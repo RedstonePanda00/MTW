@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 <!-- EN: Mechanoids: Total Warfare Y -->
   <NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>机械族：全面战争Y</NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>
@@ -656,4 +656,8 @@ Tactical Tip: Build laser point defense against mortars. -->
 
   <!-- 资源 / 错误 -->
   <NCL.NotEnoughSteel>弹药不足，无法开火：每次射击需要 {0} 点弹药。</NCL.NotEnoughSteel>
+
+  <!-- Mod settings UI tabs -->
+  <NCL_SETTINGS_TAB_GENERAL>常规</NCL_SETTINGS_TAB_GENERAL>
+  <NCL_SETTINGS_TAB_STORYTELLER>故事叙述者</NCL_SETTINGS_TAB_STORYTELLER>
 </LanguageData>

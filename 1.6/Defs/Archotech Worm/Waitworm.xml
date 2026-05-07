@@ -4,7 +4,7 @@
   
   <GameConditionDef>
     <defName>NCL_WaitWorm</defName>
-    <conditionClass>NCLWorm.GameCondition_WaitWorm</conditionClass>
+    <conditionClass>NCL.Worm.GameCondition_WaitWorm</conditionClass>
     <label>ArchoWorm Incoming</label>
     <description>An archoWorm unit will be deployed to your primary colony. If you abandon the colony before its arrival, you will permanently forfeit this archomechanical specimen.</description>
     <endMessage>蠕虫送达</endMessage>
@@ -15,7 +15,7 @@
   </GameConditionDef>
   <GameConditionDef>
     <defName>NCL_WaitWormFight</defName>
-    <conditionClass>NCLWorm.GameCondition_WaitWormFight</conditionClass>
+    <conditionClass>NCL.Worm.GameCondition_WaitWormFight</conditionClass>
     <label>ArchoWorm Trial Imminent</label>
     <description>An archoWorm combat unit is en route to your primary colony. Abandoning the colony prior to engagement will be considered trial failure.</description>
     <endMessage>蠕虫送达</endMessage>

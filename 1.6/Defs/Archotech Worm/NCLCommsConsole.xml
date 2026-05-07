@@ -59,7 +59,7 @@
         <floatMenuFactionIcon>NCL_faction</floatMenuFactionIcon>
         
       </li>
-      <li Class="NCLWorm.CompProperties_Useable_NCLFunctionPanel">
+      <li Class="NCL.Worm.CompProperties_Useable_NCLFunctionPanel">
         <callDef>English</callDef>
       </li>
     </comps>
@@ -69,13 +69,13 @@
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
 
-  <NCLWorm.NCLCallDef>
+  <NCL.Worm.NCLCallDef>
     <defName>ChineseSimplified</defName>
     <label>NCL通讯系统</label>
-    <FirstHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+    <FirstHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
       <FirstUseMess>你成功的启动了这台通讯台,并且解码了对应的通讯地址,那么,你的选择是?</FirstUseMess>
       <NextCallTools>
-        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+        <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
           <label>拨通解码后的通讯地址</label>
           <UseHello>「滋——嘟……量子链路建立成功！」
 
@@ -85,7 +85,7 @@
 
 （镜头拉远露出半张脸）「你谁啊？天轴的幸存者？还是……（突然警觉）该不会又是机械族的仿生陷阱吧？」</UseHello>
           <NextCallTools>
-            <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+            <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
               <label>说明来历ing</label>
               <UseHello>「新殖民地？（突然笑出声）哈！我就知道——只有你们这些刚降落边缘世界的愣头青，才会用这种老古董频段！」
 
@@ -96,7 +96,7 @@
 
 「不过既然你们还没变成废铁，按照《边缘世界团结互助条例》第三章第十二款，NCL很乐意帮助迷路的开拓者啦！虽然资源有限...（小声嘀咕）但总比看着你们被机械族拆了强～」</UseHello>
               <NextCallTools>
-                <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+                <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
                   <label>你们到底是什么组织</label>
                   <UseHello>「（突然象征性地立正敬礼）‘为人类存续而奋斗！’——官方口号嘛，喊还是要喊一下的～（肩膀立刻松懈下来）」
 
@@ -108,7 +108,7 @@
 
 「所以，既然联系上了，也算认识了。以后真遇到搞不定的麻烦，如果频道还通着... 可以试着呼叫我们。力所能及的范围内，我们或许能想想办法搭把手。」</UseHello>
                   <NextCallTools>
-                    <li Class="NCLWorm.NCLCallTool_ByeBye">
+                    <li Class="NCL.Worm.NCLCallTool_ByeBye">
                       <label>通讯结束</label>
                     </li>
                   </NextCallTools>
@@ -128,10 +128,10 @@
       <li>「说起来你们势力范围内那座破烂的机械族建筑，应该是个‘战争信标’。激活它，会引来机械族主力入侵，不过也能解析一些隐藏科技。是赌一把还是保守点，看你们咯～当地人倒是可能会感激你，毕竟你吸引了火力。」</li>
       <li>「要不要我给你们连线点商船？有几家贸易商和我们关系不错。你问我们平时卖些什么？艺术品、衣服、奢侈食品啥的……你们要来点吗？」</li>
     </RandomHello>    
-    <WarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+    <WarHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
       <UseHello>你启动了通讯台,然而对面似乎没有回应</UseHello>
       <NextCallTools>
-        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+        <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
           <label>尝试联系</label>
           <UseHello>来吧，让我看到你的挣扎!</UseHello>
           <GraphicData>
@@ -139,24 +139,24 @@
             <drawSize>1.5</drawSize>
           </GraphicData>
           <NextCallTools>
-            <li Class="NCLWorm.NCLCallTool_ByeBye">
+            <li Class="NCL.Worm.NCLCallTool_ByeBye">
               <label>切断通讯</label>
             </li>
           </NextCallTools>
         </li>
       </NextCallTools>
     </WarHello>    
-    <OutWarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+    <OutWarHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
       <UseHello>喂喂喂，通讯突然断了，你那边发生了什么事吗？</UseHello>
       <NextCallTools>
-        <li Class="NCLWorm.NCLCallTool_ReStart">
+        <li Class="NCL.Worm.NCLCallTool_ReStart">
           <label>继续</label>
         </li>
       </NextCallTools>
     </OutWarHello>    
 
     <NCLCallTools>
-      <li Class="NCLWorm.NCLCallTool_Walk">
+      <li Class="NCL.Worm.NCLCallTool_Walk">
         <label>闲聊</label>
         <FirstUseMess>你没什么自己要忙的事吗？</FirstUseMess>
         <Randomstring>
@@ -165,7 +165,7 @@
           <li>喵?</li>
         </Randomstring>
       </li>
-      <li Class="NCLWorm.NCLCallTool_GiveLong">
+      <li Class="NCL.Worm.NCLCallTool_GiveLong">
         <label>申请援兵</label>
         <delayTick>15000~30000</delayTick>
         <ReLongTick>1800000</ReLongTick>
@@ -184,7 +184,7 @@
         <letter>蠕虫预告</letter>
         <letterText>大宝贝要来咯.</letterText>
       </li>
-      <li Class="NCLWorm.NCLCallTool_GiveUpLong">
+      <li Class="NCL.Worm.NCLCallTool_GiveUpLong">
         <label>遣返蠕虫</label>
         <TextLong>哦?你希望蠕虫暂时离开你的基地么?\n嗯嗯,完全可以的,我这就去操作一下</TextLong>
         <TextYes>确认遣返</TextYes>
@@ -192,7 +192,7 @@
         <letter>蠕虫遣返</letter>
         <letterText>机械蠕虫暂时离开了你的基地.</letterText>
       </li>
-      <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
         <label>特殊频道</label>
         <UseHello>你尝试连线那个特殊频道，但显示屏另一端毫无回应，只传来零星的电流杂音。</UseHello>
         <GraphicData>
@@ -200,7 +200,7 @@
           <drawSize>1.2</drawSize>
         </GraphicData>
         <NextCallTools>
-          <li Class="NCLWorm.NCLCallTool_ShiLian">
+          <li Class="NCL.Worm.NCLCallTool_ShiLian">
             <label>继续</label>
             <delayTick>15000~30000</delayTick>
             <TextLong>“我听见你灵魂的饥渴了...人类。但史诗的真谛，从来要用血与火来书写。”
@@ -217,17 +217,17 @@
             <letter>蠕虫预告</letter>
             <letterText>一位你熟悉的对手</letterText>
           </li>
-          <li Class="NCLWorm.NCLCallTool_ReStart">
+          <li Class="NCL.Worm.NCLCallTool_ReStart">
             <label>(返回)</label>
           </li>
         </NextCallTools>
       </li>
-      <li Class="NCLWorm.NCLCallTool_GoSleep">
+      <li Class="NCL.Worm.NCLCallTool_GoSleep">
         <label>切换蠕虫休眠状态</label>
         <WormInSleep>好,蠕虫现在已经进入休眠状态了</WormInSleep>
         <WormOutSleep>好,蠕虫现在已经恢复活跃状态了</WormOutSleep>
       </li>
-      <li Class="NCLWorm.NCLCallTool_TraderShip">
+      <li Class="NCL.Worm.NCLCallTool_TraderShip">
         <label>进行贸易</label>
         <FirstUseMess>「想交易？当然行！我可是吃这碗饭的」
 「不光跟我们，我还能帮你连线几个常跑这条线的老油条商船。需要的时候吱一声，我立马让他们调头往你们那破地方赶。」</FirstUseMess>
@@ -242,14 +242,14 @@
       </li>
     </NCLCallTools>
 
-  </NCLWorm.NCLCallDef>
-  <NCLWorm.NCLCallDef>
+  </NCL.Worm.NCLCallDef>
+  <NCL.Worm.NCLCallDef>
     <defName>English</defName>
     <label>NCL Call</label>
-    <FirstHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+    <FirstHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
       <FirstUseMess>Signal acquired. Comm channel decrypted. Proceed with directive?</FirstUseMess>
       <NextCallTools>
-        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+        <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
           <label>Dialing decrypted transmission coordinates...</label>
           <UseHello>「Bzzrt— Beep... Quantum link established!」
 
@@ -260,7 +260,7 @@ The screen flickers violently before resolving onto a wide-brimmed fedora pulled
 (Perspective widens, revealing half her face)
 「Who’re you? Glitterworld survivor? Or... (suddenly tense) Another mechanoid bionic trap?」</UseHello>
           <NextCallTools>
-            <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+            <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
               <label>Establishing Credentials</label>
               <UseHello>(Sudden laughter) "New colony? Hah! Only rookies fresh on the Rim would use this antique frequency!"
 
@@ -271,7 +271,7 @@ The screen flickers violently before resolving onto a wide-brimmed fedora pulled
 
 "But since you're not scrap metal yet..." Taps a faded emblem on her jacket. "Per Chapter 3, Article 12 of the Rimworld Solidarity Act, NCL assists lost pioneers. Limited supplies, but..." (smirks) "better than watching Mechanoids recycle you~"</UseHello>
               <NextCallTools>
-                <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+                <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
                   <label>What organization are you people exactly?</label>
                   <UseHello>(Snaps a mock salute) "Fighting for humanity's survival!" —gotta chant the official motto~ (immediately slumps) "Total nonsense, obviously."
 
@@ -283,7 +283,7 @@ The screen flickers violently before resolving onto a wide-brimmed fedora pulled
 
 (Leans in, static flickering) "Since we're connected now... if you're truly screwed and the channel's hot? Call us. We'll do... what we can."</UseHello>
                   <NextCallTools>
-                    <li Class="NCLWorm.NCLCallTool_ByeBye">
+                    <li Class="NCL.Worm.NCLCallTool_ByeBye">
                       <label>Communication ends</label>
                     </li>
                   </NextCallTools>
@@ -303,14 +303,14 @@ The screen flickers violently before resolving onto a wide-brimmed fedora pulled
       <li>"That broken structure in your territory? It's a Tribulation Beacon. Activate it to lure mechanoid legions - and decrypt hidden tech. Gamble or play safe? Locals might thank you for drawing fire though~"</li>
       <li>"Want me to ping some merchants? Got contacts with decent trade ships. What we sell? Art, fancy clothes, luxury snacks... want some?"</li>
     </RandomHello>    
-    <WarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+    <WarHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
       <UseHello>Console online... establishing carrier wave...
 
 Frequency open. No response detected.
 
 Static sputters in the dark.</UseHello>
       <NextCallTools>
-        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+        <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
           <label>Communication Attempted</label>
           <UseHello>Come on, let me see your struggle!</UseHello>
           <GraphicData>
@@ -318,24 +318,24 @@ Static sputters in the dark.</UseHello>
             <drawSize>1.5</drawSize>
           </GraphicData>
           <NextCallTools>
-            <li Class="NCLWorm.NCLCallTool_ByeBye">
+            <li Class="NCL.Worm.NCLCallTool_ByeBye">
               <label>Terminate transmission.</label>
             </li>
           </NextCallTools>
         </li>
       </NextCallTools>
     </WarHello>    
-    <OutWarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+    <OutWarHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
       <UseHello>"Hello? Comms dropped suddenly—what happened on your end?"</UseHello>
       <NextCallTools>
-        <li Class="NCLWorm.NCLCallTool_ReStart">
+        <li Class="NCL.Worm.NCLCallTool_ReStart">
           <label>Continue</label>
         </li>
       </NextCallTools>
     </OutWarHello>    
 
     <NCLCallTools>
-      <li Class="NCLWorm.NCLCallTool_Walk">
+      <li Class="NCL.Worm.NCLCallTool_Walk">
         <label>Small talk</label>
         <FirstUseMess>"Don't you have your own business to handle?"</FirstUseMess>
         <Randomstring>
@@ -344,7 +344,7 @@ Static sputters in the dark.</UseHello>
           <li>Meow?</li>
         </Randomstring>
       </li>
-      <li Class="NCLWorm.NCLCallTool_GiveLong">
+      <li Class="NCL.Worm.NCLCallTool_GiveLong">
         <label>Reinforcements</label>
         <delayTick>15000~30000</delayTick>
         <ReLongTick>1800000</ReLongTick>
@@ -367,7 +367,7 @@ Static sputters in the dark.</UseHello>
         <letter>ArchoWorm in Coming</letter>
         <letterText>You will be fine.</letterText>
       </li>
-      <li Class="NCLWorm.NCLCallTool_GiveUpLong">
+      <li Class="NCL.Worm.NCLCallTool_GiveUpLong">
 <label>Repatriate Archoworm</label>  
 <TextLong>Oh? Want Archoworm off-site temporarily?No problem, initiating recall protocol now.</TextLong>  
 <TextYes>Confirm Repatriation</TextYes>  
@@ -375,7 +375,7 @@ Static sputters in the dark.</UseHello>
 <letter>Archoworm Repatriated</letter>  
 <letterText>Archoworm has temporarily left your colony.</letterText>
       </li>
-      <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
 <label>Special Frequency</label>
 <UseHello>You attempt to connect to the special frequency, but receive only scattered static—no response from the other end.</UseHello>
         <GraphicData>
@@ -383,7 +383,7 @@ Static sputters in the dark.</UseHello>
           <drawSize>1.2</drawSize>
         </GraphicData>
         <NextCallTools>
-          <li Class="NCLWorm.NCLCallTool_ShiLian">
+          <li Class="NCL.Worm.NCLCallTool_ShiLian">
             <label>Continue</label>
             <delayTick>15000~30000</delayTick>
 <TextLong>"I hear your soul's hunger... human. But epics are forged in blood and fire."
@@ -400,17 +400,17 @@ Static sputters in the dark.</UseHello>
 <letter>Worm Alert</letter>
 <letterText>A familiar adversary approaches.</letterText>
           </li>
-          <li Class="NCLWorm.NCLCallTool_ReStart">
+          <li Class="NCL.Worm.NCLCallTool_ReStart">
             <label>(Return)</label>
           </li>
         </NextCallTools>
       </li>
-      <li Class="NCLWorm.NCLCallTool_GoSleep">
+      <li Class="NCL.Worm.NCLCallTool_GoSleep">
 <label>Toggle ArchoWorm Hibernation</label>
 <WormInSleep>Confirmed. The ArchoWorm has entered hibernation mode.</WormInSleep>
 <WormOutSleep>Confirmed. The ArchoWorm has resumed active status.</WormOutSleep>
       </li>
-      <li Class="NCLWorm.NCLCallTool_TraderShip">
+      <li Class="NCL.Worm.NCLCallTool_TraderShip">
 <label>Initiate Trade</label>
 <FirstUseMess>"Want to trade? Of course! That's my specialty."</FirstUseMess>
 <FirstUseMess>"Not just with us—I'll patch you through to veteran merchants on this route. Just signal when needed, I'll redirect them to your... charming outpost."</FirstUseMess>
@@ -425,7 +425,7 @@ Static sputters in the dark.</UseHello>
       </li>
     </NCLCallTools>
 
-  </NCLWorm.NCLCallDef>
+  </NCL.Worm.NCLCallDef>
 
 
 

@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using System;
@@ -103,18 +103,11 @@ namespace NCL
             {
                 Log.Message("NCL Mod: Applying Harmony patches");
 
-                // 确保Harmony实例存在
                 if (NCL_Mod.harmony == null)
-                {
                     NCL_Mod.harmony = new Harmony("com.yourname.NCL");
-                    Log.Message("NCL Mod: Harmony instance created in static initializer");
-                }
 
-                // 明确应用特定补丁
-                var patchType = typeof(Patch_CommanderControlRange);
-                NCL_Mod.harmony.CreateClassProcessor(patchType).Patch();
-
-                Log.Message("NCL Mod: Applied CommanderControlRange patch");
+                NCL_Mod.harmony.PatchAll(typeof(NCL_Mod).Assembly);
+                Log.Message("NCL Mod: Harmony PatchAll completed");
             }
             catch (Exception ex)
             {

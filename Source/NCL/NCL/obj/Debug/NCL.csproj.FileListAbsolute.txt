@@ -28,3 +28,9 @@ C:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\Mechanoid-TotalWarfare-Source
 C:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\Mechanoid-TotalWarfare-SourceCode\NCLSource\NCL\NCL\obj\Debug\NCL.csproj.Up2Date
 C:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\Mechanoid-TotalWarfare-SourceCode\NCLSource\NCL\NCL\obj\Debug\NCL.dll
 C:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\Mechanoid-TotalWarfare-SourceCode\NCLSource\NCL\NCL\obj\Debug\NCL.pdb
+c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\obj\Debug\NCL.csproj.AssemblyReference.cache
+c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\obj\Debug\NCL.csproj.CoreCompileInputs.cache
+c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\obj\Debug\NCL.dll
+c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\obj\Debug\NCL.pdb
+c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\bin\Debug\NCL.dll
+c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\bin\Debug\NCL.pdb

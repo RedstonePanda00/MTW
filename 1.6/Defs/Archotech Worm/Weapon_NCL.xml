@@ -25,7 +25,7 @@
     <techLevel>Spacer</techLevel>
     <verbs>
       <li>
-        <verbClass>NCLWorm.Verb_GuangA</verbClass>
+        <verbClass>NCL.Worm.Verb_GuangA</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <warmupTime>0.3</warmupTime>
         <minRange>4</minRange>
@@ -76,7 +76,7 @@
   <ThingDef ParentName="EtherealThingBase">
     <defName>Mote_NCLWormLaser</defName>
     <label>NCLWormLaser</label>
-    <thingClass>NCLWorm.Mote_NCLWormLaser</thingClass>
+    <thingClass>NCL.Worm.Mote_NCLWormLaser</thingClass>
     <tickerType>Normal</tickerType>
     <drawerType>RealtimeOnly</drawerType>
     <drawOffscreen>true</drawOffscreen>

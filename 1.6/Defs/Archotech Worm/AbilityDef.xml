@@ -12,7 +12,7 @@
     <hostile>true</hostile>
     <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
     <verbProperties>
-      <verbClass>NCLWorm.Verb_CastAbilityJumpWithBomb</verbClass>
+      <verbClass>NCL.Worm.Verb_CastAbilityJumpWithBomb</verbClass>
       <warmupTime>0.1</warmupTime>
       <range>25</range>
       <minRange>1</minRange>
@@ -28,7 +28,7 @@
   </AbilityDef>
   <ThingDef ParentName="PawnFlyerBase">
     <defName>NCLJumpWithBomb_Flyer</defName>
-    <thingClass>NCLWorm.NCLJumpWithBomb_Flyer</thingClass>
+    <thingClass>NCL.Worm.NCLJumpWithBomb_Flyer</thingClass>
     <pawnFlyer>
       <flightDurationMin>0.1</flightDurationMin>
       <flightSpeed>120</flightSpeed>
@@ -49,7 +49,7 @@
     <hostile>true</hostile>
     <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
     <verbProperties>
-      <verbClass>NCLWorm.Verb_CastAbilityBurrow</verbClass>
+      <verbClass>NCL.Worm.Verb_CastAbilityBurrow</verbClass>
       <warmupTime>0.1</warmupTime>
       <range>500</range>
       <minRange>0</minRange>
@@ -69,7 +69,7 @@
   </AbilityDef>
   <ThingDef ParentName="PawnFlyerBase">
     <defName>NCLBurrow_Flyer</defName>
-    <thingClass>NCLWorm.NCLBurrow_Flyer</thingClass>
+    <thingClass>NCL.Worm.NCLBurrow_Flyer</thingClass>
     <pawnFlyer>
       <flightDurationMin>1</flightDurationMin>
       <flightSpeed>60</flightSpeed>
@@ -94,7 +94,7 @@
     </verbProperties>
     <comps>
       <li Class="CompProperties_AbilityEffect">
-        <compClass>NCLWorm.Comp_NCLBeckon</compClass>
+        <compClass>NCL.Worm.Comp_NCLBeckon</compClass>
       </li>
     </comps>
   </AbilityDef>
@@ -116,7 +116,7 @@
     </verbProperties>
     <comps>
       <li Class="CompProperties_AbilityEffect">
-        <compClass>NCLWorm.Comp_NCLPush</compClass>
+        <compClass>NCL.Worm.Comp_NCLPush</compClass>
       </li>
     </comps>
   </AbilityDef>
@@ -139,7 +139,7 @@
     </verbProperties>
     <comps>
       <li Class="CompProperties_AbilityEffect">
-        <compClass>NCLWorm.Comp_ChaosTeleport</compClass>
+        <compClass>NCL.Worm.Comp_ChaosTeleport</compClass>
       </li>
     </comps>
   </AbilityDef>

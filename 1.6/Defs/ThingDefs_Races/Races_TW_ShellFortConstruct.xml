@@ -163,7 +163,7 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
         <li>Vaporize</li>
       </excludedDamageTypes>
     </li>
-      <li Class="NCLWorm.CompProperties_DamageAbsorbedAndBoom">
+      <li Class="NCL.Worm.CompProperties_DamageAbsorbedAndBoom">
         <AbsorbedTime>1</AbsorbedTime>
         <BoomTime>60</BoomTime>
         <radius>9</radius>
@@ -175,7 +175,7 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
         <tickInterval>180</tickInterval>
         <healAmount>10</healAmount> 
     </li>
-      <li Class="NCLWorm.CompProperties_BattleCrush">
+      <li Class="NCL.Worm.CompProperties_BattleCrush">
           <battleEffect>NCL_ShellFortFightingeffects</battleEffect>
           <damageInterval>60</damageInterval>
           <damageFactor>0.1</damageFactor>
@@ -571,7 +571,7 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
         <li>Vaporize</li>
       </excludedDamageTypes>
     </li>
-      <li Class="NCLWorm.CompProperties_DamageAbsorbedAndBoom">
+      <li Class="NCL.Worm.CompProperties_DamageAbsorbedAndBoom">
         <AbsorbedTime>1</AbsorbedTime>
         <BoomTime>60</BoomTime>
         <radius>9</radius>
@@ -579,7 +579,7 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
         <amount>50</amount>
         <armorPenetration>1</armorPenetration>
       </li>
-      <li Class="NCLWorm.CompProperties_BattleCrush">
+      <li Class="NCL.Worm.CompProperties_BattleCrush">
           <battleEffect>NCL_ShellFortFightingeffects</battleEffect>
           <damageInterval>60</damageInterval>
           <damageFactor>0.1</damageFactor>

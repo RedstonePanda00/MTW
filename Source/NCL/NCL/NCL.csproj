@@ -36,20 +36,37 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>$(RimWorldManagedDir)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>$(RimWorldManagedDir)\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
@@ -163,6 +180,26 @@
     <Compile Include="Worm\Worm.cs" />
     <Compile Include="Worm\WormAbility.cs" />
     <Compile Include="Projectiles\Class1.cs" />
+    <Compile Include="NoBody\Patch_PawnRenderNode_Body_GraphicFor.cs" />
+    <Compile Include="NoBody\Comp_ForceBodyType.cs" />
+    <Compile Include="NoBody\CompProperties_ForceBodyType.cs" />
+    <Compile Include="NoBody\TransparentBodyDefOf.cs" />
+    <Compile Include="NoBody\Command_ActionWithFloat.cs" />
+    <Compile Include="NoBody\NoBodyApparel.cs" />
+    <Compile Include="CompFormChange.cs" />
+    <Compile Include="CompPropertiesWeaponSwitch.cs" />
+    <Compile Include="TransformData.cs" />
+    <Compile Include="Command_Transform_Action.cs" />
+    <Compile Include="Command_AutoReversion_Action.cs" />
+    <Compile Include="IFCEquipmentFormChangePatches.cs" />
+    <Compile Include="MechanitorKingOfTheFieldPatches.cs" />
+    <Compile Include="NCL_Storyteller\NCL_StorytellerUtility.cs" />
+    <Compile Include="NCL_Storyteller\Patch_StorytellerUtility.cs" />
+    <Compile Include="NCL_Storyteller\Patch_PawnsArrivalModeWorker.cs" />
+    <Compile Include="NCLWorm\**\*.cs" />
+    <Compile Include="TowerLaserDefense\**\*.cs" />
+    <Compile Include="WeaponBackpack\**\*.cs" />
+    <Compile Include="CapitalisticMilitor\**\*.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

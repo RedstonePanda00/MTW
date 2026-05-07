@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Penetrate Thick Roof", "Penetrate Thick Roof.csproj", "{0CCFE9D1-633A-4472-9B83-BBC4F2FDA418}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CCFE9D1-633A-4472-9B83-BBC4F2FDA418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCFE9D1-633A-4472-9B83-BBC4F2FDA418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCFE9D1-633A-4472-9B83-BBC4F2FDA418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCFE9D1-633A-4472-9B83-BBC4F2FDA418}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

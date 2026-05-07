@@ -10,7 +10,7 @@
       <shaderType>TransparentPostLight</shaderType>
 	  <drawSize>2.4</drawSize>
     </graphicData>
-    <thingClass>NCLProjectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
+    <thingClass>NCL.Projectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>60</damageAmountBase>
@@ -21,7 +21,7 @@
       <flyOverhead>true</flyOverhead>
     </projectile>
     <modExtensions>
-      <li Class="NCLProjectiles.ModExtension_ProjectileEffects">
+      <li Class="NCL.Projectiles.ModExtension_ProjectileEffects">
         <stages>
           <li>
             <label>climbing</label>

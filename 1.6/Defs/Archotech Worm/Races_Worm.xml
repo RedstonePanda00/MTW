@@ -28,7 +28,7 @@ Thunderstrike: The worm summons several bolts of lightning from the sky to strik
 Worm Tracking Cannon: Periodically, the worm fires volleys from its joints, releasing moderately powerful homing bullets that ignore enemy shields.
 
 Dragon's Final Blow: The worm burrows underground and charges straight toward its target, dealing massive impact damage.</description>
-    <thingClass>NCLWorm.NCL_Pawn_Worm</thingClass>
+    <thingClass>NCL.Worm.NCL_Pawn_Worm</thingClass>
     <statBases>
       <MarketValue>5</MarketValue>
       <MoveSpeed>5.4</MoveSpeed>
@@ -58,7 +58,7 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
       <baseBodySize>40</baseBodySize>
       <mechWeightClass>UltraHeavy</mechWeightClass>
       <deathAction>
-        <workerClass>NCLWorm.DeathActionWorker_EndWar</workerClass>
+        <workerClass>NCL.Worm.DeathActionWorker_EndWar</workerClass>
       </deathAction>
       <headPosPerRotation>
         <li>(0, 0, 4)</li>
@@ -114,7 +114,7 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
         <tickInterval>180</tickInterval>
         <healAmount>1</healAmount> 
     </li>
-      <li Class="NCLWorm.CompProperties_BattleCrush">
+      <li Class="NCL.Worm.CompProperties_BattleCrush">
           <battleEffect>NCL_WormFightingeffects</battleEffect>
           </li>
     <li Class="NCL.CompProperties_DamageLimit">
@@ -123,12 +123,12 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
         <li>Vaporize</li>
       </excludedDamageTypes>
     </li>
-      <li Class="NCLWorm.CompProperties_CauseHediff_AoEAndRing">        
+      <li Class="NCL.Worm.CompProperties_CauseHediff_AoEAndRing">        
         <hediff>WormPressure</hediff>
         <checkInterval>600</checkInterval>
         <range>18</range>
       </li>
-      <li Class="NCLWorm.CompProperties_DamageAbsorbedAndBoom">
+      <li Class="NCL.Worm.CompProperties_DamageAbsorbedAndBoom">
         <AbsorbedTime>3</AbsorbedTime>
         <BoomTime>60</BoomTime>
         <radius>9</radius>
@@ -138,12 +138,12 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
       </li>
     <li Class="NCL.CompProperties_MechanoidShield">
         </li>
-      <li Class="NCLWorm.CompProperties_ShieldNCLWorm">
+      <li Class="NCL.Worm.CompProperties_ShieldNCLWorm">
         <EnergyShieldEnergyMax>1000</EnergyShieldEnergyMax>
         <EnergyShieldRechargeRate>5</EnergyShieldRechargeRate>
         <RestTime>30</RestTime>
       </li>
-      <li Class="NCLWorm.CompProperties_NCLWormSkillList">
+      <li Class="NCL.Worm.CompProperties_NCLWormSkillList">
         <skill>
           <li>NCLPush</li>
           <li>NCLBeckon</li>

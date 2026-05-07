@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 <NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>Mechanoids: Total Warfare Y</NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>
   <NCL_TOTALWARFARE_AUTO_TRIGGER_TEXT>
@@ -435,5 +435,9 @@ Tactical Tip: Build laser point defense against mortars.</NCL_Content_Page3>
 
   <!-- Resource / error -->
   <NCL.NotEnoughSteel>Not enough HE Shells to fire: requires {0} shells per shot.</NCL.NotEnoughSteel>
+
+  <!-- Mod settings UI tabs -->
+  <NCL_SETTINGS_TAB_GENERAL>General</NCL_SETTINGS_TAB_GENERAL>
+  <NCL_SETTINGS_TAB_STORYTELLER>Storyteller</NCL_SETTINGS_TAB_STORYTELLER>
 
 </LanguageData> 

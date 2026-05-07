@@ -11,8 +11,11 @@ namespace NCL
         // 不需要额外字段，仅作为标记
     }
 
-    [HarmonyPatch(typeof(LetterStack))]
-    [HarmonyPatch("ReceiveLetter")]
+    // RimWorld 1.6: Letter lives in Verse; ReceiveLetter(Letter) was replaced by a 4-arg overload.
+    [HarmonyPatch(
+        typeof(LetterStack),
+        nameof(LetterStack.ReceiveLetter),
+        new[] { typeof(Verse.Letter), typeof(string), typeof(int), typeof(bool) })]
     public static class Patch_LetterStack_ReceiveLetter
     {
         // 指定要拦截的信件类型
@@ -22,13 +25,13 @@ namespace NCL
  
         };
 
-        public static bool Prefix(Letter letter)
+        public static bool Prefix(Verse.Letter let, string debugInfo, int delayTicks, bool playSound)
         {
             // 检查是否是需要拦截的通知类型
-            if (NotificationDefs.Contains(letter.def))
+            if (NotificationDefs.Contains(let.def))
             {
                 // 尝试从信件文本中提取Pawn
-                Pawn affectedPawn = TryGetAffectedPawn(letter);
+                Pawn affectedPawn = TryGetAffectedPawn(let);
 
                 if (affectedPawn != null && affectedPawn.IsColonist)
                 {
@@ -36,7 +39,7 @@ namespace NCL
                     if (HasNoNotificationHediff(affectedPawn))
                     {
                         // 调试日志
-                        // Log.Message($"阻止通知: {letter.label} - 目标: {affectedPawn.Label}");
+                        // Log.Message($"阻止通知: {let.label} - 目标: {affectedPawn.Label}");
                         return false; // 阻止邮件发送
                     }
                 }
@@ -45,10 +48,10 @@ namespace NCL
         }
 
         // 尝试从信件中提取受影响的Pawn
-        private static Pawn TryGetAffectedPawn(Letter letter)
+        private static Pawn TryGetAffectedPawn(Verse.Letter let)
         {
             // 方法1: 从信件目标获取
-            if (letter.lookTargets != null && letter.lookTargets.PrimaryTarget.Thing is Pawn directTarget)
+            if (let.lookTargets != null && let.lookTargets.PrimaryTarget.Thing is Pawn directTarget)
             {
                 return directTarget;
             }

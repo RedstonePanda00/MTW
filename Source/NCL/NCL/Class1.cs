@@ -1,4 +1,4 @@
-﻿using NCL;
+using NCL;
 using RimWorld;
 using RimWorld.Planet;
 using System;
@@ -11,9 +11,6 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.Sound;
-
-
-
 namespace NCL
 {
 
@@ -617,6 +614,11 @@ namespace NCL
         public static bool ShowDevLogs = false;
 
         internal static int AdvancedNodeCount = 5;
+
+        // Storyteller caps (single ModSettings type per Mod; see TotalWarfareMod).
+        public float maxDefaultThreatPoints = 100000f;
+        public int maxPawns = 300;
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -630,6 +632,8 @@ namespace NCL
             Scribe_Values.Look(ref WealthTriggerThreshold, "wealthTriggerThreshold", 1000000f);
             Scribe_Values.Look(ref AirstrikeWealthThreshold, "airstrikeWealthThreshold", 500000f);
             Scribe_Values.Look(ref InvisibilityVisibleToPlayer, "invisibilityVisibleToPlayer", true);
+            Scribe_Values.Look(ref maxDefaultThreatPoints, "maxDefaultThreatPoints", 100000f);
+            Scribe_Values.Look(ref maxPawns, "maxPawns", 300);
         }
     }
 }
@@ -639,6 +643,18 @@ namespace NCL
     public class TotalWarfareMod : Mod
     {
         private TotalWarfareSettings settings;
+
+        // Settings UI: left tabs (1) vs right content (3), same height as settings window.
+        private int _settingsTabIndex;
+        private int _settingsTabScrollOwner = -1;
+        private Vector2 _settingsRightScroll;
+
+        private static readonly string[] SettingsTabLabelKeys =
+        {
+            "NCL_SETTINGS_TAB_GENERAL",
+            "NCL_SETTINGS_TAB_STORYTELLER"
+        };
+
         public TotalWarfareMod(ModContentPack content) : base(content)
         {
             this.settings = GetSettings<TotalWarfareSettings>();
@@ -653,12 +669,62 @@ namespace NCL
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
+            if (_settingsTabScrollOwner != _settingsTabIndex)
+            {
+                _settingsRightScroll = Vector2.zero;
+                _settingsTabScrollOwner = _settingsTabIndex;
+            }
+
+            const float columnGap = 12f;
+            float leftW = (inRect.width - columnGap) * (1f / 4f);
+            float rightW = inRect.width - columnGap - leftW;
+
+            Rect leftOuter = new Rect(inRect.x, inRect.y, leftW, inRect.height);
+            Rect rightOuter = new Rect(inRect.x + leftW + columnGap, inRect.y, rightW, inRect.height);
+
+            Widgets.DrawBox(leftOuter);
+            Widgets.DrawBox(rightOuter);
+
+            DrawSettingsTabColumn(leftOuter.ContractedBy(6f));
+
+            if (_settingsTabIndex == 0)
+                DrawSettingsGeneralPanel(rightOuter.ContractedBy(6f));
+            else
+                DrawSettingsStorytellerPanel(rightOuter.ContractedBy(6f));
+        }
+
+        private void DrawSettingsTabColumn(Rect area)
+        {
+            const float tabHeight = 36f;
+            const float gap = 8f;
+            for (int i = 0; i < SettingsTabLabelKeys.Length; i++)
+            {
+                Rect row = new Rect(area.x, area.y + i * (tabHeight + gap), area.width, tabHeight);
+                if (_settingsTabIndex == i)
+                {
+                    Widgets.DrawBoxSolid(row, new Color(0.2f, 0.25f, 0.32f, 0.55f));
+                }
+
+                if (Widgets.ButtonText(row, SettingsTabLabelKeys[i].Translate()))
+                {
+                    _settingsTabIndex = i;
+                }
+            }
+        }
+
+        private void DrawSettingsGeneralPanel(Rect rightInner)
+        {
             const float verticalSpacing = 12f;
             const float sectionSpacing = 20f;
             const float numberEntryHeight = 30f;
+            const float viewHeight = 1500f;
+            float innerListW = Mathf.Max(rightInner.width - 20f, 80f);
+            Rect viewRect = new Rect(0f, 0f, innerListW, viewHeight);
+
+            Widgets.BeginScrollView(rightInner, ref _settingsRightScroll, viewRect);
 
             Listing_Standard listing = new Listing_Standard();
-            listing.Begin(inRect);
+            listing.Begin(viewRect);
 
             // === 第一部分：基础设置 ===
             Rect basicLabelRect = listing.GetRect(Text.LineHeight);
@@ -841,9 +907,36 @@ namespace NCL
                 TooltipHandler.TipRegion(buttonRect, "NCL_GENERATE_ANCIENT_WAR_BEACON_REMAINS_DESC".Translate());
             }
 
+            listing.End();
+            Widgets.EndScrollView();
+        }
 
+        private void DrawSettingsStorytellerPanel(Rect rightInner)
+        {
+            const float viewHeight = 400f;
+            float innerListW = Mathf.Max(rightInner.width - 20f, 80f);
+            Rect viewRect = new Rect(0f, 0f, innerListW, viewHeight);
+
+            Widgets.BeginScrollView(rightInner, ref _settingsRightScroll, viewRect);
+
+            Listing_Standard listing = new Listing_Standard();
+            listing.Begin(viewRect);
+
+            Rect storytellerLabelRect = listing.GetRect(Text.LineHeight);
+            Widgets.Label(storytellerLabelRect, "NCL_Storyteller_Mod".Translate());
+            listing.Gap(12f);
+
+            TotalWarfareSettings st = this.settings;
+            string threatBuf = st.maxDefaultThreatPoints.ToString();
+            string pawnsBuf = st.maxPawns.ToString();
+            listing.Label("maxDefaultThreatPoints".Translate(), -1f, "maxDefaultThreatPointsDesc".Translate());
+            listing.TextFieldNumeric(ref st.maxDefaultThreatPoints, ref threatBuf, 0f, 1E+09f);
+            listing.Gap(5f);
+            listing.Label("maxPawns".Translate(), -1f, "maxPawnsDesc".Translate());
+            listing.TextFieldNumeric(ref st.maxPawns, ref pawnsBuf, 0f, 1000000);
 
             listing.End();
+            Widgets.EndScrollView();
         }
 
 

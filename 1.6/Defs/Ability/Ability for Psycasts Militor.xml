@@ -21,7 +21,7 @@
     </verbProperties>
     <comps>
       <li Class="CompProperties_AbilityEffect">
-        <compClass>NCLWorm.Comp_TeleportToRandomAlly</compClass>
+        <compClass>NCL.Worm.Comp_TeleportToRandomAlly</compClass>
       </li>
       <li Class="CompProperties_AbilityEffectWithDuration">
         <compClass>CompAbilityEffect_Stun</compClass>

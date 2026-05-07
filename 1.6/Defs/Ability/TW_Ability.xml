@@ -2,7 +2,7 @@
 <Defs>
   
     <ThingDef Name="NCL_MissileProjectile" ParentName="BaseBullet" Abstract="True">
-    <thingClass>NCLProjectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
+    <thingClass>NCL.Projectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
     <graphicData>
       <texPath>Projectiles/AutoChasingMissile</texPath>
       <graphicClass>Graphic_Single</graphicClass>

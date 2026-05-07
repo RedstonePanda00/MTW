@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <Proj_GrenadeExplosiveEMP.label>GrenadeExplosiveEMP</Proj_GrenadeExplosiveEMP.label>
+  
+  
+  <Specops_Charge_Lance.label>特种电荷标枪</Specops_Charge_Lance.label>
+  
+  <Specops_Charge_Lance.description>仅在伞兵静螳间装备的特殊电荷标枪，有着极远的射程与不俗的伤害</Specops_Charge_Lance.description>
+  
+  <Specops_Charge_Lance.tools.stock.label>stock</Specops_Charge_Lance.tools.stock.label>
+  
+  <Specops_Charge_Lance.tools.barrel.label>barrel</Specops_Charge_Lance.tools.barrel.label>
+  
+  <Specops_Charge_Lance.verbs.Verb_Shoot.label>Specops Charge Lance</Specops_Charge_Lance.verbs.Verb_Shoot.label>
+  
+</LanguageData>

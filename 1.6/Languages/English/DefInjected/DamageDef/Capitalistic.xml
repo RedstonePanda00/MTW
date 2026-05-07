@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: cut -->
+  <TW_Encourage.label>cut</TW_Encourage.label>
+  <!-- EN: {0} has been cut to death. -->
+  <TW_Encourage.deathMessage>{0} has been cut to death.</TW_Encourage.deathMessage>
+  
+</LanguageData>

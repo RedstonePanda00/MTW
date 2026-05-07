@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>NCL_Battery</defName>
+    <label>Advanced Battery</label>
+    <description>Medium-capacity power storage unit developed by NCL engineers. Utilizes quantum capacitance technology to reliably store 2000Wd electricity while maintaining efficient charge/discharge performance in harsh environments.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Buildings/NCLBattery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2.3</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>4</Beauty>
+    </statBases>
+    <size>(1,2)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <costList>
+      <Steel>100</Steel>
+	  <Plasteel>40</Plasteel>
+	  <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>2000</storedEnergyMax>
+        <efficiency>0.98</efficiency>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2020</uiOrder>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>NCL_Advance_Battery</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>NCL_Large_Battery</defName>
+    <label>Heavy Battery Array</label>
+    <description>High-capacity military-grade energy storage designed by NCL. Features reinforced quantum capacitance arrays capable of storing up to 12,000Wd, meeting power demands of forward bases and heavy equipment.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Buildings/NCLLargeBattery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5.5,5)</drawSize>
+      <shadowData>
+        <volume>(0, 0, 0)</volume>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>4000</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>16</Beauty>
+    </statBases>
+    <size>(2,4)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <costList>
+      <Steel>300</Steel>
+	  <Plasteel>175</Plasteel>
+	  <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>12000</storedEnergyMax>
+        <efficiency>0.98</efficiency>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2020</uiOrder>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>NCL_Advance_Battery</li>
+      <li>NCL_Research_of_megastructures</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+    <defName>NCL_LightWaterReactor</defName>
+    <label>Light Water Reactor</label>
+    <thingClass>Building</thingClass>
+    <description>Modular nuclear power unit utilizing uranium fuel with flexible output up to 280,000Wd. Requires external cooling to maintain core temperature below 120°C. Coolant failure triggers void coefficient-induced power surges leading to meltdown - explosive yield varies with remaining fuel. This dual-purpose design enables both efficient power generation and weaponization potential.</description>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <graphicData>
+      <graphicClass>NCL.Graphic_RefuelableMulti</graphicClass>
+      <texPath>Buildings/LightWaterReactor</texPath>
+      <drawSize>(7,7)</drawSize>
+      <shadowData>
+        <volume>(2.9, 1, 1.9)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.75</fillPercent>
+    <pathCost>50</pathCost>
+    <rotatable>true</rotatable>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2200</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>4000</MaxHitPoints>
+      <WorkToBuild>120000</WorkToBuild>
+      <Flammability>0.75</Flammability>
+      <Beauty>-40</Beauty>
+    </statBases>
+    <size>(7,7)</size>
+    <costList>
+      <Steel>1000</Steel>
+	  <Plasteel>800</Plasteel>
+      <ComponentIndustrial>54</ComponentIndustrial>
+	  <ComponentSpacer>24</ComponentSpacer>
+    </costList>
+    <placeWorkers>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>NCL_Advance_Nuclear_Power</li>
+    </researchPrerequisites>
+		<placeWorkers>
+			<li>NCL.PlaceWorker_MustBeRoofed</li>
+		</placeWorkers>
+    <comps>
+  <li Class="NCL.CompProperties_TemperatureMonitor">
+    <warningTemperature>80</warningTemperature>
+    <criticalTemperature>135</criticalTemperature>
+    <checkInterval>60</checkInterval> 
+  </li>
+    <li Class="CompProperties_Power">
+				<compClass>NCL.CompPowerAdjustable</compClass>
+				<transmitsPower>true</transmitsPower>
+    </li>
+      <li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>0</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelConsumptionRate>2</fuelConsumptionRate>
+				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>100</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+       <li Class="NCL.CompProperties_ExplosiveRefuelable">
+         <minExplosionRadius>5</minExplosionRadius>
+          <maxExplosionRadius>50</maxExplosionRadius>
+         <damageDef>Bomb</damageDef>
+         <explosionDamageFactor>1</explosionDamageFactor>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8</glowRadius>
+        <glowColor>(80,141,223,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

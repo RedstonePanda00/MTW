@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <NCL_ChargeA.label>冲刺！冲!</NCL_ChargeA.label>
+  
+  <NCL_ChargeA.description>Charge towards the target, push away all enemies along the path, and create an area effect at the target location.</NCL_ChargeA.description>
+  
+  
+  <NCL_ChargeB.label>冲!冲刺！</NCL_ChargeB.label>
+  
+  <NCL_ChargeB.description>Charge towards the target, push away all enemies along the path, and create an area effect at the target location.</NCL_ChargeB.description>
+  
+</LanguageData>

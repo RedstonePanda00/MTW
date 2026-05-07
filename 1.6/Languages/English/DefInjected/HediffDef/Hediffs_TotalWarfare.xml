@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <TW_CompositeArmorReinforcementProtocol_M.label>Composite Armor Reinforcement Protocol</TW_CompositeArmorReinforcementProtocol_M.label>
+  <TW_CompositeArmorReinforcementProtocol_M.description>This unit's protective capabilities are significantly enhanced.</TW_CompositeArmorReinforcementProtocol_M.description>
+  
+  <TW_CompositeArmorReinforcementProtocol_R.label>Composite Armor Reinforcement Protocol</TW_CompositeArmorReinforcementProtocol_R.label>
+  <TW_CompositeArmorReinforcementProtocol_R.description>This unit's protective capabilities are significantly enhanced.</TW_CompositeArmorReinforcementProtocol_R.description>
+  
+  <TW_HighMobilityPhaseShiftDrive_M.label>High-Output Phase Shift Drive</TW_HighMobilityPhaseShiftDrive_M.label>
+  <TW_HighMobilityPhaseShiftDrive_M.description>This unit's movement speed is significantly boosted.</TW_HighMobilityPhaseShiftDrive_M.description>
+  
+  <TW_HighMobilityPhaseShiftDrive_R.label>High-Output Phase Shift Drive</TW_HighMobilityPhaseShiftDrive_R.label>
+  <TW_HighMobilityPhaseShiftDrive_R.description>This unit's movement speed is significantly boosted.</TW_HighMobilityPhaseShiftDrive_R.description>
+  
+  <TW_LongRangeBallisticsOptimizationSystem.label>Long-Range Ballistics Optimization Module</TW_LongRangeBallisticsOptimizationSystem.label>
+  <TW_LongRangeBallisticsOptimizationSystem.description>This unit's weapon range is increased by 20%.</TW_LongRangeBallisticsOptimizationSystem.description>
+  
+  <TW_Optical_Camo_Disruption_M.label>Optical Camouflage Disruption Device</TW_Optical_Camo_Disruption_M.label>
+  <TW_Optical_Camo_Disruption_M.description>Random mechanoid units are equipped with optical camouflage modules, rendering them invisible on the battlefield. Camouflage deactivates when player units come within 5 tiles.</TW_Optical_Camo_Disruption_M.description>
+  
+  <TW_Optical_Camo_Disruption_R.label>Optical Camouflage Disruption Device</TW_Optical_Camo_Disruption_R.label>
+  <TW_Optical_Camo_Disruption_R.description>Random mechanoid units are equipped with optical camouflage modules, rendering them invisible. Camouflage deactivates when player units come within 45 tiles.[melee will then be 5 tiles]  Until then, the unit is invulnerable and will not attack.</TW_Optical_Camo_Disruption_R.description>
+  
+  <TW_Overdrive_M.label>Mechanical Overdrive</TW_Overdrive_M.label>
+  <TW_Overdrive_M.description>This mechanoid is temporarily overloaded due to massive energy infusion.</TW_Overdrive_M.description>
+  <TW_Overdrive_M.stages.0.label>Overdrive</TW_Overdrive_M.stages.0.label>
+  <TW_Overdrive_M.stages.1.label>Energy Surplus</TW_Overdrive_M.stages.1.label>
+  <TW_Overdrive_M.stages.2.label>Stabilizing</TW_Overdrive_M.stages.2.label>
+  <TW_Overdrive_M.stages.3.label>Stable</TW_Overdrive_M.stages.3.label>
+   
+  <TW_TacticalArtilleryCoordinationModule_AutoMortar.label>Tactical Coordination Module: Mortar Support</TW_TacticalArtilleryCoordinationModule_AutoMortar.label>
+  <TW_TacticalArtilleryCoordinationModule_AutoMortar.description>Summons mortar support for combat assistance when player units are detected within a 150-tile radius.</TW_TacticalArtilleryCoordinationModule_AutoMortar.description>
+  
+  <TW_TacticalArtilleryCoordinationModule_ChargeBlaster.label>Tactical Coordination Module: Blast Cannon Support</TW_TacticalArtilleryCoordinationModule_ChargeBlaster.label>
+  <TW_TacticalArtilleryCoordinationModule_ChargeBlaster.description>Summons blast cannon support for combat assistance when player units are detected within a 45-tile radius.</TW_TacticalArtilleryCoordinationModule_ChargeBlaster.description>
+  
+  <TW_TacticalArtilleryCoordinationModule_LaserDefence.label>Tactical Coordination Module: Point Defense Support</TW_TacticalArtilleryCoordinationModule_LaserDefence.label>
+  <TW_TacticalArtilleryCoordinationModule_LaserDefence.description>Summons point-defense systems for combat assistance when player units are detected within a 150-tile radius.</TW_TacticalArtilleryCoordinationModule_LaserDefence.description>
+
+</LanguageData>

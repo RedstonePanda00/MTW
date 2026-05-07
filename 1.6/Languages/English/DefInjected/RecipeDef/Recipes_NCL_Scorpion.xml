@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <NCL_Mech_Scorpion.label>Gestate War Scorpion</NCL_Mech_Scorpion.label>
+  <NCL_Mech_Scorpion.description>Designated "War Scorpion", this unit was engineered for breaching high-density fortifications. Its chassis comprises millions of self-repairing uranium-alloy scales that dynamically reconfigure into localized defense barriers during damage events - providing extraordinary physical resistance. Combat logs confirm operational continuity after direct high-explosive impacts.
+
+The tail-mounted "Solaris Penetrator" rail cannon represents its signature armament: High-compression thermal projectiles released after brief charging can vaporize most fortifications and vehicles. Each discharge triggers thermal surges and terrain deformation - an iconic area-denial attack.
+
+Bilateral suppression artillery maintains continuous fire against infantry and light vehicles during main cannon operation cycles.
+
+When entering Crimson Tide mode, it launches successive thermobaric grenades combining concussive blasts with persistent combustion effects, clearing residual resistance from enemy cover and advance paths.</NCL_Mech_Scorpion.description>
+  <NCL_Mech_Scorpion.jobString>Gestating mech.</NCL_Mech_Scorpion.jobString>
+
+</LanguageData>

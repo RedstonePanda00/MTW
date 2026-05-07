@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 战场之王 -->
+  <NCL_King_of_the_field.label>King of the field</NCL_King_of_the_field.label>
+  <!-- EN: 由击败静巢构体后提取其脑核核心所制，承载着Doxa-0对战场全局的理解与掌控能力。安装后，机械师将获得对所有己方机械族单位的全图远程控制权限，指令不再受限于视野、距离或传输延迟，真正成为战争的指挥中枢，令麾下机械部队化为纯粹而高效的战争机器。\n		\n与此同时，芯片将给予技能“全向律”：启动机械族的全域协调系统，在短时间内显著提升所有己方机械单位的移动速度，实现跨战线的快速部署与零延迟响应，如同Doxa-0当年那般以一己之力编织战术网络，主宰战场节奏。 -->
+  <NCL_King_of_the_field.description>Crafted from the neural core extracted after defeating the Doxa-0, it carries Doxa-0's comprehensive understanding and control over the battlefield. Once installed, the mechanitor gains full-map remote control authority over all allied mechanoid units, with commands no longer limited by line of sight, distance, or transmission delays, truly becoming the command center of warfare and transforming mechanical forces into pure and efficient war machines.</NCL_King_of_the_field.description>
+  
+  <!-- EN: 骇日的阿尔忒弥斯狩月虹膜 -->
+  <SolarbaneArtemisLunarOculus.label>Solarbane Artemis Lunar Oculus</SolarbaneArtemisLunarOculus.label>
+  <!-- EN: "当月光浸染大地时，你将看清每一粒尘埃的轨迹"  \n——装备者Right的战斗日志  \n\n阵营档案描述：\nNCL第23研究所"月光之子"计划产物，采用光子坍缩材料制成的虹膜能在月光下进入超频模式，代价是日光照射会引发量子退相干反应将一定程度削弱植入者白天的视觉能力。\n联盟警告：携带者在正午时分的情绪失控已导致14起友军误伤事件（打得都是同一个人）。\n  \n技能：终焉凝视（Terminus_Gaze）\n效果：\n量子纠缠锁定单一目标，瓦解其生物希格斯场\n施加【被凝视状态】状态，持续十分钟，期间承受伤害+75%\n\n1. 战术副作用：  \n   - 强制瞳孔蓝移现象（无法识别红色信号）  \n   - 连续使用长达728小时将永久损失色彩感知能力  \n\n2. 日间模式下的视觉缺陷无法通过任何光学增强设备补偿  \n   → 参见《第38号补充协议》第7条  \n\n研发O'Neal总监批注：  \n"Right声称这是'最烂的改造'，但数据显示：  \n- 她夜间击杀效率提升270%  \n- 所有抱怨都发生在白天" -->
+  <SolarbaneArtemisLunarOculus.description>Project Number: LUN-EYE-07α
+Codename: Solarbane Artemis Lunar Oculus
+
+The ultimate product of NCL 1st Research Institute's "Moonlight Child" project, originally intended for elite night combat visual transition experiments, first implemented on Right. This bionic construct consists of compressed photon crystal beams, with 512 layers of neural spectral guidance membranes embedded in the iris, capable of inducing "Moonlight Coherence Synchronization" phenomenon under moonlight radiation, entering pre-tachyonic perception state.
+
+Under controlled conditions, the implantee can activate the special operations protocol codenamed "Terminus Gaze":
+
+All melee and shooting cooldowns reset to zero
+
+Guaranteed projectile hit with maximum range increased by 200%
+
+Movement speed increased to 640% of normal standards
+
+Gains free teleportation ability during duration
+
+When skill activates, applies "Shadow Tag" effect to enemy units within 200 tiles in darkness, lasting 20 seconds
+
+Warning: Once activated, the effect lasts 5 hours. When time expires, the implantee will suffer complete sensory dysregulation and neural paralysis, losing all combat capability for 24 hours.</SolarbaneArtemisLunarOculus.description>
+  
+  <!-- EN: 不稳定的普罗米修斯炉心 -->
+  <UnstablePrometheusCore.label>Unstable Prometheus Core</UnstablePrometheusCore.label>
+  <!-- EN: 项目编号：NYX-CORE-17β\n代号：不稳定的普罗米修斯炉心\n当联盟工程师将死亡之眼空间站的引力透镜技术与克拉斯纳克生体电容结合时，我们终于复现了"血色超流体"现象——这是用无数名死刑犯的循环系统换来的突破。\n该装置取代心脏成为机体能量中枢，其钛钨陶瓷心室内置3600枚纳米神经簇，通过电解血液中的铁元素产生光子喷流。启动时，植入者将经历三个阶段：\n\n光殒阶段：生物电信号被强行提升至2000Hz，引发希格斯场域局部瓦解，使机体暂时获得玻色子化能力\n焚烬阶段：以97.3%光速撞击目标时，动能过载将释放相当于380吨TNT的压缩冲击波\n余火阶段：失控的纳米电弧实质是泄漏的微型黑洞霍金辐射，这些1.6毫米的时空奇点将持续撕裂半径6米内所有物质。\n\n量子化人工心脏在提供亚光速突袭能力的同时，其纳米神经簇会持续释放θ波干扰，导致植入者心灵敏感度永久归零。\n职业限制锁：Left主观声称当检测到携带者正在进行个别特定行为时，炉心会触发三级疼痛脉冲。\n\n"Left（ID:Nyx-114-514L）声称炉心让她'失去握画笔的力量'，但监控显示：\n上周她徒手拆解了机械螳螂的钛合金颅骨\n昨天用餐刀精准命中了试图逃跑的薯条\n当前正用植入体的电弧烤着棉花糖\n\n（发生在休息室的录音片段）\nRight："你的炉心又'禁止'你洗碗了？"\nLeft："根据《γ型装备守则》第17条，接触有机废物可能引发量子坍缩。"\nRight："那你解释下，为什么昨天能用它给扫地机器人？"\nLeft："...那是必要的生存技能训练。"\nRight："懒狗。" -->
+  <UnstablePrometheusCore.description>Project Number: NYX-CORE-17β
+Codename: Unstable Prometheus Core
+
+This device serves as the body's energy core replacing the heart, first implemented on the Left individual. Its titanium-tungsten ceramic ventricle integrates 3600 sets of nano-neural clusters that can generate directed photon jets by electrolyzing iron components in the blood.
+
+Upon activation, the implantee can impact designated targets at 97.3% light speed, releasing kinetic energy equivalent to 380 tons of TNT compressed shockwaves. After impact completion, the unit enters a brief overload state where damage taken is reduced by 50% and operation speed increased by 100%.
+
+While providing sub-light speed assault capability, the quantum heart's continuously generated theta wave interference from nano-neural clusters causes permanent loss of the implantee's psychic sensitivity.</UnstablePrometheusCore.description>
+  
+  <!-- EN: 伊格德拉西尔世界树脊柱 -->
+  <YggdrasilWorldTreeSpine.label>Yggdrasil World Tree Spine</YggdrasilWorldTreeSpine.label>
+  <!-- EN: 项目编号：NYX-CORE-18α\n代号：伊格德拉西尔世界树脊柱\n\n阵营档案描述\n伊格德拉西尔世界树脊柱是NCL第23研究所“永恒之根”计划的巅峰之作，专为联盟领袖Reeze量身定制。该仿生体以传说中的世界树为灵感，融合了量子折跃技术与生物免疫增强系统，旨在为植入者提供无与伦比的战场统治力与生存能力。\n\n核心特性：\n免疫所有负面效果\n世界树脊柱内置的生物量子净化系统能够实时中和一切毒素、辐射、精神干扰及物理损伤，确保植入者在任何环境下都能保持最佳状态。\n\n空间折跃能力\n脊柱搭载的量子折跃核心允许使用者无视地形限制，自由折跃至战场任意位置。\n折跃范围：半径100米内任意地点。\n可对一切单位使用折跃，实现战术性转移或突袭。\n\n无副作用设计\n经过严格的生物兼容性测试，世界树脊柱与植入者的神经系统完美融合，未发现任何生理或心理副作用。\n稳定性评级：SSS+ -->
+  <YggdrasilWorldTreeSpine.description>Project Number: NYX-CORE-18α
+Codename: Yggdrasil World Tree Spine
+
+Faction Archive Description
+The Yggdrasil World Tree Spine is the pinnacle achievement of NCL 23rd Research Institute's "Eternal Root" project, custom-made for alliance leader Reeze. Inspired by the legendary World Tree, this bionic construct combines quantum warp technology with biological immunity enhancement systems, designed to provide the implantee with unparalleled battlefield dominance and survivability.
+
+Core Features:
+Immunity to all negative effects
+The bio-quantum purification system built into the World Tree Spine can neutralize all toxins, radiation, mental interference, and physical damage in real-time, ensuring the implantee maintains optimal condition in any environment.
+
+Spatial Warp Ability
+The quantum warp core equipped in the spine allows the user to ignore terrain restrictions and freely warp to any location on the battlefield.
+Warp range: Any point within 100-meter radius.
+Can warp any unit, enabling tactical relocation or assault.
+
+No Side Effects Design
+After rigorous biocompatibility testing, the World Tree Spine perfectly integrates with the implantee's nervous system, with no physiological or psychological side effects detected.
+Stability Rating: SSS+</YggdrasilWorldTreeSpine.description>
+  
+</LanguageData>

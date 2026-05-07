@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>ProtossMechPurifier</li>
+        </mods>
+
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ProtossMech.DefaultAllowedHediffsDef[defName="ProtossMech_DefaultWhitelist"]/hediffs</xpath>
+                    <value>
+                        <li>FireControl_Upgrade_I</li>
+                        <li>Armor_Upgrade_I</li>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+
+</Patch>

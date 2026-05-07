@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: tame mechanoid -->
+  <TW_TameMech.label>tame mechanoid</TW_TameMech.label>
+  <!-- EN: Attempting to tame TargetA. -->
+  <TW_TameMech.reportString>Attempting to tame TargetA.</TW_TameMech.reportString>
+  
+</LanguageData>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 蠕虫威压 -->
+  <WormPressure.label>WormPressure</WormPressure.label>
+  <!-- EN: 受到蠕虫的威压影响,变的脆弱且易怒. -->
+  <WormPressure.description>"Worm's oppressive aura induces fragility and heightened aggression."</WormPressure.description>
+  
+    <!-- EN: NCL：超凡机械蠕虫 -->
+  <NCL_Mech_ArchotechWorm_Hediff.label>ArchoWorm</NCL_Mech_ArchotechWorm_Hediff.label>
+  <!-- EN: 这个庞大机械体的身世被NCL封存在最高机密中，您虽充满好奇却无从探查。您亲眼见证过它在战场上展现的神迹般的杀伤效率，此刻只能庆幸它暂时属于同盟阵营——尽管这种特殊状态充满未知变数。 -->
+  <NCL_Mech_ArchotechWorm_Hediff.description>The origins of this massive mechanical entity are sealed under the highest levels of confidentiality by the NCL, leaving you burning with curiosity but unable to investigate. You have personally witnessed its miraculous lethality on the battlefield, and at this moment, you can only be grateful that it is temporarily aligned with the alliance—though this peculiar state is fraught with unknowns.
+
+Worm Traits:
+
+Damage Absorption: After taking damage, the worm becomes temporarily immune to subsequent damage of the same type.
+
+Warp Bullets: The worm can use telekinesis to vanish incoming enemy bullets into space. After warping a certain number of bullets, this ability enters a cooldown period.
+
+Energy Shield: The worm possesses an energy shield. Once shattered, the shield requires a cooldown period before regenerating.
+
+Warp Manipulation: The worm randomly selects nearby enemies and either warps them to the edge of the map or pulls them close to itself.
+
+Chaotic Warp: After a long charge-up, the worm warps all enemies on the map randomly to the edges.
+
+Means of Damage:
+
+Destructive Beam: After a brief charge, the worm fires an immensely powerful, infinite-range beam.
+
+Thunderstrike: The worm summons several bolts of lightning from the sky to strike enemies across the map.
+
+Worm Tracking Cannon: Periodically, the worm fires volleys from its joints, releasing moderately powerful homing bullets that ignore enemy shields.
+
+Dragon's Final Blow: The worm burrows underground and charges straight toward its target, dealing massive impact damage.</NCL_Mech_ArchotechWorm_Hediff.description>
+
+</LanguageData>

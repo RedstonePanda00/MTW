@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+      <JobDef>
+        <defName>AttackUniversityMinitor</defName>
+        <driverClass>NCL.JobDriver_AttackMinitor</driverClass>
+        <reportString>attacking target.</reportString>
+        <suspendable>false</suspendable>
+        <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+    </JobDef>
+
+  
+</Defs>

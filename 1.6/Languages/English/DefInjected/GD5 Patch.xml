@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 泰坦机械体：静巢构体 -->
+  <Introduction_Doxa.label>Introduction: Doxa</Introduction_Doxa.label>
+  <!-- EN: 泰坦机械体：静巢构体 -->
+  <Introduction_Doxa.description>Introduction: Doxa</Introduction_Doxa.description>
+  
+  <!-- EN: NCL:闪光西瓜虫 -->
+  <Introduction_PillBug.label>Introduction: PillBug</Introduction_PillBug.label>
+  <!-- EN: NCL:闪光西瓜虫 -->
+  <Introduction_PillBug.description>Introduction: PillBug</Introduction_PillBug.description>
+  
+  <!-- EN: NCL：战争巨蝎 -->
+  <Introduction_WarScorpion.label>Introduction: War Scorpion</Introduction_WarScorpion.label>
+  <!-- EN: NCL：战争巨蝎 -->
+  <Introduction_WarScorpion.description>Introduction: War Scorpion</Introduction_WarScorpion.description>
+  
+</LanguageData>

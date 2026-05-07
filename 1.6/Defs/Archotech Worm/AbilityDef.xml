@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <AbilityDef ParentName="LongJumpMech">
+    <defName>NCLJumpWithBomb</defName>
+    <label>重力突进</label>
+    <description>猛的跳向目标并以体重碾压对手</description>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>1</charges>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>NCLWorm.Verb_CastAbilityJumpWithBomb</verbClass>
+      <warmupTime>0.1</warmupTime>
+      <range>25</range>
+      <minRange>1</minRange>
+      <requireLineOfSight>true</requireLineOfSight>
+      <flyWithCarriedThing>true</flyWithCarriedThing>
+      <soundLanding>JumpMechLand</soundLanding>
+      <soundCast Inherit="False" />
+      <targetParams>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <jobDef>CastJump</jobDef>
+  </AbilityDef>
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>NCLJumpWithBomb_Flyer</defName>
+    <thingClass>NCLWorm.NCLJumpWithBomb_Flyer</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.1</flightDurationMin>
+      <flightSpeed>120</flightSpeed>
+      <heightFactor>0.5</heightFactor>
+    </pawnFlyer>
+  </ThingDef>
+
+
+  
+  <AbilityDef ParentName="LongJumpMech">
+    <defName>NCLBurrowAttack</defName>
+    <label>潜龙</label>
+    <description>从地下猛地钻出发出突击</description>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>1</charges>
+    <cooldownTicksRange>1000</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>NCLWorm.Verb_CastAbilityBurrow</verbClass>
+      <warmupTime>0.1</warmupTime>
+      <range>500</range>
+      <minRange>0</minRange>
+      <requireLineOfSight>false</requireLineOfSight>
+      <soundLanding>JumpMechLand</soundLanding>
+      <soundCast Inherit="False" />
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <jobDef>CastJump</jobDef>
+  </AbilityDef>
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>NCLBurrow_Flyer</defName>
+    <thingClass>NCLWorm.NCLBurrow_Flyer</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>1</flightDurationMin>
+      <flightSpeed>60</flightSpeed>
+      
+    </pawnFlyer>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>NCLBeckon</defName>
+    <label>牵引</label>
+    <description>将目标用牵引至身侧.</description>
+    <cooldownTicksRange>6000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>True</requireLineOfSight>
+      <warmupTime>0</warmupTime>
+      <range>55</range>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>NCLWorm.Comp_NCLBeckon</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>NCLPush</defName>
+    <label>驱逐</label>
+    <description>将目标驱逐.</description>
+    <cooldownTicksRange>6000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>True</requireLineOfSight>
+      <warmupTime>0</warmupTime>
+      <range>55</range>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>NCLWorm.Comp_NCLPush</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>NCLChaosTeleport</defName>
+    <label>Chaotic Teleport</label>
+    <description>Randomly teleports any colonists present on the entire map.</description>
+    <cooldownTicksRange>24000</cooldownTicksRange>
+    <targetRequired>true</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>False</requireLineOfSight>
+      <warmupTime>5</warmupTime>
+      <range>500</range>
+      <minRange>10</minRange>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>NCLWorm.Comp_ChaosTeleport</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  
+
+</Defs>

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NCL</defName>
+    <label>NCL5 Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+	  <stoppingPower>1.5</stoppingPower>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>NCL_Rifle</defName>
+    <label>NCL5</label>
+    <description>Weapon Archive: Noah Standard Issue Assault Rifle Mk5
+Designation: NCL5  
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series  
+
+Functional Overview:  
+The NCL5 is the standard assault rifle of the Neo-Communist League, designed for mass deployment. Excels in range, fire rate, penetration, and stability within its class, though compromises single-shot damage and stopping power. Optimized for sustained medium-to-long range suppression.
+
+Developer Notes (Lsa and None):
+"Scalable. Systematic."</description>
+<relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Weapons/NCL5</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NCL_Standard_Issue</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+	  	<recipeUsers Inherit="False">
+        <li>TableMachining</li>
+        </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NCL</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>42</range>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>NCL5R</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <comps>
+    </comps>
+  </ThingDef>
+  
+  </Defs>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+<!-- EN: King of the Battlefield -->
+<NCL_King_of_the_field.label>King of the Battlefield</NCL_King_of_the_field.label>
+<!-- EN: Crafted from the neural core extracted after defeating the Doxa-0, it carries Doxa-0's comprehensive understanding and control over the battlefield. Once installed, the mechanitor gains full-map remote control authority over all allied mechanoid units, with commands no longer limited by line of sight, distance, or transmission delays, truly becoming the command center of warfare and transforming mechanical forces into pure and efficient war machines.
+
+Simultaneously, the chip grants the skill "Omnidirectional Law": activating the mechanoid's global coordination system significantly boosts the movement speed of all allied mechanical units for a short duration, enabling rapid cross-frontline deployment and zero-delay response, weaving tactical networks single-handedly and dominating battlefield tempo just as Doxa-0 once did. -->
+<NCL_King_of_the_field.description>Crafted from the neural core extracted after defeating the Doxa-0, it carries Doxa-0's comprehensive understanding and control over the battlefield. Once installed, the mechanitor gains full-map remote control authority over all allied mechanoid units, with commands no longer limited by line of sight, distance, or transmission delays, truly becoming the command center of warfare and transforming mechanical forces into pure and efficient war machines.</NCL_King_of_the_field.description>
+<!-- EN: King of the Battlefield -->
+<NCL_King_of_the_field.labelNoun>King of the Battlefield</NCL_King_of_the_field.labelNoun>
+
+<!-- EN: Solarbane Artemis Lunar Oculus -->
+<Solarbane_Artemis_Lunar_Oculus.label>Solarbane Artemis Lunar Oculus</Solarbane_Artemis_Lunar_Oculus.label>
+<!-- EN: Project Number: LUN-EYE-07α
+Codename: Solarbane Artemis Lunar Oculus
+
+The ultimate product of NCL 1st Research Institute's "Moonlight Child" project, originally intended for elite night combat visual transition experiments, first implemented on Right. This bionic construct consists of compressed photon crystal beams, with 512 layers of neural spectral guidance membranes embedded in the iris, capable of inducing "Moonlight Coherence Synchronization" phenomenon under moonlight radiation, entering pre-tachyonic perception state.
+
+Under controlled conditions, the implantee can activate the special operations protocol codenamed "Terminus Gaze":
+
+All melee and shooting cooldowns reset to zero
+
+Guaranteed projectile hit with maximum range increased by 200%
+
+Movement speed increased to 640% of normal standards
+
+Gains free teleportation ability during duration
+
+When skill activates, applies "Shadow Tag" effect to enemy units within 200 tiles in darkness, lasting 20 seconds
+
+Warning: Once activated, the effect lasts 5 hours. When time expires, the implantee will suffer complete sensory dysregulation and neural paralysis, losing all combat capability for 24 hours. -->
+<Solarbane_Artemis_Lunar_Oculus.description>Project Number: LUN-EYE-07α
+Codename: Solarbane Artemis Lunar Oculus
+
+The ultimate product of NCL 1st Research Institute's "Moonlight Child" project, originally intended for elite night combat visual transition experiments, first implemented on Right. This bionic construct consists of compressed photon crystal beams, with 512 layers of neural spectral guidance membranes embedded in the iris, capable of inducing "Moonlight Coherence Synchronization" phenomenon under moonlight radiation, entering pre-tachyonic perception state.
+
+Under controlled conditions, the implantee can activate the special operations protocol codenamed "Terminus Gaze":
+
+All melee and shooting cooldowns reset to zero
+
+Guaranteed projectile hit with maximum range increased by 200%
+
+Movement speed increased to 640% of normal standards
+
+Gains free teleportation ability during duration
+
+When skill activates, applies "Shadow Tag" effect to enemy units within 200 tiles in darkness, lasting 20 seconds
+
+Warning: Once activated, the effect lasts 5 hours. When time expires, the implantee will suffer complete sensory dysregulation and neural paralysis, losing all combat capability for 24 hours.</Solarbane_Artemis_Lunar_Oculus.description>
+<!-- EN: Product of NCL 23rd Research Institute's "Moonlight Child" project, the iris made of photon collapse material can enter overclocking mode under moonlight, at the cost of quantum decoherence reactions triggered by sunlight exposure that somewhat impairs the implantee's daytime visual capabilities. -->
+<Solarbane_Artemis_Lunar_Oculus.labelNoun>Product of NCL 23rd Research Institute's "Moonlight Child" project, the iris made of photon collapse material can enter overclocking mode under moonlight, at the cost of quantum decoherence reactions triggered by sunlight exposure that somewhat impairs the implantee's daytime visual capabilities.</Solarbane_Artemis_Lunar_Oculus.labelNoun>
+
+<!-- EN: Unstable Prometheus Core -->
+<Unstable_Prometheus_Core.label>Unstable Prometheus Core</Unstable_Prometheus_Core.label>
+<!-- EN: Project Number: NYX-CORE-17β
+Codename: Unstable Prometheus Core
+
+This device serves as the body's energy core replacing the heart, first implemented on the Left individual. Its titanium-tungsten ceramic ventricle integrates 3600 sets of nano-neural clusters that can generate directed photon jets by electrolyzing iron components in the blood.
+
+Upon activation, the implantee can impact designated targets at 97.3% light speed, releasing kinetic energy equivalent to 380 tons of TNT compressed shockwaves. After impact completion, the unit enters a brief overload state where damage taken is reduced by 50% and operation speed increased by 100%.
+
+While providing sub-light speed assault capability, the quantum heart's continuously generated theta wave interference from nano-neural clusters causes permanent loss of the implantee's psychic sensitivity. -->
+<Unstable_Prometheus_Core.description>Project Number: NYX-CORE-17β
+Codename: Unstable Prometheus Core
+
+This device serves as the body's energy core replacing the heart, first implemented on the Left individual. Its titanium-tungsten ceramic ventricle integrates 3600 sets of nano-neural clusters that can generate directed photon jets by electrolyzing iron components in the blood.
+
+Upon activation, the implantee can impact designated targets at 97.3% light speed, releasing kinetic energy equivalent to 380 tons of TNT compressed shockwaves. After impact completion, the unit enters a brief overload state where damage taken is reduced by 50% and operation speed increased by 100%.
+
+While providing sub-light speed assault capability, the quantum heart's continuously generated theta wave interference from nano-neural clusters causes permanent loss of the implantee's psychic sensitivity.</Unstable_Prometheus_Core.description>
+<!-- EN: This device replaces the heart as the energy center, with its titanium-tungsten ceramic ventricle housing 3600 nano-neural clusters that generate photon jets by electrolyzing iron elements in the blood. -->
+<Unstable_Prometheus_Core.labelNoun>This device replaces the heart as the energy center, with its titanium-tungsten ceramic ventricle housing 3600 nano-neural clusters that generate photon jets by electrolyzing iron elements in the blood.</Unstable_Prometheus_Core.labelNoun>
+
+<!-- EN: Yggdrasil World Tree Spine -->
+<Yggdrasil_World_Tree_Spine.label>Yggdrasil World Tree Spine</Yggdrasil_World_Tree_Spine.label>
+<!-- EN: Project Number: NYX-CORE-18α
+Codename: Yggdrasil World Tree Spine
+
+Faction Archive Description
+The Yggdrasil World Tree Spine is the pinnacle achievement of NCL 23rd Research Institute's "Eternal Root" project, custom-made for alliance leader Reeze. Inspired by the legendary World Tree, this bionic construct combines quantum warp technology with biological immunity enhancement systems, designed to provide the implantee with unparalleled battlefield dominance and survivability.
+
+Core Features:
+Immunity to all negative effects
+The bio-quantum purification system built into the World Tree Spine can neutralize all toxins, radiation, mental interference, and physical damage in real-time, ensuring the implantee maintains optimal condition in any environment.
+
+Spatial Warp Ability
+The quantum warp core equipped in the spine allows the user to ignore terrain restrictions and freely warp to any location on the battlefield.
+Warp range: Any point within 100-meter radius.
+Can warp any unit, enabling tactical relocation or assault.
+
+No Side Effects Design
+After rigorous biocompatibility testing, the World Tree Spine perfectly integrates with the implantee's nervous system, with no physiological or psychological side effects detected.
+Stability Rating: SSS+ -->
+<Yggdrasil_World_Tree_Spine.description>Project Number: NYX-CORE-18α
+Codename: Yggdrasil World Tree Spine
+
+Faction Archive Description
+The Yggdrasil World Tree Spine is the pinnacle achievement of NCL 23rd Research Institute's "Eternal Root" project, custom-made for alliance leader Reeze. Inspired by the legendary World Tree, this bionic construct combines quantum warp technology with biological immunity enhancement systems, designed to provide the implantee with unparalleled battlefield dominance and survivability.
+
+Core Features:
+Immunity to all negative effects
+The bio-quantum purification system built into the World Tree Spine can neutralize all toxins, radiation, mental interference, and physical damage in real-time, ensuring the implantee maintains optimal condition in any environment.
+
+Spatial Warp Ability
+The quantum warp core equipped in the spine allows the user to ignore terrain restrictions and freely warp to any location on the battlefield.
+Warp range: Any point within 100-meter radius.
+Can warp any unit, enabling tactical relocation or assault.
+
+No Side Effects Design
+After rigorous biocompatibility testing, the World Tree Spine perfectly integrates with the implantee's nervous system, with no physiological or psychological side effects detected.
+Stability Rating: SSS+</Yggdrasil_World_Tree_Spine.description>
+<!-- EN: Inspired by the legendary World Tree, this bionic construct combines quantum warp technology with biological immunity enhancement systems, designed to provide the implantee with unparalleled battlefield dominance and survivability. -->
+<Yggdrasil_World_Tree_Spine.labelNoun>Inspired by the legendary World Tree, this bionic construct combines quantum warp technology with biological immunity enhancement systems, designed to provide the implantee with unparalleled battlefield dominance and survivability.</Yggdrasil_World_Tree_Spine.labelNoun>
+  
+</LanguageData>

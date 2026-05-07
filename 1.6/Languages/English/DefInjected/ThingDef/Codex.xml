@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Bullet_Codex_SMG.label>Bullet Codex SMG</Bullet_Codex_SMG.label>
+
+<Bullet_Codex_Sniper.label>Bullet Codex Sniper</Bullet_Codex_Sniper.label>
+
+<Centurion_Arsenal_Codex.label>Centurion Arsenal Codex</Centurion_Arsenal_Codex.label>
+<Centurion_Arsenal_Codex.description>Weapon Archive: Centurion Arsenal Codex Tactical Backpack System
+Designation: Centurion Arsenal Codex
+Affiliation: Neo-Communist League "Centurion" Elite Tactical Series
+
+The Centurion Arsenal Codex is an integrated combat platform exclusive to NCL elite units. This highly modular tactical harness features independent power and AI management systems. Designed for rapid battlefield adaptation, it embeds multiple specialized weapons into a single backpack, enabling real-time weapon switching during combat via dynamic deployment mechanisms - facilitating "single-operator multi-role" combat doctrine.
+
+Non-combat configuration presents as an oversized military backpack. When activated, primary arm linkage systems deploy selected modules. To maintain operator physiological balance, the system provides:
+◆ Increased carrying capacity
+◆ Robotic massage systems
+◆ Rapid weapon deployment/mode transition
+
+Confirmed integrated weapon modules:
+
+◆ Charge Rifle - 
+High-frequency energy pulses for medium-range penetration and suppression.
+
+◆ Submachine Gun - 
+Close-quarter suppression weapon with minimal target acquisition delay.
+
+◆ Designated Marksman Rifle - 
+High-precision, low-rate-of-fire long-range rifle.
+
+◆ Tactical Bayonet - 
+Rapid-deployment melee weapon based on vanguard tactics.
+
+Development logs:
+O'Neal: "I crammed an entire armory into a backpack. Don't tell me it's insufficient."
+Shana: "Sometimes you just need a blade... and momentum."</Centurion_Arsenal_Codex.description>
+
+<Centurion_Arsenal_Codex_Rifle.label>Centurion Arsenal: Charge Rifle</Centurion_Arsenal_Codex_Rifle.label>
+<Centurion_Arsenal_Codex_Rifle.description>Integrated charge rifle module</Centurion_Arsenal_Codex_Rifle.description>
+<Centurion_Arsenal_Codex_Rifle.tools.stock.label>stock</Centurion_Arsenal_Codex_Rifle.tools.stock.label>
+<Centurion_Arsenal_Codex_Rifle.tools.barrel.label>barrel</Centurion_Arsenal_Codex_Rifle.tools.barrel.label>
+<Centurion_Arsenal_Codex_Rifle.verbs.Verb_Shoot.label>Centurion Arsenal: Charge Rifle</Centurion_Arsenal_Codex_Rifle.verbs.Verb_Shoot.label>
+
+<Centurion_Arsenal_Codex_SMG.label>Centurion Arsenal: Submachine Gun</Centurion_Arsenal_Codex_SMG.label>
+<Centurion_Arsenal_Codex_SMG.description>Integrated submachine gun module</Centurion_Arsenal_Codex_SMG.description>
+<Centurion_Arsenal_Codex_SMG.tools.stock.label>stock</Centurion_Arsenal_Codex_SMG.tools.stock.label>
+<Centurion_Arsenal_Codex_SMG.tools.barrel.label>barrel</Centurion_Arsenal_Codex_SMG.tools.barrel.label>
+<Centurion_Arsenal_Codex_SMG.verbs.Verb_Shoot.label>Centurion Arsenal: Submachine Gun</Centurion_Arsenal_Codex_SMG.verbs.Verb_Shoot.label>
+
+<Centurion_Arsenal_Codex_Sniper.label>Centurion Arsenal: Sniper Rifle</Centurion_Arsenal_Codex_Sniper.label>
+<Centurion_Arsenal_Codex_Sniper.description>Integrated sniper rifle module</Centurion_Arsenal_Codex_Sniper.description>
+<Centurion_Arsenal_Codex_Sniper.tools.stock.label>stock</Centurion_Arsenal_Codex_Sniper.tools.stock.label>
+<Centurion_Arsenal_Codex_Sniper.tools.barrel.label>barrel</Centurion_Arsenal_Codex_Sniper.tools.barrel.label>
+<Centurion_Arsenal_Codex_Sniper.verbs.Verb_Shoot.label>Centurion Arsenal: Sniper Rifle</Centurion_Arsenal_Codex_Sniper.verbs.Verb_Shoot.label>
+
+<ChargedBullet_Codex_Rifle.label>ChargedBullet Codex Rifle</ChargedBullet_Codex_Rifle.label>
+
+<CodexTurret.label>Codex Turret</CodexTurret.label>
+<CodexTurret.description>Shoulder-mounted automatic defense system</CodexTurret.description>
+<CodexTurret.verbs.Verb_Shoot.label>Codex Turret</CodexTurret.verbs.Verb_Shoot.label>
+
+<MeleeWeapon_M9Knife.label>M9 Bayonet</MeleeWeapon_M9Knife.label>
+<MeleeWeapon_M9Knife.description>Rapid-deployment tactical blade</MeleeWeapon_M9Knife.description>
+<MeleeWeapon_M9Knife.tools.handle.label>handle</MeleeWeapon_M9Knife.tools.handle.label>
+<MeleeWeapon_M9Knife.tools.blade.label>blade</MeleeWeapon_M9Knife.tools.blade.label>
+<MeleeWeapon_M9Knife.tools.point.label>point</MeleeWeapon_M9Knife.tools.point.label>
+
+</LanguageData>

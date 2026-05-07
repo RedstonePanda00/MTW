@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+<Bullet_NCL42H.label>Bullet NCL42H</Bullet_NCL42H.label>
+
+<NCL_SniperGun.label>NCL42H</NCL_SniperGun.label>
+<NCL_SniperGun.description>武器档案：NCL42H 狙击步枪
+代号：NCL42H  
+所属：诺亚新共产主义联盟「铁律」常规武器序列  
+
+功能概述：  
+NCL42H 是一款专为狙击兵蚁设计的特化狙击步枪，射程、准度、伤害和穿甲能力均达到顶尖水平。由于其过重的重量和特化的设计，仅狙击兵蚁能够有效操控。</NCL_SniperGun.description>
+<NCL_SniperGun.tools.stock.label>stock</NCL_SniperGun.tools.stock.label>
+<NCL_SniperGun.tools.barrel.label>barrel</NCL_SniperGun.tools.barrel.label>
+<NCL_SniperGun.verbs.Verb_Shoot.label>NCL42H</NCL_SniperGun.verbs.Verb_Shoot.label>
+  
+</LanguageData>

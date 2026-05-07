@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 修复破损建筑 -->
+  <WorkGiver_RebuildTheWarBeacon.label>Rebuild The War Beacon</WorkGiver_RebuildTheWarBeacon.label>
+  <!-- EN: filling -->
+  <WorkGiver_RebuildTheWarBeacon.gerund>filling</WorkGiver_RebuildTheWarBeacon.gerund>
+  <!-- EN: fill -->
+  <WorkGiver_RebuildTheWarBeacon.verb>fill</WorkGiver_RebuildTheWarBeacon.verb>
+  
+</LanguageData>

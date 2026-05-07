@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <LifeStageDef>
+    <defName>NCL_Mech_MantisFullyformed</defName>
+    <label>fully-formed</label>
+    <caravanRideable>true</caravanRideable>
+    <visible>false</visible>
+  </LifeStageDef>
+  
+  <ThingDef Name="NCLMechMantis" ParentName="SuperHeavyMechanoid">
+    <defName>NCL_Mech_Mantis</defName>
+    <label>Mantis</label>
+    <description>Unit File: NCL-06 "Mantis"
+Origin: NCL Autonomous Mechanoid Series VI
+This sixth-generation tactical unit, fusing a humanoid-female torso with a wolf-spider chassis, specializes in close-quarters assassination and shock infiltration. Its heavy combat armor integrates dynamic self-repair systems to regenerate defensive layers during isolated engagements, yet energy-redistribution protocols render it critically vulnerable under concentrated fire. Hydraulic actuators enable short-range phase-leaps for instant gap closure or tactical withdrawal. The signature Binary Veil System deploys smokescreen barriers while launching two infrared-guided Gyro-Blades—detonating on impact with EMP bursts and directional shrapnel to cripple electronics and eviscerate organic targets. Terminal protocol "Heartfire" triggers core meltdown, igniting the unit in a catastrophic blast to annihilate high-threat hostiles.</description>
+    <statBases>
+      <MarketValue>3200</MarketValue>
+      <MoveSpeed>5.4</MoveSpeed>
+      <ArmorRating_Blunt>1.15</ArmorRating_Blunt>
+	  <EMPResistance>0.6</EMPResistance>
+			<IncomingDamageFactor>0.80</IncomingDamageFactor>
+			<StaggerDurationFactor>0.5</StaggerDurationFactor>
+      <ArmorRating_Sharp>1.05</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">8</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+<tools>
+      <li>
+        <label>left blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>0.7</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>0.7</cooldownTime>
+        <linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>80</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+   <comps>  
+    <li Class="NCL.CompProperties_MechAutoRecovery">
+        <tickInterval>180</tickInterval>
+        <healAmount>30</healAmount> 
+    </li>
+    <li Class="NCL.CompProperties_IgnoreCommandRange" />
+	</comps>
+	<butcherProducts>
+      <Steel>600</Steel>
+      <Plasteel>180</Plasteel>
+    </butcherProducts>
+    <race>
+      <lifeStageAges>
+        <li>
+          <def>NCL_Mech_MantisFullyformed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <body>Scyther</body>
+	  <baseBodySize>4.5</baseBodySize>
+      <baseHealthScale>8</baseHealthScale>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+        <mechEnabledWorkTypes>
+        </mechEnabledWorkTypes>
+	<mechFixedSkillLevel>20</mechFixedSkillLevel>
+	<hediffGiverSets>
+  </hediffGiverSets>
+        <mechEnabledWorkTypes>
+          <li>Hauling</li>
+          <li>Cleaning</li>
+        </mechEnabledWorkTypes>
+	<mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+	<modExtensions>
+        <li Class="NyarsModPackOne.ModExtension_EffecterOnMelee">
+      <effectersAtCaster>
+			</effectersAtCaster>
+      <flecksAtTarget>
+				<li>NCL_Fleck_BurnerUsedEmber</li>
+			</flecksAtTarget>
+      <motesAtTarget>
+				<li>Mote_SparkThrownFast</li>
+			</motesAtTarget>
+      <motesLinkLine>
+			</motesLinkLine>
+        </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="HeavyMechanoidKind">
+  <defName>NCL_Mech_Mantis_Kind</defName>
+  <label>机械兰螳</label>
+  <race>NCL_Mech_Mantis</race>
+  <defaultFactionType>NCL_faction</defaultFactionType>
+  <allowInMechClusters>false</allowInMechClusters>
+  <combatPower>1800</combatPower>
+  <lifeStages>
+    <li MayRequire="Ludeon.RimWorld.Biotech">
+      <bodyGraphicData>
+        <texPath>Races/Mantis</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>4.5</drawSize>
+        <shadowData>
+          <volume>(0.4, 0.8, 0.4)</volume>
+        </shadowData>
+      </bodyGraphicData>
+    </li>
+  </lifeStages>
+  <weaponMoney>9999~9999</weaponMoney>
+  <weaponTags>
+  </weaponTags>
+  <techHediffsChance>1</techHediffsChance>
+  <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+    <li>Ironbark_Explosion</li>
+    <li>NCL_Bidirectional_Shielding_System</li>
+    <li>NCL_ChargeA</li>
+    <li>NCL_ChargeB</li>
+  </abilities>
+  </PawnKindDef>
+  
+      <AbilityDef>
+        <defName>NCL_ChargeA</defName>
+        <label>Extreme Speed</label>
+        <description>Charge towards the target, push away all enemies along the path, and create an area effect at the target location.</description>
+        <writeCombatLog>True</writeCombatLog>
+        <cooldownTicksRange>900</cooldownTicksRange>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <iconPath>ModIcon/Mantis_FlyingA</iconPath>
+        <verbProperties>
+            <verbClass>NCL.Verb_Charge</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <range>30.9</range>
+            <defaultCooldownTime>0</defaultCooldownTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+  
+      <AbilityDef>
+        <defName>NCL_ChargeB</defName>
+        <label>Extreme Speed</label>
+        <description>Charge towards the target, push away all enemies along the path, and create an area effect at the target location.</description>
+        <writeCombatLog>True</writeCombatLog>
+        <cooldownTicksRange>900</cooldownTicksRange>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <iconPath>ModIcon/Mantis_FlyingA</iconPath>
+        <verbProperties>
+            <verbClass>NCL.Verb_Charge</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <range>30.9</range>
+            <defaultCooldownTime>0</defaultCooldownTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <ThingDef ParentName="PawnFlyerBase">
+        <defName>NCL_Charge</defName>
+        <thingClass>NCL.Charge</thingClass>
+        <pawnFlyer>
+            <flightDurationMin>0.5</flightDurationMin>
+            <flightSpeed>22</flightSpeed>
+        </pawnFlyer>
+    </ThingDef>
+</Defs>

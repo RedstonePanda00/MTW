@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Bullet NCL42H -->
+<Bullet_NCL42H.label>NCL42H Sniper Round</Bullet_NCL42H.label>
+
+<NCL_SniperGun.label>NCL42H</NCL_SniperGun.label>
+<NCL_SniperGun.description>Weapon Archive: NCL42H Sniper Rifle
+Designation: NCL42H  
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series  
+
+Functional Overview:  
+Specialized sniper rifle designed exclusively for Dinergate Snipers. Delivers peak performance in range, accuracy, damage, and armor penetration. Excessive weight and specialized ergonomics restrict effective operation to Dinergate units only.</NCL_SniperGun.description>
+<NCL_SniperGun.tools.stock.label>stock</NCL_SniperGun.tools.stock.label>
+<NCL_SniperGun.tools.barrel.label>barrel</NCL_SniperGun.tools.barrel.label>
+<NCL_SniperGun.verbs.Verb_Shoot.label>NCL42H</NCL_SniperGun.verbs.Verb_Shoot.label>
+  
+</LanguageData>

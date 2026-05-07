@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <LifeStageDef>
+    <defName>NCL_Mech_PillBugFullyformed</defName>
+    <label>fully-formed</label>
+    <caravanRideable>true</caravanRideable>
+    <visible>false</visible>
+  </LifeStageDef>
+  
+  <ThingDef Name="NCLMechPillBug" ParentName="SuperHeavyMechanoid">
+    <defName>NCL_Mech_PillBug</defName>
+    <label>Photon Pillbug</label>
+    <description>Unit Archive: NCL-04 "Photon Pillbug"
+Codename: Prism Fortress
+Origin: NCL "Iron Law" Corona Series Data Remnants
+
+A specialized combat unit modified for ground-based firepower suppression, originally conceived as an experimental optical weapons platform during the NCL's final era. Its chassis is densely covered with photon lattice structures that create persistent energy afterimages under intense illumination - hence the designation "Photon Pillbug".
+
+While slow-moving, it possesses exceptional durability exceeding standard mechanoid survivability thresholds. The front-mounted "Disintegrator" positron cannon melts through most cover and armored targets at extended ranges. Synchronized prismatic laser systems flanking both sides precisely destroy mid-to-low velocity bullet liked projectiles, demonstrating particular efficacy against orbital munitions.</description>
+    <statBases>
+      <MarketValue>3200</MarketValue>
+      <MoveSpeed>1.8</MoveSpeed>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+	  <EMPResistance>0.40</EMPResistance>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">8</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+	<tools>
+      <li>
+        <label>MechanicalHead</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>50</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+	<comps>  
+	 <li Class="CompProperties_Forbiddable" />
+     <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+          <range>25</range>
+          <interceptCount>2</interceptCount>
+          <interceptTime>16</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>-0.3</laserOffsetY>
+					<ignoreAirProjectiles>true</ignoreAirProjectiles>
+					<connectinglaserWidth>0.7</connectinglaserWidth>
+					<connectingLineFleck>NCL_Ground_LaserDefenseLine</connectingLineFleck>
+					<laserLineTexture>Motes/LaserLine</laserLineTexture>
+					<impactScale>0.5</impactScale>
+          <secondaryImpactScale>0.3</secondaryImpactScale>
+          <tertiaryImpactScale>0.3</tertiaryImpactScale>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+	</comps>
+	<butcherProducts>
+      <Steel>600</Steel>
+      <Plasteel>180</Plasteel>
+    </butcherProducts>
+    <race>
+      <lifeStageAges>
+        <li>
+          <def>NCL_Mech_PillBugFullyformed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <body>MechanicalCentipede</body>
+	  <baseBodySize>4.0</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+        <mechEnabledWorkTypes>
+          <li>PlantCutting</li>
+          <li>Growing</li>
+        </mechEnabledWorkTypes>
+	<mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="HeavyMechanoidKind">
+  <defName>NCL_Mech_PillBug_Kind</defName>
+  <label>PillBug</label>
+  <race>NCL_Mech_PillBug</race>
+  <defaultFactionType>NCL_faction</defaultFactionType>
+  <allowInMechClusters>false</allowInMechClusters>
+  <combatPower>1800</combatPower>
+  <lifeStages>
+    <li MayRequire="Ludeon.RimWorld.Biotech">
+      <bodyGraphicData>
+        <texPath>Races/PillBug</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>4</drawSize>
+        <shadowData>
+          <volume>(0.4, 0.8, 0.4)</volume>
+        </shadowData>
+      </bodyGraphicData>
+    </li>
+  </lifeStages>
+  <weaponMoney>9999~9999</weaponMoney>
+  <weaponTags>
+    <li>NCL_BillBugBeamGraser</li>
+  </weaponTags>
+  <techHediffsChance>1</techHediffsChance>
+  <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+    <li>NCL_FlyingKick</li>
+  </abilities>
+  </PawnKindDef>
+  
+	
+	    <EffecterDef>
+        <defName>NCL_Crack</defName>
+        <children>
+                    <li>
+                        <subEffecterClass>SubEffecter_CameraShakeSingle</subEffecterClass>
+                        <cameraShake>.1~.2</cameraShake>
+                        <soundDef>Emergence_Quake</soundDef>
+                        <distanceAttenuationScale>1</distanceAttenuationScale>
+                        <distanceAttenuationMax>20</distanceAttenuationMax>
+                    </li>
+                    <li>
+                        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                        <fleckDef>DustPuffThick</fleckDef>
+                        <burstCount>4</burstCount>
+                        <spawnLocType>OnSource</spawnLocType>
+                        <positionRadius>2</positionRadius>
+                        <scale>1.5~3</scale>
+                        <rotation>0</rotation>
+                        <rotationRate>-10~10</rotationRate>
+                        <absoluteAngle>False</absoluteAngle>
+                        <positionOffset>(0, 0, 0)</positionOffset>
+                        <angle>0~360</angle>
+                        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+                        <speed>.2~.3</speed>
+                        <makeMoteOnSubtrigger>true</makeMoteOnSubtrigger>
+                    </li>
+                    <li>
+                        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                        <avoidLastPositionRadius>1</avoidLastPositionRadius>
+                        <fleckDef>GroundCrack</fleckDef>
+                        <initialDelayTicks>0</initialDelayTicks>
+                        <burstCount>15</burstCount>
+                        <color>(1, 1, 1, .75)</color>
+                        <spawnLocType>OnSource</spawnLocType>
+                        <positionRadius>2.5</positionRadius>
+                        <positionRadiusMin>0</positionRadiusMin>
+                        <scale>.5~1.5</scale>
+                        <rotation>0~360</rotation>
+                        <rotationRate>0</rotationRate>
+                        <absoluteAngle>True</absoluteAngle>
+                        <positionOffset>(-.25, 0, -.25)</positionOffset>
+                        <angle>0</angle>
+                        <fleckUsesAngleForVelocity>False</fleckUsesAngleForVelocity>
+                        <speed>0</speed>
+                        <makeMoteOnSubtrigger>true</makeMoteOnSubtrigger>
+                    </li>
+                    <li>
+                        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                        <avoidLastPositionRadius>1</avoidLastPositionRadius>
+                        <fleckDef>ThrownDebris</fleckDef>
+                        <initialDelayTicks>0</initialDelayTicks>
+                        <burstCount>15</burstCount>
+                        <spawnLocType>OnSource</spawnLocType>
+                        <rotationRate>100~200</rotationRate>
+                        <positionRadius>2</positionRadius>
+                        <positionRadiusMin>0</positionRadiusMin>
+                        <scale>.5~1</scale>
+                        <rotation>0~360</rotation>
+                        <absoluteAngle>False</absoluteAngle>
+                        <positionOffset>(-.5, 0, -.5)</positionOffset>
+                        <angle>0~360</angle>
+                        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+                        <speed>.1~1</speed>
+                        <makeMoteOnSubtrigger>true</makeMoteOnSubtrigger>
+                    </li>
+        </children>
+    </EffecterDef>
+	
+	    <FleckDef ParentName="FleckGlowDistortBackground">
+        <defName>NCL_Stump_ShockWave</defName>
+        <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.075</fadeInTime>
+        <fadeOutTime>0.6</fadeOutTime>
+        <solidTime>0.15</solidTime>
+        <growthRate>0.2</growthRate>
+        <graphicData>
+            <texPath>Things/Mote/Black</texPath>
+            <shaderParameters>
+                <_distortionIntensity>0.045</_distortionIntensity>
+                <_brightnessMultiplier>0.5</_brightnessMultiplier>
+            </shaderParameters>
+            <drawSize>15</drawSize>
+        </graphicData>
+    </FleckDef>
+	
+    <HediffDef>
+        <defName>NCL_BeatenOff</defName>
+        <hediffClass>NCL.Hediff_BeatenOff</hediffClass>
+        <label>Beaten off</label>
+        <defaultLabelColor>(0.9, 0.1, 0.1)</defaultLabelColor>
+        <description>Beaten away. Colliding into a wall will result in additional damage.</description>
+    </HediffDef>
+  
+</Defs>

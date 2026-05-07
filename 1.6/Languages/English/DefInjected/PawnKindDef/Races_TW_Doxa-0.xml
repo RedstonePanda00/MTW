@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 静巢构体 -->
+  <TW_Mech_Doxa_Kind.label>Doxa</TW_Mech_Doxa_Kind.label>
+  
+  <!-- EN: 裂壳蛛 -->
+  <TW_Mech_Shellsplitter_Spider.label>Shellsplitter</TW_Mech_Shellsplitter_Spider.label>
+  <!-- EN: 裂壳蛛 -->
+  <TW_Mech_Shellsplitter_Spider.labelPlural>Shellsplitter</TW_Mech_Shellsplitter_Spider.labelPlural>
+  
+</LanguageData>

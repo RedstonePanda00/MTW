@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<!-- 微型聚变反应堆 -->
+<NCL_Microfusion_Reactor.label>Microfusion Reactor</NCL_Microfusion_Reactor.label>
+<NCL_Microfusion_Reactor.description>As the core power source for NCL heavy mechanoids, this reactor employs cutting-edge compact magnetic confinement technology to sustain stable deuterium-tritium fusion within a 0.45m-diameter cylinder. Hexapolar magnetic fields precisely control high-temperature plasma, delivering adjustable power output to meet diverse tactical mechanoid energy demands.</NCL_Microfusion_Reactor.description>
+
+<!-- 神经织网 -->
+<NCL_Neural_Weave.label>Neural Weave</NCL_Neural_Weave.label>
+<NCL_Neural_Weave.description>NCL's core anti-mechanoid technology utilizing quantum neural mapping. Preserves tactical efficacy while circumventing traditional "consciousness harvesting" processes. These artificial neural networks algorithmically reconstruct the most adaptive decision patterns from human tactical cognition—not emotional carriers. Each weave undergoes thousands of battlefield simulations to form autonomous tactical optimization cores for complex environments.</NCL_Neural_Weave.description>
+
+<NCL_AdvancedPowerCell.label>Enhanced Power Cell</NCL_AdvancedPowerCell.label>
+<NCL_AdvancedPowerCell.description>Core component engineered by NCL researchers for mechanoid enhancement. Enables mechanoid augmentation and specialized equipment fabrication.</NCL_AdvancedPowerCell.description>
+
+
+<!-- 红色魔方 -->
+<NCL_RedCube.label>Red Cube</NCL_RedCube.label>
+<NCL_RedCube.description>Internal data structures surpass current human comprehension. Persistent communication coordinates flicker across its surface, awaiting response.</NCL_RedCube.description>
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze The Red Cube.</NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateDescString>
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateLabelString>
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the The Red Cube, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetter>
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetterLabel>The Red Cube studied: {RESEARCH} unlocked</NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</NCL_RedCube.comps.CompAnalyzableUnlockResearch.guiLabelString>
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</NCL_RedCube.comps.CompAnalyzableUnlockResearch.inspectString>
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.jobString>Analyze The Red Cube</NCL_RedCube.comps.CompAnalyzableUnlockResearch.jobString>
+
+<!-- 装甲突击战略核心 -->
+<TW_ArmorBlitzWarfare.label>Armor Blitz Strategic Core</TW_ArmorBlitzWarfare.label>
+<TW_ArmorBlitzWarfare.description>"Strategic Core: Armor Blitz Warfare" - legacy tactical engine from the Shell Fortconstruct. Contains all mechanoid ground assault and fire advancement algorithms. Records include vehicle path optimization, target suppression protocols, area prioritization, and multi-layer defense coordination - embodying the "frontal suppression, heavy penetration" doctrine.
+
+Recovery and analysis unlocks heavy-assault mechanoid units/structures and enables development of high-strength composite armor with active feedback systems. Also functions as implant control module to enhance mechanized lifeform survivability and assault capabilities - key to achieving "firepower breakthrough" in Total War systems.</TW_ArmorBlitzWarfare.description>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the Tactical Core.</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateDescString>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateLabelString>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the Tactical Core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetter>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Fortified Shell Tactical Core studied: {RESEARCH} unlocked</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.guiLabelString>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.inspectString>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.jobString>Analyze Fortified Shell Tactical Core</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.jobString>
+
+<!-- 机械首脑主线提示 -->
+<TW_CerebrexCore_Target.label>Complete Cerebrex Core Questline</TW_CerebrexCore_Target.label>
+<TW_CerebrexCore_Target.description>Unlocking this research requires completing the Cerebrex Core main quest in Odyssey. Debug mode can bypass this requirement if Odyssey is unavailable.</TW_CerebrexCore_Target.description>
+<TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze The Red Cube.</TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.activateDescString>
+<TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.activateLabelString>
+<TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the The Red Cube, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.completedLetter>
+<TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.completedLetterLabel>The Red Cube studied: {RESEARCH} unlocked</TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+<TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.guiLabelString>
+<TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.inspectString>
+<TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.jobString>Analyze The Red Cube</TW_CerebrexCore_Target.comps.CompAnalyzableUnlockResearch.jobString>
+
+<!-- 压制火控战略核心 -->
+<TW_DoxaTacticalCore.label>Fire Suppression Tactical Core</TW_DoxaTacticalCore.label>
+<TW_DoxaTacticalCore.description>"Strategic Core: Fire Suppression Warfare" - residual processor from Doxa-0. Contains neural architectures for fire control computation, target prioritization, and battlefield suppression algorithms. Features exceptional data throughput, parallel processing, and full compilation support for mechanoid structures/implants.
+
+Enables construction of mechanoid units, deployment structures, and specialized equipment. Functions as advanced implant control hub for "tactical self-evolution" - essential for mastering mechanoid battlefield tempo in Total War systems.</TW_DoxaTacticalCore.description>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the Tactical Core.</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateDescString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateLabelString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the Tactical Core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetter>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.guiLabelString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.inspectString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.jobString>Analyze Doxa Tactical Core</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.jobString>
+
+<!-- 机械精密接口阵列 -->
+<TW_Precision_Memory_Interface_Array.label>Precision Memory Interface Array</TW_Precision_Memory_Interface_Array.label>
+<TW_Precision_Memory_Interface_Array.description>This high-precision interface array stores compressed core mechanoid data. Decoding enables partial access to their technological systems.</TW_Precision_Memory_Interface_Array.description>
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze Precision Memory Interface Array.</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateDescString>
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateLabelString>
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the Precision Memory Interface Array, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetter>
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Precision Interface studied: {RESEARCH} unlocked</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.guiLabelString>
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.inspectString>
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.jobString>Analyze Precision Memory Interface Array</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.jobString>
+
+<!-- 自愿离职报告 -->
+<Voluntary_Resignation_Letter.label>Voluntary Resignation Report</Voluntary_Resignation_Letter.label>
+<Voluntary_Resignation_Letter.description>Respected Leader:
+
+Greetings!
+
+This Militor XXX officially resigned on XX/XX/XXXX. I sincerely appreciate the cultivation and support received during my tenure, which provided valuable experience in labor-intensive work.
+
+Due to personal career adjustments, I have completed all work handovers per company procedures after careful consideration. Relevant materials and affairs have been properly transferred. This resignation report is submitted for filing.
+
+Thank you for the growth platform, and for the support from leaders and colleagues. Wishing the company prosperous development and new team achievements.
+
+Sincerely,
+[Signature]
+
+Reporter: XX Militor
+Date: XXXX/XX/XX</Voluntary_Resignation_Letter.description>
+
+  
+</LanguageData>

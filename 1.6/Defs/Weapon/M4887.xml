@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_M4887_Gun</defName>
+    <label>Bullet M4887</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+	  <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>4</damageAmountBase>
+      <armorPenetrationBase>0.45</armorPenetrationBase>
+	  <stoppingPower>1.5</stoppingPower>
+      <speed>60</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>M4887_Gun</defName>
+    <label>M4887</label>
+    <description>I come from 2042</description>
+    <relicChance>0</relicChance>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Weapons/M4887</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+	<uiIconPath>Weapons/M4887</uiIconPath>
+    <soundInteract>Interact_SMG</soundInteract>
+	<equippedAngleOffset>0</equippedAngleOffset>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+	  <WorkToMake>20000</WorkToMake>
+      <Mass>2.8</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.8</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
+      <AccuracyLong>0.1</AccuracyLong>
+      <RangedWeapon_Cooldown>1.88</RangedWeapon_Cooldown>
+    </statBases>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_M4887_Gun</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>12</range>
+        <burstShotCount>8</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+        <soundCast>Shot_Shotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>6</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>M4887</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  </Defs>

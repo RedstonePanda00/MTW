@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <LifeStageDef>
+    <defName>NCL_Mech_ScorpionFullyformed</defName>
+    <label>fully-formed</label>
+    <caravanRideable>true</caravanRideable>
+    <visible>false</visible>
+  </LifeStageDef>
+  
+  <ThingDef Name="NCLMechScorpion" ParentName="SuperHeavyMechanoid">
+    <defName>NCL_Mech_Scorpion</defName>
+    <label>War Scorpion</label>
+    <description>Designated "War Scorpion", this unit was engineered for breaching high-density fortifications. Its chassis comprises millions of self-repairing uranium-alloy scales that dynamically reconfigure into localized defense barriers during damage events - providing extraordinary physical resistance. Combat logs confirm operational continuity after direct high-explosive impacts.
+
+The tail-mounted "Solaris Penetrator" rail cannon represents its signature armament: High-compression thermal projectiles released after brief charging can vaporize most fortifications and vehicles. Each discharge triggers thermal surges and terrain deformation - an iconic area-denial attack.
+
+Bilateral suppression artillery maintains continuous fire against infantry and light vehicles during main cannon operation cycles.
+
+When entering Crimson Tide mode, it launches successive thermobaric grenades combining concussive blasts with persistent combustion effects, clearing residual resistance from enemy cover and advance paths.</description>
+    <statBases>
+      <MarketValue>3200</MarketValue>
+      <MoveSpeed>5.4</MoveSpeed>
+      <ArmorRating_Blunt>1.05</ArmorRating_Blunt>
+	  <EMPResistance>0.40</EMPResistance>
+      <ArmorRating_Sharp>1.05</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">8</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+	<tools>
+      <li>
+        <label>MechanicalHead</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>50</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+	<comps>  
+	  <li Class="CompProperties_TurretGun">
+        <turretDef>RT_AutoGun</turretDef>
+        <angleOffset>-90</angleOffset>
+     </li>
+	</comps>
+	<butcherProducts>
+      <Steel>600</Steel>
+      <Plasteel>180</Plasteel>
+    </butcherProducts>
+    <race>
+      <lifeStageAges>
+        <li>
+          <def>NCL_Mech_ScorpionFullyformed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <body>ScorpionBody</body>
+	  <baseBodySize>3.5</baseBodySize>
+      <baseHealthScale>4</baseHealthScale>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+        <mechEnabledWorkTypes>
+          <li>Hauling</li>
+		  <li>Mining</li>
+        </mechEnabledWorkTypes>
+	<mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="HeavyMechanoidKind">
+  <defName>NCL_Mech_Scorpion_Kind</defName>
+  <label>War Scorpion</label>
+  <race>NCL_Mech_Scorpion</race>
+  <defaultFactionType>NCL_faction</defaultFactionType>
+  <allowInMechClusters>false</allowInMechClusters>
+  <combatPower>1800</combatPower>
+  <lifeStages>
+    <li MayRequire="Ludeon.RimWorld.Biotech">
+      <bodyGraphicData>
+        <texPath>Things/Scorpion</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>4.5</drawSize>
+        <shadowData>
+          <volume>(0.4, 0.8, 0.4)</volume>
+        </shadowData>
+      </bodyGraphicData>
+    </li>
+  </lifeStages>
+  <weaponMoney>9999~9999</weaponMoney>
+  <weaponTags>
+    <li>RedT03</li>
+  </weaponTags>
+  <techHediffsChance>1</techHediffsChance>
+  <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+	<li>NCL_Blazing_Core_Penetrator</li>
+	<li>NCL_MechSelfRepair</li>
+  </abilities>
+  </PawnKindDef>
+  
+</Defs>

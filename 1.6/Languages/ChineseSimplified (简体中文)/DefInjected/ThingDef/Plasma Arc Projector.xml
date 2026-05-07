@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Bullet_TeslaCentipede.label>charge blaster shot</Bullet_TeslaCentipede.label>
+
+<TW_Plasma_Arc_Projector.label>等离子电弧投射器</TW_Plasma_Arc_Projector.label>
+<TW_Plasma_Arc_Projector.description>特斯拉蜈蚣的主武器。通过背部电容器蓄能后发射高温等离子电弧。</TW_Plasma_Arc_Projector.description>
+<TW_Plasma_Arc_Projector.tools.stock.label>stock</TW_Plasma_Arc_Projector.tools.stock.label>
+<TW_Plasma_Arc_Projector.tools.barrel.label>barrel</TW_Plasma_Arc_Projector.tools.barrel.label>
+<TW_Plasma_Arc_Projector.verbs.Verb_Shoot.label>Plasma Arc Projector</TW_Plasma_Arc_Projector.verbs.Verb_Shoot.label>
+
+  
+</LanguageData>

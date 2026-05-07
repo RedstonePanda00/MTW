@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 机械雇佣服务 -->
+  <Mechanoid_Employer.label>Mechanoid Employerment Serves</Mechanoid_Employer.label>
+
+  
+  <!-- EN: 原材料供应商 -->
+  <NCL_material_Trader.label>Raw Material Trader</NCL_material_Trader.label>
+  
+  <!-- EN: 轨道防御解决方案公司 -->
+  <Orbital_Defense_Solutions.label>Orbital Defense Solutions</Orbital_Defense_Solutions.label>
+  
+  <!-- EN: 寰宇生活服务商 -->
+  <Orbital_Universal_life_Services_Provider.label>Orbital Universal life Services Provider</Orbital_Universal_life_Services_Provider.label>
+  
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  <NCL_Mech_Mantis.label>制造机械兰螳</NCL_Mech_Mantis.label>
+  <NCL_Mech_Mantis.description>机械兰螳
+致命的近战突击单位。内置模块化修复系统，虽然相对脆弱但可在作战中持续修复创伤。液压关节带来的爆发力使其可瞬间切入敌阵或撤离险境。成熟可控的武备系统可同时展开战术烟幕与两枚制导Gyro-Blade旋刃——命中时引爆EMP冲击波及大范围破片溅射。最终协议「大爆炸」通过超载核心引发的爆炸强度甚至接近帝王业火炮，鲜少有人能在其范围内活下来，包括兰螳本身。
+“好马配好鞍，美女当然要配上够酷的坐骑...地雷女也一样！”lisa理所当然地解释机械少女和狼蛛底盘的奇怪搭配</NCL_Mech_Mantis.description>
+  <NCL_Mech_Mantis.jobString>Gestating mech.</NCL_Mech_Mantis.jobString>
+
+  
+</LanguageData>

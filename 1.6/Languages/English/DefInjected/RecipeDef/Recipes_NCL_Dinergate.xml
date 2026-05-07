@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <NCL_Mech_Dinergate.label>Gestate Dinergate</NCL_Mech_Dinergate.label>
+  <NCL_Mech_Dinergate.description>Unit Archive: NCL-00 "Dinergate"
+Codename: Dinergate
+Origin: "Iron Law" Mass-Produced General Series
+
+As NCL's first fully autonomous design, the Dinergate marks the historic transition from repurposed wrecks to proprietary mechanoid manufacturing. This compact combat platform was deployed across diverse frontline operations - from tunnel infiltration to base assaults - becoming virtually ubiquitous.
+
+Built on modular survival logic, it shifts from "Engineering Mode" to "Annihilation Mode" within seconds, adapting rapidly to changing combat scenarios. This transition mechanism drastically compresses tactical response time, granting disproportionate tactical value in guerrilla and urban warfare despite its size.
+
+Its core chassis features a honeycomb bionic structure assembled from nearly 300 micro living-metal joints, balancing high load capacity with mass-production efficiency. Surviving technical documents indicate a theoretical maximum payload of 2.3 tons per unit - far exceeding volumetric expectations.
+
+Armament varies by environment, though standard models typically deploy mid-range electro-lances and a pair of polymorphic manipulators that seamlessly transition between hauling, combat, and disassembly roles.
+
+Though technically obsolete, Dinergate data-fragments continue to be optimized by surviving intelligences. Unconfirmed reports suggest operational units persist in stellar ruins - minimalist shells executing lethal efficiency under commands whose originators vanished millennia ago.</NCL_Mech_Dinergate.description>
+  <NCL_Mech_Dinergate.jobString>Gestating mech.</NCL_Mech_Dinergate.jobString>
+  
+  <NCL_Mech_DinergateSniper.label>Gestate Dinergate Sniper</NCL_Mech_DinergateSniper.label>
+  <NCL_Mech_DinergateSniper.description>Unit Archive: NCL-02 "Dinergate Sniper"
+Codename: DinergateSniper
+Origin: "Iron Law" Mass-Produced Long-Range Variant
+
+A ranged derivative of the base Dinergate, this variant represents minimalist engineering on a lightweight frame. Smaller and more compact, it executes precision strikes and prolonged reconnaissance at medium distances. Typically concealed in low-profile terrain, it maintains synchronization with command arrays through faint data-channels, balancing ambush capability with intelligence gathering.
+
+Primary armament is the NCL-42 "Crimson Needle" tactical sniper rifle, firing low-cost ruby-ceramic rounds that maintain armor-piercing capabilities while minimizing resource expenditure - field-tested to penetrate 25mm RHA.
+
+Unlike most mechanoids, operational Dinergate Snipers exhibit near-silent mobility with staccato movement patterns, classifying them as "unpredictable shooter constructs". Colonists frequently report attacks going undetected until casualties occur, with trajectories only traceable post-impact.
+
+Surviving tactical records designate these units as the "eyes and first shot" of raiding groups, completing reconnaissance and firing solutions before main forces engage.</NCL_Mech_DinergateSniper.description>
+  <NCL_Mech_DinergateSniper.jobString>Gestating mech.</NCL_Mech_DinergateSniper.jobString>
+
+</LanguageData>

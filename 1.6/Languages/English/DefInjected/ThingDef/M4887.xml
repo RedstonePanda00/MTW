@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Bullet M4887 -->
+  <Bullet_M4887_Gun.label>Bullet M4887</Bullet_M4887_Gun.label>
+  
+  <!-- EN: M4887 -->
+  <M4887_Gun.label>M4887</M4887_Gun.label>
+  <!-- EN: 1 -->
+  <M4887_Gun.description>I come from 2042</M4887_Gun.description>
+  <!-- EN: stock -->
+  <M4887_Gun.tools.stock.label>stock</M4887_Gun.tools.stock.label>
+  <!-- EN: barrel -->
+  <M4887_Gun.tools.barrel.label>barrel</M4887_Gun.tools.barrel.label>
+  <!-- EN: M4887 -->
+  <M4887_Gun.verbs.Verb_Shoot.label>M4887</M4887_Gun.verbs.Verb_Shoot.label>
+  
+</LanguageData>

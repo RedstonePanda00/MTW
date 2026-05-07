@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <Crimson_Slagburst.label>Crimson Slagburst</Crimson_Slagburst.label>
+  
+  <Crimson_Slagburst.deathMessage>{0} has burned to death.</Crimson_Slagburst.deathMessage>
+  
+  
+  <DeathExplosion.label>DeathExplosion</DeathExplosion.label>
+  
+  <DeathExplosion.deathMessage>{0} is death.</DeathExplosion.deathMessage>
+  
+  
+  <Disruptor_Positron_Burn.label>Disruptor Positron Burn</Disruptor_Positron_Burn.label>
+  
+  <Disruptor_Positron_Burn.deathMessage>{0} has burned to death.</Disruptor_Positron_Burn.deathMessage>
+  
+  
+  <ShotbyDeath.label>ShotbyDeath</ShotbyDeath.label>
+  
+  <ShotbyDeath.deathMessage>{0} is death.</ShotbyDeath.deathMessage>
+  
+  
+  <TW_Antiparticle_explosion.label>Antiparticle explosion</TW_Antiparticle_explosion.label>
+  
+  <TW_Antiparticle_explosion.deathMessage>{0} has burned to death.</TW_Antiparticle_explosion.deathMessage>
+  
+  
+  <WildFire.label>DeathExplosion</WildFire.label>
+  
+  <WildFire.deathMessage>{0} is death.</WildFire.deathMessage>
+  
+</LanguageData>

@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>NCL_Mech_Dinergate</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_NCL_Mech_Dinergate</li>
+		</value>
+	</Operation>
+	
+		<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>NCL_Mech_DinergateSniper</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_NCL_Mech_DinergateSniper</li>
+		</value>
+	</Operation>
+
+			<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="MechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>TW_Mech_Psycasts_Militor_Ally</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectLightMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_Mech_Psycasts_Militor</li>
+		</value>
+	</Operation>
+
+			<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>TW_Mech_Paratrooper</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_Mech_Paratrooper</li>
+		</value>
+	</Operation>
+
+			<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>TW_Mech_Birgus</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_Mech_Birgus</li>
+		</value>
+	</Operation>
+
+		<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_MechPenguin</li>
+		</value>
+	</Operation>
+	
+		<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>NCL_Mech_Scorpion</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_NCL_Mech_Scorpion</li>
+		</value>
+	</Operation>
+	
+		<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>NCL_Mech_PillBug</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_NCL_Mech_PillBug</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>NCL_Mech_Mantis</li>
+		</value>
+	</Operation>
+
+		<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_NCL_Mech_Mantis</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>NCL_Mech_Scutiger</li>
+		</value>
+	</Operation>
+
+			<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_NCL_Mech_Scutiger</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>TW_Mech_Praetor</li>
+		</value>
+	</Operation>
+
+				<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_Mech_Praetor</li>
+		</value>
+	</Operation>
+
+	
+			<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>TW_Mech_Shell_Fortification_Reforged</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_Mech_Shell_Fortification_Reforged</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>TW_Mech_Doxa</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_Mech_Doxa</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>TW_Mech_MechTeslaCentipede</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_TW_Mech_MechTeslaCentipede</li>
+		</value>
+	</Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Mech_WarUrchin"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath" />
+        </value>
+    </Operation> 
+
+		<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>Mech_CentipedeMissile</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_Mech_CentipedeMissile</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Mech_WarUrchin"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
+			<ProductDef>Steel</ProductDef>
+		<SpawnCountRange>
+        <min>5</min>
+        <max>15</max>
+        </SpawnCountRange>
+			</li>
+        </value>
+    </Operation>
+
+		<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="NCL_Dinergate_Drone"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
+			<ProductDef>Steel</ProductDef>
+		<SpawnCountRange>
+        <min>10</min>
+        <max>25</max>
+        </SpawnCountRange>
+			</li>
+        </value>
+    </Operation>
+
+			<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="NCL_Scutiger_Drone"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
+			<ProductDef>Steel</ProductDef>
+		<SpawnCountRange>
+        <min>10</min>
+        <max>25</max>
+        </SpawnCountRange>
+			</li>
+        </value>
+    </Operation>
+	
+	<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="TW_Mech_Shellsplitter_Spider"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
+			<ProductDef>Uranium</ProductDef>
+		<SpawnCountRange>
+        <min>5</min>
+        <max>15</max>
+        </SpawnCountRange>
+			</li>
+        </value>
+    </Operation>
+	
+		<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="TW_University_Minitor"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
+			<ProductDef>Voluntary_Resignation_Letter</ProductDef>
+		<SpawnCountRange>
+        <min>1</min>
+        <max>1</max>
+        </SpawnCountRange>
+			</li>
+        </value>
+    </Operation>
+
+		<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="TW_Gestapo_Minitor"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
+			<ProductDef>Voluntary_Resignation_Letter</ProductDef>
+		<SpawnCountRange>
+        <min>0</min>
+        <max>1</max>
+        </SpawnCountRange>
+			</li>
+        </value>
+    </Operation>
+
+		<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="TW_Mech_Shell_Fortification"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
+			<ProductDef>TW_Shellcore_Bastion</ProductDef>
+		<SpawnCountRange>
+        <min>1</min>
+        <max>1</max>
+        </SpawnCountRange>
+			</li>
+        </value>
+    </Operation>
+	
+	
+    <Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName="Mechanoid"]/pawnGroupMakers/li[kindDef="Combat" and commonality=100]/options</xpath>
+		<value>
+		  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName="Mechanoid"]/pawnGroupMakers/li[kindDef="Combat" and commonality=80]/options</xpath>
+		<value>
+		  <TW_Mech_MechTeslaCentipede_Kind>1</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+		  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName="Mechanoid"]/pawnGroupMakers/li[kindDef="Combat" and commonality=70]/options</xpath>
+		<value>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName="Mechanoid"]/pawnGroupMakers/li[kindDef="Combat" and commonality=30]/options</xpath>
+		<value>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName="Mechanoid"]/pawnGroupMakers/li[kindDef="Combat" and commonality=1]/options</xpath>
+		<value>
+		  <TW_Mech_MechTeslaCentipede_Kind>2</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Doxa_Kind>1</TW_Mech_Doxa_Kind>
+		  <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+		  <Mech_CentipedeMissile_Kind>10</Mech_CentipedeMissile_Kind>
+		</value>
+	</Operation>
+
+
+
+<Operation Class="PatchOperationReplace">
+        <xpath>/Defs/BossgroupDef[defName = "Diabolus"]/waves</xpath>
+        <value>
+		    <waves>
+			  <li> <!-- 0 -->
+				<bossCount>1</bossCount>
+				<escorts>
+				  <!-- null -->
+				</escorts>
+			  </li>
+			  <li> <!-- 1 -->
+				<bossCount>1</bossCount>
+				<escorts>
+				  <Mech_Militor>3</Mech_Militor>
+				  <Mech_Pikeman>1</Mech_Pikeman>
+				</escorts>
+			  </li>
+			  <li> <!-- 2 - Repeat starts here -->
+				<bossCount>1</bossCount>
+				<escorts>
+				  <Mech_Militor>3</Mech_Militor>
+				  <Mech_Pikeman>2</Mech_Pikeman>
+				  <Mech_Tesseron>1</Mech_Tesseron>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 3 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_Legionary>6</Mech_Legionary>
+				  <Mech_Centurion>1</Mech_Centurion>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 4 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_Scyther>15</Mech_Scyther>
+				  <Mech_CentipedeGunner>3</Mech_CentipedeGunner>
+		          <Mech_CentipedeMissile_Kind>1</Mech_CentipedeMissile_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 5 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_Pikeman>10</Mech_Pikeman>
+				  <Mech_CentipedeGunner>8</Mech_CentipedeGunner>
+				  <Mech_CentipedeMissile_Kind>4</Mech_CentipedeMissile_Kind>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				  <Mech_Centurion>1</Mech_Centurion>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 6 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_Lancer>18</Mech_Lancer>
+				  <Mech_CentipedeGunner>10</Mech_CentipedeGunner>
+				  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 7 -->
+				<bossCount>3</bossCount>
+				<escorts>
+				  <Mech_Legionary>10</Mech_Legionary>
+				  <Mech_Tesseron>10</Mech_Tesseron>
+				  <Mech_CentipedeGunner>10</Mech_CentipedeGunner>
+				  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+				  <Mech_Centurion>2</Mech_Centurion>
+		          <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			</waves>
+        </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+        <xpath>/Defs/BossgroupDef[defName = "Warqueen"]/waves</xpath>
+        <value>
+		    <waves>
+			  <li> <!-- 0 -->
+				<bossCount>1</bossCount>
+				<escorts>
+				  <Mech_Pikeman>2</Mech_Pikeman>
+				  <Mech_Scyther>2</Mech_Scyther>
+				</escorts>
+			  </li>
+			  <li> <!-- 1 -->
+				<bossCount>1</bossCount>
+				<escorts>
+				  <Mech_Militor>10</Mech_Militor>
+				  <Mech_CentipedeBurner>2</Mech_CentipedeBurner>
+				  <Mech_CentipedeMissile_Kind>2</Mech_CentipedeMissile_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 2 - Repeat starts here -->
+				<bossCount>1</bossCount>
+				<escorts>
+				  <Mech_Pikeman>10</Mech_Pikeman>
+				  <Mech_Tesseron>2</Mech_Tesseron>
+				  <Mech_Tunneler>3</Mech_Tunneler>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 3 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_Militor>5</Mech_Militor>
+				  <Mech_Lancer>12</Mech_Lancer>
+				  <Mech_CentipedeBurner>2</Mech_CentipedeBurner>
+				  <Mech_CentipedeMissile_Kind>2</Mech_CentipedeMissile_Kind>
+		          <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 4 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_Lancer>10</Mech_Lancer>
+				  <Mech_Legionary>10</Mech_Legionary>
+				  <Mech_CentipedeBurner>3</Mech_CentipedeBurner>
+				  <Mech_CentipedeMissile_Kind>3</Mech_CentipedeMissile_Kind>
+		          <TW_Mech_Birgus_Kind>3</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 5 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_Scyther>33</Mech_Scyther>
+				  <Mech_CentipedeBurner>6</Mech_CentipedeBurner>
+				  <Mech_CentipedeMissile_Kind>4</Mech_CentipedeMissile_Kind>
+		          <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+				  <Mech_Centurion>1</Mech_Centurion>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 6 -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_CentipedeBurner>18</Mech_CentipedeBurner>
+				  <Mech_CentipedeMissile_Kind>8</Mech_CentipedeMissile_Kind>
+				  <TW_Mech_MechTeslaCentipede_Kind>1</TW_Mech_MechTeslaCentipede_Kind>
+				  <Mech_Scorcher>20</Mech_Scorcher>
+		          <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 7 -->
+				<bossCount>3</bossCount>
+				<escorts>
+				  <Mech_Scyther>12</Mech_Scyther>
+				  <Mech_Lancer>12</Mech_Lancer>
+				  <Mech_Legionary>12</Mech_Legionary>
+				  <Mech_CentipedeBurner>10</Mech_CentipedeBurner>
+				  <Mech_CentipedeMissile_Kind>10</Mech_CentipedeMissile_Kind>
+				  <TW_Mech_MechTeslaCentipede_Kind>1</TW_Mech_MechTeslaCentipede_Kind>
+		          <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+		          <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		          <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+				  <Mech_Centurion>1</Mech_Centurion>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			</waves>
+        </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+        <xpath>/Defs/BossgroupDef[defName = "Apocriton"]/waves</xpath>
+        <value>
+		    <waves>
+			  <li> <!-- 0 -->
+				<bossCount>1</bossCount>
+				<escorts>
+				  <Mech_Scyther>10</Mech_Scyther>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				  <Mech_CentipedeBlaster>1</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>1</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>1</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">1</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>1</Mech_CentipedeMissile_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 1 -->
+				<bossCount>2</bossCount>
+				<escorts>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				  <Mech_CentipedeBlaster>3</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>3</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>3</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">3</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>3</Mech_CentipedeMissile_Kind>
+				  <Mech_Tesseron>4</Mech_Tesseron>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 2 - Repeat starts here -->
+				<bossCount>2</bossCount>
+				<escorts>
+				  <Mech_CentipedeBlaster>4</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>4</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>4</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">4</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>4</Mech_CentipedeMissile_Kind>
+				  <Mech_Diabolus>1</Mech_Diabolus>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 3 -->
+				<bossCount>3</bossCount>
+				<escorts>
+				  <Mech_CentipedeBlaster>5</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">5</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+				  <Mech_Diabolus>2</Mech_Diabolus>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 4 -->
+				<bossCount>3</bossCount>
+				<escorts>
+				  <Mech_CentipedeBlaster>6</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>6</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>6</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">6</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>6</Mech_CentipedeMissile_Kind>
+				  <Mech_Diabolus>2</Mech_Diabolus>
+				  <Mech_Centurion>1</Mech_Centurion>
+		          <TW_Mech_Birgus_Kind>1</TW_Mech_Birgus_Kind>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 5 -->
+				<bossCount>3</bossCount>
+				<escorts>
+				  <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">5</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+				  <Mech_Diabolus>3</Mech_Diabolus>
+				  <Mech_Centurion>1</Mech_Centurion>
+		          <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+				  <Mech_Firefly MayRequire="fxz.glitterworlddestroyer.mk4">1</Mech_Firefly>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 6 -->
+				<bossCount>3</bossCount>
+				<escorts>
+				  <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">5</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+				  <Mech_Warqueen>1</Mech_Warqueen>
+				  <Mech_Diabolus>2</Mech_Diabolus>
+				  <Mech_Centurion>1</Mech_Centurion>
+		          <TW_Mech_Birgus_Kind>3</TW_Mech_Birgus_Kind>
+				  <Mech_Firefly MayRequire="fxz.glitterworlddestroyer.mk4">3</Mech_Firefly>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			  <li> <!-- 7 -->
+				<bossCount>3</bossCount>
+				<escorts>
+				  <Mech_CentipedeBlaster>12</Mech_CentipedeBlaster>
+				  <Mech_CentipedeBurner>10</Mech_CentipedeBurner>
+				  <Mech_CentipedeGunner>10</Mech_CentipedeGunner>
+				  <Mech_CentipedeSword MayRequire="fxz.glitterworlddestroyer.mk4">10</Mech_CentipedeSword>
+				  <Mech_CentipedeMissile_Kind>10</Mech_CentipedeMissile_Kind>
+				  <Mech_Warqueen>3</Mech_Warqueen>
+				  <Mech_Diabolus>3</Mech_Diabolus>
+				  <Mech_Centurion>1</Mech_Centurion>
+		          <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+		          <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		          <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+				  <Mech_Firefly MayRequire="fxz.glitterworlddestroyer.mk4">3</Mech_Firefly>
+				</escorts>
+				<bossApparel>
+				  <li>
+					<thing>Apparel_HeavyShield</thing>
+				  </li>
+				</bossApparel>
+			  </li>
+			</waves>
+        </value>
+	</Operation>
+
+
+</Patch>

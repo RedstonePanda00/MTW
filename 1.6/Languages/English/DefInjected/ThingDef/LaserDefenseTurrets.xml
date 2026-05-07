@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<NCL_LaserDefenceTurret.label>Laser Point Defense Turret</NCL_LaserDefenceTurret.label>
+<NCL_LaserDefenceTurret.description>Automated interception platform deployed on colonial frontlines. Generates high-frequency laser beams through sustained power input, effectively neutralizing slow-moving high-trajectory projectiles like mortar shells and incendiary rounds. While demonstrating high accuracy, its single-point defense capability is severely challenged against high-velocity aircraft or saturation attacks - requiring coordinated multi-turret deployment to maintain area denial coverage.</NCL_LaserDefenceTurret.description>
+
+<TW_LaserDefenceTurret.label>Mechanoid Laser Point Defense Turret</TW_LaserDefenceTurret.label>
+<TW_LaserDefenceTurret.description>Temporary defensive installation deployed by mechanoids in forward areas. Integrated power core enables short-duration high-efficiency operation specialized in intercepting slow enemy projectiles. Upon power depletion, activates self-destruct protocol to prevent capture of core technology.</TW_LaserDefenceTurret.description>
+  
+</LanguageData>

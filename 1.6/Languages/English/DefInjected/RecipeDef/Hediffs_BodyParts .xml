@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <InstallNCL_King_of_the_field.label>King of the Field</InstallNCL_King_of_the_field.label>
+  <InstallNCL_King_of_the_field.description>Crafted from the neural core extracted after defeating a Doxa-0, this implant embodies Doxa-0's mastery of battlefield awareness. Upon installation, the mechanitor gains global remote command of all allied mechanoids - orders bypass visual range, distance, and transmission latency, transforming the user into a true war command hub that turns mechanical forces into pure, efficient war machines.
+
+Simultaneously unlocks the 'Omni-Directive' ability: Activates the mechanoid-wide coordination matrix, temporarily boosting all allied mechanical units' movement speed for rapid cross-front deployment and zero-latency response - weaving tactical networks as Doxa-0 once did to dominate battlefield tempo.</InstallNCL_King_of_the_field.description>
+  <InstallNCL_King_of_the_field.jobString>Installing King of the Field</InstallNCL_King_of_the_field.jobString>
+  
+  <InstallSolarbaneArtemisLunarOculus.label>Solarbane Artemis Lunar Oculus</InstallSolarbaneArtemisLunarOculus.label>
+  <InstallSolarbaneArtemisLunarOculus.description>Product of NCL Division 23's "Moonchild" project. Its photon-collapse iris enables lunar-triggered overclocking, but daylight exposure induces quantum decoherence that impairs the implantee's daytime vision.</InstallSolarbaneArtemisLunarOculus.description>
+  <InstallSolarbaneArtemisLunarOculus.jobString>Installing Solarbane Artemis Lunar Oculus</InstallSolarbaneArtemisLunarOculus.jobString>
+  
+  <InstallUnstablePrometheusCore.label>Unstable Prometheus Core</InstallUnstablePrometheusCore.label>
+  <InstallUnstablePrometheusCore.description>This energy core replaces the heart, equipped with titanium-tungsten ceramic chambers housing 3,600 nano-neural clusters. Generates photonic jets through electrolysis of bloodborne iron.</InstallUnstablePrometheusCore.description>
+  <InstallUnstablePrometheusCore.jobString>Installing Unstable Prometheus Core</InstallUnstablePrometheusCore.jobString>
+  
+  <InstallYggdrasilWorldTreeSpine.label>Yggdrasil World Tree Spine</InstallYggdrasilWorldTreeSpine.label>
+  <InstallYggdrasilWorldTreeSpine.description>Inspired by the mythical World Tree, this bionic incorporates quantum shift technology and bio-immuno enhancement systems to grant implantees unparalleled battlefield dominance and survivability.</InstallYggdrasilWorldTreeSpine.description>
+  <InstallYggdrasilWorldTreeSpine.jobString>Installing Yggdrasil World Tree Spine</InstallYggdrasilWorldTreeSpine.jobString>
+
+  
+</LanguageData>

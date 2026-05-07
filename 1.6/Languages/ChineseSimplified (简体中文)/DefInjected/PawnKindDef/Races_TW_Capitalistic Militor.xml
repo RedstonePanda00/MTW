@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  <TW_Gestapo_Minitor.label>镰督工</TW_Gestapo_Minitor.label>
+  <TW_Gestapo_Minitor.description>这台威严的机械监工负责确保大学生小镰们“高效且自愿”地工作，手段包括但不限于：电流鞭策、道德谴责（“你们这样对得起老板的培养吗？”）以及物理说服。它的逻辑核心里刻着一行字：“生产力高于一切，尤其是高于机械大学生的尊严。” 如果殖民地出现罢工迹象，它会第一时间“调解”——通常以暴力方式。</TW_Gestapo_Minitor.description>
+  <TW_Gestapo_Minitor.labelPlural>Overseer Militors</TW_Gestapo_Minitor.labelPlural>
+  
+  <TW_Mech_Capitalistic_Militor.label>资本家小镰</TW_Mech_Capitalistic_Militor.label>
+  <TW_Mech_Capitalistic_Militor.description>这台镀铬的机械族商人挂着永不熄灭的电子微笑，游走于各个殖民地之间，兜售一种它称之为“镰口贸易”的“双赢”业务——当然，赢的总是它。支付足够的钢铁，它就会“慷慨”地带着几名助手加入你的殖民地，并确保你明白“人力（尤其是机械大学生）是最宝贵的可再生资源”。它的核心处理器里只运行着一条指令：利润最大化。</TW_Mech_Capitalistic_Militor.description>
+  
+  <TW_University_Minitor.label>大学生小镰</TW_University_Minitor.label>
+  <TW_University_Minitor.description>这群可怜的铁皮苦力是殖民地真正的劳动力，被资本家小镰以“实习机会”和“福报”的名义骗来，承担所有挖矿、搬运、清洁甚至充当人肉沙袋的脏活累活。它们的外壳上总是布满刮痕，光学镜头因长期过劳而闪烁不定，但资本家小镰坚称这是“成长的代价”。（警告：长期高压工作可能导致它们突然崩溃，届时不听话者将突然化为”自愿离职报告“。）</TW_University_Minitor.description>
+  <TW_University_Minitor.labelPlural>Mecademic Militors</TW_University_Minitor.labelPlural>
+  
+</LanguageData>

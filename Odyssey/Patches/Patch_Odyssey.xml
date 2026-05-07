@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+		<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="CerebrexCore"]/comps</xpath>
+        <value>
+            <li Class="NCL.CompProperties_UnlockResearch">
+      <researchToUnlock>NCL_CerebrexCore_Rebuild</researchToUnlock>
+      <activateRange>8</activateRange>
+      <checkIntervalTicks>30</checkIntervalTicks>
+      <requireLineOfSight>false</requireLineOfSight>
+      <letterDef>PositiveEvent</letterDef>
+      <letterLabel>研究突破：机械首脑</letterLabel>
+      <letterText>你的殖民者已通过扫描该远古机械首脑解锁了重构它的能力</letterText>
+      <sendLetter>true</sendLetter>
+			</li>
+        </value>
+    </Operation>
+	
+</Patch>

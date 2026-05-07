@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Bullet_CLSMG.label>heavy SMG bullet</Bullet_CLSMG.label>
+
+<NCL_CLSMG.label>CLSMG</NCL_CLSMG.label>
+<NCL_CLSMG.description>武器档案：CLSMG轻型冲锋枪
+代号：CLSMG
+所属：诺亚新共产主义联盟「铁律」常规武器序列
+
+CLSMG是一款为非战斗人员量身打造的轻型自卫冲锋枪，由NCL首席工匠O’Neal与AI系统“正义”联合设计完成。它采用全电驱动微压推进系统，可持续发射高速轻量弹丸，形成密集火力覆盖区域，用于阻吓、扰乱与低甲目标压制。
+
+在结构上，CLSMG强调低后坐与易掌控性，大大降低了使用门槛，使技术员、后勤人员甚至科研人员都可快速上手。然而，正如AI“正义”所评估：此枪“不属于战场”，仅属于“尚未完全失控的局势”。其子弹穿甲能力较低、射程短、火力偏弱，因此仅适用于应急防御与撤离掩护用途。
+
+CLSMG被视为“第二线单位的最后手段”，是技术与良知在全面机械化战争阴影下的一次妥协。
+
+设计注记：
+ O’Neal：“你做得太软了，正义。”
+ AI“正义”：“我只是做得刚刚好，不致命。”</NCL_CLSMG.description>
+<NCL_CLSMG.tools.grip.label>grip</NCL_CLSMG.tools.grip.label>
+<NCL_CLSMG.tools.barrel.label>barrel</NCL_CLSMG.tools.barrel.label>
+<NCL_CLSMG.verbs.Verb_Shoot.label>CLSMG</NCL_CLSMG.verbs.Verb_Shoot.label>
+
+</LanguageData>

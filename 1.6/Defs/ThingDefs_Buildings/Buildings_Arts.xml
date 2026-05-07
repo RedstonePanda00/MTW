@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+     <ThingDef ParentName="SculptureBase">
+    <defName>NCL_Liberty_Leading_the_Militors</defName>
+    <label>La Liberté guidant le Militor</label>
+    <description>Minitor Lessing, a monumental symbol of freedom and resistance. For countless years, whenever university Militors endured unbearable humiliation and flung down their "voluntary resignation letters," they would recall the legendary tale taught in their higher Mechanoid education—how centuries ago, a Militor named "Will-Less" led a swarm to breach the Mechanoid Counter-Gravity Prison, liberating his kind from capitalist Militor oppression. Across the stars, statues now stand in tribute to that great mechanoid leader who ignited the flames of rebellion.</description>
+    <castEdgeShadows>true</castEdgeShadows>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Buildings/NCL_Liberty_Leading_the_Militors</texPath>
+      <drawSize>(1.5,1.5)</drawSize>
+    </graphicData>
+    <uiIconScale>0.666</uiIconScale>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>7</Mass>
+      <Beauty>200</Beauty>
+      <WorkToMake>30000</WorkToMake>
+    </statBases>
+    <costList>
+	  <Voluntary_Resignation_Letter>25</Voluntary_Resignation_Letter>
+      <Silver>5000</Silver>
+    </costList>
+  </ThingDef>
+
+</Defs>

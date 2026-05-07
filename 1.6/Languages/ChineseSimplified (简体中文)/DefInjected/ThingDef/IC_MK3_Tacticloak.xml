@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<IC_MK3_Tacticloak.label>铁幕战术斗篷</IC_MK3_Tacticloak.label>
+<IC_MK3_Tacticloak.description>铁幕战术斗篷
+代号：IC_MK3_Tacticloak 
+研发机构：NCL第8战术研究所 /「暗影计划」
+执行单位：设计人员：Eclipse 与 O’Neal（特别授权联合工程）
+
+铁幕III型战术斗篷是NCL现阶段最尖端的战术支援装备，仅配发于少数精英作战单位。该装备集成了隔热防护层、局部能量护盾、短时光学折射隐形系统以及低功率重力跃迁辅助模块，是“暗影计划”中对个体作战能力极限的尝试。
+
+在全面战争的铁幕下，Eclipse 与 O’Neal少有地重拾了对战术装备的设计意图，他们称之为对“人类战斗尊严”的最后答复。这款斗篷本质上是一件功能集成外骨骼，通过量子协调算法与佩戴者神经系统深度协作，使其在复杂、压制、致命的环境中仍保有执行与脱离能力。
+
+由于成本与可控性问题，铁幕III型斗篷并未进入批量生产，仅作为暗影计划特配样品被授权用于“保留作战单位”的作战任务中。
+
+研发笔记片段： 
+Eclipse：“不是所有人都有机会穿上这件斗篷了。”
+ O’Neal：“我只为活下来的那几个家伙缝的。”</IC_MK3_Tacticloak.description>
+<IC_MK3_Tacticloak.comps.CompApparelReloadable.chargeNoun>incendiary</IC_MK3_Tacticloak.comps.CompApparelReloadable.chargeNoun>
+<IC_MK3_Tacticloak.comps.CompApparelReloadable.cooldownGerund>on cooldown</IC_MK3_Tacticloak.comps.CompApparelReloadable.cooldownGerund>
+<IC_MK3_Tacticloak.verbs.0.label>Optical Camo Activation</IC_MK3_Tacticloak.verbs.0.label>
+  
+</LanguageData>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>TW_Mech_Praetor</defName>
+    <label>Praetor</label>
+    <gestationCycles>12</gestationCycles>
+    <displayPriority>300</displayPriority>
+    <description>Elite mechanoid unit featuring enhanced shield generators and quad-tube missile launchers. Capable of launching precision HE/EMP warheads at extended ranges while neutralizing cloaking effects within operational radius through advanced counter-detection systems.</description>
+    <researchPrerequisites>
+	<li>UltraMechtech</li>
+	<li>NCL_Ignition_of_the_Crucible</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>650</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>450</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+	        <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>400</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>NanostructuringChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <TW_Mech_Praetor>1</TW_Mech_Praetor>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>TW_Mech_Praetor</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

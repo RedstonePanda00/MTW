@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <Bullet_PsyCast_SMG.label>PsyCast SMG Bullet</Bullet_PsyCast_SMG.label>
+  
+  
+  <TW_PsyCast_SMG.label>灵能冲锋枪</TW_PsyCast_SMG.label>
+  
+  <TW_PsyCast_SMG.description>这把特制灵能冲锋枪是专为小镰打造的装备。长期996工作让这台机械体早早患上了严重的肩周炎，再也无法像同类那样自如使用传统枪械。虽然挂着冲锋枪的名号，实则更像个高科技泡泡枪——射出的灵能子弹飞行速度缓慢得如同漂浮的肥皂泡，就算是散步的老奶奶也能轻松躲开。即便如此，那微乎其微的后坐力对颤抖的机械臂而言仍是艰巨挑战。</TW_PsyCast_SMG.description>
+  
+  <TW_PsyCast_SMG.tools.grip.label>grip</TW_PsyCast_SMG.tools.grip.label>
+  
+  <TW_PsyCast_SMG.tools.barrel.label>barrel</TW_PsyCast_SMG.tools.barrel.label>
+  
+  <TW_PsyCast_SMG.verbs.Verb_Shoot.label>PsyCast SMG</TW_PsyCast_SMG.verbs.Verb_Shoot.label>
+  
+</LanguageData>

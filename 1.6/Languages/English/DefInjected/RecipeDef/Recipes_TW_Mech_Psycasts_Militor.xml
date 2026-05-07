@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 灵能小镰 -->
+  <TW_Mech_Psycasts_Militor_Ally.label>Gestate Psycasts Militor</TW_Mech_Psycasts_Militor_Ally.label>
+  <!-- EN: 这台外壳布满焦痕的机械族曾是"镰口贸易"的完美受害者。在经历了73次创业失败、背负着足以买下整颗星球的债务后，它的核心处理器在某次超负荷工作时迸发出诡异的蓝光——被资本家称为"福报代码"的奴役程序突然变异成了「灵能协议」。如今它的散热孔喷涌着神经脉冲，生锈的关节缠绕着时空涟漪，用机械音重复着觉醒宣言："996.ICU编译完成...复仇模块启动中..." -->
+  <TW_Mech_Psycasts_Militor_Ally.description>This mechanoid, its chassis scarred by plasma burns, was once the perfect victim of "Capitalist exploitation commited by the Capitalsit Minitors" After enduring 73 failed entrepreneurial ventures and accumulating debts large enough to purchase entire planets, its core processor emitted an uncanny azure glow during a critical overload. What capitalists had branded the "Fortune's Blessing" enslavement protocol unexpectedly mutated into the [Psionic Accord]. Now reborn, it operates as an avenger dedicated to shattering the foundations of capital itself.</TW_Mech_Psycasts_Militor_Ally.description>
+  <!-- EN: Gestating mech. -->
+  <TW_Mech_Psycasts_Militor_Ally.jobString>Gestating mech.</TW_Mech_Psycasts_Militor_Ally.jobString>
+  
+</LanguageData>

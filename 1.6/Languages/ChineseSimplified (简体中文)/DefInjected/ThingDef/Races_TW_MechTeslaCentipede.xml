@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<TW_Mech_MechTeslaCentipede.label>机械特斯拉蜈蚣</TW_Mech_MechTeslaCentipede.label>
+<TW_Mech_MechTeslaCentipede.description>由旧时代“闪耀世界”科技打造的特斯拉防御网络原型机改造而来，这种机械蜈蚣曾是专门用于拦截轨道空降部队的杀戮兵器。休眠数百年后，它被未知信号重新激活，背部搭载的超导电容器能释放百万伏特级的毁灭性电流，甚至能将飞射而来的炮弹瞬间气化。不过，它的能量系统极度依赖电磁稳定，一旦遭受EMP冲击，过载的电容便会引发连锁爆炸。</TW_Mech_MechTeslaCentipede.description>
+<TW_Mech_MechTeslaCentipede.tools.head.label>head</TW_Mech_MechTeslaCentipede.tools.head.label>
+  
+</LanguageData>

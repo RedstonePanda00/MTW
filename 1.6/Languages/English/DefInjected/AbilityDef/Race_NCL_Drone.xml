@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<NCL_Dinergate_SpawnDrone.label>Dinergate Drone Support</NCL_Dinergate_SpawnDrone.label>
+<NCL_Dinergate_SpawnDrone.description>Deploy combat drones</NCL_Dinergate_SpawnDrone.description>
+
+<NCL_Scutiger_SpawnDrone.label>Shieldbearer Drone Support</NCL_Scutiger_SpawnDrone.label>
+<NCL_Scutiger_SpawnDrone.description>Deploy shield drones</NCL_Scutiger_SpawnDrone.description>
+
+  
+</LanguageData>

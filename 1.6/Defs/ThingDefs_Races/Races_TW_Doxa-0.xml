@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  
+    <ThingDef Name="TWMechDoxa" ParentName="SuperHeavyMechanoid">
+      <defName>TW_Mech_Doxa</defName>
+      <label>Doxa</label>
+      <description>Doxa is among the most tactically sophisticated mechanoids. Originally based on arachnid predators, it was rebuilt into an autonomous titan-class fire control nexus. Designed not for quick elimination but for gradual paralysis through sustained suppression and battlefield management. Its deployment signals regional decisive engagements.
+
+Doxa advances slowly with rhythmic cadence. When anchored in Artillery Lock mode, it deploys third-segment rocket arrays for continuous shield-penetrating bombardment. Sacrificing mobility, it becomes a semi-permanent firebase suppressing enemy concentrations.
+
+Its deadliest feature: periodically releasing Shellsplitter - micro-units with erratic trajectories that explode terminally, disrupting formations. These are tactical disruptors, not direct damage dealers.
+
+Doxa's neural core creates intelligent tactical networks through real-time fire distribution and target prioritization. Unchecked deployment risks dismantling entire defensive lines and losing battlefield initiative.
+
+Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to neutralize it promptly leads to colony's operational death.</description>
+      <race>
+        <body>Doxa0Body</body>
+        <baseBodySize>4</baseBodySize>
+		<baseHealthScale>10</baseHealthScale>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+        </lifeStageAges>
+        <detritusLeavings>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>3</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>17</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>1</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+        </detritusLeavings>
+	<thinkTreeMain>DoxaThinkTreeMain</thinkTreeMain>
+      </race>
+      <tools>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>88</power>
+          <cooldownTime>2.6</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        </li>
+      </tools>
+      <statBases>
+      <MarketValue>30000</MarketValue>
+      <MoveSpeed>1</MoveSpeed>
+      <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
+	    <ArmorRating_Heat>2</ArmorRating_Heat>
+	    <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+	    <EMPResistance>0.5</EMPResistance>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">50</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+      </statBases>
+	  <comps>
+  <li Class="CompProperties_AutoMechSpawner" />
+      <li Class="CompProperties_MechCarrier">
+        <spawnPawnKind>TW_Mech_Shellsplitter_Spider</spawnPawnKind>
+        <fixedIngredient>Uranium</fixedIngredient>
+        <costPerPawn>50</costPerPawn>
+        <startingIngredientCount>5000</startingIngredientCount>
+        <maxIngredientCount>5000</maxIngredientCount>
+        <spawnEffecter>WarqueenWarUrchinsSpawned</spawnEffecter>
+        <spawnedMechEffecter>WarUrchinSpawned</spawnedMechEffecter>
+        <attachSpawnedEffecter>true</attachSpawnedEffecter>
+        <attachSpawnedMechEffecter>true</attachSpawnedMechEffecter>
+		<cooldownTicks>450</cooldownTicks>
+		<maxPawnsToSpawn>5</maxPawnsToSpawn>
+      </li>
+	  <li Class="NCL.CompProperties_AllDead">
+					<toggleLabelKey>NCL.KillAllSplitterSpider</toggleLabelKey>
+					<toggleDescKey>NCL.KillAllSplitterSpiderDesc</toggleDescKey>
+					<toggleIconPath>ModIcon/KillAllSplitterSpider</toggleIconPath>
+					<unableKey>NCL.CanNotKillSplitterSpidern</unableKey>
+					<mechanoidToKill>TW_Mech_Shellsplitter_Spider</mechanoidToKill>
+				</li>
+    <li Class="NCL.CompProperties_MechanoidShield">
+    </li>
+    </comps>
+      <killedLeavingsPlayerHostile>
+        <TW_DoxaTacticalCore>1</TW_DoxaTacticalCore>
+      </killedLeavingsPlayerHostile>
+	<butcherProducts>
+      <Steel>800</Steel>
+      <Plasteel>200</Plasteel>
+	  <Uranium>600</Uranium>
+	  <GravlitePanel MayRequire="Ludeon.RimWorld.Odyssey">150</GravlitePanel>
+    </butcherProducts>
+    </ThingDef>
+    
+    <PawnKindDef Name="TWMechDoxaKind" ParentName="HeavyMechanoidKind">
+      <defName>TW_Mech_Doxa_Kind</defName>
+      <label>Doxa</label>
+      <race>TW_Mech_Doxa</race>
+      <combatPower>500</combatPower>
+      <maxPerGroup>1</maxPerGroup>
+      <isBoss>true</isBoss>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Doxa</texPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <maskPath>Races/Doxa_C</maskPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/JXGTAncient</texPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <maskPath>Races/Doxa_C</maskPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>      
+      <weaponTags>
+        <li>TW_Antiparticle_Rail_Mortar</li>
+      </weaponTags>
+	  <skipResistant>true</skipResistant>
+    </PawnKindDef>
+	
+	    <ThingDef ParentName="LightMechanoid">
+      <defName>TW_Mech_Shellsplitter_Spider</defName>
+      <label>Shellsplitter</label>
+      <description>Short-range assault units spawned from Doxa-series incubation systems. Lightweight exoskeletons with high-frequency vibration materials enable rapid slashing attacks effective at infantry suppression and formation disruption.
+
+Unlike most expendable mechanoids, Shellsplitter Spiders function as "engage-and-detonate" frontline disruptors. They deliver high-frequency melee strikes until structural failure triggers localized fragmentation explosions - damaging electronics while causing area-denial effects.
+
+Typically deployed in swarms via rapid batch production, they execute infiltration, area denial, and tactical self-destruction missions with cold determination - fulfilling tactical purpose through approach, shred, and detonation.</description>
+      <statBases>
+        <MoveSpeed>6</MoveSpeed>
+      </statBases>
+    <tools>
+      <li>
+        <label>left blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>19</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+      <race>
+      <body>Scyther</body>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_WarUrchin_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_WarUrchin_Death</soundDeath>
+            <soundCall>Pawn_Mech_WarUrchin_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_WarUrchin_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_WarUrchin_Death</soundDeath>
+            <soundCall>Pawn_Mech_WarUrchin_Call</soundCall>
+          </li>
+        </lifeStageAges>
+        <thinkTreeConstant>WarUrchinConstant</thinkTreeConstant>
+        <baseHealthScale>1.5</baseHealthScale>
+      </race>
+      <comps Inherit="False">
+        <li Class="CompProperties_CanBeDormant" />
+        <li Class="CompProperties_WakeUpDormant">
+          <wakeUpOnDamage>true</wakeUpOnDamage>
+          <wakeUpCheckRadius>30</wakeUpCheckRadius>
+          <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+        </li>
+        <li Class="CompProperties_MechPowerCell">
+          <totalPowerTicks>15000</totalPowerTicks>
+        </li>
+		<li Class="CompProperties_Explosive">
+        <wickTicks>0</wickTicks>
+        <explosiveRadius>5.5</explosiveRadius>
+        <explodeOnKilled>true</explodeOnKilled>
+        <explosiveDamageType>TW_Antiparticle_explosion</explosiveDamageType>
+        <propagationSpeed>0.5</propagationSpeed>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+        <extraInspectStringKey>MechStunPulseWarning</extraInspectStringKey>
+      </li>
+      </comps>
+	  <butcherProducts>
+	  <Uranium>10</Uranium>
+    </butcherProducts>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="LightMechanoidKind">
+      <defName>TW_Mech_Shellsplitter_Spider</defName>
+      <label>Shellsplitter</label>
+      <labelPlural>裂壳蛛</labelPlural>
+      <race>TW_Mech_Shellsplitter_Spider</race>
+      <allowInMechClusters>false</allowInMechClusters>
+      <forceNoDeathNotification>true</forceNoDeathNotification>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Shellsplitter_Spider</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>3</drawSize>
+            <shadowData>
+              <volume>(1, 1, 1)</volume>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Ancient_Shellsplitter_SpiderAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>3</drawSize>
+            <shadowData>
+              <volume>(1, 1, 1)</volume>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>      
+      <weaponTags>
+        <li>MeleeWeapon_Shellsplitter</li>
+      </weaponTags>
+    </PawnKindDef>
+  
+</Defs>

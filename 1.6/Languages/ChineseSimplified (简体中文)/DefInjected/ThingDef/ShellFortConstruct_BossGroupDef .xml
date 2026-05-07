@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Omen_of_Shellfort.label>坚城信标</Omen_of_Shellfort.label>
+<Omen_of_Shellfort.description>一种用于引导泰坦级单位“壳堡构体”降临的高强度信号装置。激活后将向轨道发送专属指令，使壳堡构体以空投形式进入战场，并配合机械族主力部队发动联合进攻。其投送冲击将造成局部地形破坏，并伴随全图导弹压制。信号激活后装置将自毁，仅可使用一次。成功击败壳堡构体可获取其战术核心，解锁对应技术路径。</Omen_of_Shellfort.description>
+<Omen_of_Shellfort.comps.CompUsable.useLabel>Summon Fortified Shell Construct</Omen_of_Shellfort.comps.CompUsable.useLabel>
+
+</LanguageData>

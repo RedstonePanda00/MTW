@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+    <ThingDef Name="NCL_MissileProjectile" ParentName="BaseBullet" Abstract="True">
+    <thingClass>NCLProjectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
+    <graphicData>
+      <texPath>Projectiles/AutoChasingMissile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <drawOffscreen>true</drawOffscreen>
+  </ThingDef>
+  
+
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+<Nyar_RandomTurrent_BulletA.label>弹子A</Nyar_RandomTurrent_BulletA.label>
+<Nyar_RandomTurrent_BulletB.label>弹子B</Nyar_RandomTurrent_BulletB.label>
+<Nyar_RandomTurrent_BulletC.label>弹子C</Nyar_RandomTurrent_BulletC.label>
+<Nyar_RandomTurrent_BulletD.label>弹子D</Nyar_RandomTurrent_BulletD.label>
+<Nyar_RandomTurrent_BulletE.label>弹子E</Nyar_RandomTurrent_BulletE.label>
+<Nyar_RandomTurrent_BulletF.label>弹子F</Nyar_RandomTurrent_BulletF.label>
+
+<Nyar_RandomTurrent_Gun.label>蠕虫追踪弹</Nyar_RandomTurrent_Gun.label>
+<Nyar_RandomTurrent_Gun.description>A simple automatic gun made to be mounted on a turret.</Nyar_RandomTurrent_Gun.description>
+<Nyar_RandomTurrent_Gun.verbs.Verb_ShootRandomBullet.label>Worm Tracking Cannon</Nyar_RandomTurrent_Gun.verbs.Verb_ShootRandomBullet.label>
+
+  
+</LanguageData>

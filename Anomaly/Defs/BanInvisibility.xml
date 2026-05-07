@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef>
+    <defName>DisruptorFlash</defName>
+    <label>disruptor flash</label>
+    <hediffClass>NCL.Hediff_DisruptorFlash</hediffClass>
+    <description>The initial psychic burst from a disruptor flare has left this creature dazed.</description>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li/>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800</disappearsAfterTicks> <!-- 30 seconds -->
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+  
+</Defs>

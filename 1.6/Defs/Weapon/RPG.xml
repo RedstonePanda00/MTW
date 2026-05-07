@@ -1,0 +1,574 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>TW_Guided_Rocket_Launcher_HE</defName>
+    <label>HE Guided Rocket Launcher</label>
+    <description>Fires target-tracking high-explosive warheads for precision demolition.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tickerType>Normal</tickerType>
+    <techLevel>Spacer</techLevel>
+    <smeltable>false</smeltable>
+	<uiIconPath>Weapons/TW_Guided_Rocket_Launcher_HE</uiIconPath>
+    <graphicData>
+      <texPath>Weapons/TW_Guided_Rocket_Launcher_HE</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>8</Mass>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TW_Guided_Rocket_Launcher_HE</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>TW_HE_Guided_Missile</defaultProjectile>
+        <forcedMissRadius>0.1</forcedMissRadius>
+        <warmupTime>3.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+        <range>35</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <tickerType>Normal</tickerType>
+    <comps Inherit="false">
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="NCL.CompPropertiesWeaponSwitch">
+        <sharedComps>
+          <li>RimWorld.CompProperties_Styleable</li>
+          <li>RimWorld.CompStyleable</li>
+          <li>RimWorld.CompProperties_Biocodable</li>
+          <li>RimWorld.CompBiocodable</li>
+          <li>RimWorld.CompQuality</li>
+          <li>RimWorld.CompProperties_Art</li>
+          <li>RimWorld.CompArt</li>
+          <li MayRequire="Mlie.YayosCombat3">RimWorld.CompReloadable</li>
+        </sharedComps>
+        <transformData>
+          <li>
+            <label>Switch to EMP</label>
+            <description>Switch to EMP</description>
+            <thingDef>TW_Guided_Rocket_Launcher_EMP</thingDef>
+            <transformCooldown>30</transformCooldown>
+            <soundOnTransform>Interact_Rifle</soundOnTransform>
+            <iconPath>ModIcon/TW_Guided_Rocket_Launcher_EMP</iconPath>
+            <iconSize>1</iconSize>
+          </li>
+        </transformData>
+      </li>
+    </comps>
+        <modExtensions>
+          <li Class="VEF.Things.ThingDefExtension">
+            <weaponCarryDrawOffsets>
+              <south>
+                <drawOffset>(-0.30,0,0)</drawOffset>
+              </south>
+            </weaponCarryDrawOffsets>
+          </li>
+        </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>TW_Guided_Rocket_Launcher_EMP</defName>
+    <label>EMP Guided Rocket Launcher</label>
+    <description>Fires target-tracking EMP warheads for precision electronic suppression.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tickerType>Normal</tickerType>
+    <techLevel>Spacer</techLevel>
+    <smeltable>false</smeltable>
+	<uiIconPath>Weapons/TW_Guided_Rocket_Launcher_EMP</uiIconPath>
+    <graphicData>
+      <texPath>Weapons/TW_Guided_Rocket_Launcher_EMP</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>8</Mass>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TW_Guided_Rocket_Launcher_EMP</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>TW_EMP_Guided_Missile</defaultProjectile>
+        <forcedMissRadius>0.1</forcedMissRadius>
+        <warmupTime>3.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+        <range>35</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <tickerType>Normal</tickerType>
+    <comps Inherit="false">
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="NCL.CompPropertiesWeaponSwitch">
+        <sharedComps>
+          <li>RimWorld.CompProperties_Styleable</li>
+          <li>RimWorld.CompStyleable</li>
+          <li>RimWorld.CompProperties_Biocodable</li>
+          <li>RimWorld.CompBiocodable</li>
+          <li>RimWorld.CompQuality</li>
+          <li>RimWorld.CompProperties_Art</li>
+          <li>RimWorld.CompArt</li>
+          <li MayRequire="Mlie.YayosCombat3">RimWorld.CompReloadable</li>
+        </sharedComps>
+        <transformData>
+          <li>
+            <label>Switch to HE</label>
+            <description>Switch to HE</description>
+            <thingDef>TW_Guided_Rocket_Launcher_HE</thingDef>
+            <transformCooldown>30</transformCooldown>
+            <soundOnTransform>Interact_Rifle</soundOnTransform>
+            <iconPath>ModIcon/TW_Guided_Rocket_Launcher_HE</iconPath>
+            <iconSize>1</iconSize>
+          </li>
+        </transformData>
+      </li>
+    </comps>
+        <modExtensions>
+          <li Class="VEF.Things.ThingDefExtension">
+            <weaponCarryDrawOffsets>
+              <south>
+                <drawOffset>(-0.30,0,0)</drawOffset>
+              </south>
+            </weaponCarryDrawOffsets>
+          </li>
+        </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>TW_Quad_Guided_Rocket_Launcher_HE</defName>
+    <label>Quad HE Guided Rocket Launcher</label>
+    <description>Four-tube launcher firing target-tracking high-explosive warheads for saturation demolition.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tickerType>Normal</tickerType>
+    <techLevel>Spacer</techLevel>
+    <smeltable>false</smeltable>
+	<uiIconPath>Weapons/TW_Quad_Guided_Rocket_Launcher_HE</uiIconPath>
+    <graphicData>
+      <texPath>Weapons/TW_Quad_Guided_Rocket_Launcher_HE</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>8</Mass>
+      <RangedWeapon_Cooldown>5.5</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TW_Quad_Guided_Rocket_Launcher_HE</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>TW_HE_Guided_Missile</defaultProjectile>
+        <forcedMissRadius>0.1</forcedMissRadius>
+        <warmupTime>3.5</warmupTime>
+      <ticksBetweenBurstShots>44</ticksBetweenBurstShots>
+        <ai_AvoidFriendlyFireRadius>2</ai_AvoidFriendlyFireRadius>
+        <range>36</range>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <tickerType>Normal</tickerType>
+    <comps Inherit="false">
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="NCL.CompPropertiesWeaponSwitch">
+        <sharedComps>
+          <li>RimWorld.CompProperties_Styleable</li>
+          <li>RimWorld.CompStyleable</li>
+          <li>RimWorld.CompProperties_Biocodable</li>
+          <li>RimWorld.CompBiocodable</li>
+          <li>RimWorld.CompQuality</li>
+          <li>RimWorld.CompProperties_Art</li>
+          <li>RimWorld.CompArt</li>
+          <li MayRequire="Mlie.YayosCombat3">RimWorld.CompReloadable</li>
+        </sharedComps>
+        <transformData>
+          <li>
+            <label>Switch to EMP</label>
+            <description>Switch to EMP</description>
+            <thingDef>TW_Quad_Guided_Rocket_Launcher_EMP</thingDef>
+            <transformCooldown>30</transformCooldown>
+            <soundOnTransform>Interact_Rifle</soundOnTransform>
+            <iconPath>ModIcon/TW_Guided_Rocket_Launcher_EMP</iconPath>
+            <iconSize>1</iconSize>
+          </li>
+        </transformData>
+      </li>
+    </comps>
+        <modExtensions>
+		<li Class="VEF.Things.ThingDefExtension">
+			<weaponCarryDrawOffsets>
+				<north>
+					<drawOffset>(1.0, 0.0, -0.7)</drawOffset>
+				</north>
+				<east>
+					<drawOffset>(-1.0, 0.0, -0.7)</drawOffset>
+				</east>
+				<south>
+					<drawOffset>(-1.0, 0.0, -0.7)</drawOffset>
+				</south>
+				<west>
+					<drawOffset>(1.0, 0.0, -0.7)</drawOffset>
+				</west>
+			</weaponCarryDrawOffsets>
+		</li>
+        </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>TW_Quad_Guided_Rocket_Launcher_EMP</defName>
+    <label>Quad EMP Guided Rocket Launcher</label>
+    <description>Four-tube launcher firing target-tracking EMP warheads for saturation electronic suppression.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tickerType>Normal</tickerType>
+    <techLevel>Spacer</techLevel>
+    <smeltable>false</smeltable>
+	<uiIconPath>Weapons/TW_Quad_Guided_Rocket_Launcher_EMP</uiIconPath>
+    <graphicData>
+      <texPath>Weapons/TW_Quad_Guided_Rocket_Launcher_EMP</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>8</Mass>
+      <RangedWeapon_Cooldown>5.5</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TW_Quad_Guided_Rocket_Launcher_EMP</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>TW_EMP_Guided_Missile</defaultProjectile>
+      <ticksBetweenBurstShots>44</ticksBetweenBurstShots>
+        <forcedMissRadius>0.1</forcedMissRadius>
+        <warmupTime>3.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>2</ai_AvoidFriendlyFireRadius>
+        <range>36</range>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <tickerType>Normal</tickerType>
+    <comps Inherit="false">
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="NCL.CompPropertiesWeaponSwitch">
+        <sharedComps>
+          <li>RimWorld.CompProperties_Styleable</li>
+          <li>RimWorld.CompStyleable</li>
+          <li>RimWorld.CompProperties_Biocodable</li>
+          <li>RimWorld.CompBiocodable</li>
+          <li>RimWorld.CompQuality</li>
+          <li>RimWorld.CompProperties_Art</li>
+          <li>RimWorld.CompArt</li>
+          <li MayRequire="Mlie.YayosCombat3">RimWorld.CompReloadable</li>
+        </sharedComps>
+        <transformData>
+          <li>
+            <label>Switch to HE</label>
+            <description>Switch to HE</description>
+            <thingDef>TW_Quad_Guided_Rocket_Launcher_HE</thingDef>
+            <transformCooldown>30</transformCooldown>
+            <soundOnTransform>Interact_Rifle</soundOnTransform>
+            <iconPath>ModIcon/TW_Guided_Rocket_Launcher_HE</iconPath>
+            <iconSize>1</iconSize>
+          </li>
+        </transformData>
+      </li>
+    </comps>
+        <modExtensions>
+		<li Class="VEF.Things.ThingDefExtension">
+			<weaponCarryDrawOffsets>
+				<north>
+					<drawOffset>(1.0, 0.0, -0.7)</drawOffset>
+				</north>
+				<east>
+					<drawOffset>(-1.0, 0.0, -0.7)</drawOffset>
+				</east>
+				<south>
+					<drawOffset>(-1.0, 0.0, -0.7)</drawOffset>
+				</south>
+				<west>
+					<drawOffset>(1.0, 0.0, -0.7)</drawOffset>
+				</west>
+			</weaponCarryDrawOffsets>
+		</li>
+        </modExtensions>
+  </ThingDef>
+  
+  
+    <ThingDef ParentName="BaseBullet">
+    <defName>TW_HE_Guided_Missile</defName>
+    <label>HE-Guided Missile</label>
+    <thingClass>TY_Mora_Gene_B.com.Projectile_BezierTrackingMissile</thingClass>
+    <graphicData>
+      <texPath>Projectiles/HE_Guided_Missile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+	  <damageAmountBase>40</damageAmountBase>
+	  <armorPenetrationBase>0.8</armorPenetrationBase>
+	  <stoppingPower>1.5</stoppingPower>
+      <explosionRadius>3.8</explosionRadius>
+	  <flyOverhead>true</flyOverhead>
+      <speed>20</speed>
+    </projectile>
+  <comps>
+    <li Class="TY_Mora_Gene_B.com.BezierMissileProperties">
+      <maxTrackingRadius>35</maxTrackingRadius>
+      <maxTurnAngle>30</maxTurnAngle>
+      <turnRatePerTick>1.5</turnRatePerTick>
+      <canSwitchTargets>false</canSwitchTargets>
+      <targetSwitchChance>1</targetSwitchChance>
+      <minTargetSwitchDistance>6</minTargetSwitchDistance>
+      <agilePhaseStart>0.25</agilePhaseStart>
+      <agilePhaseEnd>0.85</agilePhaseEnd>
+      <heightMultiplier>1.2</heightMultiplier>
+      <trajectoryType>Linear</trajectoryType>
+      <searchRadius>45</searchRadius>
+      <trajectoryAmplitude>3</trajectoryAmplitude>
+      <trajectoryFrequency>1.2</trajectoryFrequency>
+      <spiralRadius>2.5</spiralRadius>
+      <spiralTightness>0.6</spiralTightness>
+      <tailWidth>1.4</tailWidth>
+      <tailLength>3.5</tailLength>
+      <smokeChance>0.8</smokeChance>
+      <flecksPerBurst>4</flecksPerBurst>
+      <fleckInterval>2</fleckInterval>
+    </li>
+    <li Class="NCL.CompProperties_FragmentedExplosive">
+      <explosionRadius>5</explosionRadius>
+      <fragmentCount>6</fragmentCount> 
+      <guaranteedCenterFraction>0.2</guaranteedCenterFraction> 
+      <fragmentProjectileDef>Bullet_NCL_Fragments</fragmentProjectileDef>
+      <fireGlowSize>2.5</fireGlowSize>
+    </li>
+  </comps>
+		<modExtensions>
+			<li Class="PenetrateThickRoof.PenetrateThickRoofExtension" />
+		</modExtensions>
+  </ThingDef>
+  
+      <ThingDef ParentName="BaseBullet">
+    <defName>TW_EMP_Guided_Missile</defName>
+    <label>EMP-Guided Missile</label>
+    <thingClass>TY_Mora_Gene_B.com.Projectile_BezierTrackingMissile</thingClass>
+    <graphicData>
+      <texPath>Projectiles/EMP_Guided_Missile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>EMP</damageDef>
+      <explosionRadius>2.8</explosionRadius>
+	  <flyOverhead>true</flyOverhead>
+      <speed>20</speed>
+    </projectile>
+  <comps>
+    <li Class="TY_Mora_Gene_B.com.BezierMissileProperties">
+      <maxTrackingRadius>35</maxTrackingRadius>
+      <maxTurnAngle>30</maxTurnAngle>
+      <turnRatePerTick>1.5</turnRatePerTick>
+      <canSwitchTargets>false</canSwitchTargets>
+      <targetSwitchChance>1</targetSwitchChance>
+      <minTargetSwitchDistance>6</minTargetSwitchDistance>
+      <agilePhaseStart>0.25</agilePhaseStart>
+      <agilePhaseEnd>0.85</agilePhaseEnd>
+      <heightMultiplier>1.2</heightMultiplier>
+      <trajectoryType>Linear</trajectoryType>
+      <searchRadius>45</searchRadius>
+      <trajectoryAmplitude>3</trajectoryAmplitude>
+      <trajectoryFrequency>1.2</trajectoryFrequency>
+      <spiralRadius>2.5</spiralRadius>
+      <spiralTightness>0.6</spiralTightness>
+      <tailWidth>1.4</tailWidth>
+      <tailLength>3.5</tailLength>
+      <smokeChance>0.8</smokeChance>
+      <flecksPerBurst>4</flecksPerBurst>
+      <fleckInterval>2</fleckInterval>
+    </li>
+    <li Class="NCL.CompProperties_FragmentedExplosive">
+      <explosionRadius>5</explosionRadius>
+      <fragmentCount>6</fragmentCount> 
+      <guaranteedCenterFraction>0.2</guaranteedCenterFraction> 
+      <fragmentProjectileDef>Bullet_NCL_Fragments</fragmentProjectileDef>
+      <fireGlowSize>2.5</fireGlowSize>
+    </li>
+  </comps>
+		<modExtensions>
+			<li Class="PenetrateThickRoof.PenetrateThickRoofExtension" />
+		</modExtensions>
+  </ThingDef>
+
+  </Defs>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: PsyCast SMG Bullet -->
+  <Bullet_PsyCast_SMG.label>PsyCast SMG Bullet</Bullet_PsyCast_SMG.label>
+  
+  <!-- EN: 灵能冲锋枪 -->
+  <TW_PsyCast_SMG.label>PsyCast SMG</TW_PsyCast_SMG.label>
+  <!-- EN: 这把特制灵能冲锋枪是专为小镰打造的装备。长期996工作让这台机械体早早患上了严重的肩周炎，再也无法像同类那样自如使用传统枪械。虽然挂着冲锋枪的名号，实则更像个高科技泡泡枪——射出的灵能子弹飞行速度缓慢得如同漂浮的肥皂泡，就算是散步的老奶奶也能轻松躲开。即便如此，那微乎其微的后坐力对颤抖的机械臂而言仍是艰巨挑战。 -->
+  <TW_PsyCast_SMG.description>This custom psy-submachine gun was engineered exclusively for Minitor. Chronic 996 work regimes gave this mechanoid severe scapulohumeral periarthritis decades ahead of schedule, permanently disabling its ability to handle conventional firearms like its counterparts. Despite its submachine gun designation, it functions more like a high-tech bubble blaster - firing psy-bullets that travel at speeds resembling drifting soap bubbles, slow enough for leisurely strolling elders to evade effortlessly. Yet even its negligible recoil presents formidable challenges for the unit's tremor-plagued manipulator arms.</TW_PsyCast_SMG.description>
+  <!-- EN: grip -->
+  <TW_PsyCast_SMG.tools.grip.label>grip</TW_PsyCast_SMG.tools.grip.label>
+  <!-- EN: barrel -->
+  <TW_PsyCast_SMG.tools.barrel.label>barrel</TW_PsyCast_SMG.tools.barrel.label>
+  <!-- EN: 灵能冲锋枪 -->
+  <TW_PsyCast_SMG.verbs.Verb_Shoot.label>PsyCast SMG</TW_PsyCast_SMG.verbs.Verb_Shoot.label>
+  
+</LanguageData>

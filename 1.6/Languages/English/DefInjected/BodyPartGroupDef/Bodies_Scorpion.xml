@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: left front power leg -->
+  <LeftFrontPowerLeg.label>left front power leg</LeftFrontPowerLeg.label>
+  <!-- EN: power leg -->
+  <LeftFrontPowerLeg.labelShort>power leg</LeftFrontPowerLeg.labelShort>
+  
+  <!-- EN: left hind power leg -->
+  <LeftHindPowerLeg.label>left hind power leg</LeftHindPowerLeg.label>
+  <!-- EN: power leg -->
+  <LeftHindPowerLeg.labelShort>power leg</LeftHindPowerLeg.labelShort>
+  
+  <!-- EN: right front power leg -->
+  <RightFrontPowerLeg.label>right front power leg</RightFrontPowerLeg.label>
+  <!-- EN: power leg -->
+  <RightFrontPowerLeg.labelShort>power leg</RightFrontPowerLeg.labelShort>
+  
+  <!-- EN: right hind power leg -->
+  <RightHindPowerLeg.label>right hind power leg</RightHindPowerLeg.label>
+  <!-- EN: power leg -->
+  <RightHindPowerLeg.labelShort>power leg</RightHindPowerLeg.labelShort>
+  
+</LanguageData>

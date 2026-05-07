@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <NCL_Mech_Mantis.label>Gestate Mantis</NCL_Mech_Mantis.label>
+  <NCL_Mech_Mantis.description>Unit File: NCL-06 "Mantis"
+Origin: NCL Autonomous Mechanoid Series VI
+This sixth-generation tactical unit, fusing a humanoid-female torso with a wolf-spider chassis, specializes in close-quarters assassination and shock infiltration. Its heavy combat armor integrates dynamic self-repair systems to regenerate defensive layers during isolated engagements, yet energy-redistribution protocols render it critically vulnerable under concentrated fire. Hydraulic actuators enable short-range phase-leaps for instant gap closure or tactical withdrawal. The signature Binary Veil System deploys smokescreen barriers while launching two infrared-guided Gyro-Blades—detonating on impact with EMP bursts and directional shrapnel to cripple electronics and eviscerate organic targets. Terminal protocol "Heartfire" triggers core meltdown, igniting the unit in a catastrophic blast to annihilate high-threat hostiles.</NCL_Mech_Mantis.description>
+  <NCL_Mech_Mantis.jobString>Gestating mech.</NCL_Mech_Mantis.jobString>
+
+  
+</LanguageData>

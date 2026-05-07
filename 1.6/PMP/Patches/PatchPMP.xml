@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Probe -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Probe"]/statBases</xpath>
+        <value>
+            <statBases>
+                <MoveSpeed>10</MoveSpeed>
+                <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+                <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+                <WorkSpeedGlobal>2.0</WorkSpeedGlobal>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Probe"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>200</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- sentry -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentry"]/statBases</xpath>
+        <value>
+            <statBases>
+                <BandwidthCost>2</BandwidthCost>
+                <MoveSpeed>10</MoveSpeed>
+                <ArmorRating_Blunt>1.20</ArmorRating_Blunt>
+                <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Sentry"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>400</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Energizer -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Energizer"]/statBases</xpath>
+        <value>
+            <statBases>
+                <BandwidthCost>2</BandwidthCost>
+                <MoveSpeed>10</MoveSpeed>
+                <ArmorRating_Blunt>1.50</ArmorRating_Blunt>
+                <ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+                <IncomingDamageFactor>0.5</IncomingDamageFactor>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Energizer"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>400</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Fellow Probe -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_FellowProbe"]/statBases</xpath>
+        <value>
+            <statBases>
+                <MoveSpeed>10</MoveSpeed>
+                <ArmorRating_Blunt>1.20</ArmorRating_Blunt>
+                <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+                <FoodPoisonChance>0</FoodPoisonChance>
+                <WorkSpeedGlobal>3.0</WorkSpeedGlobal>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_FellowProbe"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>400</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Servitor Drone -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Servitor"]/statBases</xpath>
+        <value>
+            <statBases>
+                <MoveSpeed>10</MoveSpeed>
+                <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+                <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Servitor"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>200</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Legionnaire -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Legionnaire"]/statBases</xpath>
+        <value>
+            <statBases>
+                <BandwidthCost>3</BandwidthCost>
+                <MoveSpeed>6.5</MoveSpeed>
+                <ArmorRating_Blunt>2.00</ArmorRating_Blunt>
+                <ArmorRating_Sharp>2.00</ArmorRating_Sharp>
+                <IncomingDamageFactor>0.1</IncomingDamageFactor>
+                <RangedCooldownFactor>0.5</RangedCooldownFactor>
+                <AimingDelayFactor>0.5</AimingDelayFactor>
+                <ShootingAccuracyPawn>12</ShootingAccuracyPawn>
+                <ShootingAccuracyFactor_Medium>1.5</ShootingAccuracyFactor_Medium>
+                <ShootingAccuracyFactor_Long>1.5</ShootingAccuracyFactor_Long>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Legionnaire"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>1000</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Legionnaire"]/comps/li[@Class="ProtossMech.CompProperties_PurifierReconstruct"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_PurifierReconstruct">
+                <cooldownTicks>1800</cooldownTicks>
+                <reconstructHediff>Hediff_Reconstruct</reconstructHediff>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Legionnaire"]/tools/li[label="left Energy Blade"]/power</xpath>
+        <value>
+            <power>32</power>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Legionnaire"]/tools/li[label="left Energy Blade"]/cooldownTime</xpath>
+        <value>
+            <cooldownTime>0.5</cooldownTime>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Legionnaire"]/tools/li[label="left Energy Blade"]/armorPenetration</xpath>
+        <value>
+            <armorPenetration>2.0</armorPenetration>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Legionnaire"]/tools/li[label="right Energy Blade"]/power</xpath>
+        <value>
+            <power>32</power>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Legionnaire"]/tools/li[label="right Energy Blade"]/cooldownTime</xpath>
+        <value>
+            <cooldownTime>0.5</cooldownTime>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Legionnaire"]/tools/li[label="right Energy Blade"]/armorPenetration</xpath>
+        <value>
+            <armorPenetration>2.0</armorPenetration>
+        </value>
+    </Operation>
+
+    <!-- Sentinel -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentinel"]/statBases</xpath>
+        <value>
+            <statBases>
+                <BandwidthCost>2</BandwidthCost>
+                <MoveSpeed>6.0</MoveSpeed>
+                <ArmorRating_Blunt>1.50</ArmorRating_Blunt>
+                <ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+                <IncomingDamageFactor>0.5</IncomingDamageFactor>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Sentinel"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>500</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Sentinel"]/comps/li[@Class="ProtossMech.CompProperties_PurifierReconstruct"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_PurifierReconstruct">
+                <cooldownTicks>1800</cooldownTicks>
+                <reconstructHediff>Hediff_Reconstruct</reconstructHediff>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentinel"]/tools/li[label="left Energy Blade"]/power</xpath>
+        <value>
+            <power>16</power>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentinel"]/tools/li[label="left Energy Blade"]/cooldownTime</xpath>
+        <value>
+            <cooldownTime>0.5</cooldownTime>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentinel"]/tools/li[label="left Energy Blade"]/armorPenetration</xpath>
+        <value>
+            <armorPenetration>1.5</armorPenetration>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentinel"]/tools/li[label="right Energy Blade"]/power</xpath>
+        <value>
+            <power>16</power>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentinel"]/tools/li[label="right Energy Blade"]/cooldownTime</xpath>
+        <value>
+            <cooldownTime>0.5</cooldownTime>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Sentinel"]/tools/li[label="right Energy Blade"]/armorPenetration</xpath>
+        <value>
+            <armorPenetration>1.5</armorPenetration>
+        </value>
+    </Operation>
+
+    <!-- Colossus Prototype -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_ColossusPrototype"]/statBases</xpath>
+        <value>
+            <statBases>
+                <MoveSpeed>12.6</MoveSpeed>
+                <BandwidthCost>6</BandwidthCost>
+                <ArmorRating_Blunt>2.00</ArmorRating_Blunt>
+                <ArmorRating_Sharp>2.00</ArmorRating_Sharp>
+                <IncomingDamageFactor>0.1</IncomingDamageFactor>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_ColossusPrototype"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>1000</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>5</maxDrawSize>
+                <HardenedShields>true</HardenedShields>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_ColossusPrototype"]/comps/li[@Class="ProtossMech.CompProperties_PurifierReconstruct"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_PurifierReconstruct">
+                <cooldownTicks>1800</cooldownTicks>
+                <reconstructHediff>Hediff_Reconstruct</reconstructHediff>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Purifier Immortal -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_PurifierImmortal"]/statBases</xpath>
+        <value>
+            <statBases>
+                <MoveSpeed>5</MoveSpeed>
+                <BandwidthCost>4</BandwidthCost>
+                <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+                <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                <IncomingDamageFactor>0.1</IncomingDamageFactor>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_PurifierImmortal"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>1000</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>3</maxDrawSize>
+                <HardenedShields>true</HardenedShields>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_PurifierImmortal"]/comps/li[@Class="ProtossMech.CompProperties_PurifierReconstruct"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_PurifierReconstruct">
+                <cooldownTicks>1800</cooldownTicks>
+                <reconstructHediff>Hediff_Reconstruct</reconstructHediff>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Disruptor -->
+     <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="PMP_Disruptor"]/statBases</xpath>
+        <value>
+            <statBases>
+                <MoveSpeed>10</MoveSpeed>
+                <BandwidthCost>4</BandwidthCost>
+                <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+                <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                <IncomingDamageFactor>0.1</IncomingDamageFactor>
+            </statBases>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>
+            Defs/ThingDef[defName="PMP_Disruptor"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+        <value>
+            <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                <energyMax>1000</energyMax>
+                <energyGainPerTick>0.5</energyGainPerTick>
+                <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                <minDrawSize>0</minDrawSize>
+                <maxDrawSize>2</maxDrawSize>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

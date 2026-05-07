@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<TW_Mech_Doxa.label>静巢构体</TW_Mech_Doxa.label>
+<TW_Mech_Doxa.description>静巢构体（Doxa-0） 是机械族中最具战术深度与火力协调能力的单位之一，其原型来自蛛形掠食者，却被机械族重构为一座自律运算的泰坦级战术火力中枢。它的设计目的并非快速歼敌，而是通过持续压制、火控锁定与战场管理，逐步令敌方陷入战术瘫痪。在整支机械军团中，Doxa-0 的部署通常意味着一场区域性的决战已悄然开始。
+	  
+
+行进中的 Doxa-0 缓慢、沉重，以几近仪式感的低频节奏在地表推进。然而，一旦其进入“架炮锁定”状态，它将主动固定于地面，解锁第三身节中的火箭阵列模块，对大片区域进行持续性的穿盾性饱和打击。在此模式下，Doxa-0 彻底抛弃机动性，转而成为一座半永久性的火力节点，压制敌方任何形式的集结或推进。</TW_Mech_Doxa.description>
+<TW_Mech_Doxa.jobString>Gestating mech.</TW_Mech_Doxa.jobString>
+
+  
+</LanguageData>

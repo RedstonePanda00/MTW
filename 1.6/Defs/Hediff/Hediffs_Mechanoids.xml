@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  
+  <HediffDef>
+    <defName>NCL_Mech_Ironbark_Hediff</defName>
+    <label>NCL: Ironbark</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<description>The Ironbark's honeycomb shock-absorbing layer and high-temperature regeneration cycle automatically fortify damaged areas upon taking a hit.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+	  <li Class="NCL.HediffCompProperties_MechAutoRecovery">
+        <tickMultiflier>180</tickMultiflier>
+        <healPoint>5</healPoint>
+      </li>
+	</comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<IncomingDamageFactor>0.80</IncomingDamageFactor>
+			<StaggerDurationFactor>0.5</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+    <modExtensions>
+        <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+
+    <HediffGiverSetDef>
+    <defName>NCL_Mech_Ironbark_Introduction</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>NCL_Mech_Ironbark_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+    <HediffDef>
+    <defName>NCL_Mech_Mantis_Hediff</defName>
+    <label>NCL：机械兰螳</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<description>1</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+	  <li Class="NCL.HediffCompProperties_MechAutoRecovery">
+        <tickMultiflier>180</tickMultiflier>
+        <healPoint>5</healPoint>
+      </li>
+	</comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<IncomingDamageFactor>0.80</IncomingDamageFactor>
+			<StaggerDurationFactor>0.5</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+		  <MeleeHitChance>+18</MeleeHitChance>
+		  <MeleeDodgeChance>+18</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+    <modExtensions>
+        <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+  
+  <HediffGiverSetDef>
+    <defName>NCL_Mech_Mantis_Introduction</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>NCL_Mech_Mantis_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+  
+  <HediffDef>
+    <defName>TW_Mech_Shell_Fortification_Hediff</defName>
+    <label>Total War: Fortified Shell</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<description>Total War: Fortified Shell</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+	  <li Class="NCL.HediffCompProperties_MechAutoRecovery">
+        <tickMultiflier>180</tickMultiflier>
+        <healPoint>10</healPoint>
+      </li>
+	</comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<StaggerDurationFactor>0</StaggerDurationFactor>
+    </statFactors>
+      </li>
+    </stages>
+      <modExtensions>
+        <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+  
+  <HediffGiverSetDef>
+    <defName>TW_Mech_Shell_Fortification_Introduction</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>TW_Mech_Shell_Fortification_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+    <HediffDef>
+    <defName>TW_Mech_Shell_Fortification_ShellBreaked_Hediff</defName>
+    <label>Total War: Shell Breached</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<description>Total War: Shell Breached</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+	  <li Class="NCL.HediffCompProperties_MechAutoRecovery">
+        <tickMultiflier>180</tickMultiflier>
+        <healPoint>10</healPoint>
+      </li>
+	</comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<VEF_VerbRangeFactor>1.25</VEF_VerbRangeFactor>
+			<RangedCooldownFactor>0.1</RangedCooldownFactor>
+			<AimingDelayFactor>0.1</AimingDelayFactor>
+        </statFactors>
+		<statOffsets>
+        </statOffsets>
+      </li>
+    </stages>
+    <modExtensions>
+        <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+  
+  <HediffGiverSetDef>
+    <defName>TW_Mech_Shell_Fortification_ShellBreaked</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>TW_Mech_Shell_Fortification_ShellBreaked_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+    <HediffDef>
+    <defName>TW_Capacitor_Meltdown</defName>
+    <label>Capacitor Meltdown</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<description>After a catastrophic capacitor overload explosion, the Tesla Centipede suffers a brief functional collapse. High-voltage arcs become erratic, movement speed drastically drops, and attacks may even suffer momentary power interruptions. Although it gradually recovers through autonomous recharging, it struggles to effectively pursue enemies or mount defensive counterattacks until fully recharged.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+	  <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>3600</disappearsAfterTicks>
+		<showRemainingTime>true</showRemainingTime>
+      </li>
+	  <li Class="NCL.HediffCompProperties_EffectAura">
+        <minDistance>1.0</minDistance>  
+        <maxDistance>3.0</maxDistance>  
+        <EffectInterval>300</EffectInterval> 
+        <EffectsPerBurst>1</EffectsPerBurst> 
+		<EffectFleckDef>NCL_EnergyCrackle</EffectFleckDef>
+      </li>
+	</comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<IncomingDamageFactor>2</IncomingDamageFactor>
+			<StaggerDurationFactor>3</StaggerDurationFactor>
+			<MeleeDamageFactor>0.5</MeleeDamageFactor>
+			<MoveSpeed>0.5</MoveSpeed>
+        </statFactors>
+		<statOffsets>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+    <HediffDef>
+    <defName>NCL_Mech_ArchotechWorm_Hediff</defName>
+    <label>ArchoWorm</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<description>The origins of this massive mechanical entity are sealed under the highest levels of confidentiality by the NCL, leaving you burning with curiosity but unable to investigate. You have personally witnessed its miraculous lethality on the battlefield, and at this moment, you can only be grateful that it is temporarily aligned with the alliance—though this peculiar state is fraught with unknowns.
+
+Worm Traits:
+
+Damage Absorption: After taking damage, the worm becomes temporarily immune to subsequent damage of the same type.
+
+Warp Bullets: The worm can use telekinesis to vanish incoming enemy bullets into space. After warping a certain number of bullets, this ability enters a cooldown period.
+
+Energy Shield: The worm possesses an energy shield. Once shattered, the shield requires a cooldown period before regenerating.
+
+Warp Manipulation: The worm randomly selects nearby enemies and either warps them to the edge of the map or pulls them close to itself.
+
+Chaotic Warp: After a long charge-up, the worm warps all enemies on the map randomly to the edges.
+
+Means of Damage:
+
+Destructive Beam: After a brief charge, the worm fires an immensely powerful, infinite-range beam.
+
+Thunderstrike: The worm summons several bolts of lightning from the sky to strike enemies across the map.
+
+Worm Tracking Cannon: Periodically, the worm fires volleys from its joints, releasing moderately powerful homing bullets that ignore enemy shields.
+
+Dragon's Final Blow: The worm burrows underground and charges straight toward its target, dealing massive impact damage.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+	  <li Class="NCL.HediffCompProperties_MechAutoRecovery">
+        <tickMultiflier>180</tickMultiflier>
+        <healPoint>1</healPoint>
+      </li>
+	</comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<StaggerDurationFactor>0</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+    <modExtensions>
+        <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+
+  <HediffGiverSetDef>
+    <defName>NCL_Mech_ArchotechWorm_Hediff</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>NCL_Mech_ArchotechWorm_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+      <HediffDef>
+    <defName>TW_Mech_Apocriton_Hediff</defName>
+    <label>Total War: Apocriton</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<description>Apocriton's proprietary optical camouflage module renders it invisible on the battlefield. Stealth disengages only when player units approach within 45 tiles, and the unit remains non-hostile until decloaking occurs.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+        <li Class="NCL.HediffCompProperties_InvisibilityWithEnemyAwareness">
+        <detectionRadius>25</detectionRadius> 
+        <checkInterval>60</checkInterval>
+        <visibleToPlayer>true</visibleToPlayer>
+	    </li>
+        <li Class="HediffCompProperties_DisappearsOnDeath" />
+	</comps>
+	<stages>
+  </stages>
+    <modExtensions>
+        <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+
+  <HediffGiverSetDef>
+    <defName>TW_Mech_Apocriton_Hediff</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>TW_Mech_Apocriton_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+      <HediffDef>
+    <defName>TW_Mech_Warqueen_Hediff</defName>
+    <label>Total War: War Queen</label>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+<description>The War Queen utilizes loaded steel energy to reinforce chassis defenses. Defense strength scales with steel reserves: damage taken reduced to 50% at full capacity, increasing to 150% when depleted.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+        <li Class="HediffCompProperties_DisappearsOnDeath" />
+	</comps>
+	<stages>
+  </stages>
+    <modExtensions>
+        <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+
+  <HediffGiverSetDef>
+    <defName>TW_Mech_Warqueen_Hediff</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>TW_Mech_Warqueen_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+</Defs>

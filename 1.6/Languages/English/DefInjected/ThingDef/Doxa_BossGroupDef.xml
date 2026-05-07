@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 末日信标 -->
+<Omen_of_Doomsday.label>Omen of Doomsday</Omen_of_Doomsday.label>
+<Omen_of_Doomsday.description>High-power mechanoid signal emitter vastly exceeding standard beacon capacity. Activation releases a catastrophic pulse summoning the titan-class Doxa-0 with its escort forces. Victory yields rare tech components from the wreckage. The pulse overload destroys the emitter after single use.</Omen_of_Doomsday.description>
+<Omen_of_Doomsday.comps.CompUsable.useLabel>Summon Apocriton Threat</Omen_of_Doomsday.comps.CompUsable.useLabel>
+
+  
+</LanguageData>

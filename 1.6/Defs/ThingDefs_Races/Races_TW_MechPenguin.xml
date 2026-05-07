@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <LifeStageDef>
+    <defName>TW_MechPenguinFullyformed</defName>
+    <label>fully-formed</label>
+    <caravanRideable>true</caravanRideable>
+    <visible>false</visible>
+  </LifeStageDef>
+  
+  <ThingDef Name="TWMechPenguin" ParentName="LightMechanoid">
+    <defName>TW_MechPenguin</defName>
+    <label>Mech Penguin</label>
+    <description>Unit Archive: Anomalous Cryo-Unit
+Designation: Mech Penguin
+Behavioral Note: Its subcore maintains persistent identification as biological penguin. Operates exclusively within ice sheet biomes. Remains receptive to infinite power supply from mechanoid clusters, enabling sustained polar operations despite cognitive discrepancy.</description>
+    <statBases>
+      <MoveSpeed>4.3</MoveSpeed>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <FoodPoisonChance>0</FoodPoisonChance>
+	  <EMPResistance>0</EMPResistance>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">4</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+	<comps>
+	    <li Class="NCL.CompProperties_TameableMech">
+            <baseTameChance>0.5</baseTameChance>
+            <componentsPerTame>3</componentsPerTame>
+        </li>
+	</comps>
+	<butcherProducts>
+      <Steel>180</Steel>
+      <Plasteel>80</Plasteel>
+    </butcherProducts>
+    <race>
+      <lifeStageAges>
+        <li>
+          <def>TW_MechPenguinFullyformed</def>
+          <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <baseHealthScale>4</baseHealthScale>
+	  <baseBodySize>1.5</baseBodySize>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+        <mechEnabledWorkTypes>
+          <li>Construction</li>
+		      <li>Mining</li>
+		      <li>BasicWorker</li>
+          <li>Doctor</li>
+          <li>Firefighter</li>
+          <li>Crafting</li>
+          <li>Cooking</li>
+        </mechEnabledWorkTypes>
+	<mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+  <comps>
+    <li Class="NCL.CompProperties_SilverSummon">
+      <silverCost>500</silverCost>
+      <pawnKinds>
+        <li>TW_University_Minitor</li>
+      </pawnKinds>
+      <pawnCount>1</pawnCount>
+      <secondaryPawnKinds>
+        <li>TW_Gestapo_Minitor</li>
+      </secondaryPawnKinds>
+      <secondaryPawnCount>2</secondaryPawnCount>
+    </li>
+  </comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="LightMechanoidKind">
+  <defName>TW_MechPenguin_Kind</defName>
+  <label>Mech Penguin</label>
+  <race>TW_MechPenguin</race>
+  <allowInMechClusters>false</allowInMechClusters>
+  <combatPower>100</combatPower>
+  <lifeStages>
+    <li MayRequire="Ludeon.RimWorld.Biotech">
+      <bodyGraphicData>
+        <texPath>Races/TW_MechPenguin</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.4, 0.8, 0.4)</volume>
+        </shadowData>
+      </bodyGraphicData>
+    </li>
+  </lifeStages>
+  <weaponMoney>9999~9999</weaponMoney>
+  <weaponTags>
+    <li>M4887</li>
+  </weaponTags>
+  <techHediffsChance>1</techHediffsChance>
+  <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+  </abilities>
+  </PawnKindDef>
+  
+    <JobDef>
+    <defName>TW_TameMech</defName>
+    <label>tame mechanoid</label>
+    <driverClass>NCL.JobDriver_TameMech</driverClass>
+    <reportString>Attempting to tame TargetA.</reportString>
+  </JobDef>
+
+    <DesignationDef>
+        <defName>TW_TameMechDesignation</defName>
+    <texturePath>ModIcon/MechTameDesignation</texturePath>
+        <targetType>Thing</targetType>
+    </DesignationDef>
+
+  
+</Defs>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 冲刺！冲! -->
+  <NCL_ChargeA.label>Extreme Speed</NCL_ChargeA.label>
+  <!-- EN: Charge towards the target, push away all enemies along the path, and create an area effect at the target location. -->
+  <NCL_ChargeA.description>Charge towards the target, push away all enemies along the path, and create an area effect at the target location.</NCL_ChargeA.description>
+  
+  <!-- EN: 冲!冲刺！ -->
+  <NCL_ChargeB.label>Extreme Speed</NCL_ChargeB.label>
+  <!-- EN: Charge towards the target, push away all enemies along the path, and create an area effect at the target location. -->
+  <NCL_ChargeB.description>Charge towards the target, push away all enemies along the path, and create an area effect at the target location.</NCL_ChargeB.description>
+  
+</LanguageData>

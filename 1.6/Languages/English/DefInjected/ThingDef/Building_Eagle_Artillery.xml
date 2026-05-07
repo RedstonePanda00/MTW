@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mote -->
+  <NCL_Eagle_Artillery_Aim.label>TODO</NCL_Eagle_Artillery_Aim.label>
+  
+  <!-- EN: 鸟炮 -->
+  <NCL_Eagle_Artillery_Building.label>Black Hawk-T4000</NCL_Eagle_Artillery_Building.label>
+  <!-- EN: 1 -->
+  <NCL_Eagle_Artillery_Building.description>The design of the Black Hawk-T4000 artillery system is inspired by the "Eagle Artillery" from the mobile game "Clash of Clans" in Zhonghuan World. "It is completely unreasonable for such an artillery to appear in ancient tribal wars. It looks more like a modern missile launch system!" "You're absolutely right." Thus, Lisa was compelled to develop the Black Hawk-T4000, specifically designed to launch heavy missiles.
+
+Notably, NCL has provided a concise operation manual for every operator of the Black Hawk, as follows:
+
+Black Hawk-T4000 Artillery System Manual
+• Startup: Consumes electricity and requires a certain amount of time to enter combat readiness. Can be manually shut down or automatically stop after a preset duration.
+• Firing: Consumes resources; if resources are insufficient, firing is disabled. After selecting a target, the system enters an aiming phase, followed by a salvo of 3 missiles per launch. Each missile consumes 5% of the current power grid's capacity. The higher the power level, the greater the single-missile damage (up to 1600 points) and damage radius.
+• Cooldown: After each launch, the system enters a cooldown period during which aiming and firing are disabled. The system can only fire again after the cooldown ends.
+• Visual Feedback: Each phase of operation—startup, aiming, and firing—features corresponding visual effects and real-time feedback to indicate the system's status.
+• Automatic Management: Automatically shuts down when the runtime exceeds limits or resources are depleted to save power, ensure safety, and simplify operation.</NCL_Eagle_Artillery_Building.description>
+  
+  <!-- EN: Eagle Artillery Shell shot -->
+  <NCL_Eagle_Artillery_Shell_Down.label>TODO</NCL_Eagle_Artillery_Shell_Down.label>
+  
+  <!-- EN: Eagle Artillery Shell shot -->
+  <NCL_Eagle_Artillery_Shell_Up.label>TODO</NCL_Eagle_Artillery_Shell_Up.label>
+  
+</LanguageData>

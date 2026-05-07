@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <HediffGiverSetDef MayRequire="fxz.glitterworlddestroyer.mk5">
+    <defName>Introduction_WarScorpion</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>Introduction_WarScorpion</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+  
+  <HediffGiverSetDef MayRequire="fxz.glitterworlddestroyer.mk5">
+    <defName>Introduction_PillBug</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>Introduction_PillBug</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+  
+  <HediffGiverSetDef MayRequire="fxz.glitterworlddestroyer.mk5">
+    <defName>Introduction_Doxa</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>Introduction_Doxa</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+
+  <HediffDef MayRequire="fxz.glitterworlddestroyer.mk5">
+    <defName>Introduction_WarScorpion</defName>
+    <label>Introduction: War Scorpion</label>
+	<hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+    <description>Introduction: War Scorpion</description>
+    <comps>
+	  <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<IncomingDamageFactor>0.80</IncomingDamageFactor>
+        </statFactors>
+		<statOffsets>
+	<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+    <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+    <modExtensions>
+		  <li Class="GD3.ModExtension_NotSendLetter" />
+	  </modExtensions>
+  </HediffDef>
+  
+  <HediffDef MayRequire="fxz.glitterworlddestroyer.mk5">
+    <defName>Introduction_PillBug</defName>
+    <label>Introduction: PillBug</label>
+	<hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+    <description>Introduction: PillBug</description>
+    <comps>
+	  <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<IncomingDamageFactor>0.80</IncomingDamageFactor>
+			<StaggerDurationFactor>0.5</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+	    	<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+     	    <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+    <modExtensions>
+		  <li Class="GD3.ModExtension_NotSendLetter" />
+	  </modExtensions>
+  </HediffDef>
+  
+  <HediffDef MayRequire="fxz.glitterworlddestroyer.mk5">
+    <defName>Introduction_Doxa</defName>
+    <label>Introduction: Doxa</label>
+	<hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+    <description>Introduction: Doxa</description>
+    <comps>
+	  <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+	<stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<IncomingDamageFactor>0.80</IncomingDamageFactor>
+			<StaggerDurationFactor>0.5</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+	  <ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+    <modExtensions>
+		  <li Class="GD3.ModExtension_NotSendLetter" />
+	  </modExtensions>
+  </HediffDef>
+
+</Defs>

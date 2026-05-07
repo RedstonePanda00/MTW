@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+    <!-- EN: 机械空投 -->
+  <Mech2000Coming.label>Mechanoid Airdrop</Mech2000Coming.label>
+  <!-- EN: 机械空投 -->
+  <Mech2000Coming.description>B2000 will continuously airdrop Mechanoid Centipedes onto the battlefield until the Static Nest Construct is destroyed.</Mech2000Coming.description>
+  <!-- EN: 机械空投结束了 -->
+  <Mech2000Coming.endMessage>The Mechanoid Airdrop has ended</Mech2000Coming.endMessage>
+  <!-- EN: An unusual heat wave has begun.\n\nHeat waves can induce deadly heatstroke. Stay cool by building either a passive or electric cooler, or by getting deep underground where the rocks are naturally cool. -->
+  <Mech2000Coming.letterText>The Mechanoid Airdrop has started! B2000 will continuously airdrop Mechanoid Centipedes onto the battlefield until the Static Nest Construct is destroyed.</Mech2000Coming.letterText>
+
+</LanguageData>

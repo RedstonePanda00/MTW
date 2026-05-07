@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Bullet_NCLChargeLance.label>NCL Charge lance bullet</Bullet_NCLChargeLance.label>
+
+<NCLLance.label>NCL电荷标枪</NCLLance.label>
+<NCLLance.description>武器档案：NCL Lance NCL电荷标枪
+代号：NCL Charge Lance 
+所属：诺亚新共产主义联盟「铁律」常规武器序列  
+
+功能概述：  
+NCL电荷标枪是专为机动兵蚁设计的特制步枪，具备出色的单发伤害、穿甲性能与射击精度。为强化机动兵蚁的近战适应性，该武器在近距离速射模式与白刃战功能上进行了专项优化，实现中远程火力压制与近身战术打击的无缝衔接。</NCLLance.description>
+<NCLLance.tools.stock.label>stock</NCLLance.tools.stock.label>
+<NCLLance.tools.barrel.label>barrel</NCLLance.tools.barrel.label>
+<NCLLance.verbs.Verb_Shoot.label>NCL Charge Lance</NCLLance.verbs.Verb_Shoot.label>
+
+</LanguageData>

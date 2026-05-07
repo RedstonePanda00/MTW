@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+
+<FusionReactor.label>聚变反应堆</FusionReactor.label>
+
+
+<GreekFireNozzle.label>希腊烈火喷嘴</GreekFireNozzle.label>
+
+
+<HydraulicCrusher.label>液压粉碎器</HydraulicCrusher.label>
+
+
+<InfernoEmitter.label>焚城辐射器</InfernoEmitter.label>
+
+
+<IronbarkBaseTrunk.label>铁木基段</IronbarkBaseTrunk.label>
+
+<IronbarkBaseTrunk.labelShort>Ironbark Trunk Base</IronbarkBaseTrunk.labelShort>
+
+
+<IronbarkCanopy.label>铁木树冠</IronbarkCanopy.label>
+
+
+<IronbarkCore.label>铁木核心</IronbarkCore.label>
+
+
+<IronbarkLowerTrunk.label>铁木下段</IronbarkLowerTrunk.label>
+
+<IronbarkLowerTrunk.labelShort>Ironbark Trunk Base</IronbarkLowerTrunk.labelShort>
+
+
+<IronbarkMidTrunk.label>铁木中段</IronbarkMidTrunk.label>
+
+<IronbarkMidTrunk.labelShort>Ironbark Trunk Base</IronbarkMidTrunk.labelShort>
+
+
+<IronbarkRootHub.label>根系枢纽</IronbarkRootHub.label>
+
+<IronbarkRootHub.labelShort>Ironbark Trunk Base</IronbarkRootHub.labelShort>
+
+
+<IronbarkTrunk.label>铁木主干</IronbarkTrunk.label>
+
+<IronbarkTrunk.labelShort>Ironbark Trunk Base</IronbarkTrunk.labelShort>
+
+
+<PhaseShieldCore.label>相位护盾核心</PhaseShieldCore.label>
+
+
+<RootJoint.label>根系关节</RootJoint.label>
+
+
+<ThermalSensor.label>热感阵列</ThermalSensor.label>
+
+</LanguageData>

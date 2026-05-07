@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+  <NCL_Mech_Dinergate.label>制造机动兵蚁</NCL_Mech_Dinergate.label>
+  <NCL_Mech_Dinergate.description>机动兵蚁，NCL军工级人形机械体，搭载特制电荷标枪，可消耗钢铁召唤附带能量护盾的机动无人机，能快速充能以抵御绝大部分子弹，为友军构建安全的输出空间。
+“兵蚁"的技术，源自lisa自学机械设计时的灵机一动，本意是为满足中产家庭苛刻要求而量身打造的家政机器人。因灵活度堪比人类，故其设计的终极归宿并非客厅，而是战场。</NCL_Mech_Dinergate.description>
+  <NCL_Mech_Dinergate.jobString>Gestating mech.</NCL_Mech_Dinergate.jobString>
+  
+  <NCL_Mech_DinergateSniper.label>制造狙击兵蚁</NCL_Mech_DinergateSniper.label>
+  <NCL_Mech_DinergateSniper.description>狙击兵蚁，NCL军工级人形机械体，由机动兵蚁改造而来，搭载狙击型电荷标枪，仍可消耗钢铁召唤机动无人机，能快速充能以抵御绝大部分子弹；但其通常在敌人射程外狙击点杀，显得无人机功能意义不明。
+狙击型起初并非正式型号，源头是lisa早年把家门口的高清监控装兵蚁上再弄一把高精度糖豆枪，遥控操作机体打homeless玩得到的灵感……至于意义不明的无人机功能，专利早卖了，lisa 才不考虑这种事情</NCL_Mech_DinergateSniper.description>
+  <NCL_Mech_DinergateSniper.jobString>Gestating mech.</NCL_Mech_DinergateSniper.jobString>
+
+</LanguageData>

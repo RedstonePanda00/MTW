@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="ArmorMachineableBase">
+    <defName>Apparel_NoBody</defName>
+    <label>Symbiomesh</label>
+    <description>Symbiomesh
+Designation: IC_MK3_Symbiomesh 
+RD Facility: NCL Division 9 Biotechnology Lab "Second Skin Project"
+
+As wartime demands escalated, traditional human combat efficacy was increasingly superseded by military mechanoids. Under this strategic paradigm shift, lead researcher Eclipse and systems designer O'Neal pivoted from combat enhancement to dual core objectives: wearer protection and operational efficiency.
+
+The Symbiomesh epitomizes this philosophy. This form-fitting suit utilizes smart composite materials infused with nanoscale mechano-fluid. Establishing low-latency neural feedback enables real-time physiological optimization. It provides:
+◆ Adaptive environmental buffering
+◆ Foundational survival safeguards
+◆ Myokinetic algorithms reducing fatigue
+◆ Enhanced energy recovery rates
+
+In operational contexts, it extends high-precision engineering/research endurance. Though non-defensive, it prolongs survivability in combat zones through sustained mobility. Now standard-issue across NCL research stations, colonial worksites, and border installations - representing the pinnacle of Second Skin Project implementation.
+
+[NCL Division 9 · Log Excerpt]
+Eclipse: "Humanity ultimately marched into its own engineered hell."
+O'Neal: "Then I'll at least ensure they're properly dressed for it."</description>
+	<thingClass>NoBody.NoBodyApparel</thingClass>
+    <graphicData>
+      <texPath>Apparels/IC_MK3_Battledress/IC_MK3_Battledress</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <techLevel>Archotech</techLevel>
+    <statBases>
+      <Mass>3</Mass>
+	  <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToMake>14000</WorkToMake>
+      <Flammability>0</Flammability>
+	  <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>58</Insulation_Cold> 
+      <Insulation_Heat>38</Insulation_Heat>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+	<generateCommonality>0</generateCommonality>
+	<equippedStatOffsets>
+      <MoveSpeed>1.5</MoveSpeed>
+	  <ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+	  <ToxicResistance>0.5</ToxicResistance>
+    <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+    </equippedStatOffsets>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <costList>
+      <ComponentSpacer>5</ComponentSpacer>
+      <Hyperweave>50</Hyperweave>
+      <Plasteel>150</Plasteel>
+    </costList>
+    <recipeMaker>
+	<researchPrerequisites>
+      <li>NCL_Protective_Gear</li>
+    </researchPrerequisites>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <skillRequirements>
+        <Crafting>15</Crafting>
+      </skillRequirements>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <apparel>
+	  <wornGraphicPath>Apparels/IC_MK3_Battledress/IC_MK3_Battledress</wornGraphicPath>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+		<li>Legs</li>
+      </bodyPartGroups>
+      <layers>
+		 <li>Middle</li>
+		 <li>OnSkin</li>
+      </layers>
+      <tags>
+        <li>IndustrialAdvanced</li>
+      </tags>
+    </apparel>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+    <tradeTags>
+      <li>NCLthings</li>
+    </tradeTags>
+	<comps>
+      <li Class="CompProperties_CauseHediff_Apparel">
+        <hediff>Symbiomesh</hediff>
+      </li>
+	  <li Class="NoBody.CompProperties_ForceBodyType" />
+    </comps>
+	</ThingDef>
+
+</Defs>

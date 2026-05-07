@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NCL42H</defName>
+    <label>NCL42H Sniper Round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.35</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>38</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+	  <stoppingPower>5</stoppingPower>
+      <speed>200</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>NCL_SniperGun</defName>
+    <label>NCL42H</label>
+    <description>Weapon Archive: NCL42H Sniper Rifle
+Designation: NCL42H  
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series  
+
+Functional Overview:  
+Specialized sniper rifle designed exclusively for Dinergate Snipers. Delivers peak performance in range, accuracy, damage, and armor penetration. Excessive weight and specialized ergonomics restrict effective operation to Dinergate units only.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+<relicChance>0</relicChance>    
+    <graphicData>
+      <texPath>Weapons/NCL42H</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.8</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>14.5</Mass>
+      <AccuracyTouch>.7</AccuracyTouch>
+      <AccuracyShort>.75</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+    </statBases>
+	<smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NCL42H</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>56</range>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>NCL42H</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  </Defs>

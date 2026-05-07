@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: flying -->
+  <NCL_Charge.label>Charge</NCL_Charge.label>
+  
+  <!-- EN: 机械兰螳 -->
+  <NCL_Mech_Mantis.label>Mantis</NCL_Mech_Mantis.label>
+  <!-- EN: 单位档案：NCL-06“机械兰螳”\n来源：NCL自主机械序列VI型\n这台融合机械少女上半身与狼蛛底盘的第六代特战单位，专精致命近身猎杀与战术突进。其重甲内置动态自愈系统，可在单挑中持续修复创伤，却因能量分流机制在集火时异常脆弱；借助液压关节爆发的短距跃迁能力，可瞬间切入敌阵或撤离险境。专属武器「双向遮蔽系统」同步展开战术烟幕屏障与两枚红外制导Gyro-Blade旋刃——命中时触发EMP冲击波及可控破片溅射，瓦解电子设备并撕裂血肉。最终协议「焚心殉爆」将通过超载核心熔毁装甲，以毁灭性自燃爆炸与强敌同归于尽。 -->
+  <NCL_Mech_Mantis.description>Unit File: NCL-06 "Mantis"
+Origin: NCL Autonomous Mechanoid Series VI
+This sixth-generation tactical unit, fusing a humanoid-female torso with a wolf-spider chassis, specializes in close-quarters assassination and shock infiltration. Its heavy combat armor integrates dynamic self-repair systems to regenerate defensive layers during isolated engagements, yet energy-redistribution protocols render it critically vulnerable under concentrated fire. Hydraulic actuators enable short-range phase-leaps for instant gap closure or tactical withdrawal. The signature Binary Veil System deploys smokescreen barriers while launching two infrared-guided Gyro-Blades—detonating on impact with EMP bursts and directional shrapnel to cripple electronics and eviscerate organic targets. Terminal protocol "Heartfire" triggers core meltdown, igniting the unit in a catastrophic blast to annihilate high-threat hostiles.</NCL_Mech_Mantis.description>
+  <!-- EN: left blade -->
+  <NCL_Mech_Mantis.tools.left_blade.label>left blade</NCL_Mech_Mantis.tools.left_blade.label>
+  <!-- EN: blade -->
+  <NCL_Mech_Mantis.tools.left_blade.labelNoLocation>blade</NCL_Mech_Mantis.tools.left_blade.labelNoLocation>
+  <!-- EN: right blade -->
+  <NCL_Mech_Mantis.tools.right_blade.label>right blade</NCL_Mech_Mantis.tools.right_blade.label>
+  <!-- EN: blade -->
+  <NCL_Mech_Mantis.tools.right_blade.labelNoLocation>blade</NCL_Mech_Mantis.tools.right_blade.labelNoLocation>
+  <!-- EN: head -->
+  <NCL_Mech_Mantis.tools.head.label>head</NCL_Mech_Mantis.tools.head.label>
+  
+</LanguageData>

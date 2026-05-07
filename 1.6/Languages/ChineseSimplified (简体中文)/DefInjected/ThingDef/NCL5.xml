@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+<Bullet_NCL.label>NCL5 bullet</Bullet_NCL.label>
+
+<NCL_Rifle.label>NCL5</NCL_Rifle.label>
+<NCL_Rifle.description>武器档案：诺亚制式通用型突击步枪第五代
+代号：NCL5  
+所属：诺亚新共产主义联盟「铁律」常规武器序列  
+
+功能概述：  
+NCL5 是诺亚新共产主义联盟的制式突击步枪，专为大规模列装设计。其射程、射速、子弹穿透与稳定性均达到同类别武器的顶尖水平，但单发伤害与停滞能力稍显不足，适合中远距离持续压制。
+
+  开发者Lsa和None批注：
+“规模化，建制化。”</NCL_Rifle.description>
+<NCL_Rifle.tools.stock.label>stock</NCL_Rifle.tools.stock.label>
+<NCL_Rifle.tools.barrel.label>barrel</NCL_Rifle.tools.barrel.label>
+<NCL_Rifle.verbs.Verb_Shoot.label>NCL5</NCL_Rifle.verbs.Verb_Shoot.label>
+
+  
+  <NCLCommsConsole.label>NCL通讯台</NCLCommsConsole.label>
+  
+  <NCLCommsConsole.description>一个看上去十分古典的通讯台，内置的解码器能够让其进入三级加密后的通讯网络</NCLCommsConsole.description>
+  
+  <NCLCommsConsole.comps.CompUsable.useLabel>Contact with NCL</NCLCommsConsole.comps.CompUsable.useLabel>
+  
+  
+  <NCL_MechWorm.label>机械蠕虫</NCL_MechWorm.label>
+  
+  <NCL_MechWorm.label>机械蠕虫</NCL_MechWorm.label>
+  
+  <NCL_MechWorm.description>这个庞大机械体的身世被NCL封存在最高机密中，您虽充满好奇却无从探查。您亲眼见证过它在战场上展现的神迹般的杀伤效率，此刻只能庆幸它暂时属于同盟阵营——尽管这种特殊状态充满未知变数。
+    
+蠕虫特性：
+ - 伤害吸收： 蠕虫本体受到伤害后，会在短时间内免疫该类型的后续伤害。
+ - 折跃子弹： 蠕虫能够使用念力，将飞向自身的敌方子弹传送消失（至太空）。传送一定数量的子弹后，该能力会进入冷却。
+ - 能量护盾： 蠕虫拥有能量护盾。护盾被击碎后，需要经过冷却时间才能重新生成。
+ - 折跃操控： 蠕虫会随机选择附近的敌人，将其传送（折跃）至地图边缘或拉至自身身边。
+ - 混乱传送： 经过长蓄力后，蠕虫会将地图上所有敌人随机传送至地图边缘。
+
+伤害手段：
+ - 破坏死光： 蠕虫短暂蓄力后，发射一道威力巨大、射程无限的光线。
+ - 雷击： 蠕虫召唤数道从天而降的雷电轰击地图上的敌人。
+ - 蠕虫追踪炮： 蠕虫周期性从其身体各关节处发射齐射，产生威力一般但能无视敌人护盾的追踪子弹。
+ - 画龙点睛： 蠕虫潜入地下，直线冲向目标，造成巨额撞击伤害。</NCL_MechWorm.description>
+  
+  <NCL_MechWorm.tools.0.label>outrage</NCL_MechWorm.tools.0.label>
+  
+    
+  <Bullet_LightingStrike.label>Lighting Strike</Bullet_LightingStrike.label>
+  
+  
+  <Mote_NCLWormLaser.label>Mote</Mote_NCLWormLaser.label>
+  
+  
+  <NCL_Gun_BeamGraser.label>破坏死光</NCL_Gun_BeamGraser.label>
+  
+  <NCL_Gun_BeamGraser.description>蠕虫通过念力汇聚大量能量于口中喷射而出</NCL_Gun_BeamGraser.description>
+  
+  <NCL_Gun_BeamGraser.verbs.Verb_GuangA.label>Hyper Beam</NCL_Gun_BeamGraser.verbs.Verb_GuangA.label>
+  
+  
+  <NCL_Gun_HellsphereCannon.label>雷击</NCL_Gun_HellsphereCannon.label>
+  
+  <NCL_Gun_HellsphereCannon.description>蠕虫召唤雷击攻击距离自己最近的敌人</NCL_Gun_HellsphereCannon.description>
+  
+  <NCL_Gun_HellsphereCannon.verbs.Verb_ShootOneUse.label>LightingStrike</NCL_Gun_HellsphereCannon.verbs.Verb_ShootOneUse.label>
+  
+</LanguageData>

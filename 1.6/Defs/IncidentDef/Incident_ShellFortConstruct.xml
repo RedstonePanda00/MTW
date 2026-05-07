@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+<IncidentDef>
+    <defName>PawnSpawnerEvent</defName>
+    <label>PawnSpawnerEvent</label>
+    <workerClass>NCL.IncidentWorker_PawnSpawner</workerClass>
+    <category>ThreatBig</category>
+    <modExtensions>
+        <li Class="NCL.IncidentDefExtension">
+            <spawnThingDef>ShellBreakSpawner</spawnThingDef>
+            <spawnFaction>Mechanoid</spawnFaction>
+        </li>
+    </modExtensions>
+    <baseChance>0</baseChance>
+    <letterLabel>有什么东西在破土而出</letterLabel>
+    <letterText>还没完，小子！</letterText>
+	<targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+</IncidentDef>
+
+</Defs>

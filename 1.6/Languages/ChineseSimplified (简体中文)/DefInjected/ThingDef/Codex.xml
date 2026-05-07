@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Bullet_Codex_SMG.label>Bullet Codex SMG</Bullet_Codex_SMG.label>
+
+<Bullet_Codex_Sniper.label>Bullet Codex Sniper</Bullet_Codex_Sniper.label>
+
+<Centurion_Arsenal_Codex.label>百战兵谱</Centurion_Arsenal_Codex.label>
+<Centurion_Arsenal_Codex.description>武器档案：百战兵谱 复合战术背负系统
+代号：Centurion Arsenal Codex
+所属：新共产主义联盟「百战兵谱」精英战术序列
+百战兵谱是NCL精英作战单位专属配备的复合型作战平台，其本体为一具高度模块化、具备独立能源与智能管理系统的战术背负单元。为响应多域战场的快速适应需求，百战兵谱将数种专属武器嵌入单个背包系统中，通过动态部署机制允许佩戴者在战斗中实时切换武器类型，实现“单兵多角色”作战模式。
+
+在非战斗状态下，百战兵谱呈现为超大型军用背包，携行沉重但造型稳固。被征召时，佩戴者将展开主臂联动系统，激活所需模块。为维持系统负荷与使用者生理平衡，佩戴百战兵谱时将获得以下增益状态：
+提升负重阈值
+机械臂按摩系统
+快速武器部署与模式转换
+
+已确认集成武器模块如下：
+
+电荷步枪 - 
+高频能量脉冲射击，适合中远程穿透压制。
+
+冲锋枪 - 
+极短时距压制冲锋枪。
+
+精密射手步枪 - 
+高精度、低射速的远程步枪。
+
+刺突短刀 - 
+基于先锋战术理念，融合工艺改造，具快速拔出与近战收割功能。
+
+研发语音片段：
+O’Neal：“我把一整座武器库塞进了背包里，别告诉我还不够。”
+Shana：“有时候你只需要一把刀，然后冲过去。”</Centurion_Arsenal_Codex.description>
+
+<Centurion_Arsenal_Codex_Rifle.label>百战兵谱：电荷步枪</Centurion_Arsenal_Codex_Rifle.label>
+<Centurion_Arsenal_Codex_Rifle.description>1</Centurion_Arsenal_Codex_Rifle.description>
+<Centurion_Arsenal_Codex_Rifle.tools.stock.label>stock</Centurion_Arsenal_Codex_Rifle.tools.stock.label>
+<Centurion_Arsenal_Codex_Rifle.tools.barrel.label>barrel</Centurion_Arsenal_Codex_Rifle.tools.barrel.label>
+<Centurion_Arsenal_Codex_Rifle.verbs.Verb_Shoot.label>Centurion Arsenal: Charge Rifle</Centurion_Arsenal_Codex_Rifle.verbs.Verb_Shoot.label>
+
+<Centurion_Arsenal_Codex_SMG.label>百战兵谱：冲锋枪</Centurion_Arsenal_Codex_SMG.label>
+<Centurion_Arsenal_Codex_SMG.description>1</Centurion_Arsenal_Codex_SMG.description>
+<Centurion_Arsenal_Codex_SMG.tools.stock.label>stock</Centurion_Arsenal_Codex_SMG.tools.stock.label>
+<Centurion_Arsenal_Codex_SMG.tools.barrel.label>barrel</Centurion_Arsenal_Codex_SMG.tools.barrel.label>
+<Centurion_Arsenal_Codex_SMG.verbs.Verb_Shoot.label>Centurion Arsenal: Submachine Gun</Centurion_Arsenal_Codex_SMG.verbs.Verb_Shoot.label>
+
+<Centurion_Arsenal_Codex_Sniper.label>百战兵谱：狙击枪</Centurion_Arsenal_Codex_Sniper.label>
+<Centurion_Arsenal_Codex_Sniper.description>1</Centurion_Arsenal_Codex_Sniper.description>
+<Centurion_Arsenal_Codex_Sniper.tools.stock.label>stock</Centurion_Arsenal_Codex_Sniper.tools.stock.label>
+<Centurion_Arsenal_Codex_Sniper.tools.barrel.label>barrel</Centurion_Arsenal_Codex_Sniper.tools.barrel.label>
+<Centurion_Arsenal_Codex_Sniper.verbs.Verb_Shoot.label>Centurion Arsenal: Sniper Rifle</Centurion_Arsenal_Codex_Sniper.verbs.Verb_Shoot.label>
+
+<ChargedBullet_Codex_Rifle.label>ChargedBullet Codex Rifle</ChargedBullet_Codex_Rifle.label>
+
+<CodexTurret.label>CodexTurret</CodexTurret.label>
+<CodexTurret.description>1</CodexTurret.description>
+<CodexTurret.verbs.Verb_Shoot.label>Codex Turret</CodexTurret.verbs.Verb_Shoot.label>
+
+<MeleeWeapon_M9Knife.label>M9刺刀</MeleeWeapon_M9Knife.label>
+<MeleeWeapon_M9Knife.description>1</MeleeWeapon_M9Knife.description>
+<MeleeWeapon_M9Knife.tools.handle.label>handle</MeleeWeapon_M9Knife.tools.handle.label>
+<MeleeWeapon_M9Knife.tools.blade.label>blade</MeleeWeapon_M9Knife.tools.blade.label>
+<MeleeWeapon_M9Knife.tools.point.label>point</MeleeWeapon_M9Knife.tools.point.label>
+
+</LanguageData>

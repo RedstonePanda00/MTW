@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<NCL_Overwatch_Nexus.label>Spectre Detection Array</NCL_Overwatch_Nexus.label>
+<NCL_Overwatch_Nexus.description>Strategic facility designed to counter cloaking technology. Emits high-frequency pulses that disrupt electromagnetic invisibility fields while creating tactical data networks to enhance battlefield awareness for allied mechanoids.</NCL_Overwatch_Nexus.description>
+<NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandDesc>Toggle cloaking detection system</NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandDesc>
+<NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandLabel>Toggle Scanner</NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandLabel>
+
+
+  
+</LanguageData>

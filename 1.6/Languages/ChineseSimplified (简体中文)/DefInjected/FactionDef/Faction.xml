@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <NCL_faction.label>NCL</NCL_faction.label>
+  
+  <NCL_faction.description>常态NCL派系，属于友方阵营，必须被生成。</NCL_faction.description>
+  
+  <NCL_faction.leaderTitle>leader</NCL_faction.leaderTitle>
+  
+  <NCL_faction.messageDefendersAttacking>{0} from {1} are attacking your {2}.</NCL_faction.messageDefendersAttacking>
+  
+  <NCL_faction.pawnSingular>mechanoid</NCL_faction.pawnSingular>
+  
+  <NCL_faction.pawnsPlural>mechanoids</NCL_faction.pawnsPlural>
+  
+</LanguageData>

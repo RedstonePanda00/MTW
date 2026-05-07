@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+	
+	<AbilityDef>
+     <defName>Call_for_University_Students</defName>
+     <label>Call for University Students</label>
+     <description>1</description>
+	 <aiCanUse>true</aiCanUse>
+     <iconPath>Things/Pawn/Mechanoid/Militor_east</iconPath>
+	 <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+     <cooldownTicksRange>100000</cooldownTicksRange> 
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+     <targetRequired>false</targetRequired>
+	 <showCastingProgressBar>true</showCastingProgressBar>
+	<warmupEffecter>ApocrionAttached</warmupEffecter>
+     <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>true</requireLineOfSight>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <warmupTime>3</warmupTime>
+      <range>0</range>
+      <targetable>false</targetable>
+	<targetParams>
+		<canTargetSelf>true</canTargetSelf>
+	</targetParams>
+    </verbProperties>
+    <comps>
+        <li Class="NCL.CompProperties_AbilitySummonDropPawns">
+		<compClass>NCL.CompAbilityEffect_SummonDropPawns</compClass>
+            <pawnKinds>
+                <li>TW_University_Minitor</li>
+            </pawnKinds>
+            <pawnCount>3</pawnCount>
+			<secondaryPawnKinds>
+				<li>TW_Gestapo_Minitor</li>
+			</secondaryPawnKinds>
+			<secondaryPawnCount>1</secondaryPawnCount>
+			
+            <spawnRadius>8</spawnRadius>
+            <minSpawnDistance>2</minSpawnDistance>
+            <leaveSlag>false</leaveSlag>
+            <canRoofPunch>false</canRoofPunch>
+        </li>
+    </comps>
+  </AbilityDef>
+  
+</Defs>

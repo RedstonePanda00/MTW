@@ -1,0 +1,551 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+    <ThingDef ParentName="BasePawn">
+        <defName>NCL_Dinergate_Drone</defName>
+        <label>Dinergate Drone</label>
+        <description>Combat support drone deployed by Dinergate units</description>
+        <thingClass>NyarsModPackOne.Drone</thingClass>
+        <altitudeLayer>Skyfaller</altitudeLayer>
+        <tools>
+      <li>
+        <label>left blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+        </tools>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <statBases>
+              <InjuryHealingFactor>0</InjuryHealingFactor>
+            <PsychicSensitivity>0</PsychicSensitivity>
+            <ToxicResistance>100</ToxicResistance>
+            <Flammability>0</Flammability>
+            <MoveSpeed>10</MoveSpeed>
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+            <ComfyTemperatureMax>250</ComfyTemperatureMax>
+            <MeatAmount>0</MeatAmount>
+            <ArmorRating_Heat>2.00</ArmorRating_Heat>
+            <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+        </statBases>
+        <receivesSignals>true</receivesSignals>
+        <race>
+            <body>Scyther</body>
+            <baseHealthScale>0.5</baseHealthScale>
+            <gestationPeriodDays>9999</gestationPeriodDays>
+            <fleshType>Mechanoid</fleshType>
+            <needsRest>false</needsRest>
+            <hasGenders>false</hasGenders>
+            <foodType>None</foodType>
+            <lifeExpectancy>2500</lifeExpectancy>
+            <bloodDef>Filth_MachineBits</bloodDef>
+            <intelligence>ToolUser</intelligence>
+            <thinkTreeMain>NCL_Dinergate_Drone_thinkTreeMain</thinkTreeMain>
+            <baseBodySize>0.5</baseBodySize>
+            <lifeStageAges>
+                <li>
+                    <def>MechanoidFullyFormed</def>
+                    <minAge>0</minAge>
+                    <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+                    <soundDeath>Pawn_Mech_Scyther_Death</soundDeath>
+                    <soundCall>Pawn_Mech_Scyther_Call</soundCall>
+                </li>
+            </lifeStageAges>
+            <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+            <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+        </race>
+        <inspectorTabs Inherit="false">
+            <li>ITab_Pawn_Health</li>
+            <li>ITab_Pawn_Log</li>
+        </inspectorTabs>
+        <modExtensions>
+            <li Class="NyarsModPackOne.ModExtension_DroneProperties">
+                <maxSpawnTime>18000</maxSpawnTime>
+            </li>
+        </modExtensions>
+	<comps>  
+  <li Class="NCL.CompProperties_AuraEffect">
+    <effecterDef>NCL_DroneFloating</effecterDef>
+    <spawnIntervalTicks>2</spawnIntervalTicks>
+    <spawnRadius>
+      <min>0</min>
+      <max>0</max>
+    </spawnRadius>
+  </li>
+      <li Class="VEF.AnimalBehaviours.CompProperties_Floating">
+        <canCrossWater>true</canCrossWater>
+        <isFloater>true</isFloater>
+      </li>
+	<li Class="CompProperties_ProjectileInterceptor">
+        <radius>4.5</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.8, 0.0, 0.0, 0.8)</color>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>300</hitPoints>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>3000</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    <li Class="CompProperties_TurretGun">
+        <turretDef>NCL_MiniDronegun</turretDef>
+        <angleOffset>-90</angleOffset>
+     </li>
+	</comps> 
+    <butcherProducts>
+      <Steel>20</Steel>
+    </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef ParentName="BaseMechanoidKind">
+        <defName>NCL_Dinergate_Drone</defName>
+        <label>Dinergate Drone</label>
+        <race>NCL_Dinergate_Drone</race>
+        <combatPower>190</combatPower>
+    <defaultFactionType>NCL_faction</defaultFactionType>
+	<allowInMechClusters>false</allowInMechClusters>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+        <forceNoDeathNotification>true</forceNoDeathNotification>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Races/Drone</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <drawSize>0.8</drawSize>
+                    <shadowData>
+                        <volume>(0.4, 0.8, 0.4)</volume>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+        <techHediffsChance>1</techHediffsChance>
+        <techHediffsMoney>9999~9999</techHediffsMoney>
+    </PawnKindDef>
+
+    <AbilityDef>
+        <defName>NCL_Dinergate_SpawnDrone</defName>
+        <label>Dinergate Drone Support</label>
+        <description>Deploy combat drones</description>
+        <cooldownTicksRange>18000</cooldownTicksRange>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <iconPath>Races/Drone_south</iconPath>
+        <aiCanUse>true</aiCanUse>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <violent>false</violent>
+            <hasStandardCommand>true</hasStandardCommand>
+            <targetable>false</targetable>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <onlyManualCast>True</onlyManualCast>
+            <drawAimPie>false</drawAimPie>
+            <warmupTime>0.5</warmupTime>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NyarsModPackOne.CompProperties_AbilitySpawnDrone">
+              <droneCount>1</droneCount>
+              <droneKind>NCL_Dinergate_Drone</droneKind>
+            </li>
+        </comps>
+    </AbilityDef>
+
+        <AbilityDef>
+        <defName>NCL_Scutiger_SpawnDrone</defName>
+        <label>Shieldbearer Drone Support</label>
+        <description>Deploy shield drones</description>
+        <cooldownTicksRange>5400</cooldownTicksRange>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <iconPath>Races/ScutigerDrone_south</iconPath>
+        <aiCanUse>true</aiCanUse>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <violent>false</violent>
+            <hasStandardCommand>true</hasStandardCommand>
+            <targetable>false</targetable>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <onlyManualCast>True</onlyManualCast>
+            <drawAimPie>false</drawAimPie>
+            <warmupTime>0.5</warmupTime>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NyarsModPackOne.CompProperties_AbilitySpawnDrone">
+              <droneCount>4</droneCount>
+              <droneKind>NCL_Scutiger_Drone</droneKind>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <ThingDef ParentName="BasePawn">
+        <defName>NCL_Scutiger_Drone</defName>
+        <label>Shieldbearer Drone</label>
+        <description>Barrier support drone deployed by Shieldbearer units</description>
+        <thingClass>NyarsModPackOne.Drone</thingClass>
+        <altitudeLayer>Skyfaller</altitudeLayer>
+        <tools>
+      <li>
+        <label>left blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+        </tools>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <statBases>
+           <InjuryHealingFactor>0</InjuryHealingFactor>
+            <PsychicSensitivity>0</PsychicSensitivity>
+            <ToxicResistance>100</ToxicResistance>
+            <Flammability>0</Flammability>
+            <MoveSpeed>10</MoveSpeed>
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+            <ComfyTemperatureMax>250</ComfyTemperatureMax>
+            <MeatAmount>0</MeatAmount>
+            <ArmorRating_Heat>2.00</ArmorRating_Heat>
+            <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+        </statBases>
+        <receivesSignals>true</receivesSignals>
+        <race>
+            <body>Scyther</body>
+            <baseHealthScale>0.5</baseHealthScale>
+            <gestationPeriodDays>9999</gestationPeriodDays>
+            <fleshType>Mechanoid</fleshType>
+            <needsRest>false</needsRest>
+            <hasGenders>false</hasGenders>
+            <foodType>None</foodType>
+            <lifeExpectancy>2500</lifeExpectancy>
+            <bloodDef>Filth_MachineBits</bloodDef>
+            <intelligence>ToolUser</intelligence>
+            <thinkTreeMain>NCL_Scutiger_Drone_thinkTreeMain</thinkTreeMain>
+            <baseBodySize>0.5</baseBodySize>
+            <lifeStageAges>
+                <li>
+                    <def>MechanoidFullyFormed</def>
+                    <minAge>0</minAge>
+                    <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+                    <soundDeath>Pawn_Mech_Scyther_Death</soundDeath>
+                    <soundCall>Pawn_Mech_Scyther_Call</soundCall>
+                </li>
+            </lifeStageAges>
+            <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+            <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+        </race>
+        <inspectorTabs Inherit="false">
+            <li>ITab_Pawn_Health</li>
+            <li>ITab_Pawn_Log</li>
+        </inspectorTabs>
+        <modExtensions>
+            <li Class="NyarsModPackOne.ModExtension_DroneProperties">
+                <maxSpawnTime>12000</maxSpawnTime>
+            </li>
+        </modExtensions>
+	<comps>  
+      <li Class="VEF.AnimalBehaviours.CompProperties_Floating">
+        <canCrossWater>true</canCrossWater>
+        <isFloater>true</isFloater>
+      </li>
+	<li Class="CompProperties_ProjectileInterceptor">
+        <radius>3.5</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.8, 0.0, 0.0, 0.8)</color>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>150</hitPoints>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>1</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>3000</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+	</comps> 
+    <butcherProducts>
+      <Steel>20</Steel>
+    </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef ParentName="BaseMechanoidKind">
+        <defName>NCL_Scutiger_Drone</defName>
+        <label>Shieldbearer Drone</label>
+        <race>NCL_Scutiger_Drone</race>
+        <combatPower>190</combatPower>
+    <defaultFactionType>NCL_faction</defaultFactionType>
+	<allowInMechClusters>false</allowInMechClusters>
+     <forceDeathOnDowned>true</forceDeathOnDowned>       
+      <forceNoDeathNotification>true</forceNoDeathNotification>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Races/ScutigerDrone</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <drawSize>1.2</drawSize>
+                    <shadowData>
+                        <volume>(0.4, 0.8, 0.4)</volume>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+        <techHediffsChance>1</techHediffsChance>
+        <techHediffsMoney>9999~9999</techHediffsMoney>
+  <weaponMoney>9999~9999</weaponMoney>
+  <weaponTags>
+      <li>NCL_MiniDroneRifle</li>
+  </weaponTags>
+    </PawnKindDef>
+
+    <ThinkTreeDef>
+        <defName>NCL_Dinergate_Drone_thinkTreeMain</defName>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_Subtree">
+                    <treeDef>Downed</treeDef>
+                </li>
+                <li Class="ThinkNode_QueuedJob" />
+                <li Class="ThinkNode_Subtree">
+                    <treeDef>LordDuty</treeDef>
+                </li>
+
+                <li Class="NyarsModPackOne.JobGiver_AIFightEnemiesInPlace">
+                    <targetAcquireRadius>1</targetAcquireRadius>
+                    <targetKeepRadius>40</targetKeepRadius>
+                </li>
+                <li Class="NyarsModPackOne.JobGiver_FollowTarget" />
+
+                <li Class="ThinkNode_Tagger">
+                    <tagToGive>Idle</tagToGive>
+                    <subNodes>
+                        <li Class="JobGiver_Idle">
+                            <ticks>30</ticks>
+                        </li>
+                    </subNodes>
+                </li>
+                <li Class="JobGiver_IdleError" />
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+
+        <ThinkTreeDef>
+        <defName>NCL_Scutiger_Drone_thinkTreeMain</defName>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_Subtree">
+                    <treeDef>Downed</treeDef>
+                </li>
+                <li Class="ThinkNode_QueuedJob" />
+                <li Class="ThinkNode_Subtree">
+                    <treeDef>LordDuty</treeDef>
+                </li>
+
+                        <li Class="JobGiver_AIFightEnemies">
+                          <targetAcquireRadius>65</targetAcquireRadius>
+                          <targetKeepRadius>72</targetKeepRadius>
+                        </li>
+                <li Class="NyarsModPackOne.JobGiver_FollowTarget" />
+
+                <li Class="ThinkNode_Tagger">
+                    <tagToGive>Idle</tagToGive>
+                    <subNodes>
+                        <li Class="JobGiver_Idle">
+                            <ticks>30</ticks>
+                        </li>
+                    </subNodes>
+                </li>
+                <li Class="JobGiver_IdleError" />
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+
+    <JobDef>
+        <defName>NCL_Dinergate_DroneDetonate</defName>
+        <driverClass>NyarsModPackOne.JobDriver_DroneSlefDetonate</driverClass>
+        <reportString>moving.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>NCL_MiniDronegun</defName>
+    <label>Portable Minigun</label>
+    <description>Compact autonomous turret system</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_MiniDronegun</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>31</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+		<defaultCooldownTime>3</defaultCooldownTime>
+      </li>
+    </verbs>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_MiniDronegun</defName>
+    <label>Dronegun Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <armorPenetrationBase>0.42</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>NCL_MiniDroneRifle</defName>
+    <label>Portable Drone Rifle</label>
+    <description>Compact autonomous turret system</description>
+    <smeltable>false</smeltable>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_MiniDronegun</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>27</range>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+		<defaultCooldownTime>1.6</defaultCooldownTime>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>NCL_MiniDroneRifle</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+</Defs>

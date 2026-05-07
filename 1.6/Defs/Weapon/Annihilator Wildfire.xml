@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+    <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Annihilator_Wildfire</defName>
+    <label>Annihilator_Wildfire_Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <color>(159,9,14)</color>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+	<thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>WildFire</damageDef>
+	  <armorPenetrationBase>1.3</armorPenetrationBase>
+      <speed>120</speed>
+	  <explosionRadius>1.6</explosionRadius>
+    </projectile>
+    <comps>
+    <li Class="NCL.CompProperties_FragmentedExplosive">
+      <explosionRadius>12</explosionRadius>
+      <fragmentCount>12</fragmentCount> 
+      <guaranteedCenterFraction>0.5</guaranteedCenterFraction> 
+      <fragmentProjectileDef>Bullet_NCL_Fragments</fragmentProjectileDef>
+      <fireGlowSize>1.5</fireGlowSize>
+      <heatGlowSize>1</heatGlowSize>
+    </li>
+    </comps>
+  </ThingDef>
+  
+  
+   <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Annihilator_Wildfire</defName>
+    <label>Annihilator Wildfire</label>
+    <description>Designation: Annihilator Wildfire
+Affiliation: Noah Communist League "Iron Curtain" Experimental Weapons Series
+
+Functional Overview:
+
+The Annihilator Wildfire is a high-energy experimental rifle housing a red antiparticle core, co-developed by NCL chief engineer O'Neal and transhuman AI "Justice" amid intense technical controversy. It fires high-frequency oscillating red antiparticle projectiles that trigger localized annihilation reactions upon impact, delivering incalculable destructive damage to single targets and medium clusters.
+
+However, O'Neal never fully endorsed the design. The weapon exhibits extreme recoil instability surpassing human endurance thresholds, while core excitation patterns induce rapid ballistic deviation - transforming each shot into a gamble between skill and fate. Unsuitable for sustained operation and never meeting standard combat unit compatibility requirements.
+
+The Annihilator Wildfire represents a nonlinear destruction vector - the final gamble when conventional tactics and ballistic logic collapse.
+
+Justice audio log #21: "Not flawed design... just excessive passion." "Precision unnecessary - courage sufficient."
+O'Neal RD annotation: "This shouldn't exist. But existing - never stand before it."</description>
+<relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Weapons/AnnihilatorWildfire</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.64</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NCL_Experimental_Assemblies</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>14</Crafting>
+      </skillRequirements>
+	  	<recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+        </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Uranium>175</Uranium>
+      <Gold>300</Gold>
+      <Plasteel>200</Plasteel>
+      <ComponentSpacer>36</ComponentSpacer>
+    </costList>
+   <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Annihilator_Wildfire</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>35.9</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_Autocannon</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>18</muzzleFlashScale>
+		<forcedMissRadius>5</forcedMissRadius>
+        <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetPlants>false</canTargetPlants>
+      </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>21</power>
+        <cooldownTime>2</cooldownTime>
+		<armorPenetration>0.9</armorPenetration>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2</cooldownTime>
+		<armorPenetration>0.9</armorPenetration>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>Annihilator_Wildfire</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  </Defs>

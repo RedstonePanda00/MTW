@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+   <ThingDef ParentName="BaseBullet">
+    <defName>TW_Mech_Shell_Fortification_MissileProjectile</defName>
+    <label>Shell Fortune Missile Projectile</label>
+    <graphicData>
+      <texPath>Projectiles/FortConstructMissiles</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <drawSize>2.4</drawSize>
+    </graphicData>
+    <thingClass>NCLProjectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>60</damageAmountBase>
+      <explosionRadius>4.5</explosionRadius>
+      <speed>28</speed>
+      <shadowSize>0.6</shadowSize>
+      <arcHeightFactor>40</arcHeightFactor>
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+    <modExtensions>
+      <li Class="NCLProjectiles.ModExtension_ProjectileEffects">
+        <stages>
+          <li>
+            <label>climbing</label>
+            <type>Cruise</type>
+            <speed>28</speed>
+            <positionFunction>EaseInQuad</positionFunction>
+			<arcFactor>30</arcFactor>
+            <heightOffset>0</heightOffset>
+            <heightFunction>EaseOutQuad</heightFunction>
+          </li>
+        </stages>
+      </li>
+    </modExtensions>
+	<comps>
+      <li Class="NCL.CompProperties_SmokeTrail">
+        <intervalTicks>4</intervalTicks>
+        <smokeSize>1</smokeSize>
+      </li>
+    </comps>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseWeaponTurret">
+    <defName>TW_Mech_Shell_Fortification_AutomaticMissileLauncher</defName>
+    <label>Shell Fortune Automatic Missile Launcher</label>
+    <description>Automated missile deployment system for Shell Fortune units.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+<relicChance>0</relicChance>    
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>20</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.85</AccuracyLong>
+      <RangedWeapon_Cooldown>12</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+	    <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+	    <verbClass>Verb_Shoot</verbClass>
+		<defaultProjectile>TW_Mech_Shell_Fortification_MissileProjectile</defaultProjectile>
+        <range>500</range>
+		<warmupTime>0</warmupTime>
+        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+		<forcedMissRadius>5</forcedMissRadius>
+        <burstShotCount>12</burstShotCount>
+        <soundCast>Shot_Autocannon</soundCast>
+        <muzzleFlashScale>7</muzzleFlashScale>
+		<linkedBodyPartsGroup>BulbTurret</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>false</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </verbs>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>TW_Ionized_Plasma_Launcher</defName>
+    <label>Ionized Plasma Launcher</label>
+    <description>Mechanoid plasma projection weapon system.</description>
+	<tradeability>None</tradeability>
+  <relicChance>0</relicChance>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.8</drawSize>
+    </graphicData>
+	<uiIconPath>Weapons/TW_Ionized_Plasma_Launcher</uiIconPath>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>20</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+    </statBases>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+				<verbClass>Verb_ShootFromAbove</verbClass>
+				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+				<burstShotCount>80</burstShotCount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Ionized_Plasma</defaultProjectile>
+				<defaultCooldownTime>2</defaultCooldownTime>
+				<minRange>0</minRange>
+				<range>36</range>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>7</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0.1</forcedMissRadius>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>120</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>120</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>TW_Ionized_Plasma_Launcher</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseIncendiaryProjectile">
+    <defName>Ionized_Plasma</defName>
+    <label>Ionized Plasma</label>
+    <graphicData>
+      <texPath>Projectiles/Ionized_Plasma</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <projectile>
+	  <damageDef>TW_Crimson_Slagburst</damageDef>
+      <speed>160</speed>
+	  <preExplosionSpawnThingDef>Filth_Ash</preExplosionSpawnThingDef>
+	  <damageAmountBase>15</damageAmountBase>
+      <armorPenetrationBase>1.2</armorPenetrationBase>
+	  <stoppingPower>1.5</stoppingPower>
+	  <ai_IsIncendiary>true</ai_IsIncendiary>
+      <explosionRadius>1.5</explosionRadius>
+	  <arcHeightFactor>0</arcHeightFactor>
+    </projectile>
+  </ThingDef>
+  
+  
+  </Defs>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Crimson Slagburst -->
+  <Crimson_Slagburst.label>Crimson Slagburst</Crimson_Slagburst.label>
+  <!-- EN: {0} has burned to death. -->
+  <Crimson_Slagburst.deathMessage>{0} has burned to death.</Crimson_Slagburst.deathMessage>
+  
+  <!-- EN: DeathExplosion -->
+  <DeathExplosion.label>DeathExplosion</DeathExplosion.label>
+  <!-- EN: {0} is death. -->
+  <DeathExplosion.deathMessage>{0} is death.</DeathExplosion.deathMessage>
+  
+  <!-- EN: Disruptor Positron Burn -->
+  <Disruptor_Positron_Burn.label>Disruptor Positron Burn</Disruptor_Positron_Burn.label>
+  <!-- EN: {0} has burned to death. -->
+  <Disruptor_Positron_Burn.deathMessage>{0} has burned to death.</Disruptor_Positron_Burn.deathMessage>
+  
+  <!-- EN: ShotbyDeath -->
+  <ShotbyDeath.label>ShotbyDeath</ShotbyDeath.label>
+  <!-- EN: {0} is death. -->
+  <ShotbyDeath.deathMessage>{0} is death.</ShotbyDeath.deathMessage>
+  
+  <!-- EN: Antiparticle explosion -->
+  <TW_Antiparticle_explosion.label>Antiparticle explosion</TW_Antiparticle_explosion.label>
+  <!-- EN: {0} has burned to death. -->
+  <TW_Antiparticle_explosion.deathMessage>{0} has burned to death.</TW_Antiparticle_explosion.deathMessage>
+  
+  <!-- EN: DeathExplosion -->
+  <WildFire.label>DeathExplosion</WildFire.label>
+  <!-- EN: {0} is death. -->
+  <WildFire.deathMessage>{0} is death.</WildFire.deathMessage>
+  
+</LanguageData>

@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+<NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>Mechanoids: Total Warfare Y</NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>
+  <NCL_TOTALWARFARE_AUTO_TRIGGER_TEXT>
+    A message from NCL indicates a critical situation:
+    
+    Your colony's total wealth has reached a significant scale, causing the Mechanoid hives to perceive you as a threat that must be eliminated.
+    From now on, they may equip their forces with more advanced weaponry and launch total warfare against you. Prepare for battle.
+  </NCL_TOTALWARFARE_AUTO_TRIGGER_TEXT>
+  
+
+  <NCL_WEALTH_TRIGGER_SETTINGS>Wealth Trigger Settings</NCL_WEALTH_TRIGGER_SETTINGS>
+  <NCL_WEALTH_THRESHOLD>Trigger Threshold:</NCL_WEALTH_THRESHOLD>
+
+<NCL.LaunchCondition>Launch Condition</NCL.LaunchCondition>
+<NCL.MustBeDisabledWhenActive>Cannot change while silo is active</NCL.MustBeDisabledWhenActive>
+
+<NCL.Condition.HighAngleOnly>Hostile High-Angle Projectiles Only</NCL.Condition.HighAngleOnly>
+<NCL.Condition.AnyEnemyThreat>Hostile Units or Projectiles</NCL.Condition.AnyEnemyThreat>
+
+<NCL.ConditionDesc.HighAngleOnly>Only fires when hostile high-angle projectiles are present</NCL.ConditionDesc.HighAngleOnly>
+<NCL.ConditionDesc.AnyEnemyThreat>Fires when hostile high-angle projectiles or enemy combat units are present</NCL.ConditionDesc.AnyEnemyThreat>
+
+<TLD.DetectionState>Detection System</TLD.DetectionState>
+<TLD.DetectionEnabledDesc>Detection system is active\nProjectile interception enabled</TLD.DetectionEnabledDesc>
+<TLD.DetectionDisabledDesc>Detection system disabled\nNo interception or rotation</TLD.DetectionDisabledDesc>
+
+<!-- Manual trigger letters -->
+<NCL_TOTALWARFARE_MANUAL_TRIGGER_TITLE>Mechanoids: Total Warfare X</NCL_TOTALWARFARE_MANUAL_TRIGGER_TITLE>
+<NCL_TOTALWARFARE_MANUAL_TRIGGER_TEXT>&lt;b&gt;Manual activation signal confirmed&lt;/b&gt;\n\n
+Mechanoid Total Warfare Protocol X activated! All mechanoid units will receive battlefield enhancements:\n\n
+• &lt;b&gt;Overdrive&lt;/b&gt;: Some mechanoids are overloaded with massive energy injection for short periods\n
+• &lt;b&gt;Optical Camo Disruption&lt;/b&gt;: Random mechanoid units are equipped with optical camouflage modules, making them invisible on the battlefield.\n
+• &lt;b&gt;Composite Armor Reinforcement Protocol&lt;/b&gt;: Some units' protective capabilities are significantly enhanced.\n
+• &lt;b&gt;Tactical Artillery Coordination Module&lt;/b&gt;: Some units can summon turret support\n
+• &lt;b&gt;Long Range Ballistics Optimization System&lt;/b&gt;: Some units' weapon range is increased.\n\n
+• &lt;b&gt;High Mobility Phase Shift Drive&lt;/b&gt;: Some units' movement speed is greatly enhanced.\n\n
+&lt;b&gt;Tactical Recommendations:&lt;/b&gt;\n
+- Prioritize EMP weapons\n
+- Deploy sensors to detect invisible units\n
+- Lay point defense systems to counter high-angle projectiles
+</NCL_TOTALWARFARE_MANUAL_TRIGGER_TEXT>
+
+<!-- Settings menu -->
+<NCL_TOTALWARFARE_SETTINGS_CATEGORY>Mechanoids: Total Warfare</NCL_TOTALWARFARE_SETTINGS_CATEGORY>
+
+<NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT>Enable Mechanoid enhancements triggered by war beacons</NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT>
+<NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT_DESC>Disabling will completely turn off mechanoid enhancement effects triggered by war beacons</NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT_DESC>
+
+<NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER>Enable wealth threshold-triggered mechanoid enhancements</NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER>
+<NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER_DESC>Automatically triggers mechanoid enhancements when colony wealth reaches 1.5 million</NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER_DESC>
+
+<NCL_TOTALWARFARE_SHOW_DEV_LOGS>Show developer logs</NCL_TOTALWARFARE_SHOW_DEV_LOGS>
+<NCL_TOTALWARFARE_SHOW_DEV_LOGS_DESC>Display debug information in developer mode</NCL_TOTALWARFARE_SHOW_DEV_LOGS_DESC>
+
+<NCL_TOTALWARFARE_BANDWIDTH_PER_NODE_LABEL>Bandwidth provided per node:</NCL_TOTALWARFARE_BANDWIDTH_PER_NODE_LABEL>
+
+<!-- Debug logs -->
+<NCL_TOTALWARFARE_START_LOG>NCL: Total Warfare started - Wealth: {0} | Status: {1}</NCL_TOTALWARFARE_START_LOG>
+
+<NCL_WARBEACON_TOGGLE_GIZMO_LABEL>Building repair allowed</NCL_WARBEACON_TOGGLE_GIZMO_LABEL>
+<NCL_WARBEACON_TOGGLE_GIZMO_OFF_LABEL>Building repair prohibited</NCL_WARBEACON_TOGGLE_GIZMO_OFF_LABEL>
+
+<!-- Building_Ancient_WarBeacon -->
+<NCL_WARBEACON_INSPECT_DESCRIPTION>This ancient war device appears to be reactivated through repairs</NCL_WARBEACON_INSPECT_DESCRIPTION>
+<NCL_WARBEACON_REPAIR_TIME>Repair time required</NCL_WARBEACON_REPAIR_TIME>
+<NCL_WARBEACON_REQUIRED_RESOURCES>Resources required for repair</NCL_WARBEACON_REQUIRED_RESOURCES>
+
+<!-- WorkGiver_RebuildTheWarBeacon -->
+<NCL_WARBEACON_NO_MATERIAL>Lacking the materials that were required for fixing this structure</NCL_WARBEACON_NO_MATERIAL>
+
+<!-- WorkGiver_RebuildBrokenShellcoreBastion -->
+<NCL_SHELLCORE_NO_MATERIAL>Lacking the materials that were required for fixing this structure</NCL_SHELLCORE_NO_MATERIAL>
+
+<!-- NewSelect dialog content -->
+<NCL_WARBEACON_REACTIVATE_TITLE>War Beacon Reactivation</NCL_WARBEACON_REACTIVATE_TITLE>
+<NCL_WARBEACON_REACTIVATE_DESCRIPTION>You have successfully repaired this war beacon. Its massive structure looms over the wasteland like a slumbering beast, sending chills down your spine. As the core structure used by mechanoids to mark strategic coordinates, its activation means you will be exposed to their sight—more powerful, more deadly mechanoid forces will pour in, attempting to utterly destroy you.\n
+But high risk comes with high reward. By analyzing the beacon's core data, you may crack the mechanoids' technological barriers and unlock cutting-edge technologies once beyond reach.\n
+The choice is yours—remain silent for preservation, or ignite the war and face the unknown?\n
+Activate it, activate the war.</NCL_WARBEACON_REACTIVATE_DESCRIPTION>
+<NCL_WARBEACON_ELLIPSES>......</NCL_WARBEACON_ELLIPSES>
+<NCL_WARBEACON_FIRST_LOG>FirstWarBeaconLog</NCL_WARBEACON_FIRST_LOG>
+<NCL_WARBEACON_SECOND_LOG>SecondWarBeaconLog</NCL_WARBEACON_SECOND_LOG>
+
+  <NCL.HoldFire>HoldFire</NCL.HoldFire>
+  <NCL.HoldFireDesc>HoldFire</NCL.HoldFireDesc>
+
+<NCL.AutoExplodeCountdown>[CRITICAL] Detonation in T-{0} seconds</NCL.AutoExplodeCountdown>
+
+<!-- NewSelect mechanoid core dialogue content -->
+<CerebrexCore_SpawnTitle>Mechanoid CerebrexCore Restored</CerebrexCore_SpawnTitle>
+<CerebrexCore_SpawnDesc>A mechanoid CerebrexCore has been constructed in your base. Its deep space signal transmitter is currently dormant but may awaken the entire mechanoid empire at any time.</CerebrexCore_SpawnDesc>
+<NCL_COREBASED_ENHANCEMENT_TITLE>Mechanoid CerebrexCore Reactivation</NCL_COREBASED_ENHANCEMENT_TITLE>
+<NCL_COREBASED_ENHANCEMENT_DESC>You have restarted this mechanoid CerebrexCore. Its signal transmitter has begun broadcasting coordinates into deep space. Mechanoid raids will be reactivated, their attacks will break through scale limits, new mechanoid units will join the battlefield, and all mechanoid forces will receive enhancements.
+
+Risk often accompanies reward. By actively researching the core's neural matrix with research staff, you can unlock the mechanoids' cutting-edge technologies.</NCL_COREBASED_ENHANCEMENT_DESC>
+
+<!-- ========== Manual Lightning Strike Component ========== -->
+<LightningStrike>EMP Strike</LightningStrike>
+<LightningStrikeDesc>Summon a powerful lightning strike on the target area, dealing EMP damage</LightningStrikeDesc>
+<LightningStrike_NoPower>Cannot activate EMP attack: Not connected to power</LightningStrike_NoPower>
+<LightningStrike_Cooldown>Cooldown: Available in {0}</LightningStrike_Cooldown>
+<LightningStrike_NeedPower>More power needed: At least {0}W required</LightningStrike_NeedPower>
+<LightningStrike_PowerStatus>Available power: {0}W / EMP attack single use: {1}W</LightningStrike_PowerStatus>
+<LightningStrike_Ready>Ready</LightningStrike_Ready>
+<LightningStrike_Message>{0} released a lightning strike!</LightningStrike_Message>
+
+<!-- ========== Auto Lightning Strike Component ========== -->
+<NCL_OverdriveMode_Enabled>{0} overdrive mode enabled</NCL_OverdriveMode_Enabled>
+<NCL_OverdriveMode_Disabled>{0} overdrive mode disabled</NCL_OverdriveMode_Disabled>
+<NCL_AutoLightningStrike_NoPower>Cannot activate lightning attack: Not connected to power</NCL_AutoLightningStrike_NoPower>
+<NCL_AutoLightningStrike_NeedPower>More power needed: At least {0}W required</NCL_AutoLightningStrike_NeedPower>
+<NCL_OverdriveMode_RequiresAuto>Auto strike mode must be enabled first</NCL_OverdriveMode_RequiresAuto>
+<NCL_AutoLightningStrike_PowerStatus>Available power: {0}W / Lightning attack single use: {1}W</NCL_AutoLightningStrike_PowerStatus>
+<NCL_AutoLightningStrike_AutoActive>Auto strike mode enabled</NCL_AutoLightningStrike_AutoActive>
+<NCL_AutoLightningStrike_ConcurrentStrikes>Current strikes: {0}/{1}</NCL_AutoLightningStrike_ConcurrentStrikes>
+<NCL_OverdriveMode_Active>Overdrive mode enabled</NCL_OverdriveMode_Active>
+<NCL_AutoLightningStrike_NextStrike>Next strike: In {0}</NCL_AutoLightningStrike_NextStrike>
+<NCL_AutoLightningStrike_Ready>Ready</NCL_AutoLightningStrike_Ready>
+
+<!-- ========== Auto Strike Property Fields ========== -->
+<NCL_AutoStrike_Mode>Auto lightning strike</NCL_AutoStrike_Mode>
+<NCL_AutoStrike_ToggleDesc>Toggle automatic enemy targeting</NCL_AutoStrike_ToggleDesc>
+<NCL_Overdrive_Mode>Overdrive Mode</NCL_Overdrive_Mode>
+<NCL_Overdrive_Description>Double targets, half cooldown, but 2x power consumption</NCL_Overdrive_Description>
+
+<!-- ========== Core Function Text ========== -->
+<NCL_HediffSwitched>Switched to {0} effect</NCL_HediffSwitched>
+<NCL_MechHealed>{0} ({1}) has received {3} effect, consuming {2} units of fuel</NCL_MechHealed>
+<NCL_CurrentHediff>Current effect: {0}</NCL_CurrentHediff>
+
+<!-- ========== Mech Weight Classes ========== -->
+<MechWeightClass_Light>Light</MechWeightClass_Light>
+<MechWeightClass_Medium>Medium</MechWeightClass_Medium>
+<MechWeightClass_Heavy>Heavy</MechWeightClass_Heavy>
+<MechWeightClass_UltraHeavy>Ultra Heavy</MechWeightClass_UltraHeavy>
+
+<!-- ========== Gizmo Labels ========== -->
+<NCL_EnableLight>Modify Light Mechs</NCL_EnableLight>
+<NCL_EnableMedium>Modify Medium Mechs</NCL_EnableMedium>
+<NCL_EnableHeavy>Modify Heavy Mechs</NCL_EnableHeavy>
+<NCL_EnableUltraHeavy>Modify Ultra Heavy Mechs</NCL_EnableUltraHeavy>
+
+<!-- ========== Hediff Labels ========== -->
+<FireControl_Upgrade>Fire Control Upgrade</FireControl_Upgrade>
+<Armor_Upgrade>Armor Upgrade</Armor_Upgrade>
+
+<!-- ========== Inspection Panel Text ========== -->
+<NCL_Healer_Status>Mech Modifier Status: {0}</NCL_Healer_Status>
+<NCL_Healer_Active>Active</NCL_Healer_Active>
+<NCL_Healer_Inactive>Inactive</NCL_Healer_Inactive>
+<NCL_Healer_NextHeal>Next modification: In {0}</NCL_Healer_NextHeal>
+<NCL_Healer_NoFuel>Insufficient fuel</NCL_Healer_NoFuel>
+
+<!-- ========== Fuel Consumption Descriptions ========== -->
+<NCL_FuelCost_Light>Light consumption: {0}</NCL_FuelCost_Light>
+<NCL_FuelCost_Medium>Medium consumption: {0}</NCL_FuelCost_Medium>
+<NCL_FuelCost_Heavy>Heavy consumption: {0}</NCL_FuelCost_Heavy>
+<NCL_FuelCost_UltraHeavy>Ultra Heavy consumption: {0}</NCL_FuelCost_UltraHeavy>
+
+<GenerateBandwidth>Bandwidth Expansion</GenerateBandwidth>
+<GenerateBandwidthDesc>Bandwidth Expansion</GenerateBandwidthDesc>
+<ResetBandwidth>Reset Bandwidth</ResetBandwidth>
+<ResetBandwidthDesc>Reset all upgrade levels to 0, restoring original state</ResetBandwidthDesc>
+<BandwidthReset>{0}'s bandwidth upgrades have been reset</BandwidthReset>
+<BandwidthGenerated>{0}'s bandwidth upgraded to level {1} (max {2} levels)</BandwidthGenerated>
+
+<NCL_ADVANCED_NODE_TITLE>Initial bandwidth granted by band antenna</NCL_ADVANCED_NODE_TITLE>
+<NCL_ENABLE_CORETRIGGER>Enable core building triggers</NCL_ENABLE_CORETRIGGER>
+<NCL_ENABLE_CORETRIGGER_DESC>When enabled, rebuilding ancient mechanoid cores activates advanced war systems</NCL_ENABLE_CORETRIGGER_DESC>
+
+<NCL_GENERATE_ANCIENT_WAR_BEACON_REMAINS>Generate ancient war beacon remains (only to ensure players joining mid-game can experience mod content normally)</NCL_GENERATE_ANCIENT_WAR_BEACON_REMAINS>
+<NCL_NO_CURRENT_MAP_FOUND>No current map found</NCL_NO_CURRENT_MAP_FOUND>
+<NCL_ANCIENT_WAR_BEACON_REMAINS_GENSTEPDEF_NOT_FOUND>Ancient war beacon remains generation step definition not found</NCL_ANCIENT_WAR_BEACON_REMAINS_GENSTEPDEF_NOT_FOUND>
+<NCL_GENSTEP_INSTANCE_NULL>Generation step instance is null</NCL_GENSTEP_INSTANCE_NULL>
+<NCL_SUCCESS_GENERATE_ANCIENT_WAR_BEACON>Successfully generated ancient war beacon remains</NCL_SUCCESS_GENERATE_ANCIENT_WAR_BEACON>
+<NCL_FAILED_GENERATE>Generation failed: {0}</NCL_FAILED_GENERATE>
+
+<NCL_ANCIENT_REMAINS_GENERATED>Ancient remains generated on this map</NCL_ANCIENT_REMAINS_GENERATED>
+
+<NCL.ADJUST_POWER_OUTPUT>Adjust Power Output</NCL.ADJUST_POWER_OUTPUT>
+<NCL.CURRENT_POWER_LEVEL>Current power: {0}%</NCL.CURRENT_POWER_LEVEL>
+<NCL.SET_POWER_OUTPUT>Set power output level: {0}%\nHeat output: {1}°C/sec</NCL.SET_POWER_OUTPUT>
+
+<NCL_INVISIBILITY_VISIBLE_TO_PLAYER>Visibility of Mechanoid Enhancement Invisibility to Player</NCL_INVISIBILITY_VISIBLE_TO_PLAYER>
+<NCL_INVISIBILITY_VISIBLE_TO_PLAYER_DESC>If disabled, the invisibility effect granted by mechanoid enhancements will hide the mechanoid from the player as well. (Changes require restart to take effect)</NCL_INVISIBILITY_VISIBLE_TO_PLAYER_DESC>
+
+
+<!-- Fuel status -->
+<NCL.POWER_DISABLED>Power output: 0% (Disabled)</NCL.POWER_DISABLED>
+<NCL.NO_FUEL_SYSTEM>No fuel system</NCL.NO_FUEL_SYSTEM>
+<NCL.NO_FUEL>Fuel: 0% (No power)</NCL.NO_FUEL>
+<NCL.FUEL_STATUS>Fuel: {0:F0}% ({1:F1}x power{2})</NCL.FUEL_STATUS>
+<NCL.PEAK_POWER> (Peak power)</NCL.PEAK_POWER>
+
+<!-- Heat information -->
+<NCL.HEAT_OUTPUT>Heat output: {0}°C/sec</NCL.HEAT_OUTPUT>
+<NCL.NO_HEAT_OUTPUT>No heat output (Disabled)</NCL.NO_HEAT_OUTPUT>
+
+<!-- Inspection strings -->
+<NCL.FUEL_CONSUMPTION>Fuel consumption: {0}/day</NCL.FUEL_CONSUMPTION>
+<NCL.FUEL_MULTIPLIER>Fuel multiplier: {0}x</NCL.FUEL_MULTIPLIER>
+<NCL.PEAK>(Peak)</NCL.PEAK>
+<NCL.NEED_MORE_FUEL>Need to add {0}% more fuel to reach peak output</NCL.NEED_MORE_FUEL>
+
+<NCL.STRUCTURE_DESTROYED_HEAT>{0} destroyed due to high temperature!</NCL.STRUCTURE_DESTROYED_HEAT>
+<NCL.STRUCTURE_SHUTDOWN>{0} emergency shutdown</NCL.STRUCTURE_SHUTDOWN>
+
+<!-- Inspection strings -->
+<NCL.CRITICAL_OVERHEAT>Run, it's going to explode!</NCL.CRITICAL_OVERHEAT>
+<NCL.HIGH_TEMP_WARNING>Critical reactor overheating! Immediate shutdown required!</NCL.HIGH_TEMP_WARNING>
+<NCL.CURRENT_TEMP>Current temperature: {0}°C</NCL.CURRENT_TEMP>
+
+<!-- Emergency operations -->
+<NCL.EMERGENCY_SHUTDOWN>Emergency Shutdown</NCL.EMERGENCY_SHUTDOWN>
+<NCL.EMERGENCY_SHUTDOWN_DESC>Immediately shut down to reduce temperature</NCL.EMERGENCY_SHUTDOWN_DESC>
+
+<!-- Alert system -->
+<NCL.ALERT_CRITICAL_TEMP>Run, it's going to explode!</NCL.ALERT_CRITICAL_TEMP>
+<NCL.ALERT_WARNING_TEMP>Emergency: Reactor overheating!</NCL.ALERT_WARNING_TEMP>
+<NCL.ALERT_CRITICAL_EXPLANATION>Reactor overheating detected! If not shut down immediately, some equipment will self-destruct!\n\nAffected equipment:\n{0}\n\nEmergency measures:\n- Use emergency shutdown\n- Improve cooling system</NCL.ALERT_CRITICAL_EXPLANATION>
+<NCL.ALERT_WARNING_EXPLANATION>High temperature detected! Some equipment operating under dangerous conditions.\n\nAffected equipment:\n{0}\n\nRecommended measures:\n- Reduce equipment power output\n- Improve ventilation</NCL.ALERT_WARNING_EXPLANATION>
+
+<NCL.TRADE_EMPLOY_SUCCESS>Used {0} to hire {1} for {2} days</NCL.TRADE_EMPLOY_SUCCESS>
+
+<NCL_DAILY_SPECIAL_HEDIFF_LIMIT>Maximum number of EMP mortars that can be spawned in a single raid</NCL_DAILY_SPECIAL_HEDIFF_LIMIT>
+<NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC>Actually the daily limit for the number of EMP mortars that can be spawned</NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC>
+
+
+<NCL_DAILY_SPECIAL_HEDIFF_LIMIT_A>Maximum number of HE mortars that can be spawned in a single raid</NCL_DAILY_SPECIAL_HEDIFF_LIMIT_A>
+<NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC_A>Actually the daily limit for the number of HE mortars that can be spawned</NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC_A>
+<!-- Employment status -->
+<NCL.EMPLOYMENT_EXPIRED>{0}'s employment contract has expired</NCL.EMPLOYMENT_EXPIRED>
+<NCL.EMPLOYMENT_REMAINING>Employment remaining: {0}\nHostile targets: {1}</NCL.EMPLOYMENT_REMAINING>
+
+<NCL_MustPlaceRoofed>Must be placed in a roofed room</NCL_MustPlaceRoofed>
+
+<NCL_ResearchUnlocked>{0} research automatically unlocked</NCL_ResearchUnlocked>
+<NCL_WillUnlockResearch>Will unlock research: {0}</NCL_WillUnlockResearch>
+
+<NCL.KillAllSplitterSpider>Command: Self-destruct</NCL.KillAllSplitterSpider>
+<NCL.KillAllSplitterSpiderDesc>Command all splitter spiders produced by this mechanoid to self-destruct</NCL.KillAllSplitterSpiderDesc>
+
+<MechShield_Reactivated>This mechanoid boss's localized core ensures immunity to external psychic attacks</MechShield_Reactivated>
+<ReleaseDrones>Deploy Drones</ReleaseDrones>
+<ReleaseDronesDesc>Deploy {0} drones</ReleaseDronesDesc>
+<DroneCarrierResourceStatus>Drone Carrier Resource Status</DroneCarrierResourceStatus>
+<Material>Material</Material>
+<CurrentResources>Current Resources</CurrentResources>
+<DronesReady>Ready: {0} drones</DronesReady>
+<AutoReleaseDrones>Auto Deploy Drones</AutoReleaseDrones>
+<AutoReleaseDronesDesc>When enabled, automatically deploys drones when cooldown ends until resources are exhausted</AutoReleaseDronesDesc>
+
+<NCL.FireAllUniversityStudents>Fire Them All!</NCL.FireAllUniversityStudents>
+<NCL.FireAllUniversityStudentsDesc>One-click delete all existing university Minitors</NCL.FireAllUniversityStudentsDesc>
+    <NCL.CanNotFireAllUniversityStudents>There arenot any university Minitors exist in the map</NCL.CanNotFireAllUniversityStudents>
+
+<CannotDropBoundWeapon>This weapon cannot be dropped on the ground</CannotDropBoundWeapon>
+<RestartCore>Restart Mechanoid Core</RestartCore>
+<RestartCoreDECS>Restart the mechanoid core, which will reactivate all mechanoids on this planet</RestartCoreDECS>
+
+<CancelRestart>Cancel Mechanoid Core Restart</CancelRestart>
+<CancelRestartDECS>This is your second chance</CancelRestartDECS>
+
+<NCL_Storyteller_Mod>Mechanoids: Total Warfare Storyteller Settings</NCL_Storyteller_Mod>
+<maxDefaultThreatPoints>Raid point cap when using Justice as storyteller</maxDefaultThreatPoints>
+<maxDefaultThreatPointsDesc>Raid point cap when using Justice as storyteller, default value is 3 million</maxDefaultThreatPointsDesc>
+<maxPawns>Raid pawn cap when using Justice as storyteller</maxPawns>
+<maxPawnsDesc>Raid pawn cap when using Justice as storyteller, default value is 400</maxPawnsDesc>
+<NCL_Subtitle>Mechanoids: Total Warfare</NCL_Subtitle>
+
+<!-- Checkbox labels -->
+<NCL_Checkbox_DisableWindow>Disable startup window</NCL_Checkbox_DisableWindow>
+<NCL_Checkbox_DisableWindowWithUpdate>Disable normal startup popup (will still prompt on updates)</NCL_Checkbox_DisableWindowWithUpdate>
+
+<!-- Titles -->
+<NCL_Title_Main>Total Warfare Mod Notice</NCL_Title_Main>
+<NCL_Title_Page1>Mid-Game Joining Notice</NCL_Title_Page1>
+<NCL_Title_Page2>Development Plan</NCL_Title_Page2>
+<NCL_Title_Page3>Hostile Mechanoid Enhancement Types</NCL_Title_Page3>
+
+<!-- Buttons -->
+<NCL_Button_Page1>Mid-Game Joining Notice</NCL_Button_Page1>
+<NCL_Button_Page2>Development Plan</NCL_Button_Page2>
+<NCL_Button_Page3>Hostile Mechanoid Enhancement Types</NCL_Button_Page3>
+<NCL_Button_Return>Main Page</NCL_Button_Return>
+
+<!-- Dynamic content -->
+<NCL_Content_UpdatePrefix>【Version Update v{0}】\n\n</NCL_Content_UpdatePrefix>
+<NCL_Title_UpdateWithPage>Version Update v{0} - {1}</NCL_Title_UpdateWithPage>
+
+<NCL_BASIC_SETTINGS>Basic Settings</NCL_BASIC_SETTINGS>
+<NCL_BASIC_SETTINGS_DESC>Basic Settings</NCL_BASIC_SETTINGS_DESC>
+
+<NCL_OPERATIONS>Special Operations Buttons</NCL_OPERATIONS>
+<NCL_OPERATIONS_DESC>Special Operations Buttons</NCL_OPERATIONS_DESC>
+
+<NCL_Content_Main>Thanks for subscribing to "Mechanoids: Total Warfare" MOD!
+
+Core features:
+◆ 20+ new mechanoids with unique combat roles
+◆ Expanded battle scale and new combat mechanics
+◆ Progressive difficulty (late-game focused)
+◆ Toggleable enemy enhancements
+◆ Hidden NCL faction with worm garrison system
+
+Note: Worm garrisons are emergency tools - overuse reduces challenge.</NCL_Content_Main>
+
+<NCL_Content_Page1>Essential Setup:
+• MOD requires generated mechanoid ruins
+• Mid-game joinning players: Use "Generate Ruins" in MOD settings
+• Works ONLY on planetary surfaces (not spaceships)
+• Without ruins, core content remains locked</NCL_Content_Page1>
+
+<NCL_Content_Page2>Development Status: Beta v0.8
+
+Planned:
+• Balance adjustments
+• Complete story campaign</NCL_Content_Page2>
+
+<NCL_Content_Page3>Enemy Mechanoid Enhancements:
+• Applies randomly (0/unit in early game, max 3/unit as the game progress)
+• Effects:
+  - Mortar Support 
+  - Point Defense Support
+  - Blast Cannon Support
+  - +20% Weapon Range and attack speed
+  - + Move Speed
+  - + Armor
+  - Optical Camo (revealed at 45 tiles)
+  - Overdrive State
+
+Tactical Tip: Build laser point defense against mortars.</NCL_Content_Page3>
+
+  <LaserDefence_PowerPerShot>Power per shot: {0}</LaserDefence_PowerPerShot>
+  <LaserDefence_PowerWarning>Warning! Insufficient power reserves (Current: {0})</LaserDefence_PowerWarning>
+
+  <NCLYouNewWorm>(Requires {0} days to rebuild)</NCLYouNewWorm>
+  <NCLSradeShipCooldownTime>(CD: {0} days)</NCLSradeShipCooldownTime>
+  <NCLYouWaitWorm>(Worm currently inbound)</NCLYouWaitWorm>
+  <NCLYouInWar>(Currently in trial)</NCLYouInWar>
+  <NoNCLWormCanSleep>(No mechanical worm on current map)</NoNCLWormCanSleep>
+  <GoBackMuLu>(Return to previous)</GoBackMuLu>
+  <NCLNeedReaearch>(Research required: {0})</NCLNeedReaearch>
+
+  <UnknownAddressEncrypted>Unknown Address: Encrypted</UnknownAddressEncrypted>
+  <NCLEncryptedComms>NCL Encrypted Comms System</NCLEncryptedComms>
+  <GoBack>Return to Menu</GoBack>
+  <Factional_Relation>Faction Relation: Friendly</Factional_Relation>
+
+  <NCL_AIRSTRIKE_TRIGGER_SETTINGS>Airstrike Trigger Settings [Need WarBeacon Activated] </NCL_AIRSTRIKE_TRIGGER_SETTINGS>
+  <NCL_AIRSTRIKE_THRESHOLD>Airstrike Threshold:</NCL_AIRSTRIKE_THRESHOLD>
+
+  <!-- Psychic Dodge 组件本地化 -->
+  <NCL.PsychicDodgeToggle>Psychic Dodge</NCL.PsychicDodgeToggle>
+  <NCL.PsychicDodgeToggleDesc>Toggle psychic dodge ability</NCL.PsychicDodgeToggleDesc>
+  <NCL.PsychicDodgeDisabled>Psychic Dodge: Disabled</NCL.PsychicDodgeDisabled>
+  <NCL.PsychicDodgeCoolingDown>Psychic Dodge: Cooling down ({0}s)</NCL.PsychicDodgeCoolingDown>
+  <NCL.PsychicDodgeReady>Psychic Dodge: Ready</NCL.PsychicDodgeReady>
+  
+    <NCL.SmokePopToggle>Smoke Pop</NCL.SmokePopToggle>
+  <NCL.SmokePopToggleDesc>Toggle automatic smoke pop on hit</NCL.SmokePopToggleDesc>
+  <NCL.SmokePopDisabled>Smoke Pop: Disabled</NCL.SmokePopDisabled>
+  <NCL.SmokePopCoolingDown>Smoke Pop: Cooling down ({0}s)</NCL.SmokePopCoolingDown>
+  <NCL.SmokePopReady>Smoke Pop: Ready</NCL.SmokePopReady>
+
+<ClearSteelTitle>Eject Resources</ClearSteelTitle>
+<ConfirmClearSteel>Eject {0} from this missile silo?</ConfirmClearSteel>
+<ClearSteelTooltip>Eject all resources</ClearSteelTooltip>
+
+  <NCL.ActivateSilo>Activate Silo</NCL.ActivateSilo>
+  <NCL.DeactivateSilo>Deactivate Silo</NCL.DeactivateSilo>
+  <NCL.ActivateSiloDesc>Raise the silo lid and enable missile launch</NCL.ActivateSiloDesc>
+  <NCL.DeactivateSiloDesc>Lower the silo lid and disable missile launch</NCL.DeactivateSiloDesc>
+  
+  <!-- 发射间隔按钮 - 英文 -->
+  <NCL.LaunchInterval>Launch Interval: {0}s</NCL.LaunchInterval>
+  <NCL.LaunchIntervalDesc>Adjust time between missile launches (0.1-3.0 seconds)</NCL.LaunchIntervalDesc>
+  
+  <!-- 设置窗口 - 英文 -->
+  <NCL.SetLaunchInterval>Set Launch Interval</NCL.SetLaunchInterval>
+  
+  <!-- 滑块标签 - 英文 -->
+  <NCL.CurrentValue>{0}s</NCL.CurrentValue>
+  <NCL.MinValue>{0}s</NCL.MinValue>
+  <NCL.MaxValue>{0}s</NCL.MaxValue>
+
+    <Confirm>OK</Confirm>
+
+  <NCL_SummonGizmoLabel>Summon Drop Pods</NCL_SummonGizmoLabel>
+  <NCL_SummonGizmoDesc>Consume silver to summon drop pod units</NCL_SummonGizmoDesc>
+  <NCL_SilverCost>Silver cost: {0}</NCL_SilverCost>
+  <NCL_NotEnoughSilver>Not enough silver ({0}/{1})</NCL_NotEnoughSilver>
+  <NCL_CannotSummonNoSilver>Cannot summon: insufficient silver</NCL_CannotSummonNoSilver>
+  <NCL_ConsumeSilverFailed>Failed to consume silver</NCL_ConsumeSilverFailed>
+  <NCL_SummonSuccess>Consumed {0} silver, summoning drop pods</NCL_SummonSuccess>
+
+  <!-- Toggle / state -->
+  <NCL.OpenLid>Activate artillery</NCL.OpenLid>
+  <NCL.CloseLid>Shut down artillery</NCL.CloseLid>
+
+  <NCL.OpenLidDesc>
+    Begin powering up and deploying the artillery platform.
+  </NCL.OpenLidDesc>
+  <NCL.CloseLidDesc>
+    Abort all operations and power down the artillery platform.
+  </NCL.CloseLidDesc>
+
+  <!-- Launch / targeting -->
+  <NCL.LaunchSkyfaller>Fire artillery</NCL.LaunchSkyfaller>
+  <NCL.LaunchSkyfallerDesc>Select a target location or pawn for the artillery strike.</NCL.LaunchSkyfallerDesc>
+
+  <NCL.LaunchSkyfallerGlobal>Global Strike</NCL.LaunchSkyfallerGlobal>
+  <NCL.LaunchSkyfallerGlobalDesc>Select a target location or pawn for the Global strike.</NCL.LaunchSkyfallerGlobalDesc>
+  <!-- Aiming -->
+  <NCL.AimingLabel>Aiming: {0}s</NCL.AimingLabel>
+  <NCL.AimingDesc>The artillery is adjusting its firing solution. It will begin the bombardment when aiming is complete.</NCL.AimingDesc>
+  <NCL.AimingRemainingTime>Aiming time remaining: {0}s</NCL.AimingRemainingTime>
+
+  <!-- Cooldown -->
+  <NCL.CoolingDownLabel>Cooling down: {0}s</NCL.CoolingDownLabel>
+  <NCL.CoolingDownDesc>The artillery is dissipating heat and recharging systems before it can fire again.</NCL.CoolingDownDesc>
+  <NCL.CooldownRemainingTime>Artillery cooldown: {0}s</NCL.CooldownRemainingTime>
+
+  <!-- “Lid” / platform states (描述改成火炮启停和战备状态) -->
+  <NCL.LidOpeningCountdown>Artillery startup sequence: {0}s until ready to fire.</NCL.LidOpeningCountdown>
+
+  <NCL.LidOpened>Artillery online and combat‑ready.</NCL.LidOpened>
+
+  <NCL.LidRemainingTime>Remaining active uptime before automatic shutdown: {0}s.</NCL.LidRemainingTime>
+
+  <NCL.LidClosingCountdown>Artillery shutdown sequence in progress: {0}s until offline.</NCL.LidClosingCountdown>
+
+    <NCL.NoPower>No Power</NCL.NoPower>
+
+  <!-- Resource / error -->
+  <NCL.NotEnoughSteel>Not enough HE Shells to fire: requires {0} shells per shot.</NCL.NotEnoughSteel>
+
+</LanguageData> 

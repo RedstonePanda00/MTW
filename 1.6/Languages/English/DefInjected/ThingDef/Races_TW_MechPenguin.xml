@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<TW_MechPenguin.label>Mech Penguin</TW_MechPenguin.label>
+<TW_MechPenguin.description>Unit Archive: Anomalous Cryo-Unit
+Designation: Mech Penguin
+Behavioral Note: Its subcore maintains persistent identification as biological penguin. Operates exclusively within ice sheet biomes. Remains receptive to infinite power supply from mechanoid clusters, enabling sustained polar operations despite cognitive discrepancy.</TW_MechPenguin.description>
+<TW_MechPenguin.tools.head.label>head</TW_MechPenguin.tools.head.label>
+
+</LanguageData>

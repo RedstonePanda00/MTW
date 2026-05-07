@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Shell_TW_Antiparticle_Rail_Mortar</defName>
+    <label>HE Tactical Warhead</label>
+    <graphicData>
+      <texPath>Projectiles/Shell_Nuclear_Bomb</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <drawSize>3</drawSize>
+    </graphicData>
+    <thingClass>NCLProjectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
+    <projectile>
+      <damageDef>TW_Antiparticle_explosion</damageDef>
+      <damageAmountBase>80</damageAmountBase>
+      <explosionRadius>12.5</explosionRadius>
+      <speed>28</speed>
+      <shadowSize>3</shadowSize>
+      <arcHeightFactor>40</arcHeightFactor>
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+    <modExtensions>
+      <li Class="NCLProjectiles.ModExtension_ProjectileEffects">
+        <stages>
+          <li>
+            <label>climbing</label>
+            <type>Cruise</type>
+            <speed>28</speed>
+            <positionFunction>EaseInQuad</positionFunction>
+			<arcFactor>30</arcFactor>
+            <heightOffset>0</heightOffset>
+            <heightFunction>EaseOutQuad</heightFunction>
+          </li>
+        </stages>
+      </li>
+    </modExtensions>
+	<comps>
+      <li Class="NCL.CompProperties_SmokeTrail">
+        <intervalTicks>2</intervalTicks>
+        <smokeSize>1</smokeSize>
+      </li>
+	  <li Class="NCL.CompProperties_SpawnFleckEffectOnDestroyed">
+            
+            <globalScaleFactor>1.5</globalScaleFactor>
+            
+            
+            <flecks>
+                
+                <li>
+                    <fleckDef>Smoke</fleckDef>
+                    <count>20</count>          
+                    <scale>2.0</scale>         
+                    <maxOffset>1.8</maxOffset> 
+                    <velocityAngle>90</velocityAngle> 
+                    <velocitySpeed>0.8</velocitySpeed>
+                    <durationTicks>180</durationTicks>
+                </li>
+                
+                
+                <li>
+                    <fleckDef>ExplosionFlash</fleckDef>
+                    <count>15</count>
+                    <scale>1.2</scale>
+                    <maxOffset>2.5</maxOffset>
+                    <rotationRate>90</rotationRate> 
+                    <solidTime>0.5</solidTime>      
+                </li>
+            </flecks>
+            
+            
+            <effects>
+                <li>
+                    <effectDef>GiantExplosion</effectDef>
+                    <count>1</count>
+                    <durationTicks>600</durationTicks> 
+                </li>
+                
+                <li>
+                    <effectDef>GiantExplosion</effectDef>
+                    <count>1</count>
+                    <maxOffset>0.3</maxOffset>
+                </li>
+            </effects>
+        </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Shell_TW_EMP_Rail_Mortar</defName>
+    <label>EMP Tactical Warhead</label>
+    <graphicData>
+      <texPath>Projectiles/Shell_Nuclear_Bomb</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <drawSize>3</drawSize>
+    </graphicData>
+    <thingClass>NCLProjectiles.Projectile_ExplosiveStagedWithEffects</thingClass>
+    <projectile>
+      <damageDef>EMP</damageDef>
+      <damageAmountBase>50</damageAmountBase>
+      <explosionRadius>12.5</explosionRadius>
+      <speed>28</speed>
+      <shadowSize>3</shadowSize>
+      <arcHeightFactor>40</arcHeightFactor>
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+	 <modExtensions>
+      <li Class="NCLProjectiles.ModExtension_ProjectileEffects">
+        <stages>
+          <li>
+            <label>climbing</label>
+            <type>Cruise</type>
+            <speed>28</speed>
+            <positionFunction>EaseInQuad</positionFunction>
+			<arcFactor>30</arcFactor>
+            <heightOffset>0</heightOffset>
+            <heightFunction>EaseOutQuad</heightFunction>
+          </li>
+        </stages>
+      </li>
+    </modExtensions>
+	<comps>
+      <li Class="NCL.CompProperties_SmokeTrail">
+        <intervalTicks>2</intervalTicks>
+        <smokeSize>1</smokeSize>
+      </li>
+	<li Class="NCL.CompProperties_SpawnFleckEffectOnDestroyed">
+            
+            <globalScaleFactor>1.5</globalScaleFactor>
+            
+            
+            <flecks>
+                
+                <li>
+                    <fleckDef>Smoke</fleckDef>
+                    <count>20</count>          
+                    <scale>2.0</scale>         
+                    <maxOffset>1.8</maxOffset> 
+                    <velocityAngle>90</velocityAngle> 
+                    <velocitySpeed>0.8</velocitySpeed>
+                    <durationTicks>180</durationTicks>
+                </li>
+                
+                
+                <li>
+                    <fleckDef>ExplosionFlash</fleckDef>
+                    <count>15</count>
+                    <scale>1.2</scale>
+                    <maxOffset>2.5</maxOffset>
+                    <rotationRate>90</rotationRate> 
+                    <solidTime>0.5</solidTime>      
+                </li>
+            </flecks>
+            
+            
+            <effects>
+                <li>
+                    <effectDef>GiantExplosion</effectDef>
+                    <count>1</count>
+                    <durationTicks>600</durationTicks> 
+                </li>
+                
+                <li>
+                    <effectDef>GiantExplosion</effectDef>
+                    <count>1</count>
+                    <maxOffset>0.3</maxOffset>
+                </li>
+            </effects>
+        </li>
+    </comps>
+  </ThingDef>
+
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>TW_Antiparticle_Rail_Mortar</defName>
+    <label>Miniature Nuclear Projector</label>
+    <description>Dubbed "Avatar of Annihilation," this orbital artillery system deploys when Doxa-0 anchors. Fires miniature nuclear warheads via gravity rails, bypassing shields, structural barriers, and energy shielding with delayed impact sequencing.</description>
+    <tradeability>None</tradeability>
+    <relicChance>0</relicChance>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+	<uiIconPath>ModIcon/Antiparticle_Rail_Mortar</uiIconPath>
+    <soundInteract>Interact_ChargeLance</soundInteract>
+	<equippedAngleOffset>0</equippedAngleOffset>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+	  <WorkToMake>20000</WorkToMake>
+      <Mass>30</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>20</RangedWeapon_Cooldown>
+    </statBases>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <isMortar>true</isMortar>
+	    <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <ai_TargetHasRangedAttackScoreOffset>500</ai_TargetHasRangedAttackScoreOffset>
+	    <forcedMissRadius>0.5</forcedMissRadius>
+        <verbClass>NCL.Verb_AdvancedShoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Shell_TW_Antiparticle_Rail_Mortar</defaultProjectile>
+        <warmupTime>5</warmupTime>
+        <range>500</range>
+		<minRange>25</minRange>
+        <burstShotCount>10</burstShotCount>
+        <requireLineOfSight>false</requireLineOfSight>
+        <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+        <soundCast>Shot_HellsphereCannonGun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>50</muzzleFlashScale>
+		<targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+		<li Class="NCL.CompProperties_AdvancedAmmo">
+			<primaryProjectileCount0>1</primaryProjectileCount0>
+			<secondaryProjectile0>Shell_TW_EMP_Rail_Mortar</secondaryProjectile0>
+			<secondaryProjectileCount0>1</secondaryProjectileCount0>
+			
+		</li>
+    </comps>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>TW_Antiparticle_Rail_Mortar</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeapon">
+    <defName>MeleeWeapon_Shellsplitter</defName>
+    <label>Shellsplitter Laser Blade</label>
+    <techLevel>Archotech</techLevel>
+    <generateCommonality>0</generateCommonality>
+    <description>High-frequency energy blade mounted on Shellsplitter for close-quarters disruption attacks.</description>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1</uiIconScale>
+    <weaponTags>
+      <li>Legendary</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>0.5</Mass>
+    </statBases>
+	<equippedStatOffsets>
+	 <MeleeHitChance>8</MeleeHitChance>
+     </equippedStatOffsets>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>0.5</cooldownTime>
+      </li>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>0.5</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>0.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+</Defs>

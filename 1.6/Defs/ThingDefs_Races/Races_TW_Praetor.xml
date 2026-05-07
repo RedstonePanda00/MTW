@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="BaseMechanoid">
+    <defName>TW_Mech_Praetor</defName>
+    <label>Praetor</label>
+    <description>Elite mechanoid unit featuring enhanced shield generators and quad-tube missile launchers. Capable of launching precision HE/EMP warheads at extended ranges while neutralizing cloaking effects within operational radius through advanced counter-detection systems.</description>
+    <statBases>
+      <MarketValue>6400</MarketValue>
+      <MoveSpeed>1.8</MoveSpeed>
+      <ArmorRating_Blunt>1.06</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.44</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+	  <IncomingDamageFactor>1</IncomingDamageFactor>
+	  <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">20</BandwidthCost>
+	  <MechEnergyLossPerHP MayRequire="Ludeon.Rimworld.Biotech">0.2</MechEnergyLossPerHP>
+	  <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+
+    </statBases>
+	<size>(1,1)</size>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+	<damageMultipliers>
+	  <li>
+        <damageDef>Stun</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Mechanoid</thinkTreeMain>
+      <body>Mech_Centurion</body>
+      <baseBodySize>7.2</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+	  <hediffGiverSets>
+	  </hediffGiverSets>
+      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+	  <mechWeightClass>UltraHeavy</mechWeightClass>
+	  <lifeStageAges Inherit="false">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+	<comps>  
+	 <li Class="CompProperties_Forbiddable" />
+	<li Class="CompProperties_ProjectileInterceptor">
+    <radius>15</radius>
+    <color>(0.4, 0.4, 0.4)</color>
+    <interceptGroundProjectiles>true</interceptGroundProjectiles>
+    <interceptAirProjectiles>true</interceptAirProjectiles>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>1500</hitPoints>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>2</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>2400</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    <li Class="NCL.CompProperties_AntiInvisibilityField">
+        <effectiveRadius>38</effectiveRadius>
+		<requiresPower>false</requiresPower>
+		<applyHediff>DisruptorFlash</applyHediff>
+        <checkIntervalTicks>60</checkIntervalTicks>
+		<affectsThroughWalls>true</affectsThroughWalls>
+		<drawRadius>true</drawRadius>
+        <drawLines>true</drawLines>
+        <radiusColor>(255, 255, 255)</radiusColor>
+        </li>
+	</comps>
+    <butcherProducts>
+      <Steel>600</Steel>
+      <Plasteel>180</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>TW_Mech_Praetor_Kind</defName>
+    <label>Praetor</label>
+    <combatPower>1000</combatPower>
+    <maxPerGroup>4</maxPerGroup>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+    </weaponTags>
+	<race>TW_Mech_Praetor</race>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/Praetor</texPath>
+          <maskPath>Races/Praetor_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/PraetorAncient</texPath>
+          <maskPath>Races/Praetor_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(1.2, 1.4, 1.3)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>TW_Quad_Guided_Rocket_Launcher_EMP</li>
+      <li>TW_Quad_Guided_Rocket_Launcher_HE</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+  
+</Defs>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: GrenadeExplosiveEMP -->
+  <Proj_GrenadeExplosiveEMP.label>GlitterWorld Explosive EMP Grenade</Proj_GrenadeExplosiveEMP.label>
+  
+  <!-- EN: 特种电荷标枪 -->
+  <Specops_Charge_Lance.label>Specops Charge Lance</Specops_Charge_Lance.label>
+  <!-- EN: 仅在伞兵静螳间装备的特殊电荷标枪，有着极远的射程与不俗的伤害 -->
+  <Specops_Charge_Lance.description>A specialized charge javelin exclusively equipped by Mech Paratroopers, featuring exceptional range and considerable damage potential.</Specops_Charge_Lance.description>
+  <!-- EN: stock -->
+  <Specops_Charge_Lance.tools.stock.label>stock</Specops_Charge_Lance.tools.stock.label>
+  <!-- EN: barrel -->
+  <Specops_Charge_Lance.tools.barrel.label>barrel</Specops_Charge_Lance.tools.barrel.label>
+  <!-- EN: 特种电荷标枪 -->
+  <Specops_Charge_Lance.verbs.Verb_Shoot.label>Specops Charge Lance</Specops_Charge_Lance.verbs.Verb_Shoot.label>
+  
+</LanguageData>

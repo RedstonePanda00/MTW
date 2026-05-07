@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <Bullet_M4887_Gun.label>Bullet M4887</Bullet_M4887_Gun.label>
+  
+  
+  <M4887_Gun.label>M4887</M4887_Gun.label>
+  
+  <M4887_Gun.description>1</M4887_Gun.description>
+  
+  <M4887_Gun.tools.stock.label>stock</M4887_Gun.tools.stock.label>
+  
+  <M4887_Gun.tools.barrel.label>barrel</M4887_Gun.tools.barrel.label>
+  
+  <M4887_Gun.verbs.Verb_Shoot.label>M4887</M4887_Gun.verbs.Verb_Shoot.label>
+  
+</LanguageData>

@@ -1,0 +1,648 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef Name="TWMechShellFortification" ParentName="SuperHeavyMechanoid">
+      <defName>TW_Mech_Shell_Fortification</defName>
+      <label>Shell Fortconstruct</label>
+      <description>Shell Fortconstruct is an extremely rare titan-class unit among mechanoids, standing twenty meters tall and clad in massive armor composed of multiple layers of alien metals and alloy fragments, presenting an awe-inspiring presence. Its design philosophy combines multiple strategic objectives including siege warfare, suppression, and area control, excelling particularly at breaching enemy defensive lines and clearing battlefield remnants with absolute firepower.
+
+The Shell Fortification Construct typically descends from the sky, crashing heavily at the colony's periphery, entering a turret-mode standby state while launching missiles to cause localized earthquakes and panic. Simultaneously, attached mechanoid main forces will drop from the opposite side, forming pincer attack formations that dramatically intensify offensive pressure.</description>
+      <race>
+        <body>Doxa0Body</body>
+        <baseBodySize>4</baseBodySize>
+		<baseHealthScale>18</baseHealthScale>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+        </lifeStageAges>
+        <detritusLeavings>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>3</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>17</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>1</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+        </detritusLeavings>
+	<hediffGiverSets>
+    </hediffGiverSets>
+	<thinkTreeMain>Shell_FortificationThinkTreeMain</thinkTreeMain>
+    <thinkTreeConstant>Shell_FortificationThinkTreeConstant</thinkTreeConstant>
+      </race>
+      <killedLeavingsPlayerHostile>
+        <TW_ArmorBlitzWarfare>1</TW_ArmorBlitzWarfare>
+      </killedLeavingsPlayerHostile>
+      <tools>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>88</power>
+          <cooldownTime>2.6</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        </li>
+      </tools>
+      <statBases>
+      <MarketValue>100000</MarketValue>
+      <MoveSpeed>1.88</MoveSpeed>
+      <ArmorRating_Blunt>2</ArmorRating_Blunt>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+	  <ArmorRating_Heat>2</ArmorRating_Heat>
+	    <EMPResistance>0.75</EMPResistance>
+		<StaggerDurationFactor>0</StaggerDurationFactor>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">999</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+      </statBases>
+<damageMultipliers Inherit="False">
+      <li>
+        <damageDef>TW_Crimson_Slagburst</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Bullet</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Stun</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+	  <comps>
+    <li Class="NCL.CompProperties_ClearOwnerProjectiles">
+    </li>
+	  <li Class="CompProperties_Forbiddable" />
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>54</range>
+                    <interceptCount>8</interceptCount>
+                    <interceptTime>51</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>0.7</laserOffsetY>
+					<connectinglaserWidth>0.5</connectinglaserWidth>
+					<ignoreAirProjectiles>false</ignoreAirProjectiles>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<connectingLineFleck>NCL_Ground_LaserDefenseLine</connectingLineFleck>
+					<laserLineTexture>Motes/LaserLine</laserLineTexture>
+					<impactScale>1</impactScale>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+		<li Class="CompProperties_ProjectileInterceptor">
+        <radius>20</radius>
+        <color>(0.4, 0.4, 0.4, 0.4)</color>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>10000</hitPoints>
+		<interceptGroundProjectiles>true</interceptGroundProjectiles>
+		<interceptAirProjectiles>true</interceptAirProjectiles>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>5</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>1800</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+	<li Class="NCL.CompProperties_TurretGun_GroundTarget">
+        <turretDef>TW_Mech_Shell_Fortification_AutomaticMissileLauncher</turretDef>
+    </li>
+	<li Class="NCL.CompProperties_OnDeathEvent">
+      <incidentToTrigger>PawnSpawnerEvent</incidentToTrigger>
+      <spawnThingOnDeath>false</spawnThingOnDeath>
+    </li>
+	<li Class="NCL.CompProperties_FearAura">
+      </li>
+    <li Class="NCL.CompProperties_MechanoidShield">
+    </li>
+    <li Class="NCL.CompProperties_DamageLimit">
+      <maxDamage>200</maxDamage>
+      <excludedDamageTypes>
+        <li>Vaporize</li>
+      </excludedDamageTypes>
+    </li>
+      <li Class="NCLWorm.CompProperties_DamageAbsorbedAndBoom">
+        <AbsorbedTime>1</AbsorbedTime>
+        <BoomTime>60</BoomTime>
+        <radius>9</radius>
+        <damageDef>NCL_ModBomb</damageDef>
+        <amount>50</amount>
+        <armorPenetration>1</armorPenetration>
+      </li>
+    <li Class="NCL.CompProperties_MechAutoRecovery">
+        <tickInterval>180</tickInterval>
+        <healAmount>10</healAmount> 
+    </li>
+      <li Class="NCLWorm.CompProperties_BattleCrush">
+          <battleEffect>NCL_ShellFortFightingeffects</battleEffect>
+          <damageInterval>60</damageInterval>
+          <damageFactor>0.1</damageFactor>
+          </li>
+      </comps>
+	<butcherProducts>
+      <Steel>1800</Steel>
+      <Plasteel>600</Plasteel>
+	  <GravlitePanel MayRequire="Ludeon.RimWorld.Odyssey">200</GravlitePanel>
+    </butcherProducts>
+    </ThingDef>
+    
+    <PawnKindDef Name="MechShellFortificationKind" ParentName="HeavyMechanoidKind">
+      <defName>TW_Mech_Shell_Fortification_Kind</defName>
+      <label>Fortified Shell Construct</label>
+      <race>TW_Mech_Shell_Fortification</race>
+      <combatPower>1800</combatPower>
+      <maxPerGroup>1</maxPerGroup>
+      <isBoss>true</isBoss>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/KBGT2</texPath>
+          <maskPath>Races/KBGT2_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/KBGT</texPath>
+          <maskPath>Races/KBGT2_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>      
+	  <skipResistant>true</skipResistant>
+	    <weaponMoney>9999~9999</weaponMoney>
+         <weaponTags>
+		 <li>TW_Ionized_Plasma_Launcher</li>
+         </weaponTags>
+         <techHediffsChance>1</techHediffsChance>
+         <techHediffsMoney>9999~9999</techHediffsMoney>
+         <abilities>
+	<li>TurnIntoBuildingAbility</li>
+         </abilities>
+    </PawnKindDef>
+	
+	<ThingDef Name="TW_Mech_Shell_Fortification_ShellBreakFormed" ParentName="SuperHeavyMechanoid">
+      <defName>TW_Mech_Shell_Fortification_ShellBreakFormed</defName>
+      <label>Shell Fortconstruct ShellBreakFormed</label>
+      <description>Shell Fortconstruct is an extremely rare titan-class unit among mechanoids, standing twenty meters tall and clad in massive armor composed of multiple layers of alien metals and alloy fragments, presenting an awe-inspiring presence. Its design philosophy combines multiple strategic objectives including siege warfare, suppression, and area control, excelling particularly at breaching enemy defensive lines and clearing battlefield remnants with absolute firepower.
+
+The Shell Fortification Construct typically descends from the sky, crashing heavily at the colony's periphery, entering a turret-mode standby state while launching missiles to cause localized earthquakes and panic. Simultaneously, attached mechanoid main forces will drop from the opposite side, forming pincer attack formations that dramatically intensify offensive pressure.</description>
+      <race>
+        <body>Doxa0Body</body>
+        <baseBodySize>4</baseBodySize>
+		<baseHealthScale>30</baseHealthScale>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+        </lifeStageAges>
+        <detritusLeavings>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>3</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>17</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>1</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+        </detritusLeavings>
+	<hediffGiverSets>
+      <li>TW_Mech_Shell_Fortification_ShellBreaked</li>
+    </hediffGiverSets>
+      </race>
+      <tools>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>88</power>
+          <cooldownTime>2.6</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        </li>
+      </tools>
+      <statBases>
+      <MoveSpeed>10</MoveSpeed>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+	  <ArmorRating_Heat>1</ArmorRating_Heat>
+	    <EMPResistance>0.5</EMPResistance>
+	  <ShootingAccuracyPawn>20</ShootingAccuracyPawn>
+		<StaggerDurationFactor>0</StaggerDurationFactor>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">999</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+      </statBases>
+	  <comps>
+	  <li Class="CompProperties_Forbiddable" />
+	<li Class="NCL.CompProperties_FearAura">
+    </li>
+    <li Class="NCL.CompProperties_MechAutoRecovery">
+        <tickInterval>180</tickInterval>
+        <healAmount>10</healAmount> 
+    </li>
+      </comps>
+<damageMultipliers>
+      <li>
+        <damageDef>TW_Crimson_Slagburst</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Bullet</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+	<butcherProducts>
+      <Steel>1800</Steel>
+      <Plasteel>600</Plasteel>
+    </butcherProducts>
+    </ThingDef>
+    
+    <PawnKindDef Name="TW_Mech_Shell_Fortification_ShellBreakFormed_Kind" ParentName="HeavyMechanoidKind">
+      <defName>TW_Mech_Shell_Fortification_ShellBreakFormed_Kind</defName>
+      <label>Shell Breach Construct</label>
+      <race>TW_Mech_Shell_Fortification_ShellBreakFormed</race>
+      <combatPower>1800</combatPower>
+      <maxPerGroup>1</maxPerGroup>
+      <isBoss>true</isBoss>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/KBGT4</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/KBGT3</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>      
+	  <skipResistant>true</skipResistant>
+	    <weaponMoney>9999~9999</weaponMoney>
+         <weaponTags>
+		 <li>TW_Ionized_Plasma_Launcher</li>
+         </weaponTags>
+         <techHediffsChance>1</techHediffsChance>
+         <techHediffsMoney>9999~9999</techHediffsMoney>
+         <abilities>
+         </abilities>
+    </PawnKindDef>
+	
+  <AbilityDef>
+    <defName>TurnIntoBuildingAbility</defName>
+    <label>turn into building</label>
+    <description>Transform into a building and back.</description>
+    <abilityClass>NCL.Ability_TurnIntoBuilding</abilityClass>
+	    <iconPath>Ability/TurnIntoBuildingAbility</iconPath>
+		<cooldownTicksRange>18000</cooldownTicksRange>
+		<aiCanUse>false</aiCanUse>
+		<targetRequired>false</targetRequired>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupEffecter>Fire_Burst_Warmup</warmupEffecter>
+			<warmupTime>1.5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>0</range>
+			<drawAimPie>false</drawAimPie>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+	    <jobDef>TurnIntoBuilding</jobDef> 
+</AbilityDef>
+
+<HediffDef>
+    <defName>PawnContainedHediff</defName>
+    <label>contained in building</label>
+	<description>1</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+</HediffDef>
+
+  <JobDef>
+    <defName>TurnIntoBuilding</defName>
+    <driverClass>NCL.JobDriver_TurnIntoBuilding</driverClass>
+    <reportString>TurnIntoBuilding</reportString>
+  </JobDef>
+  
+    <JobDef>
+    <defName>TurnIntoBuildingForged</defName>
+    <driverClass>NCL.JobDriver_TurnIntoBuildingForged</driverClass>
+    <reportString>TurnIntoBuilding</reportString>
+  </JobDef>
+  
+    <AbilityDef>
+    <defName>TurnIntoBuildingAbilityForged</defName>
+    <label>turn into building</label>
+    <description>Transform into a building and back.</description>
+    <abilityClass>NCL.Ability_TurnIntoBuildingForged</abilityClass>
+	    <iconPath>Ability/TurnIntoBuildingAbility</iconPath>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<aiCanUse>false</aiCanUse>
+		<targetRequired>false</targetRequired>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupEffecter>Fire_Burst_Warmup</warmupEffecter>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>0</range>
+			<drawAimPie>false</drawAimPie>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+	    <jobDef>TurnIntoBuildingForged</jobDef> 
+</AbilityDef>
+  
+  <ThingDef Name="TWMechShellFortificationReforged" ParentName="SuperHeavyMechanoid">
+      <defName>TW_Mech_Shell_Fortification_Reforged</defName>
+      <label>Shell Fortconstruct</label>
+      <description>Shell Fortconstruct is an extremely rare titan-class unit among mechanoids, standing twenty meters tall and clad in massive armor composed of multiple layers of alien metals and alloy fragments, presenting an awe-inspiring presence. Its design philosophy combines multiple strategic objectives including siege warfare, suppression, and area control, excelling particularly at breaching enemy defensive lines and clearing battlefield remnants with absolute firepower.
+
+The Shell Fortification Construct typically descends from the sky, crashing heavily at the colony's periphery, entering a turret-mode standby state while launching missiles to cause localized earthquakes and panic. Simultaneously, attached mechanoid main forces will drop from the opposite side, forming pincer attack formations that dramatically intensify offensive pressure.</description>
+      <race>
+        <body>Doxa0Body</body>
+        <baseBodySize>4</baseBodySize>
+		<baseHealthScale>18</baseHealthScale>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+          </li>
+        </lifeStageAges>
+        <detritusLeavings>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>3</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>17</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+          <li>
+            <def>ChunkMechanoidSlag</def>
+            <texOverrideIndex>1</texOverrideIndex>
+            <spawnChance>0.75</spawnChance>
+          </li>
+        </detritusLeavings>
+	<hediffGiverSets>
+    </hediffGiverSets>
+	<thinkTreeMain>Shell_FortificationThinkTreeMain</thinkTreeMain>
+    <thinkTreeConstant>Shell_FortificationThinkTreeConstant</thinkTreeConstant>
+      </race>
+      <tools>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>88</power>
+          <cooldownTime>2.6</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        </li>
+      </tools>
+      <statBases>
+      <MoveSpeed>1.88</MoveSpeed>
+      <ArmorRating_Blunt>1.88</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.88</ArmorRating_Sharp>
+	      <ArmorRating_Heat>1.88</ArmorRating_Heat>
+		<StaggerDurationFactor>0</StaggerDurationFactor>
+	    <EMPResistance>0.75</EMPResistance>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">100</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0</MechEnergyLossPerHP>
+      </statBases>
+	  <comps>
+	  <li Class="CompProperties_Forbiddable" />
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>54</range>
+                    <interceptCount>8</interceptCount>
+                    <interceptTime>51</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>0.7</laserOffsetY>
+					<connectinglaserWidth>0.5</connectinglaserWidth>
+					<ignoreAirProjectiles>false</ignoreAirProjectiles>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<connectingLineFleck>NCL_Ground_LaserDefenseLine</connectingLineFleck>
+					<laserLineTexture>Motes/LaserLine</laserLineTexture>
+					<impactScale>1</impactScale>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+    <li Class="NCL.CompProperties_MechAutoRecovery">
+        <tickInterval>180</tickInterval>
+        <healAmount>5</healAmount> 
+    </li>
+		<li Class="CompProperties_ProjectileInterceptor">
+        <radius>20</radius>
+        <color>(0.4, 0.4, 0.4, 0.4)</color>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>10000</hitPoints>
+		<interceptGroundProjectiles>true</interceptGroundProjectiles>
+		<interceptAirProjectiles>true</interceptAirProjectiles>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>1</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>1800</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+	<li Class="NCL.CompProperties_TurretGun_GroundTarget">
+        <turretDef>TW_Mech_Shell_Fortification_AutomaticMissileLauncher</turretDef>
+    </li>
+	<li Class="NCL.CompProperties_FearAura">
+    </li>
+    <li Class="NCL.CompProperties_DamageLimit">
+      <maxDamage>200</maxDamage>
+      <excludedDamageTypes>
+        <li>Vaporize</li>
+      </excludedDamageTypes>
+    </li>
+      <li Class="NCLWorm.CompProperties_DamageAbsorbedAndBoom">
+        <AbsorbedTime>1</AbsorbedTime>
+        <BoomTime>60</BoomTime>
+        <radius>9</radius>
+        <damageDef>NCL_ModBomb</damageDef>
+        <amount>50</amount>
+        <armorPenetration>1</armorPenetration>
+      </li>
+      <li Class="NCLWorm.CompProperties_BattleCrush">
+          <battleEffect>NCL_ShellFortFightingeffects</battleEffect>
+          <damageInterval>60</damageInterval>
+          <damageFactor>0.1</damageFactor>
+          </li>
+      </comps>
+<damageMultipliers>
+      <li>
+        <damageDef>TW_Crimson_Slagburst</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Bullet</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+	<butcherProducts>
+      <Steel>1800</Steel>
+      <Plasteel>600</Plasteel>
+    </butcherProducts>
+    </ThingDef>
+    
+    <PawnKindDef Name="MechShellFortificationReforgedKind" ParentName="HeavyMechanoidKind">
+      <defName>TW_Mech_Shell_Fortification_Reforged_Kind</defName>
+      <label>Reforged Shell Construct</label>
+      <race>TW_Mech_Shell_Fortification_Reforged</race>
+      <combatPower>1800</combatPower>
+      <maxPerGroup>1</maxPerGroup>
+      <isBoss>true</isBoss>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/KBGT2</texPath>
+          <maskPath>Races/KBGT2_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/KBGT2</texPath>
+          <maskPath>Races/KBGT2_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+        <graphicClass>Graphic_Multi</graphicClass>
+              <drawSize>10</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>      
+	  <skipResistant>false</skipResistant>
+	    <weaponMoney>9999~9999</weaponMoney>
+         <weaponTags>
+		 <li>TW_Ionized_Plasma_Launcher</li>
+         </weaponTags>
+         <techHediffsChance>1</techHediffsChance>
+         <techHediffsMoney>9999~9999</techHediffsMoney>
+         <abilities>
+	<li>TurnIntoBuildingAbilityForged</li>
+         </abilities>
+    </PawnKindDef>
+  
+</Defs>

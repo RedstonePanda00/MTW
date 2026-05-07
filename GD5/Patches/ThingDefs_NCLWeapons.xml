@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+    	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Ionized_Plasma"]/projectile</xpath>
+		<value>
+    <projectile>
+	  <damageDef>TW_Crimson_Slagburst</damageDef>
+      <speed>160</speed>
+	  <preExplosionSpawnThingDef>Filth_Ash</preExplosionSpawnThingDef>
+	  <damageAmountBase>25</damageAmountBase>
+      <armorPenetrationBase>1.5</armorPenetrationBase>
+	  <stoppingPower>1.5</stoppingPower>
+	  <ai_IsIncendiary>true</ai_IsIncendiary>
+      <explosionRadius>2.5</explosionRadius>
+	  <arcHeightFactor>0</arcHeightFactor>
+    </projectile>
+		</value>
+	</Operation>
+ 
+    	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_NCL_Fragments"]/projectile</xpath>
+		<value>
+        <projectile>
+            <damageDef>NCL_ModBomb</damageDef>
+            <explosionRadius>0.9</explosionRadius>
+            <explosionEffect>NCL_Frag</explosionEffect>
+            <damageAmountBase>14</damageAmountBase>
+      <screenShakeFactor>0</screenShakeFactor>
+            <stoppingPower>2.3</stoppingPower>
+            <armorPenetrationBase>0.65</armorPenetrationBase>
+            <speed>38</speed>
+        </projectile>
+		</value>
+	</Operation>
+
+	    	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TW_Guided_Rocket_Launcher_HE"]/verbs</xpath>
+		<value>
+<verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>TW_HE_Guided_Missile</defaultProjectile>
+        <forcedMissRadius>0.1</forcedMissRadius>
+        <warmupTime>2.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+        <range>45</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+		</value>
+	</Operation>
+
+	    	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TW_Guided_Rocket_Launcher_EMP"]/verbs</xpath>
+		<value>
+<verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>TW_EMP_Guided_Missile</defaultProjectile>
+        <forcedMissRadius>0.1</forcedMissRadius>
+        <warmupTime>2.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+        <range>45</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+		</value>
+	</Operation>
+
+		    	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TW_Plasma_Arc_Projector"]/verbs</xpath>
+		<value>
+    <verbs>
+      <li>
+				<verbClass>Verb_Shoot</verbClass>
+				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+				<burstShotCount>158</burstShotCount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_TeslaCentipede</defaultProjectile>
+				<warmupTime>2.5</warmupTime>
+				<minRange>0</minRange>
+				<range>40</range>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>7</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+      </li>
+    </verbs>
+		</value>
+	</Operation>
+
+</Patch>

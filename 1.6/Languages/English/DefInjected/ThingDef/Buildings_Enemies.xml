@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: auto-mortar -->
+  <Artillery_TWAutoMortar.label>auto-mortar</Artillery_TWAutoMortar.label>
+  <!-- EN: auto-mortar -->
+  <Artillery_TWAutoMortar.verbs.Verb_Shoot.label>auto-mortar</Artillery_TWAutoMortar.verbs.Verb_Shoot.label>
+  
+  <!-- EN: 小型自动迫击炮 -->
+  <Turret_TW_AutoMortar.label>AutoMortar</Turret_TW_AutoMortar.label>
+  <!-- EN: A self-powered, self-loading, automatic mortar. It can hit targets at any distance, over walls, but is quite inaccurate. -->
+  <Turret_TW_AutoMortar.description>A self-powered, self-loading, automatic mortar. It can hit targets at any distance, over walls, but is quite inaccurate.</Turret_TW_AutoMortar.description>
+  
+  <!-- EN: high-explosive shell -->
+  <TW_Shell_HighExplosive.label>high-explosive shell</TW_Shell_HighExplosive.label>
+
+    <!-- EN: 电荷冲击炮 -->
+  <Turret_TW_AutoChargeBlaster.label>Auto Charge Blaster</Turret_TW_AutoChargeBlaster.label>
+  <!-- EN: 一种配备电荷冲击炮的自供电炮塔。它在极近距离无法感知目标。 -->
+  <Turret_TW_AutoChargeBlaster.description>A self-powered turret mounted with a charge blaster. It cannot sense targets at very short ranges.</Turret_TW_AutoChargeBlaster.description>
+  
+  <!-- EN: 地狱火炮塔 -->
+  <Turret_TW_AutoInferno.label>Inferno cannon</Turret_TW_AutoInferno.label>
+  <!-- EN: 一种配备地狱火炮的自供电炮塔。它在极近距离无法感知目标，这个炮塔仿佛有特别的智能导致其会混烟。 -->
+  <Turret_TW_AutoInferno.description>A self-powered turret mounted with an inferno cannon. It cannot perceive targets at very close range, yet exhibits uncanny intelligence that enables it to fight effectively through smoke and visual obstructions.</Turret_TW_AutoInferno.description>
+  
+  <!-- EN: 突袭信号指示终端 -->
+  <TW_Airstrike_Signal_Transmitter.label>Airstrike Signal Transmitter</TW_Airstrike_Signal_Transmitter.label>
+  <!-- EN: 机械族核心支援装备，突袭信号指示终端在场时可持续发送加密指令，精准召唤可空降型机械体进行高频投送。\n \n突袭机械体将配备伞降突袭背包，搭载 b2000 对殖民地进行骚扰及割裂阵型，为机械族袭击创造突破窗口，是掌控战场主动权的关键设备。 -->
+  <TW_Airstrike_Signal_Transmitter.description>Core mechanoid support equipment. When paired with an active Raid Signal Indicator Terminal, this device continuously transmits encrypted commands to coordinate precision airdrops of airborne-capable mechanoid units at high operational tempo.
+
+Deployed assault mechanoids feature integrated paradrop assault packs and B2000 harassment systems designed to disrupt colonial defenses and fracture combat formations. This creates critical breach opportunities for mechanoid assault waves, serving as a pivotal asset for establishing battlefield dominance through rapid force projection.</TW_Airstrike_Signal_Transmitter.description>
+  <!-- EN: Enable/disable invisibility detection -->
+  <TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandDesc>Enable/disable invisibility detection</TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandDesc>
+  <!-- EN: Toggle Scanner -->
+  <TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandLabel>Toggle Scanner</TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandLabel>
+  
+  <!-- EN: 地狱火炮塔 -->
+  <Turret_TW_AutoBirgusMortar.label>The Mech Birgus Mortar</Turret_TW_AutoBirgusMortar.label>
+  <!-- EN: 一种配备地狱火炮的自供电炮塔。它在极近距离无法感知目标，这个炮塔仿佛有特别的智能导致其会混烟。 -->
+  <Turret_TW_AutoBirgusMortar.description>In protracted engagements, the mechanoid collective observed significant tactical and strategic deficiencies in their Mech birgus units, which struggled to counter long-range enemy artillery. To address this vulnerability, they launched a dedicated research initiative. Through systematic analysis of active mortar deployment patterns and comprehensive evaluation of the Mech birgus's physical resilience, they successfully engineered the specialized Mech Birgus Mortar - purpose-built to neutralize such threats.</Turret_TW_AutoBirgusMortar.description>
+  
+</LanguageData>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Bullet_TeslaCentipede.label>Tesla Centipede Charge Blast</Bullet_TeslaCentipede.label>
+
+<TW_Plasma_Arc_Projector.label>Plasma Arc Projector</TW_Plasma_Arc_Projector.label>
+<TW_Plasma_Arc_Projector.description>Primary weapon of Tesla Centipedes. Emits high-temperature plasma arcs powered by dorsal capacitors.</TW_Plasma_Arc_Projector.description>
+<TW_Plasma_Arc_Projector.tools.stock.label>stock</TW_Plasma_Arc_Projector.tools.stock.label>
+<TW_Plasma_Arc_Projector.tools.barrel.label>barrel</TW_Plasma_Arc_Projector.tools.barrel.label>
+<TW_Plasma_Arc_Projector.verbs.Verb_Shoot.label>Plasma Arc Projector</TW_Plasma_Arc_Projector.verbs.Verb_Shoot.label>
+
+  
+</LanguageData>

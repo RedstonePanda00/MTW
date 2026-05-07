@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: turn into building -->
+  <TurnIntoBuildingAbility.label>turn into building</TurnIntoBuildingAbility.label>
+  <!-- EN: Transform into a building and back. -->
+  <TurnIntoBuildingAbility.description>Transform into a building and back.</TurnIntoBuildingAbility.description>
+  
+  <!-- EN: turn into building -->
+  <TurnIntoBuildingAbilityForged.label>turn into building</TurnIntoBuildingAbilityForged.label>
+  <!-- EN: Transform into a building and back. -->
+  <TurnIntoBuildingAbilityForged.description>Transform into a building and back.</TurnIntoBuildingAbilityForged.description>
+  
+</LanguageData>

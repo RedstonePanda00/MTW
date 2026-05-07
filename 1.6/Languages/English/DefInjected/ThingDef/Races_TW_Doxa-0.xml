@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 静巢构体 -->
+  <TW_Mech_Doxa.label>Doxa</TW_Mech_Doxa.label>
+  <!-- EN: 静巢构体（Doxa-0） 是机械族中最具战术深度与火力协调能力的单位之一，其原型来自蛛形掠食者，却被机械族重构为一座自律运算的泰坦级战术火力中枢。它的设计目的并非快速歼敌，而是通过持续压制、火控锁定与战场管理，逐步令敌方陷入战术瘫痪。在整支机械军团中，Doxa-0 的部署通常意味着一场区域性的决战已悄然开始。\n	  \n\n行进中的 Doxa-0 缓慢、沉重，以几近仪式感的低频节奏在地表推进。然而，一旦其进入“架炮锁定”状态，它将主动固定于地面，解锁第三身节中的火箭阵列模块，对大片区域进行持续性的穿盾性饱和打击。在此模式下，Doxa-0 彻底抛弃机动性，转而成为一座半永久性的火力节点，压制敌方任何形式的集结或推进。\n\n\n更为致命的是它的孵化系统：战斗期间，Doxa-0 会定期释放名为“裂壳蛛”的微型支援单位。这些蛛形机械虫体积小、速度快，几乎难以预测路径，但在其死亡时会引爆局部冲击波并释放爆炸，令敌人陷入混乱之中。裂壳蛛并非传统意义上的伤害单位，而是一种用于打断、防区扰乱与后排击穿的战术武器。\n\n\nDoxa-0 的“脑核”系统则为整个战场带来更深层的危机。其高频运算能力可在极短时间内完成火力分配、目标优先级调整与支援单位指引，形成一种智能化的战术网络节点。若放任其长时间部署，将可能导致整个防御线被逐一拆解，战场节奏完全落入敌手。\n\n\n静巢构体不是用于正面对抗的敌人，它是战争节奏的塑造者，是战术系统的具现。如果不能迅速加以终结，它将用缓慢却致命的步伐，一点一点将整个殖民地拖入死亡的沉寂。 -->
+  <TW_Mech_Doxa.description>Doxa is among the most tactically sophisticated mechanoids. Originally based on arachnid predators, it was rebuilt into an autonomous titan-class fire control nexus. Designed not for quick elimination but for gradual paralysis through sustained suppression and battlefield management. Its deployment signals regional decisive engagements.
+
+Doxa advances slowly with rhythmic cadence. When anchored in Artillery Lock mode, it deploys third-segment rocket arrays for continuous shield-penetrating bombardment. Sacrificing mobility, it becomes a semi-permanent firebase suppressing enemy concentrations.
+
+Its deadliest feature: periodically releasing Shellsplitter - micro-units with erratic trajectories that explode terminally, disrupting formations. These are tactical disruptors, not direct damage dealers.
+
+Doxa's neural core creates intelligent tactical networks through real-time fire distribution and target prioritization. Unchecked deployment risks dismantling entire defensive lines and losing battlefield initiative.
+
+Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to neutralize it promptly leads to colony's operational death.</TW_Mech_Doxa.description>
+  <!-- EN: head -->
+  <TW_Mech_Doxa.tools.head.label>head</TW_Mech_Doxa.tools.head.label>
+  
+  <!-- EN: 裂壳蛛 -->
+  <TW_Mech_Shellsplitter_Spider.label>Shellsplitter</TW_Mech_Shellsplitter_Spider.label>
+  <!-- EN: 裂壳蛛是静巢构体 Doxa 系列孵化系统衍生出的短程攻击单元，具备基础战斗能力与高度机动性。其外骨骼采用轻质高频震动材料，在贴身接触中可执行连续撕裂与穿刺攻击，具备压制步兵、扰乱阵型的能力。\n\n与多数小型机械族不同，裂壳蛛并非完全以牺牲为目的，而是一种“可打可爆”的前线干扰体。它们在近战接敌时具有高频斩击输出，而一旦结构临界，其核心模块会立即释放一次局部EMP冲击波与破片爆裂，干扰周围电子系统并造成范围伤害。\n\n裂壳蛛通常以集群部署，由孵化装置快速批量制造，适用于渗透破坏、区域锁控与战术自毁任务。它们没有恐惧，只有执行指令的冷酷决心——在接近、撕裂、爆散之间完成自身的战术意义。 -->
+  <TW_Mech_Shellsplitter_Spider.description>Short-range assault units spawned from Doxa-series incubation systems. Lightweight exoskeletons with high-frequency vibration materials enable rapid slashing attacks effective at infantry suppression and formation disruption.
+
+Unlike most expendable mechanoids, Shellsplitter Spiders function as "engage-and-detonate" frontline disruptors. They deliver high-frequency melee strikes until structural failure triggers localized fragmentation explosions - damaging electronics while causing area-denial effects.
+
+Typically deployed in swarms via rapid batch production, they execute infiltration, area denial, and tactical self-destruction missions with cold determination - fulfilling tactical purpose through approach, shred, and detonation.</TW_Mech_Shellsplitter_Spider.description>
+  <!-- EN: head -->
+  <TW_Mech_Shellsplitter_Spider.tools.head.label>head</TW_Mech_Shellsplitter_Spider.tools.head.label>
+  
+</LanguageData>

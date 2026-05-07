@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>NCL_Eagle_Artillery_Shell_Up</defName>
+    <label>Eagle Artillery Shell shot</label>
+    <size>(3,3)</size>
+    <graphicData>
+      <texPath>Projectiles/NCL_Eagle_Artillery_Shell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Mote</shaderType>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <skyfaller>
+	  <angleCurve>
+	    <points>
+          <li>(0,     0)</li>
+          <li>(1,     0)</li>
+        </points>
+	  </angleCurve>
+	  <reversed>true</reversed>
+      <speed>0.65</speed>
+      <shadowSize>(1, 1)</shadowSize>
+	  <anticipationSound>DropPod_Leaving</anticipationSound>
+      <anticipationSoundTicks>10</anticipationSoundTicks>
+      <ticksToImpactRange><min>0</min><max>0</max></ticksToImpactRange>
+    </skyfaller>
+  <comps>
+    <li Class="NCL.CompProperties_SkyfallerTrail">
+      <intervalTicks>1</intervalTicks>
+      <fleckCountRange>
+        <min>4</min>
+        <max>6</max>
+      </fleckCountRange>
+      <mainFleck>FireGlow</mainFleck>
+      <lateFleck>MicroSparks</lateFleck>
+      <latePhaseThreshold>0.9</latePhaseThreshold>
+      <scaleRange>
+        <min>0.6</min>
+        <max>0.8</max>
+      </scaleRange>
+      <speedRange>
+        <min>0.05</min>
+        <max>0.15</max>
+      </speedRange>
+      <angleOffsetRange>
+        <min>-180</min>
+        <max>180</max>
+      </angleOffsetRange>
+      <rotationRateRange>
+        <min>-30</min>
+        <max>30</max>
+      </rotationRateRange>
+      <smokeChance>0.7</smokeChance>
+      <smokeScaleFactor>1.2</smokeScaleFactor>
+      <limitToMidFlight>false</limitToMidFlight>
+      <midFlightRange>
+        <min>0.1</min>
+        <max>0.95</max>
+      </midFlightRange>
+    </li>
+  </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>NCL_Eagle_Artillery_Shell_Down</defName>
+    <label>Eagle Artillery Shell shot</label>
+    <size>(3,3)</size>
+    <graphicData>
+      <texPath>Projectiles/NCL_Eagle_Artillery_Shell_Down</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Mote</shaderType>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <skyfaller>
+	  <angleCurve>
+	    <points>
+          <li>(0,     0)</li>
+          <li>(1,     0)</li>
+        </points>
+	  </angleCurve>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <speed>0.85</speed>
+      <shadowSize>(3, 3)</shadowSize>
+	  <ticksToImpactRange><min>320</min><max>320</max></ticksToImpactRange>
+    </skyfaller>
+  <comps>
+    <li Class="NCL.CompProperties_SkyfallerTrail">
+      <intervalTicks>1</intervalTicks>
+      <fleckCountRange>
+        <min>4</min>
+        <max>6</max>
+      </fleckCountRange>
+      <mainFleck>FireGlow</mainFleck>
+      <lateFleck>MicroSparks</lateFleck>
+      <latePhaseThreshold>0.7</latePhaseThreshold>
+      <scaleRange>
+        <min>0.6</min>
+        <max>0.8</max>
+      </scaleRange>
+      <speedRange>
+        <min>0.05</min>
+        <max>0.15</max>
+      </speedRange>
+      <angleOffsetRange>
+        <min>-180</min>
+        <max>180</max>
+      </angleOffsetRange>
+      <rotationRateRange>
+        <min>-30</min>
+        <max>30</max>
+      </rotationRateRange>
+      <smokeChance>0.7</smokeChance>
+      <smokeScaleFactor>1.2</smokeScaleFactor>
+      <limitToMidFlight>false</limitToMidFlight>
+      <midFlightRange>
+        <min>0.1</min>
+        <max>0.95</max>
+      </midFlightRange>
+    </li>
+    <li Class="CompProperties_PowerConsumingExploder"/>
+	  <li Class="NCL.CompProperties_SpawnFleckEffectOnDestroyed">
+            
+            <globalScaleFactor>1.5</globalScaleFactor>
+            
+            
+            <flecks>
+                
+                <li>
+                    <fleckDef>Smoke</fleckDef>
+                    <count>20</count>          
+                    <scale>2.0</scale>         
+                    <maxOffset>1.8</maxOffset> 
+                    <velocityAngle>90</velocityAngle> 
+                    <velocitySpeed>0.8</velocitySpeed>
+                    <durationTicks>180</durationTicks>
+                </li>
+                
+                
+                <li>
+                    <fleckDef>ExplosionFlash</fleckDef>
+                    <count>15</count>
+                    <scale>1.2</scale>
+                    <maxOffset>2.5</maxOffset>
+                    <rotationRate>90</rotationRate> 
+                    <solidTime>0.5</solidTime>      
+                </li>
+            </flecks>
+            
+            
+            <effects>
+                <li>
+                    <effectDef>GiantExplosion</effectDef>
+                    <count>1</count>
+                    <durationTicks>600</durationTicks> 
+                </li>
+                
+                <li>
+                    <effectDef>GiantExplosion</effectDef>
+                    <count>1</count>
+                    <maxOffset>0.3</maxOffset>
+                </li>
+            </effects>
+        </li>
+  </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>NCL_Eagle_Artillery_Building</defName>
+    <label>NCL_Eagle_Artillery_Building</label>
+    <description>NCL_Eagle_Artillery_Building</description>
+    <thingClass>NCL.Building_SkyfallerLauncher</thingClass>
+   <uiIconPath>Buildings/EagleArtilleryModIcon</uiIconPath>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <fillPercent>0.4</fillPercent>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <graphicData>
+      <texPath>Buildings/NCL_Eagle_Artillery_Building</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(7,7)</drawSize>
+      <shadowData>
+        <volume>(0, 0, 0)</volume>
+        <offset>(0, 0, -0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <passability>PassThroughOnly</passability>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>BuildingsSecurity</li>
+      </buildingTags>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <designationCategory>Security</designationCategory>
+    <uiOrder>2420</uiOrder>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <rotatable>false</rotatable>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>5000</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>500</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(7,7)</size>
+    <costList>
+      <Steel>1750</Steel>
+	  <Plasteel>800</Plasteel>
+    <ComponentIndustrial>50</ComponentIndustrial>
+	  <ComponentSpacer>24</ComponentSpacer>
+	  <TW_ArmorBlitzWarfare>1</TW_ArmorBlitzWarfare>
+	  <Shell_HighExplosive>100</Shell_HighExplosive>
+    </costList>
+    <researchPrerequisites>
+      <li>NCL_Doom_Calculation</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>2000</basePowerConsumption>
+      </li>
+        <li Class="NCL.CompProperties_SteelResource">
+            <fixedIngredient>Shell_HighExplosive</fixedIngredient>
+            <maxIngredientCount>500</maxIngredientCount>
+            <startingIngredientCount>100</startingIngredientCount>
+        </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowCauseHediffAoE</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>NCL_Eagle_Artillery_Aim</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <texPath>Motes/NCL_Eagle_Artillery_Aim</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteHellfireCannon_Aim</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/Cloudy_C</_DistortionTex>
+        <_NumFrames>10</_NumFrames>
+        <_FramesPerSec>1.35</_FramesPerSec>
+        <_DistortionScrollSpeed>(1.35, 1.35)</_DistortionScrollSpeed>
+        <_Intensity>3</_Intensity>
+        <_DistortionScale>0.082</_DistortionScale>
+      </shaderParameters>
+      <drawSize>(3, 0.9)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <SoundDef>
+    <defName>NCL_Artillery_Firing</defName>    
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Artillery/NCL_Artillery_Firing</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <SoundDef>
+    <defName>NCL_Artillery_Activated</defName>    
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Artillery/NCL_Artillery_Activated</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <SoundDef>
+    <defName>NCL_Artillery_Landed</defName>    
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Artillery/NCL_Artillery_Landed</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <SoundDef>
+    <defName>NCL_Artillery_Aimming</defName>    
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Artillery/NCL_Artillery_Aimming</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <WorldObjectDef>
+    <defName>NCL_WorldObject_SkyfallerArtillery</defName>
+    <label>Eagle Artillery Shell</label>
+    <description>Eagle Artillery Shell</description>
+    <worldObjectClass>WorldObject_SkyfallerArtillery</worldObjectClass>
+    <texture>ModIcon/WorldTarget</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>ModIcon/WorldTarget</expandingIconTexture>
+    <expandingIconPriority>6</expandingIconPriority>
+  </WorldObjectDef>
+
+</Defs>

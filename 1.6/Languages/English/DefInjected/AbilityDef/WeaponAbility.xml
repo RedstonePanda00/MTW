@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Codex_M9Knife.label>Combat Chronicles: M9 Bayonet</Codex_M9Knife.label>
+<Codex_M9Knife.description>Switch to M9 bayonet</Codex_M9Knife.description>
+
+<Codex_Rifle.label>Combat Chronicles: Charge Rifle</Codex_Rifle.label>
+<Codex_Rifle.description>Switch to charge rifle</Codex_Rifle.description>
+
+<Codex_SMG.label>Combat Chronicles: Submachine Gun</Codex_SMG.label>
+<Codex_SMG.description>Switch to heavy submachine gun</Codex_SMG.description>
+
+<Codex_Sniper.label>Combat Chronicles: Sniper Rifle</Codex_Sniper.label>
+<Codex_Sniper.description>Switch to sniper rifle</Codex_Sniper.description>
+
+  
+</LanguageData>

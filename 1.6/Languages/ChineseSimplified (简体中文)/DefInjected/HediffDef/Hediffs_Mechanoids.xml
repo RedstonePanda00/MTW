@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  <NCL_Mech_Ironbark_Hediff.label>NCL：铁树</NCL_Mech_Ironbark_Hediff.label>
+  <NCL_Mech_Ironbark_Hediff.description>铁木妖的蜂窝减震层与高温再生循环会在受到攻击时自动强化受损区域</NCL_Mech_Ironbark_Hediff.description>
+  
+  <TW_Capacitor_Meltdown.label>电容紊乱</TW_Capacitor_Meltdown.label>
+  <TW_Capacitor_Meltdown.description>在电容过载爆炸后，特斯拉蜈蚣会陷入短暂的机能崩溃状态。高压电弧变得紊乱，移动速度大幅下降，攻击时甚至会出现短暂的电力中断。虽然它能通过自主充能逐渐恢复，但在完全回充前，无论是追击敌人还是防御反击都显得力不从心。</TW_Capacitor_Meltdown.description>
+  
+  <TW_Mech_Shell_Fortification_Hediff.label>全面战争：壳堡构体</TW_Mech_Shell_Fortification_Hediff.label>
+  <TW_Mech_Shell_Fortification_Hediff.description>全面战争：壳堡构体</TW_Mech_Shell_Fortification_Hediff.description>
+  
+  <TW_Mech_Shell_Fortification_ShellBreaked_Hediff.label>全面战争：壳堡构体</TW_Mech_Shell_Fortification_ShellBreaked_Hediff.label>
+  <TW_Mech_Shell_Fortification_ShellBreaked_Hediff.description>全面战争：壳堡构体</TW_Mech_Shell_Fortification_ShellBreaked_Hediff.description>
+  
+
+<TW_Mech_Warqueen_Hediff.label>全面战争：战争女王</TW_Mech_Warqueen_Hediff.label>
+
+<TW_Mech_Warqueen_Hediff.description>战争女王利用装载的钢铁能源强化机体防御。钢铁储量越充足，伤害减免效果越强：满载时可承受伤害降至50%，耗尽后承受伤害提升至150%。</TW_Mech_Warqueen_Hediff.description>
+
+
+<TW_Mech_Apocriton_Hediff.label>全面战争：憎恶毒蜂</TW_Mech_Apocriton_Hediff.label>
+
+<TW_Mech_Apocriton_Hediff.description>憎恶毒蜂专有的光学迷彩模块，使其从战场上隐身。仅当玩家单位处于其附近25格范围内时隐身才会解除，在此之前该单位不进行攻击。</TW_Mech_Apocriton_Hediff.description>
+
+
+</LanguageData>

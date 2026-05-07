@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<NCL_MechNode.label>链波中继 (tuned)</NCL_MechNode.label>
+
+<NCL_MechNode.description>This mechanitor's bandwidth is being increased by 5 per node thanks to the influence of a voidlink band node structure.</NCL_MechNode.description>
+
+</LanguageData>

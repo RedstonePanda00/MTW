@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 特战伞兵静螳 -->
+  <TW_Mech_Paratrooper.label>Gestate Mech Paratrooper.</TW_Mech_Paratrooper.label>
+  <!-- EN: 机械族中型量产精英机械体。配备专业喷气式背包，可原地起飞，在地图内指定地点及大地图一定范围内实施伞降；同时，伞兵静螳还能投掷进攻型破片闪光弹，对各类单位造成眩晕与破片伤害。\n\n伞兵静螳的核心跳跃技术来自于某科技企业所谓“高性能计算芯片”，在闪耀世界算力竞赛中被打假后，芯片流入机械主巢，意外的是，这片芯片意外在跳跃平衡技术方面对中型机械体有重要突破，随后被大规模量产，代号“Jumping”。 -->
+  <TW_Mech_Paratrooper.description>A medium-sized mass-produced elite mechanoid unit. Equipped with a specialized jump-jet propulsion system, the Paratrooper Silent Mantis variant can deploy offensive fragmentation-flash grenades that deliver both disorienting stun effects and shrapnel damage against all target classifications.</TW_Mech_Paratrooper.description>
+  <!-- EN: Gestating mech. -->
+  <TW_Mech_Paratrooper.jobString>Gestating mech.</TW_Mech_Paratrooper.jobString>
+  
+</LanguageData>

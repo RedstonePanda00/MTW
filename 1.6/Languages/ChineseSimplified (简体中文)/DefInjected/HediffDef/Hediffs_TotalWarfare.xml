@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  <TW_CompositeArmorReinforcementProtocol_M.label>复合装甲增强协议</TW_CompositeArmorReinforcementProtocol_M.label>
+  <TW_CompositeArmorReinforcementProtocol_M.description>该单位的防护能力获得大幅增强</TW_CompositeArmorReinforcementProtocol_M.description>
+  
+  <TW_CompositeArmorReinforcementProtocol_R.label>复合装甲增强协议</TW_CompositeArmorReinforcementProtocol_R.label>
+  <TW_CompositeArmorReinforcementProtocol_R.description>该单位的防护能力获得大幅增强</TW_CompositeArmorReinforcementProtocol_R.description>
+  
+  <TW_HighMobilityPhaseShiftDrive_M.label>超功率推进器</TW_HighMobilityPhaseShiftDrive_M.label>
+  <TW_HighMobilityPhaseShiftDrive_M.description>该单位的移动速度得到了大幅加强</TW_HighMobilityPhaseShiftDrive_M.description>
+  
+  <TW_HighMobilityPhaseShiftDrive_R.label>超功率推进器</TW_HighMobilityPhaseShiftDrive_R.label>
+  <TW_HighMobilityPhaseShiftDrive_R.description>该单位的移动速度得到了大幅加强</TW_HighMobilityPhaseShiftDrive_R.description>
+  
+  <TW_LongRangeBallisticsOptimizationSystem.label>长距弹道优化模组</TW_LongRangeBallisticsOptimizationSystem.label>
+  <TW_LongRangeBallisticsOptimizationSystem.description>该单位的武器射程获得了20%增长。</TW_LongRangeBallisticsOptimizationSystem.description>
+  
+  <TW_Optical_Camo_Disruption_M.label>光学迷彩干扰装置</TW_Optical_Camo_Disruption_M.label>
+  <TW_Optical_Camo_Disruption_M.description>随机单位机械体被赋予光学迷彩模块，使其从战场上隐身，仅当玩家单位处于其附近5格范围内时隐身才会解除。（该隐身对玩家可见）</TW_Optical_Camo_Disruption_M.description>
+  
+  <TW_Optical_Camo_Disruption_R.label>光学迷彩干扰装置</TW_Optical_Camo_Disruption_R.label>
+  <TW_Optical_Camo_Disruption_R.description>随机单位机械体被赋予光学迷彩模块，使其从战场上隐身。仅当玩家单位处于其附近45格范围内时隐身才会解除。（该隐身对玩家不可见）</TW_Optical_Camo_Disruption_R.description>
+  
+  <TW_Overdrive_M.label>机械超载</TW_Overdrive_M.label>
+  <TW_Overdrive_M.description>该机械体因被注入大量能量而在短时间内超载</TW_Overdrive_M.description>
+  <TW_Overdrive_M.stages.0.label>Overdrive</TW_Overdrive_M.stages.0.label>
+  <TW_Overdrive_M.stages.1.label>Energy Surplus</TW_Overdrive_M.stages.1.label>
+  <TW_Overdrive_M.stages.2.label>Stabilizing</TW_Overdrive_M.stages.2.label>
+  <TW_Overdrive_M.stages.3.label>Stable</TW_Overdrive_M.stages.3.label>
+   
+  <TW_TacticalArtilleryCoordinationModule_AutoMortar.label>远程战术协调单元:迫击炮</TW_TacticalArtilleryCoordinationModule_AutoMortar.label>
+  <TW_TacticalArtilleryCoordinationModule_AutoMortar.description>该单位在周围半径150格内存在玩家单位时将召唤迫击炮协助战斗</TW_TacticalArtilleryCoordinationModule_AutoMortar.description>
+  
+  <TW_TacticalArtilleryCoordinationModule_ChargeBlaster.label>远程战术协调单元：冲击炮</TW_TacticalArtilleryCoordinationModule_ChargeBlaster.label>
+  <TW_TacticalArtilleryCoordinationModule_ChargeBlaster.description>该单位在周围半径35格内存在玩家单位时将召唤冲击炮协助战斗</TW_TacticalArtilleryCoordinationModule_ChargeBlaster.description>
+  
+  <TW_TacticalArtilleryCoordinationModule_LaserDefence.label>远程战术协调单元：点防御</TW_TacticalArtilleryCoordinationModule_LaserDefence.label>
+  <TW_TacticalArtilleryCoordinationModule_LaserDefence.description>该单位在周围半径35格内存在玩家单位时将召唤点防御协助战斗</TW_TacticalArtilleryCoordinationModule_LaserDefence.description>
+
+</LanguageData>

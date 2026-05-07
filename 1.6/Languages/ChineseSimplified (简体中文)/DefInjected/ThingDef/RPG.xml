@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+
+<TW_EMP_Guided_Missile.label>EMP-Guided Missile</TW_EMP_Guided_Missile.label>
+
+
+<TW_Guided_Rocket_Launcher_EMP.label>制导火箭发射器-EMP导弹</TW_Guided_Rocket_Launcher_EMP.label>
+<TW_Guided_Rocket_Launcher_EMP.description>"发射可追踪目标的高爆弹或EMP火箭弹，适用于精确打击。"</TW_Guided_Rocket_Launcher_EMP.description>
+<TW_Guided_Rocket_Launcher_EMP.tools.barrel.label>barrel</TW_Guided_Rocket_Launcher_EMP.tools.barrel.label>
+<TW_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>EMP Guided Rocket Launcher</TW_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>
+
+
+<TW_Guided_Rocket_Launcher_HE.label>制导火箭发射器-高爆导弹</TW_Guided_Rocket_Launcher_HE.label>
+<TW_Guided_Rocket_Launcher_HE.description>"发射可追踪目标的高爆弹或EMP火箭弹，适用于精确打击。"</TW_Guided_Rocket_Launcher_HE.description>
+<TW_Guided_Rocket_Launcher_HE.tools.barrel.label>barrel</TW_Guided_Rocket_Launcher_HE.tools.barrel.label>
+<TW_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>HE Guided Rocket Launcher</TW_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>
+
+
+<TW_HE_Guided_Missile.label>HE-Guided Missile</TW_HE_Guided_Missile.label>
+
+
+<TW_Quad_Guided_Rocket_Launcher_EMP.label>4联制导火箭发射器-EMP导弹</TW_Quad_Guided_Rocket_Launcher_EMP.label>
+<TW_Quad_Guided_Rocket_Launcher_EMP.description>"发射可追踪目标的高爆弹或EMP火箭弹，适用于精确打击。"</TW_Quad_Guided_Rocket_Launcher_EMP.description>
+<TW_Quad_Guided_Rocket_Launcher_EMP.tools.barrel.label>barrel</TW_Quad_Guided_Rocket_Launcher_EMP.tools.barrel.label>
+<TW_Quad_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>Quad EMP Guided Rocket Launcher</TW_Quad_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>
+
+
+<TW_Quad_Guided_Rocket_Launcher_HE.label>4联制导火箭发射器-高爆导弹</TW_Quad_Guided_Rocket_Launcher_HE.label>
+<TW_Quad_Guided_Rocket_Launcher_HE.description>"发射可追踪目标的高爆弹或EMP火箭弹，适用于精确打击。"</TW_Quad_Guided_Rocket_Launcher_HE.description>
+<TW_Quad_Guided_Rocket_Launcher_HE.tools.barrel.label>barrel</TW_Quad_Guided_Rocket_Launcher_HE.tools.barrel.label>
+<TW_Quad_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>Quad HE Guided Rocket Launcher</TW_Quad_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>
+
+</LanguageData>

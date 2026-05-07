@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThinkTreeDef>
+    <defName>MechWormConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+
+        
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="NCLWorm.ThinkNode_NCLWormSleep">
+          <subNodes>
+            <li Class="NCLWorm.JobGiver_GetBeacon" />
+            <li Class="JobGiver_SelfShutdown" />
+          </subNodes>
+        </li>
+
+  
+
+      <li Class="ThinkNode_ConditionalHasAbility"><ability>NCLJumpWithBomb</ability><subNodes><li Class="ThinkNode_HarmedRecently"><thresholdTicks>120</thresholdTicks><subNodes><li Class="ThinkNode_ConditionalHasTarget"><subNodes><li Class="JobGiver_AIJumpToJobTarget"><ability>NCLJumpWithBomb</ability></li></subNodes></li></subNodes></li></subNodes></li><li Class="ThinkNode_ConditionalHasAbility"><ability>NCLChaosTeleport</ability><subNodes><li Class="ThinkNode_ConditionalHasTarget"><subNodes><li Class="NCLWorm.JobGiver_CastAbilityToAnyThing"><ability>NCLChaosTeleport</ability></li></subNodes></li></subNodes></li><li Class="NCLWorm.JobGiver_UseNCLWormSkillList" /><li Class="ThinkNode_ConditionalHasAbility"><ability>NCLChaosTeleport</ability><subNodes><li Class="ThinkNode_ConditionalHasTarget"><subNodes><li Class="NCLWorm.JobGiver_CastAbilityToEnemyTarget"><ability>NCLBurrowAttack</ability></li></subNodes></li></subNodes></li><li Class="ThinkNode_ConditionalHasTarget"><subNodes><li Class="JobGiver_AIReleaseMechs" /></subNodes></li>
+
+
+
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+
+        <li Class="JobGiver_AITrashColonyClose" />
+        <li Class="JobGiver_AITrashBuildingsDistant" />
+        <li Class="JobGiver_AIGotoNearestHostile" />
+        <li Class="JobGiver_AITrashBuildingsDistant">
+          <attackAllInert>true</attackAllInert>
+        </li>
+
+            <li Class="ThinkNode_ConditionalPlayerMech">
+              <subNodes>
+                <li Class="NCLvsTW.ThinkNode_ConditionalInHomeAreaRoofed" />
+              </subNodes>
+        </li>
+    <li Class="JobGiver_WanderHerd" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

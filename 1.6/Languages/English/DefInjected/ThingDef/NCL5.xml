@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: NCL5 bullet -->
+<Bullet_NCL.label>NCL5 Bullet</Bullet_NCL.label>
+
+<NCL_Rifle.label>NCL5</NCL_Rifle.label>
+<NCL_Rifle.description>Weapon Archive: Noah Standard Issue Assault Rifle Mk5
+Designation: NCL5  
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series  
+
+Functional Overview:  
+The NCL5 is the standard assault rifle of the Neo-Communist League, designed for mass deployment. Excels in range, fire rate, penetration, and stability within its class, though compromises single-shot damage and stopping power. Optimized for sustained medium-to-long range suppression.
+
+Developer Notes (Lsa and None):
+"Scalable. Systematic."</NCL_Rifle.description>
+<NCL_Rifle.tools.stock.label>stock</NCL_Rifle.tools.stock.label>
+<NCL_Rifle.tools.barrel.label>barrel</NCL_Rifle.tools.barrel.label>
+<NCL_Rifle.verbs.Verb_Shoot.label>NCL5</NCL_Rifle.verbs.Verb_Shoot.label>
+
+  <!-- EN: NCL通讯台 -->
+  <NCLCommsConsole.label>NCL Comms Console</NCLCommsConsole.label>
+  <!-- EN: NCL的通讯台. -->
+  <NCLCommsConsole.description>This vintage communications station features an integrated cryptodecoder that can breach tier-three encrypted networks</NCLCommsConsole.description>
+  <!-- EN: 呼叫NCL -->
+  <NCLCommsConsole.comps.CompUsable.useLabel>Contact with NCL</NCLCommsConsole.comps.CompUsable.useLabel>
+  
+  
+  <NCL_MechWorm.label>ArchoWorm</NCL_MechWorm.label>
+  <!-- EN: 超凡机械蠕虫 -->
+  <NCL_MechWorm.label>ArchoWorm</NCL_MechWorm.label>
+  <!-- EN: 这个庞大机械体的身世被NCL封存在最高机密中，您虽充满好奇却无从探查。您亲眼见证过它在战场上展现的神迹般的杀伤效率，此刻只能庆幸它暂时属于同盟阵营——尽管这种特殊状态充满未知变数。\n    \n蠕虫特性：\n - 伤害吸收： 蠕虫本体受到伤害后，会在短时间内免疫该类型的后续伤害。\n - 折跃子弹： 蠕虫能够使用念力，将飞向自身的敌方子弹传送消失（至太空）。传送一定数量的子弹后，该能力会进入冷却。\n - 能量护盾： 蠕虫拥有能量护盾。护盾被击碎后，需要经过冷却时间才能重新生成。\n - 折跃操控： 蠕虫会随机选择附近的敌人，将其传送（折跃）至地图边缘或拉至自身身边。\n - 混乱传送： 经过长蓄力后，蠕虫会将地图上所有敌人随机传送至地图边缘。\n\n伤害手段：\n - 破坏死光： 蠕虫短暂蓄力后，发射一道威力巨大、射程无限的光线。\n - 雷击： 蠕虫召唤数道从天而降的雷电轰击地图上的敌人。\n - 蠕虫追踪炮： 蠕虫周期性从其身体各关节处发射齐射，产生威力一般但能无视敌人护盾的追踪子弹。\n - 画龙点睛： 蠕虫潜入地下，直线冲向目标，造成巨额撞击伤害。 -->
+  <NCL_MechWorm.description>The origins of this massive mechanical entity are sealed under the highest levels of confidentiality by the NCL, leaving you burning with curiosity but unable to investigate. You have personally witnessed its miraculous lethality on the battlefield, and at this moment, you can only be grateful that it is temporarily aligned with the alliance—though this peculiar state is fraught with unknowns.
+
+Worm Traits:
+
+Damage Absorption: After taking damage, the worm becomes temporarily immune to subsequent damage of the same type.
+
+Warp Bullets: The worm can use telekinesis to vanish incoming enemy bullets into space. After warping a certain number of bullets, this ability enters a cooldown period.
+
+Energy Shield: The worm possesses an energy shield. Once shattered, the shield requires a cooldown period before regenerating.
+
+Warp Manipulation: The worm randomly selects nearby enemies and either warps them to the edge of the map or pulls them close to itself.
+
+Chaotic Warp: After a long charge-up, the worm warps all enemies on the map randomly to the edges.
+
+Means of Damage:
+
+Destructive Beam: After a brief charge, the worm fires an immensely powerful, infinite-range beam.
+
+Thunderstrike: The worm summons several bolts of lightning from the sky to strike enemies across the map.
+
+Worm Tracking Cannon: Periodically, the worm fires volleys from its joints, releasing moderately powerful homing bullets that ignore enemy shields.
+
+Dragon's Final Blow: The worm burrows underground and charges straight toward its target, dealing massive impact damage.</NCL_MechWorm.description>
+  <!-- EN: 逆鳞 -->
+  <NCL_MechWorm.tools.0.label>outrage</NCL_MechWorm.tools.0.label>
+  
+    <!-- EN: Lighting Strike -->
+  <Bullet_LightingStrike.label>LightingStrike</Bullet_LightingStrike.label>
+  
+  <!-- EN: Mote -->
+  <Mote_NCLWormLaser.label>NCLWormLaser</Mote_NCLWormLaser.label>
+  
+  <!-- EN: 破坏死光 -->
+  <NCL_Gun_BeamGraser.label>Hyper Beam</NCL_Gun_BeamGraser.label>
+  <!-- EN: 蠕虫通过念力汇聚大量能量于口中喷射而出 -->
+  <NCL_Gun_BeamGraser.description>Hyper Beam</NCL_Gun_BeamGraser.description>
+  <!-- EN: 破坏死光 -->
+  <NCL_Gun_BeamGraser.verbs.Verb_GuangA.label>Hyper Beam</NCL_Gun_BeamGraser.verbs.Verb_GuangA.label>
+  
+  <!-- EN: 雷击 -->
+  <NCL_Gun_HellsphereCannon.label>LightingStrike</NCL_Gun_HellsphereCannon.label>
+  <!-- EN: 蠕虫召唤雷击攻击距离自己最近的敌人 -->
+  <NCL_Gun_HellsphereCannon.description>LightingStrike</NCL_Gun_HellsphereCannon.description>
+  <!-- EN: 雷击 -->
+  <NCL_Gun_HellsphereCannon.verbs.Verb_ShootOneUse.label>LightingStrike</NCL_Gun_HellsphereCannon.verbs.Verb_ShootOneUse.label>
+  
+</LanguageData>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/MapGeneratorDef[defName = "Base_Player"]/genSteps</xpath>
+		<value>
+		</value>
+	</Operation>
+</Patch>

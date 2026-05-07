@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<MeleeWeapon_Shellsplitter.label>Shellsplitter Laser Blade</MeleeWeapon_Shellsplitter.label>
+<MeleeWeapon_Shellsplitter.description>High-frequency energy blade mounted on Shellsplitter for close-quarters disruption attacks.</MeleeWeapon_Shellsplitter.description>
+<MeleeWeapon_Shellsplitter.tools.handle.label>handle</MeleeWeapon_Shellsplitter.tools.handle.label>
+<MeleeWeapon_Shellsplitter.tools.blade.label>blade</MeleeWeapon_Shellsplitter.tools.blade.label>
+<MeleeWeapon_Shellsplitter.tools.point.label>point</MeleeWeapon_Shellsplitter.tools.point.label>
+
+<Shell_TW_Antiparticle_Rail_Mortar.label>HE Tactical Warhead</Shell_TW_Antiparticle_Rail_Mortar.label>
+
+<Shell_TW_EMP_Rail_Mortar.label>EMP Tactical Warhead</Shell_TW_EMP_Rail_Mortar.label>
+
+<TW_Antiparticle_Rail_Mortar.label>Miniature Nuclear Projector</TW_Antiparticle_Rail_Mortar.label>
+<TW_Antiparticle_Rail_Mortar.description>Dubbed "Avatar of Annihilation," this orbital artillery system deploys when Doxa-0 anchors. Fires miniature nuclear warheads via gravity rails, bypassing shields, structural barriers, and energy shielding with delayed impact sequencing.</TW_Antiparticle_Rail_Mortar.description>
+<TW_Antiparticle_Rail_Mortar.tools.stock.label>stock</TW_Antiparticle_Rail_Mortar.tools.stock.label>
+<TW_Antiparticle_Rail_Mortar.tools.barrel.label>barrel</TW_Antiparticle_Rail_Mortar.tools.barrel.label>
+<TW_Antiparticle_Rail_Mortar.verbs.Verb_AdvancedShoot.label>Miniature Nuclear Projector</TW_Antiparticle_Rail_Mortar.verbs.Verb_AdvancedShoot.label>
+ 
+</LanguageData>

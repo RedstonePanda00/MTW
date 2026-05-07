@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<!-- 破碎信标碎片 -->
+<Ancient_WarBeacon_PartsA.label>Broken Beacon Fragments</Ancient_WarBeacon_PartsA.label>
+<Ancient_WarBeacon_PartsA.description>Component debris scattered from war beacon wreckage. Internal structures severely compromised - no tactical or comms functionality remains. Still viable as source of metal and composites for resource-starved colonies.</Ancient_WarBeacon_PartsA.description>
+
+<Ancient_WarBeacon_PartsB.label>Broken Beacon Fragments</Ancient_WarBeacon_PartsB.label>
+<Ancient_WarBeacon_PartsB.description>Component debris scattered from war beacon wreckage. Internal structures severely compromised - no tactical or comms functionality remains. Still viable as source of metal and composites for resource-starved colonies.</Ancient_WarBeacon_PartsB.description>
+
+<!-- 战争巨蝎残骸 -->
+<Broken_War_Scorpion_Rust.label>War Scorpion Wreckage</Broken_War_Scorpion_Rust.label>
+<Broken_War_Scorpion_Rust.description>A War Scorpion's remains. You sense valuable components within.</Broken_War_Scorpion_Rust.description>
+<Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterLabel>War Scorpion Wreckage</Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterLabel>
+<Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterText>Approaching the War Scorpion wreckage reveals a faintly glowing red cube embedded in its cranial unit - potentially extractable for your use.</Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterText>
+<Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterLabel>Available: {LEAVINGS1_label}</Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterLabel>
+<Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterText>Destruction yields a Red Cube - possibly key to unlocking advanced technologies.</Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterText>
+<Broken_War_Scorpion_Rust.comps.CompInspectString.inspectString>Contains a faintly luminous red cube.</Broken_War_Scorpion_Rust.comps.CompInspectString.inspectString>
+
+<!-- 破碎的信标旧址 -->
+<Building_Ancient_WarBeacon.label>Ruined Beacon Site</Building_Ancient_WarBeacon.label>
+<Building_Ancient_WarBeacon.description>This war beacon bears brutal combat scars - fractured structures whispering of catastrophic battles. Though shattered, its core frame remains resilient, awaiting reactivation. With sufficient resources it could be rebuilt into a functional war beacon, attracting mechanoid attention while unlocking unprecedented technologies. The choice stands: reactivate... or abandon?</Building_Ancient_WarBeacon.description>
+<Building_Ancient_WarBeacon.comps.CompProximityLetter.letterLabel>Ruined Beacon Site</Building_Ancient_WarBeacon.comps.CompProximityLetter.letterLabel>
+<Building_Ancient_WarBeacon.comps.CompProximityLetter.letterText>This war beacon bears brutal combat scars - fractured structures whispering of catastrophic battles. Though shattered, its core frame remains resilient, awaiting reactivation. With sufficient resources it could be rebuilt into a functional war beacon, attracting mechanoid attention while unlocking unprecedented technologies. The choice stands: reactivate... or abandon?</Building_Ancient_WarBeacon.comps.CompProximityLetter.letterText>
+<Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoLabel>NCL_WARBEACON_TOGGLE_GIZMO_LABEL</Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoLabel>
+<Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoOffLabel>NCL_WARBEACON_TOGGLE_GIZMO_OFF_LABEL</Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoOffLabel>
+
+<!-- 战争信标 -->
+<Building_TotalWarfareActivator.label>War Beacon</Building_TotalWarfareActivator.label>
+<Building_TotalWarfareActivator.description>The restored war beacon looms like a slumbering leviathan. As mechanoids' strategic locus, activation exposes your colony - drawing progressively deadlier assaults. Yet high risk brings high reward: beacon core analysis can bypass mechanoid tech barriers, unlocking previously inaccessible technologies. The choice is yours: preserve safety through silence, or ignite war to grasp the unknown?</Building_TotalWarfareActivator.description>
+<Building_TotalWarfareActivator.comps.CompUsable.useLabel>Activate Total Warfare</Building_TotalWarfareActivator.comps.CompUsable.useLabel>
+
+  
+</LanguageData>

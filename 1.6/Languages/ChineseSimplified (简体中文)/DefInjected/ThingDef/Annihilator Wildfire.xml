@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Annihilator_Wildfire.label>湮灭野火</Annihilator_Wildfire.label>
+<Annihilator_Wildfire.description>代号：Annihilator Wildfire
+所属：诺亚新共产主义联合「铁幕」实验武器序列
+	
+功能概述：
+
+ 湮灭野火是一款搭载红色反粒子核心的高能实验型步枪，由NCL首席工匠O’Neal与超凡AI「正义」在极度技术争议下共同开发。该武器可发射高频振荡的红色反粒子弹头，命中后引发微型局部湮灭反应，对单体与中型集群目标造成难以估算的破坏性伤害。
+ 
+然而，湮灭野火并不受O’Neal完全认可。武器结构存在极高的反冲不稳定性，其后坐力远超一般人类所能承受，且弹道会因核心激发模式在极短时间内发生偏移，使每一次射击都成为技术与命运的博弈。它极不适合长时间连续使用，也未通过常规作战单位适配标准。
+
+湮灭野火被定义为一种非线性毁灭手段——当传统火力与战术逻辑不再成立时，它是唯一还能拉开局面的赌注。
+
+正义语音片段（记录#21）： “这不是错误的设计，只是……太过热情了而已。” “你不需要精准，只要够勇敢。”
+O’Neal研发注解： “这不该存在。但既然已经存在——那就不要站在它前面。”</Annihilator_Wildfire.description>
+
+<Annihilator_Wildfire.tools.point.label>point</Annihilator_Wildfire.tools.point.label>
+<Annihilator_Wildfire.tools.edge.label>edge</Annihilator_Wildfire.tools.edge.label>
+<Annihilator_Wildfire.verbs.Verb_Shoot.label>Annihilator Wildfire</Annihilator_Wildfire.verbs.Verb_Shoot.label>
+
+<Bullet_Annihilator_Wildfire.label>Annihilator_Wildfire_Bullet</Bullet_Annihilator_Wildfire.label>
+
+</LanguageData>

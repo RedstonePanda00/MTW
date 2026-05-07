@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+    <AbilityDef>
+		<defName>Codex_SMG</defName>
+		<label>Combat Chronicles: Submachine Gun</label>
+		<description>Switch to heavy submachine gun</description>
+		<iconPath>Weapons/Codex_SMG</iconPath>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<aiCanUse>true</aiCanUse>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+        <targetRequired>false</targetRequired>
+		<canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<defaultCooldownTime>0</defaultCooldownTime>
+			<verbClass>Verb_CastAbility</verbClass>
+			<onlyManualCast>true</onlyManualCast>
+			<range>-1</range>
+			<warmupTime>0</warmupTime>
+			<soundCast>Interact_SMG</soundCast>
+		    <drawAimPie>false</drawAimPie>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetPlants>false</canTargetPlants>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		<li Class="Edited_BM_WeaponSummon.CompProperties_SummonWeapon">
+				<weapon>Centurion_Arsenal_Codex_SMG</weapon>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>Codex_Sniper</defName>
+		<label>Combat Chronicles: Sniper Rifle</label>
+		<description>Switch to sniper rifle</description>
+		<iconPath>Weapons/Codex_Sniper</iconPath>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<aiCanUse>true</aiCanUse>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+        <targetRequired>false</targetRequired>
+		<canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<defaultCooldownTime>0</defaultCooldownTime>
+			<verbClass>Verb_CastAbility</verbClass>
+			<onlyManualCast>true</onlyManualCast>
+			<range>-1</range>
+			<warmupTime>0</warmupTime>
+			<soundCast>Interact_Rifle</soundCast>
+		    <drawAimPie>false</drawAimPie>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetPlants>false</canTargetPlants>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		<li Class="Edited_BM_WeaponSummon.CompProperties_SummonWeapon">
+				<weapon>Centurion_Arsenal_Codex_Sniper</weapon>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>Codex_Rifle</defName>
+		<label>Combat Chronicles: Charge Rifle</label>
+		<description>Switch to charge rifle</description>
+		<iconPath>Weapons/Codex_Rifle</iconPath>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<aiCanUse>true</aiCanUse>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+        <targetRequired>false</targetRequired>
+		<canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<defaultCooldownTime>0</defaultCooldownTime>
+			<verbClass>Verb_CastAbility</verbClass>
+			<onlyManualCast>true</onlyManualCast>
+			<range>-1</range>
+			<warmupTime>0</warmupTime>
+			<soundCast>Interact_Rifle</soundCast>
+		    <drawAimPie>false</drawAimPie>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetPlants>false</canTargetPlants>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		<li Class="Edited_BM_WeaponSummon.CompProperties_SummonWeapon">
+				<weapon>Centurion_Arsenal_Codex_Rifle</weapon>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>Codex_M9Knife</defName>
+		<label>Combat Chronicles: M9 Bayonet</label>
+		<description>Switch to M9 bayonet</description>
+		<iconPath>Weapons/M9</iconPath>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<aiCanUse>true</aiCanUse>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+        <targetRequired>false</targetRequired>
+		<canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<defaultCooldownTime>0</defaultCooldownTime>
+			<verbClass>Verb_CastAbility</verbClass>
+			<onlyManualCast>true</onlyManualCast>
+			<range>-1</range>
+			<warmupTime>0</warmupTime>
+			<soundCast>Interact_Rifle</soundCast>
+		    <drawAimPie>false</drawAimPie>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetPlants>false</canTargetPlants>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		<li Class="Edited_BM_WeaponSummon.CompProperties_SummonWeapon">
+				<weapon>MeleeWeapon_M9Knife</weapon>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+		</comps>
+	</AbilityDef>
+
+	
+</Defs>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>NCL_Mech_Mantis</defName>
+    <label>Mantis</label>
+    <gestationCycles>10</gestationCycles>
+    <displayPriority>200</displayPriority>
+    <description>Unit File: NCL-06 "Mantis"
+Origin: NCL Autonomous Mechanoid Series VI
+This sixth-generation tactical unit, fusing a humanoid-female torso with a wolf-spider chassis, specializes in close-quarters assassination and shock infiltration. Its heavy combat armor integrates dynamic self-repair systems to regenerate defensive layers during isolated engagements, yet energy-redistribution protocols render it critically vulnerable under concentrated fire. Hydraulic actuators enable short-range phase-leaps for instant gap closure or tactical withdrawal. The signature Binary Veil System deploys smokescreen barriers while launching two infrared-guided Gyro-Blades—detonating on impact with EMP bursts and directional shrapnel to cripple electronics and eviscerate organic targets. Terminal protocol "Heartfire" triggers core meltdown, igniting the unit in a catastrophic blast to annihilate high-threat hostiles.</description>
+	<researchPrerequisite Inherit="false" />
+	<researchPrerequisites>
+	  <li>UltraMechtech</li>
+	  <li>NCL_Heavyforge_Units</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>450</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Hyperweave</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Neural_Weave</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Microfusion_Reactor</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <NCL_Mech_Mantis>1</NCL_Mech_Mantis>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>NCL_Mech_Mantis</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

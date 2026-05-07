@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <NCL_Mech_PillBug.label>Gestate Photon Pillbug</NCL_Mech_PillBug.label>
+  <NCL_Mech_PillBug.description>Unit Archive: NCL-04 "Photon Pillbug"
+Origin: NCL "Iron Law" Heavy Defense Series
+
+A specialized combat unit modified for ground-based firepower suppression, originally conceived as an experimental optical weapons platform during the NCL's final era. Its chassis is densely covered with photon lattice structures that create persistent energy afterimages under intense illumination - hence the designation "Photon Pillbug".
+
+While slow-moving, it possesses exceptional durability exceeding standard mechanoid survivability thresholds. The front-mounted "Disintegrator" positron cannon melts through most cover and armored targets at extended ranges. Synchronized prismatic laser systems flanking both sides precisely destroy mid-to-low velocity bullet liked Projectile, demonstrating particular efficacy against orbital munitions.
+
+Special Ability:
+◆ KINETIC ROLL - Engages short-burst thrusters to leap towards target zones, dealing impact damage and powerful knockback to hostile units at the landing point.</NCL_Mech_PillBug.description>
+  <NCL_Mech_PillBug.jobString>Gestating mech.</NCL_Mech_PillBug.jobString>
+
+</LanguageData>

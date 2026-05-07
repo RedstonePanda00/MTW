@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Mechanoids: Total Warfare</name>
+  <packageId>Nyar.NCLvsTW</packageId>
+  <author>Nyarlathotep</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+		<li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
+			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Royalty</packageId>
+      <displayName>Royalty</displayName>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+	<li>wvc.sergkart.biotech.MoreMechanoidsWorkModes</li>
+	<li>BreadMo.Cinders</li>
+    <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+	<li>IssacZhuang.MuzzleFlash</li>
+	<li>sarg.alphamechs</li>
+	<li>fxz.glitterworlddestroyer.mk5</li>
+  </loadAfter>
+  <incompatibleWith>
+	<li>automatic.gunplay</li>
+  </incompatibleWith>
+  <description>Thanks for subscribing to "Mechanoids: Total Warfare" MOD!
+This mod's difficulty primarily centers on new mechanical enemies and their accompanying enhancement systems. These enhancements gradually unlock as players trigger specific conditions during gameplay, delivering an extremely hardcore trial while avoiding unnecessary power creep. If you feel excessive pressure during play, please prioritize your experience - you can reduce raid intensity or disable mechanoid enhancements in settings.
+
+● Total Warfare provides deep expansion to RimWorld's original mechanoid content, offering:
+
+Richer mechanoid unit options
+Unique combat mechanics
+Epic-scale battles
+● Total Warfare features progressive difficulty design. The mod reconstructs vanilla combat logic, expands battle scale, and adds about a dozen distinctive mechanoid units. Early-game content focuses on exploring new elements, allowing you to naturally familiarize yourself with numerous new items and mechanics while enjoying gameplay, establishing a solid foundation for late-game challenges. Please note that for late-game challenges, we recommend utilizing the mod's new mechanics, mechanoids, and structures - using purely vanilla tactics against new enemies may significantly increase combat difficulty.
+
+● Additionally, Total Warfare introduces the hidden faction NCL. By constructing an NCL Quantum Communication Console, you can establish contact to:
+
+Trade valuable resources for colony expansion
+Request deployment of Titan class Mechanoid Archowrom as garrison reinforcements
+『Archowrom Garrison Feature: This worm can dramatically reduce raid difficulty. If you wish to avoid frequent interruptions during construction, you can use it to eliminate threats. Please note its combat methods may cause unexpected damage to your base facilities.』</description>
+</ModMetaData>

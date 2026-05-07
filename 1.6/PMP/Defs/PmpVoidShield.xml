@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+    <defName>PMP_VoidShieldGenerator</defName>
+    <label>Void Shield Generator</label>
+    <description>A simple one way portal that will teleport imcoming projectile to the void.</description>
+    <thingClass>Building</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/Security/BroadshieldProjector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(2.8, 0.5, 2.8)</volume>
+      </shadowData>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <size>(3,3)</size>
+    <statBases>
+      <MaxHitPoints>5000</MaxHitPoints>
+      <WorkToBuild>12000</WorkToBuild>
+      <Mass>150</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>200</Plasteel>
+      <ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+      <compClass>CompPowerTrader</compClass>
+      <basePowerConsumption>5000</basePowerConsumption>
+    </li>
+    <li Class="CompProperties_Flickable"/>
+    
+    <li Class="RS_VoidShield.CompProperties_VoidShield">
+      <shieldRadius>19.9</shieldRadius>
+      <pawnFilter_affectAllFactions>false</pawnFilter_affectAllFactions> 
+    </li>
+    </comps>
+    <!-- <researchPrerequisites>
+      <li>ProtossEngineeringFundamentals</li>
+    </researchPrerequisites> -->
+    <!-- <designationCategory>Security</designationCategory> -->
+  </ThingDef>
+</Defs>

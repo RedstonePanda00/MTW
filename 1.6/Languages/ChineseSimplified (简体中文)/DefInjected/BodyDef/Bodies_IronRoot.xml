@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+
+<NCL_Mech_IronbarkBody.label>铁树</NCL_Mech_IronbarkBody.label>
+
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.1.customLabel>Thermal Array: Left</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.1.customLabel>
+
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.2.customLabel>Thermal Array: Right</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.2.customLabel>
+
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.3.customLabel>Hydraulic Crusher: One</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.3.customLabel>
+
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.4.customLabel>Hydraulic Crusher: Two</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.4.customLabel>
+
+<NCL_Mech_IronbarkBody.corePart.parts.2.customLabel>Cityburner Radiation Array</NCL_Mech_IronbarkBody.corePart.parts.2.customLabel>
+  
+</LanguageData>

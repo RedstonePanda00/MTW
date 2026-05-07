@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 铁木妖 -->
+<NCL_Mech_Ironbark.label>Ironbark</NCL_Mech_Ironbark.label>
+<NCL_Mech_Ironbark.description>Unit Archive: NCL-05 "Ironbark"
+Codename: Cityburner
+Origin: NCL "Iron Law" Siege Series Legacy Protocols
+
+This colossal war machine designated "Ironbark" served as primary siege and area-denial unit. Its bark-like bio-mechanical armor provides exceptional impact resistance, while complex internal systems enable gradual self-repair under non-critical damage - epitomizing high-survivability suppression platforms.
+
+Combat methodology is brutally efficient: Fore-mounted "Ground Splitter" arms equipped with high-frequency vibro-blades tear through light vehicles and cover at close quarters. Rear-mounted nozzles eject high-temperature adhesive pyrogel in wide arcs, igniting all contaminated targets for prolonged combustion.
+
+Most lethally, its persistent thermal radiation field penetrates cover to scorch nearby units and disrupt cloaking devices. Engaging Ironbark at close range is tactical suicide.
+
+As final contingency, Ironbark can deliberately detonate its reactor core to unleash devastating thermokinetic shockwaves - codenamed "Megaton Blast".</NCL_Mech_Ironbark.description>
+<NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandDesc>Enable/disable invisibility detection</NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandDesc>
+<NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandLabel>Toggle Scanner</NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandLabel>
+<NCL_Mech_Ironbark.tools.0.label>Ground Splitter</NCL_Mech_Ironbark.tools.0.label>
+<NCL_Mech_Ironbark.tools.0.labelNoLocation>Ground Splitter</NCL_Mech_Ironbark.tools.0.labelNoLocation>
+<NCL_Mech_Ironbark.tools.1.label>Ground Splitter</NCL_Mech_Ironbark.tools.1.label>
+<NCL_Mech_Ironbark.tools.1.labelNoLocation>Ground Splitter</NCL_Mech_Ironbark.tools.1.labelNoLocation>
+<NCL_Mech_Ironbark.tools.2.label>Ironbark Canopy</NCL_Mech_Ironbark.tools.2.label>
+
+  
+</LanguageData>

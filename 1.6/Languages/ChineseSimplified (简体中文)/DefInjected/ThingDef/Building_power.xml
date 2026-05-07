@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<NCL_Battery.label>先进电池</NCL_Battery.label>
+<NCL_Battery.description>先进电池是NCL工程师研发的中型储能单元，采用量子电容技术，可稳定存储2000W电力，在恶劣环境下仍能保持高效充放电性能。</NCL_Battery.description>
+
+<NCL_Large_Battery.label>装甲蓄电池</NCL_Large_Battery.label>
+<NCL_Large_Battery.description>装甲蓄电池是NCL专为军事级电力需求设计的高容量储能单元，采用强化量子电容阵列技术，可稳定储存高达12000W电力，满足前线基地和重型设备的能源需求。</NCL_Large_Battery.description>
+
+<NCL_LightWaterReactor.label>轻水反应堆</NCL_LightWaterReactor.label>
+<NCL_LightWaterReactor.description>轻水反应堆是NCL研发的模块化核能装置，采用铀燃料驱动，可弹性输出最高280,000W电力，但需通过外部冷却系统将堆芯温度维持在120°C以下。若冷却失效，燃料棒将因"空泡效应"（Void Coefficient）导致功率骤升而熔毁，其爆炸当量取决于剩余燃料量——这项特性使其既可成为高效能源，也能被改造为毁灭性武器。</NCL_LightWaterReactor.description>
+
+  
+</LanguageData>

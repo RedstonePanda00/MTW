@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<NCL_Overwatch_Nexus.label>反隐雷达</NCL_Overwatch_Nexus.label>
+<NCL_Overwatch_Nexus.description>一座战略级设施，专为对抗隐形技术而设计。其高频脉冲发射能够强行剥除敌方单位的电磁隐形层，同时在自身周围构建战术数据链网络，为友方机械部队提供实时战场感知支持。</NCL_Overwatch_Nexus.description>
+<NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandDesc>Toggle cloaking detection system</NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandDesc>
+<NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandLabel>Toggle Scanner</NCL_Overwatch_Nexus.comps.CompAntiInvisibilityField.toggleCommandLabel>
+
+
+  
+</LanguageData>

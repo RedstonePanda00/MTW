@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+
+  
+  <!-- EN: 高效蓄能 -->
+<NCL_Advance_Battery.label>Advanced Battery Systems</NCL_Advance_Battery.label>
+<NCL_Advance_Battery.description>Research batteries with superior energy density and charge efficiency.</NCL_Advance_Battery.description>
+
+  
+  <!-- EN: 先进核能 -->
+<NCL_Advance_Nuclear_Power.label>Advanced Nuclear Power</NCL_Advance_Nuclear_Power.label>
+<NCL_Advance_Nuclear_Power.description>Research modular nuclear reactors with flexible power output capabilities.</NCL_Advance_Nuclear_Power.description>
+
+  <!-- EN: 超凡机械 -->
+<NCL_Archoworm.label>Archtech Mechanoid</NCL_Archoworm.label>
+
+<NCL_Archoworm.description>The Finishing Touch</NCL_Archoworm.description>
+
+  <!-- EN: 星火传音 -->
+<NCL_Ashes_to_Signal.label>Ashes to Signal</NCL_Ashes_to_Signal.label>
+<NCL_Ashes_to_Signal.description>Decrypt the signals within the Red Cube to establish initial connection with the NCL Mechanoid Network. Your first step into mechanized warfare.</NCL_Ashes_to_Signal.description>
+
+  <!-- EN: 特斯拉信标 -->
+<NCL_Building_Lightingstrike.label>Tesla Beacon</NCL_Building_Lightingstrike.label>
+<NCL_Building_Lightingstrike.description>This strategic energy weapon system channels grid reserves to summon area lightning strikes against hostile units. Critical EMP discharges can paralyze enemy electronics, converting power reserves into direct battlefield suppression.</NCL_Building_Lightingstrike.description> 
+
+  
+
+<NCL_CerebrexCore_Rebuild.label>Cerebrex Core Reactivation</NCL_CerebrexCore_Rebuild.label>
+<NCL_CerebrexCore_Rebuild.description>Ready for greater challenges?</NCL_CerebrexCore_Rebuild.description>
+
+  
+  <!-- EN: 赛博诺斯母树 -->
+<NCL_Cybernethic_Arbo.label>Cybernethetic Arbo</NCL_Cybernethic_Arbo.label>
+<NCL_Cybernethic_Arbo.description>Strategic structure for mass permanent enhancement of allied mechanoids.</NCL_Cybernethic_Arbo.description>
+
+  
+  <!-- EN: 技术诠译：静巢 -->
+<NCL_Doom_Calculation.label>Doom Calculation</NCL_Doom_Calculation.label>
+<NCL_Doom_Calculation.description>Research Doxa-0's battlefield control systems to unlock advanced mechanoid tactical computation.</NCL_Doom_Calculation.description>
+
+  
+  <!-- EN: 实验级技术 -->
+<NCL_Experimental_Assemblies.label>Experimental-Grade Technology</NCL_Experimental_Assemblies.label>
+<NCL_Experimental_Assemblies.description>Access NCL's most advanced prototype weapon systems.</NCL_Experimental_Assemblies.description>
+
+
+  
+  <!-- EN: 技术诠译：壳堡 -->
+<NCL_Fortress_Protocol.label>Fortress Protocol</NCL_Fortress_Protocol.label>
+  <!-- EN: "解析壳堡构体的复合装甲系统与战场控制协议，掌握机械族终极攻坚单位的运作原理。" -->
+<NCL_Fortress_Protocol.description>Analyze the Fortified Shell Construct's composite armor systems and battlefield control protocols to master the ultimate mechanoid siege unit's operational principles.</NCL_Fortress_Protocol.description>
+
+  
+  <!-- EN: 重装机械 -->
+<NCL_Heavyforge_Units.label>Heavyforge Units</NCL_Heavyforge_Units.label>
+<NCL_Heavyforge_Units.description>Unlock heavy combat mechanoid fabrication technology to deploy primary assault forces.</NCL_Heavyforge_Units.description>
+
+<NCL_Helios_PD_Turret.label>Helios PD Turret</NCL_Helios_PD_Turret.label>
+<NCL_Helios_PD_Turret.description>Develop laser interception systems capable of effectively neutralizing rockets, artillery shells, and low-velocity aircraft.</NCL_Helios_PD_Turret.description>
+
+  <!-- EN: 熔火点火 -->
+<NCL_Ignition_of_the_Crucible.label>Ignition of the Crucible</NCL_Ignition_of_the_Crucible.label>
+<NCL_Ignition_of_the_Crucible.description>Activate and analyze mechanoid war beacons to unlock their core technology tree, progressively acquiring advanced military technologies originating from mechanoid civilization.</NCL_Ignition_of_the_Crucible.description>
+
+  
+  <!-- EN: 特种作战防护服研发 -->
+<NCL_Protective_Gear.label>Protective Gear</NCL_Protective_Gear.label>
+<NCL_Protective_Gear.description>Research two advanced personal protective systems: tactical cloaking field generators and bio-enhanced combat suits to increase special forces survivability.</NCL_Protective_Gear.description>
+
+  
+  <!-- EN: 战略性建筑研发 -->
+<NCL_Research_of_megastructures.label>Research of Megastructures</NCL_Research_of_megastructures.label>
+<NCL_Research_of_megastructures.description>Strategic megastructure development focuses on core facilities that directly alter battlefield dynamics, including large-scale energy weapons, mechanoid modification centers, and reconnaissance satellite arrays, achieving tactical breakthroughs through technological superiority.</NCL_Research_of_megastructures.description>
+
+  <!-- EN: 敬请期待 -->
+<NCL_Seraphiron.label>Seraphiron</NCL_Seraphiron.label>
+<NCL_Seraphiron.description>This will be a flying mechanoid boss currently in development - stay tuned.</NCL_Seraphiron.description>
+
+  <!-- EN: 警戒穹顶反隐系统 -->
+<NCL_SpectreNet_Array.label>SpectreNet Array</NCL_SpectreNet_Array.label>
+<NCL_SpectreNet_Array.description>Develop strategic anti-cloaking radar installations capable of detecting all cloaked units within operational range while providing battlefield awareness support for mechanoid forces.</NCL_SpectreNet_Array.description>
+
+  
+  <!-- EN: 标准配装 -->
+<NCL_Standard_Issue.label>Standard Issue</NCL_Standard_Issue.label>
+<NCL_Standard_Issue.description>Unlock fabrication technology for NCL-standard assault rifles and self-defense submachine guns.</NCL_Standard_Issue.description>
+
+
+  <NCL_MechNode.label>Chainwave Relay</NCL_MechNode.label>
+<NCL_MechNode.description>Quantum comms node providing 20 base bandwidth. Amplify signals via extra power. Requires bonded mechanitor for stable operation.</NCL_MechNode.description>
+  <!-- EN: 先锋机械 -->
+<NCL_Vanguard_Units.label>Vanguard Units</NCL_Vanguard_Units.label>
+<NCL_Vanguard_Units.description>Unlock medium mechanoid unit production technology.</NCL_Vanguard_Units.description>
+
+    <!-- EN: 垂发拦截系统 -->
+  <NCL_Vertical_Launch_Interception_System.label>Vertical Launch Interception System</NCL_Vertical_Launch_Interception_System.label>
+  <!-- EN: "研发“铁雨”垂发拦截系统，系统可远程自动跟踪敌方导弹及爆破敌方本体，实现全地图范围防御。" -->
+  <NCL_Vertical_Launch_Interception_System.description>The "Iron Rain" is NCL's advanced missile interception system providing full-map defense capabilities. Automatically detects and neutralizes incoming threats with precision interceptors.</NCL_Vertical_Launch_Interception_System.description>
+</LanguageData>

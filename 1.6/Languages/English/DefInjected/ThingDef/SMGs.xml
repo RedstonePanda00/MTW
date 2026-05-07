@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Bullet_CLSMG.label>CLSMG Cartridge</Bullet_CLSMG.label>
+
+<NCL_CLSMG.label>CLSMG</NCL_CLSMG.label>
+<NCL_CLSMG.description>Weapon Archive: CLSMG Light Submachine Gun
+Designation: CLSMG
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series
+
+The CLSMG is a lightweight defensive SMG designed for non-combatants, co-developed by NCL chief engineer O'Neal and AI system "Justice". Its fully electric micro-pressure propulsion system fires high-velocity lightweight projectiles to create dense suppression zones for deterrence, disruption, and light-armor target engagement.
+
+Structurally optimized for low recoil and user-friendly operation, the CLSMG features minimal handling barriers - enabling technicians, logistic personnel, and researchers to achieve immediate operational capability. However, as AI "Justice" assessed: this weapon "doesn't belong on battlefields" but rather in "not-yet-collapsed situations". Limited penetration, short effective range, and moderate firepower restrict its use to emergency defense and evacuation cover operations.
+
+Regarded as "the last resort for second-line units", the CLSMG represents technological and ethical compromise under total mechanized warfare.
+
+Design Notes:
+ O'Neal: "You made it too soft, Justice."
+ AI "Justice": "I calibrated it precisely - nonlethal by design."</NCL_CLSMG.description>
+<NCL_CLSMG.tools.grip.label>grip</NCL_CLSMG.tools.grip.label>
+<NCL_CLSMG.tools.barrel.label>barrel</NCL_CLSMG.tools.barrel.label>
+<NCL_CLSMG.verbs.Verb_Shoot.label>CLSMG</NCL_CLSMG.verbs.Verb_Shoot.label>
+
+</LanguageData>

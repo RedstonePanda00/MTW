@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: “铁雨”垂发拦截系统 -->
+  <NCL_Building_MissileSilo.label>Iron Rain" Vertical Launch Interception System</NCL_Building_MissileSilo.label>
+  <!-- EN: “铁雨”垂发拦截系统是 NCL 自主研发的全域反导装备，以专用导弹井为载体，核心功能是发射密集中型反导导弹。\n \n该系统可远程自动跟踪敌方导弹及爆破敌方本体，实现全地图范围防御，导弹井内置微型导弹生产工厂，可自主生产中型反导导弹，每生产与发射一枚此导弹消耗少量钢铁与电力（10铁50电），在密集火力下，需要大量资源保障持续作战。\n \n作为现有技术条件下的“导弹终结者”，它是NCL构建完备反导系统的关键，可高效削弱敌方打击强度，掌握战场主动权。 -->
+  <NCL_Building_MissileSilo.description>The "Iron Rain" Vertical Launch Interception System is a globally deployed missile defense platform independently developed by NCL. Utilizing dedicated missile silos as its core delivery platform, this system launches dense salvos of medium-range anti-missile interceptors to neutralize incoming threats.
+
+Operating through automated long-range tracking, it provides full-map-range defense by identifying hostile projectiles and destroying them mid-trajectory. Each silo houses an integrated miniature missile production facility that autonomously manufactures replacement interceptors. Production and launch of each interceptor consumes minimal resources (10 steel + 50 power units).</NCL_Building_MissileSilo.description>
+  
+  <!-- EN: IronRain Rocket -->
+  <Nyar_IronRain_Rocket.label>IronRain Rocket</Nyar_IronRain_Rocket.label>
+  
+</LanguageData>

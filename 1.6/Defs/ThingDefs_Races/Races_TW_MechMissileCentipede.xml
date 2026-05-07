@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="MechCentipede">
+    <defName>Mech_CentipedeMissile</defName>
+    <label>Missile Centipede</label>
+	<description>A centipede-class mechanoid equipped with guided missile systems, capable of launching precision HE or EMP warheads at extended ranges to suppress targets with devastating accuracy.</description>
+  <comps>
+  </comps>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="MechCentipedeBase">
+    <defName>Mech_CentipedeMissile_Kind</defName>
+    <label>Missile Centipede</label>
+    <race>Mech_CentipedeMissile</race>
+	<description>A centipede mechanoid equipped with guided missile launchers, capable of launching precision HE or EMP warheads at extended ranges to suppress targets with devastating accuracy.</description>
+    <lifeStages Inherit="False">
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <bodyGraphicData>
+          <texPath>Races/CentipedeMissile</texPath>
+          <maskPath>Races/CentipedeMissile_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/CentipedeMissileAncient</texPath>
+          <maskPath>Races/CentipedeMissile_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>TW_Guided_Rocket_Launcher_EMP</li>
+      <li>TW_Guided_Rocket_Launcher_HE</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+</Defs>

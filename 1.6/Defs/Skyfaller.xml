@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>B2000Mech</defName>
+    <label>B2000Mech</label>
+    <thingClass>NCL.CruiseFlyer</thingClass>
+    <graphicData>
+      <texPath>Things/b2000</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>10</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(3, 3)</shadowSize>
+      <anticipationSound>DropPod_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_FlyingCentipede</defName>
+    <label>fleshmelter bolt</label>
+    <graphicData>
+      <texPath>Projectiles/FlyingCentipede</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Mote</shaderType>
+      <drawSize>4</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>10</speed>
+    </projectile>
+  <comps>
+  	<li Class="NCL.CompProperties_SpawnThingOnDestroy">
+    <enablePawnSpawn>true</enablePawnSpawn>
+    <enableThingSpawn>false</enableThingSpawn>
+    <pawnKindDef>Mech_CentipedeBlaster</pawnKindDef>
+    <faction>Mechanoid</faction>
+	</li>
+  </comps>
+  </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_FlyingLancer</defName>
+    <label>FlyingLancer</label>
+    <graphicData>
+      <texPath>Projectiles/FlyingLancer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Mote</shaderType>
+      <drawSize>4</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>10</speed>
+    </projectile>
+  <comps>
+  	<li Class="NCL.CompProperties_SpawnThingOnDestroy">
+    <enablePawnSpawn>true</enablePawnSpawn>
+    <enableThingSpawn>false</enableThingSpawn>
+    <pawnKindDef>TW_Mech_Paratrooper_Kind</pawnKindDef>
+    <faction>Mechanoid</faction>
+	</li>
+  </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>B2000MechLF</defName>
+    <label>B2000Mech</label>
+    <thingClass>NCL.StraightLineCruiseFlyerRighttoLeft</thingClass>
+    <graphicData>
+      <texPath>Things/b2000</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>10</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(3, 3)</shadowSize>
+      <anticipationSound>DropPod_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+    <ThingDef ParentName="SkyfallerBase">
+    <defName>B2000MechUD</defName>
+    <label>B2000Mech</label>
+    <thingClass>NCL.StraightLineCruiseFlyerUptoDown</thingClass>
+    <graphicData>
+      <texPath>Things/b2000</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>10</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(3, 3)</shadowSize>
+      <anticipationSound>DropPod_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  </Defs>

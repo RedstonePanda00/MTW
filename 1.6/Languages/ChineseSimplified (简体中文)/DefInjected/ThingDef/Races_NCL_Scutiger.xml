@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<NCL_Mech_Scutiger.label>机械蚰蜒</NCL_Mech_Scutiger.label>
+<NCL_Mech_Scutiger.description>单位档案：NCL-12“机械蚰蜒”
+来源：NCL「铁律」重装支援序列
+
+这台重型机械单位采用独特的移动护盾平台设计，本身未配备任何远程武器系统。其核心防御依靠集成式重型能量屏障，能够有效抵御各类火力打击。
+
+主要功能是通过消耗预装载的钢铁资源（每架50单位）现场制造护盾无人机。这些无人机搭载小型屏障发生器，具有以下特性：
+- 本体结构脆弱但护盾效能出色
+- 可为自身及友军单位提供能量防护
+- 无战斗威胁时自动环绕母体形成保护圈
+- 作战状态下为前线单位提供即时护盾支援
+
+所有生产单位在待机状态下保持母体周边，形成动态防御阵列。</NCL_Mech_Scutiger.description>
+<NCL_Mech_Scutiger.tools.MechanicalHead.label>MechanicalHead</NCL_Mech_Scutiger.tools.MechanicalHead.label>
+
+  
+</LanguageData>

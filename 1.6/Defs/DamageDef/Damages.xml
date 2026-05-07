@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <DamageDef>
+    <defName>Crimson_Slagburst</defName>
+    <workerClass>DamageWorker_Flame</workerClass>
+    <label>Crimson Slagburst</label>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+	<armorCategory>Heat</armorCategory>
+    <defaultDamage>15</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+    <explosionHeatEnergyPerCell>100</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastFlame</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Flame</soundExplosion>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+	<additionalHediffs>
+      <li>
+        <hediff>CrimsonSlagburstScorched</hediff>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+    <DamageDef>
+    <defName>TW_Crimson_Slagburst</defName>
+    <workerClass>DamageWorker_Flame</workerClass>
+    <label>Crimson Slagburst</label>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+	<armorCategory>Heat</armorCategory>
+    <defaultDamage>15</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+    <explosionHeatEnergyPerCell>100</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastFlame</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Flame</soundExplosion>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+	<additionalHediffs>
+      <li>
+        <hediff>CrimsonSlagburstScorched</hediff>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+  
+  <DamageDef>
+    <defName>Disruptor_Positron_Burn</defName>
+    <workerClass>DamageWorker_Flame</workerClass>
+    <label>Disruptor Positron Burn</label>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+	<armorCategory>Heat</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+    <explosionHeatEnergyPerCell>100</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastFlame</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Flame</soundExplosion>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+  </DamageDef>
+  
+  <DamageDef Name="Bomb">
+    <defName>DeathExplosion</defName>
+    <label>DeathExplosion</label>
+	  <explosionColorCenter>(0.5, 0.15, 1)</explosionColorCenter>
+	  <explosionColorEdge>(0.67, 0.5, 1)</explosionColorEdge>
+      <defaultDamage>50</defaultDamage>
+      <defaultStoppingPower>2.0</defaultStoppingPower>
+      <defaultArmorPenetration>1.2</defaultArmorPenetration>
+	  <buildingDamageFactorImpassable>20</buildingDamageFactorImpassable>
+      <buildingDamageFactorPassable>10</buildingDamageFactorPassable>
+	  <workerClass>DamageWorker_Flame</workerClass>
+      <hasForcefulImpact>false</hasForcefulImpact>
+      <makesBlood>true</makesBlood>
+      <canInterruptJobs>false</canInterruptJobs>
+      <externalViolence>true</externalViolence>
+      <deathMessage>{0} is death.</deathMessage>
+      <hediff>Burn</hediff>
+	  <armorCategory>Sharp</armorCategory>
+      <explosionHeatEnergyPerCell>100</explosionHeatEnergyPerCell>
+      <explosionCellFleck>BlastFlame</explosionCellFleck>
+      <soundExplosion>Explosion_Flame</soundExplosion>
+      <combatLogRules>Damage_Flame</combatLogRules>
+      <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+  </DamageDef>
+  
+  <DamageDef ParentName="Bomb">
+    <defName>ShotbyDeath</defName>
+    <label>ShotbyDeath</label>
+	  <explosionColorCenter>(0.5, 0.15, 1)</explosionColorCenter>
+	  <explosionColorEdge>(0.67, 0.5, 1)</explosionColorEdge>
+      <defaultDamage>50</defaultDamage>
+      <defaultStoppingPower>2.0</defaultStoppingPower>
+      <defaultArmorPenetration>1.2</defaultArmorPenetration>
+	  <buildingDamageFactorImpassable>20</buildingDamageFactorImpassable>
+      <buildingDamageFactorPassable>10</buildingDamageFactorPassable>
+	  <workerClass>DamageWorker_Flame</workerClass>
+      <hasForcefulImpact>false</hasForcefulImpact>
+      <makesBlood>true</makesBlood>
+      <canInterruptJobs>false</canInterruptJobs>
+      <externalViolence>true</externalViolence>
+      <deathMessage>{0} is death.</deathMessage>
+      <hediff>Burn</hediff>
+	  <armorCategory>Sharp</armorCategory>
+      <explosionHeatEnergyPerCell>100</explosionHeatEnergyPerCell>
+      <explosionCellFleck>BlastFlame</explosionCellFleck>
+      <soundExplosion>Explosion_Flame</soundExplosion>
+      <combatLogRules>Damage_Flame</combatLogRules>
+      <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+	  	<additionalHediffs>
+      <li>
+        <hediff>The_coming_death</hediff>
+      </li>
+    </additionalHediffs>
+   </DamageDef>
+   
+   	<DamageDef ParentName="Bomb">
+      <defName>WildFire</defName>
+    <explosionColorCenter>(159,9,14)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+      <defaultDamage>40</defaultDamage>
+      <defaultStoppingPower>2.0</defaultStoppingPower>
+      <defaultArmorPenetration>1.30</defaultArmorPenetration>
+	  <buildingDamageFactorImpassable>15</buildingDamageFactorImpassable>
+      <buildingDamageFactorPassable>7.5</buildingDamageFactorPassable>
+    </DamageDef>
+	
+
+   
+  <DamageDef>
+    <defName>TW_Antiparticle_explosion</defName>
+    <label>Antiparticle explosion</label>
+	<workerClass>DamageWorker_Flame</workerClass>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+	<armorCategory>Sharp</armorCategory>
+    <defaultDamage>120</defaultDamage>
+    <defaultArmorPenetration>1.2</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>40</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>20</buildingDamageFactorPassable>
+    <explosionHeatEnergyPerCell>100</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastFlame</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Flame</soundExplosion>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <expolosionPropagationSpeed>0.3</expolosionPropagationSpeed>
+  </DamageDef>
+   
+
+     <DamageDef>
+    <defName>TW_HyperBeam_Damage</defName>
+    <label>HyperBeam Burn</label>
+	<workerClass>DamageWorker_Flame</workerClass>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+	<armorCategory>Sharp</armorCategory>
+    <defaultDamage>120</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>0</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>1</buildingDamageFactorPassable>
+    <explosionHeatEnergyPerCell>100</explosionHeatEnergyPerCell>
+    <explosionCellFleck>Fleck_Vaporize</explosionCellFleck>
+    <armorCategory>Heat</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <explosionColorCenter>(1, 1, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Vaporize</soundExplosion>
+    <expolosionPropagationSpeed>0.3</expolosionPropagationSpeed>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <corpseDamageFactor>0.1</corpseDamageFactor>
+  </DamageDef>
+</Defs>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingCategoryDef>
+    <defName>Apparel_NoBody</defName>
+    <label>Symbiomesh</label>
+    <parent>Apparel</parent>
+  </ThingCategoryDef>
+</Defs>

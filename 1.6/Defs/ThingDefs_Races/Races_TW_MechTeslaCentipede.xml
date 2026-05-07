@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="BaseMechanoid">
+    <defName>TW_Mech_MechTeslaCentipede</defName>
+    <label>Tesla Centipede</label>
+    <description>Modified from a Glitterworld-era Tesla defense network prototype, this mechanized centipede was designed as an orbital drop-troop interceptor. After centuries of dormancy, it was reactivated by unknown signals. Its dorsal superconducting capacitors discharge multi-megavolt currents capable of vaporizing incoming artillery shells. However, its energy systems critically depend on electromagnetic stability - EMP impacts trigger cascading capacitor explosions through catastrophic overload.</description>
+    <statBases>
+      <MarketValue>6400</MarketValue>
+      <MoveSpeed>1.8</MoveSpeed>
+      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.44</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+	  <IncomingDamageFactor>1</IncomingDamageFactor>
+	  <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">20</BandwidthCost>
+	  <MechEnergyLossPerHP MayRequire="Ludeon.Rimworld.Biotech">0.2</MechEnergyLossPerHP>
+	  <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+
+    </statBases>
+	<size>(1,1)</size>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+	<damageMultipliers>
+	  <li>
+        <damageDef>Stun</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Mechanoid</thinkTreeMain>
+      <body>MechanicalCentipede</body>
+      <baseBodySize>12.8</baseBodySize>
+      <baseHealthScale>6.48</baseHealthScale>
+	  <hediffGiverSets>
+	  </hediffGiverSets>
+      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+	  <mechWeightClass>UltraHeavy</mechWeightClass>
+	  <lifeStageAges Inherit="false">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+	<comps>  
+	 <li Class="CompProperties_Forbiddable" />
+     <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>56</range>
+                    <interceptCount>2</interceptCount>
+                    <interceptTime>40</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>1.5</laserOffsetY>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<enableSpecialBulletExplosion>true</enableSpecialBulletExplosion>
+					<connectinglaserWidth>1</connectinglaserWidth>
+					<connectingLineFleck>TW_Tesla_LightnintDefenseLine</connectingLineFleck>
+					<laserLineTexture>Things/None</laserLineTexture>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<impactScale>1</impactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+		<li Class="NCL.CompProperties_ExplodeWhenStunned">
+             <explosionRadius>5</explosionRadius>
+                <explosionDamage>50</explosionDamage>
+                <damageType>Flame</damageType>
+                <armorPenetration>1</armorPenetration>
+                <chanceToStartFire>1</chanceToStartFire>
+                <vulnerabilityHediff>TW_Capacitor_Meltdown</vulnerabilityHediff>
+                <increasedDamageFactor>1</increasedDamageFactor>
+                <damageFalloff>true</damageFalloff>
+                <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+                <cooldownTicks>1200</cooldownTicks> 
+        </li>
+	</comps>
+    <butcherProducts>
+      <Steel>600</Steel>
+      <Plasteel>180</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>TW_Mech_MechTeslaCentipede_Kind</defName>
+    <label>Tesla Centipede</label>
+    <combatPower>1200</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <weaponMoney>9999~9999</weaponMoney>
+	<isGoodBreacher>true</isGoodBreacher>
+    <weaponTags>
+	<li>TW_Plasma_Arc_Projector</li>
+    </weaponTags>
+	<race>TW_Mech_MechTeslaCentipede</race>
+    <lifeStages>
+	  <li MayRequire="Ludeon.RimWorld.Biotech">
+        <bodyGraphicData>
+          <texPath>Races/MechTeslaCentipede</texPath>
+          <maskPath>Races/MechTeslaCentipede_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>6</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/MechTeslaCentipedeAncient</texPath>
+          <maskPath>Races/MechTeslaCentipede_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>6</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+	    <FleckDef ParentName="FleckBase">
+        <defName>TW_Tesla_LightnintDefenseLine</defName>
+        <graphicData>
+            <texPath>Motes/Tesla_Lighning</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+            <renderInstanced>true</renderInstanced>
+			<drawSize>(1, 2)</drawSize>
+        </graphicData>
+        <altitudeLayer>Projectile</altitudeLayer>
+        <solidTime>0</solidTime>
+        <fadeOutTime>0.5</fadeOutTime>
+    </FleckDef>
+
+    	    <FleckDef ParentName="FleckBase">
+        <defName>NCL_SkipLine</defName>
+        <graphicData>
+            <texPath>Things/None</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+            <renderInstanced>true</renderInstanced>
+			<drawSize>(0, 0)</drawSize>
+        </graphicData>
+        <altitudeLayer>Projectile</altitudeLayer>
+        <solidTime>0</solidTime>
+        <fadeOutTime>0</fadeOutTime>
+    </FleckDef>
+  
+</Defs>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 椰子械 -->
+  <TW_Mech_Birgus.label>Mech Birgus</TW_Mech_Birgus.label>
+  <!-- EN: 机械巢穴仿造异星潮间带节肢生物铸造的战术单位。复合装甲外壳覆盖精密的液压关节，四足踏地时发出金属叩击声。移速稳健而非迅猛，然其合金附肢可在近距爆发骇人杀伤力。内置自适应减震网络，将冲击能转化为结构强化，愈受击则躯壳愈韧。腹舱搭载「微尘雾核」，受击即释放精准烟幕，为自身与友军织就灵动的生存屏障。 -->
+  <TW_Mech_Birgus.description>Tactical unit forged by the Mechanical Hive in imitation of intertidal arthropods from alien worlds. Its composite armor shell envelops precision hydraulic joints, emitting metallic clanking with each quadrupedal step. While moving at a deliberate pace rather than swift speed, its alloy appendages unleash devastating lethality at close quarters. The integrated adaptive shock-dispersal network converts impact energy into structural reinforcement - its carapace grows more durable with each impact. The abdominal compartment houses a "Microdust Mist Core" that deploys precisely targeted smoke screens upon receiving hits, weaving an agile survival barrier for itself and allied units.
+  
+  BUT IT IS WEAK TO FIRE.</TW_Mech_Birgus.description>
+  <!-- EN: left blade -->
+  <TW_Mech_Birgus.tools.left_blade.label>left blade</TW_Mech_Birgus.tools.left_blade.label>
+  <!-- EN: blade -->
+  <TW_Mech_Birgus.tools.left_blade.labelNoLocation>blade</TW_Mech_Birgus.tools.left_blade.labelNoLocation>
+  <!-- EN: right blade -->
+  <TW_Mech_Birgus.tools.right_blade.label>right blade</TW_Mech_Birgus.tools.right_blade.label>
+  <!-- EN: blade -->
+  <TW_Mech_Birgus.tools.right_blade.labelNoLocation>blade</TW_Mech_Birgus.tools.right_blade.labelNoLocation>
+  <!-- EN: head -->
+  <TW_Mech_Birgus.tools.head.label>head</TW_Mech_Birgus.tools.head.label>
+  
+</LanguageData>

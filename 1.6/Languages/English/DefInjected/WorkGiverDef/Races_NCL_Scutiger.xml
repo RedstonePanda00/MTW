@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: haul resources to carrier -->
+  <HaulToCarrier.label>haul resources to carrier</HaulToCarrier.label>
+  <!-- EN: hauling to -->
+  <HaulToCarrier.gerund>hauling to</HaulToCarrier.gerund>
+  <!-- EN: haul to -->
+  <HaulToCarrier.verb>haul to</HaulToCarrier.verb>
+  
+</LanguageData>

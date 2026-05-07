@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Sucker Punch -->
+  <SuckerPunch.label>Sucker Punch</SuckerPunch.label>
+  <!-- EN: Activates the jetpack's global mobility system, enabling tactical airborne insertion from any map location for rapid deployment to target zones and combat execution -->
+  <SuckerPunch.description>Activates the jetpack's global mobility system, enabling tactical airborne insertion from any map location for rapid deployment to target zones and combat execution.</SuckerPunch.description>
+
+  
+</LanguageData>

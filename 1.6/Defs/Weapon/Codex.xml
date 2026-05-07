@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Codex_Sniper</defName>
+    <label>Bullet Codex Sniper</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>40</damageAmountBase>
+      <armorPenetrationBase>0.88</armorPenetrationBase>
+	  <stoppingPower>3</stoppingPower>
+      <speed>300</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>Centurion_Arsenal_Codex_Sniper</defName>
+    <label>Centurion Arsenal: Sniper Rifle</label>
+    <description>Integrated sniper rifle module</description>
+    <relicChance>0</relicChance>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Weapons/Codex_Sniper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.15</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<generateCommonality>0</generateCommonality>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <MaxHitPoints>1</MaxHitPoints>
+      <MarketValue>0</MarketValue>
+      <WorkToMake>70000</WorkToMake>
+      <DeteriorationRate>99999999999999999</DeteriorationRate>
+      <Mass>6.8</Mass>
+      <AccuracyTouch>.7</AccuracyTouch>
+      <AccuracyShort>.8</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+	<smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Codex_Sniper</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+	    <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+        <range>56</range>
+        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>7</muzzleFlashScale>
+      </li>
+    </verbs>
+	<comps>
+		<li Class="Edited_BM_WeaponSummon.CompProperties_SummonedWeapon">
+			<lifetimeDuration>36000</lifetimeDuration>
+		</li>
+    <li Class="Edited_BM_WeaponSummon.CompProperties_PreventDrop" />
+  </comps>
+  <tickerType>Normal</tickerType>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>Legendary</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Codex_SMG</defName>
+    <label>Bullet Codex SMG</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>38</damageAmountBase>
+      <armorPenetrationBase>0.56</armorPenetrationBase>
+	  <stoppingPower>1</stoppingPower>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseGun">
+    <defName>Centurion_Arsenal_Codex_SMG</defName>
+    <label>Centurion Arsenal: Submachine Gun</label>
+    <description>Integrated submachine gun module</description>
+    <relicChance>0</relicChance>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Weapons/Codex_SMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+	<generateCommonality>0</generateCommonality>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <MaxHitPoints>1</MaxHitPoints>
+      <MarketValue>0</MarketValue>
+      <WorkToMake>70000</WorkToMake>
+      <DeteriorationRate>99999999999999999</DeteriorationRate>
+      <Mass>2.8</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>.75</AccuracyMedium>
+      <AccuracyLong>.5</AccuracyLong>
+      <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+    </statBases>
+	<smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Codex_SMG</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>14</range>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>5</muzzleFlashScale>
+      </li>
+    </verbs>
+	<comps>
+		<li Class="Edited_BM_WeaponSummon.CompProperties_SummonedWeapon">
+			<lifetimeDuration>36000</lifetimeDuration>
+		</li>
+    <li Class="Edited_BM_WeaponSummon.CompProperties_PreventDrop" />
+  </comps>
+  <tickerType>Normal</tickerType>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>Legendary</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+      <ThingDef ParentName="BaseBullet">
+    <defName>ChargedBullet_Codex_Rifle</defName>
+    <label>ChargedBullet Codex Rifle</label>
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+	  <color>(255, 80, 80)</color>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>24</damageAmountBase>
+      <armorPenetrationBase>0.65</armorPenetrationBase>
+	  <stoppingPower>1</stoppingPower>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseGun">
+    <defName>Centurion_Arsenal_Codex_Rifle</defName>
+    <label>Centurion Arsenal: Charge Rifle</label>
+    <description>Integrated charge rifle module</description>
+    <relicChance>0</relicChance>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Weapons/Codex_Rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.15</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<generateCommonality>0</generateCommonality>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <MaxHitPoints>1</MaxHitPoints>
+      <MarketValue>0</MarketValue>
+      <WorkToMake>70000</WorkToMake>
+      <DeteriorationRate>99999999999999999</DeteriorationRate>
+      <Mass>2.8</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+	<smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>ChargedBullet_Codex_Rifle</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>36</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  <comps>
+    <li Class="Edited_BM_WeaponSummon.CompProperties_SummonedWeapon">
+      <lifetimeDuration>36000</lifetimeDuration>
+    </li>
+  <li Class="Edited_BM_WeaponSummon.CompProperties_PreventDrop" />
+  </comps>
+  <tickerType>Normal</tickerType>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>Legendary</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  
+  
+   <ThingDef ParentName="BaseWeapon">
+    <defName>MeleeWeapon_M9Knife</defName>
+    <label>M9 Bayonet</label>
+    <techLevel>Archotech</techLevel>
+    <generateCommonality>0</generateCommonality>
+    <description>Rapid-deployment tactical blade</description>
+    <relicChance>0</relicChance>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Weapons/M9</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.6</uiIconScale>
+    <weaponTags>
+      <li>Legendary</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <MaxHitPoints>1</MaxHitPoints>
+      <DeteriorationRate>99999999999999999</DeteriorationRate>
+      <MarketValue>0</MarketValue>
+      <Mass>0.5</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>0.3</cooldownTime>
+      </li>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>0.5</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+	<comps>
+		<li Class="Edited_BM_WeaponSummon.CompProperties_SummonedWeapon">
+			<lifetimeDuration>36000</lifetimeDuration>
+		</li>
+    <li Class="Edited_BM_WeaponSummon.CompProperties_PreventDrop" />
+  </comps>
+  <tickerType>Normal</tickerType>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>CodexTurret</defName>
+    <label>Codex Turret</label>
+    <description>Shoulder-mounted automatic defense system</description>
+    <graphicData>
+      <texPath>Weapons/CodexTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>ChargedBullet_Codex_Rifle</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>31</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  </Defs>

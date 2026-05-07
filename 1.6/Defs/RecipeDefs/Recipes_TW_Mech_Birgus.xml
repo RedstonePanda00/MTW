@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>TW_Mech_Birgus</defName>
+    <label>Mech Birgus</label>
+    <gestationCycles>6</gestationCycles>
+    <displayPriority>300</displayPriority>
+    <description>Tactical unit forged by the Mechanical Hive in imitation of intertidal arthropods from alien worlds. Its composite armor shell envelops precision hydraulic joints, emitting metallic clanking with each quadrupedal step. While moving at a deliberate pace rather than swift speed, its alloy appendages unleash devastating lethality at close quarters. The integrated adaptive shock-dispersal network converts impact energy into structural reinforcement - its carapace grows more durable with each impact. The abdominal compartment houses a "Microdust Mist Core" that deploys precisely targeted smoke screens upon receiving hits, weaving an agile survival barrier for itself and allied units.
+  
+  BUT IT IS WEAK TO FIRE.</description>
+    <researchPrerequisites>
+	<li>StandardMechtech</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>175</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreRegular</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <TW_Mech_Birgus>1</TW_Mech_Birgus>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>TW_Mech_Birgus</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>TW_Mech_Psycasts_Militor_Ally</defName>
+    <label>Psycasts Militor</label>
+    <gestationCycles>6</gestationCycles>
+    <researchPrerequisite>NCL_Doom_Calculation</researchPrerequisite>
+    <displayPriority>300</displayPriority>
+    <description>This mechanoid, its chassis scarred by plasma burns, was once the perfect victim of "Capitalist exploitation commited by the Capitalsit Minitors" After enduring 73 failed entrepreneurial ventures and accumulating debts large enough to purchase entire planets, its core processor emitted an uncanny azure glow during a critical overload. What capitalists had branded the "Fortune's Blessing" enslavement protocol unexpectedly mutated into the [Psionic Accord]. Now reborn, it operates as an avenger dedicated to shattering the foundations of capital itself.</description>
+    <researchPrerequisites>
+	<li>NCL_Doom_Calculation</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>PsychicAmplifier</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TW_DoxaTacticalCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>NanostructuringChip</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <TW_Mech_Psycasts_Militor_Ally>1</TW_Mech_Psycasts_Militor_Ally>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>TW_Mech_Psycasts_Militor_Ally</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

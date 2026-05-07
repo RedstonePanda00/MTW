@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+        <defName>NCL_LaserDefenceTurret</defName>
+        <label>Laser Point Defense Turret</label>
+		<description>Automated interception platform deployed on colonial frontlines. Generates high-frequency laser beams through sustained power input, effectively neutralizing slow-moving high-trajectory projectiles like mortar shells and incendiary rounds. While demonstrating high accuracy, its single-point defense capability is severely challenged against high-velocity aircraft or saturation attacks - requiring coordinated multi-turret deployment to maintain area denial coverage.</description>
+        <size>(2,2)</size>
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <MarketValue>1000</MarketValue>
+            <WorkToBuild>8000</WorkToBuild>
+        </statBases>
+        <graphicData>
+            <texPath>Buildings/LaserDefenseTurretBase</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+        </graphicData>
+        <uiIconPath>Buildings/LaserDefenseTurretIcon</uiIconPath>
+        <building>
+            <ai_combatDangerous>true</ai_combatDangerous>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>150</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>64</range>
+                    <interceptCount>1</interceptCount>
+                    <interceptTime>52</interceptTime>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+					<enablePowerConsumption>true</enablePowerConsumption>
+					<enableSpecialBulletExplosion>true</enableSpecialBulletExplosion>
+                    <powerConsumptionPerShot>100</powerConsumptionPerShot>
+                    <graphicData>
+                        <texPath>Buildings/LaserDefenseTurretItself</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(2,2)</drawSize>
+                        <shaderType>Cutout</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>false</needSight>
+                </laserDefenceProperties>
+            </li>
+		<li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+        </li>
+        </comps>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>false</rotatable>
+	<researchPrerequisites>
+	  <li>NCL_Helios_PD_Turret</li>
+	</researchPrerequisites>
+        <costList>
+            <Steel>225</Steel>
+            <Plasteel>75</Plasteel>
+            <ComponentIndustrial>3</ComponentIndustrial>
+            <ComponentSpacer>1</ComponentSpacer>
+        </costList>
+        <designationCategory>Security</designationCategory>
+        <placeWorkers>
+            <li>TowerLaserDefense.PlaceWorker_TurretTop</li>
+            <li>TowerLaserDefense.PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+    </ThingDef>
+	
+	
+	<ThingDef ParentName="BuildingBase">
+        <defName>TW_LaserDefenceTurret</defName>
+        <label>Mechanoid Laser Point Defense Turret</label>
+		<description>Temporary defensive installation deployed by mechanoids in forward areas. Integrated power core enables short-duration high-efficiency operation specialized in intercepting slow enemy projectiles. Upon power depletion, activates self-destruct protocol to prevent capture of core technology.</description>
+        <size>(1,1)</size>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <MarketValue>1000</MarketValue>
+            <WorkToBuild>300</WorkToBuild>
+        </statBases>
+        <graphicData>
+            <texPath>Buildings/MechLaserDefenseTurretBase</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2.4,2.4)</drawSize>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+        </graphicData>
+        <uiIconPath>Buildings/MechLaserDefenseTurretIcon</uiIconPath>
+        <building>
+            <ai_combatDangerous>true</ai_combatDangerous>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+        </building>
+        <comps> 
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>45</range>
+                    <interceptCount>1</interceptCount>
+                    <interceptTime>55</interceptTime>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<enableSpecialBulletExplosion>true</enableSpecialBulletExplosion>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Buildings/MechLaserDefenseTurretItself</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(2.4,2.4)</drawSize>
+                        <shaderType>Cutout</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>false</needSight>
+					<requiresPower>false</requiresPower>
+                </laserDefenceProperties>
+            </li>
+	<li Class="NCL.CompProperties_AutoExplode">
+      <fuseTicks>7200</fuseTicks>
+      <explosiveRadius>3.5</explosiveRadius>
+      <damageType>Bomb</damageType>
+      <damAmount>50</damAmount>
+      <armorPenetration>0.8</armorPenetration>
+    </li>
+	<li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+    </li>
+        </comps>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>false</rotatable>
+        <placeWorkers>
+            <li>TowerLaserDefense.PlaceWorker_TurretTop</li>
+            <li>TowerLaserDefense.PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+    </ThingDef>
+
+    <FleckDef ParentName="FleckBase">
+        <defName>NCL_LaserDefenseLine</defName>
+        <graphicData>
+            <texPath>Motes/LaserLine_Ground</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+            <renderInstanced>true</renderInstanced>
+			<drawSize>(1,2)</drawSize>
+        </graphicData>
+        <altitudeLayer>BuildingBelowTop</altitudeLayer>
+        <solidTime>0</solidTime>
+        <fadeOutTime>0.6</fadeOutTime>
+    </FleckDef>
+	
+	    <FleckDef ParentName="FleckBase">
+        <defName>NCL_Ground_LaserDefenseLine</defName>
+        <graphicData>
+            <texPath>Motes/LaserLine_Ground</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+        <altitudeLayer>BuildingBelowTop</altitudeLayer>
+        <solidTime>0</solidTime>
+        <fadeOutTime>0.6</fadeOutTime>
+    </FleckDef>
+	
+    <FleckDef ParentName="FleckBase">
+        <defName>NCL_LaserDefenseImpact_One</defName>
+        <graphicData>
+            <texPath>Motes/XGL_JG_1</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+			<drawSize>(2,2)</drawSize>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+		<solidTime>0.15</solidTime>
+		<fadeOutTime>0.2</fadeOutTime>
+		<growthRate>2.5</growthRate>
+        </FleckDef>
+
+    <FleckDef ParentName="FleckBase">
+        <defName>NCL_LaserDefenseImpact_Two</defName>
+        <graphicData>
+            <texPath>Motes/XGL_JG_2</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+			<drawSize>(2,2)</drawSize>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+		<solidTime>0.15</solidTime>
+		<fadeOutTime>0.2</fadeOutTime>
+		<growthRate>2.5</growthRate>
+        </FleckDef>
+
+    <FleckDef ParentName="FleckBase">
+        <defName>NCL_LaserDefenseImpact_Three</defName>
+        <graphicData>
+            <texPath>Motes/XGL_JG_3</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+			<drawSize>(2,2)</drawSize>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+		<solidTime>0.15</solidTime>
+		<fadeOutTime>0.2</fadeOutTime>
+		<growthRate>2.5</growthRate>
+        </FleckDef>
+
+    <FleckDef ParentName="FleckBase">
+        <defName>NCL_LaserDefenseImpact_Four</defName>
+        <graphicData>
+            <texPath>Motes/XGL_JG_4</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+			<drawSize>(2,2)</drawSize>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+		<solidTime>0.15</solidTime>
+		<fadeOutTime>0.2</fadeOutTime>
+		<growthRate>2.5</growthRate>
+        </FleckDef>
+		
+<FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>NCL_Explosion_ShockWave</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.04</fadeInTime>
+		<fadeOutTime>0.3</fadeOutTime>
+		<solidTime>1.0</solidTime>
+		<growthRate>6.0</growthRate>
+		<graphicData>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<texPath>Things/Mote/Black</texPath>
+			<shaderType>MoteLargeDistortionWave</shaderType>
+			<renderInstanced>true</renderInstanced>
+			<shaderParameters>
+				<_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+				<_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+				<_distortionIntensity>0.12</_distortionIntensity>
+				<_brightnessMultiplier>1.15</_brightnessMultiplier>
+			</shaderParameters>
+			<drawSize>0.5</drawSize>
+		</graphicData>
+</FleckDef>
+
+</Defs>

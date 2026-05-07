@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<!-- 战争巨蝎 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="NCL_Mech_Scorpion"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MarketValue>3200</MarketValue>
+      <MoveSpeed>5.4</MoveSpeed>
+      <ArmorRating_Blunt>1.35</ArmorRating_Blunt>
+	  <EMPResistance>0.40</EMPResistance>
+      <ArmorRating_Sharp>1.35</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">8</BandwidthCost>
+      <MechEnergyLossPerHP  MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+			</statBases>
+    <race>
+      <baseHealthScale>6</baseHealthScale>
+    </race>
+		</value>
+	</Operation>
+	
+	<!-- 闪光西瓜虫 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="NCL_Mech_PillBug"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MarketValue>3200</MarketValue>
+      <MoveSpeed>1.8</MoveSpeed>
+      <ArmorRating_Blunt>1.15</ArmorRating_Blunt>
+	  <EMPResistance>0.40</EMPResistance>
+      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">8</BandwidthCost>
+      <MechEnergyLossPerHP  MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+			</statBases>
+    <race>
+      <baseHealthScale>6</baseHealthScale>
+    </race>
+		</value>
+	</Operation>
+
+		<!-- 机械兰螳 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="NCL_Mech_Mantis"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MarketValue>3200</MarketValue>
+      <MoveSpeed>5.4</MoveSpeed>
+      <ArmorRating_Blunt>1.45</ArmorRating_Blunt>
+	  <EMPResistance>0.8</EMPResistance>
+			<IncomingDamageFactor>0.80</IncomingDamageFactor><!--受到伤害乘数-->
+			<StaggerDurationFactor>0.5</StaggerDurationFactor><!--抑止时间系数-->
+      <ArmorRating_Sharp>1.45</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">8</BandwidthCost>
+      <MechEnergyLossPerHP  MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+			</statBases>
+    <race>
+      <baseHealthScale>8</baseHealthScale>
+    </race>
+		</value>
+	</Operation>
+
+			<!-- 静巢构体 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TW_Mech_Doxa"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MarketValue>30000</MarketValue>
+      <MoveSpeed>1</MoveSpeed>
+        <ArmorRating_Blunt>1.45</ArmorRating_Blunt>
+        <ArmorRating_Sharp>1.75</ArmorRating_Sharp>
+	    <ArmorRating_Heat>2</ArmorRating_Heat>
+	    <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+	    <EMPResistance>0.5</EMPResistance>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">50</BandwidthCost>
+      <MechEnergyLossPerHP  MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+			</statBases>
+    <race>
+		<baseHealthScale>20</baseHealthScale>
+    </race>
+		</value>
+	</Operation>
+ 
+ 			<!-- 裂壳蛛 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TW_Mech_Shellsplitter_Spider"]/statBases</xpath>
+		<value>
+			<statBases>
+        <MoveSpeed>6</MoveSpeed>
+			</statBases>
+    <race>
+        <baseHealthScale>4</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>left blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>0.3</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right blade</label>
+        <labelNoLocation>blade</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>0.3</cooldownTime>
+        <linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+		</value>
+	</Operation>
+
+		<!-- 壳堡构体敌对模式 -->
+	    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TW_Mech_Shell_Fortification"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MarketValue>100000</MarketValue>
+      <MoveSpeed>1.88</MoveSpeed>
+      <ArmorRating_Blunt>2</ArmorRating_Blunt>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+	  <ArmorRating_Heat>2</ArmorRating_Heat>
+	    <EMPResistance>0.88</EMPResistance>
+		<StaggerDurationFactor>0</StaggerDurationFactor>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">999</BandwidthCost>
+      <MechEnergyLossPerHP  MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+			</statBases>
+    <race>
+		<baseHealthScale>30</baseHealthScale>
+    </race>
+		</value>
+	</Operation>
+
+			<!-- 壳堡构体破壳mon -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TW_Mech_Shell_Fortification_ShellBreakFormed"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MoveSpeed>10</MoveSpeed>
+      <ArmorRating_Blunt>1.25</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+	  <ArmorRating_Heat>1</ArmorRating_Heat>
+	    <EMPResistance>0.5</EMPResistance>
+	  <ShootingAccuracyPawn>20</ShootingAccuracyPawn>
+		<StaggerDurationFactor>0</StaggerDurationFactor>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">999</BandwidthCost>
+      <MechEnergyLossPerHP  MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+			</statBases>
+    <race>
+		<baseHealthScale>30</baseHealthScale>
+    </race>
+		</value>
+	</Operation>
+
+				<!-- 测频 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TW_Mech_Praetor"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MarketValue>6400</MarketValue>
+      <MoveSpeed>1.8</MoveSpeed>
+      <ArmorRating_Blunt>1.26</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.54</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+	  <IncomingDamageFactor>1</IncomingDamageFactor>
+	  <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">20</BandwidthCost>
+	  <MechEnergyLossPerHP  MayRequire="Ludeon.Rimworld.Biotech">0.2</MechEnergyLossPerHP>
+	  <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+			</statBases>
+    <race>
+		<baseHealthScale>6</baseHealthScale>
+    </race>
+		</value>
+	</Operation>
+
+  				<!-- 测频 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TW_Mech_Praetor"]/comps</xpath>
+		<value>
+	<comps>  
+	 <li Class="CompProperties_Forbiddable"/>
+	<li Class="CompProperties_ProjectileInterceptor">
+    <radius>15</radius>
+    <color>(0.4, 0.4, 0.4)</color>
+    <interceptGroundProjectiles>true</interceptGroundProjectiles>
+    <interceptAirProjectiles>true</interceptAirProjectiles>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>4000</hitPoints>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>1</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>2400</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    <li Class="NCL.CompProperties_AntiInvisibilityField">
+        <effectiveRadius>38</effectiveRadius>
+		<requiresPower>false</requiresPower>
+		<applyHediff>DisruptorFlash</applyHediff>
+        <checkIntervalTicks>60</checkIntervalTicks>
+		<affectsThroughWalls>true</affectsThroughWalls>
+		<drawRadius>true</drawRadius>
+        <drawLines>true</drawLines>
+        <radiusColor>(255, 255, 255)</radiusColor>
+        </li>
+	</comps>
+		</value>
+	</Operation>
+
+			<!-- 特斯拉蜈蚣 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TW_Mech_MechTeslaCentipede"]/statBases</xpath>
+		<value>
+			<statBases>
+      <MarketValue>6400</MarketValue>
+      <MoveSpeed>1.8</MoveSpeed>
+      <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.54</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+	  <IncomingDamageFactor>1</IncomingDamageFactor>
+	  <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">20</BandwidthCost>
+	  <MechEnergyLossPerHP  MayRequire="Ludeon.Rimworld.Biotech">0.2</MechEnergyLossPerHP>
+	  <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+			</statBases>
+		</value>
+	</Operation>
+
+</Patch>

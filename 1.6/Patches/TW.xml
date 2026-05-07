@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
+		<value>
+			  <li Class="NCL.CompProperties_TotalWarfareHediff">
+				<TWhediffsRange>
+				  <li>TW_HighMobilityPhaseShiftDrive_R</li>
+		    	  <li>TW_TacticalArtilleryCoordinationModule_AutoInferno</li>
+				  <li>TW_TacticalArtilleryCoordinationModule_LaserDefence</li>
+				  <li>TW_CompositeArmorReinforcementProtocol_R</li>
+				  <li>TW_LongRangeBallisticsOptimizationSystem</li>
+				  <li>TW_Overdrive_M</li>
+		    	  <li>TW_TacticalArtilleryCoordinationModule_ChargeBlaster</li>
+				  <li>TW_Optical_Camo_Disruption_R</li>
+				</TWhediffsRange>
+				<TWhediffsMelee>
+				  <li>TW_Optical_Camo_Disruption_M</li>
+				  <li>TW_TacticalArtilleryCoordinationModule_ChargeBlaster</li>
+				  <li>TW_TacticalArtilleryCoordinationModule_LaserDefence</li>
+		    	  <li>TW_TacticalArtilleryCoordinationModule_AutoInferno</li>
+				  <li>TW_HighMobilityPhaseShiftDrive_M</li>
+				  <li>TW_CompositeArmorReinforcementProtocol_M</li>
+				  <li>TW_Overdrive_M</li>
+				</TWhediffsMelee>
+			  </li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
+		<value>
+			  <li Class="NCL.CompProperties_TotalWarfareBetaHediff">
+				<TWhediffsRange>
+				  <li>TW_TacticalArtilleryCoordinationModule_ChargeBlaster</li>
+				  <li>TW_HighMobilityPhaseShiftDrive_R</li>
+				  <li>TW_CompositeArmorReinforcementProtocol_R</li>
+				  <li>TW_LongRangeBallisticsOptimizationSystem</li>
+				  <li>TW_Optical_Camo_Disruption_R</li>
+				</TWhediffsRange>
+				<TWhediffsMelee>
+				  <li>TW_TacticalArtilleryCoordinationModule_ChargeBlaster</li>
+				  <li>TW_HighMobilityPhaseShiftDrive_M</li>
+				  <li>TW_Optical_Camo_Disruption_M</li>
+				  <li>TW_CompositeArmorReinforcementProtocol_M</li>
+				</TWhediffsMelee>
+			  </li>
+		</value>
+	</Operation>
+
+		<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
+		<value>
+			  <li Class="NCL.CompProperties_TotalWarfareAlphaHediff">
+				<TWhediffsRange>
+				  <li>TW_TacticalArtilleryCoordinationModule_LaserDefence</li>
+		    	  <li>TW_TacticalArtilleryCoordinationModule_AutoInferno</li>
+				  <li>TW_TacticalArtilleryCoordinationModule_ChargeBlaster</li>
+				  <li>TW_HighMobilityPhaseShiftDrive_R</li>
+				  <li>TW_CompositeArmorReinforcementProtocol_R</li>
+				  <li>TW_LongRangeBallisticsOptimizationSystem</li>
+				  <li>TW_Optical_Camo_Disruption_R</li>
+				</TWhediffsRange>
+				<TWhediffsMelee>
+				  <li>TW_TacticalArtilleryCoordinationModule_LaserDefence</li>
+		    	  <li>TW_TacticalArtilleryCoordinationModule_AutoInferno</li>
+				  <li>TW_TacticalArtilleryCoordinationModule_ChargeBlaster</li>
+				  <li>TW_HighMobilityPhaseShiftDrive_M</li>
+				  <li>TW_Optical_Camo_Disruption_M</li>
+				  <li>TW_CompositeArmorReinforcementProtocol_M</li>
+				</TWhediffsMelee>
+			  </li>
+		</value>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Bullet Red tide -->
+  <Bullet_Red_tide.label>Bullet Red tide</Bullet_Red_tide.label>
+  
+  <!-- EN: Crimson Slagburst Rocket -->
+  <Crimson_Slagburst_Rocket.label>Crimson Slagburst Rocket</Crimson_Slagburst_Rocket.label>
+  
+  <!-- EN: Redtide -->
+  <NCL_Redtide.label>Redtide</NCL_Redtide.label>
+  <!-- EN: 赤潮 -->
+  <NCL_Redtide.description>Redtide</NCL_Redtide.description>
+  <!-- EN: stock -->
+  <NCL_Redtide.tools.stock.label>stock</NCL_Redtide.tools.stock.label>
+  <!-- EN: barrel -->
+  <NCL_Redtide.tools.barrel.label>barrel</NCL_Redtide.tools.barrel.label>
+  <!-- EN: Redtide -->
+  <NCL_Redtide.verbs.Verb_Shoot.label>Redtide</NCL_Redtide.verbs.Verb_Shoot.label>
+  
+  <!-- EN: RT AutoGun -->
+  <RT_AutoGun.label>RT AutoGun</RT_AutoGun.label>
+  <!-- EN: RT AutoGun -->
+  <RT_AutoGun.description>RT AutoGun</RT_AutoGun.description>
+  <!-- EN: RT AutoGun -->
+  <RT_AutoGun.verbs.Verb_ArcSprayProjectile.label>RT AutoGun</RT_AutoGun.verbs.Verb_ArcSprayProjectile.label>
+  
+</LanguageData>

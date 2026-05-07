@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NCLChargeLance</defName>
+    <label>NCL Charge Lance Round</label>
+    <graphicData>
+      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+	  <shaderType>TransparentPostLight</shaderType>
+      <color>(159,9,14)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>24</damageAmountBase>
+      <armorPenetrationBase>0.8</armorPenetrationBase>
+	  <stoppingPower>1.5</stoppingPower>
+      <speed>150</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>NCLLance</defName>
+    <label>NCL Charge Lance</label>
+    <description>Weapon Archive: NCL Charge Lance
+Designation: NCL Charge Lance 
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series  
+
+Functional Overview:  
+Specialized rifle designed for Dinergate units, featuring exceptional single-shot damage, armor penetration, and accuracy. Optimized for Dinergate close-quarters combat with rapid-fire modes and integrated bayonet functionality, enabling seamless transitions between medium-range suppression and melee tactics.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+<relicChance>0</relicChance>     
+<graphicData>
+      <texPath>Weapons/NCLlance</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+	<uiIconPath>Weapons/NCLlance</uiIconPath>
+    <soundInteract>Interact_ChargeLance</soundInteract>
+	<equippedAngleOffset>0</equippedAngleOffset>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+	  <WorkToMake>20000</WorkToMake>
+      <Mass>6.8</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>0.95</AccuracyMedium>
+      <AccuracyLong>0.95</AccuracyLong>
+      <RangedWeapon_Cooldown>0.88</RangedWeapon_Cooldown>
+    </statBases>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NCLChargeLance</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>36</range>
+        <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <soundCast>ChargeLance_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>7</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>NCLLance</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  </Defs>

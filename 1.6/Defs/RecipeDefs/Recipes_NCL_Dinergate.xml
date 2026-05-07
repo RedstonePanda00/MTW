@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>NCL_Mech_Dinergate</defName>
+    <label>Dinergate</label>
+    <gestationCycles>5</gestationCycles>
+    <displayPriority>200</displayPriority>
+    <description>Unit Archive: NCL-00 "Dinergate"
+Origin: "Iron Law" Mass-Production Series
+
+As NCL's first autonomous design, the Dinergate marked the transition from scrap-based to purpose-built mechanoids. This compact combat platform served diverse frontline roles across countless operations.
+
+Its core chassis features a honeycomb bionic structure with living-metal joints, balancing durability and mass-production efficiency. 
+
+Standard armament includes mid-range electro-lances and polymorphic manipulators that transition seamlessly between combat and utility roles. A rear-mounted drone deployment system provides tactical flexibility.
+
+Though technically obsolete, Dinergate variants persist in stellar ruins - minimalist shells executing forgotten commands with lethal precision.</description>
+	<researchPrerequisite Inherit="false" />
+	<researchPrerequisites>
+	  <li>StandardMechtech</li>
+	  <li>NCL_Vanguard_Units</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>225</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Neural_Weave</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <NCL_Mech_Dinergate>1</NCL_Mech_Dinergate>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>NCL_Mech_Dinergate</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>NCL_Mech_DinergateSniper</defName>
+    <label>Dinergate Sniper</label>
+    <gestationCycles>5</gestationCycles>
+    <displayPriority>200</displayPriority>
+    <description>Unit Archive: NCL-02 "Dinergate Sniper"
+Origin: "Iron Law" Mass-Production Series
+
+A lightweight variant optimized for mid-range engagement. Its compact size enables precise strikes and prolonged reconnaissance. Primary weapon is the 'NCL-42 Red Needle' tactical rifle firing low-cost red ceramic slugs, capable of penetrating 25mm homogeneous steel. Mounts a foldable drone pod for deploying defensive drones at critical moments. Uniquely quiet during operation, it employs erratic repositioning jumps, making it an unpredictable marksman unit. Tactical records indicate its role as the scout and first-strike element preceding main forces.</description>
+	<researchPrerequisite Inherit="false" />
+	<researchPrerequisites>
+	  <li>StandardMechtech</li>
+	  <li>NCL_Vanguard_Units</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>225</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Neural_Weave</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <NCL_Mech_DinergateSniper>1</NCL_Mech_DinergateSniper>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>NCL_Mech_DinergateSniper</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

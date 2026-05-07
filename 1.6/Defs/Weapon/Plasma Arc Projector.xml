@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+ <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_TeslaCentipede</defName>
+    <label>Tesla Centipede Charge Blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <drawSize>1.8</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>25</damageAmountBase>
+      <speed>180</speed>
+	  <armorPenetrationBase>1.05</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>TW_Plasma_Arc_Projector</defName>
+    <label>Plasma Arc Projector</label>
+    <description>Primary weapon of Tesla Centipedes. Emits high-temperature plasma arcs powered by dorsal capacitors.</description>
+	<tradeability>None</tradeability>
+  <relicChance>0</relicChance>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Weapons/TW_Plasma_Arc_Projector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.5</drawSize>
+    </graphicData>
+	<uiIconPath>Weapons/TW_Plasma_Arc_Projector</uiIconPath>
+    <soundInteract>Interact_ChargeLance</soundInteract>
+	<equippedAngleOffset>0</equippedAngleOffset>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+	  <WorkToMake>20000</WorkToMake>
+      <Mass>6.8</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.6</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+    </statBases>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+				<verbClass>Verb_Shoot</verbClass>
+				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+				<burstShotCount>108</burstShotCount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_TeslaCentipede</defaultProjectile>
+				<warmupTime>2.5</warmupTime>
+				<minRange>0</minRange>
+				<range>36</range>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>7</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>50</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>TW_Plasma_Arc_Projector</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+	<modExtensions>
+		<li Class="VEF.Things.ThingDefExtension">
+			<weaponCarryDrawOffsets>
+				<north>
+					<drawOffset>(1.0, 0.0, -0.7)</drawOffset>
+				</north>
+				<east>
+					<drawOffset>(-1.0, 0.0, -0.7)</drawOffset>
+				</east>
+				<south>
+					<drawOffset>(-1.0, 0.0, -0.7)</drawOffset>
+				</south>
+				<west>
+					<drawOffset>(1.0, 0.0, -0.7)</drawOffset>
+				</west>
+			</weaponCarryDrawOffsets>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  </Defs>

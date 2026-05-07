@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+<!-- EN: Mechanoids: Total Warfare Y -->
+  <NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>机械族：全面战争Y</NCL_TOTALWARFARE_AUTO_TRIGGER_TITLE>
+  <!-- EN: 
+    A message from NCL indicates a critical situation:
+    
+    Your colony's total wealth has reached a significant scale, causing the Mechanoid hives to perceive you as a threat that must be eliminated.
+    From now on, they may equip their forces with more advanced weaponry and launch total warfare against you. Prepare for battle.
+   -->
+  <NCL_TOTALWARFARE_AUTO_TRIGGER_TEXT>来自NCL的信件显示，形势异常严峻：\n    \n    你的殖民地总财富已达到一定规模，这让机械族巢穴将你们视为必须铲除的威胁。\n    今后，他们可能将以更先进的装备武装部队，向你们发起全面战争，请做好战斗准备。\n  </NCL_TOTALWARFARE_AUTO_TRIGGER_TEXT>
+  
+
+  <!-- EN: Wealth Trigger Settings -->
+  <NCL_WEALTH_TRIGGER_SETTINGS>财富值触发设置</NCL_WEALTH_TRIGGER_SETTINGS>
+  <!-- EN: Trigger Threshold: -->
+  <NCL_WEALTH_THRESHOLD>触发阈值：</NCL_WEALTH_THRESHOLD>
+
+<!-- EN: Launch Condition -->
+  <NCL.LaunchCondition>发射条件</NCL.LaunchCondition>
+<!-- EN: Cannot change while silo is active -->
+  <NCL.MustBeDisabledWhenActive>发射井激活时不可修改</NCL.MustBeDisabledWhenActive>
+
+<!-- EN: Hostile High-Angle Projectiles Only -->
+  <NCL.Condition.HighAngleOnly>仅敌方高角投射物</NCL.Condition.HighAngleOnly>
+<!-- EN: Hostile Units or Projectiles -->
+  <NCL.Condition.AnyEnemyThreat>敌方单位或投射物</NCL.Condition.AnyEnemyThreat>
+
+<!-- EN: Only fires when hostile high-angle projectiles are present -->
+  <NCL.ConditionDesc.HighAngleOnly>只有场上存在敌方高角投射物时才会发射导弹</NCL.ConditionDesc.HighAngleOnly>
+<!-- EN: Fires when hostile high-angle projectiles or enemy combat units are present -->
+  <NCL.ConditionDesc.AnyEnemyThreat>场上存在敌方高角投射物或敌方单位（非囚犯/倒地）时发射导弹</NCL.ConditionDesc.AnyEnemyThreat>
+
+<!-- EN: Detection System -->
+  <TLD.DetectionState>检测系统</TLD.DetectionState>
+<!-- EN: Detection system is active\nProjectile interception enabled -->
+  <TLD.DetectionEnabledDesc>检测系统已启用\n拦截功能激活中</TLD.DetectionEnabledDesc>
+<!-- EN: Detection system disabled\nNo interception or rotation -->
+  <TLD.DetectionDisabledDesc>检测系统已禁用\n停止所有拦截和旋转</TLD.DetectionDisabledDesc>
+
+<!-- Manual trigger letters -->
+<!-- EN: Mechanoids: Total Warfare X -->
+  <NCL_TOTALWARFARE_MANUAL_TRIGGER_TITLE>机械族：全面战争X</NCL_TOTALWARFARE_MANUAL_TRIGGER_TITLE>
+<!-- EN: <b>Manual activation signal confirmed</b>\n\n
+Mechanoid Total Warfare Protocol X activated! All mechanoid units will receive battlefield enhancements:\n\n
+• <b>Overdrive</b>: Some mechanoids are overloaded with massive energy injection for short periods\n
+• <b>Optical Camo Disruption</b>: Random mechanoid units are equipped with optical camouflage modules, making them invisible on the battlefield.\n
+• <b>Composite Armor Reinforcement Protocol</b>: Some units' protective capabilities are significantly enhanced.\n
+• <b>Tactical Artillery Coordination Module</b>: Some units can summon turret support\n
+• <b>Long Range Ballistics Optimization System</b>: Some units' weapon range is increased.\n\n
+• <b>High Mobility Phase Shift Drive</b>: Some units' movement speed is greatly enhanced.\n\n
+<b>Tactical Recommendations:</b>\n
+- Prioritize EMP weapons\n
+- Deploy sensors to detect invisible units\n
+- Lay point defense systems to counter high-angle projectiles
+ -->
+  <NCL_TOTALWARFARE_MANUAL_TRIGGER_TEXT>&lt;b>手动激活信号已确认&lt;/b>\n\n\n机械族全面战争协议X已激活！所有机械单位将获得战场强化：\n\n\n• &lt;b>机械超载&lt;/b>：部分机械体因被注入大量能量而在短时间内超载\n\n• &lt;b>光学迷彩干扰装置&lt;/b>：随机单位机械体被赋予光学迷彩模块，使其从战场上隐身。\n\n• &lt;b>复合装甲增强协议&lt;/b>：部分单位的防护能力获得大幅增强。\n\n• &lt;b>远程战术协调单元&lt;/b>：部分单位可召唤炮塔支援\n\n• &lt;b>长距弹道优化模组&lt;/b>：部分单位的武器射程获得了增长。\n\n\n• &lt;b>超功率推进器&lt;/b>：部分单位的移动速度得到了大幅加强。\n\n\n&lt;b>战术建议：&lt;/b>\n\n- 优先使用EMP武器\n\n- 部署传感器探测隐形单位\n\n- 铺设点防御系统以反制高角投射物\n  </NCL_TOTALWARFARE_MANUAL_TRIGGER_TEXT>
+
+<!-- Settings menu -->
+<!-- EN: Mechanoids: Total Warfare -->
+  <NCL_TOTALWARFARE_SETTINGS_CATEGORY>机械族：全面战争</NCL_TOTALWARFARE_SETTINGS_CATEGORY>
+
+<!-- EN: Enable Mechanoid enhancements triggered by war beacons -->
+  <NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT>启用战争信标触发的机械族强化 [包含HE迫击炮] </NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT>
+<!-- EN: Disabling will completely turn off mechanoid enhancement effects triggered by war beacons -->
+  <NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT_DESC>禁用后将完全关闭用战争信标触发的机械族强化效果</NCL_TOTALWARFARE_ENABLE_BEACON_ENHANCEMENT_DESC>
+
+<!-- EN: Enable wealth threshold-triggered mechanoid enhancements -->
+  <NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER>启用财富阈值触发的机械族强化 [包含EMP迫击炮和点防御] </NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER>
+<!-- EN: Automatically triggers mechanoid enhancements when colony wealth reaches 1.5 million -->
+  <NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER_DESC>当殖民地财富达到150万时自动触发机械族强化</NCL_TOTALWARFARE_ENABLE_WEALTH_TRIGGER_DESC>
+
+<!-- EN: Show developer logs -->
+  <NCL_TOTALWARFARE_SHOW_DEV_LOGS>显示开发者日志</NCL_TOTALWARFARE_SHOW_DEV_LOGS>
+<!-- EN: Display debug information in developer mode -->
+  <NCL_TOTALWARFARE_SHOW_DEV_LOGS_DESC>在开发者模式下显示调试信息</NCL_TOTALWARFARE_SHOW_DEV_LOGS_DESC>
+
+<!-- EN: Bandwidth provided per node: -->
+  <NCL_TOTALWARFARE_BANDWIDTH_PER_NODE_LABEL>每个频带节点提供的带宽:</NCL_TOTALWARFARE_BANDWIDTH_PER_NODE_LABEL>
+
+<!-- Debug logs -->
+<!-- EN: NCL: Total Warfare started - Wealth: {0} | Status: {1} -->
+  <NCL_TOTALWARFARE_START_LOG>NCL: 全面战争已启动 - 财富: {0} | 状态: {1}</NCL_TOTALWARFARE_START_LOG>
+
+<!-- EN: Building repair allowed -->
+  <NCL_WARBEACON_TOGGLE_GIZMO_LABEL>已允许修复该建筑</NCL_WARBEACON_TOGGLE_GIZMO_LABEL>
+<!-- EN: Building repair prohibited -->
+  <NCL_WARBEACON_TOGGLE_GIZMO_OFF_LABEL>已禁止修复该建筑</NCL_WARBEACON_TOGGLE_GIZMO_OFF_LABEL>
+
+<!-- Building_Ancient_WarBeacon -->
+<!-- EN: This ancient war device appears to be reactivated through repairs -->
+  <NCL_WARBEACON_INSPECT_DESCRIPTION>这个远古战争装置似乎可以通过维修重新激活</NCL_WARBEACON_INSPECT_DESCRIPTION>
+<!-- EN: Repair time required -->
+  <NCL_WARBEACON_REPAIR_TIME>修复所需的时间</NCL_WARBEACON_REPAIR_TIME>
+<!-- EN: Resources required for repair -->
+  <NCL_WARBEACON_REQUIRED_RESOURCES>修复所需的资源</NCL_WARBEACON_REQUIRED_RESOURCES>
+
+<!-- WorkGiver_RebuildTheWarBeacon -->
+<!-- EN: Lacking the materials that were required for fixing this structure -->
+  <NCL_WARBEACON_NO_MATERIAL>缺失修复该建筑所需要的材料</NCL_WARBEACON_NO_MATERIAL>
+
+<!-- WorkGiver_RebuildBrokenShellcoreBastion -->
+<!-- EN: Lacking the materials that were required for fixing this structure -->
+  <NCL_SHELLCORE_NO_MATERIAL>缺失修复该建筑所需要的材料</NCL_SHELLCORE_NO_MATERIAL>
+
+<!-- NewSelect dialog content -->
+<!-- EN: War Beacon Reactivation -->
+  <NCL_WARBEACON_REACTIVATE_TITLE>战争信标重新激活</NCL_WARBEACON_REACTIVATE_TITLE>
+<!-- EN: You have successfully repaired this war beacon. Its massive structure looms over the wasteland like a slumbering beast, sending chills down your spine. As the core structure used by mechanoids to mark strategic coordinates, its activation means you will be exposed to their sight—more powerful, more deadly mechanoid forces will pour in, attempting to utterly destroy you.\n
+But high risk comes with high reward. By analyzing the beacon's core data, you may crack the mechanoids' technological barriers and unlock cutting-edge technologies once beyond reach.\n
+The choice is yours—remain silent for preservation, or ignite the war and face the unknown?\n
+Activate it, activate the war. -->
+  <NCL_WARBEACON_REACTIVATE_DESCRIPTION>你已成功修复这座战争信标，它庞大的构造在废土之上仿佛一尊沉眠的巨兽，令人不寒而栗。作为机械族用以标定战略坐标的核心建筑，它的激活意味着你将暴露于他们的视野之中——更强大、更致命的机械部队将陆续涌来，妄图将你彻底摧毁。\n\n但高风险亦伴随高回报。通过分析信标的核心数据，你有望破解机械族的技术壁垒，解锁曾经遥不可及的尖端科技。\n\n选择权在你手中——是沉默以保全，还是点燃战火，直面未知？\n\n开启它，开启战争。</NCL_WARBEACON_REACTIVATE_DESCRIPTION>
+<!-- EN: ...... -->
+  <NCL_WARBEACON_ELLIPSES>......</NCL_WARBEACON_ELLIPSES>
+<!-- EN: FirstWarBeaconLog -->
+  <NCL_WARBEACON_FIRST_LOG>FirstWarBeaconLog</NCL_WARBEACON_FIRST_LOG>
+<!-- EN: SecondWarBeaconLog -->
+  <NCL_WARBEACON_SECOND_LOG>SecondWarBeaconLog</NCL_WARBEACON_SECOND_LOG>
+
+  <!-- EN: HoldFire -->
+  <NCL.HoldFire>停火</NCL.HoldFire>
+  <!-- EN: HoldFire -->
+  <NCL.HoldFireDesc>停火</NCL.HoldFireDesc>
+
+<!-- EN: [CRITICAL] Detonation in T-{0} seconds -->
+  <NCL.AutoExplodeCountdown>【警告】{0}秒后爆炸</NCL.AutoExplodeCountdown>
+
+<!-- NewSelect mechanoid core dialogue content -->
+<!-- EN: Mechanoid CerebrexCore Restored -->
+  <CerebrexCore_SpawnTitle>机械主脑已修复</CerebrexCore_SpawnTitle>
+<!-- EN: A mechanoid CerebrexCore has been constructed in your base. Its deep space signal transmitter is currently dormant but may awaken the entire mechanoid empire at any time. -->
+  <CerebrexCore_SpawnDesc>一座机械主脑在你的基地中建造完成。它的深空信号发射器目前处于休眠状态，但随时可能唤醒整个机械帝国。</CerebrexCore_SpawnDesc>
+<!-- EN: Mechanoid CerebrexCore Reactivation -->
+  <NCL_COREBASED_ENHANCEMENT_TITLE>机械首脑重新激活</NCL_COREBASED_ENHANCEMENT_TITLE>
+<!-- EN: You have restarted this mechanoid CerebrexCore. Its signal transmitter has begun broadcasting coordinates into deep space. Mechanoid raids will be reactivated, their attacks will break through scale limits, new mechanoid units will join the battlefield, and all mechanoid forces will receive enhancements.
+
+Risk often accompanies reward. By actively researching the core's neural matrix with research staff, you can unlock the mechanoids' cutting-edge technologies. -->
+  <NCL_COREBASED_ENHANCEMENT_DESC>您已重启这座机械主脑，它的信号发射器开始向深空广播坐标。机械族袭击将被重新激活，它们的袭击将突破规模限制，新的机械族单位将加入战场，所有机械部队都将获得强化。\n  \n  风险往往伴随着收益，派遣科研人员主动研究主脑的神经矩阵，您可以解锁机械族的尖端科技。</NCL_COREBASED_ENHANCEMENT_DESC>
+
+<!-- ========== Manual Lightning Strike Component ========== -->
+<!-- EN: EMP Strike -->
+  <LightningStrike>EMP打击</LightningStrike>
+<!-- EN: Summon a powerful lightning strike on the target area, dealing EMP damage -->
+  <LightningStrikeDesc>召唤一道强大的闪电打击目标区域，造成EMP伤害</LightningStrikeDesc>
+<!-- EN: Cannot activate EMP attack: Not connected to power -->
+  <LightningStrike_NoPower>无法激活EMP攻击：未连接电源</LightningStrike_NoPower>
+<!-- EN: Cooldown: Available in {0} -->
+  <LightningStrike_Cooldown>冷却中：{0}后可用</LightningStrike_Cooldown>
+<!-- EN: More power needed: At least {0}W required -->
+  <LightningStrike_NeedPower>需要更多电力：至少需要{0}W</LightningStrike_NeedPower>
+<!-- EN: Available power: {0}W / EMP attack single use: {1}W -->
+  <LightningStrike_PowerStatus>可用电力：{0}W / EMP攻击单次需求：{1}W</LightningStrike_PowerStatus>
+<!-- EN: Ready -->
+  <LightningStrike_Ready>准备就绪</LightningStrike_Ready>
+<!-- EN: {0} released a lightning strike! -->
+  <LightningStrike_Message>{0} 释放了闪电打击！</LightningStrike_Message>
+
+<!-- ========== Auto Lightning Strike Component ========== -->
+<!-- EN: {0} overdrive mode enabled -->
+  <NCL_OverdriveMode_Enabled>{0} 已启用超载模式</NCL_OverdriveMode_Enabled>
+<!-- EN: {0} overdrive mode disabled -->
+  <NCL_OverdriveMode_Disabled>{0} 已禁用超载模式</NCL_OverdriveMode_Disabled>
+<!-- EN: Cannot activate lightning attack: Not connected to power -->
+  <NCL_AutoLightningStrike_NoPower>无法激活闪电攻击：未连接电源</NCL_AutoLightningStrike_NoPower>
+<!-- EN: More power needed: At least {0}W required -->
+  <NCL_AutoLightningStrike_NeedPower>需要更多电力：至少需要{0}W</NCL_AutoLightningStrike_NeedPower>
+<!-- EN: Auto strike mode must be enabled first -->
+  <NCL_OverdriveMode_RequiresAuto>需要先启用自动打击模式</NCL_OverdriveMode_RequiresAuto>
+<!-- EN: Available power: {0}W / Lightning attack single use: {1}W -->
+  <NCL_AutoLightningStrike_PowerStatus>可用电力：{0}W / 闪电攻击单次需求：{1}W</NCL_AutoLightningStrike_PowerStatus>
+<!-- EN: Auto strike mode enabled -->
+  <NCL_AutoLightningStrike_AutoActive>自动打击模式已启用</NCL_AutoLightningStrike_AutoActive>
+<!-- EN: Current strikes: {0}/{1} -->
+  <NCL_AutoLightningStrike_ConcurrentStrikes>当前打击：{0}/{1}</NCL_AutoLightningStrike_ConcurrentStrikes>
+<!-- EN: Overdrive mode enabled -->
+  <NCL_OverdriveMode_Active>超载模式已启用</NCL_OverdriveMode_Active>
+<!-- EN: Next strike: In {0} -->
+  <NCL_AutoLightningStrike_NextStrike>下次打击：{0}后</NCL_AutoLightningStrike_NextStrike>
+<!-- EN: Ready -->
+  <NCL_AutoLightningStrike_Ready>准备就绪</NCL_AutoLightningStrike_Ready>
+
+<!-- ========== Auto Strike Property Fields ========== -->
+<!-- EN: Auto lightning strike -->
+  <NCL_AutoStrike_Mode>自动落雷打击</NCL_AutoStrike_Mode>
+<!-- EN: Toggle automatic enemy targeting -->
+  <NCL_AutoStrike_ToggleDesc>切换自动敌人锁定</NCL_AutoStrike_ToggleDesc>
+<!-- EN: Overdrive Mode -->
+  <NCL_Overdrive_Mode>超载模式</NCL_Overdrive_Mode>
+<!-- EN: Double targets, half cooldown, but 2x power consumption -->
+  <NCL_Overdrive_Description>双倍目标，半冷却时间，但2倍电力消耗</NCL_Overdrive_Description>
+
+<!-- ========== Core Function Text ========== -->
+<!-- EN: Switched to {0} effect -->
+  <NCL_HediffSwitched>已切换至 {0} 效果</NCL_HediffSwitched>
+<!-- EN: {0} ({1}) has received {3} effect, consuming {2} units of fuel -->
+  <NCL_MechHealed>{0} ({1}) 已获得 {3} 效果，消耗 {2} 单位燃料</NCL_MechHealed>
+<!-- EN: Current effect: {0} -->
+  <NCL_CurrentHediff>当前效果：{0}</NCL_CurrentHediff>
+
+<!-- ========== Mech Weight Classes ========== -->
+<!-- EN: Light -->
+  <MechWeightClass_Light>轻型</MechWeightClass_Light>
+<!-- EN: Medium -->
+  <MechWeightClass_Medium>中型</MechWeightClass_Medium>
+<!-- EN: Heavy -->
+  <MechWeightClass_Heavy>重型</MechWeightClass_Heavy>
+<!-- EN: Ultra Heavy -->
+  <MechWeightClass_UltraHeavy>超重型</MechWeightClass_UltraHeavy>
+
+<!-- ========== Gizmo Labels ========== -->
+<!-- EN: Modify Light Mechs -->
+  <NCL_EnableLight>改造轻型机械</NCL_EnableLight>
+<!-- EN: Modify Medium Mechs -->
+  <NCL_EnableMedium>改造中型机械</NCL_EnableMedium>
+<!-- EN: Modify Heavy Mechs -->
+  <NCL_EnableHeavy>改造重型机械</NCL_EnableHeavy>
+<!-- EN: Modify Ultra Heavy Mechs -->
+  <NCL_EnableUltraHeavy>改造超重型机械</NCL_EnableUltraHeavy>
+
+<!-- ========== Hediff Labels ========== -->
+<!-- EN: Fire Control Upgrade -->
+  <FireControl_Upgrade>火控升级</FireControl_Upgrade>
+<!-- EN: Armor Upgrade -->
+  <Armor_Upgrade>护甲升级</Armor_Upgrade>
+
+<!-- ========== Inspection Panel Text ========== -->
+<!-- EN: Mech Modifier Status: {0} -->
+  <NCL_Healer_Status>机械改造器状态：{0}</NCL_Healer_Status>
+<!-- EN: Active -->
+  <NCL_Healer_Active>工作中</NCL_Healer_Active>
+<!-- EN: Inactive -->
+  <NCL_Healer_Inactive>未启用</NCL_Healer_Inactive>
+<!-- EN: Next modification: In {0} -->
+  <NCL_Healer_NextHeal>下次改造：{0}后</NCL_Healer_NextHeal>
+<!-- EN: Insufficient fuel -->
+  <NCL_Healer_NoFuel>燃料不足</NCL_Healer_NoFuel>
+
+<!-- ========== Fuel Consumption Descriptions ========== -->
+<!-- EN: Light consumption: {0} -->
+  <NCL_FuelCost_Light>轻型消耗：{0}</NCL_FuelCost_Light>
+<!-- EN: Medium consumption: {0} -->
+  <NCL_FuelCost_Medium>中型消耗：{0}</NCL_FuelCost_Medium>
+<!-- EN: Heavy consumption: {0} -->
+  <NCL_FuelCost_Heavy>重型消耗：{0}</NCL_FuelCost_Heavy>
+<!-- EN: Ultra Heavy consumption: {0} -->
+  <NCL_FuelCost_UltraHeavy>超重型消耗：{0}</NCL_FuelCost_UltraHeavy>
+
+<!-- EN: Bandwidth Expansion -->
+  <GenerateBandwidth>宽带扩张</GenerateBandwidth>
+<!-- EN: Bandwidth Expansion -->
+  <GenerateBandwidthDesc>宽带扩张</GenerateBandwidthDesc>
+<!-- EN: Reset Bandwidth -->
+  <ResetBandwidth>重置带宽</ResetBandwidth>
+<!-- EN: Reset all upgrade levels to 0, restoring original state -->
+  <ResetBandwidthDesc>将所有升级等级重置为0，恢复原始状态</ResetBandwidthDesc>
+<!-- EN: {0}'s bandwidth upgrades have been reset -->
+  <BandwidthReset>{0}的带宽升级已重置</BandwidthReset>
+<!-- EN: {0}'s bandwidth upgraded to level {1} (max {2} levels) -->
+  <BandwidthGenerated>{0}的带宽已升级到第{1}级（最大{2}级）</BandwidthGenerated>
+
+<!-- EN: Initial bandwidth granted by band antenna -->
+  <NCL_ADVANCED_NODE_TITLE>频带天线初始给予的宽带数量</NCL_ADVANCED_NODE_TITLE>
+<!-- EN: Enable core building triggers -->
+  <NCL_ENABLE_CORETRIGGER>启用核心建筑触发</NCL_ENABLE_CORETRIGGER>
+<!-- EN: When enabled, rebuilding ancient mechanoid cores activates advanced war systems -->
+  <NCL_ENABLE_CORETRIGGER_DESC>启用后，重建古代机械核心可激活高级战争系统</NCL_ENABLE_CORETRIGGER_DESC>
+
+<!-- EN: Generate ancient war beacon remains (only to ensure players joining mid-game can experience mod content normally) -->
+  <NCL_GENERATE_ANCIENT_WAR_BEACON_REMAINS>生成古代战争信标遗迹（仅用于确保中途该mod的玩家可以正常体验mod内容）</NCL_GENERATE_ANCIENT_WAR_BEACON_REMAINS>
+<!-- EN: No current map found -->
+  <NCL_NO_CURRENT_MAP_FOUND>未找到当前地图</NCL_NO_CURRENT_MAP_FOUND>
+<!-- EN: Ancient war beacon remains generation step definition not found -->
+  <NCL_ANCIENT_WAR_BEACON_REMAINS_GENSTEPDEF_NOT_FOUND>未找到古代战争信标遗迹生成步骤定义</NCL_ANCIENT_WAR_BEACON_REMAINS_GENSTEPDEF_NOT_FOUND>
+<!-- EN: Generation step instance is null -->
+  <NCL_GENSTEP_INSTANCE_NULL>生成步骤实例为空</NCL_GENSTEP_INSTANCE_NULL>
+<!-- EN: Successfully generated ancient war beacon remains -->
+  <NCL_SUCCESS_GENERATE_ANCIENT_WAR_BEACON>成功生成古代战争信标遗迹</NCL_SUCCESS_GENERATE_ANCIENT_WAR_BEACON>
+<!-- EN: Generation failed: {0} -->
+  <NCL_FAILED_GENERATE>生成失败: {0}</NCL_FAILED_GENERATE>
+
+<!-- EN: Ancient remains generated on this map -->
+  <NCL_ANCIENT_REMAINS_GENERATED>已在此地图生成古代遗迹</NCL_ANCIENT_REMAINS_GENERATED>
+
+<!-- EN: Adjust Power Output -->
+  <NCL.ADJUST_POWER_OUTPUT>调节功率输出</NCL.ADJUST_POWER_OUTPUT>
+<!-- EN: Current power: {0}% -->
+  <NCL.CURRENT_POWER_LEVEL>当前功率: {0}%</NCL.CURRENT_POWER_LEVEL>
+<!-- EN: Set power output level: {0}%\nHeat output: {1}°C/sec -->
+  <NCL.SET_POWER_OUTPUT>设置功率输出等级: {0}%\n热量输出: {1}°C/秒</NCL.SET_POWER_OUTPUT>
+
+<!-- EN: Visibility of Mechanoid Enhancement Invisibility to Player -->
+  <NCL_INVISIBILITY_VISIBLE_TO_PLAYER>机械族强化的隐身效果对玩家可见</NCL_INVISIBILITY_VISIBLE_TO_PLAYER>
+<!-- EN: If disabled, the invisibility effect granted by mechanoid enhancements will hide the mechanoid from the player as well. (Changes require restart to take effect) -->
+  <NCL_INVISIBILITY_VISIBLE_TO_PLAYER_DESC>如果禁止，则机械族强化所给予的隐身效果将让该机械族对玩家也隐身（每次改动需要重启）</NCL_INVISIBILITY_VISIBLE_TO_PLAYER_DESC>
+
+
+<!-- Fuel status -->
+<!-- EN: Power output: 0% (Disabled) -->
+  <NCL.POWER_DISABLED>功率输出: 0% (已禁用)</NCL.POWER_DISABLED>
+<!-- EN: No fuel system -->
+  <NCL.NO_FUEL_SYSTEM>无燃料系统</NCL.NO_FUEL_SYSTEM>
+<!-- EN: Fuel: 0% (No power) -->
+  <NCL.NO_FUEL>燃料: 0% (无动力)</NCL.NO_FUEL>
+<!-- EN: Fuel: {0:F0}% ({1:F1}x power{2}) -->
+  <NCL.FUEL_STATUS>燃料: {0:F0}% ({1:F1}倍功率{2})</NCL.FUEL_STATUS>
+<!-- EN:  (Peak power) -->
+  <NCL.PEAK_POWER> (峰值功率)</NCL.PEAK_POWER>
+
+<!-- Heat information -->
+<!-- EN: Heat output: {0}°C/sec -->
+  <NCL.HEAT_OUTPUT>热量输出: {0}°C/秒</NCL.HEAT_OUTPUT>
+<!-- EN: No heat output (Disabled) -->
+  <NCL.NO_HEAT_OUTPUT>无热量输出 (已禁用)</NCL.NO_HEAT_OUTPUT>
+
+<!-- Inspection strings -->
+<!-- EN: Fuel consumption: {0}/day -->
+  <NCL.FUEL_CONSUMPTION>燃料消耗: {0}/天</NCL.FUEL_CONSUMPTION>
+<!-- EN: Fuel multiplier: {0}x -->
+  <NCL.FUEL_MULTIPLIER>燃料倍率: {0}x</NCL.FUEL_MULTIPLIER>
+<!-- EN: (Peak) -->
+  <NCL.PEAK>(峰值)</NCL.PEAK>
+<!-- EN: Need to add {0}% more fuel to reach peak output -->
+  <NCL.NEED_MORE_FUEL>需要再添加{0}%燃料以达到峰值输出</NCL.NEED_MORE_FUEL>
+
+<!-- EN: {0} destroyed due to high temperature! -->
+  <NCL.STRUCTURE_DESTROYED_HEAT>{0}因高温已被摧毁！</NCL.STRUCTURE_DESTROYED_HEAT>
+<!-- EN: {0} emergency shutdown -->
+  <NCL.STRUCTURE_SHUTDOWN>{0}已紧急关闭</NCL.STRUCTURE_SHUTDOWN>
+
+<!-- Inspection strings -->
+<!-- EN: Run, it's going to explode! -->
+  <NCL.CRITICAL_OVERHEAT>快跑，要爆了！</NCL.CRITICAL_OVERHEAT>
+<!-- EN: Critical reactor overheating! Immediate shutdown required! -->
+  <NCL.HIGH_TEMP_WARNING>严重反应堆过热！需要立即关闭！</NCL.HIGH_TEMP_WARNING>
+<!-- EN: Current temperature: {0}°C -->
+  <NCL.CURRENT_TEMP>当前温度: {0}°C</NCL.CURRENT_TEMP>
+
+<!-- Emergency operations -->
+<!-- EN: Emergency Shutdown -->
+  <NCL.EMERGENCY_SHUTDOWN>紧急关闭</NCL.EMERGENCY_SHUTDOWN>
+<!-- EN: Immediately shut down to reduce temperature -->
+  <NCL.EMERGENCY_SHUTDOWN_DESC>立即关闭以降低温度</NCL.EMERGENCY_SHUTDOWN_DESC>
+
+<!-- Alert system -->
+<!-- EN: Run, it's going to explode! -->
+  <NCL.ALERT_CRITICAL_TEMP>快跑，要爆了！</NCL.ALERT_CRITICAL_TEMP>
+<!-- EN: Emergency: Reactor overheating! -->
+  <NCL.ALERT_WARNING_TEMP>紧急：反应堆过热！</NCL.ALERT_WARNING_TEMP>
+<!-- EN: Reactor overheating detected! If not shut down immediately, some equipment will self-destruct!\n\nAffected equipment:\n{0}\n\nEmergency measures:\n- Use emergency shutdown\n- Improve cooling system -->
+  <NCL.ALERT_CRITICAL_EXPLANATION>检测到反应堆过热！如果不立即关闭，某些设备将自毁！\n\n受影响设备:\n{0}\n\n紧急措施:\n- 使用紧急关闭\n- 改善冷却系统</NCL.ALERT_CRITICAL_EXPLANATION>
+<!-- EN: High temperature detected! Some equipment operating under dangerous conditions.\n\nAffected equipment:\n{0}\n\nRecommended measures:\n- Reduce equipment power output\n- Improve ventilation -->
+  <NCL.ALERT_WARNING_EXPLANATION>检测到高温！某些设备在危险条件下运行。\n\n受影响设备:\n{0}\n\n建议措施:\n- 降低设备功率输出\n- 改善通风</NCL.ALERT_WARNING_EXPLANATION>
+
+<!-- EN: Used {0} to hire {1} for {2} days -->
+  <NCL.TRADE_EMPLOY_SUCCESS>已用 {0} 雇佣 {1} {2}天</NCL.TRADE_EMPLOY_SUCCESS>
+
+<!-- EN: Maximum number of EMP mortars that can be spawned in a single raid -->
+  <NCL_DAILY_SPECIAL_HEDIFF_LIMIT>单次袭击内可生成的EMP迫击炮的数量上限</NCL_DAILY_SPECIAL_HEDIFF_LIMIT>
+<!-- EN: Actually the daily limit for the number of EMP mortars that can be spawned -->
+  <NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC>其实是每天内可生成的EMP迫击炮的数量上限</NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC>
+
+
+<!-- EN: Maximum number of HE mortars that can be spawned in a single raid -->
+  <NCL_DAILY_SPECIAL_HEDIFF_LIMIT_A>单次袭击内可生成的迫击炮的数量上限</NCL_DAILY_SPECIAL_HEDIFF_LIMIT_A>
+<!-- EN: Actually the daily limit for the number of HE mortars that can be spawned -->
+  <NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC_A>其实是每天内可生成的迫击炮的数量上限</NCL_DAILY_SPECIAL_HEDIFF_LIMIT_DESC_A>
+<!-- Employment status -->
+<!-- EN: {0}'s employment contract has expired -->
+  <NCL.EMPLOYMENT_EXPIRED>{0}的雇佣合约已到期</NCL.EMPLOYMENT_EXPIRED>
+<!-- EN: Employment remaining: {0}\nHostile targets: {1} -->
+  <NCL.EMPLOYMENT_REMAINING>雇佣剩余: {0}\n仇恨目标: {1}个</NCL.EMPLOYMENT_REMAINING>
+
+<!-- EN: Must be placed in a roofed room -->
+  <NCL_MustPlaceRoofed>必须放置在有屋顶的房间内</NCL_MustPlaceRoofed>
+
+<!-- EN: {0} research automatically unlocked -->
+  <NCL_ResearchUnlocked>{0} 研究已自动解锁</NCL_ResearchUnlocked>
+<!-- EN: Will unlock research: {0} -->
+  <NCL_WillUnlockResearch>将解锁研究：{0}</NCL_WillUnlockResearch>
+
+<!-- EN: Command: Self-destruct -->
+  <NCL.KillAllSplitterSpider>指令：消失</NCL.KillAllSplitterSpider>
+<!-- EN: Command all splitter spiders produced by this mechanoid to self-destruct -->
+  <NCL.KillAllSplitterSpiderDesc>命令所有被该机械所生产的裂壳蛛关机</NCL.KillAllSplitterSpiderDesc>
+
+<!-- EN: This mechanoid boss's localized core ensures immunity to external psychic attacks -->
+  <MechShield_Reactivated>该机械族Boss的本地化核心确保了其不受外部精神攻击影响</MechShield_Reactivated>
+<!-- EN: Deploy Drones -->
+  <ReleaseDrones>部署无人机</ReleaseDrones>
+<!-- EN: Deploy {0} drones -->
+  <ReleaseDronesDesc>部署{0}台无人机</ReleaseDronesDesc>
+<!-- EN: Drone Carrier Resource Status -->
+  <DroneCarrierResourceStatus>无人机运载器资源状态</DroneCarrierResourceStatus>
+<!-- EN: Material -->
+  <Material>材料</Material>
+<!-- EN: Current Resources -->
+  <CurrentResources>当前资源</CurrentResources>
+<!-- EN: Ready: {0} drones -->
+  <DronesReady>准备就绪: {0} 台无人机</DronesReady>
+<!-- EN: Auto Deploy Drones -->
+  <AutoReleaseDrones>自动部署无人机</AutoReleaseDrones>
+<!-- EN: When enabled, automatically deploys drones when cooldown ends until resources are exhausted -->
+  <AutoReleaseDronesDesc>启用后会在冷却结束时自动部署无人机，直到资源耗尽</AutoReleaseDronesDesc>
+
+<!-- EN: Fire Them All! -->
+  <NCL.FireAllUniversityStudents>炒了他们！</NCL.FireAllUniversityStudents>
+<!-- EN: One-click delete all existing university student Xiao Lians -->
+  <NCL.FireAllUniversityStudentsDesc>一键删除所有现有的大学生小镰</NCL.FireAllUniversityStudentsDesc>
+    <NCL.CanNotFireAllUniversityStudents>场上没有大学生小镰</NCL.CanNotFireAllUniversityStudents>
+
+<!-- EN: This weapon cannot be dropped on the ground -->
+  <CannotDropBoundWeapon>这件武器无法被放置到地上</CannotDropBoundWeapon>
+<!-- EN: Restart Mechanoid Core -->
+  <RestartCore>重启机械首脑</RestartCore>
+<!-- EN: Restart the mechanoid core, which will reactivate all mechanoids on this planet -->
+  <RestartCoreDECS>重启机械首脑，这将重新激活该星球上的所有机械族</RestartCoreDECS>
+
+<!-- EN: Cancel Mechanoid Core Restart -->
+  <CancelRestart>取消重启机械首脑</CancelRestart>
+<!-- EN: This is your second chance -->
+  <CancelRestartDECS>这是给你的后悔药</CancelRestartDECS>
+
+<!-- EN: Mechanoids: Total Warfare Storyteller Settings -->
+  <NCL_Storyteller_Mod>机械族：全面战争故事叙述者设置</NCL_Storyteller_Mod>
+<!-- EN: Raid point cap when using Justice as storyteller -->
+  <maxDefaultThreatPoints>使用正义为故事叙述者时的袭击点数上限</maxDefaultThreatPoints>
+<!-- EN: Raid point cap when using Justice as storyteller, default value is 3 million -->
+  <maxDefaultThreatPointsDesc>使用正义为故事叙述者时的袭击点数上限，默认值为300万</maxDefaultThreatPointsDesc>
+<!-- EN: Raid pawn cap when using Justice as storyteller -->
+  <maxPawns>使用正义为故事叙述者时的袭击人数上限</maxPawns>
+<!-- EN: Raid pawn cap when using Justice as storyteller, default value is 400 -->
+  <maxPawnsDesc>使用正义为故事叙述者时的袭击人数上限，默认值为400</maxPawnsDesc>
+<!-- EN: Mechanoids: Total Warfare -->
+  <NCL_Subtitle>机械族：全面战争</NCL_Subtitle>
+
+<!-- Checkbox labels -->
+<!-- EN: Disable startup window -->
+  <NCL_Checkbox_DisableWindow>禁用启动窗口</NCL_Checkbox_DisableWindow>
+<!-- EN: Disable normal startup popup (will still prompt on updates) -->
+  <NCL_Checkbox_DisableWindowWithUpdate>禁用正常启动弹窗（更新时仍会提示）</NCL_Checkbox_DisableWindowWithUpdate>
+
+<!-- Titles -->
+<!-- EN: Total Warfare Mod Notice -->
+  <NCL_Title_Main>全面战争Mod游玩须知</NCL_Title_Main>
+<!-- EN: Mid-Game Joining Notice -->
+  <NCL_Title_Page1>中途加入须知</NCL_Title_Page1>
+<!-- EN: Development Plan -->
+  <NCL_Title_Page2>开发计划</NCL_Title_Page2>
+<!-- EN: Hostile Mechanoid Enhancement Types -->
+  <NCL_Title_Page3>敌对机械族强化类型</NCL_Title_Page3>
+
+<!-- Buttons -->
+<!-- EN: Mid-Game Joining Notice -->
+  <NCL_Button_Page1>中途加入须知</NCL_Button_Page1>
+<!-- EN: Development Plan -->
+  <NCL_Button_Page2>开发计划</NCL_Button_Page2>
+<!-- EN: Hostile Mechanoid Enhancement Types -->
+  <NCL_Button_Page3>敌对机械族强化类型</NCL_Button_Page3>
+<!-- EN: Main Page -->
+  <NCL_Button_Return>返回主页</NCL_Button_Return>
+
+<!-- Dynamic content -->
+<!-- EN: 【Version Update v{0}】\n\n -->
+  <NCL_Content_UpdatePrefix>【版本更新 v{0}】\n\n</NCL_Content_UpdatePrefix>
+<!-- EN: Version Update v{0} - {1} -->
+  <NCL_Title_UpdateWithPage>版本更新 v{0} - {1}</NCL_Title_UpdateWithPage>
+
+<!-- EN: Basic Settings -->
+  <NCL_BASIC_SETTINGS>基础设置</NCL_BASIC_SETTINGS>
+<!-- EN: Basic Settings -->
+  <NCL_BASIC_SETTINGS_DESC>基础设置</NCL_BASIC_SETTINGS_DESC>
+
+<!-- EN: Special Operations Buttons -->
+  <NCL_OPERATIONS>特殊操作按钮</NCL_OPERATIONS>
+<!-- EN: Special Operations Buttons -->
+  <NCL_OPERATIONS_DESC>特殊操作按钮</NCL_OPERATIONS_DESC>
+
+<!-- EN: Thanks for subscribing to "Mechanoids: Total Warfare" MOD!
+
+Core features:
+◆ 20+ new mechanoids with unique combat roles
+◆ Expanded battle scale and new combat mechanics
+◆ Progressive difficulty (late-game focused)
+◆ Toggleable enemy enhancements
+◆ Hidden NCL faction with worm garrison system
+
+Note: Worm garrisons are emergency tools - overuse reduces challenge. -->
+  <NCL_Content_Main>感谢您订阅《机械族：全面战争》！\n（以下简称《全战》）\n请注意：本MOD难度主要集中于新机械敌人与配套的强化机制，强化会在游戏进程中随着玩家触发强化条件逐步解锁，带来极其硬核的试炼。如果您在游玩过程中感到压力过大，请务必优先照顾自己的体验——可在设置中降低袭击强度或禁用机械族强化。\n\n●《全战》针对《边缘世界》原版机械族内容进行了深度扩展，可以为您带来更丰富的机械族兵种选择、独特的战斗机制以及史诗般的战斗规模。\n\n●《全战》难度设计循序渐进。MOD重构了原版战斗逻辑并扩大了战斗规模并新增了约十几种各有特色的机械族单位。前期内容较少但经过细致调整，主要影响游戏后期，使您在游戏前期更自然地熟悉机制、享受探索乐趣，为您后期的挑战奠定扎实基础。请注意，在后期的挑战中建议您利用MOD新增的机制、机械族与建筑，如果完全沿用原版战术对抗新敌人，战斗难度可能会显著提升。\n\n●此外，《全战》新增隐藏派系NCL。您可以通过建造 NCL量子通讯台与其建立联系，交易用于扩张殖民地的宝贵物资，或请求其派遣超强力的超凡机械蠕虫作为援军驻守您的殖民地。\n\n『超凡机械蠕虫驻守功能：超凡机械蠕虫可大幅度降低袭击难度，如您不希望建设过程频繁被打扰，可以利用蠕虫清除威胁。请注意，它的战斗方式可能对您的基地设施造成意外破坏。』\n\n最后，衷心希望您能拥有愉快的游戏体验！再次感谢您的订阅。我们将持续对MOD进行一系列优化、调整与内容更新。</NCL_Content_Main>
+
+<!-- EN: Essential Setup:
+• MOD requires generated mechanoid ruins
+• Mid-game joinning players: Use "Generate Ruins" in MOD settings
+• Works ONLY on planetary surfaces (not spaceships)
+• Without ruins, core content remains locked -->
+  <NCL_Content_Page1>重要提示： 本MOD 完全重写了原版的机械族废墟事件，并将 改造后的机械族废墟设定为MOD核心流程的初始触发点。\n缺少该初始点，玩家将无法体验MOD的全部内容。\n中途加入与特定开局支持：\n\n为确保 中途订阅本MOD的玩家 以及选择 飞船开局 (飞船派系开局) 的玩家也能正常体验MOD流程，我们专门在MOD设置菜单中加入了 “一键生成机械族废墟” 功能按钮。\n强烈建议中途加入的玩家使用此按钮 来生成必要的初始点，以保证您能获得完整的MOD体验。\n使用限制：\n\n请注意： 此生成按钮 仅在非太空地图（即行星地表殖民地地图）上有效。在太空（如飞船内部）中点击该按钮将无法生成废墟。</NCL_Content_Page1>
+
+<!-- EN: Development Status: Beta v0.8
+
+Planned:
+• Balance adjustments
+• Complete story campaign -->
+  <NCL_Content_Page2>当前版本说明与后续计划：\n\n您当前体验的是本MOD的初始版本（Alpha/Beta阶段）。\n未来更新计划：\n持续完善现有内容并调整数值平衡性。\n开发一套完整且独立的主线剧情流程。\n推出关联的新MOD内容。\n欢迎反馈：\n在游玩过程中，如您发现任何数值不合理、遭遇Bug或有改进建议，诚挚欢迎您加入我们的反馈Q群：1049060238。您的宝贵意见对我们至关重要！</NCL_Content_Page2>
+
+<!-- EN: Enemy Mechanoid Enhancements:
+• Applies randomly (0/unit in early game, max 3/unit as the game progress)
+• Effects:
+  - Mortar Support 
+  - Point Defense Support
+  - Blast Cannon Support
+  - +20% Weapon Range and attack speed
+  - + Move Speed
+  - + Armor
+  - Optical Camo (revealed at 45 tiles)
+  - Overdrive State
+
+Tactical Tip: Build laser point defense against mortars. -->
+  <NCL_Content_Page3>\n当前实装的敌对机械族强化效果 (Hediff):\n\n以下强化效果会随机附加于敌对机械族单位身上。随着游戏进程推进，单个机械体可同时拥有的强化效果最大数量将逐步增加（上限为3个）：\n\n远程战术协调单元：迫击炮\n  效果： 当该单位周围150格半径内存在玩家单位时，将召唤迫击炮进行火力支援。\n远程战术协调单元：点防御\n  效果： 当该单位周围35格半径内存在玩家单位时，将召唤点防御炮塔进行近距拦截。\n远程战术协调单元：冲击炮\n  效果： 当该单位周围35格半径内存在玩家单位时，将召唤冲击炮发起攻击。\n长距弹道优化模组\n  效果： 该单位的武器射程永久提升20%。\n超功率推进器\n  效果： 该单位的移动速度获得显著提升。\n复合装甲增强协议\n  效果： 该单位的整体防护能力（护甲）获得大幅强化。\n光学迷彩干扰装置\n  效果： 赋予随机机械体单位光学迷彩。\n隐身状态： 单位隐身且无敌，不会主动攻击。\n  显形条件： 仅当玩家单位进入其周围45格范围内时，隐身解除，单位恢复正常。\n机械超载\n  效果： 该机械体因被注入过量能量而进入短时间超载状态。\n重要战术提示：\n\n若您在战斗中频繁遭遇敌方迫击炮的远程轰击，强烈建议在基地防御体系中部署激光点防御武器，以有效拦截来袭的迫击炮弹。</NCL_Content_Page3>
+
+  <!-- EN: Power per shot: {0} -->
+  <LaserDefence_PowerPerShot>每次攻击消耗电力: {0}</LaserDefence_PowerPerShot>
+  <!-- EN: Warning! Insufficient power reserves (Current: {0}) -->
+  <LaserDefence_PowerWarning>警告！电网储备不足 (当前: {0})</LaserDefence_PowerWarning>
+
+  <!-- EN: (Requires {0} days to rebuild) -->
+  <NCLYouNewWorm>(需要{0}天重建)</NCLYouNewWorm>
+  <!-- EN: (CD: {0} days) -->
+  <NCLSradeShipCooldownTime>(CD:{0}天)</NCLSradeShipCooldownTime>
+  <!-- EN: (Worm currently inbound) -->
+  <NCLYouWaitWorm>(当前已有蠕虫在降临中)</NCLYouWaitWorm>
+  <!-- EN: (Currently in trial) -->
+  <NCLYouInWar>(当前已在试炼中)</NCLYouInWar>
+  <!-- EN: (No mechanical worm on current map) -->
+  <NoNCLWormCanSleep>(当前地图无机械蠕虫)</NoNCLWormCanSleep>
+  <!-- EN: (Return to previous) -->
+  <GoBackMuLu>(返回上级)</GoBackMuLu>
+  <!-- EN: (Research required: {0}) -->
+  <NCLNeedReaearch>(需要研究:{0})</NCLNeedReaearch>
+
+  <!-- EN: Unknown Address: Encrypted -->
+  <UnknownAddressEncrypted>未知地址：对方已加密</UnknownAddressEncrypted>
+  <!-- EN: NCL Encrypted Comms System -->
+  <NCLEncryptedComms>NCL加密通讯系统</NCLEncryptedComms>
+  <!-- EN: Return to Menu -->
+  <GoBack>返回目录</GoBack>
+  <!-- EN: Faction Relation: Friendly -->
+  <Factional_Relation>派系关系：友善</Factional_Relation>
+
+  <!-- EN: Airstrike Trigger Settings [Need WarBeacon Activated]  -->
+  <NCL_AIRSTRIKE_TRIGGER_SETTINGS>空袭触发设置[仅在战争信标开启后生效]</NCL_AIRSTRIKE_TRIGGER_SETTINGS>
+  <!-- EN: Airstrike Threshold: -->
+  <NCL_AIRSTRIKE_THRESHOLD>空袭触发阈值：</NCL_AIRSTRIKE_THRESHOLD>
+
+  <!-- Psychic Dodge 组件本地化 -->
+  <!-- EN: Psychic Dodge -->
+  <NCL.PsychicDodgeToggle>灵能闪避</NCL.PsychicDodgeToggle>
+  <!-- EN: Toggle psychic dodge ability -->
+  <NCL.PsychicDodgeToggleDesc>是的，我能反应子弹</NCL.PsychicDodgeToggleDesc>
+  <!-- EN: Psychic Dodge: Disabled -->
+  <NCL.PsychicDodgeDisabled>灵能闪避</NCL.PsychicDodgeDisabled>
+  <!-- EN: Psychic Dodge: Cooling down ({0}s) -->
+  <NCL.PsychicDodgeCoolingDown>灵能闪避：冷却中（{0}秒）</NCL.PsychicDodgeCoolingDown>
+  <!-- EN: Psychic Dodge: Ready -->
+  <NCL.PsychicDodgeReady>灵能闪避：准备就绪</NCL.PsychicDodgeReady>
+  
+    <!-- EN: Smoke Pop -->
+  <NCL.SmokePopToggle>烟雾弹</NCL.SmokePopToggle>
+  <!-- EN: Toggle automatic smoke pop on hit -->
+  <NCL.SmokePopToggleDesc>切换受伤时自动释放烟雾弹</NCL.SmokePopToggleDesc>
+  <!-- EN: Smoke Pop: Disabled -->
+  <NCL.SmokePopDisabled>烟雾弹：已禁用</NCL.SmokePopDisabled>
+  <!-- EN: Smoke Pop: Cooling down ({0}s) -->
+  <NCL.SmokePopCoolingDown>烟雾弹：冷却中（{0}秒）</NCL.SmokePopCoolingDown>
+  <!-- EN: Smoke Pop: Ready -->
+  <NCL.SmokePopReady>烟雾弹：准备就绪</NCL.SmokePopReady>
+
+<!-- EN: Eject Steel Resources -->
+  <ClearSteelTitle>清空资源</ClearSteelTitle>
+<!-- EN: Eject {0} steel from this missile silo? -->
+  <ConfirmClearSteel>将从导弹井中取出数量为 {0} 的资源</ConfirmClearSteel>
+<!-- EN: Eject all steel resources -->
+  <ClearSteelTooltip>确认清空所有资源</ClearSteelTooltip>
+
+  <!-- EN: Activate Silo -->
+  <NCL.ActivateSilo>启动发射井</NCL.ActivateSilo>
+  <!-- EN: Deactivate Silo -->
+  <NCL.DeactivateSilo>关闭发射井</NCL.DeactivateSilo>
+  <!-- EN: Raise the silo lid and enable missile launch -->
+  <NCL.ActivateSiloDesc>升起发射井盖，允许导弹发射</NCL.ActivateSiloDesc>
+  <!-- EN: Lower the silo lid and disable missile launch -->
+  <NCL.DeactivateSiloDesc>降下发射井盖，禁止导弹发射</NCL.DeactivateSiloDesc>
+  
+  <!-- 发射间隔按钮 - 英文 -->
+  <!-- EN: Launch Interval: {0}s -->
+  <NCL.LaunchInterval>发射间隔: {0}秒</NCL.LaunchInterval>
+  <!-- EN: Adjust time between missile launches (0.1-3.0 seconds) -->
+  <NCL.LaunchIntervalDesc>调整导弹发射间隔时间 (0.1-3.0秒)</NCL.LaunchIntervalDesc>
+  
+  <!-- 设置窗口 - 英文 -->
+  <!-- EN: Set Launch Interval -->
+  <NCL.SetLaunchInterval>设置发射间隔</NCL.SetLaunchInterval>
+  
+  <!-- 滑块标签 - 英文 -->
+  <!-- EN: {0}s -->
+  <NCL.CurrentValue>{0}秒</NCL.CurrentValue>
+  <!-- EN: {0}s -->
+  <NCL.MinValue>{0}秒</NCL.MinValue>
+  <!-- EN: {0}s -->
+  <NCL.MaxValue>{0}秒</NCL.MaxValue>
+
+    <!-- EN: OK -->
+  <Confirm>确定</Confirm>
+
+  <NCL_SummonGizmoLabel>召唤空投</NCL_SummonGizmoLabel>
+  <NCL_SummonGizmoDesc>消耗白银召唤空投单位</NCL_SummonGizmoDesc>
+  <NCL_SilverCost>消耗白银: {0}</NCL_SilverCost>
+  <NCL_NotEnoughSilver>白银不足 ({0}/{1})</NCL_NotEnoughSilver>
+  <NCL_CannotSummonNoSilver>白银不足，无法召唤</NCL_CannotSummonNoSilver>
+  <NCL_ConsumeSilverFailed>消耗白银失败</NCL_ConsumeSilverFailed>
+  <NCL_SummonSuccess>已消耗{0}白银，召唤空投单位</NCL_SummonSuccess>
+
+  <!-- 中文 -->
+  <!-- 启动 / 关闭 -->
+  <NCL.OpenLid>启动火炮</NCL.OpenLid>
+  <NCL.CloseLid>关闭火炮</NCL.CloseLid>
+
+  <NCL.OpenLidDesc>启动火炮系统并进入战备状态。</NCL.OpenLidDesc>
+  <NCL.CloseLidDesc>终止所有操作并关闭火炮系统。</NCL.CloseLidDesc>
+
+  <!-- 发射 / 选点 -->
+  <NCL.LaunchSkyfaller>火炮开火</NCL.LaunchSkyfaller>
+  <NCL.LaunchSkyfallerDesc>选择一个地点或目标单位进行火炮打击。</NCL.LaunchSkyfallerDesc>
+  <NCL.LaunchSkyfallerGlobal>全球打击</NCL.LaunchSkyfallerGlobal>
+  <NCL.LaunchSkyfallerGlobalDesc>在大地图选择一个地点或目标单位进行火炮打击。</NCL.LaunchSkyfallerGlobalDesc>
+  <!-- 瞄准 -->
+  <NCL.AimingLabel>正在瞄准：{0} 秒</NCL.AimingLabel>
+  <NCL.AimingDesc>火炮正在计算射击解和校准炮口，瞄准完成后将开始射击。</NCL.AimingDesc>
+  <NCL.AimingRemainingTime>瞄准剩余时间：{0} 秒</NCL.AimingRemainingTime>
+  <NCL.CancelAiming>取消瞄准</NCL.CancelAiming>
+  <NCL.CancelAimingDesc>取消瞄准</NCL.CancelAimingDesc>
+  <!-- 冷却 -->
+  <NCL.CoolingDownLabel>冷却中：{0} 秒</NCL.CoolingDownLabel>
+  <NCL.CoolingDownDesc>火炮正在散热与复位，在冷却结束前无法再次开火。</NCL.CoolingDownDesc>
+  <NCL.CooldownRemainingTime>火炮冷却剩余时间：{0} 秒</NCL.CooldownRemainingTime>
+
+  <!-- “井盖”相关状态文案改成火炮启停 / 战备 -->
+  <NCL.LidOpeningCountdown>火炮启动流程进行中：{0} 秒后进入战备状态。</NCL.LidOpeningCountdown>
+
+  <NCL.LidOpened>火炮已启动，处于战备状态。</NCL.LidOpened>
+
+  <NCL.LidRemainingTime>距离自动关闭火炮剩余：{0} 秒。</NCL.LidRemainingTime>
+
+  <NCL.LidClosingCountdown> 火炮关闭流程进行中：{0} 秒后完全停机。</NCL.LidClosingCountdown>
+
+    <NCL.NoPower>没电</NCL.NoPower>
+
+  <!-- 资源 / 错误 -->
+  <NCL.NotEnoughSteel>弹药不足，无法开火：每次射击需要 {0} 点弹药。</NCL.NotEnoughSteel>
+</LanguageData>

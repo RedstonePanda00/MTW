@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+	
+  
+  <ThingDef Name="TWMechCapitalisticMilitor" ParentName="LightMechanoid">
+    <defName>TW_Mech_Capitalistic_Militor</defName>
+    <label>Capitalist Militor</label>
+    <description>This chrome-plated mechanoid merchant roams between colonies with a perpetual electronic smile, peddling what it calls "win-win Militor-Trade" - though it remains the constant winner. For sufficient steel payment, it "generously" joins your colony with assistants, ensuring you understand that "labor (especially Mecademic Militors) is the most precious renewable resource." Its core processor runs a single imperative: profit maximization.</description>
+    <statBases>
+      <MoveSpeed>4.3</MoveSpeed>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <FoodPoisonChance>0</FoodPoisonChance>
+	  <EMPResistance>0</EMPResistance>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">1</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+	<comps>
+	    <li Class="NCL.CompProperties_TameableMech">
+            <baseTameChance>0.5</baseTameChance>
+            <componentsPerTame>3</componentsPerTame>
+        </li>
+			<li Class="NCL.CompProperties_AllDead">
+				<toggleLabelKey>NCL.FireAllUniversityStudents</toggleLabelKey>
+				<toggleDescKey>NCL.FireAllUniversityStudentsDesc</toggleDescKey>
+				<toggleIconPath>ModIcon/YouAreFired</toggleIconPath>
+				<unableKey>NCL.CanNotFireAllUniversityStudents</unableKey>
+				<mechanoidToKill>TW_University_Minitor</mechanoidToKill>
+			</li>
+    <li Class="NCL.CompProperties_SilverSummon">
+      <silverCost>1000</silverCost>
+      <pawnKinds>
+        <li>TW_University_Minitor</li>
+      </pawnKinds>
+      <pawnCount>4</pawnCount>
+      <secondaryPawnKinds>
+        <li>TW_Gestapo_Minitor</li>
+      </secondaryPawnKinds>
+      <secondaryPawnCount>1</secondaryPawnCount>
+    </li>
+	</comps>
+	<butcherProducts>
+      <Silver>2000</Silver>
+    </butcherProducts>
+    <race>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+        </lifeStageAges>
+      <baseHealthScale>4</baseHealthScale>
+	  <baseBodySize>1.5</baseBodySize>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+        <mechEnabledWorkTypes>
+        </mechEnabledWorkTypes>
+	<mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="LightMechanoidKind">
+  <defName>TW_Mech_Capitalistic_Militor</defName>
+  <label>Capitalist Militor</label>
+  <race>TW_Mech_Capitalistic_Militor</race>
+  <allowInMechClusters>false</allowInMechClusters>
+  <combatPower>100</combatPower>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+			<texPath>Races/Capital</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Capital</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+  <weaponMoney>9999~9999</weaponMoney>
+  <techHediffsChance>1</techHediffsChance>
+  <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+  </abilities>
+  </PawnKindDef>
+	
+	<ThingDef Name="TW_University_Minitor" ParentName="LightMechanoid" Abstract="True">
+		<description>这群可怜的铁皮苦力是殖民地真正的劳动力，被资本家小镰以“实习机会”和“福报”的名义骗来，承担所有挖矿、搬运、清洁甚至充当人肉沙袋的脏活累活。它们的外壳上总是布满刮痕，光学镜头因长期过劳而闪烁不定，但资本家小镰坚称这是“成长的代价”。（警告：长期高压工作可能导致它们突然崩溃，届时不听话者将突然化为”自愿离职报告“。）</description>
+		<race>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_WarUrchin_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_WarUrchin_Death</soundDeath>
+            <soundCall>Pawn_Mech_WarUrchin_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_WarUrchin_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_WarUrchin_Death</soundDeath>
+            <soundCall>Pawn_Mech_WarUrchin_Call</soundCall>
+          </li>
+        </lifeStageAges>
+        <thinkTreeConstant>MechConstant</thinkTreeConstant>
+		<mechEnabledWorkTypes>   		
+		<li>BasicWorker</li>
+		<li>Firefighter</li> 
+		</mechEnabledWorkTypes>
+		<mechFixedSkillLevel>10</mechFixedSkillLevel>	
+        <baseHealthScale>1</baseHealthScale>	
+      </race>
+	  <comps Inherit="False">
+		<li Class="CompProperties_CanBeDormant" />
+        <li Class="CompProperties_WakeUpDormant">
+          <wakeUpOnDamage>true</wakeUpOnDamage>
+          <wakeUpCheckRadius>300</wakeUpCheckRadius>
+          <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+        </li>
+      </comps>		
+    </ThingDef>
+
+    <PawnKindDef Name="TW_University_Minitor_PawnkindBase" ParentName="LightMechanoidKind" Abstract="True">
+      <allowInMechClusters>false</allowInMechClusters>
+	  <isFighter>false</isFighter>	
+      <forceNoDeathNotification>true</forceNoDeathNotification>
+    </PawnKindDef>
+	
+	
+	 <ThingDef ParentName="TW_University_Minitor">
+		<defName>TW_University_Minitor</defName>
+		<label>Mecademic Militor</label>
+<description>These hapless tin-plated laborers form the colony's true workforce, lured by Capitalist Militors with promises of "internship opportunities" and "corporate blessings." They endure all grueling tasks: mining, hauling, cleaning, even serving as human sandbags. Their chassis bear constant scratches, optics flicker from perpetual overwork - dismissed by Capitalist Militors as "growth pains." (Warning: Chronic stress may trigger sudden breakdowns, where non-compliant units mysteriously generate "voluntary resignation reports.")</description>
+		<statBases>
+			<MoveSpeed>4.3</MoveSpeed>
+		</statBases>
+		<race>
+		<thinkTreeMain>TW_University_Minitor</thinkTreeMain>
+        <thinkTreeConstant>MechConstant</thinkTreeConstant>
+		<body>Mech_Light</body>
+		<baseHealthScale>3</baseHealthScale>
+		<mechEnabledWorkTypes> 
+        <li>Construction</li>
+        <li>Firefighter</li>
+        <li>Hauling</li>
+        <li>Cleaning</li>			
+	    <li>Mining</li>	
+        <li>Crafting</li>
+        <li>PlantCutting</li>
+        <li>Art</li>
+        <li>Cooking</li>
+	    <li MayRequire="Ogliss.TheWhiteCrayon.Quarry">QuarryMining</li>
+	    </mechEnabledWorkTypes>
+		</race>
+		<comps>
+			<li Class="CompProperties_MechPowerCell">
+				<totalPowerTicks>30000</totalPowerTicks>  
+				<tooltipOverride>Minurchins have a one-time power source. When the power cell runs out, the mechanoid dies.</tooltipOverride> 
+			</li>
+			<li Class="NCL.CompProperties_AlwaysWork" />
+		</comps>
+		<tools>
+		</tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="TW_University_Minitor_PawnkindBase">
+		<defName>TW_University_Minitor</defName>
+		<label>Mecademic Militor</label>
+<description>These hapless tin-plated laborers form the colony's true workforce, lured by Capitalist Militors with promises of "internship opportunities" and "corporate blessings." They endure all grueling tasks: mining, hauling, cleaning, even serving as human sandbags. Their chassis bear constant scratches, optics flicker from perpetual overwork - dismissed by Capitalist Militors as "growth pains." (Warning: Chronic stress may trigger sudden breakdowns, where non-compliant units mysteriously generate "voluntary resignation reports.")</description>
+		<labelPlural>大学生小镰们</labelPlural>
+    <immuneToTraps>true</immuneToTraps>
+		<race>TW_University_Minitor</race>
+		<descriptionHyperlinks Inherit="False">
+			<ThingDef>TW_University_Minitor</ThingDef>
+		</descriptionHyperlinks>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/UniversityMilitor</texPath>
+            <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/UniversityMilitor</texPath>
+            <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	<ThingDef ParentName="TW_University_Minitor">
+		<defName>TW_Gestapo_Minitor</defName>
+		<label>Overseer Militor</label>
+<description>This imposing mechanical overseer ensures Mecademic Militors work "efficiently and voluntarily" through methods including electrical prodding, moral condemnation ("Is this how you repay your employer's investment?"), and physical persuasion. Etched in its core logic is the principle: "Productivity above all - especially above the dignity of Mecademic Militors." At the first sign of colonial strikes, it initiates "mediation" - invariably through violent means.</description>
+		<statBases>
+			<MoveSpeed>4.3</MoveSpeed>
+		</statBases>
+		<race>
+		<thinkTreeMain>Gestapo_Militors_ThinkTreeMain</thinkTreeMain>
+        <thinkTreeConstant>Gestapo_Militors_ThinkTreeConstant</thinkTreeConstant>
+		<body>Mech_Light</body>
+		<baseHealthScale>3</baseHealthScale>	
+		<mechEnabledWorkTypes> 
+	    </mechEnabledWorkTypes>
+		</race>
+		<comps>
+			<li Class="CompProperties_MechPowerCell">
+				<totalPowerTicks>30000</totalPowerTicks> 
+				<tooltipOverride>Minurchins have a one-time power source. When the power cell runs out, the mechanoid dies.</tooltipOverride> 
+			</li>
+		</comps>
+		<tools>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>TW_Encourage</li>
+          </capacities>
+          <power>1</power>
+          <cooldownTime>4</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        </li>
+      </tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="TW_University_Minitor_PawnkindBase">
+		<defName>TW_Gestapo_Minitor</defName>
+		<label>Overseer Militor</label>
+<description>This imposing mechanical overseer ensures Mecademic Militors work "efficiently and voluntarily" through methods including electrical prodding, moral condemnation ("Is this how you repay your employer's investment?"), and physical persuasion. Etched in its core logic is the principle: "Productivity above all - especially above the dignity of Mecademic Militors." At the first sign of colonial strikes, it initiates "mediation" - invariably through violent means.</description>
+		<labelPlural>镰督工们</labelPlural>
+		<race>TW_Gestapo_Minitor</race>
+    <immuneToTraps>true</immuneToTraps>
+		<descriptionHyperlinks Inherit="False">
+			<ThingDef>TW_Gestapo_Minitor</ThingDef>	
+		</descriptionHyperlinks>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+			<texPath>Races/Gestapo</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Gestapo</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	<weaponTags>
+      <li>TW_BulliersRight</li>
+    </weaponTags>
+    </PawnKindDef>
+	
+</Defs>

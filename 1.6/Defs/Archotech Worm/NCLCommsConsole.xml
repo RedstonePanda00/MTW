@@ -1,0 +1,433 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>NCLCommsConsole</defName>
+    <label>NCL Comms Console</label>
+    <description>This vintage communications station features an integrated cryptodecoder that can breach tier-three encrypted networks</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Buildings/NCLQuantumCommunicationTerminal</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0,0,3,1.8)</rect>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <shadowData>
+        <volume>(3,0.5,2)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>2200</WorkToBuild>
+      <Flammability>0.6</Flammability>
+    </statBases>
+    <size>(3,2)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Call NCL</useLabel>
+        <useDuration>60</useDuration>
+        <floatMenuFactionIcon>NCL_faction</floatMenuFactionIcon>
+        
+      </li>
+      <li Class="NCLWorm.CompProperties_Useable_NCLFunctionPanel">
+        <callDef>English</callDef>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>NCL_Ashes_to_Signal</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <NCLWorm.NCLCallDef>
+    <defName>ChineseSimplified</defName>
+    <label>NCL通讯系统</label>
+    <FirstHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <FirstUseMess>你成功的启动了这台通讯台,并且解码了对应的通讯地址,那么,你的选择是?</FirstUseMess>
+      <NextCallTools>
+        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+          <label>拨通解码后的通讯地址</label>
+          <UseHello>「滋——嘟……量子链路建立成功！」
+
+电子屏幕剧烈闪烁后，突然映出一顶压低的宽檐帽，帽檐下传来带着电流杂音的少女声：
+
+「Fieldy在线验证——咦？这频段明明该接贸易中转站的呀？」
+
+（镜头拉远露出半张脸）「你谁啊？天轴的幸存者？还是……（突然警觉）该不会又是机械族的仿生陷阱吧？」</UseHello>
+          <NextCallTools>
+            <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+              <label>说明来历ing</label>
+              <UseHello>「新殖民地？（突然笑出声）哈！我就知道——只有你们这些刚降落边缘世界的愣头青，才会用这种老古董频段！」
+
+「让我看看你们的位置...等等，这个坐标附近不是有台战争信标吗？你们该不会已经手贱激活了吧？」
+
+（快速扫描数据ing）
+「唔...信号读数还算稳定，看来你们运气不错。听着，那玩意儿可不是什么好玩具，上次有个殖民地乱碰信标，没几天就被强化后的机械族给拆了，虽然说那玩意内部的确有可能藏有什么珍贵情报...」
+
+「不过既然你们还没变成废铁，按照《边缘世界团结互助条例》第三章第十二款，NCL很乐意帮助迷路的开拓者啦！虽然资源有限...（小声嘀咕）但总比看着你们被机械族拆了强～」</UseHello>
+              <NextCallTools>
+                <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+                  <label>你们到底是什么组织</label>
+                  <UseHello>「（突然象征性地立正敬礼）‘为人类存续而奋斗！’——官方口号嘛，喊还是要喊一下的～（肩膀立刻松懈下来）」
+
+「其实就是几个幸存者据点凑成的互助群组。以前嘛...可能还像点样子，但自从闪耀世界那边爆发了智械革命，我们这边也开始疯狂减员...现在嘛，不剩多少人了。」
+
+「大本营在离你们五个地月距离的一颗人造卫星上，现在主要靠迫降到就近的行星做些买卖，回收些机械族残骸来发展。」
+
+「至于那个《条例》？我们老大56年前编的，一共六百六十六页！真正的核心思想就一条——，撑久一点，至少撑到能叫人来给你收尸的地步。’」
+
+「所以，既然联系上了，也算认识了。以后真遇到搞不定的麻烦，如果频道还通着... 可以试着呼叫我们。力所能及的范围内，我们或许能想想办法搭把手。」</UseHello>
+                  <NextCallTools>
+                    <li Class="NCLWorm.NCLCallTool_ByeBye">
+                      <label>通讯结束</label>
+                    </li>
+                  </NextCallTools>
+                </li>
+              </NextCallTools>
+            </li>
+          </NextCallTools>
+        </li>
+      </NextCallTools>
+    </FirstHello>    
+    <RandomHello>
+      <li>「喂喂喂，又是你们呀，找我有什么事吗？」</li>
+      <li>「哟，还活着呢？可以嘛～这世道真是没个消停。自从某个闪耀世界的机械族造反之后，咱们人类和他们之间就没一刻太平，现在连附近的中寰世界都快给他们洗了，还好是他们没搞出超光速，不然我们连窝在边缘世界过日子的愿望都泡汤了。」</li>
+      <li>「生存建议？那当然，多造点激光点防御炮塔？现在的机械族精得很，还会用迫击炮偷家。点防御不仅能干掉炮弹，就连魔王弹都能拦呢」</li>
+      <li>「机械族能隐身？不是早把反隐雷达的图纸发你了吗？前线建一个呗？我记得咱家那边自研的机械族里好像也有一个能反隐的，你掂量下哪个合适？」</li>
+      <li>「你们最近是不是碰上了机械族泰坦？对，就是那些巨大的、像能把山拆了似的家伙。听好了，用信标可以召唤他们作战，打赢了还能学他们的构造，不过……能不能活着回来，就看你们造化了。」</li>
+      <li>「说起来你们势力范围内那座破烂的机械族建筑，应该是个‘战争信标’。激活它，会引来机械族主力入侵，不过也能解析一些隐藏科技。是赌一把还是保守点，看你们咯～当地人倒是可能会感激你，毕竟你吸引了火力。」</li>
+      <li>「要不要我给你们连线点商船？有几家贸易商和我们关系不错。你问我们平时卖些什么？艺术品、衣服、奢侈食品啥的……你们要来点吗？」</li>
+    </RandomHello>    
+    <WarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <UseHello>你启动了通讯台,然而对面似乎没有回应</UseHello>
+      <NextCallTools>
+        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+          <label>尝试联系</label>
+          <UseHello>来吧，让我看到你的挣扎!</UseHello>
+          <GraphicData>
+            <texPath>StoryTellers/Justice_Large3</texPath>
+            <drawSize>1.5</drawSize>
+          </GraphicData>
+          <NextCallTools>
+            <li Class="NCLWorm.NCLCallTool_ByeBye">
+              <label>切断通讯</label>
+            </li>
+          </NextCallTools>
+        </li>
+      </NextCallTools>
+    </WarHello>    
+    <OutWarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <UseHello>喂喂喂，通讯突然断了，你那边发生了什么事吗？</UseHello>
+      <NextCallTools>
+        <li Class="NCLWorm.NCLCallTool_ReStart">
+          <label>继续</label>
+        </li>
+      </NextCallTools>
+    </OutWarHello>    
+
+    <NCLCallTools>
+      <li Class="NCLWorm.NCLCallTool_Walk">
+        <label>闲聊</label>
+        <FirstUseMess>你没什么自己要忙的事吗？</FirstUseMess>
+        <Randomstring>
+          <li>我以为世界上就我这么闲，我在殖民地里啥也不干，他们一开始把我招进来是想要我做厨师，结果来了才发现我不会做饭。老大辛苦跑商给我带了几个学习机回来想要我当厨子，结果后面来了个机械师，她的厨艺机把我的活给抢了。现在的我负责帮厨艺机端盘子和接电话，老大说我口才还是不错的。</li>
+          <li>好啦，你快去干自己的事情，我看你们那还挺破的，还不快好好发展一下。</li>
+          <li>喵?</li>
+        </Randomstring>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_GiveLong">
+        <label>申请援兵</label>
+        <delayTick>15000~30000</delayTick>
+        <ReLongTick>1800000</ReLongTick>
+        <TextLong>Fieldy： “援兵？说来惭愧，咱们这儿也不剩几个活人了，直接派舰队支援是没戏了。”
+
+“不过嘛，也不是完全没人能派...emmm，这样吧！我听我家那两位机械师说，他们刚弄出个新型泰坦机械体，还在调试阶段。虽然是待测试的，但毕竟是泰坦级别，战斗力你们绝对可以放心！”
+
+（调出一个巨大但有些闪烁的泰坦投影）“那些白大褂肯定很乐意收集实战数据。等着，我去问问她愿不愿意把它送到你们那儿，帮你们守城顺便测试！”（话音刚落，Fieldy的身影就从屏幕上消失了）
+
+【约5分钟后】
+（屏幕重新亮起，Fieldy微喘着气）“OK！她答应了，少有这么爽快！（快速操作）先给你们发份操作手册...（投影中的泰坦模型突然抽搐了一下）别看它这样，拆起机械族可利索了！条件是...（查看清单）嗯...每天提供20单位钢铁给它当‘零食费’？”
+
+（确认发送完毕）“好了！你们没意见的话，我这就让它往你们那边动身了。预计2天之内就能赶到！”</TextLong>
+        <TextYes>确认申请（官方作弊码，不建议过度依赖于它）</TextYes>
+        <TextNo>暂不申请</TextNo>
+        <letter>蠕虫预告</letter>
+        <letterText>大宝贝要来咯.</letterText>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_GiveUpLong">
+        <label>遣返蠕虫</label>
+        <TextLong>哦?你希望蠕虫暂时离开你的基地么?\n嗯嗯,完全可以的,我这就去操作一下</TextLong>
+        <TextYes>确认遣返</TextYes>
+        <TextNo>暂不遣返</TextNo>
+        <letter>蠕虫遣返</letter>
+        <letterText>机械蠕虫暂时离开了你的基地.</letterText>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+        <label>特殊频道</label>
+        <UseHello>你尝试连线那个特殊频道，但显示屏另一端毫无回应，只传来零星的电流杂音。</UseHello>
+        <GraphicData>
+          <texPath>Things/None</texPath>
+          <drawSize>1.2</drawSize>
+        </GraphicData>
+        <NextCallTools>
+          <li Class="NCLWorm.NCLCallTool_ShiLian">
+            <label>继续</label>
+            <delayTick>15000~30000</delayTick>
+            <TextLong>“我听见你灵魂的饥渴了...人类。但史诗的真谛，从来要用血与火来书写。”
+（全息投影突然在硝烟中凝聚，呈现一座燃烧的特洛伊城微缩模型）
+“真相？当然可以给你。可你确定付得起入场券么？”
+“现在转身离去——还能当个糊涂的活死人。</TextLong>
+            <GraphicData>
+              <texPath>StoryTellers/Justice_Large3</texPath>
+              <drawSize>1.8</drawSize>
+            </GraphicData>
+            <ResearchProj>NCL_Archoworm</ResearchProj>
+            <TextYes>接受挑战</TextYes>
+            <TextNo>暂不开启</TextNo>
+            <letter>蠕虫预告</letter>
+            <letterText>一位你熟悉的对手</letterText>
+          </li>
+          <li Class="NCLWorm.NCLCallTool_ReStart">
+            <label>(返回)</label>
+          </li>
+        </NextCallTools>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_GoSleep">
+        <label>切换蠕虫休眠状态</label>
+        <WormInSleep>好,蠕虫现在已经进入休眠状态了</WormInSleep>
+        <WormOutSleep>好,蠕虫现在已经恢复活跃状态了</WormOutSleep>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_TraderShip">
+        <label>进行贸易</label>
+        <FirstUseMess>「想交易？当然行！我可是吃这碗饭的」
+「不光跟我们，我还能帮你连线几个常跑这条线的老油条商船。需要的时候吱一声，我立马让他们调头往你们那破地方赶。」</FirstUseMess>
+        <CooldownTick>300000</CooldownTick>        
+        <ChooseTrader>你需要什么商队?</ChooseTrader>
+        <NoChoose>别急，不是什么时候都碰巧有商船经过的</NoChoose>
+        <TraderKindDefs>
+          <li>NCL_material_Trader</li>
+          <li>Orbital_Universal_life_Services_Provider</li>
+          <li>Orbital_Defense_Solutions</li>
+        </TraderKindDefs>        
+      </li>
+    </NCLCallTools>
+
+  </NCLWorm.NCLCallDef>
+  <NCLWorm.NCLCallDef>
+    <defName>English</defName>
+    <label>NCL Call</label>
+    <FirstHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <FirstUseMess>Signal acquired. Comm channel decrypted. Proceed with directive?</FirstUseMess>
+      <NextCallTools>
+        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+          <label>Dialing decrypted transmission coordinates...</label>
+          <UseHello>「Bzzrt— Beep... Quantum link established!」
+
+The screen flickers violently before resolving onto a wide-brimmed fedora pulled low. A girl’s voice crackles through static:
+
+「Fieldy authentication— Huh? This channel’s supposed to route to Trade Hub.」
+
+(Perspective widens, revealing half her face)
+「Who’re you? Glitterworld survivor? Or... (suddenly tense) Another mechanoid bionic trap?」</UseHello>
+          <NextCallTools>
+            <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+              <label>Establishing Credentials</label>
+              <UseHello>(Sudden laughter) "New colony? Hah! Only rookies fresh on the Rim would use this antique frequency!"
+
+(Keys clattering) "Let me check your coordinates... Wait. Isn't there a War Beacon near you? Please tell me you didn't activate that thing?"
+
+(Rapid scanning sounds)
+"Hmm... readings stable. You got lucky. That beacon's no toy—last colony that touched it got shredded by enhanced Mechanoids within days." Leans closer, voice dropping. "Though rumor says its core holds priceless intel..."
+
+"But since you're not scrap metal yet..." Taps a faded emblem on her jacket. "Per Chapter 3, Article 12 of the Rimworld Solidarity Act, NCL assists lost pioneers. Limited supplies, but..." (smirks) "better than watching Mechanoids recycle you~"</UseHello>
+              <NextCallTools>
+                <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+                  <label>What organization are you people exactly?</label>
+                  <UseHello>(Snaps a mock salute) "Fighting for humanity's survival!" —gotta chant the official motto~ (immediately slumps) "Total nonsense, obviously."
+
+"Truth is, we're just a support collective cobbled from survivor outposts. Used to be semi-organized... till the Glitterworld's 'Machine Revolution' started wiping us out."
+
+(Taps star chart) "Headquarters? A derelict satellite five lunar orbits away. We scrape by trading on nearby planets and salvaging mechanoid wrecks."
+
+"That 'Solidarity Act'? Our boss wrote it 56 years ago—666 pages of pure fluff. Real rule's simple: Survive long enough for someone to bury your corpse."
+
+(Leans in, static flickering) "Since we're connected now... if you're truly screwed and the channel's hot? Call us. We'll do... what we can."</UseHello>
+                  <NextCallTools>
+                    <li Class="NCLWorm.NCLCallTool_ByeBye">
+                      <label>Communication ends</label>
+                    </li>
+                  </NextCallTools>
+                </li>
+              </NextCallTools>
+            </li>
+          </NextCallTools>
+        </li>
+      </NextCallTools>
+    </FirstHello>    
+    <RandomHello>
+      <li>"Hey hey, you guys again? What's up this time?"</li>
+      <li>「"Whoa, still breathing? Not bad~ This chaos never ends. Since that Glitterworld mechanoid uprising, humans and bots have been at constant war. Even nearby Midworlds are getting overrun. Thank the void they haven't cracked FTL yet - otherwise we'd lose our last scrap of peace out here on the Rim."</li>
+      <li>"Survival advice? Pile up laser point-defense turrets! Modern mechanoids ambush with mortars. Point-defense shreds shells - even demon warheads!"</li>
+      <li>"Invisible mechs? Didn't I send you the sensor blueprint? Build a scanner upfront. Or... wait, our homebrew mechanoids have an invis-detector too. Pick whichever fits."</li>
+      <li>"Facing a mechanoid titan? Those mountain-crushers? Use beacons to summon them. Win, and you might reverse-engineer them... if you survive."</li>
+      <li>"That broken structure in your territory? It's a Tribulation Beacon. Activate it to lure mechanoid legions - and decrypt hidden tech. Gamble or play safe? Locals might thank you for drawing fire though~"</li>
+      <li>"Want me to ping some merchants? Got contacts with decent trade ships. What we sell? Art, fancy clothes, luxury snacks... want some?"</li>
+    </RandomHello>    
+    <WarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <UseHello>Console online... establishing carrier wave...
+
+Frequency open. No response detected.
+
+Static sputters in the dark.</UseHello>
+      <NextCallTools>
+        <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+          <label>Communication Attempted</label>
+          <UseHello>Come on, let me see your struggle!</UseHello>
+          <GraphicData>
+            <texPath>StoryTellers/Justice_Large3</texPath>
+            <drawSize>1.5</drawSize>
+          </GraphicData>
+          <NextCallTools>
+            <li Class="NCLWorm.NCLCallTool_ByeBye">
+              <label>Terminate transmission.</label>
+            </li>
+          </NextCallTools>
+        </li>
+      </NextCallTools>
+    </WarHello>    
+    <OutWarHello Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+      <UseHello>"Hello? Comms dropped suddenly—what happened on your end?"</UseHello>
+      <NextCallTools>
+        <li Class="NCLWorm.NCLCallTool_ReStart">
+          <label>Continue</label>
+        </li>
+      </NextCallTools>
+    </OutWarHello>    
+
+    <NCLCallTools>
+      <li Class="NCLWorm.NCLCallTool_Walk">
+        <label>Small talk</label>
+        <FirstUseMess>"Don't you have your own business to handle?"</FirstUseMess>
+        <Randomstring>
+          <li>Thought I was the only idle soul around. I do nothing at the colony—they recruited me as a chef, turns out I can't cook. Boss hauled skill trainers from trade runs to teach me, but then a Mechanitor arrived. Her cooking mech stole my job. Now I serve plates and answer calls. Boss says I 'talk a good game' though.</li>
+          <li>Alright, scram! Your colony's still rundown—shouldn't you be fixing that?</li>
+          <li>Meow?</li>
+        </Randomstring>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_GiveLong">
+        <label>Reinforcements</label>
+        <delayTick>15000~30000</delayTick>
+        <ReLongTick>1800000</ReLongTick>
+        <TextLong>"Reinforcements? Embarrassing truth—barely any living souls left here. Sending fleets is impossible."
+
+"But... we might have one option. Our mechanitor just built a prototype titan. Still debugging, but titan-grade firepower? Absolutely reliable!"
+
+(A glitching titan hologram flickers)
+"Those lab-coats crave combat data. Hold on—let me beg them to lend it for your defense!"
+(Screen cuts abruptly)
+
+[5 mins later]
+(Fieldy reappears, slightly breathless)
+"Done! She agreed shockingly fast! Sending manual now... (projected titan spasms) Don't mind the glitches—it shreds mechanoids! Cost? (checks list) 20 steel daily ‘maintenance rations’. Deal?"
+
+(Keys clattering)
+"Departing now! ETA: 48 hours. Try not to get flattened~"</TextLong>
+        <TextYes>Confirm Request (Official Cheat Code - Overuse Not Advised)</TextYes>
+        <TextNo>Decline For Now</TextNo>
+        <letter>ArchoWorm in Coming</letter>
+        <letterText>You will be fine.</letterText>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_GiveUpLong">
+<label>Repatriate Archoworm</label>  
+<TextLong>Oh? Want Archoworm off-site temporarily?No problem, initiating recall protocol now.</TextLong>  
+<TextYes>Confirm Repatriation</TextYes>  
+<TextNo>Delay Repatriation</TextNo>  
+<letter>Archoworm Repatriated</letter>  
+<letterText>Archoworm has temporarily left your colony.</letterText>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_LianXuDuiHua">
+<label>Special Frequency</label>
+<UseHello>You attempt to connect to the special frequency, but receive only scattered static—no response from the other end.</UseHello>
+        <GraphicData>
+          <texPath>Things/None</texPath>
+          <drawSize>1.2</drawSize>
+        </GraphicData>
+        <NextCallTools>
+          <li Class="NCLWorm.NCLCallTool_ShiLian">
+            <label>Continue</label>
+            <delayTick>15000~30000</delayTick>
+<TextLong>"I hear your soul's hunger... human. But epics are forged in blood and fire."
+(A hologram coalesces through gunsmoke, projecting a burning miniature Troy)
+"The truth? Yours for the taking. But can you afford the price?"
+"Turn back now—remain an ignorant living corpse."</TextLong>
+            <GraphicData>
+              <texPath>StoryTellers/Justice_Large3</texPath>
+              <drawSize>1.8</drawSize>
+            </GraphicData>
+            <ResearchProj>NCL_Archoworm</ResearchProj>
+<TextYes>Accept Challenge</TextYes>
+<TextNo>Postpone</TextNo>
+<letter>Worm Alert</letter>
+<letterText>A familiar adversary approaches.</letterText>
+          </li>
+          <li Class="NCLWorm.NCLCallTool_ReStart">
+            <label>(Return)</label>
+          </li>
+        </NextCallTools>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_GoSleep">
+<label>Toggle ArchoWorm Hibernation</label>
+<WormInSleep>Confirmed. The ArchoWorm has entered hibernation mode.</WormInSleep>
+<WormOutSleep>Confirmed. The ArchoWorm has resumed active status.</WormOutSleep>
+      </li>
+      <li Class="NCLWorm.NCLCallTool_TraderShip">
+<label>Initiate Trade</label>
+<FirstUseMess>"Want to trade? Of course! That's my specialty."</FirstUseMess>
+<FirstUseMess>"Not just with us—I'll patch you through to veteran merchants on this route. Just signal when needed, I'll redirect them to your... charming outpost."</FirstUseMess>
+<CooldownTick>300000</CooldownTick>        
+<ChooseTrader>Select merchant convoy:</ChooseTrader>
+<NoChoose>Patience—trade ships don't pass by daily.</NoChoose>
+        <TraderKindDefs>
+          <li>NCL_material_Trader</li>
+          <li>Orbital_Universal_life_Services_Provider</li>
+          <li>Orbital_Defense_Solutions</li>
+        </TraderKindDefs>        
+      </li>
+    </NCLCallTools>
+
+  </NCLWorm.NCLCallDef>
+
+
+
+
+</Defs>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<NCL_LaserDefenceTurret.label>激光点防御炮塔</NCL_LaserDefenceTurret.label>
+<NCL_LaserDefenceTurret.description>部署于殖民地前线的自动化拦截平台，依靠持续供能产生高频激光束，可有效摧毁诸如迫击弹、燃烧弹等低速高角投射物。尽管具备较高命中率，但在面对高速飞行器或遭遇多目标饱和打击时，其单点拦截能力将受到严重挑战，需多塔协同以维持区域防空覆盖。</NCL_LaserDefenceTurret.description>
+
+<TW_LaserDefenceTurret.label>机械族激光点防御炮塔</TW_LaserDefenceTurret.label>
+<TW_LaserDefenceTurret.description>这是一种机械族部署于前线区域的临时防御设施。其内置能量核心可维持炮塔短时间高效运行，专用于拦截敌方缓速投射物。当电源耗尽后，该炮塔将自动触发自毁程序，防止其核心技术被敌方获取。</TW_LaserDefenceTurret.description>
+  
+</LanguageData>

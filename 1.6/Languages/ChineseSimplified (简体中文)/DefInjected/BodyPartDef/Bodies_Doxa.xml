@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Doxa0_AntiParticleEmitter.label>反粒子发射口</Doxa0_AntiParticleEmitter.label>
+
+
+<Doxa0_DeepLogic_NeuronCore.label>深层逻辑核</Doxa0_DeepLogic_NeuronCore.label>
+
+
+<Doxa0_Dorsal_First.label>背壳节一</Doxa0_Dorsal_First.label>
+
+<Doxa0_Dorsal_First.labelShort>Dorsal Segment</Doxa0_Dorsal_First.labelShort>
+
+
+<Doxa0_Dorsal_Fourth.label>背壳节四</Doxa0_Dorsal_Fourth.label>
+
+<Doxa0_Dorsal_Fourth.labelShort>Dorsal Segment</Doxa0_Dorsal_Fourth.labelShort>
+
+
+<Doxa0_Dorsal_Second.label>背壳节二</Doxa0_Dorsal_Second.label>
+
+<Doxa0_Dorsal_Second.labelShort>Dorsal Segment</Doxa0_Dorsal_Second.labelShort>
+
+
+<Doxa0_Dorsal_Third.label>背壳节三</Doxa0_Dorsal_Third.label>
+
+<Doxa0_Dorsal_Third.labelShort>Dorsal Segment</Doxa0_Dorsal_Third.labelShort>
+
+
+<Doxa0_FireControlModule.label>火控协调模块</Doxa0_FireControlModule.label>
+
+
+<Doxa0_Hatch_Module.label>裂壳蛛孵化腔</Doxa0_Hatch_Module.label>
+
+
+<Doxa0_LimbCluster.label>多爪推进组</Doxa0_LimbCluster.label>
+
+
+<Doxa0_Sensor_Cluster.label>前端感知阵列</Doxa0_Sensor_Cluster.label>
+
+
+<Doxa0_Turret_Mount.label>反粒子炮架</Doxa0_Turret_Mount.label>
+  
+</LanguageData>

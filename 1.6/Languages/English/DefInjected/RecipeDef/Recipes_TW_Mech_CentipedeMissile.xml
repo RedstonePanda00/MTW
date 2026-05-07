@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 机械制导蜈蚣 -->
+<Mech_CentipedeMissile.label>Gestate Missile Centipede</Mech_CentipedeMissile.label>
+<Mech_CentipedeMissile.description>A centipede-class mechanoid equipped with guided missile systems, capable of launching precision HE or EMP warheads at extended ranges to suppress targets with devastating accuracy.</Mech_CentipedeMissile.description>
+<Mech_CentipedeMissile.jobString>Gestating mech.</Mech_CentipedeMissile.jobString>
+  
+</LanguageData>

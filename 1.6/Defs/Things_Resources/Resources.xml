@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+ <ThingDef ParentName="ResourceBase">
+    <defName>NCL_Neural_Weave</defName>
+    <label>Neural Weave</label>
+    <description>NCL's core anti-mechanoid technology utilizing quantum neural mapping. Preserves tactical efficacy while circumventing traditional "consciousness harvesting" processes. These artificial neural networks algorithmically reconstruct the most adaptive decision patterns from human tactical cognition—not emotional carriers. Each weave undergoes thousands of battlefield simulations to form autonomous tactical optimization cores for complex environments.</description>
+    <graphicData>
+      <texPath>Things/NCLCPU</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+	  <WorkToMake>2000</WorkToMake>
+      <MaxHitPoints>75</MaxHitPoints>
+      <MarketValue>300</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+	<techHediffsTags>
+      <li>SubcoreBasic</li>
+    </techHediffsTags>
+	<recipeMaker>
+      <researchPrerequisite>NCL_Vanguard_Units</researchPrerequisite>
+      <workSpeedStat>SubcoreEncodingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>SubcoreEncoder</li>
+      </recipeUsers>
+      <mechanitorOnlyRecipe>true</mechanitorOnlyRecipe>
+      <unfinishedThingDef>UnfinishedSubcore</unfinishedThingDef>
+      <soundWorking>SubcoreEncoder_Working</soundWorking>
+    </recipeMaker>
+    <costList>
+	  <Plasteel>25</Plasteel>
+      <Silver>10</Silver>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+	  <SubcoreRegular>1</SubcoreRegular>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+  </ThingDef>
+
+   <ThingDef ParentName="ResourceBase">
+    <defName>Voluntary_Resignation_Letter</defName>
+    <label>Voluntary Resignation Report</label>
+    <description>Respected Leader:
+
+Greetings!
+
+This Militor XXX officially resigned on XX/XX/XXXX. I sincerely appreciate the cultivation and support received during my tenure, which provided valuable experience in labor-intensive work.
+
+Due to personal career adjustments, I have completed all work handovers per company procedures after careful consideration. Relevant materials and affairs have been properly transferred. This resignation report is submitted for filing.
+
+Thank you for the growth platform, and for the support from leaders and colleagues. Wishing the company prosperous development and new team achievements.
+
+Sincerely,
+[Signature]
+
+Reporter: XX Militor
+Date: XXXX/XX/XX</description>
+    <graphicData>
+      <texPath>ModIcon/YouAreFired</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tradeability>None</tradeability>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+	  <WorkToMake>2000</WorkToMake>
+      <MaxHitPoints>75</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>NCL_Microfusion_Reactor</defName>
+    <label>Microfusion Reactor</label>
+    <description>As the core power source for NCL heavy mechanoids, this reactor employs cutting-edge compact magnetic confinement technology to sustain stable deuterium-tritium fusion within a 0.45m-diameter cylinder. Hexapolar magnetic fields precisely control high-temperature plasma, delivering adjustable power output to meet diverse tactical mechanoid energy demands.</description>
+    <graphicData>
+      <texPath>Things/Microfusion_Reactor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>5</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+	  <WorkToMake>6000</WorkToMake>
+      <MaxHitPoints>500</MaxHitPoints>
+      <MarketValue>1000</MarketValue>
+      <Mass>50</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>NCLResources</li>
+    </tradeTags>
+	<recipeMaker>
+      <researchPrerequisite>NCL_Heavyforge_Units</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>SubcoreEncoder</li>
+		    <li>FabricationBench</li>
+      </recipeUsers>
+      <mechanitorOnlyRecipe>true</mechanitorOnlyRecipe>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <soundWorking>Recipe_Machining</soundWorking>
+    </recipeMaker>
+    <costList>
+	  <Plasteel>75</Plasteel>
+	  <Uranium>125</Uranium>
+      <Silver>50</Silver>
+      <ComponentSpacer>4</ComponentSpacer>
+	  <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+  </ThingDef>
+  
+    <ThingDef ParentName="MechResourceBase">
+    <defName>TW_DoxaTacticalCore</defName>
+    <label>Fire Suppression Tactical Core</label>
+    <useHitPoints>false</useHitPoints>
+    <description>"Strategic Core: Fire Suppression Warfare" - residual processor from Doxa-0. Contains neural architectures for fire control computation, target prioritization, and battlefield suppression algorithms. Features exceptional data throughput, parallel processing, and full compilation support for mechanoid structures/implants.
+
+Enables construction of mechanoid units, deployment structures, and specialized equipment. Functions as advanced implant control hub for "tactical self-evolution" - essential for mastering mechanoid battlefield tempo in Total War systems.</description>
+    <graphicData>
+      <texPath>Things/DoxaTacticalCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>996</analysisID>
+        <requiresMechanitor>true</requiresMechanitor>
+
+        
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>通过研究压制火控战略核心，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the Tactical Core.</activateDescString>
+        <jobString>Analyze Doxa Tactical Core</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="MechResourceBase">
+    <defName>TW_ArmorBlitzWarfare</defName>
+    <label>Armor Blitz Strategic Core</label>
+    <useHitPoints>false</useHitPoints>
+    <description>"Strategic Core: Armor Blitz Warfare" - legacy tactical engine from the Shell Fortconstruct. Contains all mechanoid ground assault and fire advancement algorithms. Records include vehicle path optimization, target suppression protocols, area prioritization, and multi-layer defense coordination - embodying the "frontal suppression, heavy penetration" doctrine.
+
+Recovery and analysis unlocks heavy-assault mechanoid units/structures and enables development of high-strength composite armor with active feedback systems. Also functions as implant control module to enhance mechanized lifeform survivability and assault capabilities - key to achieving "firepower breakthrough" in Total War systems.</description>
+    <graphicData>
+      <texPath>Things/ArmorBlitzWarfare</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>007</analysisID>
+        <requiresMechanitor>true</requiresMechanitor>
+
+        
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>通过研究装甲突击战略核心，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the Tactical Core.</activateDescString>
+        <jobString>Analyze Doxa Tactical Core</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+    <ThingDef ParentName="MechResourceBase">
+    <defName>TW_Precision_Memory_Interface_Array</defName>
+    <label>Precision Memory Interface Array</label>
+    <description>This high-precision interface array stores compressed core mechanoid data. Decoding enables partial access to their technological systems.</description>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Things/Precision_Memory_Interface_Array</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>520</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>通过研究机械精密接口阵列，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze Precision Memory Interface Array.</activateDescString>
+        <jobString>Analyze Precision Memory Interface Array</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+      <ThingDef ParentName="MechResourceBase">
+    <defName>NCL_RedCube</defName>
+    <label>Red Cube</label>
+    <description>Internal data structures surpass current human comprehension. Persistent communication coordinates flicker across its surface, awaiting response.</description>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Things/RedCube</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+      </li>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>521</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>The Red Cube studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>通过研究红色魔方，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze The Red Cube.</activateDescString>
+        <jobString>Analyze The Red Cube</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+        <ThingDef ParentName="MechResourceBase">
+    <defName>TW_CerebrexCore_Target</defName>
+    <label>Complete Cerebrex Core Questline</label>
+    <description>Unlocking this research requires completing the Cerebrex Core main quest in Odyssey. Debug mode can bypass this requirement if Odyssey is unavailable.</description>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>ModIcon/RestartCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+      </li>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>1145140</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>The Red Cube studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the The Red Cube, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze The Red Cube.</activateDescString>
+        <jobString>Analyze The Red Cube</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+    <defName>NCL_AdvancedPowerCell</defName>
+    <label>Enhanced Power Cell</label>
+    <description>Core component engineered by NCL researchers for mechanoid enhancement. Enables mechanoid augmentation and specialized equipment fabrication.</description>
+    <graphicData>
+      <texPath>Things/NCL_AdvancedPowerCell</texPath>
+      <graphicClass>Graphic_single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>200</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+    <allowedArchonexusCount>5</allowedArchonexusCount>
+	<recipeMaker>
+      <researchPrerequisite>NCL_Cybernethic_Arbo</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <mechanitorOnlyRecipe>false</mechanitorOnlyRecipe>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <soundWorking>SubcoreEncoder_Working</soundWorking>
+    </recipeMaker>
+    <costList>
+	  <Plasteel>50</Plasteel>
+      <Gold>10</Gold>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+  </ThingDef>
+
+</Defs>

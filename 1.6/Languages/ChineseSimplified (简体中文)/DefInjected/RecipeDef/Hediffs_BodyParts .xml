@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  <InstallNCL_King_of_the_field.label>战场之王</InstallNCL_King_of_the_field.label>
+  <InstallNCL_King_of_the_field.description>由击败静巢构体后提取其脑核核心所制，承载着Doxa-0对战场全局的理解与掌控能力。安装后，机械师将获得对所有己方机械族单位的全图远程控制权限，指令不再受限于视野、距离或传输延迟，真正成为战争的指挥中枢，令麾下机械部队化为纯粹而高效的战争机器。
+		
+与此同时，芯片将给予技能“全向律”：启动机械族的全域协调系统，在短时间内显著提升所有己方机械单位的移动速度，实现跨战线的快速部署与零延迟响应，如同Doxa-0当年那般以一己之力编织战术网络，主宰战场节奏。</InstallNCL_King_of_the_field.description>
+  <InstallNCL_King_of_the_field.jobString>Installing King of the Field</InstallNCL_King_of_the_field.jobString>
+  
+  <InstallSolarbaneArtemisLunarOculus.label>骇日的阿尔忒弥斯狩月虹膜</InstallSolarbaneArtemisLunarOculus.label>
+  <InstallSolarbaneArtemisLunarOculus.description>NCL第23研究所"月光之子"计划产物，采用光子坍缩材料制成的虹膜能在月光下进入超频模式，代价是日光照射会引发量子退相干反应将一定程度削弱植入者白天的视觉能力。</InstallSolarbaneArtemisLunarOculus.description>
+  <InstallSolarbaneArtemisLunarOculus.jobString>Installing Solarbane Artemis Lunar Oculus</InstallSolarbaneArtemisLunarOculus.jobString>
+  
+  <InstallUnstablePrometheusCore.label>不稳定的普罗米修斯炉心</InstallUnstablePrometheusCore.label>
+  <InstallUnstablePrometheusCore.description>该装置取代心脏成为能量中枢，其钛钨陶瓷心室内置3600枚纳米神经簇，通过电解血液中的铁元素产生光子喷流。</InstallUnstablePrometheusCore.description>
+  <InstallUnstablePrometheusCore.jobString>Installing Unstable Prometheus Core</InstallUnstablePrometheusCore.jobString>
+  
+  <InstallYggdrasilWorldTreeSpine.label>伊格德拉西尔世界树脊柱</InstallYggdrasilWorldTreeSpine.label>
+  <InstallYggdrasilWorldTreeSpine.description>该仿生体以传说中的世界树为灵感，融合了量子折跃技术与生物免疫增强系统，旨在为植入者提供无与伦比的战场统治力与生存能力。</InstallYggdrasilWorldTreeSpine.description>
+  <InstallYggdrasilWorldTreeSpine.jobString>Installing Yggdrasil World Tree Spine</InstallYggdrasilWorldTreeSpine.jobString>
+
+  
+</LanguageData>

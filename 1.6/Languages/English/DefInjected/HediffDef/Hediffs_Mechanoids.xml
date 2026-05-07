@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <NCL_Mech_Ironbark_Hediff.label>NCL: Ironbark</NCL_Mech_Ironbark_Hediff.label>
+  <NCL_Mech_Ironbark_Hediff.description>The Ironbark's honeycomb shock-absorbing layer and high-temperature regeneration cycle automatically fortify damaged areas upon taking a hit.</NCL_Mech_Ironbark_Hediff.description>
+  
+  <TW_Capacitor_Meltdown.label>Capacitor Meltdown</TW_Capacitor_Meltdown.label>
+  <TW_Capacitor_Meltdown.description>After a catastrophic capacitor overload explosion, the Tesla Centipede suffers a brief functional collapse. High-voltage arcs become erratic, movement speed drastically drops, and attacks may even suffer momentary power interruptions. Although it gradually recovers through autonomous recharging, it struggles to effectively pursue enemies or mount defensive counterattacks until fully recharged.</TW_Capacitor_Meltdown.description>
+  
+  <TW_Mech_Shell_Fortification_Hediff.label>Total War: Fortified Shell</TW_Mech_Shell_Fortification_Hediff.label>
+  <TW_Mech_Shell_Fortification_Hediff.description>Total War: Fortified Shell</TW_Mech_Shell_Fortification_Hediff.description>
+  
+  <TW_Mech_Shell_Fortification_ShellBreaked_Hediff.label>Total War: Shell Breached</TW_Mech_Shell_Fortification_ShellBreaked_Hediff.label>
+  <TW_Mech_Shell_Fortification_ShellBreaked_Hediff.description>Total War: Shell Breached</TW_Mech_Shell_Fortification_ShellBreaked_Hediff.description>
+  
+<!-- EN: Total War: War Queen -->
+<TW_Mech_Warqueen_Hediff.label>Total War: War Queen</TW_Mech_Warqueen_Hediff.label>
+<!-- EN: The War Queen utilizes loaded steel energy to reinforce chassis defenses. Defense strength scales with steel reserves: damage taken reduced to 50% at full capacity, increasing to 150% when depleted. -->
+<TW_Mech_Warqueen_Hediff.description>The War Queen utilizes loaded steel energy to reinforce chassis defenses. Defense strength scales with steel reserves: damage taken reduced to 50% at full capacity, increasing to 150% when depleted.</TW_Mech_Warqueen_Hediff.description>
+
+<!-- EN: Total War: Apocriton -->
+<TW_Mech_Apocriton_Hediff.label>Total War: Apocriton</TW_Mech_Apocriton_Hediff.label>
+<!-- EN: Apocriton's proprietary optical camouflage module renders it invisible on the battlefield. Stealth disengages only when player units approach within 25 tiles, and the unit remains non-hostile until decloaking occurs. -->
+<TW_Mech_Apocriton_Hediff.description>Apocriton's proprietary optical camouflage module renders it invisible on the battlefield. Stealth disengages only when player units approach within 45 tiles, and the unit remains non-hostile until decloaking occurs.</TW_Mech_Apocriton_Hediff.description>
+
+
+</LanguageData>

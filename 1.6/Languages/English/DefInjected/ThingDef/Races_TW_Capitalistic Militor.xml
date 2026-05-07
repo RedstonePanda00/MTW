@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<TW_Gestapo_Minitor.label>Overseer Militor</TW_Gestapo_Minitor.label>
+<TW_Gestapo_Minitor.description>This imposing mechanical overseer ensures Mecademic Militors work "efficiently and voluntarily" through methods including electrical prodding, moral condemnation ("Is this how you repay your employer's investment?"), and physical persuasion. Etched in its core logic is the principle: "Productivity above all - especially above the dignity of Mecademic Militors." At the first sign of colonial strikes, it initiates "mediation" - invariably through violent means.</TW_Gestapo_Minitor.description>
+<TW_Gestapo_Minitor.comps.CompMechPowerCell.tooltipOverride>Minitors have a one-time power source. When the power cell runs out, the mechanoid dies.</TW_Gestapo_Minitor.comps.CompMechPowerCell.tooltipOverride>
+<TW_Gestapo_Minitor.tools.head-0.label>head</TW_Gestapo_Minitor.tools.head-0.label>
+<TW_Gestapo_Minitor.tools.head-1.label>head</TW_Gestapo_Minitor.tools.head-1.label>
+
+<TW_Mech_Capitalistic_Militor.label>Capitalist Militor</TW_Mech_Capitalistic_Militor.label>
+<TW_Mech_Capitalistic_Militor.description>This chrome-plated mechanoid merchant roams between colonies with a perpetual electronic smile, peddling what it calls "win-win Militor-Trade" - though it remains the constant winner. For sufficient steel payment, it "generously" joins your colony with assistants, ensuring you understand that "labor (especially Mecademic Militors) is the most precious renewable resource." Its core processor runs a single imperative: profit maximization.</TW_Mech_Capitalistic_Militor.description>
+
+<TW_University_Minitor.label>Mecademic Militor</TW_University_Minitor.label>
+<TW_University_Minitor.description>These hapless tin-plated laborers form the colony's true workforce, lured by Capitalist Militors with promises of "internship opportunities" and "corporate blessings." They endure all grueling tasks: mining, hauling, cleaning, even serving as human sandbags. Their chassis bear constant scratches, optics flicker from perpetual overwork - dismissed by Capitalist Militors as "growth pains." (Warning: Chronic stress may trigger sudden breakdowns, where non-compliant units mysteriously generate "voluntary resignation reports.")</TW_University_Minitor.description>
+<TW_University_Minitor.comps.CompMechPowerCell.tooltipOverride>Minitors have a one-time power source. When the power cell runs out, the mechanoid dies.</TW_University_Minitor.comps.CompMechPowerCell.tooltipOverride>
+<TW_University_Minitor.tools.head.label>head</TW_University_Minitor.tools.head.label>
+
+  
+</LanguageData>

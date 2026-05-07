@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>TW_Mech_MechTeslaCentipede</defName>
+    <label>Tesla Centipede</label>
+    <gestationCycles>12</gestationCycles>
+    <displayPriority>300</displayPriority>
+    <description>Modified from a Glitterworld-era Tesla defense network prototype, this mechanized centipede was designed as an orbital drop-troop interceptor. After centuries of dormancy, it was reactivated by unknown signals. Its dorsal superconducting capacitors discharge multi-megavolt currents capable of vaporizing incoming artillery shells. However, its energy systems critically depend on electromagnetic stability - EMP impacts trigger cascading capacitor explosions through catastrophic overload.</description>
+    <researchPrerequisites>
+	<li>NCL_Doom_Calculation</li>
+	<li>NCL_Ignition_of_the_Crucible</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>550</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>375</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>NanostructuringChip</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <TW_Mech_MechTeslaCentipede>1</TW_Mech_MechTeslaCentipede>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>TW_Mech_MechTeslaCentipede</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

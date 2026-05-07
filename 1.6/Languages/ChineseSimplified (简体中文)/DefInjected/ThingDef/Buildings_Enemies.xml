@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <Artillery_TWAutoMortar.label>auto-mortar</Artillery_TWAutoMortar.label>
+  
+  <Artillery_TWAutoMortar.verbs.Verb_Shoot.label>auto-mortar</Artillery_TWAutoMortar.verbs.Verb_Shoot.label>
+  
+  
+  <Turret_TW_AutoMortar.label>小型自动迫击炮</Turret_TW_AutoMortar.label>
+  
+  <Turret_TW_AutoMortar.description>A self-powered, self-loading, automatic mortar. It can hit targets at any distance, over walls, but is quite inaccurate.</Turret_TW_AutoMortar.description>
+  
+  
+  <TW_Shell_HighExplosive.label>high-explosive shell</TW_Shell_HighExplosive.label>
+
+    
+  <Turret_TW_AutoChargeBlaster.label>电荷冲击炮</Turret_TW_AutoChargeBlaster.label>
+  
+  <Turret_TW_AutoChargeBlaster.description>一种配备电荷冲击炮的自供电炮塔。它在极近距离无法感知目标。</Turret_TW_AutoChargeBlaster.description>
+  
+  
+  <Turret_TW_AutoInferno.label>地狱火炮塔</Turret_TW_AutoInferno.label>
+  
+  <Turret_TW_AutoInferno.description>一种配备地狱火炮的自供电炮塔。它在极近距离无法感知目标，这个炮塔仿佛有特别的智能导致其会混烟。</Turret_TW_AutoInferno.description>
+  
+  
+  <TW_Airstrike_Signal_Transmitter.label>突袭信号指示终端</TW_Airstrike_Signal_Transmitter.label>
+  
+  <TW_Airstrike_Signal_Transmitter.description>机械族核心支援装备，具有强力护盾及反隐能力的突袭信号指示终端在场时可持续发送加密指令，精准召唤可空降型机械体进行高频投送。
+ 
+突袭机械体将配备伞降突袭背包，搭载 b2000 对殖民地进行骚扰及割裂阵型，为机械族袭击创造突破窗口，是掌控战场主动权的关键设备。</TW_Airstrike_Signal_Transmitter.description>
+  
+  <TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandDesc>Enable/disable invisibility detection</TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandDesc>
+  
+  <TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandLabel>Toggle Scanner</TW_Airstrike_Signal_Transmitter.comps.CompAntiInvisibilityField.toggleCommandLabel>
+  
+  
+  <Turret_TW_AutoBirgusMortar.label>椰子迫击炮</Turret_TW_AutoBirgusMortar.label>
+  
+  <Turret_TW_AutoBirgusMortar.description>在长期作战中，机械族发现其部队椰子蟹在战术，战略效能显著不足，在面对敌方的长距火力时力不从心。为此，他们启动了专项研究，通过对现役迫击炮的火力投射模式与椰子蟹的物理防御强度进行系统性评估，最终成功研发出专用于反制此类目标的椰子蟹迫击炮。</Turret_TW_AutoBirgusMortar.description>
+  
+</LanguageData>

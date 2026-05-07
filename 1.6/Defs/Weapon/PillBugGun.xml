@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BaseGun">
+    <defName>Disruptor_Positron_Cannon</defName>
+    <label>Disruptor Positron Cannon</label>
+    <description>Maximum range: 50 tiles. Capable of melting through 3-meter composite armor.</description>
+	<uiIconPath>Weapons/DisruptorPositronCannon</uiIconPath>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>40000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+	<verbs>
+		<li>
+			<verbClass>NCL.Verb_ShootBeam</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+      <warmupTime>7.5</warmupTime>
+			<range>45</range>
+			<minRange>10</minRange>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+			<showBurstShotStats>false</showBurstShotStats>
+			<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+			<beamDamageDef>Disruptor_Positron_Burn</beamDamageDef>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>36</muzzleFlashScale>
+			<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+			<beamGroundFleckDef>NCL_Fleck_BeamBurn</beamGroundFleckDef>
+	  	<beamTotalDamage>2000</beamTotalDamage>
+			<beamFleckChancePerTick>0.64</beamFleckChancePerTick>
+			<beamMoteDef>NCL_Mote_PillBugBeamBase</beamMoteDef>
+			<beamEndEffecterDef>NCL_PillBugBeam_End</beamEndEffecterDef>
+			<beamChanceToStartFire>1.0</beamChanceToStartFire>
+			<beamChanceToAttachFire>1.0</beamChanceToAttachFire>
+			<beamFireSizeRange>1.0~1.5</beamFireSizeRange>
+			<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+			<beamStartOffset>0.8</beamStartOffset>
+      <beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
+      <stopBurstWithoutLos>false</stopBurstWithoutLos>
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+			<ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <aimingLineMote>Mote_HellsphereCannon_Aim</aimingLineMote>
+        <aimingChargeMote>Mote_HellsphereCannon_Charge</aimingChargeMote>
+			<aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+			<aimingLineMoteFixedLength>25.9</aimingLineMoteFixedLength>
+			<soundAiming>HellsphereCannon_Aiming</soundAiming>
+			<beamLineFleckChanceCurve>
+			<points>
+				<li>(0, 0)</li>
+				<li>(0.65, 0.4)</li>
+				<li>(1, 0.75)</li>
+			</points>
+			</beamLineFleckChanceCurve>
+		</li>
+	</verbs>
+    <weaponTags>
+      <li>NCL_BillBugBeamGraser</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+      <ThingDef ParentName="MoteBase">
+    <defName>Mote_GraserBeamNCL</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/GraserBeam</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+	  <color>(159,9,14)</color>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>2</_Intensity>
+      </shaderParameters>
+	<drawSize>(5, 1)</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+		<defName>NCL_Fleck_BeamBurn</defName>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<fadeInTime>0.1</fadeInTime>
+		<fadeOutTime>2</fadeOutTime>
+		<solidTime>12</solidTime>
+		<randomGraphics>
+		<li>
+			<graphicClass>Graphic_Fleck</graphicClass>
+			<texPath>Things/Mote/BeamBurn/BeamBurn_A</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>2.65</drawSize>
+		</li>
+		<li>
+			<graphicClass>Graphic_Fleck</graphicClass>
+			<texPath>Things/Mote/BeamBurn/BeamBurn_B</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>2.65</drawSize>
+		</li>
+		<li>
+			<graphicClass>Graphic_Fleck</graphicClass>
+			<texPath>Things/Mote/BeamBurn/BeamBurn_C</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>2.65</drawSize>
+		</li>
+		</randomGraphics>
+	</FleckDef>
+  
+	<ThingDef ParentName="MoteBase">
+		<defName>NCL_Mote_PillBugBeamBase</defName>
+		<thingClass>MoteDualAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+		<fadeInTime>0.5</fadeInTime>
+		<fadeOutTime>0.5</fadeOutTime>
+		<solidTime>999999</solidTime>
+		<needsMaintenance>True</needsMaintenance>
+		<rotateTowardsTarget>True</rotateTowardsTarget>
+		<scaleToConnectTargets>True</scaleToConnectTargets>
+		<fadeOutUnmaintained>True</fadeOutUnmaintained>
+		</mote>
+		<drawOffscreen>true</drawOffscreen>
+		<graphicData>
+		<texPath>Motes/PillBugBeam</texPath>
+		<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+		<shaderType>MoteBeam</shaderType>
+		</graphicData>
+	</ThingDef>
+
+  </Defs>

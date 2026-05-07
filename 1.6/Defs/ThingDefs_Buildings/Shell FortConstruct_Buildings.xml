@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+        <defName>Building_PawnContainer</defName>
+        <label>Shellcore Bastion</label>
+		<thingClass>NCL.Building_PawnContainer</thingClass>
+        <size>(1,1)</size>
+    <building>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+        <statBases>
+            <Flammability>0</Flammability>
+            <MarketValue>1000</MarketValue>
+            <WorkToBuild>3000</WorkToBuild>
+        </statBases>
+		<useHitPoints>False</useHitPoints>
+        <graphicData>
+            <texPath>Buildings/ShellcoreBastion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(10,10)</drawSize>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+        </graphicData>
+        <uiIconPath>Buildings/ShellcoreBastion</uiIconPath>
+     <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+     </building>
+        <comps>
+    <li Class="NCL.CompProperties_ClearOwnerProjectiles" />
+            <li Class="NCL.CompProperties_ForceFaction">
+                <factionDef>Mechanoid</factionDef>
+            </li>
+            <li Class="CompProperties_Forbiddable" />
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>54</range>
+                    <interceptCount>4</interceptCount>
+                    <interceptTime>51</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>0.7</laserOffsetY>
+					<connectinglaserWidth>0.5</connectinglaserWidth>
+					<ignoreAirProjectiles>false</ignoreAirProjectiles>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<connectingLineFleck>NCL_Ground_LaserDefenseLine</connectingLineFleck>
+					<laserLineTexture>Motes/LaserLine</laserLineTexture>
+					<impactScale>1</impactScale>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+    <li Class="NCL.CompProperties_AloneDetonator">
+        <fuseTicks>3000</fuseTicks>
+        <explosiveRadius>14.5</explosiveRadius>
+      <damageType>Bomb</damageType>
+        <damAmount>75</damAmount>
+        <checkInterval>60</checkInterval> 
+        <includeDownedPawns>false</includeDownedPawns>
+        <customCountdownText>自毁倒计时: {0}秒</customCountdownText>
+    </li>
+	<li Class="NCL.CompProperties_TurretGun_GroundTarget">
+      <turretDef>Shell_FortConstruct_Barrage</turretDef> 
+    </li>
+		<li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+        </li>
+        </comps>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>false</rotatable>
+
+        <placeWorkers>
+            <li>TowerLaserDefense.PlaceWorker_TurretTop</li>
+            <li>TowerLaserDefense.PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+    </ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+        <defName>Building_PawnContainerForged</defName>
+        <label>Reforged Shellcore Bastion</label>
+		<thingClass>NCL.Building_PawnContainerForged</thingClass>
+        <size>(5,5)</size>
+		<useHitPoints>true</useHitPoints>
+        <statBases>
+		    <MaxHitPoints>5000</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <MarketValue>1000</MarketValue>
+            <WorkToBuild>3000</WorkToBuild>
+        </statBases>
+        <graphicData>
+            <texPath>Buildings/CompleteShellcoreBastion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(10,10)</drawSize>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+        </graphicData>
+        <uiIconPath>Buildings/CompleteShellcoreBastion</uiIconPath>
+     <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+     </building>
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>54</range>
+                    <interceptCount>4</interceptCount>
+                    <interceptTime>51</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>0.7</laserOffsetY>
+					<connectinglaserWidth>0.5</connectinglaserWidth>
+					<ignoreAirProjectiles>false</ignoreAirProjectiles>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<connectingLineFleck>NCL_Ground_LaserDefenseLine</connectingLineFleck>
+					<laserLineTexture>Motes/LaserLine</laserLineTexture>
+					<impactScale>1</impactScale>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+	<li Class="NCL.CompProperties_TurretGun_GroundTarget">
+      <turretDef>Shell_FortConstruct_Barrage</turretDef> 
+    </li>
+		<li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+        </li>
+        </comps>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>false</rotatable>
+
+        <placeWorkers>
+            <li>TowerLaserDefense.PlaceWorker_TurretTop</li>
+            <li>TowerLaserDefense.PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+    </ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+        <defName>TW_Shellcore_Bastion</defName>
+        <label>Shellcore Bastion Prototype</label>
+        <size>(5,5)</size>
+    <building>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+        <statBases>
+			<MaxHitPoints>50000</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <MarketValue>1000</MarketValue>
+            <WorkToBuild>3000</WorkToBuild>
+        </statBases>
+		<useHitPoints>true</useHitPoints>
+        <graphicData>
+            <texPath>Buildings/ShellcoreBastion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(10,10)</drawSize>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+        </graphicData>
+        <uiIconPath>Buildings/ShellcoreBastion</uiIconPath>
+     <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+     </building>
+        <comps>
+    <li Class="NCL.CompProperties_ClearOwnerProjectiles" />
+            <li Class="NCL.CompProperties_ForceFaction">
+                <factionDef>Mechanoid</factionDef>
+            </li>
+            <li Class="CompProperties_Forbiddable" />
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>54</range>
+                    <interceptCount>4</interceptCount>
+                    <interceptTime>51</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>0.7</laserOffsetY>
+					<connectinglaserWidth>0.5</connectinglaserWidth>
+					<ignoreAirProjectiles>false</ignoreAirProjectiles>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<connectingLineFleck>NCL_Ground_LaserDefenseLine</connectingLineFleck>
+					<laserLineTexture>Motes/LaserLine</laserLineTexture>
+					<impactScale>1</impactScale>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+	<li Class="NCL.CompProperties_TurretGun_GroundTarget">
+      <turretDef>Shell_FortConstruct_Barrage</turretDef> 
+    </li>
+		<li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+        </li>
+	<li Class="NCL.CompProperties_SpawnThingOnDestroy">
+		<thingDef>Broken_Shellcore_Bastion</thingDef>
+	</li>
+	<li Class="NCL.CompProperties_MechanicalBuilding">
+	</li>
+        </comps>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>false</rotatable>
+
+        <placeWorkers>
+            <li>TowerLaserDefense.PlaceWorker_TurretTop</li>
+            <li>TowerLaserDefense.PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+    </ThingDef>
+	
+	<ThingDef>
+    <defName>ShellBreakSpawner</defName>
+    <label>Carapace Fracture Spawner</label>
+    <description>Subterranean entity emergence detected at this location</description>
+    <thingClass>RimWorld.BuildingPawnSpawner</thingClass>
+    <size>(1, 1)</size>
+    <building Class="RimWorld.BuildingProperties_PawnSpawner">
+        
+        <groundSpawnerThingToSpawn>TW_Mech_Shell_Fortification_ShellBreakFormed</groundSpawnerThingToSpawn>
+        <pawnKindToSpawn>TW_Mech_Shell_Fortification_ShellBreakFormed_Kind</pawnKindToSpawn>
+        <defaultFaction>Mechanoid</defaultFaction>
+        
+        
+        <groundSpawnerSpawnDelay>1000~1500</groundSpawnerSpawnDelay>
+        <groundSpawnerDestroyAdjacent>true</groundSpawnerDestroyAdjacent>
+        <groundSpawnerLetterLabel>Pit gate opened</groundSpawnerLetterLabel>
+        
+        
+        <groundSpawnerSustainedEffecter>EmergencePointSustained8X8</groundSpawnerSustainedEffecter>
+        <groundSpawnerCompleteEffecter>EmergencePointComplete8X8</groundSpawnerCompleteEffecter>
+    </building>
+	
+    <destroyable>false</destroyable>
+    <holdsRoof>true</holdsRoof>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <drawerType>RealtimeOnly</drawerType>
+    <uiIconPath>Ability/ReleaseFromBuilding</uiIconPath>
+</ThingDef>
+
+
+   <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Shell_FortConstruct_Barrage</defName>
+    <label>Conch Shell Artillery System</label>
+    <graphicData>
+      <texPath>Things/None</texPath>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <weaponTags>
+      <li>Shell_FortConstruct_Barrage</li>
+    </weaponTags>
+    <verbs>
+      <li>
+	    <verbClass>Verb_Shoot</verbClass>
+	    <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+		<defaultProjectile>TW_Mech_Shell_Fortification_MissileProjectile</defaultProjectile>
+        <range>500</range>
+		<warmupTime>0</warmupTime>
+        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+		<forcedMissRadius>5</forcedMissRadius>
+        <burstShotCount>12</burstShotCount>
+        <soundCast>Shot_Autocannon</soundCast>
+        <muzzleFlashScale>7</muzzleFlashScale>
+		<linkedBodyPartsGroup>BulbTurret</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>false</ensureLinkedBodyPartsGroupAlwaysUsable>
+		<defaultCooldownTime>5</defaultCooldownTime>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  
+  <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+		<defName>Broken_Shellcore_Bastion</defName>
+		<label>Fractured Shellcore Bastion</label>
+		<description>Critical structural damage detected - core systems compromised</description>
+		<thingClass>NCL.Building_Ancient_WarBeacon</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+        <texPath>Buildings/BrokenShellcoreBastion</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <drawSize>(10,10)</drawSize>
+        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+      <shadowData>
+        <volume>(1.1, 0.75, 1.1)</volume>
+      </shadowData>
+    </graphicData>
+	    <uiIconPath>Buildings/BrokenShellcoreBastion</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>42</pathCost>
+		<destroyable>true</destroyable>
+        <useHitPoints>true</useHitPoints>
+		<statBases>
+		    <MaxHitPoints>20000</MaxHitPoints>
+			<WorkToBuild>60000</WorkToBuild>
+			<Mass>50000</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>(5,5)</size>
+		<tickerType>Rare</tickerType>
+		<rotatable>true</rotatable>
+		<constructEffect>ConstructWood</constructEffect>
+        <costList>
+            <Steel>10000</Steel>
+        </costList>
+		<building>
+            <alwaysDeconstructible>true</alwaysDeconstructible>
+			<deconstructible>true</deconstructible>
+			<destroySound>BuildingDestroyed_Wood_Small</destroySound>
+		</building>
+		<modExtensions>
+			<li Class="NCL.ModExtension_AncientWarBeacon">
+				<finalThing>TW_Complete_Shellcore_Bastion</finalThing>
+				<toggleGizmoIcon>ModIcon/FixingTheBuilding</toggleGizmoIcon>
+                <toggleGizmoOffIcon>ModIcon/NotFixingTheBuilding</toggleGizmoOffIcon>
+				<stages>
+					<li>
+						<Things>
+							<Steel>10000</Steel>
+						</Things>
+						<Rewards>
+							<ComponentSpacer>1</ComponentSpacer>
+						</Rewards>
+						<graphic>
+                           <texPath>Buildings/BrokenShellcoreBastion</texPath>
+                           <graphicClass>Graphic_Single</graphicClass>
+                           <drawSize>(10,10)</drawSize>
+                           <shadowData>
+                           <volume>(1.1, 0.75, 1.1)</volume>
+                           </shadowData>
+						</graphic>
+
+					</li>
+				</stages>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+        <defName>TW_Complete_Shellcore_Bastion</defName>
+        <label>Operational Shellcore Bastion</label>
+        <size>(5,5)</size>
+        <statBases>
+			<MaxHitPoints>50000</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <MarketValue>1000</MarketValue>
+            <WorkToBuild>3000</WorkToBuild>
+        </statBases>
+		<useHitPoints>true</useHitPoints>
+        <graphicData>
+            <texPath>Buildings/CompleteShellcoreBastion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(10,10)</drawSize>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+        </graphicData>
+        <uiIconPath>Buildings/CompleteShellcoreBastion</uiIconPath>
+     <building>
+     </building>
+        <comps>
+	<li Class="NCL.CompProperties_TurretGun_GroundTarget">
+      <turretDef>Shell_FortConstruct_Barrage</turretDef> 
+    </li>
+            <li Class="CompProperties_Forbiddable" />
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+                <laserDefenceProperties>
+                    <range>54</range>
+                    <interceptCount>4</interceptCount>
+                    <interceptTime>51</interceptTime>
+					<laserOffsetX>0</laserOffsetX>
+					<laserOffsetY>0.7</laserOffsetY>
+					<connectinglaserWidth>0.5</connectinglaserWidth>
+					<ignoreAirProjectiles>false</ignoreAirProjectiles>
+					<ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+					<connectingLineFleck>NCL_Ground_LaserDefenseLine</connectingLineFleck>
+					<laserLineTexture>Motes/LaserLine</laserLineTexture>
+					<impactScale>1</impactScale>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+					<interceptSound>Explosion_Rocket</interceptSound>
+                    <graphicData>
+                        <texPath>Things/None</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <drawSize>(1,1)</drawSize>
+                        <shaderType>Transparent</shaderType>
+                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
+                    </graphicData>
+                    <needSight>true</needSight>
+                </laserDefenceProperties>
+            </li>
+		<li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+        </li>
+	<li Class="NCL.CompProperties_SpawnThingOnDestroy">
+		<thingDef />
+	</li>
+        </comps>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>false</rotatable>
+        <placeWorkers>
+            <li>TowerLaserDefense.PlaceWorker_TurretTop</li>
+            <li>TowerLaserDefense.PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+    </ThingDef>
+
+	<WorkGiverDef>
+		<defName>WorkGiver_RebuildBrokenShellcoreBastion</defName>
+		<label>Rebuild Broken Shellcore Bastion</label>
+		<giverClass>NCL.WorkGiver_RebuildBrokenShellcoreBastion</giverClass>
+		<workType>Hauling</workType>
+		<verb>fill</verb>
+		<gerund>filling</gerund>
+		<priorityInType>114</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<canBeDoneByMechs>false</canBeDoneByMechs>
+	</WorkGiverDef>
+	
+		<JobDef>
+		<defName>RebuildBrokenShellcoreBastion</defName>
+		<driverClass>NCL.JobDriver_RebuildTheWarBeacon</driverClass>
+		<reportString>修复 TargetA.</reportString>
+		<suspendable>false</suspendable>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+
+</Defs>

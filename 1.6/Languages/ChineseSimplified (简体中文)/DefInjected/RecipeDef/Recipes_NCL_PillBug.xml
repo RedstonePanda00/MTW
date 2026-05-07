@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <NCL_Mech_PillBug.label>制造闪光西瓜虫</NCL_Mech_PillBug.label>
+  <NCL_Mech_PillBug.description>闪光西瓜虫是一种用于大面积杀伤与游走狙击的重型机械体，虽看起来很厚重但防御力实际不如战争巨蝎。
+其内置的“裂解者”阳电子炮是其如此肥大的原因，过大能耗令其构型变成了皮薄馅大的胖宝宝。原本该机械体还拥有拦截弹幕的功能，但在种种专员的努力下，移除了两侧的拦截系统。
+为了弥补其生存力，lisa加班开发出「跳起来滚」机动工程。令看似笨拙的西瓜虫可以弹射起步化身跳跃大运，实现快速转移狙击地点。
+R总书记非常喜欢西瓜虫的新构型，据说办公室里全是西瓜虫的微缩模型。</NCL_Mech_PillBug.description>
+  <NCL_Mech_PillBug.jobString>Gestating mech.</NCL_Mech_PillBug.jobString>
+
+</LanguageData>

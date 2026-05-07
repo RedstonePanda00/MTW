@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <ShellFortConstructBossgroup.questContentRules.rulesStrings>
+    <li>bossDefeatedLetterLabel-&gt;[escortees0_label] defeated: [reward_label]</li>
+    <li>bossDefeatedStudyChipLetterText-&gt;[defeated][study][manufacture]</li>
+    <li>bossDefeatedLetterText-&gt;[defeated][manufacture]</li>
+    <li>defeated-&gt;The hostile [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
+    <li>manufacture-&gt;\n\nThe chip can also be used to create more advanced mechanoids.</li>
+    <li>study-&gt;\n\nYou can study the [reward_label] by selecting a mechanitor and right-clicking the chip. Studying a [reward_label] helps unlock higher tiers of mechtech research.</li>
+  </ShellFortConstructBossgroup.questContentRules.rulesStrings>
+  
+  <ShellFortConstructBossgroup.questDescriptionRules.rulesStrings>
+    <li>questDescription-&gt;ShellFortConstructBossgroup</li>
+  </ShellFortConstructBossgroup.questDescriptionRules.rulesStrings>
+  
+  <ShellFortConstructBossgroup.questNameRules.rulesStrings>
+    <li>questName-&gt;ShellFortConstructBossgroup</li>
+  </ShellFortConstructBossgroup.questNameRules.rulesStrings>
+  
+</LanguageData>

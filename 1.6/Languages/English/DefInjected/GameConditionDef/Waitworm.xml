@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ArchoWorm Incoming -->
+  <NCL_WaitWorm.label>ArchoWorm Incoming</NCL_WaitWorm.label>
+  <!-- EN: An archoWorm unit will be deployed to your primary colony. If you abandon the colony before its arrival, you will permanently forfeit this archomechanical specimen. -->
+  <NCL_WaitWorm.description>An archoWorm unit will be deployed to your primary colony. If you abandon the colony before its arrival, you will permanently forfeit this archomechanical specimen.</NCL_WaitWorm.description>
+  <!-- EN: ArchoWorm Delivery Complete -->
+  <NCL_WaitWorm.endMessage>ArchoWorm Delivery Complete</NCL_WaitWorm.endMessage>
+  <!-- EN: The deployed archoWorm has arrived at your colony. Prepare for acquisition procedures. -->
+  <NCL_WaitWorm.letterText>The deployed archoWorm has arrived at your colony. Prepare for acquisition procedures.</NCL_WaitWorm.letterText>
+  
+  <!-- EN: ArchoWorm Trial Imminent -->
+  <NCL_WaitWormFight.label>ArchoWorm Trial Imminent</NCL_WaitWormFight.label>
+  <!-- EN: An archoWorm combat unit is en route to your primary colony. Abandoning the colony prior to engagement will be considered trial failure. -->
+  <NCL_WaitWormFight.description>An archoWorm combat unit is en route to your primary colony. Abandoning the colony prior to engagement will be considered trial failure.</NCL_WaitWormFight.description>
+  <!-- EN: ArchoWorm Engagement Protocol Initiated -->
+  <NCL_WaitWormFight.endMessage>ArchoWorm Engagement Protocol Initiated</NCL_WaitWormFight.endMessage>
+  <!-- EN: The archoWorm trial unit has reached your perimeter. Assume combat positions - this mechanoid requires subjugation through force. -->
+  <NCL_WaitWormFight.letterText>The archoWorm trial unit has reached your perimeter. Assume combat positions - this mechanoid requires subjugation through force.</NCL_WaitWormFight.letterText>
+
+</LanguageData>

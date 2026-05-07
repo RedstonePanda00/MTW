@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+
+<Ancient_WarBeacon_PartsA.label>破碎信标碎片</Ancient_WarBeacon_PartsA.label>
+<Ancient_WarBeacon_PartsA.description>战争信标残骸中散落的组件碎片，其内部结构已严重损毁，不具备任何战术或通讯功能。但对于资源短缺的殖民地来说，这些碎片依旧可作为金属与复合材料的来源。</Ancient_WarBeacon_PartsA.description>
+
+<Ancient_WarBeacon_PartsB.label>破碎信标碎片</Ancient_WarBeacon_PartsB.label>
+<Ancient_WarBeacon_PartsB.description>战争信标残骸中散落的组件碎片，其内部结构已严重损毁，不具备任何战术或通讯功能。但对于资源短缺的殖民地来说，这些碎片依旧可作为金属与复合材料的来源。</Ancient_WarBeacon_PartsB.description>
+
+
+<Broken_War_Scorpion_Rust.label>战争巨蝎残骸</Broken_War_Scorpion_Rust.label>
+<Broken_War_Scorpion_Rust.description>一只战争巨蝎的残骸,你感受到其中似乎存在某些有价值的事物</Broken_War_Scorpion_Rust.description>
+<Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterLabel>War Scorpion Wreckage</Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterLabel>
+<Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterText>Approaching the War Scorpion wreckage reveals a faintly glowing red cube embedded in its cranial unit - potentially extractable for your use.</Broken_War_Scorpion_Rust.comps.CompProximityLetter.letterText>
+<Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterLabel>Available: {LEAVINGS1_label}</Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterLabel>
+<Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterText>Destruction yields a Red Cube - possibly key to unlocking advanced technologies.</Broken_War_Scorpion_Rust.comps.CompLeavingsLetter.letterText>
+<Broken_War_Scorpion_Rust.comps.CompInspectString.inspectString>Contains a faintly luminous red cube.</Broken_War_Scorpion_Rust.comps.CompInspectString.inspectString>
+
+
+<Building_Ancient_WarBeacon.label>破碎的信标旧址</Building_Ancient_WarBeacon.label>
+<Building_Ancient_WarBeacon.description>这座战争信标早已饱经战火的洗礼，残垣断壁诉说着一场惨烈的过往。尽管其表面伤痕累累、结构破碎，但核心框架依旧坚固如初，仿佛静静等待着重返战场的那一刻。
+如果你能筹集足够的资源并完成修复，或许就能再次唤醒它沉睡的力量——将其重构为真正的战争信标，点燃机械族对这片土地的关注，也为你带来前所未有的科技突破。
+它静候着……是重启，还是遗忘？</Building_Ancient_WarBeacon.description>
+<Building_Ancient_WarBeacon.comps.CompProximityLetter.letterLabel>Ruined Beacon Site</Building_Ancient_WarBeacon.comps.CompProximityLetter.letterLabel>
+<Building_Ancient_WarBeacon.comps.CompProximityLetter.letterText>This war beacon bears brutal combat scars - fractured structures whispering of catastrophic battles. Though shattered, its core frame remains resilient, awaiting reactivation. With sufficient resources it could be rebuilt into a functional war beacon, attracting mechanoid attention while unlocking unprecedented technologies. The choice stands: reactivate... or abandon?</Building_Ancient_WarBeacon.comps.CompProximityLetter.letterText>
+<Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoLabel>NCL_WARBEACON_TOGGLE_GIZMO_LABEL</Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoLabel>
+<Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoOffLabel>NCL_WARBEACON_TOGGLE_GIZMO_OFF_LABEL</Building_Ancient_WarBeacon.modExtensions.0.toggleGizmoOffLabel>
+
+
+<Building_TotalWarfareActivator.label>战争信标</Building_TotalWarfareActivator.label>
+<Building_TotalWarfareActivator.description>你已成功修复这座战争信标，它庞大的构造在废土之上仿佛一尊沉眠的巨兽，令人不寒而栗。作为机械族用以标定战略坐标的核心建筑，它的激活意味着你将暴露于他们的视野之中——更强大、更致命的机械部队将陆续涌来，妄图将你彻底摧毁。
+但高风险亦伴随高回报。通过分析信标的核心数据，你有望破解机械族的技术壁垒，解锁曾经遥不可及的尖端科技。
+选择权在你手中——是沉默以保全，还是点燃战火，直面未知？
+打开它，打开战争。</Building_TotalWarfareActivator.description>
+<Building_TotalWarfareActivator.comps.CompUsable.useLabel>Activate Total Warfare</Building_TotalWarfareActivator.comps.CompUsable.useLabel>
+
+  
+</LanguageData>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<!-- EN: Centurion Arsenal Codex: Composite Tactical Backmount -->
+<Centurion_Arsenal_Codex_Hediff.label>Centurion Arsenal Codex: Composite Tactical Backmount</Centurion_Arsenal_Codex_Hediff.label>
+<!-- EN: You now have everything, go for it. -->
+<Centurion_Arsenal_Codex_Hediff.description>You now have everything, go for it.</Centurion_Arsenal_Codex_Hediff.description>
+
+<!-- EN: Crimson Slagburst Scorched -->
+<CrimsonSlagburstScorched.label>Crimson Slagburst Scorched</CrimsonSlagburstScorched.label>
+<!-- EN: Crimson Erosion Condensed Burn Scar -->
+<CrimsonSlagburstScorched.description>Crimson Erosion Condensed Burn Scar</CrimsonSlagburstScorched.description>
+
+<!-- EN: Optical Camouflage Active -->
+<GD_Hediff_CloakedEffect.label>Optical Camouflage Active</GD_Hediff_CloakedEffect.label>
+<!-- EN: Optical Camouflage Active -->
+<GD_Hediff_CloakedEffect.description>Optical Camouflage Active</GD_Hediff_CloakedEffect.description>
+
+<!-- EN: Moonlight Coherence Synchronization -->
+<Moonlight_Synchronization.label>Moonlight Coherence Synchronization</Moonlight_Synchronization.label>
+<!-- EN: Stimulated by moonlight radiation, the implanted photon crystal beam iris and neural spectral guidance membrane resonate, putting the host into an overload state with significantly enhanced combat perception and reaction speed -->
+<Moonlight_Synchronization.description>Stimulated by moonlight radiation, the implanted photon crystal beam iris and neural spectral guidance membrane resonate, putting the host into an overload state with significantly enhanced combat perception and reaction speed</Moonlight_Synchronization.description>
+
+<!-- EN: Tactical Data Link Synchronization -->
+<NCL_Overwatch_Nexus_MechBoost.label>Tactical Data Link Synchronization</NCL_Overwatch_Nexus_MechBoost.label>
+<!-- EN: Through tactical networks built by anti-stealth radar, real-time optimization of mechanoid fire control systems significantly improves shooting accuracy and battlefield response speed -->
+<NCL_Overwatch_Nexus_MechBoost.description>Through tactical networks built by anti-stealth radar, real-time optimization of mechanoid fire control systems significantly improves shooting accuracy and battlefield response speed</NCL_Overwatch_Nexus_MechBoost.description>
+
+<!-- EN: Shadow Tag -->
+<NCL_Shadow_Tag_Hediff.label>Shadow Tag</NCL_Shadow_Tag_Hediff.label>
+<!-- EN: Target has been shadow tagged and cannot move for a short time -->
+<NCL_Shadow_Tag_Hediff.description>Target has been shadow tagged and cannot move for a short time</NCL_Shadow_Tag_Hediff.description>
+
+<!-- EN: Extended Shoulder Turret -->
+<NCL_ShoulderTurretActive.label>Extended Shoulder Turret</NCL_ShoulderTurretActive.label>
+<!-- EN: Invisible hediff with shoulder turret -->
+<NCL_ShoulderTurretActive.description>Invisible hediff with shoulder turret</NCL_ShoulderTurretActive.description>
+<!-- EN: Shoulder Turret Gun -->
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.label>Shoulder Turret Gun</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.label>
+<!-- EN: A low caliber autonomous gun made to be mounted on a shoulder -->
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.description>A low caliber autonomous gun made to be mounted on a shoulder</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.description>
+<!-- EN: Shoulder Turret Gun -->
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.visualLabel>Shoulder Turret Gun</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.visualLabel>
+<!-- EN: Shoulder Turret Gun -->
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbs.shoulder_turret_gun.label>Shoulder Turret Gun</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbs.shoulder_turret_gun.label>
+
+<!-- EN: Solar Decoherence -->
+<NCL_Solar_Disruption.label>Solar Decoherence</NCL_Solar_Disruption.label>
+<!-- EN: "Like the moon falling into the sea." Inevitable aftereffect following termination of the "Final Gaze" protocol, resulting from quantum entanglement structure rupture between photon crystal beams and neural guidance membranes, causing host's entire sensory and motor systems to enter decoherence collapse phase. Although consciousness remains, body and mind are severely dysregulated -->
+<NCL_Solar_Disruption.description>"Like the moon falling into the sea." Inevitable aftereffect following termination of the "Final Gaze" protocol, resulting from quantum entanglement structure rupture between photon crystal beams and neural guidance membranes, causing host's entire sensory and motor systems to enter decoherence collapse phase. Although consciousness remains, body and mind are severely dysregulated</NCL_Solar_Disruption.description>
+
+<!-- EN: Terminus Gaze -->
+<NCL_Terminus_Gazed_Hediff.label>Terminus Gaze</NCL_Terminus_Gazed_Hediff.label>
+<!-- EN: Final combat protocol in NCL "Moonlight Child" project, restricted to LUN-EYE-07α grade iris carriers. When activated, the implantee enters a near-divine combat state: time seems to freeze, enemies unaware, destruction arrives. But the cost is unavoidable - after protocol ends, host suffers complete neural collapse, falling into sensory paralysis and combat capability loss -->
+<NCL_Terminus_Gazed_Hediff.description>Final combat protocol in NCL "Moonlight Child" project, restricted to LUN-EYE-07α grade iris carriers. When activated, the implantee enters a near-divine combat state: time seems to freeze, enemies unaware, destruction arrives. But the cost is unavoidable - after protocol ends, host suffers complete neural collapse, falling into sensory paralysis and combat capability loss</NCL_Terminus_Gazed_Hediff.description>
+
+<!-- EN: Symbiotic Membrane: Dynamic Physiological Regulation -->
+<Symbiomesh.label>Symbiotic Membrane: Dynamic Physiological Regulation</Symbiomesh.label>
+<!-- EN: Nano-fluids actively regulate physiological state, enhancing physical efficiency and operational adaptability -->
+<Symbiomesh.description>Nano-fluids actively regulate physiological state, enhancing physical efficiency and operational adaptability</Symbiomesh.description>
+
+<!-- EN: Death Approaches -->
+<The_coming_death.label>Death Approaches</The_coming_death.label>
+<!-- EN: Detonate it -->
+<The_coming_death.description>Detonate it</The_coming_death.description>
+
+<!-- EN: Encouraged -->
+<TW_WasEncouraged.label>Encouraged</TW_WasEncouraged.label>
+<!-- EN: Encouraged -->
+<TW_WasEncouraged.description>Encouraged</TW_WasEncouraged.description>
+
+<!-- EN: Zero-Point Flash Overdrive -->
+<Zero_Point_Overdrive_Hediff.label>Zero-Point Flash Overdrive</Zero_Point_Overdrive_Hediff.label>
+<!-- EN: Mechanical joints enter overdrive mode, movement speed increased, damage taken halved, shooting cooldown halved -->
+<Zero_Point_Overdrive_Hediff.description>Mechanical joints enter overdrive mode, movement speed increased, damage taken halved, shooting cooldown halved</Zero_Point_Overdrive_Hediff.description>
+  
+</LanguageData>

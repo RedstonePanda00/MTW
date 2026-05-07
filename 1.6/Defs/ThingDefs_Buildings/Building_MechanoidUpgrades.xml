@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>Cybernethic_Arbo</defName>
+    <label>Cybernethic Arbo</label>
+    <description>Strategic mechanoid enhancement facility developed by NCL mechanitors. Permanently augments all allied mechanical units within range through continuous fuel consumption, serving as the core nexus for battlefield evolution of mechanoid forces.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+      <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData>
+      <texPath>Buildings/CybernethicArbo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(15,15)</drawSize>
+      <shadowData>
+        <volume>(1.93,1,1.69)</volume>
+        <offset>(-0.03,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+	<uiIconPath>Buildings/CybernethicArboUI</uiIconPath>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.9</fillPercent>
+    <pathCost>50</pathCost>
+    <rotatable>false</rotatable>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints>
+      <WorkToBuild>50000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>2000</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(5,5)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <costList>
+      <Steel>800</Steel>
+	  <Plasteel>800</Plasteel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1000</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+	 <li Class="CompProperties_Refuelable">
+				<fuelCapacity>100.0</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>100</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>NCL_AdvancedPowerCell</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
+				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>100</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>15</glowRadius>
+        <glowColor>(187, 46, 23, 0)</glowColor>
+
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>30</heatPerSecond>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+	<li Class="NCL.CompProperties_DualHediffMechHealer">
+        
+        <hediffOne>FireControl_Upgrade_I</hediffOne>
+        <texPathOne>ModIcon/FireControl</texPathOne>
+        <labelOne>FireControl_Upgrade</labelOne>
+        
+        
+        <hediffTwo>Armor_Upgrade_I</hediffTwo>
+        <texPathTwo>ModIcon/Armor</texPathTwo>
+        <labelTwo>Armor_Upgrade</labelTwo>
+        
+        
+        <radius>25</radius>
+        <healIntervalTicks>300</healIntervalTicks>
+        
+        
+        <fuelCostLight>1.0</fuelCostLight>
+        <fuelCostMedium>2</fuelCostMedium>
+        <fuelCostHeavy>4.0</fuelCostHeavy>
+        <fuelCostUltraHeavy>8.0</fuelCostUltraHeavy>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <designationHotKey>Misc3</designationHotKey>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>NCL_Cybernethic_Arbo</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+  </ThingDef>
+  
+   <HediffDef>
+    <defName>FireControl_Upgrade_I</defName>
+    <label>Fire Control Upgrade</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Fire Control Upgrade</description>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<isBad>false</isBad>
+	<stages>
+	  <li>
+		<statFactors>
+            <ShootingAccuracyPawn>1.15</ShootingAccuracyPawn>
+			<VEF_VerbRangeFactor>1.15</VEF_VerbRangeFactor>
+			<RangedCooldownFactor>0.9</RangedCooldownFactor>
+			<AimingDelayFactor>0.9</AimingDelayFactor>		  
+        </statFactors>
+      </li>
+	</stages>
+	<comps>
+	  <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+  </HediffDef>
+  
+   <HediffDef>
+    <defName>Armor_Upgrade_I</defName>
+    <label>Armor Upgrade</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Armor Upgrade</description>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<isBad>false</isBad>
+	<stages>
+	  <li>
+		<statFactors>
+			<IncomingDamageFactor MayRequire="fxz.glitterworlddestroyer.mk5">0.8</IncomingDamageFactor>
+        </statFactors>
+		<statOffsets>
+		  <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+  </HediffDef>
+  
+</Defs>

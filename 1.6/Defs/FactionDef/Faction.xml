@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase">
+	<defName>NCL_faction</defName>
+	<label>Nyar Neo-Communist Alliance</label>
+	<description>you must spawn both NCL factions for the mod to run sucessfully.</description>
+	<pawnSingular>mechanoid</pawnSingular>
+	<pawnsPlural>mechanoids</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>2000</configurationListOrderPriority>
+    <displayInFactionSelection>false</displayInFactionSelection>
+	<factionNameMaker>NamerFactionNyar</factionNameMaker>
+	<factionIconPath>Things/NCLIcon</factionIconPath>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(100,100)</li>
+        <li>(10000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <raidsForbidden>true</raidsForbidden>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+	<humanlikeFaction>false</humanlikeFaction>
+	<hidden>true</hidden>
+	<autoFlee>false</autoFlee>
+	<canUseAvoidGrid>false</canUseAvoidGrid>
+	<techLevel>Archotech</techLevel>
+	<earliestRaidDays>90</earliestRaidDays>
+	<permanentEnemy>False</permanentEnemy>
+	<hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+	<pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <NCL_Mech_Dinergate_Kind>1</NCL_Mech_Dinergate_Kind>
+        </options>
+      </li>
+    </pawnGroupMakers>
+	<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+	<allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+	<maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+	<configurationListOrderPriority>80</configurationListOrderPriority>
+  </FactionDef>
+	  
+  <RulePackDef>
+    <defName>NamerFactionNyar</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name-&gt;NCL</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+    <FactionDef ParentName="FactionBase">
+	<defName>NCL_factionEnemy</defName>
+	<label>NCL</label>
+    <permanentEnemy>true</permanentEnemy>
+	<description>特殊情况下的NCL派系，属于敌方阵营，必须被生成。</description>
+	<pawnSingular>mechanoid</pawnSingular>
+	<pawnsPlural>mechanoids</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>2000</configurationListOrderPriority>
+    <displayInFactionSelection>false</displayInFactionSelection>
+	<factionNameMaker>NamerFactionNyar</factionNameMaker>
+	<factionIconPath>Things/NCLIcon</factionIconPath>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(100,100)</li>
+        <li>(10000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <raidsForbidden>true</raidsForbidden>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+	<humanlikeFaction>false</humanlikeFaction>
+	<hidden>true</hidden>
+	<autoFlee>false</autoFlee>
+	<canUseAvoidGrid>false</canUseAvoidGrid>
+	<techLevel>Archotech</techLevel>
+	<earliestRaidDays>90</earliestRaidDays>
+	<permanentEnemy>true</permanentEnemy>
+	<hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+	<pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <NCL_Mech_Dinergate_Kind>1</NCL_Mech_Dinergate_Kind>
+        </options>
+      </li>
+    </pawnGroupMakers>
+	<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+	<allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+	<maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+	<configurationListOrderPriority>80</configurationListOrderPriority>
+  </FactionDef>
+	  
+</Defs>

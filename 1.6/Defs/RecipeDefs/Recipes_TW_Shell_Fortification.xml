@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>TW_Mech_Shell_Fortification_Reforged</defName>
+    <label>Shell Fortconstruct</label>
+    <gestationCycles>10</gestationCycles>
+    <researchPrerequisite>NCL_Fortress_Protocol</researchPrerequisite>
+    <displayPriority>100</displayPriority>
+    <description>Shell Fortconstruct is an extremely rare titan-class unit among mechanoids, standing twenty meters tall and clad in massive armor composed of multiple layers of alien metals and alloy fragments, presenting an awe-inspiring presence. Its design philosophy combines multiple strategic objectives including siege warfare, suppression, and area control, excelling particularly at breaching enemy defensive lines and clearing battlefield remnants with absolute firepower.
+
+The Shell Fortification Construct typically descends from the sky, crashing heavily at the colony's periphery, entering a turret-mode standby state while launching missiles to cause localized earthquakes and panic. Simultaneously, attached mechanoid main forces will drop from the opposite side, forming pincer attack formations that dramatically intensify offensive pressure.</description>
+    <researchPrerequisite>NCL_Fortress_Protocol</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>2000</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>2000</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+	        <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>1500</count>
+      </li>
+	        <li MayRequire="Ludeon.RimWorld.Odyssey">
+        <filter>
+          <thingDefs>
+            <li>GravlitePanel</li>
+          </thingDefs>
+        </filter>
+        <count>750</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AIPersonaCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TW_ArmorBlitzWarfare</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <products>
+      <TW_Mech_Shell_Fortification_Reforged>1</TW_Mech_Shell_Fortification_Reforged>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>TW_Mech_Shell_Fortification_Reforged</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

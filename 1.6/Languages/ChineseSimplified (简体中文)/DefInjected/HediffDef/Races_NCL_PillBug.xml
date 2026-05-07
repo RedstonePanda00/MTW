@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <NCL_BeatenOff.label>Beaten off</NCL_BeatenOff.label>
+  
+  <NCL_BeatenOff.description>Beaten away. Colliding into a wall will result in additional damage.</NCL_BeatenOff.description>
+  
+</LanguageData>

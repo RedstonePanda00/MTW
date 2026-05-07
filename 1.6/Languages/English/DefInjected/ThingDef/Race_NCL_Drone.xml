@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Bullet_MiniDronegun.label>Dronegun Bullet</Bullet_MiniDronegun.label>
+
+<NCL_Dinergate_Drone.label>Dinergate Drone</NCL_Dinergate_Drone.label>
+<NCL_Dinergate_Drone.description>Combat support drone deployed by Dinergate units</NCL_Dinergate_Drone.description>
+<NCL_Dinergate_Drone.tools.left_blade.label>left blade</NCL_Dinergate_Drone.tools.left_blade.label>
+<NCL_Dinergate_Drone.tools.left_blade.labelNoLocation>blade</NCL_Dinergate_Drone.tools.left_blade.labelNoLocation>
+<NCL_Dinergate_Drone.tools.right_blade.label>right blade</NCL_Dinergate_Drone.tools.right_blade.label>
+<NCL_Dinergate_Drone.tools.right_blade.labelNoLocation>blade</NCL_Dinergate_Drone.tools.right_blade.labelNoLocation>
+<NCL_Dinergate_Drone.tools.head.label>head</NCL_Dinergate_Drone.tools.head.label>
+
+<NCL_MiniDronegun.label>Portable Minigun</NCL_MiniDronegun.label>
+<NCL_MiniDronegun.description>Compact autonomous turret system</NCL_MiniDronegun.description>
+<NCL_MiniDronegun.verbs.Verb_Shoot.label>Portable Minigun</NCL_MiniDronegun.verbs.Verb_Shoot.label>
+
+<NCL_MiniDroneRifle.label>Portable Drone Rifle</NCL_MiniDroneRifle.label>
+<NCL_MiniDroneRifle.description>Compact autonomous turret system</NCL_MiniDroneRifle.description>
+<NCL_MiniDroneRifle.tools.stock.label>stock</NCL_MiniDroneRifle.tools.stock.label>
+<NCL_MiniDroneRifle.tools.barrel.label>barrel</NCL_MiniDroneRifle.tools.barrel.label>
+<NCL_MiniDroneRifle.verbs.Verb_Shoot.label>Portable Drone Rifle</NCL_MiniDroneRifle.verbs.Verb_Shoot.label>
+
+<NCL_Scutiger_Drone.label>Shieldbearer Drone</NCL_Scutiger_Drone.label>
+<NCL_Scutiger_Drone.description>Barrier support drone deployed by Shieldbearer units</NCL_Scutiger_Drone.description>
+<NCL_Scutiger_Drone.tools.left_blade.label>left blade</NCL_Scutiger_Drone.tools.left_blade.label>
+<NCL_Scutiger_Drone.tools.left_blade.labelNoLocation>blade</NCL_Scutiger_Drone.tools.left_blade.labelNoLocation>
+<NCL_Scutiger_Drone.tools.right_blade.label>right blade</NCL_Scutiger_Drone.tools.right_blade.label>
+<NCL_Scutiger_Drone.tools.right_blade.labelNoLocation>blade</NCL_Scutiger_Drone.tools.right_blade.labelNoLocation>
+<NCL_Scutiger_Drone.tools.head.label>head</NCL_Scutiger_Drone.tools.head.label>
+
+  
+</LanguageData>

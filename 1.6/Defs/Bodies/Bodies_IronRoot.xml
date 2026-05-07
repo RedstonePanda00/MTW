@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <BodyDef>
+    <defName>NCL_Mech_IronbarkBody</defName>
+    <label>Ironbark Fiend</label>
+    <corePart>
+      <def>IronbarkTrunk</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <groups>
+        <li>Torso</li>
+      </groups>
+      <parts>
+        
+        <li>
+          <def>IronbarkCanopy</def>
+          <coverage>0.1</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+          <parts>
+            <li>
+              <def>IronbarkCore</def>
+              <coverage>0.10</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>ThermalSensor</def>
+              <customLabel>热感阵列：左</customLabel>
+              <coverage>0.13</coverage>
+            </li>
+            <li>
+              <def>ThermalSensor</def>
+              <customLabel>热感阵列：右</customLabel>
+              <coverage>0.13</coverage>
+            </li>
+            <li>
+              <def>HydraulicCrusher</def>
+              <customLabel>液压粉碎器：一</customLabel>
+              <coverage>0.10</coverage>
+            </li>
+            <li>
+              <def>HydraulicCrusher</def>
+              <customLabel>液压粉碎器：二</customLabel>
+              <coverage>0.10</coverage>
+            </li>
+            <li>
+              <def>GreekFireNozzle</def>
+              <coverage>0.10</coverage>
+            </li>
+          </parts>
+        </li>
+        
+        
+        <li>
+          <def>IronbarkTrunk</def>
+          <coverage>0.75</coverage>
+		  <groups>
+            <li>LeftBlade</li>
+			<li>RightBlade</li>
+          </groups>
+          <parts>
+            <li>
+              <def>FusionReactor</def>
+              <coverage>0.05</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>RootJoint</def>
+              <coverage>0.1</coverage>
+              <depth>Outside</depth>
+            </li>
+            <li>
+              <def>RootJoint</def>
+              <coverage>0.1</coverage>
+              <depth>Outside</depth>
+            </li>
+            <li>
+              <def>IronbarkMidTrunk</def>
+              <coverage>0.7</coverage>
+              <parts>
+                <li>
+                  <def>IronbarkLowerTrunk</def>
+                  <coverage>0.7</coverage>
+                  <parts>
+                    <li>
+                      <def>IronbarkBaseTrunk</def>
+                      <coverage>0.6</coverage>
+                      <parts>
+                        <li>
+                          <def>IronbarkRootHub</def>
+                          <coverage>0.5</coverage>
+                          <parts>
+                            <li>
+                              <def>PhaseShieldCore</def>
+                              <coverage>0.05</coverage>
+                              <depth>Inside</depth>
+                            </li>
+                          </parts>
+                        </li>
+                      </parts>
+                    </li>
+                  </parts>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        
+        
+        <li>
+          <def>InfernoEmitter</def>
+          <customLabel>焚城辐射阵列</customLabel>
+          <coverage>0.05</coverage>
+          <groups>
+            <li>InfernoSystem</li>
+          </groups>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+  
+  <BodyPartDef>
+    <defName>IronbarkCanopy</defName>
+    <label>Ironbark Canopy</label>
+    <hitPoints>35</hitPoints>
+	<frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<tags>
+      <li>SightSource</li>
+	  <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>IronbarkCore</defName>
+    <label>Ironbark Core</label>
+    <hitPoints>40</hitPoints>
+	<frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>ConsciousnessSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>ThermalSensor</defName>
+    <label>Thermal Sensor Array</label>
+    <hitPoints>20</hitPoints>
+    <frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+	<tags>
+      <li>BloodFiltrationSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>GreekFireNozzle</defName>
+    <label>Greek Fire Nozzle</label>
+    <hitPoints>35</hitPoints>
+	<frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>HydraulicCrusher</defName>
+    <label>Hydraulic Crusher</label>
+    <hitPoints>20</hitPoints>
+	<frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>FusionReactor</defName>
+    <label>Fusion Reactor</label>
+    <hitPoints>30</hitPoints>
+	<frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>BloodPumpingSource</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>PhaseShieldCore</defName>
+    <label>Phase Shield Core</label>
+    <hitPoints>38</hitPoints>
+	<frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>RootJoint</defName>
+    <label>Root Joint</label>
+    <hitPoints>30</hitPoints>
+	<frostbiteVulnerability>2</frostbiteVulnerability>
+	<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+  
+<BodyPartDef Abstract="True" Name="IronbarkDorsalBase">
+    <labelShort>铁木主干基座</labelShort>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  
+  <BodyPartDef ParentName="IronbarkDorsalBase">
+    <defName>IronbarkTrunk</defName>
+    <label>Ironbark Trunk</label>
+    <hitPoints>35</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="IronbarkDorsalBase">
+    <defName>IronbarkMidTrunk</defName>
+    <label>Ironbark Mid Segment</label>
+    <hitPoints>30</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="IronbarkDorsalBase">
+    <defName>IronbarkLowerTrunk</defName>
+    <label>Ironbark Lower Segment</label>
+    <hitPoints>28</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="IronbarkDorsalBase">
+    <defName>IronbarkBaseTrunk</defName>
+    <label>Ironbark Base Segment</label>
+    <hitPoints>25</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="IronbarkDorsalBase">
+    <defName>IronbarkRootHub</defName>
+    <label>Root Hub</label>
+    <hitPoints>20</hitPoints>
+  </BodyPartDef>
+
+  
+  <BodyPartDef>
+    <defName>InfernoEmitter</defName>
+    <label>Inferno Emitter</label>
+    <hitPoints>30</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartGroupDef>
+    <defName>InfernoSystem</defName>
+    <label>Inferno System</label>
+  </BodyPartGroupDef>
+
+</Defs>

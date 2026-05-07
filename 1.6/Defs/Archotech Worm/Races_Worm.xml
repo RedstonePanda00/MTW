@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  
+  <ThingDef ParentName="BaseMechanoid">
+    <defName>NCL_MechWorm</defName>
+    <label>ArchoWorm</label>
+    <description>The origins of this massive mechanical entity are sealed under the highest levels of confidentiality by the NCL, leaving you burning with curiosity but unable to investigate. You have personally witnessed its miraculous lethality on the battlefield, and at this moment, you can only be grateful that it is temporarily aligned with the alliance—though this peculiar state is fraught with unknowns.
+
+Worm Traits:
+
+Damage Absorption: After taking damage, the worm becomes temporarily immune to subsequent damage of the same type.
+
+Warp Bullets: The worm can use telekinesis to vanish incoming enemy bullets into space. After warping a certain number of bullets, this ability enters a cooldown period.
+
+Energy Shield: The worm possesses an energy shield. Once shattered, the shield requires a cooldown period before regenerating.
+
+Warp Manipulation: The worm randomly selects nearby enemies and either warps them to the edge of the map or pulls them close to itself.
+
+Chaotic Warp: After a long charge-up, the worm warps all enemies on the map randomly to the edges.
+
+Means of Damage:
+
+Destructive Beam: After a brief charge, the worm fires an immensely powerful, infinite-range beam.
+
+Thunderstrike: The worm summons several bolts of lightning from the sky to strike enemies across the map.
+
+Worm Tracking Cannon: Periodically, the worm fires volleys from its joints, releasing moderately powerful homing bullets that ignore enemy shields.
+
+Dragon's Final Blow: The worm burrows underground and charges straight toward its target, dealing massive impact damage.</description>
+    <thingClass>NCLWorm.NCL_Pawn_Worm</thingClass>
+    <statBases>
+      <MarketValue>5</MarketValue>
+      <MoveSpeed>5.4</MoveSpeed>
+      <BandwidthCost>200</BandwidthCost>
+      <ControlTakingTime>999</ControlTakingTime>
+      <IncomingDamageFactor>1</IncomingDamageFactor>
+      <EMPResistance>0.75</EMPResistance>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+    </statBases>
+    <graphicData>
+      <texPath>Races/NCLMechWorm_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+<damageMultipliers>
+      <li>
+        <damageDef>Stun</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+    <race>
+      <body>NCLWormBody</body>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Mechanoid</thinkTreeMain>
+      <thinkTreeConstant>MechWormConstant</thinkTreeConstant>
+      <baseBodySize>40</baseBodySize>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <deathAction>
+        <workerClass>NCLWorm.DeathActionWorker_EndWar</workerClass>
+      </deathAction>
+      <headPosPerRotation>
+        <li>(0, 0, 4)</li>
+        <li>(4.5, 0, 1.7)</li>
+        <li>(0.5, 0,1)</li>
+        <li>(-4, 0,2)</li>
+      </headPosPerRotation>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Apocriton_Wounded</soundWounded>
+          <soundAngry>Pawn_Mech_Apocriton_Call</soundAngry>
+          <soundDeath>Pawn_Mech_Apocriton_Death</soundDeath>
+          <soundCall>Pawn_Mech_Apocriton_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <baseHealthScale>20</baseHealthScale>
+      <soundAmbience>Pawn_Mech_Apocriton_Ambience</soundAmbience>
+    <hediffGiverSets>
+    </hediffGiverSets>
+    </race>
+    <tools>
+      <li>
+        <label>逆鳞</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>150</power>
+        <cooldownTime>0.75</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>EMP</def>
+            <amount>20</amount>
+            <chance>1</chance>
+          </li>
+          <li>
+            <def>Stun</def>
+            <amount>6</amount>
+            <chance>0.5</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+    <comps Inherit="False">
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpCheckRadius>30</wakeUpCheckRadius>
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+    <li Class="NCL.CompProperties_MechAutoRecovery">
+        <tickInterval>180</tickInterval>
+        <healAmount>1</healAmount> 
+    </li>
+      <li Class="NCLWorm.CompProperties_BattleCrush">
+          <battleEffect>NCL_WormFightingeffects</battleEffect>
+          </li>
+    <li Class="NCL.CompProperties_DamageLimit">
+      <maxDamage>120</maxDamage>
+      <excludedDamageTypes>
+        <li>Vaporize</li>
+      </excludedDamageTypes>
+    </li>
+      <li Class="NCLWorm.CompProperties_CauseHediff_AoEAndRing">        
+        <hediff>WormPressure</hediff>
+        <checkInterval>600</checkInterval>
+        <range>18</range>
+      </li>
+      <li Class="NCLWorm.CompProperties_DamageAbsorbedAndBoom">
+        <AbsorbedTime>3</AbsorbedTime>
+        <BoomTime>60</BoomTime>
+        <radius>9</radius>
+        <damageDef>NCL_ModBomb</damageDef>
+        <amount>50</amount>
+        <armorPenetration>1</armorPenetration>
+      </li>
+    <li Class="NCL.CompProperties_MechanoidShield">
+        </li>
+      <li Class="NCLWorm.CompProperties_ShieldNCLWorm">
+        <EnergyShieldEnergyMax>1000</EnergyShieldEnergyMax>
+        <EnergyShieldRechargeRate>5</EnergyShieldRechargeRate>
+        <RestTime>30</RestTime>
+      </li>
+      <li Class="NCLWorm.CompProperties_NCLWormSkillList">
+        <skill>
+          <li>NCLPush</li>
+          <li>NCLBeckon</li>
+        </skill>
+      </li>
+      <li Class="NCL.CompProperties_WeaponGiver">
+        <weaponPool>
+          <li>NCL_Gun_BeamGraser</li>
+          <li>NCL_Gun_HellsphereCannon</li>
+        </weaponPool>
+        <cooldownTicks>
+          <li>1800</li>
+          <li>900</li>
+        </cooldownTicks>
+        <checkIntervalTicks>60</checkIntervalTicks>
+        <randomizeIfMultipleAvailable>true</randomizeIfMultipleAvailable>
+      </li>
+      <li Class="NCL.CompProperties_TurretGunPawnOnly">
+          <turretDef>Nyar_RandomTurrent_Gun</turretDef>
+          <angleOffset>-90</angleOffset>
+        </li>
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+        <laserDefenceProperties>
+          <range>10</range>
+          <interceptCount>3</interceptCount>
+          <interceptTime>2</interceptTime>
+          <laserOffsetX>0</laserOffsetX>
+          <laserOffsetY>-0.3</laserOffsetY>
+          <ignoreAirProjectiles>false</ignoreAirProjectiles>
+          <ignoreGroundProjectiles>false</ignoreGroundProjectiles>
+          <connectinglaserWidth>-1</connectinglaserWidth>
+          <connectingLineFleck>NCL_SkipLine</connectingLineFleck>
+					<laserLineTexture>Things/None</laserLineTexture>
+            <enableLaserLine>false</enableLaserLine>
+  <enableCooldownEffect>true</enableCooldownEffect>
+            <enableConnectingLineFleck>false</enableConnectingLineFleck>
+          <laserWidth>-1</laserWidth>
+          <impactScale>0.5</impactScale>
+          <impactFleck>PsycastSkipInnerEntry</impactFleck>
+          <secondaryImpactFleck>PsycastSkipFlashEntry</secondaryImpactFleck>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactFleck>PsycastSkipOuterRingEntry</tertiaryImpactFleck>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+          <enableSmokeEffect>false</enableSmokeEffect>          
+          <enableFireGlowEffect>false</enableFireGlowEffect>
+          <interceptSound>Psycast_Skip_Exit</interceptSound>
+          <coolDownAfterShots>150</coolDownAfterShots>
+          <coolDownTicks>2400</coolDownTicks>
+          <graphicData>
+            <texPath>Things/None</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <shaderType>Transparent</shaderType>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+          </graphicData>
+          <needSight>true</needSight>
+        </laserDefenceProperties>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>2500</Steel>
+      <Plasteel>1200</Plasteel>
+      <Gold>1800</Gold>
+    </butcherProducts>
+    <killedLeavingsPlayerHostile> 
+      <UnstablePrometheusCore>1</UnstablePrometheusCore>
+      <SolarbaneArtemisLunarOculus>1</SolarbaneArtemisLunarOculus>
+      <YggdrasilWorldTreeSpine>1</YggdrasilWorldTreeSpine>
+    </killedLeavingsPlayerHostile>    
+	<modExtensions>
+        <li Class="NyarsModPackOne.ModExtension_EffecterOnMelee">
+            <effectersAtCaster>
+				<li>NCL_WormBulletOnHit</li>
+			</effectersAtCaster>
+            <flecksAtTarget>
+				<li>NCL_Fleck_BurnerUsedEmber</li>
+			</flecksAtTarget>
+            <motesAtTarget>
+				<li>Mote_SparkThrownFast</li>
+			</motesAtTarget>
+            <motesLinkLine>
+			</motesLinkLine>
+            </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>NCL_MechWorm</defName>
+    <label>ArchoWorm</label>
+    <race>NCL_MechWorm</race>
+    <defaultFactionType>NCL_faction</defaultFactionType>
+    <combatPower>8000</combatPower>
+    <maxPerGroup>1</maxPerGroup>
+    <isBoss>true</isBoss>
+    <allowInMechClusters>false</allowInMechClusters>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/NCLMechWorm</texPath>
+          <shaderType>Cutout</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>12</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <abilities>
+      <li>NCLJumpWithBomb</li>
+      <li>NCLBurrowAttack</li>
+      <li>NCLPush</li>
+      <li>NCLBeckon</li>
+      <li>NCLChaosTeleport</li>
+    </abilities>
+    <skipResistant>true</skipResistant>
+  </PawnKindDef>
+
+  <HediffDef>
+    <defName>WormPressure</defName>
+    <label>WormPressure</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>"Worm's oppressive aura induces fragility and heightened aggression."</description>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>1</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WormPressure</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WormPressure</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>蠕虫威压</label>
+        <description>受到蠕虫的威压影响,变的脆弱且易怒.</description>
+        <baseMoodEffect>-40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

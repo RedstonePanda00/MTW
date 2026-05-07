@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Omen_of_Shellfort.label>Bastion Beacon</Omen_of_Shellfort.label>
+<Omen_of_Shellfort.description>A high-intensity signal device designed to summon the titan-class Fortified Shell Construct. Activation transmits exclusive orbital commands, deploying the construct via combat drop to coordinate assaults with primary mechanoid forces. The impact causes localized terrain destruction while initiating global missile suppression. The device self-destructs after activation and is single-use only. Defeating the Fortified Shell Construct yields its tactical core, unlocking corresponding technology pathways.</Omen_of_Shellfort.description>
+<Omen_of_Shellfort.comps.CompUsable.useLabel>Summon Fortified Shell Construct</Omen_of_Shellfort.comps.CompUsable.useLabel>
+
+</LanguageData>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<NCL_Battery.label>Advanced Battery</NCL_Battery.label>
+<NCL_Battery.description>Medium-capacity power storage unit developed by NCL engineers. Utilizes quantum capacitance technology to reliably store 2000Wd electricity while maintaining efficient charge/discharge performance in harsh environments.</NCL_Battery.description>
+
+<NCL_Large_Battery.label>Heavy Battery Array</NCL_Large_Battery.label>
+<NCL_Large_Battery.description>High-capacity military-grade energy storage designed by NCL. Features reinforced quantum capacitance arrays capable of storing up to 12,000Wd, meeting power demands of forward bases and heavy equipment.</NCL_Large_Battery.description>
+
+<NCL_LightWaterReactor.label>Light Water Reactor</NCL_LightWaterReactor.label>
+<NCL_LightWaterReactor.description>Modular nuclear power unit utilizing uranium fuel with flexible output up to 280,000Wd. Requires external cooling to maintain core temperature below 120°C. Coolant failure triggers void coefficient-induced power surges leading to meltdown - explosive yield varies with remaining fuel. This dual-purpose design enables both efficient power generation and weaponization potential.</NCL_LightWaterReactor.description>
+
+  
+</LanguageData>

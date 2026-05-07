@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mote -->
+  <NCL_Eagle_Artillery_Aim.label>TODO</NCL_Eagle_Artillery_Aim.label>
+  
+  <!-- EN: 鸟炮 -->
+  <NCL_Eagle_Artillery_Building.label>黑鹰-T4000</NCL_Eagle_Artillery_Building.label>
+  <!-- EN: 1 -->
+  <NCL_Eagle_Artillery_Building.description>黑鹰-T4000火炮系统的设计源自中寰世界手游《部落冲突》中的天鹰火炮。“在远古部落战争里出现这种火炮完全不合常理，它看起来更像是现代战争中用于发射导弹的发射井！”“你说得没错。”就此，Lisa 被迫研发出了黑鹰-T4000，专门用以发射重型导弹。
+       值得说明的是，NCL为每一位黑鹰的操作人员都配备了一份简要说明，如下。
+黑鹰-T4000火炮系统精简说明
+• ︎启动：消耗电力，需一定时间进入战备，可手动关闭或到预设时长自动停机。
+• ︎发射：消耗资源，资源不足无法开火；选定目标后进入瞄准，完成后多连发打击， 1次发射3发导弹，每发消耗当前电网5%电量；电量越高，单发伤害（最高1600点）、伤害范围越大。
+• 冷却：每次发射后进入冷却，期间无法瞄准、发射，冷却结束才可再次开火。
+• 视觉：启动、瞄准、发射各阶段有对应光效与特效，实时反馈状态。
+• 自动管理：运行时长超限或资源耗尽时自动关闭，以达到省电、安全、简化操作的功效。</NCL_Eagle_Artillery_Building.description>
+  
+  <!-- EN: Eagle Artillery Shell shot -->
+  <NCL_Eagle_Artillery_Shell_Down.label>TODO</NCL_Eagle_Artillery_Shell_Down.label>
+  
+  <!-- EN: Eagle Artillery Shell shot -->
+  <NCL_Eagle_Artillery_Shell_Up.label>TODO</NCL_Eagle_Artillery_Shell_Up.label>
+  
+</LanguageData>

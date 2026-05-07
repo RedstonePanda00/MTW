@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+<Omen_of_Doomsday.label>末日信标</Omen_of_Doomsday.label>
+<Omen_of_Doomsday.description>一种高功率的机械族信号发射装置，远强于常规的机械信标天线。启动后会释放一次超强力的脉冲信号，引导泰坦级机械体静巢构体（Doxa-0）携带其护卫部队前来应战。若能将其击败，可从其残骸中提取稀有技术组件。由于信号脉冲会烧毁发射装置，战争信标只能使用一次。</Omen_of_Doomsday.description>
+<Omen_of_Doomsday.comps.CompUsable.useLabel>Summon Apocriton Threat</Omen_of_Doomsday.comps.CompUsable.useLabel>
+
+  
+</LanguageData>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Bullet_NCLChargeLance.label>NCL Charge Lance Round</Bullet_NCLChargeLance.label>
+
+<NCLLance.label>NCL Charge Lance</NCLLance.label>
+<NCLLance.description>Weapon Archive: NCL Charge Lance
+Designation: NCL Charge Lance 
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series  
+
+Functional Overview:  
+Specialized rifle designed for Dinergate units, featuring exceptional single-shot damage, armor penetration, and accuracy. Optimized for Dinergate close-quarters combat with rapid-fire modes and integrated bayonet functionality, enabling seamless transitions between medium-range suppression and melee tactics.</NCLLance.description>
+<NCLLance.tools.stock.label>stock</NCLLance.tools.stock.label>
+<NCLLance.tools.barrel.label>barrel</NCLLance.tools.barrel.label>
+<NCLLance.verbs.Verb_Shoot.label>NCL Charge Lance</NCLLance.verbs.Verb_Shoot.label>
+
+</LanguageData>

@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Omen_of_Doomsday</defName>
+    <label>Omen of Doomsday</label>
+    <description>High-power mechanoid signal emitter vastly exceeding standard beacon capacity. Activation releases a catastrophic pulse summoning the titan-class Doxa-0 with its escort forces. Victory yields rare tech components from the wreckage. The pulse overload destroys the emitter after single use.</description>
+    <graphicData>
+      <texPath>Buildings/OmenOfWar</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(12,12)</drawSize>
+      <shadowData>
+        <volume>(4, 7.5, 4)</volume>
+      </shadowData>
+    </graphicData>
+	<uiIconPath>Buildings/OmenOfWarUI</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2460</uiOrder>
+    <statBases>
+      <MaxHitPoints>1500</MaxHitPoints>
+      <WorkToBuild>16000</WorkToBuild>
+      <Mass>125</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>500</Steel>
+      <Plasteel>125</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <killedLeavings>
+      <ChunkSlagSteel>5</ChunkSlagSteel>
+    </killedLeavings>
+    <researchPrerequisites>
+      <li>UltraMechtech</li>
+	  <li>NCL_Ignition_of_the_Crucible</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Summon apocriton threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+      </li>
+      <li Class="CompProperties_Useable_CallBossgroup">
+        <bossgroupDef>Doxa</bossgroupDef>
+        <effecterDef>MechbandDishUsed</effecterDef>
+        <prepareEffecterDef>MechBandDishPrepared</prepareEffecterDef>
+        <unlockedLetterLabelKey>LetterLabelBossgroupCallerUnlocked</unlockedLetterLabelKey>
+        <unlockedLetterTextKey>LetterBossgroupCallerUnlocked</unlockedLetterTextKey>
+        <delayTicks>120</delayTicks>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnKilledLeavings>true</spawnKilledLeavings>
+        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+  </ThingDef>
+
+
+  <BossDef>
+    <defName>Doxa</defName>
+    <kindDef>TW_Mech_Doxa_Kind</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks>
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroup">
+    <defName>Doxa</defName>
+    <boss>Doxa</boss>
+    <repeatWaveStartIndex>5</repeatWaveStartIndex>
+    <waves>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>5</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+		  <Mech_Warqueen>1</Mech_Warqueen>
+		  <TW_Mech_MechTeslaCentipede_Kind>1</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+		          <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <Mech_Diabolus>1</Mech_Diabolus>
+		  <Mech_Centurion>1</Mech_Centurion>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Pikeman>5</Mech_Pikeman>
+		          <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+        </escorts>
+      </li>
+	  <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>5</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>1</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>1</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>1</Mech_Apocriton>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Pikeman>5</Mech_Pikeman>
+        </escorts>
+      </li>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		<Mech_CentipedeMissile_Kind>8</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>8</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>8</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>8</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>2</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>1</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>1</Mech_Apocriton>
+          <Mech_Pikeman>10</Mech_Pikeman>
+		  <Mech_Scyther>5</Mech_Scyther>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>10</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>10</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>10</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>2</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>2</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>2</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>2</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>2</Mech_Apocriton>
+          <Mech_Pikeman>10</Mech_Pikeman>
+		  <Mech_Scyther>10</Mech_Scyther>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>15</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>15</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>15</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>15</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>2</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>3</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>2</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>3</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>2</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>2</Mech_Apocriton>
+          <Mech_Pikeman>15</Mech_Pikeman>
+		  <Mech_Scyther>15</Mech_Scyther>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+	  <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>15</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>15</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>15</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>15</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>3</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>3</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>2</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>3</Mech_Warqueen>
+		  <Mech_Centurion>3</Mech_Centurion>
+		  <Mech_Diabolus>3</Mech_Diabolus>
+          <Mech_Apocriton>3</Mech_Apocriton>
+          <Mech_Pikeman>15</Mech_Pikeman>
+		  <Mech_Scyther>15</Mech_Scyther>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>静巢构体（Doxa-0） 是机械族中最具战术深度与火力协调能力的单位之一，其原型来自蛛形掠食者，却被机械族重构为一座自律运算的泰坦级战术火力中枢。它的设计目的并非快速歼敌，而是通过持续压制、火控锁定与战场管理，逐步令敌方陷入战术瘫痪。在整支机械军团中，Doxa-0 的部署通常意味着一场区域性的决战已悄然开始。
+	  
+
+行进中的 Doxa-0 缓慢、沉重，以几近仪式感的低频节奏在地表推进。然而，一旦其进入“架炮锁定”状态，它将主动固定于地面，解锁第三身节中的火箭阵列模块，对大片区域进行持续性的穿盾性饱和打击。在此模式下，Doxa-0 彻底抛弃机动性，转而成为一座半永久性的火力节点，压制敌方任何形式的集结或推进。</leaderDescription>
+    <rewardDef>TW_DoxaTacticalCore</rewardDef>
+  </BossgroupDef>
+
+
+</Defs>

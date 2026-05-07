@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+    <defName>NCL_Building_MissileSilo</defName>
+    <label>Iron Rain" Vertical Launch Interception System</label>
+    <description>The "Iron Rain" Vertical Launch Interception System is a globally deployed missile defense platform independently developed by NCL. Utilizing dedicated missile silos as its core delivery platform, this system launches dense salvos of medium-range anti-missile interceptors to neutralize incoming threats.
+
+Operating through automated long-range tracking, it provides full-map-range defense by identifying hostile projectiles and destroying them mid-trajectory. Each silo houses an integrated miniature missile production facility that autonomously manufactures replacement interceptors. Production and launch of each interceptor consumes minimal resources (10 steel + 50 power units).</description>
+    <thingClass>NCL.Building_MissileSilo</thingClass>
+   <uiIconPath>Buildings/NCL_MissileSilo</uiIconPath>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <fillPercent>0.4</fillPercent>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <graphicData>
+      <texPath>Buildings/NCL_MissileSilo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(0, 0, 0)</volume>
+        <offset>(0, 0, -0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <passability>PassThroughOnly</passability>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>BuildingsSecurity</li>
+      </buildingTags>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <designationCategory>Security</designationCategory>
+    <uiOrder>2420</uiOrder>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <rotatable>false</rotatable>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>5000</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>500</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(6,6)</size>
+    <costList>
+      <Steel>1750</Steel>
+	  <Plasteel>300</Plasteel>
+    <ComponentIndustrial>24</ComponentIndustrial>
+	  <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>NCL_Vertical_Launch_Interception_System</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>2000</basePowerConsumption>
+      </li>
+        <li Class="NCL.CompProperties_SteelResource">
+            <fixedIngredient>Steel</fixedIngredient>
+            <maxIngredientCount>5000</maxIngredientCount>
+            <startingIngredientCount>1000</startingIngredientCount>
+        </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowCauseHediffAoE</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+
+        <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_IronRain_Rocket</defName>
+        <label>IronRain Rocket</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <modExtensions>
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_IronRain_Rocket_Fleck</trailFleck>
+                <trackEnemyProjectiles>true</trackEnemyProjectiles>
+                <initialFlyingStep>0.2</initialFlyingStep>
+            <accelerationDuration>120</accelerationDuration>
+            <ticksBeforeTracing>30</ticksBeforeTracing>  
+                <maxFlyingTime>900</maxFlyingTime>
+                <flyingStep>2</flyingStep>
+                <ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+        <enableExplosionOnHit>false</enableExplosionOnHit>
+	<randomImpactFlecks>
+        <li>NCL_LaserDefenseImpact_One</li>
+        <li>NCL_LaserDefenseImpact_Two</li>
+        <li>NCL_LaserDefenseImpact_Three</li>
+        <li>NCL_LaserDefenseImpact_Four</li>
+    </randomImpactFlecks>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/AutoChasingMissile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Bomb</damageDef>
+            <flyOverhead>true</flyOverhead>
+            <armorPenetrationBase>0.5</armorPenetrationBase>
+            <explosionRadius>4.2</explosionRadius>
+            <damageAmountBase>35</damageAmountBase>
+            <speed>55</speed>
+        </projectile>
+    <comps>
+    <li Class="NCL.CompProperties_FragmentedExplosive">
+      <explosionRadius>12</explosionRadius>
+      <fragmentCount>12</fragmentCount> 
+      <guaranteedCenterFraction>0.5</guaranteedCenterFraction> 
+      <fragmentProjectileDef>Bullet_NCL_Fragments</fragmentProjectileDef>
+      <fireGlowSize>0</fireGlowSize>
+      <heatGlowSize>0</heatGlowSize>
+      <smokeSize>0</smokeSize>
+    </li>
+    </comps>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_IronRain_Rocket_Fleck</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(2,2)</drawSize>
+            <color>(0.5,0.5,0.5)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+  
+      <JobDef>
+        <defName>FillTheIronRain</defName>
+        <driverClass>NCL.JobDriver_FillMissileSilo</driverClass>
+        <reportString>Fill The Iron Rain</reportString>
+    </JobDef>
+
+  <WorkGiverDef ParentName="HaulToBase">
+    <defName>HaulToTheIronRain</defName>
+    <label>haul resources To The IronRain</label>
+    <giverClass>NCL.WorkGiver_HaulSteelToMissileSilo</giverClass>
+  </WorkGiverDef>
+  
+
+</Defs>

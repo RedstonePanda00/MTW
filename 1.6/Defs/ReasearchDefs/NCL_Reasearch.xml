@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ResearchTabDef>
+    <defName>NCL_Research</defName>
+    <label>Mechanoid: Total Warfare</label>
+  </ResearchTabDef>
+  
+    <ResearchProjectDef>
+    <defName>NCL_Standard_Issue</defName>
+    <label>Standard Issue</label>
+    <description>Unlock fabrication technology for NCL-standard assault rifles and self-defense submachine guns.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>GasOperation</li>
+	  <li>NCL_Ashes_to_Signal</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>NCL_Protective_Gear</defName>
+    <label>Protective Gear</label>
+    <description>Research two advanced personal protective systems: tactical cloaking field generators and bio-enhanced combat suits to increase special forces survivability.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>4000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Standard_Issue</li>
+	  <li>PoweredArmor</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>2</researchViewX>
+    <researchViewY>0</researchViewY>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>NCL_Ashes_to_Signal</defName>
+    <label>Ashes to Signal</label>
+    <description>Decrypt the signals within the Red Cube to establish initial connection with the NCL Mechanoid Network. Your first step into mechanized warfare.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>500</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>3</researchViewY>
+	<requiredAnalyzed>
+      <li>NCL_RedCube</li>
+    </requiredAnalyzed>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;mechanoids</li>
+
+        <li>subject_story-&gt;acquired a Red Cube in shady circumstances</li>
+        <li>subject_story-&gt;found an intact Red Cube in a War Scorpion wreck</li>
+        <li>subject_gerund-&gt;unlocking certain technologies</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>NCL_Vanguard_Units</defName>
+    <label>Vanguard Units</label>
+    <description>Unlock medium mechanoid unit production technology.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Ashes_to_Signal</li>
+	  <li>StandardMechtech</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>1</researchViewX>
+    <researchViewY>3</researchViewY>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>NCL_Helios_PD_Turret</defName>
+    <label>Helios PD Turret</label>
+    <description>Develop laser interception systems capable of effectively neutralizing rockets, artillery shells, and low-velocity aircraft.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Advance_Battery</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>2</researchViewX>
+    <researchViewY>2</researchViewY>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+      <ResearchProjectDef>
+    <defName>NCL_Vertical_Launch_Interception_System</defName>
+    <label>Vertical Launch Interception System</label>
+    <description>The "Iron Rain" is NCL's advanced missile interception system providing full-map defense capabilities. Automatically detects and neutralizes incoming threats with precision interceptors.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>5000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Helios_PD_Turret</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>3</researchViewX>
+    <researchViewY>2</researchViewY>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>NCL_Advance_Battery</defName>
+    <label>Advanced Battery Systems</label>
+    <description>Research batteries with superior energy density and charge efficiency.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Ashes_to_Signal</li>
+      <li>Batteries</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>1</researchViewX>
+    <researchViewY>2</researchViewY>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+    <ResearchProjectDef>
+    <defName>NCL_Advance_Nuclear_Power</defName>
+    <label>Advanced Nuclear Power</label>
+    <description>Research modular nuclear reactors with flexible power output capabilities.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>8000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Advance_Battery</li>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>2</researchViewX>
+    <researchViewY>1</researchViewY>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+    <ResearchProjectDef>
+    <defName>NCL_SpectreNet_Array</defName>
+    <label>SpectreNet Array</label>
+    <description>Develop strategic anti-cloaking radar installations capable of detecting all cloaked units within operational range while providing battlefield awareness support for mechanoid forces.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>2000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Research_of_megastructures</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>2</researchViewX>
+    <researchViewY>4</researchViewY>
+    <requiredResearchFacilities>
+		<li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+      <ResearchProjectDef>
+    <defName>NCL_Research_of_megastructures</defName>
+    <label>Research of Megastructures</label>
+    <description>Strategic megastructure development focuses on core facilities that directly alter battlefield dynamics, including large-scale energy weapons, mechanoid modification centers, and reconnaissance satellite arrays, achieving tactical breakthroughs through technological superiority.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Ashes_to_Signal</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>1</researchViewX>
+    <researchViewY>4</researchViewY>
+    <requiredResearchFacilities>
+		<li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+      <ResearchProjectDef>
+    <defName>NCL_Building_Lightingstrike</defName>
+    <label>Tesla Beacon</label>
+    <description>Strategic energy weapon system developed by the NCL League. Channels grid reserves to summon area lightning strikes against hostile units. Critical EMP discharges paralyze enemy electronics, converting power reserves into direct battlefield suppression.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>4000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+	  	<li>Fabrication</li>
+      <li>NCL_Research_of_megastructures</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>3</researchViewX>
+    <researchViewY>4</researchViewY>
+    <requiredResearchFacilities>
+		<li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>NCL_MechNode</defName>
+    <label>Chainwave Relay</label>
+    <description>A quantum communication node co-developed by NCL engineers and mechanitors. Provides 20 base bandwidth units initially, with signal amplification achievable through additional power consumption. Requires dedicated mechanitor bonding as service terminal for stable operation.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>6000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+	  	<li>Fabrication</li>
+      <li>NCL_Research_of_megastructures</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>4</researchViewX>
+    <researchViewY>4</researchViewY>
+    <requiredResearchFacilities>
+		<li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>NCL_Heavyforge_Units</defName>
+    <label>Heavyforge Units</label>
+    <description>Unlock heavy combat mechanoid fabrication technology to deploy primary assault forces.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>3000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+    <li>NCL_Vanguard_Units</li>
+	  <li>HighMechtech</li>
+    <li>MultiAnalyzer</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>3</researchViewX>
+    <researchViewY>3</researchViewY>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>NCL_Archoworm</defName>
+    <label>Archtech Mechanoid</label>
+    <description>The Finishing Touch</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>30000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>NCL_Heavyforge_Units</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>5</researchViewX>
+    <researchViewY>3</researchViewY>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+  
+        <ResearchProjectDef>
+    <defName>NCL_Ignition_of_the_Crucible</defName>
+    <label>Ignition of the Crucible</label>
+    <description>Activate and analyze mechanoid war beacons to unlock their core technology tree, progressively acquiring advanced military technologies originating from mechanoid civilization.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>500</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>5</researchViewY>
+    <requiredAnalyzed>
+      <li>TW_Precision_Memory_Interface_Array</li>
+    </requiredAnalyzed>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;mechanoids</li>
+
+        <li>subject_story-&gt;acquired a Precision Memory Interface Array in shady circumstances</li>
+        <li>subject_story-&gt;found an intact Precision Memory Interface Array in a War Beacon wreck</li>
+        <li>subject_gerund-&gt;unlocking certain technologies</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>NCL_Doom_Calculation</defName>
+    <label>Doom Calculation</label>
+    <description>Research Doxa-0's battlefield control systems to unlock advanced mechanoid tactical computation.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>4000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+	    <li>NCL_Ignition_of_the_Crucible</li>
+		<li>UltraMechtech</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>2</researchViewX>
+    <researchViewY>5</researchViewY>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+	<requiredAnalyzed>
+      <li>TW_DoxaTacticalCore</li>
+    </requiredAnalyzed>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;mechanoids</li>
+
+        <li>subject_story-&gt;acquired a Doxa Tactical Core in shady circumstances</li>
+        <li>subject_story-&gt;found an intact Doxa Tactical Core in a Doxa wreck</li>
+        <li>subject_story-&gt;survived a mechanoid hive assault</li>
+        <li>subject_story-&gt;collated reports of mechanoid attacks, looking for commonalities</li>
+
+        <li>subject_gerund-&gt;creating Titan mechanoids</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  
+      <ResearchProjectDef>
+    <defName>NCL_Fortress_Protocol</defName>
+    <label>Fortress Protocol</label>
+    <description>Analyze the Fortified Shell Construct's composite armor systems and battlefield control protocols to master the ultimate mechanoid siege unit's operational principles.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>5000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+	    <li>NCL_Doom_Calculation</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>4</researchViewX>
+    <researchViewY>5</researchViewY>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+	<requiredAnalyzed>
+      <li>TW_ArmorBlitzWarfare</li>
+    </requiredAnalyzed>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;mechanoids</li>
+        <li>subject_story-&gt;acquired an Armor Blitz Warfare Core in shady circumstances</li>
+        <li>subject_story-&gt;found an intact Armor Blitz Warfare Core in a Shell FortConstruct wreck</li>
+        <li>subject_story-&gt;survived a mechanoid hive assault</li>
+        <li>subject_story-&gt;collated reports of mechanoid attacks, looking for commonalities</li>
+        <li>subject_gerund-&gt;creating Titan mechanoids</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>NCL_Cybernethic_Arbo</defName>
+    <label>Cybernethetic Arbo</label>
+    <description>Strategic structure for mass permanent enhancement of allied mechanoids.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>8000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+    <li>NCL_Research_of_megastructures</li>
+	  <li>NCL_Heavyforge_Units</li>
+		<li>Fabrication</li>
+		<li>NCL_Doom_Calculation</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>5</researchViewX>
+    <researchViewY>4</researchViewY>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>NCL_Experimental_Assemblies</defName>
+    <label>Experimental-Grade Technology</label>
+    <description>Access NCL's most advanced prototype weapon systems.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>5000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+	    <li>NCL_Protective_Gear</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>3</researchViewX>
+    <researchViewY>0</researchViewY>
+    <requiredResearchFacilities>
+	    <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+    <ResearchProjectDef>
+    <defName>NCL_CerebrexCore_Rebuild</defName>
+    <label>Cerebrex Core Reactivation</label>
+    <description>Ready for greater challenges?</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>5000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+  <requiredAnalyzed>
+    <li>TW_CerebrexCore_Target</li> 
+  </requiredAnalyzed>
+    <tab>NCL_Research</tab>
+    <researchViewX>4</researchViewX>
+    <researchViewY>6</researchViewY>
+    <requiredResearchFacilities>
+	    <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+      <ResearchProjectDef>
+    <defName>NCL_Seraphiron</defName>
+    <label>Seraphiron</label>
+    <description>This will be a flying mechanoid boss currently in development - stay tuned.</description>
+    <techLevel>Spacer</techLevel>
+    <baseCost>5000</baseCost>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+    <li>NCL_CerebrexCore_Rebuild</li>
+	  <li>NCL_Fortress_Protocol</li>
+    </prerequisites>
+    <tab>NCL_Research</tab>
+    <researchViewX>6</researchViewX>
+    <researchViewY>5</researchViewY>
+    <requiredResearchFacilities>
+	    <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+
+</Defs>

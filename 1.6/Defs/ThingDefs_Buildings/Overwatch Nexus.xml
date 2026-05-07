@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+    <defName>NCL_Overwatch_Nexus</defName>
+    <label>Spectre Detection Array</label>
+    <description>Strategic facility designed to counter cloaking technology. Emits high-frequency pulses that disrupt electromagnetic invisibility fields while creating tactical data networks to enhance battlefield awareness for allied mechanoids.</description>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <fillPercent>0.4</fillPercent>
+    <graphicData>
+      <texPath>Buildings/OverwatchNexus</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(10,10)</drawSize>
+      <shadowData>
+        <volume>(5, 5, 5)</volume>
+        <offset>(0, 0, -0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>BuildingsSecurity</li>
+      </buildingTags>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <designationCategory>Security</designationCategory>
+    <uiOrder>2420</uiOrder>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <rotatable>false</rotatable>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>500</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(5,5)</size>
+    <costList>
+      <Steel>750</Steel>
+	  <Plasteel>250</Plasteel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+	  <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>NCL_SpectreNet_Array</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>2000</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+	  <li Class="CompProperties_CauseHediff_AoE">
+        <range>25</range>
+        <onlyTargetMechs>true</onlyTargetMechs>
+        <hediff>NCL_Overwatch_Nexus_MechBoost</hediff>
+        <activeSound>MechBooster_Working</activeSound>
+      </li>
+    <li Class="NCL.CompProperties_AntiInvisibilityField">
+        <effectiveRadius>64</effectiveRadius>
+		<requiresPower>true</requiresPower>
+		<applyHediff>DisruptorFlash</applyHediff>
+        <checkIntervalTicks>60</checkIntervalTicks>
+		<affectsThroughWalls>true</affectsThroughWalls>
+		<drawRadius>true</drawRadius>
+        <drawLines>true</drawLines>
+        <radiusColor>(255, 255, 255)</radiusColor>
+        </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowCauseHediffAoE</li>
+	  <li>NCL.PlaceWorker_ShowAntiInvisibilityRadius</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+  
+
+
+</Defs>

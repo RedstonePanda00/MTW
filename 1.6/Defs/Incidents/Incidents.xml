@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <IncidentDef>
+    <defName>TW_CapitalistWandersIn</defName>
+    <label>Capitalist Mech Encounter</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>NCL.IncidentWorker_MechMilitorWandersIn</workerClass>
+    <baseChance>0.01</baseChance>
+    <earliestDay>15</earliestDay>
+    <minRefireDays>60</minRefireDays>
+    <populationEffect>IncreaseMedium</populationEffect>
+    <letterLabel>资本家小镰来访</letterLabel>
+    <letterText>这台镀铬的机械族商人挂着永不熄灭的电子微笑，游走于各个殖民地之间，兜售一种它称之为“镰口贸易”的“双赢”业务——当然，赢的总是它。支付足够的钢铁，它就会“慷慨”地带着几名助手加入你的殖民地，并确保你明白“人力是最宝贵的可再生资源”。它的核心处理器里只运行着一条指令：利润最大化。</letterText>
+    <letterDef>PositiveEvent</letterDef>
+  </IncidentDef>
+
+
+    <GameConditionDef>
+    <defName>Mech2000Coming</defName>
+    <conditionClass>NCL.GameCondition_CenterItemSpawner</conditionClass>
+    <label>Mechanoid Airdrop</label>
+    <description>B2000 will continuously airdrop Mechanoid Centipedes onto the battlefield until the Static Nest Construct is destroyed.</description>
+    <endMessage>机械空投结束了</endMessage>
+    <letterText>突袭信号指示器已出现！您的殖民地已被 b2000 锁定，具有强力护盾及反隐能力的指示器在场时可持续发送加密指令，持续召唤空降型机械体对殖民地进行高频投送，请尽快破坏它！</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <allowUnderground>false</allowUnderground>
+  </GameConditionDef>
+  
+</Defs>

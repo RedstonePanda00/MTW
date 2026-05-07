@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <LifeStageDef>
+    <defName>NCL_Mech_ScutigerFullyformed</defName>
+    <label>fully-formed</label>
+    <caravanRideable>true</caravanRideable>
+    <visible>false</visible>
+  </LifeStageDef>
+  
+  <ThingDef Name="NCLMechScutiger" ParentName="SuperHeavyMechanoid">
+    <defName>NCL_Mech_Scutiger</defName>
+    <label>Scutiger Shieldbearer</label>
+    <description>Unit Archive: NCL-12 "Scutiger Shieldbearer"
+Origin: NCL "Iron Law" Heavy Support Series
+
+This heavy mechanoid functions as a mobile shield platform, deliberately devoid of offensive weaponry. Core defense relies on integrated heavy-energy barriers capable of neutralizing diverse ballistic threats.
+
+Primary functionality involves manufacturing shield drones in situ by consuming pre-loaded steel reserves (50 units per drone). These autonomous units feature compact barrier projectors with distinct operational parameters:
+◆ Fragile chassis but exceptional shield efficiency
+◆ Provides energy protection for self and allied units
+◆ Automatically forms defensive perimeter around host when not threatened
+◆ Delivers immediate shield reinforcement to frontline units during combat
+
+All manufactured drones maintain dynamic defensive formations around the host unit during standby operations.</description>
+    <statBases>
+      <MarketValue>3200</MarketValue>
+      <MoveSpeed>1.8</MoveSpeed>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+	  <EMPResistance>0.40</EMPResistance>
+      <ArmorRating_Sharp>1.40</ArmorRating_Sharp>
+	  <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">10</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+	<tools>
+      <li>
+        <label>MechanicalHead</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>50</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+	<comps>  
+	 <li Class="CompProperties_Forbiddable" />
+	<li Class="CompProperties_ProjectileInterceptor">
+        <radius>6.5</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.8, 0.0, 0.0, 0.8)</color>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>1000</hitPoints>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>1</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>900</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+  <li Class="NyarsModPackOne.CompProperties_DroneCarrier">
+    
+    <fixedIngredient>Steel</fixedIngredient>
+    
+    
+    <costPerDrone>50</costPerDrone>
+    
+    
+    <maxIngredientCount>1000</maxIngredientCount>
+    
+    
+    <cooldownTicks>1200</cooldownTicks> 
+    
+    
+    <maxDronesPerSpawn>2</maxDronesPerSpawn>
+    
+    
+    <startingIngredientCount>0</startingIngredientCount>
+    
+    
+    <droneKind>NCL_Scutiger_Drone</droneKind>
+    <gizmoIconPath>Races/ScutigerDrone_south</gizmoIconPath>
+  </li>
+	</comps>
+	<butcherProducts>
+      <Steel>600</Steel>
+      <Plasteel>180</Plasteel>
+    </butcherProducts>
+    <race>
+      <lifeStageAges>
+        <li>
+          <def>NCL_Mech_ScutigerFullyformed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+            <soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <body>MechanicalCentipede</body>
+	  <baseBodySize>8.0</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+        <mechEnabledWorkTypes>
+        </mechEnabledWorkTypes>
+	<mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="HeavyMechanoidKind">
+  <defName>NCL_Mech_Scutiger_Kind</defName>
+  <label>Scutiger</label>
+  <race>NCL_Mech_Scutiger</race>
+    <description>单位档案：NCL-12“机械蚰蜒”
+来源：NCL「铁律」重装支援序列
+
+这台重型机械单位采用独特的移动护盾平台设计，本身未配备任何远程武器系统。其核心防御依靠集成式重型能量屏障，能够有效抵御各类火力打击。
+
+主要功能是通过消耗预装载的钢铁资源（每架50单位）现场制造护盾无人机。这些无人机搭载小型屏障发生器，具有以下特性：
+- 本体结构脆弱但护盾效能出色
+- 可为自身及友军单位提供能量防护
+- 无战斗威胁时自动环绕母体形成保护圈
+- 作战状态下为前线单位提供即时护盾支援
+
+所有生产单位在待机状态下保持母体周边，形成动态防御阵列。</description>
+  <defaultFactionType>NCL_faction</defaultFactionType>
+  <allowInMechClusters>false</allowInMechClusters>
+  <combatPower>1800</combatPower>
+  <lifeStages>
+    <li MayRequire="Ludeon.RimWorld.Biotech">
+      <bodyGraphicData>
+        <texPath>Races/Scutiger</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>7</drawSize>
+        <shadowData>
+          <volume>(0.4, 0.8, 0.4)</volume>
+        </shadowData>
+      </bodyGraphicData>
+    </li>
+  </lifeStages>
+  <weaponMoney>9999~9999</weaponMoney>
+  <weaponTags>
+  </weaponTags>
+  <techHediffsChance>1</techHediffsChance>
+  <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+  </abilities>
+  </PawnKindDef>
+
+      <JobDef>
+        <defName>FillDroneCarrier</defName>
+        <driverClass>NyarsModPackOne.JobDriver_FillDroneCarrier</driverClass>
+        <reportString>filling drone carrier.</reportString>
+    </JobDef>
+
+  <WorkGiverDef ParentName="HaulToBase">
+    <defName>NCL_HaulToCarrierB</defName>
+    <label>haul resources to carrier</label>
+    <giverClass>NyarsModPackOne.WorkGiver_HaulResourcesToDroneCarrier</giverClass>
+  </WorkGiverDef>
+  
+</Defs>

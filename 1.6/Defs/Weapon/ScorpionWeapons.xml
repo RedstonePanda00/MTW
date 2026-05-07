@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+ 
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Red_tide</defName>
+    <label>Bullet Red tide</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.85</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <armorPenetrationBase>0.88</armorPenetrationBase>
+	  <stoppingPower>2</stoppingPower>
+      <screenShakeFactor>0</screenShakeFactor>
+      <speed>100</speed>
+    </projectile>
+  <comps>
+    <li Class="NCL.CompProperties_FragmentedExplosive">
+      <explosionRadius>3.5</explosionRadius>
+      <fragmentCount>3</fragmentCount> 
+      <guaranteedCenterFraction>0.33</guaranteedCenterFraction> 
+      <fragmentProjectileDef>Bullet_NCL_Fragments</fragmentProjectileDef>
+      <fireGlowSize>0.5</fireGlowSize>
+      <heatGlowSize>0</heatGlowSize>
+      <smokeSize>0</smokeSize>
+    </li>
+  </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseIncendiaryProjectile">
+    <defName>Crimson_Slagburst_Rocket</defName>
+    <label>Crimson Slagburst Rocket</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+    </graphicData>
+    <projectile>
+	  <damageDef>Crimson_Slagburst</damageDef>
+	  <damageAmountBase>16</damageAmountBase>
+      <speed>120</speed>
+      <screenShakeFactor>0</screenShakeFactor>
+	  <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+    <armorPenetrationBase>1</armorPenetrationBase>
+	  <ai_IsIncendiary>true</ai_IsIncendiary>
+      <explosionRadius>0.8</explosionRadius>
+	  <arcHeightFactor>0</arcHeightFactor>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>NCL_Redtide</defName>
+    <label>Redtide</label>
+    <description>Redtide</description>
+    <tradeability>None</tradeability>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.8</drawSize>
+    </graphicData>
+	<uiIconPath>Things/RedtideUI</uiIconPath>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>36</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.4</AccuracyMedium>
+      <AccuracyLong>0.2</AccuracyLong>
+      <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+    </statBases>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+				<verbClass>NCL.Verb_ShootWithDustBlast</verbClass>
+				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+				<burstShotCount>15</burstShotCount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Crimson_Slagburst_Rocket</defaultProjectile>
+				<warmupTime>1.5</warmupTime>
+				<minRange>0</minRange>
+				<range>32</range>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>7</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0.1</forcedMissRadius>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>RedT03</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>RT_AutoGun</defName>
+    <label>RT AutoGun</label>
+    <description>RT AutoGun</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>10</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.3</AccuracyLong>
+    </statBases>
+    <verbs>
+      <li>
+				<verbClass>NCL.Verb_ArcSprayProjectile</verbClass>
+				<sprayWidth>2.5</sprayWidth>
+				<sprayArching>1</sprayArching>
+				<sprayThicknessCells>10</sprayThicknessCells>
+				<sprayNumExtraCells>15</sprayNumExtraCells>
+				<consumeFuelPerBurst>0</consumeFuelPerBurst>
+
+				<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+				<burstShotCount>15</burstShotCount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_Red_tide</defaultProjectile>
+				<defaultCooldownTime>2</defaultCooldownTime>
+				<minRange>3</minRange>
+				<range>35</range>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>7</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0</forcedMissRadius>
+      </li>
+    </verbs>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+  
+  </Defs>

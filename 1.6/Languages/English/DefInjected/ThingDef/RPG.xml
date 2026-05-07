@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<!-- EMP导弹 -->
+<TW_EMP_Guided_Missile.label>EMP-Guided Missile</TW_EMP_Guided_Missile.label>
+
+<!-- EMP制导发射器 -->
+<TW_Guided_Rocket_Launcher_EMP.label>EMP Guided Rocket Launcher</TW_Guided_Rocket_Launcher_EMP.label>
+<TW_Guided_Rocket_Launcher_EMP.description>Fires target-tracking EMP warheads for precision electronic suppression.</TW_Guided_Rocket_Launcher_EMP.description>
+<TW_Guided_Rocket_Launcher_EMP.tools.barrel.label>barrel</TW_Guided_Rocket_Launcher_EMP.tools.barrel.label>
+<TW_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>EMP Guided Rocket Launcher</TW_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>
+
+<!-- 高爆制导发射器 -->
+<TW_Guided_Rocket_Launcher_HE.label>HE Guided Rocket Launcher</TW_Guided_Rocket_Launcher_HE.label>
+<TW_Guided_Rocket_Launcher_HE.description>Fires target-tracking high-explosive warheads for precision demolition.</TW_Guided_Rocket_Launcher_HE.description>
+<TW_Guided_Rocket_Launcher_HE.tools.barrel.label>barrel</TW_Guided_Rocket_Launcher_HE.tools.barrel.label>
+<TW_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>HE Guided Rocket Launcher</TW_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>
+
+<!-- 高爆导弹 -->
+<TW_HE_Guided_Missile.label>HE-Guided Missile</TW_HE_Guided_Missile.label>
+
+<!-- 四联EMP制导发射器 -->
+<TW_Quad_Guided_Rocket_Launcher_EMP.label>Quad EMP Guided Rocket Launcher</TW_Quad_Guided_Rocket_Launcher_EMP.label>
+<TW_Quad_Guided_Rocket_Launcher_EMP.description>Four-tube launcher firing target-tracking EMP warheads for saturation electronic suppression.</TW_Quad_Guided_Rocket_Launcher_EMP.description>
+<TW_Quad_Guided_Rocket_Launcher_EMP.tools.barrel.label>barrel</TW_Quad_Guided_Rocket_Launcher_EMP.tools.barrel.label>
+<TW_Quad_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>Quad EMP Guided Rocket Launcher</TW_Quad_Guided_Rocket_Launcher_EMP.verbs.Verb_Shoot.label>
+
+<!-- 四联高爆制导发射器 -->
+<TW_Quad_Guided_Rocket_Launcher_HE.label>Quad HE Guided Rocket Launcher</TW_Quad_Guided_Rocket_Launcher_HE.label>
+<TW_Quad_Guided_Rocket_Launcher_HE.description>Four-tube launcher firing target-tracking high-explosive warheads for saturation demolition.</TW_Quad_Guided_Rocket_Launcher_HE.description>
+<TW_Quad_Guided_Rocket_Launcher_HE.tools.barrel.label>barrel</TW_Quad_Guided_Rocket_Launcher_HE.tools.barrel.label>
+<TW_Quad_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>Quad HE Guided Rocket Launcher</TW_Quad_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>
+
+</LanguageData>

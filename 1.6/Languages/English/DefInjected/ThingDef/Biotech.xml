@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<NCL_MechNode.label>Chainwave Relay</NCL_MechNode.label>
+<NCL_MechNode.description>A quantum communication node co-developed by NCL engineers and mechanitors. Provides 20 base bandwidth units initially, with signal amplification achievable through additional power consumption. Requires dedicated mechanitor bonding as service terminal for stable operation.</NCL_MechNode.description>
+</LanguageData>

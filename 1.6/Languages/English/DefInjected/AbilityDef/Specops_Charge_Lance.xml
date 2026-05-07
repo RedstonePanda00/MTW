@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  
+<!-- EN: Glitterworld EMP Frag Grenade -->
+<TW_LaunchGrenadeExplosiveEMP.label>Glitterworld EMP Frag Grenade</TW_LaunchGrenadeExplosiveEMP.label>
+<!-- EN: Originating from the Glitterworlds, this devastating EMP grenade releases approximately 180 fragments within a 6-cell radius. Enemies at the epicenter suffer catastrophic damage, making it exceptionally effective against the galaxy's proliferating mechanoids. Its design prioritizes EM disruption over penetration, incorporating specialized EMP core tubes that reduce armor-piercing capability.\n\nIronically, the Mechanoid Hive itself deemed this ordnance superior, resulting in its widespread adoption by elite paratroopers codenamed "Silent Bore". This unforeseen appropriation became a notorious dark joke circulating through the Rim. -->
+<TW_LaunchGrenadeExplosiveEMP.description>Originating from the Glitterworlds, this devastating EMP grenade releases approximately 180 fragments within a 6-cell radius. Enemies at the epicenter suffer catastrophic damage, making it exceptionally effective against the galaxy's proliferating mechanoids. Its design prioritizes EM disruption over penetration, incorporating specialized EMP core tubes that reduce armor-piercing capability.\n\nIronically, the Mechanoid Hive itself deemed this ordnance superior, resulting in its widespread adoption by elite paratroopers codenamed "Silent Bore". This unforeseen appropriation became a notorious dark joke circulating through the Rim.</TW_LaunchGrenadeExplosiveEMP.description>
+
+</LanguageData>

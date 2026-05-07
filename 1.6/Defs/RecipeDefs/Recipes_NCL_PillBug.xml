@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>NCL_Mech_PillBug</defName>
+    <label>Photon Pillbug</label>
+    <gestationCycles>10</gestationCycles>
+    <displayPriority>200</displayPriority>
+    <description>Unit Archive: NCL-04 "Photon Pillbug"
+Codename: Prism Fortress
+Origin: NCL "Iron Law" Corona Series Data Remnants
+
+A specialized combat unit modified for ground-based firepower suppression, originally conceived as an experimental optical weapons platform during the NCL's final era. Its chassis is densely covered with photon lattice structures that create persistent energy afterimages under intense illumination - hence the designation "Photon Pillbug".
+
+While slow-moving, it possesses exceptional durability exceeding standard mechanoid survivability thresholds. The front-mounted "Disintegrator" positron cannon melts through most cover and armored targets at extended ranges. Synchronized prismatic laser systems flanking both sides precisely destroy mid-to-low velocity bullet liked projectiles, demonstrating particular efficacy against orbital munitions.</description>
+	<researchPrerequisite Inherit="false" />
+	<researchPrerequisites>
+	  <li>UltraMechtech</li>
+	  <li>NCL_Heavyforge_Units</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+       <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>450</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Neural_Weave</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Microfusion_Reactor</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <NCL_Mech_PillBug>1</NCL_Mech_PillBug>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>NCL_Mech_PillBug</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

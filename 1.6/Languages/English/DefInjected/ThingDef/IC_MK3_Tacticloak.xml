@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<IC_MK3_Tacticloak.label>Iron Curtain Tacticloak</IC_MK3_Tacticloak.label>
+<IC_MK3_Tacticloak.description>Iron Curtain Tacticloak
+Designation: IC_MK3_Tacticloak 
+RD Facility: NCL Division 8 Tactical Institute / "Project Shadow"
+Design Team: Eclipse and O'Neal (Special Joint Engineering Authorization)
+
+The Iron Curtain III tactical cloak represents NCL's pinnacle tactical support system, reserved for elite operatives. Integrates thermal shielding, localized energy barriers, short-duration optical refraction cloaking, and low-power gravity-assist modules - Project Shadow's ultimate test of individual combat capability.
+
+Amidst total war, Eclipse and O'Neal redefined tactical gear as humanity's "final answer to combat dignity." This cloak functions as integrated exoskeleton, synchronizing with the wearer's nervous system via quantum coordination algorithms to maintain operational capability in lethal suppression environments.
+
+Production limited to prototype batches for "preservation units" due to cost and control constraints.
+
+Development log:
+Eclipse: "Not everyone will wear this cloak."
+O'Neal: "I stitch only for those who survive."</IC_MK3_Tacticloak.description>
+<IC_MK3_Tacticloak.comps.CompApparelReloadable.chargeNoun>incendiary</IC_MK3_Tacticloak.comps.CompApparelReloadable.chargeNoun>
+<IC_MK3_Tacticloak.comps.CompApparelReloadable.cooldownGerund>on cooldown</IC_MK3_Tacticloak.comps.CompApparelReloadable.cooldownGerund>
+<IC_MK3_Tacticloak.verbs.0.label>Optical Camo Activation</IC_MK3_Tacticloak.verbs.0.label>
+  
+</LanguageData>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <NCL_Building_MissileSilo.label>“铁雨”垂发拦截系统</NCL_Building_MissileSilo.label>
+  
+  <NCL_Building_MissileSilo.description>“铁雨”垂发拦截系统是 NCL 自主研发的全域反导装备，以专用导弹井为载体，核心功能是发射密集中型反导导弹。
+ 
+该系统可远程自动跟踪敌方导弹及爆破敌方本体，实现全地图范围防御，导弹井内置微型导弹生产工厂，可自主生产中型反导导弹，每生产与发射一枚此导弹消耗少量钢铁与电力（20铁100电），在密集火力下，需要大量资源保障持续作战。
+ 
+作为现有技术条件下的“导弹终结者”，它是NCL构建完备反导系统的关键，可高效削弱敌方打击强度，掌握战场主动权。</NCL_Building_MissileSilo.description>
+  
+  
+  <Nyar_IronRain_Rocket.label>IronRain Rocket</Nyar_IronRain_Rocket.label>
+  
+</LanguageData>

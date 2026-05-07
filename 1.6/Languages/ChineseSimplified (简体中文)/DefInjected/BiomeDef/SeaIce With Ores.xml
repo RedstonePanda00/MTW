@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <SeaIce.label>sea ice</SeaIce.label>
+  
+  <SeaIce.description>Permanent ice sheets floating on water. There is no soil for plants to grow, no minerals to mine, and almost no animal life.</SeaIce.description>
+  
+  <SeaIce.settleWarning>Sea ice is extremely inhospitable. There is no soil for plants and almost no animal life. Long-term survival is a challenge.</SeaIce.settleWarning>
+  
+</LanguageData>

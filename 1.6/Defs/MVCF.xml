@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+	<MVCF.ModDef>
+	<defName>NCL</defName>
+	<label>NCL</label>
+	<description>MVCF</description>
+	<ActivateFeatures>
+		<li>Drawing</li>
+		<li>HediffVerbs</li>
+		<li>IndependentFire</li>
+	</ActivateFeatures>
+  </MVCF.ModDef>
+</Defs>

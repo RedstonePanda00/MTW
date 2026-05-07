@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="BaseMechanoid"]/statBases</xpath>
+			<value>
+			   <MaxHitPoints>10000</MaxHitPoints>
+			</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Mech_Warqueen"]/comps</xpath>
+				<value>
+      <li Class="NCL.CompProperties_FuelBasedDamageReduction" />
+				</value>
+	 	</Operation>
+
+
+  <Operation Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Mech_Apocriton"]/race</xpath>
+				<value>
+					<hediffGiverSets>
+						<li>TW_Mech_Apocriton_Hediff</li>
+					</hediffGiverSets>
+				</value>
+	 	</Operation>
+
+  <Operation Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Mech_Warqueen"]/race</xpath>
+				<value>
+					<hediffGiverSets>
+						<li>TW_Mech_Warqueen_Hediff</li>
+					</hediffGiverSets>
+				</value>
+	 	</Operation>
+
+  <Operation Class="PatchOperationAdd">
+						<xpath>Defs/PawnKindDef[defName="Mech_Warqueen"]</xpath>
+				<value>
+    <weaponTags>
+      <li>TW_Gun_QueenChargeBlasterHeavy</li>
+    </weaponTags>
+				</value>
+	 	</Operation>
+</Patch>

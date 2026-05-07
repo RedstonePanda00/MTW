@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <NCL_WaitWorm.label>蠕虫将至</NCL_WaitWorm.label>
+  
+  <NCL_WaitWorm.description>一只机械蠕虫将被投放到你的主基地,如果你在这段蠕虫到来之前离开基地,那么你将永久的失去它.</NCL_WaitWorm.description>
+  
+  <NCL_WaitWorm.endMessage>蠕虫将至</NCL_WaitWorm.endMessage>
+  
+  <NCL_WaitWorm.letterText>一只机械蠕虫将被投放到你的主基地,如果你在这段蠕虫到来之前离开基地,那么你将永久的失去它.</NCL_WaitWorm.letterText>
+  
+  
+  <NCL_WaitWormFight.label>试炼将至</NCL_WaitWormFight.label>
+  
+  <NCL_WaitWormFight.description>一只机械蠕虫将被投放到你的主基地,如果你在这段蠕虫到来之前逃离,那么你的试炼可能会被视为失败.</NCL_WaitWormFight.description>
+  
+  <NCL_WaitWormFight.endMessage>试炼将至</NCL_WaitWormFight.endMessage>
+  
+  <NCL_WaitWormFight.letterText>一只机械蠕虫将被投放到你的主基地,如果你在这段蠕虫到来之前逃离,那么你的试炼可能会被视为失败.</NCL_WaitWormFight.letterText>
+
+</LanguageData>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>NCL_Mech_Scorpion</defName>
+    <label>War Scorpion</label>
+    <gestationCycles>10</gestationCycles>
+    <displayPriority>200</displayPriority>
+    <description>Designated "War Scorpion", this unit was engineered for breaching high-density fortifications. Its chassis comprises millions of self-repairing uranium-alloy scales that dynamically reconfigure into localized defense barriers during damage events - providing extraordinary physical resistance. Combat logs confirm operational continuity after direct high-explosive impacts.
+
+The tail-mounted "Solaris Penetrator" rail cannon represents its signature armament: High-compression thermal projectiles released after brief charging can vaporize most fortifications and vehicles. Each discharge triggers thermal surges and terrain deformation - an iconic area-denial attack.
+
+Bilateral suppression artillery maintains continuous fire against infantry and light vehicles during main cannon operation cycles.
+
+When entering Crimson Tide mode, it launches successive thermobaric grenades combining concussive blasts with persistent combustion effects, clearing residual resistance from enemy cover and advance paths.</description>
+	<researchPrerequisite Inherit="false" />
+	<researchPrerequisites>
+	  <li>UltraMechtech</li>
+	  <li>NCL_Heavyforge_Units</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>450</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Neural_Weave</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NCL_Microfusion_Reactor</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <NCL_Mech_Scorpion>1</NCL_Mech_Scorpion>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>NCL_Mech_Scorpion</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

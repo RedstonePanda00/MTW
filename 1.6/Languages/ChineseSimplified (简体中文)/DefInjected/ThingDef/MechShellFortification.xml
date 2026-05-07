@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+<Ionized_Plasma.label>Ionized Plasma</Ionized_Plasma.label>
+
+<Shell_Fortification_Turret.label>Shell Fortune Turret</Shell_Fortification_Turret.label>
+<Shell_Fortification_Turret.description>Integrated defense turret for Shell Fortune constructs.</Shell_Fortification_Turret.description>
+<Shell_Fortification_Turret.verbs.Verb_Shoot.label>Shell Fortune Turret</Shell_Fortification_Turret.verbs.Verb_Shoot.label>
+
+<TW_Ionized_Plasma_Launcher.label>等离子电浆发射器</TW_Ionized_Plasma_Launcher.label>
+<TW_Ionized_Plasma_Launcher.description>1</TW_Ionized_Plasma_Launcher.description>
+<TW_Ionized_Plasma_Launcher.tools.stock.label>stock</TW_Ionized_Plasma_Launcher.tools.stock.label>
+<TW_Ionized_Plasma_Launcher.tools.barrel.label>barrel</TW_Ionized_Plasma_Launcher.tools.barrel.label>
+<TW_Ionized_Plasma_Launcher.verbs.Verb_Shoot.label>Ionized Plasma Launcher</TW_Ionized_Plasma_Launcher.verbs.Verb_Shoot.label>
+
+<TW_Mech_Shell_Fortification_AutomaticMissileLauncher.label>Shell Fortification AutomaticMissileLauncher</TW_Mech_Shell_Fortification_AutomaticMissileLauncher.label>
+<TW_Mech_Shell_Fortification_AutomaticMissileLauncher.description>1</TW_Mech_Shell_Fortification_AutomaticMissileLauncher.description>
+<TW_Mech_Shell_Fortification_AutomaticMissileLauncher.verbs.Verb_Shoot.label>Shell Fortune Automatic Missile Launcher</TW_Mech_Shell_Fortification_AutomaticMissileLauncher.verbs.Verb_Shoot.label>
+
+<TW_Mech_Shell_Fortification_MissileProjectile.label>TW_Mech_Shell_Fortification_MissileProjectile</TW_Mech_Shell_Fortification_MissileProjectile.label>
+
+  
+</LanguageData>

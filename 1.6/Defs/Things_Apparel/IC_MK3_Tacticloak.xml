@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="ArmorMachineableBase">
+    <defName>IC_MK3_Tacticloak</defName>
+    <label>Iron Curtain Tacticloak</label>
+    <description>Iron Curtain Tacticloak
+Designation: IC_MK3_Tacticloak 
+RD Facility: NCL Division 8 Tactical Institute / "Project Shadow"
+Design Team: Eclipse and O'Neal (Special Joint Engineering Authorization)
+
+The Iron Curtain III tactical cloak represents NCL's pinnacle tactical support system, reserved for elite operatives. Integrates thermal shielding, localized energy barriers, short-duration optical refraction cloaking, and low-power gravity-assist modules - Project Shadow's ultimate test of individual combat capability.
+
+Amidst total war, Eclipse and O'Neal redefined tactical gear as humanity's "final answer to combat dignity." This cloak functions as integrated exoskeleton, synchronizing with the wearer's nervous system via quantum coordination algorithms to maintain operational capability in lethal suppression environments.
+
+Production limited to prototype batches for "preservation units" due to cost and control constraints.
+
+Development log:
+Eclipse: "Not everyone will wear this cloak."
+O'Neal: "I stitch only for those who survive."</description>
+	<thingClass>Apparel</thingClass>
+    <graphicData>
+      <texPath>Apparels/ICTacticloak/IC_Thin_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <techLevel>Archotech</techLevel>
+    <statBases>
+      <Mass>3</Mass>
+	  <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToMake>14000</WorkToMake>
+      <Flammability>0</Flammability>
+      <EnergyShieldRechargeRate>0.5</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>2</EnergyShieldEnergyMax>
+	  <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>35</Insulation_Cold> 
+      <Insulation_Heat>58</Insulation_Heat>
+	  <JumpRange>36</JumpRange>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+	<generateCommonality>0</generateCommonality>
+	<equippedStatOffsets>
+      <MoveSpeed>0.45</MoveSpeed>
+	  <Flammability>-1</Flammability>
+	  <ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+	  <ToxicResistance>0.5</ToxicResistance>
+    </equippedStatOffsets>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <costList>
+      <ComponentSpacer>8</ComponentSpacer>
+      <Hyperweave>150</Hyperweave>
+      <Plasteel>150</Plasteel>
+    </costList>
+    <recipeMaker>
+	<researchPrerequisites>
+      <li>NCL_Protective_Gear</li>
+    </researchPrerequisites>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <skillRequirements>
+        <Crafting>15</Crafting>
+      </skillRequirements>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <apparel>
+	  <wornGraphicPath>Apparels/ICTacticloak/IC</wornGraphicPath>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+		<li>Legs</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>IndustrialAdvanced</li>
+      </tags>
+    </apparel>
+    <comps>
+      	<li Class="VEF.Apparels.CompProperties_ShieldBubble">
+			<compClass>VEF.Apparels.CompShieldBubble</compClass>
+			<blockRangedAttack>true</blockRangedAttack>
+			<showWhenDrafted>true</showWhenDrafted>
+			<showOnHostiles>true</showOnHostiles>
+			<showOnNeutralInCombat>true</showOnNeutralInCombat>
+			<shieldTexPath>Other/ShieldBubble</shieldTexPath>
+			<EnergyShieldRechargeRate>0.05</EnergyShieldRechargeRate>
+			<EnergyShieldEnergyMax>300</EnergyShieldEnergyMax>
+			<minShieldSize>1.4</minShieldSize>
+			<maxShieldSize>1.8</maxShieldSize>
+			<disableRotation>true</disableRotation>
+		</li>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>3</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <chargeNoun>incendiary</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+    <tradeTags>
+      <li>NCLthings</li>
+    </tradeTags>
+    <verbs>
+      <li>
+        <verbClass>NCL.Verb_JumpAndCloak</verbClass>
+        <label>光学迷彩激活</label>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+		<range>8</range> 
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <requireLineOfSight>true</requireLineOfSight>
+        <flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+        <soundLanding>JumpPackLand</soundLanding>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+	</ThingDef>
+</Defs>

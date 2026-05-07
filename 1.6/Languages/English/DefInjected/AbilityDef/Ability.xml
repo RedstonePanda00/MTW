@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+
+  <!-- EN: Explosion -->
+  <Ironbark_Explosion.label>Core Detonation</Ironbark_Explosion.label>
+  <!-- EN: Detonates the mechanoid, instantly destroying it and damaging those nearby, friend or foe. -->
+  <Ironbark_Explosion.description>Detonates the mechanoid, instantly destroying it and damaging all nearby entities regardless of allegiance.</Ironbark_Explosion.description>
+  
+  <!-- EN: 双向遮蔽系统 -->
+  <NCL_Bidirectional_Shielding_System.label>Binary Veil System Deployment</NCL_Bidirectional_Shielding_System.label>
+  <!-- EN: 部署烟幕发生器创造视觉屏障并同步发射2枚Gyro-Blade旋刃，旋刃通过红外追踪锁定目标且命中时释放EMP冲击波和可控破片 -->
+  <NCL_Bidirectional_Shielding_System.description>Deploys smokescreen generators to create visual-obscurement fields while simultaneously launching two Gyro-Blades.</NCL_Bidirectional_Shielding_System.description>
+  
+  <!-- EN: 炽核贯杀 -->
+  <NCL_Blazing_Core_Penetrator.label>Solaris Penetrator</NCL_Blazing_Core_Penetrator.label>
+  <!-- EN: 目标已锁定，炽核贯杀启动——湮灭一切。 -->
+  <NCL_Blazing_Core_Penetrator.description>Propels toward target, displacing enemies along trajectory and generating large-area effect at impact zone.</NCL_Blazing_Core_Penetrator.description>
+  
+  <!-- EN: Flying Kick -->
+  <NCL_FlyingKick.label>Kinetic Assault</NCL_FlyingKick.label>
+  <!-- EN: Fly towards the target, push away all enemies along the path, and create a large area effect at the target location. -->
+  <NCL_FlyingKick.description>Propels toward target, displacing enemies along trajectory and generating large-area effect at impact zone.</NCL_FlyingKick.description>
+  
+  <!-- EN: 隐身 -->
+  <NCL_Invisibility.label>Invisibility</NCL_Invisibility.label>
+  <!-- EN: 1 -->
+  <NCL_Invisibility.description>Invisibility</NCL_Invisibility.description>
+  
+  <!-- EN: 自我修复 -->
+  <NCL_MechSelfRepair.label>SelfRepair</NCL_MechSelfRepair.label>
+  <!-- EN: 修复受损部位 -->
+  <NCL_MechSelfRepair.description>Self Repair</NCL_MechSelfRepair.description>
+  
+  <!-- EN: 潜灵奇袭 -->
+  <NCL_Phantom_Force.label>Phantom Strike</NCL_Phantom_Force.label>
+  <!-- EN: 无不可及！ -->
+  <NCL_Phantom_Force.description>No target beyond reach!</NCL_Phantom_Force.description>
+  
+  <!-- EN: toggle turret -->
+  <NCL_ToggleCodexTurret.label>Shoulder Turret Deployment</NCL_ToggleCodexTurret.label>
+  <!-- EN: extend or retract a tiny, shoulder mounted automatic turret -->
+  <NCL_ToggleCodexTurret.description>extend or retract a tiny, shoulder mounted automatic turret</NCL_ToggleCodexTurret.description>
+  
+  <!-- EN: 量子传送 -->
+  <QuantumShift.label>Quantum Shift</QuantumShift.label>
+  <!-- EN: 以世界树根系为蓝本的量子折跃系统，赋予使用者无视地形自由传送的能力 -->
+  <QuantumShift.description>Yggdrasil-root inspired quantum translocation system enabling terrain-ignoring free teleportation.</QuantumShift.description>
+  
+  <!-- EN: 终焉凝视 -->
+  <Terminus_Gaze.label>Terminus Gaze</Terminus_Gaze.label>
+  <!-- EN: “终焉凝视”是一项源自月光仿生系统的极限作战协议，专为战场压制与高频猎杀而设计。\n	 \n	 发动后，持有者将进入短暂的全能作战状态：子弹必中、动作无延迟、视线即锁定、可瞬移至任何暗域，同时强制冻结周围黑暗中的敌军。然而，这种近乎神明的战斗状态仅能维持五小时，之后植入者将因神经系统崩解而在一段时间内几乎失去战斗能力。 -->
+  <Terminus_Gaze.description>This lunar bionic-derived combat protocol enables temporary omnipotent combat state: perfect accuracy, zero action delay, instant target acquisition, dark-phase teleportation, and cryonic suspension of enemies in shadows. The godlike state lasts precisely 5 hours before neural collapse renders the implantee combat-ineffective.</Terminus_Gaze.description>
+  
+  <!-- EN: 零点闪烁 -->
+  <Zero_Point_Overdrive.label>Zero-Point Flash</Zero_Point_Overdrive.label>
+  <!-- EN: 通过纳米机械过载，瞬间突破空间限制闪烁至目标位置，落地时释放巨大动能冲击，对落点周围敌人造成毁灭性打击。同时，过载的纳米能量将形成16道不稳定的能量电弧随机劈下，攻击范围内所有单位。随后释放者将进入过载模式，移动速度、防御能力和攻击频率大幅提升。 -->
+  <Zero_Point_Overdrive.description>Overdrives nanomachines for instantaneous spatial translocation. Impact releases kinetic shockwave devastating nearby enemies while generating 16 unstable energy arcs. Post-translocation, user enters enhanced combat mode with significantly increased mobility, defense, and attack frequency.</Zero_Point_Overdrive.description>
+  
+    <!-- EN: 自我修复 -->
+  <NCL_MechSelfRepair.label>Self Repair</NCL_MechSelfRepair.label>
+  <!-- EN: 修复受损部位 -->
+  <NCL_MechSelfRepair.description>Self Repair, can recover 15 scars on the user itself</NCL_MechSelfRepair.description>
+  
+</LanguageData>

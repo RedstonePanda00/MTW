@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+    <ThingDef ParentName="BaseWeaponTurret">
+        <defName>Nyar_RandomTurrent_Gun</defName>
+        <label>Worm Tracking Cannon</label>
+        <description>Automated artillery system specialized in tracking and engaging subterranean threats.</description>
+        <graphicData>
+            <texPath>Things/None</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <AccuracyTouch>0.77</AccuracyTouch>
+            <AccuracyShort>0.70</AccuracyShort>
+            <AccuracyMedium>0.45</AccuracyMedium>
+            <AccuracyLong>0.24</AccuracyLong>
+            <RangedWeapon_Cooldown>6.8</RangedWeapon_Cooldown>
+            <DeteriorationRate>0</DeteriorationRate>
+            <Mass>5</Mass>
+            <Flammability>0</Flammability>
+        </statBases>
+        <modExtensions>
+            <li Class="NyarsModPackTwo.ModExtension_BulletsDefs">
+                <bullets>
+                    <li>Nyar_RandomTurrent_BulletA</li>
+                    <li>Nyar_RandomTurrent_BulletB</li>
+                    <li>Nyar_RandomTurrent_BulletC</li>
+                    <li>Nyar_RandomTurrent_BulletD</li>
+                    <li>Nyar_RandomTurrent_BulletE</li>
+                    <li>Nyar_RandomTurrent_BulletF</li>
+                </bullets>
+                <castCount>9</castCount>
+            </li>
+        </modExtensions>
+        <verbs>
+            <li>
+                <verbClass>NyarsModPackTwo.Verb_ShootRandomBullet</verbClass>
+                <defaultProjectile>Bullet_MiniTurret</defaultProjectile>
+                <warmupTime>0</warmupTime>
+                <range>31</range>
+                <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
+                <burstShotCount>4</burstShotCount>
+                <soundCast>GunShotA</soundCast>
+                <soundCastTail>GunTail_Light</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+                <consumeFuelPerShot>1</consumeFuelPerShot>
+		        <defaultCooldownTime>4.8</defaultCooldownTime>
+        <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetPlants>false</canTargetPlants>
+        </targetParams>
+            </li>
+        </verbs>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_RandomTurrent_BulletA</defName>
+        <label>Worm Tracking Projectile</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <modExtensions>
+            
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_RandomTurrent_BulletA</trailFleck>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/WormBullet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+      <armorPenetrationBase>1</armorPenetrationBase>
+            <damageAmountBase>12</damageAmountBase>
+            <speed>70</speed>
+        </projectile>
+    <comps>
+        <li Class="NCL.CompProperties_SpawnEffectOnDestroy">
+            <effectDefName>NCL_WormBulletOnHit</effectDefName>
+            <effectSize>1</effectSize>
+            <durationTicks>120</durationTicks>
+        </li>
+    </comps>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_RandomTurrent_BulletA</defName>
+        <altitudeLayer>Projectile</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(1,1)</drawSize>
+            <color>(1.0,0,0)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_RandomTurrent_BulletB</defName>
+        <label>Worm Tracking Projectile</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <modExtensions>
+            
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_RandomTurrent_BulletB</trailFleck>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/WormBullet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+      <armorPenetrationBase>1</armorPenetrationBase>
+            <damageAmountBase>12</damageAmountBase>
+            <speed>70</speed>
+
+        </projectile>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_RandomTurrent_BulletB</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(1,1)</drawSize>
+            <color>(120, 25, 15)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_RandomTurrent_BulletC</defName>
+        <label>Worm Tracking Projectile</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <modExtensions>
+            
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_RandomTurrent_BulletC</trailFleck>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/WormBullet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_RandomTurrent_BulletC</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(1,1)</drawSize>
+            <color>(255, 15, 90)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_RandomTurrent_BulletD</defName>
+        <label>Worm Tracking Projectile</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <modExtensions>
+            
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_RandomTurrent_BulletD</trailFleck>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/WormBullet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_RandomTurrent_BulletD</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(1,1)</drawSize>
+            <color>(180, 0, 45)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_RandomTurrent_BulletE</defName>
+        <label>Worm Tracking Projectile</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <modExtensions>
+            
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_RandomTurrent_BulletE</trailFleck>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/WormBullet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_RandomTurrent_BulletE</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(1,1)</drawSize>
+            <color>(220, 60, 20)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_RandomTurrent_BulletF</defName>
+        <label>Worm Tracking Projectile</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <modExtensions>
+            
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_RandomTurrent_BulletF</trailFleck>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/WormBullet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_RandomTurrent_BulletF</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(1,1)</drawSize>
+            <color>(255, 40, 30)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+</Defs>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+   <ThingDef ParentName="BuildingBase">
+    <defName>TW_CerebrexCore_Rebuild</defName>
+    <label>Cerebrex Core</label>
+    <description>Neural nexus of an ancient mechanoid civilization, its surface pulsating with quantum circuitry networks. At its core floats a synaptic encephalon, rotating slowly via antigravity fields. The integrated deep-space signal array broadcasts coordinates across star systems, awakening dormant mechanoid legions.
+
+WARNING: Activation exposes your colony to the Mechanoid Empire. Post-reboot, mechanoid raids will recommence with all assault forces receiving combat enhancements.
+
+Researching the core matrix unlocks advanced technological blueprints of mechanoid civilization.</description>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/MechCoreBase</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(7,7)</drawSize>
+    </graphicData>
+    <uiIconPath>Buildings/CerebrexCore_ReBuild_MenuIcon</uiIconPath>
+    <size>(7,7)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1.0</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>true</claimable>
+      <repairable>true</repairable>
+      <isTargetable>true</isTargetable>
+    </building>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>7200</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>3000</Mass>
+      <Beauty>500</Beauty>
+	  <WorkToBuild>88000</WorkToBuild>
+    </statBases>
+	<costList>
+      <AIPersonaCore>1</AIPersonaCore>
+      <Steel>1500</Steel>
+	  <Uranium>1000</Uranium>
+	  <Plasteel>800</Plasteel>
+      <ComponentIndustrial>72</ComponentIndustrial>
+	  <ComponentSpacer>36</ComponentSpacer>
+    </costList>
+	<researchPrerequisites>
+      <li>NCL_CerebrexCore_Rebuild</li>
+  </researchPrerequisites>
+    <designationCategory>Biotech</designationCategory>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <comps>
+    <li Class="CompProperties_RestartableCerebrexCore">
+      <bobFrequency>0.02</bobFrequency>
+      <bobAmplitude>0.35</bobAmplitude>
+      <zOffset>2</zOffset>
+      <restartDurationTicks>180</restartDurationTicks> 
+           </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>CerebrexCore_Ambient</sound>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>

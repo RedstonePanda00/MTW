@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<!-- EN: Ironbark Fiend -->
+<NCL_Mech_IronbarkBody.label>Ironbark Fiend</NCL_Mech_IronbarkBody.label>
+<!-- EN: Thermal Array: Left -->
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.1.customLabel>Thermal Array: Left</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.1.customLabel>
+<!-- EN: Thermal Array: Right -->
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.2.customLabel>Thermal Array: Right</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.2.customLabel>
+<!-- EN: Hydraulic Crusher: One -->
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.3.customLabel>Hydraulic Crusher: One</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.3.customLabel>
+<!-- EN: Hydraulic Crusher: Two -->
+<NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.4.customLabel>Hydraulic Crusher: Two</NCL_Mech_IronbarkBody.corePart.parts.IronbarkCanopy.parts.4.customLabel>
+<!-- EN: Cityburner Radiation Array -->
+<NCL_Mech_IronbarkBody.corePart.parts.2.customLabel>Cityburner Radiation Array</NCL_Mech_IronbarkBody.corePart.parts.2.customLabel>
+  
+</LanguageData>

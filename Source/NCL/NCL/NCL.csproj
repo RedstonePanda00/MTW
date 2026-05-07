@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{498DF0CF-B045-41BB-A929-271C4A608170}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NCL</RootNamespace>
+    <AssemblyName>NCL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <RimWorldManagedDir Condition=" '$(RimWorldManagedDir)' == '' ">$(MSBuildProgramFiles32)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed</RimWorldManagedDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldManagedDir)\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(RimWorldManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>$(RimWorldManagedDir)\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(RimWorldManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(RimWorldManagedDir)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(RimWorldManagedDir)\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbilityCasterHediff.cs" />
+    <Compile Include="AbilityEffecterOnSelf.cs" />
+    <Compile Include="AbilityExplosion.cs" />
+    <Compile Include="AutoTurretOnPawns.cs" />
+    <Compile Include="BanInvisibility.cs" />
+    <Compile Include="BuildingPawnSpawner.cs" />
+    <Compile Include="Building_ManualAimTurret.cs" />
+    <Compile Include="Building_MissileSilo.cs" />
+    <Compile Include="ChasingRocket.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="CompAllDead.cs" />
+    <Compile Include="CompProperties_AbilityGiveMapHediff.cs" />
+    <Compile Include="CompProperties_DamageLimit.cs" />
+    <Compile Include="CompProperties_FuelBasedDamageReduction.cs" />
+    <Compile Include="CompProperties_MechAvoidFire.cs" />
+    <Compile Include="CompSkyfallerTrail.cs" />
+    <Compile Include="PawnRenderNodeProperties_TurretGun.cs" />
+    <Compile Include="RangeControl.cs" />
+    <Compile Include="SitePartWorker_MortarCamp.cs" />
+    <Compile Include="Verb_CastAbilityDragonFly.cs" />
+    <Compile Include="CompProperties_ApplyHediffToFrontline.cs" />
+    <Compile Include="CompProperties_AutoExplode.cs" />
+    <Compile Include="CompProperties_AutoMechSpawner.cs" />
+    <Compile Include="CompProperties_ClearOwnerProjectiles.cs" />
+    <Compile Include="CompProperties_ContinuousExhaust.cs" />
+    <Compile Include="CompProperties_DamageReduction.cs" />
+    <Compile Include="CompProperties_DeactivationImmunity.cs" />
+    <Compile Include="CompProperties_ExplodeWhenStunned.cs" />
+    <Compile Include="CompProperties_ExplosiveDeath.cs" />
+    <Compile Include="CompProperties_FearAura.cs" />
+    <Compile Include="Verb_ShootWithBackblast.cs" />
+    <Compile Include="CompProperties_ForcedFaction.cs" />
+    <Compile Include="CompProperties_LightningStrike.cs" />
+    <Compile Include="CompProperties_ParticleAura.cs" />
+    <Compile Include="CompProperties_PsychicDodge.cs" />
+    <Compile Include="CompProperties_RepairAbility.cs" />
+    <Compile Include="CompProperties_ShootRandomBullet.cs" />
+    <Compile Include="CompProperties_ShowRange.cs" />
+    <Compile Include="CompProperties_SmokepopOnHit.cs" />
+    <Compile Include="CompProperties_SpawnEffectOnDestroy.cs" />
+    <Compile Include="CompProperties_SpawnThingOnDestroy.cs" />
+    <Compile Include="CompProperties_StaticOverlay.cs" />
+    <Compile Include="CompProperties_TameableMech.cs" />
+    <Compile Include="CompProperties_ThunderOnDestroyed.cs" />
+    <Compile Include="CompProperties_Transformable.cs" />
+    <Compile Include="CompProperties_WarBeacon.cs" />
+    <Compile Include="CompProperties_WeaponGiver.cs" />
+    <Compile Include="CompSpawnFleckEffectOnDestroyed.cs" />
+    <Compile Include="CompTurretGun_GroundTarget.cs" />
+    <Compile Include="CompUnlockResearch.cs" />
+    <Compile Include="Comp_DebuffImmunity.cs" />
+    <Compile Include="CruiseFlyer.cs" />
+    <Compile Include="Explosion.cs" />
+    <Compile Include="Graphic_RefuelableMulti.cs" />
+    <Compile Include="HediffCompProperties_AutoRevealInvisibility.cs" />
+    <Compile Include="HediffCompProperties_ClearArea.cs" />
+    <Compile Include="HediffCompProperties_EffectAura.cs" />
+    <Compile Include="HediffCompProperties_ShieldGenerator.cs" />
+    <Compile Include="HediffComp_AddAbility.cs" />
+    <Compile Include="HediffComp_RemoveWhenPlayerNearby.cs" />
+    <Compile Include="HediffComp_SmokeAura.cs" />
+    <Compile Include="HediffComp_SolarDisruption.cs" />
+    <Compile Include="HediffExtension_NoNotification.cs" />
+    <Compile Include="HediffgiverBuilding.cs" />
+    <Compile Include="Hediff_ExplodeOnRemove.cs" />
+    <Compile Include="IncidentWorker_MechMilitorWandersIn.cs" />
+    <Compile Include="LightningStrike.cs" />
+    <Compile Include="MagicBullets.cs" />
+    <Compile Include="MechAutoRecovery.cs" />
+    <Compile Include="ModAbout.cs" />
+    <Compile Include="NCL_QuestNode_Root_Bossgroup.cs" />
+    <Compile Include="NoCorpseAllowed.cs" />
+    <Compile Include="OverrideBodyGraphic.cs" />
+    <Compile Include="PersistentItemSpawnIncidentParams.cs" />
+    <Compile Include="PlaceWorker_MustBeRoofed.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmokeTrail.cs" />
+    <Compile Include="ThinkNode_ConditionalInHomeAreaRoofed.cs" />
+    <Compile Include="TransformableBuildingComp.cs" />
+    <Compile Include="TurretCaller1.cs" />
+    <Compile Include="TurretCaller2.cs" />
+    <Compile Include="Verb_AbilityTeleport.cs" />
+    <Compile Include="Verb_ArcSprayProjectile.cs" />
+    <Compile Include="Verb_CastAbilityRollingCrush.cs" />
+    <Compile Include="Verb_ShootBeamReforged.cs" />
+    <Compile Include="Verb_StealthCloakToggle.cs" />
+    <Compile Include="Worm\Call.cs" />
+    <Compile Include="Worm\ShieldGizmo.cs" />
+    <Compile Include="Worm\Worm.cs" />
+    <Compile Include="Worm\WormAbility.cs" />
+    <Compile Include="Projectiles\Class1.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>TW_Mech_Paratrooper</defName>
+    <label>Mech Paratrooper</label>
+    <gestationCycles>6</gestationCycles>
+    <displayPriority>300</displayPriority>
+    <description>A medium-sized mass-produced elite mechanoid unit. Equipped with a specialized jump-jet propulsion system, the Paratrooper Silent Mantis variant can deploy offensive fragmentation-flash grenades that deliver both disorienting stun effects and shrapnel damage against all target classifications.</description>
+    <researchPrerequisites>
+	<li>HighMechtech</li>
+	</researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+    </ingredients>
+    <products>
+      <TW_Mech_Paratrooper>1</TW_Mech_Paratrooper>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>TW_Mech_Paratrooper</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

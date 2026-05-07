@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>NCL_Gun_BeamGraser</defName>
+    <label>Hyper Beam</label>
+    <description>Hyper Beam</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <smeltable>false</smeltable>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>47000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <verbs>
+      <li>
+        <verbClass>NCLWorm.Verb_GuangA</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>0.3</warmupTime>
+        <minRange>4</minRange>
+        <range>54</range>
+        <soundCast>Shot_HellsphereCannonGun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>300</ticksBetweenBurstShots>
+        <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <ai_TargetHasRangedAttackScoreOffset>50</ai_TargetHasRangedAttackScoreOffset>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>true</canTargetPawns>
+        </targetParams>
+        <aimingChargeMote>Mote_HellsphereCannon_Charge</aimingChargeMote>
+        <aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+        <aimingLineMoteFixedLength>15.9</aimingLineMoteFixedLength>
+        <soundAiming>HellsphereCannon_Aiming</soundAiming>
+        <canGoWild>false</canGoWild>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>NCLgun</li>
+    </weaponTags>
+  </ThingDef>
+  
+  <SoundDef>
+    <defName>NCLLaserWarmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapon/HellsphereCannon/Hellsphere_Cannon_Warmup</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>Mote_NCLWormLaser</defName>
+    <label>NCLWormLaser</label>
+    <thingClass>NCLWorm.Mote_NCLWormLaser</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <seeThroughFog>true</seeThroughFog>
+    <alwaysFlee>false</alwaysFlee>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+    
+    
+  </ThingDef>
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_NCLStarFire</defName>
+    <graphicData>
+      <texPath>Things/Mote/SparkThrown</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0.3</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+  </FleckDef>
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_NCLStar</defName>
+    <graphicData>
+      <texPath>UI/Misc/NCLStar</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.2</fadeInTime>
+    <solidTime>0.6</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+  </FleckDef>
+
+
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>NCL_Gun_HellsphereCannon</defName>
+    <label>LightingStrike</label>
+    <description>LightingStrike</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <statBases>
+      <MarketValue>300</MarketValue>
+      <Mass>10</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>NCLgun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <burstShotCount>5</burstShotCount>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_LightingStrike</defaultProjectile>
+        <warmupTime>0.1</warmupTime>
+        <range>54</range>
+        <soundCast>Shot_HellsphereCannonGun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <ai_AvoidFriendlyFireRadius>6</ai_AvoidFriendlyFireRadius>
+        <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <ai_TargetHasRangedAttackScoreOffset>50</ai_TargetHasRangedAttackScoreOffset>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+        </targetParams>
+        <beamTargetsGround>true</beamTargetsGround>
+        <soundAiming>HellsphereCannon_Aiming</soundAiming>
+        <canGoWild>false</canGoWild>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="NCL.CompProperties_LightningOnDestroy">
+        <damageType>Bomb</damageType>
+        <damageAmount>50</damageAmount>
+        <maxTargets>8</maxTargets>
+      <mechWormDef>NCL_MechWorm</mechWormDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_LightingStrike</defName>
+    <label>LightingStrike</label>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <speed>999</speed>
+    </projectile>
+    <comps>
+      <li Class="NCL.CompProperties_LightningOnDestroy">
+        <damageType>Bomb</damageType>
+        <damageAmount>30</damageAmount>
+        <maxTargets>5</maxTargets>
+      <mechWormDef>NCL_MechWorm</mechWormDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

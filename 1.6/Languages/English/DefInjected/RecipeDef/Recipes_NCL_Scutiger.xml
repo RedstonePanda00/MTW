@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<NCL_Mech_Scutiger.label>Gestate Scutiger Shieldbearer</NCL_Mech_Scutiger.label>
+<NCL_Mech_Scutiger.description>Unit Archive: NCL-12 "Scutiger Shieldbearer"
+Origin: NCL "Iron Law" Heavy Support Series
+
+This heavy mechanoid functions as a mobile shield platform, deliberately devoid of offensive weaponry. Core defense relies on integrated heavy-energy barriers capable of neutralizing diverse ballistic threats.
+
+Primary functionality involves manufacturing shield drones in situ by consuming pre-loaded steel reserves (50 units per drone). These autonomous units feature compact barrier projectors with distinct operational parameters:
+◆ Fragile chassis but exceptional shield efficiency
+◆ Provides energy protection for self and allied units
+◆ Automatically forms defensive perimeter around host when not threatened
+◆ Delivers immediate shield reinforcement to frontline units during combat
+
+All manufactured drones maintain dynamic defensive formations around the host unit during standby operations.</NCL_Mech_Scutiger.description>
+<NCL_Mech_Scutiger.jobString>Gestating mech.</NCL_Mech_Scutiger.jobString>
+
+  
+</LanguageData>

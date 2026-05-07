@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <WormPressure.label>蠕虫威压</WormPressure.label>
+  
+  <WormPressure.description>受到蠕虫的威压影响,变的脆弱且易怒.</WormPressure.description>
+  
+    
+  <NCL_Mech_ArchotechWorm_Hediff.label>NCL：超凡机械蠕虫</NCL_Mech_ArchotechWorm_Hediff.label>
+  
+  <NCL_Mech_ArchotechWorm_Hediff.description>这个庞大机械体的身世被NCL封存在最高机密中，您虽充满好奇却无从探查。您亲眼见证过它在战场上展现的神迹般的杀伤效率，此刻只能庆幸它暂时属于同盟阵营——尽管这种特殊状态充满未知变数。</NCL_Mech_ArchotechWorm_Hediff.description>
+
+</LanguageData>

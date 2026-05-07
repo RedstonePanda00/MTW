@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<!-- 破碎的壳心堡垒 -->
+<Broken_Shellcore_Bastion.label>Fractured Shellcore Bastion</Broken_Shellcore_Bastion.label>
+<Broken_Shellcore_Bastion.description>Critical structural damage detected - core systems compromised</Broken_Shellcore_Bastion.description>
+<Broken_Shellcore_Bastion.modExtensions.0.toggleGizmoLabel>NCL_WARBEACON_TOGGLE_GIZMO_LABEL</Broken_Shellcore_Bastion.modExtensions.0.toggleGizmoLabel>
+<Broken_Shellcore_Bastion.modExtensions.0.toggleGizmoOffLabel>NCL_WARBEACON_TOGGLE_GIZMO_OFF_LABEL</Broken_Shellcore_Bastion.modExtensions.0.toggleGizmoOffLabel>
+
+<!-- 壳心堡垒结构体 -->
+<Building_PawnContainer.label>Shellcore Bastion</Building_PawnContainer.label>
+<Building_PawnContainer.comps.Comp_AloneDetonator.customCountdownText>Self-destruct countdown: {0} seconds</Building_PawnContainer.comps.Comp_AloneDetonator.customCountdownText>
+
+<!-- 重构壳心堡垒 -->
+<Building_PawnContainerForged.label>Reforged Shellcore Bastion</Building_PawnContainerForged.label>
+
+<!-- 海螺壳武器系统 -->
+<Shell_FortConstruct_Barrage.label>Conch Shell Artillery System</Shell_FortConstruct_Barrage.label>
+<Shell_FortConstruct_Barrage.verbs.Verb_Shoot.label>Conch Shell Artillery System</Shell_FortConstruct_Barrage.verbs.Verb_Shoot.label>
+
+<!-- 外壳破碎生成器 -->
+<ShellBreakSpawner.label>Carapace Fracture Spawner</ShellBreakSpawner.label>
+<ShellBreakSpawner.description>Subterranean entity emergence detected at this location</ShellBreakSpawner.description>
+<ShellBreakSpawner.building.groundSpawnerLetterLabel>Substrate breach detected</ShellBreakSpawner.building.groundSpawnerLetterLabel>
+
+<!-- 完整壳心堡垒 -->
+<TW_Complete_Shellcore_Bastion.label>Operational Shellcore Bastion</TW_Complete_Shellcore_Bastion.label>
+
+<!-- 壳心堡垒原型 -->
+<TW_Shellcore_Bastion.label>Shellcore Bastion Prototype</TW_Shellcore_Bastion.label>
+
+  
+</LanguageData>

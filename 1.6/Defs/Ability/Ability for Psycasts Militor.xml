@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+	
+  <AbilityDef>
+    <defName>TW_TeleportToRandomAlly</defName>
+    <label>Adversary Relocation</label>
+    <description>Teleports an enemy combatant adjacent to a nearby allied unit.</description>
+    <aiCanUse>True</aiCanUse>
+    <iconPath>UI/Abilities/Skip</iconPath>
+    <cooldownTicksRange>6000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>True</requireLineOfSight>
+      <warmupTime>5</warmupTime>
+      <range>55</range>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    <aimingTargetMote>NCL_Mote_SkipLocked</aimingTargetMote>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>NCLWorm.Comp_TeleportToRandomAlly</compClass>
+      </li>
+      <li Class="CompProperties_AbilityEffectWithDuration">
+        <compClass>CompAbilityEffect_Stun</compClass>
+        <durationSecondsOverride>5~10</durationSecondsOverride>
+      </li>
+    </comps>
+  </AbilityDef>
+
+ 
+
+    <AbilityDef>
+    <defName>NCL_TeleportSkip</defName>
+    <label>Psychic Skip</label>
+    <description>The psychic Militor instantly teleports a target to a designated location using telekinesis.</description>
+    <aiCanUse>false</aiCanUse>
+    <iconPath>UI/Abilities/Skip</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>false</requireLineOfSight>
+      <warmupTime>0</warmupTime>
+      <range>55</range>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    <aimingTargetMote>NCL_Mote_SkipLocked</aimingTargetMote>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityTeleport">
+        <maxBodySize>20</maxBodySize>
+        <compClass>CompAbilityEffect_Teleport</compClass>
+        <destination>Selected</destination>
+        <requiresLineOfSight>True</requiresLineOfSight>
+        <range>55</range>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+        <destClamorType>Ability</destClamorType>
+        <destClamorRadius>10</destClamorRadius>
+        <stunTicks>18~60</stunTicks>
+        <goodwillImpact>18</goodwillImpact>
+        <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+      </li>
+    </comps>
+  </AbilityDef>
+
+    <AbilityDef>
+    <defName>NCL_MechSelfRepair_PsycastsMilitor</defName>
+    <label>Area Repair</label>
+    <description>The psychic Militor uses telekinesis to partially heal scars on all allies within a 25-cell radius.</description>
+    <aiCanUse>false</aiCanUse>
+    <iconPath>ModIcon/FixingTheBuilding</iconPath>
+    <cooldownTicksRange>900</cooldownTicksRange>
+  	<stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <showCastingProgressBar>true</showCastingProgressBar>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <range>25</range>
+      <drawAimPie>false</drawAimPie>      
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+      </li>
+      <li Class="NCL.CompProperties_GroupRepairAbility" />
+    </comps>
+  </AbilityDef>
+
+    <AbilityDef>
+    <defName>NCL_SkipShieldGeneration_PsycastsMilitor</defName>
+    <label>Frontline Shield Supply</label>
+    <description>The psychic Militor telekinetically steals three shield packs from the nearest trade ship's cargo hold and instantly equips them on the three allies closest to enemy forces.</description>
+    <aiCanUse>false</aiCanUse>
+    <iconPath>Things/Building/Security/BroadshieldProjector</iconPath>
+    <cooldownTicksRange>4200</cooldownTicksRange>
+	<stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <showCastingProgressBar>true</showCastingProgressBar>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <range>-1</range>
+      <drawAimPie>false</drawAimPie>      
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>MechbandDishUsed</effecterDef>
+      </li>
+            <li Class="NCL.CompProperties_ApplyHediffToFrontline">
+                <hediffToApply>TW_ShieldGeneration</hediffToApply>
+                <numberOfTargets>3</numberOfTargets>
+                <affectEnemies>false</affectEnemies>
+                <includeDowned>false</includeDowned>
+            </li>
+    </comps>
+  </AbilityDef>
+
+      <AbilityDef>
+    <defName>TW_MechSelfRepair_PsycastsMilitor</defName>
+    <label>Area Repair</label>
+    <description>The psychic Militor uses telekinesis to partially heal scars on all allies within a 25-cell radius.</description>
+    <aiCanUse>True</aiCanUse>
+    <iconPath>ModIcon/FixingTheBuilding</iconPath>
+    <cooldownTicksRange>900</cooldownTicksRange>
+  	<stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <showCastingProgressBar>true</showCastingProgressBar>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <range>25</range>
+      <drawAimPie>false</drawAimPie>      
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+      </li>
+      <li Class="NCL.CompProperties_GroupRepairAbility" />
+    </comps>
+  </AbilityDef>
+
+    <AbilityDef>
+    <defName>TW_SkipShieldGeneration_PsycastsMilitor</defName>
+    <label>Frontline Shield Deployment</label>
+    <description>The psychic Militor telekinetically retrieves three shield packs from the nearest merchant vessel's cargo racks and instantly deploys them onto three frontline allies positioned nearest to hostile forces.</description>
+    <aiCanUse>True</aiCanUse>
+    <iconPath>Things/Building/Security/BroadshieldProjector</iconPath>
+    <cooldownTicksRange>4200</cooldownTicksRange>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <showCastingProgressBar>true</showCastingProgressBar>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <range>-1</range>
+      <drawAimPie>false</drawAimPie>      
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>MechbandDishUsed</effecterDef>
+      </li>
+            <li Class="NCL.CompProperties_ApplyHediffToFrontline">
+                <hediffToApply>TW_ShieldGeneration</hediffToApply>
+                <numberOfTargets>3</numberOfTargets>
+                <affectEnemies>false</affectEnemies>
+                <includeDowned>false</includeDowned>
+            </li>
+    </comps>
+  </AbilityDef>
+
+    
+<HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_ShieldGeneration</defName>
+    <label>隔壁偷来的护盾生成器</label>
+    <description>灵能小镰用念力从隔壁偷来了护盾生成器，因传送匆忙忘了拆标签。很快，商船上的灵能者就会循着标签将护盾折跃回去。</description>
+	<comps>
+      <li Class="NCL.HediffCompProperties_ShieldGenerator">
+        <range>19</range>
+      </li>
+    </comps>
+    <stages>
+      
+    </stages>
+  <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>4200</disappearsAfterTicks>
+		<showRemainingTime>true</showRemainingTime>
+      </li>
+  </comps>
+  </HediffDef>
+  
+
+  <ThingDef ParentName="MoteBase">
+	<defName>NCL_Mote_SkipLocked</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+	<thingClass>MoteAttached</thingClass>
+    <mote>
+      <fadeInTime>0</fadeInTime>
+      <fadeOutTime>0</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+	  <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+	<graphicData>
+	  <drawSize>3</drawSize>
+      <texPath>Motes/NCL_Mote_SkipLocked</texPath>
+      <color>(1, 1, 1, 1)</color>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

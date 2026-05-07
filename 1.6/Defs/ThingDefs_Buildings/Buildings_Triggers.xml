@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+	<ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+		<defName>Building_Ancient_WarBeacon</defName>
+		<label>Ruined Beacon Site</label>
+		<description>This war beacon bears brutal combat scars - fractured structures whispering of catastrophic battles. Though shattered, its core frame remains resilient, awaiting reactivation. With sufficient resources it could be rebuilt into a functional war beacon, attracting mechanoid attention while unlocking unprecedented technologies. The choice stands: reactivate... or abandon?</description>
+		<thingClass>NCL.Building_Ancient_WarBeacon</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/AncientWarBeacon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(1.1, 0.75, 1.1)</volume>
+      </shadowData>
+    </graphicData>
+	    <uiIconPath>Buildings/AncientWarBeaconUI</uiIconPath>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>42</pathCost>
+		<destroyable>true</destroyable>
+        <useHitPoints>false</useHitPoints>
+		<statBases>
+			<WorkToBuild>600</WorkToBuild>
+			<Mass>10</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>(3,3)</size>
+		<costList>
+			<Steel>10</Steel>
+			<WoodLog>30</WoodLog>
+		</costList>
+		<tickerType>Rare</tickerType>
+		<rotatable>true</rotatable>
+		<constructEffect>ConstructWood</constructEffect>
+		<building>
+     <alwaysDeconstructible>false</alwaysDeconstructible>
+			<deconstructible>false</deconstructible>
+			<destroySound>BuildingDestroyed_Wood_Small</destroySound>
+		</building>
+    <comps>
+      <li Class="CompProperties_ProximityLetter">
+        <radius>4</radius>
+        <letterDef>PositiveEvent</letterDef>
+        <letterLabel>破碎的信标旧址</letterLabel>
+        <letterText>这座战争信标早已饱经战火的洗礼，残垣断壁诉说着一场惨烈的过往。尽管其表面伤痕累累、结构破碎，但核心框架依旧坚固如初，仿佛静静等待着重返战场的那一刻。
+如果你能筹集足够的资源并完成修复，或许就能再次唤醒它沉睡的力量——将其重构为真正的战争信标，点燃机械族对这片土地的关注，也为你带来前所未有的科技突破。
+它静候着……是重启，还是遗忘？</letterText>
+      </li>
+    </comps>
+		<modExtensions>
+			<li Class="NCL.ModExtension_AncientWarBeacon">
+				<finalThing>Building_TotalWarfareActivator</finalThing>
+				<toggleGizmoIcon>ModIcon/FixingTheBuilding</toggleGizmoIcon>
+                <toggleGizmoOffIcon>ModIcon/NotFixingTheBuilding</toggleGizmoOffIcon>
+				<stages>
+					<li>
+						<Things>
+							<Steel>250</Steel>
+							<SignalChip>1</SignalChip>
+							<ComponentSpacer>2</ComponentSpacer>
+							<ComponentIndustrial>4</ComponentIndustrial>
+						</Things>
+						<Rewards>
+						</Rewards>
+						<graphic>
+                           <texPath>Buildings/AncientWarBeacon</texPath>
+                           <graphicClass>Graphic_Multi</graphicClass>
+                           <drawSize>(6,6)</drawSize>
+                           <shadowData>
+                           <volume>(1.1, 0.75, 1.1)</volume>
+                           </shadowData>
+						</graphic>
+
+					</li>
+				</stages>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<WorkGiverDef>
+		<defName>WorkGiver_RebuildTheWarBeacon</defName>
+		<label>Rebuild The War Beacon</label>
+		<giverClass>NCL.WorkGiver_RebuildTheWarBeacon</giverClass>
+		<workType>Hauling</workType>
+		<verb>fill</verb>
+		<gerund>filling</gerund>
+		<priorityInType>114</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<canBeDoneByMechs>false</canBeDoneByMechs>
+	</WorkGiverDef>
+	
+		<JobDef>
+		<defName>RebuildTheWarBeacon</defName>
+		<driverClass>NCL.JobDriver_RebuildTheWarBeacon</driverClass>
+		<reportString>修复 TargetA.</reportString>
+		<suspendable>false</suspendable>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+	<ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>Building_TotalWarfareActivator</defName>
+    <label>War Beacon</label>
+	<thingClass>NCL.Building_TotalWarfareActivator</thingClass>
+    <description>The restored war beacon looms like a slumbering leviathan. As mechanoids' strategic locus, activation exposes your colony - drawing progressively deadlier assaults. Yet high risk brings high reward: beacon core analysis can bypass mechanoid tech barriers, unlocking previously inaccessible technologies. The choice is yours: preserve safety through silence, or ignite war to grasp the unknown?</description>
+    <graphicData>
+      <texPath>Buildings/CompleteWarBeacon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(1.1, 0.75, 1.1)</volume>
+      </shadowData>
+    </graphicData>
+	<uiIconPath>Buildings/WarBeaconUI</uiIconPath>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <building>
+     <alwaysDeconstructible>false</alwaysDeconstructible>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <uiOrder>2460</uiOrder>
+    <statBases>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(3,3)</size>
+    <killedLeavings>
+      <ChunkSlagSteel>5</ChunkSlagSteel>
+	  <TW_Precision_Memory_Interface_Array>1</TW_Precision_Memory_Interface_Array>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>开启全面战争X</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+      </li>
+	  <li Class="NCL.CompProperties_UseEffect_ActivateWarfare">
+      <activateEffect>MechbandBuildingDestroyed</activateEffect>
+      <delayTicks>120</delayTicks> 
+    </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnKilledLeavings>true</spawnKilledLeavings>
+        <effecterDef>MechbandDishUsed</effecterDef>
+      </li>
+	<li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>CommsConsoleBossgroupSummoned</soundOnUsed>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+  </ThingDef>
+  
+    <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>Ancient_WarBeacon_PartsA</defName>
+    <label>Broken Beacon Fragments</label>
+    <description>Component debris scattered from war beacon wreckage. Internal structures severely compromised - no tactical or comms functionality remains. Still viable as source of metal and composites for resource-starved colonies.</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Buildings/AncientWarBeaconAParts</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1, 1, 0.4)</volume>
+        <offset>(-0.2,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(2,1)</size>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <Plasteel>150</Plasteel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </killedLeavings>
+  </ThingDef>
+  
+      <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>Ancient_WarBeacon_PartsB</defName>
+    <label>Broken Beacon Fragments</label>
+    <description>Component debris scattered from war beacon wreckage. Internal structures severely compromised - no tactical or comms functionality remains. Still viable as source of metal and composites for resource-starved colonies.</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Buildings/AncientWarBeaconBParts</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1, 1, 0.4)</volume>
+        <offset>(-0.2,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(2,1)</size>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <Plasteel>150</Plasteel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </killedLeavings>
+  </ThingDef>
+
+    <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>Broken_War_Scorpion_Rust</defName>
+    <label>War Scorpion Wreckage</label>
+    <description>A War Scorpion's remains. You sense valuable components within.</description>
+    <thingClass>Building</thingClass>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Buildings/BrokenWarScorpionRust</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(1, 1, 1)</volume>
+        <offset>(-0.2,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints>
+    </statBases>
+    <building>
+     <alwaysDeconstructible>false</alwaysDeconstructible>
+			<deconstructible>false</deconstructible>
+    </building>
+    <killedLeavings>
+      <Uranium>75</Uranium>
+      <Plasteel>50</Plasteel>
+      <Steel>150</Steel>
+      <NCL_RedCube>1</NCL_RedCube>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+      </li>
+      <li Class="CompProperties_ProximityLetter">
+        <radius>4</radius>
+        <letterDef>PositiveEvent</letterDef>
+        <letterLabel>战争巨蝎残骸</letterLabel>
+        <letterText>当你靠近这座战争巨蝎残骸时,你感受到其中似乎存在某些有价值的事物,你隐隐约约看到其头部的一块闪闪发光的红色立方体,也许其能提取出为你所用</letterText>
+      </li>
+      <li Class="CompProperties_LeavingsLetter">
+        <letterLabel>可用的: {LEAVINGS1_label}</letterLabel>
+        <letterText>战争巨蝎残骸毁坏后留下了一份红色魔方,也许你能用它解锁什么科技</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <leavingsFilter>
+          <thingDefs>
+            <li>NCL_RedCube</li>
+          </thingDefs>
+        </leavingsFilter>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>包含一块闪闪发光的红色立方体.</inspectString>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+</Defs>

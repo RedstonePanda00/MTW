@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<Doxa0_AntiParticleEmitter.label>Antiparticle Emitter</Doxa0_AntiParticleEmitter.label>
+
+<!-- EN: Deep Logic Core -->
+<Doxa0_DeepLogic_NeuronCore.label>Deep Logic Core</Doxa0_DeepLogic_NeuronCore.label>
+
+<!-- EN: Dorsal Segment One -->
+<Doxa0_Dorsal_First.label>Dorsal Segment One</Doxa0_Dorsal_First.label>
+<!-- EN: Dorsal Segment -->
+<Doxa0_Dorsal_First.labelShort>Dorsal Segment</Doxa0_Dorsal_First.labelShort>
+
+<!-- EN: Dorsal Segment Four -->
+<Doxa0_Dorsal_Fourth.label>Dorsal Segment Four</Doxa0_Dorsal_Fourth.label>
+<!-- EN: Dorsal Segment -->
+<Doxa0_Dorsal_Fourth.labelShort>Dorsal Segment</Doxa0_Dorsal_Fourth.labelShort>
+
+<!-- EN: Dorsal Segment Two -->
+<Doxa0_Dorsal_Second.label>Dorsal Segment Two</Doxa0_Dorsal_Second.label>
+<!-- EN: Dorsal Segment -->
+<Doxa0_Dorsal_Second.labelShort>Dorsal Segment</Doxa0_Dorsal_Second.labelShort>
+
+<!-- EN: Dorsal Segment Three -->
+<Doxa0_Dorsal_Third.label>Dorsal Segment Three</Doxa0_Dorsal_Third.label>
+<!-- EN: Dorsal Segment -->
+<Doxa0_Dorsal_Third.labelShort>Dorsal Segment</Doxa0_Dorsal_Third.labelShort>
+
+<!-- EN: Fire Control Coordination Module -->
+<Doxa0_FireControlModule.label>Fire Control Coordination Module</Doxa0_FireControlModule.label>
+
+<!-- EN: Shellsplitter Incubation Chamber -->
+<Doxa0_Hatch_Module.label>Shellsplitter Incubation Chamber</Doxa0_Hatch_Module.label>
+
+<!-- EN: Multi-Claw Propulsion Cluster -->
+<Doxa0_LimbCluster.label>Multi-Claw Propulsion Cluster</Doxa0_LimbCluster.label>
+
+<!-- EN: Frontal Sensor Array -->
+<Doxa0_Sensor_Cluster.label>Frontal Sensor Array</Doxa0_Sensor_Cluster.label>
+
+<!-- EN: Antiparticle Turret Mount -->
+<Doxa0_Turret_Mount.label>Antiparticle Turret Mount</Doxa0_Turret_Mount.label>
+  
+</LanguageData>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 修复破损建筑 -->
+  <WorkGiver_RebuildBrokenShellcoreBastion.label>Rebuild Broken Shellcore Bastion</WorkGiver_RebuildBrokenShellcoreBastion.label>
+  <!-- EN: filling -->
+  <WorkGiver_RebuildBrokenShellcoreBastion.gerund>filling</WorkGiver_RebuildBrokenShellcoreBastion.gerund>
+  <!-- EN: fill -->
+  <WorkGiver_RebuildBrokenShellcoreBastion.verb>fill</WorkGiver_RebuildBrokenShellcoreBastion.verb>
+  
+</LanguageData>

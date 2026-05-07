@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+  <RecipeDef ParentName="CentipedeMechanoidRecipe">
+    <defName>Mech_CentipedeMissile</defName>
+    <label>Missile Centipede</label>
+	<description>A centipede-class mechanoid equipped with guided missile systems, capable of launching precision HE or EMP warheads at extended ranges to suppress targets with devastating accuracy.</description>
+    <products>
+      <Mech_CentipedeMissile>1</Mech_CentipedeMissile>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_CentipedeMissile</ThingDef>
+    </descriptionHyperlinks>
+	<researchPrerequisites>
+	  <li>HighMechtech</li>
+	</researchPrerequisites>
+  </RecipeDef>
+  
+ </Defs>

@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_CLSMG</defName>
+    <label>CLSMG Cartridge</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>2</damageAmountBase>
+      <armorPenetrationBase>0.2</armorPenetrationBase>
+	  <stoppingPower>1</stoppingPower>
+      <speed>65</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>NCL_CLSMG</defName>
+    <label>CLSMG</label>
+    <description>Weapon Archive: CLSMG Light Submachine Gun
+Designation: CLSMG
+Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series
+
+The CLSMG is a lightweight defensive SMG designed for non-combatants, co-developed by NCL chief engineer O'Neal and AI system "Justice". Its fully electric micro-pressure propulsion system fires high-velocity lightweight projectiles to create dense suppression zones for deterrence, disruption, and light-armor target engagement.
+
+Structurally optimized for low recoil and user-friendly operation, the CLSMG features minimal handling barriers - enabling technicians, logistic personnel, and researchers to achieve immediate operational capability. However, as AI "Justice" assessed: this weapon "doesn't belong on battlefields" but rather in "not-yet-collapsed situations". Limited penetration, short effective range, and moderate firepower restrict its use to emergency defense and evacuation cover operations.
+
+Regarded as "the last resort for second-line units", the CLSMG represents technological and ethical compromise under total mechanized warfare.
+
+Design Notes:
+ O'Neal: "You made it too soft, Justice."
+ AI "Justice": "I calibrated it precisely - nonlethal by design."</description>
+ <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Weapons/CLSMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <weaponClasses>
+      <li>ShortShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <recipeMaker>
+      <researchPrerequisite>NCL_Standard_Issue</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+	 <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+    </recipeUsers>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>70000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.5</AccuracyShort>
+      <AccuracyMedium>0.5</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>175</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_CLSMG</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>24</range>
+        <burstShotCount>35</burstShotCount>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags Inherit="False">
+      <li>NCL_CLSMG</li>
+    </weaponTags>
+	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  </Defs>

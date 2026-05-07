@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Nyar Neo-Communist Alliance -->
+  <NCL_faction.label>Nyar Neo-Communist Alliance</NCL_faction.label>
+  <!-- EN: 1 -->
+  <NCL_faction.description>you must spawn both NCL factions for the mod to run sucessfully.</NCL_faction.description>
+  <!-- EN: leader -->
+  <NCL_faction.leaderTitle>leader</NCL_faction.leaderTitle>
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <NCL_faction.messageDefendersAttacking>{0} from {1} are attacking your {2}.</NCL_faction.messageDefendersAttacking>
+  <!-- EN: mechanoid -->
+  <NCL_faction.pawnSingular>mechanoid</NCL_faction.pawnSingular>
+  <!-- EN: mechanoids -->
+  <NCL_faction.pawnsPlural>mechanoids</NCL_faction.pawnsPlural>
+  
+</LanguageData>

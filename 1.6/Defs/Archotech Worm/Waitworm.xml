@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  
+  <GameConditionDef>
+    <defName>NCL_WaitWorm</defName>
+    <conditionClass>NCLWorm.GameCondition_WaitWorm</conditionClass>
+    <label>ArchoWorm Incoming</label>
+    <description>An archoWorm unit will be deployed to your primary colony. If you abandon the colony before its arrival, you will permanently forfeit this archomechanical specimen.</description>
+    <endMessage>蠕虫送达</endMessage>
+    <letterText>被投放的蠕虫抵达了你的基地,准备接收.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <canBePermanent>false</canBePermanent>
+    <allowUnderground>true</allowUnderground>
+  </GameConditionDef>
+  <GameConditionDef>
+    <defName>NCL_WaitWormFight</defName>
+    <conditionClass>NCLWorm.GameCondition_WaitWormFight</conditionClass>
+    <label>ArchoWorm Trial Imminent</label>
+    <description>An archoWorm combat unit is en route to your primary colony. Abandoning the colony prior to engagement will be considered trial failure.</description>
+    <endMessage>蠕虫送达</endMessage>
+    <letterText>被投放的蠕虫抵达了你的基地,准备好战斗吧.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <canBePermanent>false</canBePermanent>
+    <allowUnderground>true</allowUnderground>
+  </GameConditionDef>
+
+  
+</Defs>

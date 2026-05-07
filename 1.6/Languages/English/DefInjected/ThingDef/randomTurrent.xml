@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<Nyar_RandomTurrent_BulletA.label>Worm Tracking Projectile</Nyar_RandomTurrent_BulletA.label>
+<Nyar_RandomTurrent_BulletB.label>Worm Tracking Projectile</Nyar_RandomTurrent_BulletB.label>
+<Nyar_RandomTurrent_BulletC.label>Worm Tracking Projectile</Nyar_RandomTurrent_BulletC.label>
+<Nyar_RandomTurrent_BulletD.label>Worm Tracking Projectile</Nyar_RandomTurrent_BulletD.label>
+<Nyar_RandomTurrent_BulletE.label>Worm Tracking Projectile</Nyar_RandomTurrent_BulletE.label>
+<Nyar_RandomTurrent_BulletF.label>Worm Tracking Projectile</Nyar_RandomTurrent_BulletF.label>
+
+<Nyar_RandomTurrent_Gun.label>Worm Tracking Cannon</Nyar_RandomTurrent_Gun.label>
+<Nyar_RandomTurrent_Gun.description>Automated artillery system specialized in tracking and engaging subterranean threats.</Nyar_RandomTurrent_Gun.description>
+<Nyar_RandomTurrent_Gun.verbs.Verb_ShootRandomBullet.label>Worm Tracking Cannon</Nyar_RandomTurrent_Gun.verbs.Verb_ShootRandomBullet.label>
+
+  
+</LanguageData>

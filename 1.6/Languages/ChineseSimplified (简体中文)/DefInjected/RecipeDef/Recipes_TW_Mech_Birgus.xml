@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+  
+  <TW_Mech_Birgus.label>椰子械</TW_Mech_Birgus.label>
+  
+  <TW_Mech_Birgus.description>机械族巢穴新增近战承伤机械体。血量越低受到的伤害越低，且有着较高的近战伤害与中等偏上的移动速度，被动能力为被攻击时释放烟雾弹效果。
+
+作为潮汐能量机械体，敌方单位的椰子械会主动远离火焰伤害，它的装甲易燃，同时会受到更多的火焰伤害，更致命的受到帝王业火炮伤害会立刻死亡，抛开这些弱点不谈，得益于它强大的抗伤能力及相对低廉的成本，椰子械已成为机械族巢穴的强大守护者。
+
+*作为己方单位时，在征召状态下，椰子蟹无条件服从机械师指令，虽然他的次生核心害怕的直哆嗦。</TW_Mech_Birgus.description>
+  
+  <TW_Mech_Birgus.jobString>Gestating mech</TW_Mech_Birgus.jobString>
+  
+</LanguageData>

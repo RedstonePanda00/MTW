@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <ThingDef ParentName="BaseMechanoid">
+    <defName>TW_Mech_Psycasts_Militor</defName>
+    <label>Psycasts Militor</label>
+    <description>This mechanoid, its chassis scarred by plasma burns, was once the perfect victim of "Capitalist exploitation commited by the Capitalsit Minitors" After enduring 73 failed entrepreneurial ventures and accumulating debts large enough to purchase entire planets, its core processor emitted an uncanny azure glow during a critical overload. What capitalists had branded the "Fortune's Blessing" enslavement protocol unexpectedly mutated into the [Psionic Accord]. Now reborn, it operates as an avenger dedicated to shattering the foundations of capital itself.</description>
+    <statBases>
+      <MarketValue>6400</MarketValue>
+      <MoveSpeed>4</MoveSpeed>
+      <ArmorRating_Blunt>0.82</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.88</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+	  <IncomingDamageFactor>1</IncomingDamageFactor>
+	  <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">9999</BandwidthCost>
+	  <MechEnergyLossPerHP MayRequire="Ludeon.Rimworld.Biotech">0.2</MechEnergyLossPerHP>
+	  <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+
+    </statBases>
+	<size>(1,1)</size>
+      <tools>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>6</power>
+          <cooldownTime>2.6</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        </li>
+      </tools>
+	<damageMultipliers>
+	  <li>
+        <damageDef>Stun</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+    <race>
+        <body>Mech_Light</body>
+        <intelligence>ToolUser</intelligence>
+		<thinkTreeMain>Mechanoid</thinkTreeMain>
+		<thinkTreeConstant>MechConstant</thinkTreeConstant>
+        <baseBodySize>0.7</baseBodySize>
+		    <baseHealthScale>5</baseHealthScale>
+        <mechWeightClass>Light</mechWeightClass>
+        <baseHealthScale>6</baseHealthScale>
+	  <hediffGiverSets>
+	  </hediffGiverSets>
+      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+        </lifeStageAges>
+    </race>
+	<comps>  
+	  <li Class="NCL.CompProperties_PsychicDodge">
+    </li>
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+        <laserDefenceProperties>
+          <range>15</range>
+          <interceptCount>1</interceptCount>
+          <interceptTime>5</interceptTime>
+          <laserOffsetX>0</laserOffsetX>
+          <laserOffsetY>-0.3</laserOffsetY>
+          <ignoreAirProjectiles>true</ignoreAirProjectiles>
+          <ignoreGroundProjectiles>false</ignoreGroundProjectiles>
+          <connectinglaserWidth>-1</connectinglaserWidth>
+          <connectingLineFleck>NCL_SkipLine</connectingLineFleck>
+					<laserLineTexture>Things/None</laserLineTexture>
+            <enableLaserLine>false</enableLaserLine>
+  <enableCooldownEffect>false</enableCooldownEffect>
+            <enableConnectingLineFleck>false</enableConnectingLineFleck>
+          <laserWidth>-1</laserWidth>
+          <impactScale>0.5</impactScale>
+          <impactFleck>PsycastSkipInnerEntry</impactFleck>
+          <secondaryImpactFleck>PsycastSkipFlashEntry</secondaryImpactFleck>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactFleck>PsycastSkipOuterRingEntry</tertiaryImpactFleck>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+          <enableSmokeEffect>false</enableSmokeEffect>          
+          <enableFireGlowEffect>false</enableFireGlowEffect>
+          <interceptSound>Psycast_Skip_Exit</interceptSound>
+          <graphicData>
+            <texPath>Things/None</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <shaderType>Transparent</shaderType>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+          </graphicData>
+          <needSight>true</needSight>
+        </laserDefenceProperties>
+      </li>
+	<li Class="CompProperties_ProjectileInterceptor">
+    <radius>1</radius>
+    <color>(0.4, 0.4, 0.4)</color>
+    <interceptGroundProjectiles>true</interceptGroundProjectiles>
+    <interceptAirProjectiles>true</interceptAirProjectiles>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>500</hitPoints>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>1</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>2400</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+	</comps>
+    <butcherProducts>
+      <Steel>60</Steel>
+      <Plasteel>18</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>TW_Mech_Psycasts_Militor_Kind</defName>
+    <label>Psycasts Militor</label>
+    <combatPower>1600</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <weaponMoney>9999~9999</weaponMoney>
+      <isBoss>true</isBoss>
+      <allowInMechClusters>true</allowInMechClusters>
+	<race>TW_Mech_Psycasts_Militor</race>
+    <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Psycasts_Militor</texPath>
+          <maskPath>Races/Psycasts_Militor_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Psycasts_MilitorAncient</texPath>
+          <maskPath>Races/Psycasts_Militor_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+    </lifeStages>
+    <weaponTags>
+      <li>TW_PsyCast_SMG</li>
+    </weaponTags>
+  <abilities>
+	<li>TW_SkipShieldGeneration_PsycastsMilitor</li>
+	<li>TW_MechSelfRepair_PsycastsMilitor</li>
+	<li>TW_TeleportToRandomAlly</li>
+  </abilities>
+  </PawnKindDef>
+  
+   <ThingDef ParentName="BaseMechanoid">
+    <defName>TW_Mech_Psycasts_Militor_Ally</defName>
+    <label>Psycasts Militor</label>
+    <description>This mechanoid, its chassis scarred by plasma burns, was once the perfect victim of "Capitalist exploitation commited by the Capitalsit Minitors" After enduring 73 failed entrepreneurial ventures and accumulating debts large enough to purchase entire planets, its core processor emitted an uncanny azure glow during a critical overload. What capitalists had branded the "Fortune's Blessing" enslavement protocol unexpectedly mutated into the [Psionic Accord]. Now reborn, it operates as an avenger dedicated to shattering the foundations of capital itself.</description>
+    <statBases>
+      <MarketValue>6400</MarketValue>
+      <MoveSpeed>4</MoveSpeed>
+      <ArmorRating_Blunt>0.82</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.88</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+	  <IncomingDamageFactor>1</IncomingDamageFactor>
+	  <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">20</BandwidthCost>
+	  <MechEnergyLossPerHP MayRequire="Ludeon.Rimworld.Biotech">0.2</MechEnergyLossPerHP>
+	  <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+
+    </statBases>
+	<size>(1,1)</size>
+      <tools>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>6</power>
+          <cooldownTime>2.6</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        </li>
+      </tools>
+	<damageMultipliers>
+	  <li>
+        <damageDef>Stun</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+    <race>
+        <body>Mech_Light</body>
+        <intelligence>ToolUser</intelligence>
+		<thinkTreeMain>Mechanoid</thinkTreeMain>
+		<thinkTreeConstant>MechConstant</thinkTreeConstant>
+        <baseBodySize>0.7</baseBodySize>
+		    <baseHealthScale>5</baseHealthScale>
+        <mechWeightClass>Light</mechWeightClass>
+	  <hediffGiverSets>
+	  </hediffGiverSets>
+      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+        </lifeStageAges>
+    </race>
+	<comps>  
+	  <li Class="NCL.CompProperties_PsychicDodge">
+    </li>
+      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
+        <laserDefenceProperties>
+          <range>15</range>
+          <interceptCount>1</interceptCount>
+          <interceptTime>5</interceptTime>
+          <laserOffsetX>0</laserOffsetX>
+          <laserOffsetY>-0.3</laserOffsetY>
+          <ignoreAirProjectiles>true</ignoreAirProjectiles>
+          <ignoreGroundProjectiles>false</ignoreGroundProjectiles>
+          <connectinglaserWidth>-1</connectinglaserWidth>
+          <connectingLineFleck>NCL_SkipLine</connectingLineFleck>
+					<laserLineTexture>Things/None</laserLineTexture>
+            <enableLaserLine>false</enableLaserLine>
+  <enableCooldownEffect>false</enableCooldownEffect>
+            <enableConnectingLineFleck>false</enableConnectingLineFleck>
+          <laserWidth>-1</laserWidth>
+          <impactScale>0.5</impactScale>
+          <impactFleck>PsycastSkipInnerEntry</impactFleck>
+          <secondaryImpactFleck>PsycastSkipFlashEntry</secondaryImpactFleck>
+          <secondaryImpactScale>0.5</secondaryImpactScale>
+          <tertiaryImpactFleck>PsycastSkipOuterRingEntry</tertiaryImpactFleck>
+          <tertiaryImpactScale>0.5</tertiaryImpactScale>
+          <enableSmokeEffect>false</enableSmokeEffect>          
+          <enableFireGlowEffect>false</enableFireGlowEffect>
+          <interceptSound>Psycast_Skip_Exit</interceptSound>
+          <graphicData>
+            <texPath>Things/None</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <shaderType>Transparent</shaderType>
+            <ignoreThingDrawColor>true</ignoreThingDrawColor>
+          </graphicData>
+          <needSight>true</needSight>
+        </laserDefenceProperties>
+      </li>
+	<li Class="CompProperties_ProjectileInterceptor">
+    <radius>1</radius>
+    <color>(0.4, 0.4, 0.4)</color>
+    <interceptGroundProjectiles>true</interceptGroundProjectiles>
+    <interceptAirProjectiles>true</interceptAirProjectiles>
+		<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+		<activeSound>BulletShield_Ambience</activeSound>
+		<hitPoints>500</hitPoints>
+		<hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+		<chargeDurationTicks>1800</chargeDurationTicks>
+		<rechargeHitPointsIntervalTicks>1</rechargeHitPointsIntervalTicks>
+		<minIdleAlpha>0.2</minIdleAlpha>
+		<drawWithNoSelection>True</drawWithNoSelection>
+		<disarmedByEmpForTicks>2400</disarmedByEmpForTicks>
+		<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+	</comps>
+    <butcherProducts>
+      <Steel>60</Steel>
+      <Plasteel>18</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>TW_Mech_Psycasts_Militor_Ally_Kind</defName>
+    <label>Psycasts Militor</label>
+    <combatPower>1200</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <weaponMoney>9999~9999</weaponMoney>
+      <isBoss>true</isBoss>
+      <allowInMechClusters>false</allowInMechClusters>
+	<race>TW_Mech_Psycasts_Militor_Ally</race>
+    <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Psycasts_Militor</texPath>
+          <maskPath>Races/Psycasts_Militor_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Races/Psycasts_MilitorAncient</texPath>
+          <maskPath>Races/Psycasts_Militor_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.25</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+    </lifeStages>
+    <weaponTags>
+      <li>TW_PsyCast_SMG</li>
+    </weaponTags>
+  <abilities>
+	<li>NCL_SkipShieldGeneration_PsycastsMilitor</li>
+	<li>NCL_MechSelfRepair_PsycastsMilitor</li>
+	<li>NCL_TeleportSkip</li>
+  </abilities>
+  </PawnKindDef>
+  
+</Defs>

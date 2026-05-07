@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef Name="NCLMechDinergate" ParentName="BaseMechanoidWalker">
+    <defName>NCL_Mech_Dinergate</defName>
+    <label>Dinergate</label>
+<description>Unit Archive: NCL-00 "Dinergate"
+Origin: "Iron Law" Mass-Production Series
+
+As NCL's first autonomous design, the Dinergate marked the transition from scrap-based to purpose-built mechanoids. This compact combat platform served diverse frontline roles across countless operations.
+
+Its core chassis features a honeycomb bionic structure with living-metal joints, balancing durability and mass-production efficiency. 
+
+Standard armament includes mid-range electro-lances and polymorphic manipulators that transition seamlessly between combat and utility roles. A rear-mounted drone deployment system provides tactical flexibility.
+
+Though technically obsolete, Dinergate variants persist in stellar ruins - minimalist shells executing forgotten commands with lethal precision.</description>
+    <statBases>
+      <MarketValue>800</MarketValue>
+      <MoveSpeed>6.0</MoveSpeed>
+      <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+	  <EMPResistance>0.20</EMPResistance>
+      <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+      <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+    <tools>
+      <li>
+        <label>left fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10.0</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10.0</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>Lancer</body>
+      <baseHealthScale>2</baseHealthScale>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <li>Cleaning</li>
+      </mechEnabledWorkTypes>
+      <mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+	<butcherProducts>
+      <Steel>300</Steel>
+      <Plasteel>100</Plasteel>
+    </butcherProducts>
+<comps>  
+  <li Class="NyarsModPackOne.CompProperties_DroneCarrier">
+    
+    <fixedIngredient>Steel</fixedIngredient>
+    
+    
+    <costPerDrone>50</costPerDrone>
+    
+    
+    <maxIngredientCount>100</maxIngredientCount>
+    
+    
+    <cooldownTicks>1200</cooldownTicks> 
+    
+    
+    <maxDronesPerSpawn>1</maxDronesPerSpawn>
+    
+    
+    <startingIngredientCount>100</startingIngredientCount>
+    
+    
+    <droneKind>NCL_Dinergate_Drone</droneKind>
+    <gizmoIconPath>Races/Drone_south</gizmoIconPath>
+  </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>NCL_Mech_Dinergate_Kind</defName>
+    <label>Dinergate</label>
+    <race>NCL_Mech_Dinergate</race>
+    <defaultFactionType>NCL_faction</defaultFactionType>
+	<allowInMechClusters>false</allowInMechClusters>
+    <combatPower>180</combatPower>
+    <lifeStages>
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <bodyGraphicData>
+          <texPath>Things/Dinergate</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Dinergate</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>NCLLance</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+  </abilities>
+  </PawnKindDef>
+
+  <ThingDef Name="NCLMechDinergateSniper" ParentName="BaseMechanoidWalker">
+    <defName>NCL_Mech_DinergateSniper</defName>
+    <label>Dinergate Sniper</label>
+<description>Unit Archive: NCL-02 "Dinergate Sniper"
+Origin: "Iron Law" Mass-Production Series
+
+A lightweight variant optimized for mid-range engagement. Its compact size enables precise strikes and prolonged reconnaissance. Primary weapon is the 'NCL-42 Red Needle' tactical rifle firing low-cost red ceramic slugs, capable of penetrating 25mm homogeneous steel. Mounts a foldable drone pod for deploying defensive drones at critical moments. Uniquely quiet during operation, it employs erratic repositioning jumps, making it an unpredictable marksman unit. Tactical records indicate its role as the scout and first-strike element preceding main forces.</description>
+    <statBases>
+      <MarketValue>800</MarketValue>
+      <MoveSpeed>5.0</MoveSpeed>
+      <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+	  <EMPResistance>0.20</EMPResistance>
+      <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+    <tools>
+      <li>
+        <label>left fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10.0</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10.0</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>Lancer</body>
+      <baseHealthScale>2</baseHealthScale>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <li>Cleaning</li>
+      </mechEnabledWorkTypes>
+      <mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+	<butcherProducts>
+      <Steel>300</Steel>
+      <Plasteel>100</Plasteel>
+    </butcherProducts>
+<comps>  
+  <li Class="NyarsModPackOne.CompProperties_DroneCarrier">
+    
+    <fixedIngredient>Steel</fixedIngredient>
+    
+    
+    <costPerDrone>50</costPerDrone>
+    
+    
+    <maxIngredientCount>100</maxIngredientCount>
+    
+    
+    <cooldownTicks>1200</cooldownTicks> 
+    
+    
+    <maxDronesPerSpawn>1</maxDronesPerSpawn>
+    
+    
+    <startingIngredientCount>100</startingIngredientCount>
+    
+    
+    <droneKind>NCL_Dinergate_Drone</droneKind>
+    <gizmoIconPath>Races/Drone_south</gizmoIconPath>
+  </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>NCL_Mech_DinergateSniper_Kind</defName>
+    <label>狙击兵蚁</label>
+    <race>NCL_Mech_DinergateSniper</race>
+    <defaultFactionType>NCL_faction</defaultFactionType>
+	<allowInMechClusters>false</allowInMechClusters>
+    <combatPower>180</combatPower>
+    <lifeStages>
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <bodyGraphicData>
+          <texPath>Things/DinergateSniper</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DinergateSniper</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>NCL42H</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+  <abilities>
+  </abilities>
+  </PawnKindDef>
+</Defs>

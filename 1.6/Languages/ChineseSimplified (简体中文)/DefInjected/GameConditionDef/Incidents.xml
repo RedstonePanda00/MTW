@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+    
+  <Mech2000Coming.label>机械空投</Mech2000Coming.label>
+  
+  <Mech2000Coming.description>突袭信号指示器已出现！您的殖民地已被 b2000 锁定，具有强力护盾及反隐能力的指示器在场时可持续发送加密指令，持续召唤空降型机械体对殖民地进行高频投送，请尽快破坏它！</Mech2000Coming.description>
+  
+  <Mech2000Coming.endMessage>The Mechanoid Airdrop has ended</Mech2000Coming.endMessage>
+  
+  <Mech2000Coming.letterText>The Mechanoid Airdrop has started! B2000 will continuously airdrop Mechanoid Centipedes onto the battlefield until the Static Nest Construct is destroyed.</Mech2000Coming.letterText>
+
+</LanguageData>

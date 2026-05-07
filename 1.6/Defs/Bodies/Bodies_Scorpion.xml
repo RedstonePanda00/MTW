@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <BodyPartGroupDef>
+    <defName>LeftFrontPowerLeg</defName>
+    <label>left front power leg</label>
+    <labelShort>power leg</labelShort>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>RightFrontPowerLeg</defName>
+    <label>right front power leg</label>
+    <labelShort>power leg</labelShort>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>LeftHindPowerLeg</defName>
+    <label>left hind power leg</label>
+    <labelShort>power leg</labelShort>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>RightHindPowerLeg</defName>
+    <label>right hind power leg</label>
+    <labelShort>power leg</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyPartDef>
+    <defName>ScorpionLeg</defName>
+    <label>leg</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+	<solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyDef>
+    <defName>ScorpionBody</defName>
+    <label>ScorpionBody</label>
+    <corePart>
+      <def>MechanicalThorax</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>MechanicalNeck</def>
+          <coverage>0.05</coverage>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>MechanicalHead</def>
+			  <groups>
+              <li>HeadAttackTool</li>
+              </groups>
+              <coverage>0.40</coverage>
+              <parts>
+                <li>
+                  <def>ArtificialBrain</def>
+                  <coverage>0.10</coverage>
+                  <depth>Inside</depth>
+                </li>
+                <li>
+                  <def>SightSensor</def>
+                  <customLabel>left up sight sensor cluster</customLabel>
+                  <coverage>0.05</coverage>
+                </li>
+                <li>
+                  <def>SightSensor</def>
+                  <customLabel>left down sight sensor cluster</customLabel>
+                  <coverage>0.05</coverage>
+                </li>
+				<li>
+                  <def>SightSensor</def>
+                  <customLabel>right up sight sensor cluster</customLabel>
+                  <coverage>0.05</coverage>
+                </li>
+				<li>
+                  <def>SightSensor</def>
+                  <customLabel>right down sight sensor cluster</customLabel>
+                  <coverage>0.05</coverage>
+                </li>
+                <li>
+                  <def>HearingSensor</def>
+                  <customLabel>left hearing sensor</customLabel>
+                  <coverage>0.05</coverage>
+                </li>
+                <li>
+                  <def>HearingSensor</def>
+                  <customLabel>right hearing sensor</customLabel>
+                  <coverage>0.05</coverage>
+                </li>
+				
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalShoulder</def>
+          <customLabel>left mounting</customLabel>
+          <coverage>0.01</coverage>
+          <parts>
+            <li>
+              <def>MechanicalArm</def>
+              <customLabel>left mountpoint</customLabel>
+              <coverage>0.01</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalShoulder</def>
+          <customLabel>right mounting</customLabel>
+          <coverage>0.01</coverage>
+          <parts>
+            <li>
+              <def>MechanicalArm</def>
+              <customLabel>right mountpoint</customLabel>
+              <coverage>0.01</coverage>
+            </li>
+          </parts>
+        </li>		
+        <li>
+          <def>ScorpionLeg</def>
+          <customLabel>left front power leg</customLabel>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.2</coverage>
+              <groups>
+              <li>LeftFrontPowerLeg</li>
+              </groups>
+			</li>
+          </parts>
+          <groups>
+            <li>LeftFrontPowerLeg</li>
+          </groups>           
+		</li>
+		
+        <li>
+          <def>ScorpionLeg</def>
+          <customLabel>right front power leg</customLabel>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>right foot</customLabel>
+              <coverage>0.2</coverage>
+			  <groups>
+                <li>RightFrontPowerLeg</li>
+              </groups>
+			</li>
+          </parts>
+          <groups>
+            <li>RightFrontPowerLeg</li>
+          </groups>            
+		</li>
+		
+        <li>
+          <def>ScorpionLeg</def>
+          <customLabel>left hind power leg</customLabel>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.2</coverage>
+              <groups>
+              <li>LeftHindPowerLeg</li>
+              </groups>
+            </li>
+		  </parts>
+          <groups>
+            <li>LeftFrontPowerLeg</li>
+          </groups>
+        </li>
+		
+		<li>
+          <def>ScorpionLeg</def>
+          <customLabel>right hind power leg</customLabel>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.2</coverage>
+              <groups>
+              <li>RightHindPowerLeg</li>
+              </groups>
+            </li>
+		  </parts>
+          <groups>
+            <li>RightHindPowerLeg</li>
+          </groups>
+        </li>
+		
+        <li>
+          <def>Reactor</def>
+          <customLabel>Reactor</customLabel>
+          <coverage>0.02</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+		<li>
+          <def>BulbTurret</def>
+          <customLabel>bulb turret</customLabel>
+          <coverage>0.05</coverage>
+          <groups>
+            <li>BulbTurret</li>
+          </groups>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

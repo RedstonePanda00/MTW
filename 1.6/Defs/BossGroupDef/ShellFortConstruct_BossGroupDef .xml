@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>Omen_of_Shellfort</defName>
+    <label>Bastion Beacon</label>
+    <description>A high-intensity signal device designed to summon the titan-class Fortified Shell Construct. Activation transmits exclusive orbital commands, deploying the construct via combat drop to coordinate assaults with primary mechanoid forces. The impact causes localized terrain destruction while initiating global missile suppression. The device self-destructs after activation and is single-use only. Defeating the Fortified Shell Construct yields its tactical core, unlocking corresponding technology pathways.</description>
+    <graphicData>
+      <texPath>Buildings/OmenofShellfort</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(4, 7.5, 4)</volume>
+      </shadowData>
+    </graphicData>
+	<uiIconPath>Buildings/OmenofShellfortUI</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2460</uiOrder>
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints>
+      <WorkToBuild>24000</WorkToBuild>
+      <Mass>250</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>750</Steel>
+      <Plasteel>250</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <killedLeavings>
+      <ChunkSlagSteel>5</ChunkSlagSteel>
+    </killedLeavings>
+    <researchPrerequisites>
+      <li>UltraMechtech</li>
+	  <li>NCL_Doom_Calculation</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Summon apocriton threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+      </li>
+      <li Class="CompProperties_Useable_CallBossgroup">
+        <bossgroupDef>ShellFortConstruct</bossgroupDef>
+        <effecterDef>MechbandDishUsed</effecterDef>
+        <prepareEffecterDef>MechBandDishPrepared</prepareEffecterDef>
+        <unlockedLetterLabelKey>LetterLabelBossgroupCallerUnlocked</unlockedLetterLabelKey>
+        <unlockedLetterTextKey>LetterBossgroupCallerUnlocked</unlockedLetterTextKey>
+        <delayTicks>120</delayTicks>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnKilledLeavings>true</spawnKilledLeavings>
+        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+  </ThingDef>
+
+    <QuestScriptDef>
+    <defName>ShellFortConstructBossgroup</defName>
+    <defaultHidden>true</defaultHidden>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;ShellFortConstructBossgroup</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;ShellFortConstructBossgroup</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+
+        <li>bossDefeatedLetterLabel-&gt;[escortees0_label] defeated: [reward_label]</li>
+
+        <li>bossDefeatedStudyChipLetterText-&gt;[defeated][study][manufacture]</li>
+        <li>bossDefeatedLetterText-&gt;[defeated][manufacture]</li>
+
+        <li>defeated-&gt;The hostile [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
+        <li>manufacture-&gt;\n\nThe chip can also be used to create more advanced mechanoids.</li>
+        <li>study-&gt;\n\nYou can study the [reward_label] by selecting a mechanitor and right-clicking the chip. Studying a [reward_label] helps unlock higher tiers of mechtech research.</li>
+
+      </rulesStrings>
+    </questContentRules>
+    <root Class="RimWorld.QuestGen.TW_QuestNode_Root_Bossgroup" />
+  </QuestScriptDef>
+
+  <LetterDef ParentName="ThreatBig">
+    <defName>ShellFortConstructBossgroup</defName>
+    <arriveSound>LetterArrive_Bossgroup</arriveSound>
+  </LetterDef>
+  
+    <BossgroupDef Abstract="True" Name="ShellFortConstructBossgroup">
+    <quest>ShellFortConstructBossgroup</quest>
+    <repeatWaveStartIndex>2</repeatWaveStartIndex>
+  </BossgroupDef>
+
+  <BossDef>
+    <defName>ShellFortConstruct</defName>
+    <kindDef>TW_Mech_Shell_Fortification_Kind</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks>
+  </BossDef>
+
+  <BossgroupDef ParentName="ShellFortConstructBossgroup">
+    <defName>ShellFortConstruct</defName>
+    <boss>ShellFortConstruct</boss>
+    <repeatWaveStartIndex>6</repeatWaveStartIndex>
+    <waves>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeBlaster>5</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+		  <Mech_Warqueen>1</Mech_Warqueen>
+		  <TW_Mech_MechTeslaCentipede_Kind>1</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+		  <Mech_Diabolus>1</Mech_Diabolus>
+		  <Mech_Centurion>1</Mech_Centurion>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Pikeman>5</Mech_Pikeman>
+        </escorts>
+      </li>
+	  <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>5</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>5</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>5</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>1</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>1</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+		  <TW_Mech_Doxa_Kind>1</TW_Mech_Doxa_Kind>
+		  <Mech_Warqueen>1</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>1</Mech_Apocriton>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Pikeman>5</Mech_Pikeman>
+        </escorts>
+      </li>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>10</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>10</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>10</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>2</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>2</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+		  <TW_Mech_Doxa_Kind>1</TW_Mech_Doxa_Kind>
+		  <Mech_Warqueen>1</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>1</Mech_Apocriton>
+          <Mech_Pikeman>10</Mech_Pikeman>
+		  <Mech_Scyther>5</Mech_Scyther>
+        </escorts>
+      </li>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>10</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>10</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>10</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>2</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>2</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Doxa_Kind>1</TW_Mech_Doxa_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>2</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>2</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>2</Mech_Apocriton>
+          <Mech_Pikeman>10</Mech_Pikeman>
+		  <Mech_Scyther>10</Mech_Scyther>
+        </escorts>
+      </li>
+      <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>15</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>15</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>15</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>15</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>2</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>2</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Doxa_Kind>1</TW_Mech_Doxa_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>1</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>2</Mech_Warqueen>
+		  <Mech_Centurion>2</Mech_Centurion>
+		  <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Apocriton>2</Mech_Apocriton>
+          <Mech_Pikeman>15</Mech_Pikeman>
+		  <Mech_Scyther>15</Mech_Scyther>
+        </escorts>
+      </li>
+	  <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>15</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>15</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>15</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>15</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>3</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>3</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Doxa_Kind>1</TW_Mech_Doxa_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>2</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>4</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>3</Mech_Warqueen>
+		  <Mech_Centurion>3</Mech_Centurion>
+		  <Mech_Diabolus>3</Mech_Diabolus>
+          <Mech_Apocriton>3</Mech_Apocriton>
+          <Mech_Pikeman>15</Mech_Pikeman>
+		  <Mech_Scyther>15</Mech_Scyther>
+        </escorts>
+      </li>
+	  <li> 
+        <bossCount>1</bossCount>
+        <escorts>
+		  <Mech_CentipedeMissile_Kind>18</Mech_CentipedeMissile_Kind>
+		  <Mech_CentipedeBlaster>18</Mech_CentipedeBlaster>
+		  <Mech_CentipedeBurner>18</Mech_CentipedeBurner>
+		  <Mech_CentipedeGunner>18</Mech_CentipedeGunner>
+		  <TW_Mech_MechTeslaCentipede_Kind>4</TW_Mech_MechTeslaCentipede_Kind>
+		  <TW_Mech_Praetor_Kind>4</TW_Mech_Praetor_Kind>
+		  <TW_Mech_Doxa_Kind>1</TW_Mech_Doxa_Kind>
+		  <TW_Mech_Psycasts_Militor_Kind>3</TW_Mech_Psycasts_Militor_Kind>
+		  <TW_Mech_Birgus_Kind>5</TW_Mech_Birgus_Kind>
+		  <Mech_Warqueen>4</Mech_Warqueen>
+		  <Mech_Centurion>4</Mech_Centurion>
+		  <Mech_Diabolus>4</Mech_Diabolus>
+          <Mech_Apocriton>4</Mech_Apocriton>
+          <Mech_Pikeman>15</Mech_Pikeman>
+		  <Mech_Scyther>15</Mech_Scyther>
+        </escorts>
+      </li>
+    </waves>
+    <leaderDescription>『壳堡构体』是机械族中极为罕见的泰坦级单位，其体高二十米，身披多层金属混铸而成的庞大外壳，其设计理念结合了攻坚、压制与区域控制的多重战略目标，尤其擅长在敌方防线中撕裂缺口，并以绝对火力清扫战场残余。『壳堡构体』通常自天际坠落，重重地落在殖民地边缘，以“炮塔形态”进入待命状态，发射导弹引发局部地震和恐慌。与此同时，配属的机械族主力部队将从另一侧空投登陆，与其构成前后夹击态势，极大增强攻势张力。</leaderDescription>
+    <rewardDef>TW_ArmorBlitzWarfare</rewardDef>
+  </BossgroupDef>
+
+
+</Defs>

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>Specops_Charge_Lance</defName>
+    <label>Specops Charge Lance</label>
+    <description>A specialized charge javelin exclusively equipped by Mech Paratroopers, featuring exceptional range and considerable damage potential.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+<relicChance>0</relicChance>    
+<graphicData>
+      <texPath>Weapons/Specops_Charge_Lance</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+	<uiIconPath>Weapons/Specops_Charge_Lance</uiIconPath>
+    <soundInteract>Interact_ChargeLance</soundInteract>
+	<equippedAngleOffset>0</equippedAngleOffset>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+	  <WorkToMake>20000</WorkToMake>
+      <Mass>6.8</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>0.95</AccuracyMedium>
+      <AccuracyLong>0.95</AccuracyLong>
+      <RangedWeapon_Cooldown>1.35</RangedWeapon_Cooldown>
+    </statBases>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ChargeLance</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>45</range>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <soundCast>ChargeLance_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>7</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="False">
+      <li>Specops_Charge_Lance</li>
+    </weaponTags>
+	<tradeTags>
+      <li>Specops_Charge_Lance</li>
+    </tradeTags>
+  </ThingDef>
+  
+
+
+  <ThingDef ParentName="Proj_GrenadeExplosiveEMP">
+    <defName>Proj_GrenadeExplosiveEMP</defName>
+    <label>GlitterWorld Explosive EMP Grenade</label>
+  </ThingDef>
+
+ <ThingDef Name="Proj_GrenadeExplosiveEMP" ParentName="BaseGrenadeProjectile" Abstract="True">
+    <defName>Proj_GrenadeExplosiveEMP</defName>
+    <label>GlitterWorld Explosive EMP Grenade</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Weapons/Proj_GrenadeExplosiveEMP</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>0.7</drawSize>
+    </graphicData>
+    <projectile>
+      <explosionRadius>4</explosionRadius>
+      <damageDef>EMP</damageDef>
+      <explosionDelay>100</explosionDelay>
+      <speed>12</speed>
+      <arcHeightFactor>2</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+    </projectile>
+    <comps>
+    <li Class="NCL.CompProperties_FragmentedExplosive">
+      <explosionRadius>4</explosionRadius>
+      <fragmentCount>180</fragmentCount> 
+      <guaranteedCenterFraction>0.75</guaranteedCenterFraction> 
+      <fragmentProjectileDef>Bullet_NCL_Fragments</fragmentProjectileDef>
+      <fireGlowSize>2.5</fireGlowSize>
+    </li>
+    </comps>
+  </ThingDef>
+
+  <AbilityDef>
+    <defName>TW_LaunchGrenadeExplosiveEMP</defName>
+    <label>Glitterworld EMP Frag Grenade</label>
+    <description>Originating from the Glitterworlds, this devastating EMP grenade releases approximately 180 fragments within a 6-cell radius. Enemies at the epicenter suffer catastrophic damage, making it exceptionally effective against the galaxy's proliferating mechanoids. Its design prioritizes EM disruption over penetration, incorporating specialized EMP core tubes that reduce armor-piercing capability.\n\nIronically, the Mechanoid Hive itself deemed this ordnance superior, resulting in its widespread adoption by elite paratroopers codenamed "Silent Bore". This unforeseen appropriation became a notorious dark joke circulating through the Rim.</description>
+    <iconPath>Weapons/GrenadeExplosiveEMP</iconPath>
+    <aiCanUse>true</aiCanUse>
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>14.9</range>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Proj_GrenadeExplosiveEMP</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  </Defs>

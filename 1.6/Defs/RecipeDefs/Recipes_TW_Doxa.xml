@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+
+  
+    <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>TW_Mech_Doxa</defName>
+    <label>Doxa</label>
+   <gestationCycles>24</gestationCycles>
+    <researchPrerequisite>NCL_Doom_Calculation</researchPrerequisite>
+    <displayPriority>99</displayPriority>
+    <description>Doxa is among the most tactically sophisticated mechanoids. Originally based on arachnid predators, it was rebuilt into an autonomous titan-class fire control nexus. Designed not for quick elimination but for gradual paralysis through sustained suppression and battlefield management. Its deployment signals regional decisive engagements.
+
+Doxa advances slowly with rhythmic cadence. When anchored in Artillery Lock mode, it deploys third-segment rocket arrays for continuous shield-penetrating bombardment. Sacrificing mobility, it becomes a semi-permanent firebase suppressing enemy concentrations.
+
+Its deadliest feature: periodically releasing Shellsplitter - micro-units with erratic trajectories that explode terminally, disrupting formations. These are tactical disruptors, not direct damage dealers.
+
+Doxa's neural core creates intelligent tactical networks through real-time fire distribution and target prioritization. Unchecked deployment risks dismantling entire defensive lines and losing battlefield initiative.
+
+Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to neutralize it promptly leads to colony's operational death.</description>
+    <researchPrerequisite>NCL_Doom_Calculation</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>1500</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>750</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>38</count>
+      </li>
+	        <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>1500</count>
+      </li>
+	        <li MayRequire="Ludeon.RimWorld.Odyssey">
+        <filter>
+          <thingDefs>
+            <li>GravlitePanel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AIPersonaCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TW_DoxaTacticalCore</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <products>
+      <TW_Mech_Doxa>1</TW_Mech_Doxa>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>TW_Mech_Doxa</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+  
+ </Defs>

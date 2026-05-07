@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+<!-- EN: Area Repair -->
+<NCL_MechSelfRepair_PsycastsMilitor.label>Area Repair</NCL_MechSelfRepair_PsycastsMilitor.label>
+<!-- EN: The psychic Militor uses telekinesis to partially heal scars on all allies within a 25-cell radius -->
+<NCL_MechSelfRepair_PsycastsMilitor.description>The psychic Militor uses telekinesis to partially heal scars on all allies within a 25-cell radius.</NCL_MechSelfRepair_PsycastsMilitor.description>
+
+<!-- EN: Frontline Shield Supply -->
+<NCL_SkipShieldGeneration_PsycastsMilitor.label>Frontline Shield Supply</NCL_SkipShieldGeneration_PsycastsMilitor.label>
+<!-- EN: The psychic Militor telekinetically steals three shield packs from the nearest trade ship's cargo hold and instantly equips them on the three allies closest to enemy forces -->
+<NCL_SkipShieldGeneration_PsycastsMilitor.description>The psychic Militor telekinetically steals three shield packs from the nearest trade ship's cargo hold and instantly equips them on the three allies closest to enemy forces.</NCL_SkipShieldGeneration_PsycastsMilitor.description>
+
+<!-- EN: Psychic Skip -->
+<NCL_TeleportSkip.label>Psychic Skip</NCL_TeleportSkip.label>
+<!-- EN: The psychic Militor instantly teleports a target to a designated location using telekinesis -->
+<NCL_TeleportSkip.description>The psychic Militor instantly teleports a target to a designated location using telekinesis.</NCL_TeleportSkip.description>
+
+<!-- EN: Area Repair -->
+<TW_MechSelfRepair_PsycastsMilitor.label>Area Repair</TW_MechSelfRepair_PsycastsMilitor.label>
+<!-- EN: The psychic Militor uses telekinesis to partially heal scars on all allies within a 25-cell radius -->
+<TW_MechSelfRepair_PsycastsMilitor.description>The psychic Militor uses telekinesis to partially heal scars on all allies within a 25-cell radius.</TW_MechSelfRepair_PsycastsMilitor.description>
+
+<!-- EN: Frontline Shield Deployment -->
+<TW_SkipShieldGeneration_PsycastsMilitor.label>Frontline Shield Deployment</TW_SkipShieldGeneration_PsycastsMilitor.label>
+<!-- EN: The psychic Militor telekinetically retrieves three shield packs from the nearest merchant vessel's cargo racks and instantly deploys them onto three frontline allies positioned nearest to hostile forces -->
+<TW_SkipShieldGeneration_PsycastsMilitor.description>The psychic Militor telekinetically retrieves three shield packs from the nearest merchant vessel's cargo racks and instantly deploys them onto three frontline allies positioned nearest to hostile forces.</TW_SkipShieldGeneration_PsycastsMilitor.description>
+
+<!-- EN: Adversary Relocation -->
+<TW_TeleportToRandomAlly.label>Adversary Relocation</TW_TeleportToRandomAlly.label>
+<!-- EN: Teleports an enemy combatant adjacent to a nearby allied unit -->
+<TW_TeleportToRandomAlly.description>Teleports an enemy combatant adjacent to a nearby allied unit.</TW_TeleportToRandomAlly.description>
+
+  
+</LanguageData>

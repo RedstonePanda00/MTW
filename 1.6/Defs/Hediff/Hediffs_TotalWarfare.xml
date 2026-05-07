@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+  <HediffDef Name="NCL_TotalWarfareHediffBase" Abstract="True">
+	<hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(80, 255, 20)</defaultLabelColor>
+	<alwaysAllowMothball>true</alwaysAllowMothball>
+	<alwaysAllowMothballCached>true</alwaysAllowMothballCached>
+	<comps>
+	  <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+  </HediffDef>
+  
+  
+  
+  <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_TacticalArtilleryCoordinationModule_AutoMortar</defName>
+    <label>Tactical Coordination Module: Mortar Support</label>
+    <description>Summons mortar support for combat assistance when player units are detected within a 150-tile radius.</description>
+	<comps>
+      <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
+        <turretDef>Turret_TW_AutoMortar</turretDef>
+        <turretCount>1</turretCount>
+        <spawnRadius>20</spawnRadius>
+        <minSpawnDistance>8</minSpawnDistance>
+        <leaveSlag>false</leaveSlag>
+        <canRoofPunch>true</canRoofPunch> 
+        <triggerRadius>150</triggerRadius> 
+
+      </li>
+    </comps>
+    <stages>
+      
+    </stages>
+  </HediffDef>
+
+    
+  <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_TacticalArtilleryCoordinationModule_Airstrike_Signal_Transmitter</defName>
+    <label>远程战术协调单元:突袭信号指示终端</label>
+    <description>该单位在周围半径150格内存在玩家单位时将召唤突袭信号指示终端协助战斗</description>
+	<comps>
+      <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
+        <turretDef>TW_Airstrike_Signal_Transmitter</turretDef>
+        <turretCount>1</turretCount>
+        <spawnRadius>1</spawnRadius>
+        <minSpawnDistance>0</minSpawnDistance>
+        <leaveSlag>false</leaveSlag>
+        <canRoofPunch>true</canRoofPunch> 
+        <triggerRadius>150</triggerRadius> 
+      <extraTurretDef>Turret_TW_AutoBirgusMortar</extraTurretDef>
+      <extraTurretCount>1</extraTurretCount>
+      <extraTurretLeaveSlag>false</extraTurretLeaveSlag>
+      </li>
+    </comps>
+    <stages>
+      
+    </stages>
+  </HediffDef>
+
+    <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_TacticalArtilleryCoordinationModule_AutoMortarEMP</defName>
+    <label>远程战术协调单元:EMP迫击炮</label>
+    <description>该单位在周围半径150格内存在玩家单位时将召唤EMP迫击炮协助战斗</description>
+	<comps>
+      <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
+        <turretDef>Turret_TW_AutoMortar_EMP</turretDef>
+        <turretCount>1</turretCount>
+        <spawnRadius>20</spawnRadius>
+        <minSpawnDistance>8</minSpawnDistance>
+        <leaveSlag>false</leaveSlag>
+        <canRoofPunch>true</canRoofPunch> 
+        <triggerRadius>150</triggerRadius> 
+      </li>
+    </comps>
+    <stages>
+      
+    </stages>
+  </HediffDef>
+  
+    <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_TacticalArtilleryCoordinationModule_LaserDefence</defName>
+    <label>Tactical Coordination Module: Point Defense Support</label>
+    <description>Summons point-defense systems for combat assistance when player units are detected within a 150-tile radius.</description>
+	<comps>
+      <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
+        <turretDef>TW_LaserDefenceTurret</turretDef>
+        <turretCount>1</turretCount>
+        <spawnRadius>5</spawnRadius>
+        <minSpawnDistance>1</minSpawnDistance>
+        <leaveSlag>false</leaveSlag>
+        <canRoofPunch>true</canRoofPunch>
+        <triggerRadius>35</triggerRadius> 
+      </li>
+    </comps>
+    <stages>
+    </stages>
+  </HediffDef>
+  
+    <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_TacticalArtilleryCoordinationModule_ChargeBlaster</defName>
+    <label>Tactical Coordination Module: Blast Cannon Support</label>
+    <description>Summons blast cannon support for combat assistance when player units are detected within a 45-tile radius.</description>
+	<comps>
+      <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
+        <turretDef>Turret_TW_AutoChargeBlaster</turretDef>
+        <turretCount>1</turretCount>
+        <spawnRadius>10</spawnRadius>
+        <minSpawnDistance>8</minSpawnDistance>
+        <leaveSlag>false</leaveSlag>
+        <canRoofPunch>true</canRoofPunch>
+        <triggerRadius>35</triggerRadius> 
+      </li>
+    </comps>
+    <stages>
+      
+    </stages>
+  </HediffDef>
+
+      <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_TacticalArtilleryCoordinationModule_AutoInferno</defName>
+    <label>远程战术协调单元：狱火炮</label>
+    <description>该单位在周围半径35格内存在玩家单位时将召唤狱火炮协助战斗</description>
+	<comps>
+      <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
+        <turretDef>Turret_TW_AutoInferno</turretDef>
+        <turretCount>1</turretCount>
+        <spawnRadius>10</spawnRadius>
+        <minSpawnDistance>8</minSpawnDistance>
+        <leaveSlag>false</leaveSlag>
+        <canRoofPunch>true</canRoofPunch>
+        <triggerRadius>35</triggerRadius> 
+      </li>
+    </comps>
+    <stages>
+      
+    </stages>
+  </HediffDef>
+  
+  
+    
+    <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_LongRangeBallisticsOptimizationSystem</defName>
+    <label>Long-Range Ballistics Optimization Module</label>
+    <description>This unit's weapon range is increased by 20%.</description>
+	<comps>
+        
+    </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+      <ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+			<VEF_VerbRangeFactor>1.25</VEF_VerbRangeFactor>
+			<RangedCooldownFactor>0.8</RangedCooldownFactor>
+			<IncomingDamageFactor>0.9</IncomingDamageFactor>
+			<AimingDelayFactor>0.8</AimingDelayFactor>		  
+        </statFactors>
+		<statOffsets>
+		  <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+    <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_HighMobilityPhaseShiftDrive_R</defName>
+    <label>High-Output Phase Shift Drive</label>
+    <description>This unit's movement speed is significantly boosted.</description>
+  <comps>
+  </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<RangedCooldownFactor>0.8</RangedCooldownFactor>
+			<IncomingDamageFactor>0.9</IncomingDamageFactor>
+			<AimingDelayFactor>0.8</AimingDelayFactor>	
+			<StaggerDurationFactor>0.5</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+          <MoveSpeed>+2</MoveSpeed>
+		  <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  
+      <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_HighMobilityPhaseShiftDrive_M</defName>
+    <label>High-Output Phase Shift Drive</label>
+    <description>This unit's movement speed is significantly boosted.</description>
+  <comps>
+  </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<IncomingDamageFactor>0.9</IncomingDamageFactor>
+			<MeleeDamageFactor>1.2</MeleeDamageFactor>
+			<StaggerDurationFactor>0.5</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+      <MoveSpeed>+2</MoveSpeed>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+		  <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+    <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_CompositeArmorReinforcementProtocol_R</defName>
+    <label>Composite Armor Reinforcement Protocol</label>
+    <description>This unit's protective capabilities are significantly enhanced.</description>
+	<comps>
+        
+    </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<RangedCooldownFactor>0.8</RangedCooldownFactor>
+			<IncomingDamageFactor>0.8</IncomingDamageFactor>
+			<AimingDelayFactor>0.8</AimingDelayFactor>	
+        </statFactors>
+		<statOffsets>
+		  <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+      <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_CompositeArmorReinforcementProtocol_M</defName>
+    <label>Composite Armor Reinforcement Protocol</label>
+    <description>This unit's protective capabilities are significantly enhanced.</description>
+	<comps>
+        
+  </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<MeleeDamageFactor>1.2</MeleeDamageFactor>
+			<IncomingDamageFactor>0.8</IncomingDamageFactor>
+        </statFactors>
+		<statOffsets>
+		  <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_Optical_Camo_Disruption_R</defName>
+    <label>Optical Camouflage Disruption Device</label>
+    <description>Random mechanoid units are equipped with optical camouflage modules, rendering them invisible. Camouflage deactivates when player units come within 45 tiles.[melee will then be 5 tiles]  Until then, the unit is invulnerable and will not attack.</description>
+	<comps>
+        <li Class="NCL.HediffCompProperties_InvisibilityWithEnemyAwareness">
+        <detectionRadius>45</detectionRadius> 
+        <checkInterval>60</checkInterval>
+        <visibleToPlayer>false</visibleToPlayer>
+	    </li>
+    </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<RangedCooldownFactor>0.8</RangedCooldownFactor>
+			<AimingDelayFactor>0.8</AimingDelayFactor>	
+        </statFactors>
+		<statOffsets>
+		  <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+    </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_Optical_Camo_Disruption_M</defName>
+    <label>Optical Camouflage Disruption Device</label>
+    <description>Random mechanoid units are equipped with optical camouflage modules, rendering them invisible on the battlefield. Camouflage deactivates when player units come within 5 tiles.</description>
+	<comps>
+        <li Class="NCL.HediffCompProperties_InvisibilityWithEnemyAwareness">
+        <detectionRadius>5</detectionRadius> 
+        <checkInterval>60</checkInterval>
+        <visibleToPlayer>true</visibleToPlayer>
+	    </li>
+    </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+		<statFactors>
+			<MeleeDamageFactor>1.2</MeleeDamageFactor>
+        </statFactors>
+		<statOffsets>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+		  <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  
+  <HediffDef ParentName="NCL_TotalWarfareHediffBase">
+    <defName>TW_Overdrive_M</defName>
+    <label>Mechanical Overdrive</label>
+	<hediffClass>Hediff_High</hediffClass>
+    <description>This mechanoid is temporarily overloaded due to massive energy infusion.</description>
+    <initialSeverity>0.01</initialSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+	<comps>
+        <li Class="HediffCompProperties_SeverityPerDay">
+            <severityPerDay>8</severityPerDay>
+        </li>
+    </comps>
+    <stages>
+      <li>
+		<minSeverity>0.01</minSeverity>
+        <label>超载</label>
+		<statFactors>
+            <RangedCooldownFactor>0.2</RangedCooldownFactor>
+			<IncomingDamageFactor>0.4</IncomingDamageFactor>
+			<AimingDelayFactor>0.2</AimingDelayFactor>
+			<StaggerDurationFactor>0</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+          <MoveSpeed>+4</MoveSpeed>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+        </statOffsets>
+		<capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>+3</offset>
+            </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.20</minSeverity>
+        <label>能量过剩</label>
+		<statFactors>
+            <RangedCooldownFactor>0.4</RangedCooldownFactor>
+			<IncomingDamageFactor>0.55</IncomingDamageFactor>
+			<AimingDelayFactor>0.4</AimingDelayFactor>
+			<StaggerDurationFactor>0.4</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+          <MoveSpeed>+2</MoveSpeed>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+        </statOffsets>
+		<capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>+2</offset>
+            </li>
+        </capMods>
+      </li>    
+	  <li>
+		<minSeverity>0.40</minSeverity>
+        <label>逐渐稳定</label>
+		<statFactors>
+            <RangedCooldownFactor>0.6</RangedCooldownFactor>
+			<IncomingDamageFactor>0.7</IncomingDamageFactor>
+			<AimingDelayFactor>0.6</AimingDelayFactor>
+			<StaggerDurationFactor>0.6</StaggerDurationFactor>
+        </statFactors>
+		<statOffsets>
+          <MoveSpeed>+1</MoveSpeed>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+        </statOffsets>
+		<capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>+1</offset>
+            </li>
+        </capMods>
+      </li>
+	  <li>
+		<minSeverity>0.80</minSeverity>
+        <label>稳定</label>
+		<statFactors>
+			<RangedCooldownFactor>0.8</RangedCooldownFactor>
+			<IncomingDamageFactor>0.8</IncomingDamageFactor>
+			<AimingDelayFactor>0.8</AimingDelayFactor>	
+        </statFactors>
+		<statOffsets>
+          <MoveSpeed>+0.5</MoveSpeed>
+		  <MeleeHitChance>+10</MeleeHitChance>
+		  <MeleeDodgeChance>+10</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

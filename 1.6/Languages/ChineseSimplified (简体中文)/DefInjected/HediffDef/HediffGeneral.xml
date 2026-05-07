@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+
+<Centurion_Arsenal_Codex_Hediff.label>百战兵谱：复合战术背负</Centurion_Arsenal_Codex_Hediff.label>
+
+<Centurion_Arsenal_Codex_Hediff.description>你现在什么都有了，放手去做吧。</Centurion_Arsenal_Codex_Hediff.description>
+
+
+<CrimsonSlagburstScorched.label>Crimson Slagburst Scorched</CrimsonSlagburstScorched.label>
+
+<CrimsonSlagburstScorched.description>赤蚀凝焚伤痕</CrimsonSlagburstScorched.description>
+
+
+<GD_Hediff_CloakedEffect.label>光学迷彩激活</GD_Hediff_CloakedEffect.label>
+
+<GD_Hediff_CloakedEffect.description>光学迷彩激活</GD_Hediff_CloakedEffect.description>
+
+
+<Moonlight_Synchronization.label>月辉入相干</Moonlight_Synchronization.label>
+
+<Moonlight_Synchronization.description>受月光辐射激发，植入体内的光子晶束虹膜与神经光谱引导膜发生共振，宿主进入超载状态，战斗感知与反应速度显著提升</Moonlight_Synchronization.description>
+
+
+<NCL_Overwatch_Nexus_MechBoost.label>战术数据链同步</NCL_Overwatch_Nexus_MechBoost.label>
+
+<NCL_Overwatch_Nexus_MechBoost.description>通过反隐雷达构建的战术网络，实时优化机械族单位的火控系统，显著提升射击精度与战场响应速度。</NCL_Overwatch_Nexus_MechBoost.description>
+
+
+<NCL_Shadow_Tag_Hediff.label>踩影</NCL_Shadow_Tag_Hediff.label>
+
+<NCL_Shadow_Tag_Hediff.description>该目标已被踩影，短时间内无法移动</NCL_Shadow_Tag_Hediff.description>
+
+
+<NCL_ShoulderTurretActive.label>extended shoulder turret</NCL_ShoulderTurretActive.label>
+
+<NCL_ShoulderTurretActive.description>Invisible hediff with shoulderturret.</NCL_ShoulderTurretActive.description>
+
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.label>Shoulder Turret Gun</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.label>
+
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.description>A low caliber autonomous gun made to be mounted on a shoulder</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.description>
+
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.visualLabel>Shoulder Turret Gun</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbProps.0.visualLabel>
+
+<NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbs.shoulder_turret_gun.label>Shoulder Turret Gun</NCL_ShoulderTurretActive.comps.HediffComp_ExtendedVerbGiver.verbs.shoulder_turret_gun.label>
+
+
+<NCL_Solar_Disruption.label>日光退相干</NCL_Solar_Disruption.label>
+
+<NCL_Solar_Disruption.description>“如月坠海。”
+	“终焉凝视”协议终止后的必然后遗症，源于光子晶束与神经引导膜的量子纠缠结构断裂，导致宿主全身感知与运动系统进入退相干崩解阶段。虽仍保持意识，但身体与思维已严重失调</NCL_Solar_Disruption.description>
+
+
+<NCL_Terminus_Gazed_Hediff.label>终焉之视</NCL_Terminus_Gazed_Hediff.label>
+
+<NCL_Terminus_Gazed_Hediff.description>NCL“月光之子”计划中的最终战斗协议，仅限于LUN-EYE-07α级虹膜载体。协议激活时，植入者将进入一种近乎神明的作战状态：时间仿佛凝滞，敌人尚未察觉，毁灭已至。
+	
+	但代价无法回避——协议结束后，宿主将遭遇全面神经崩解，陷入感官瘫痪与战斗力丧失的状态。</NCL_Terminus_Gazed_Hediff.description>
+
+
+<Symbiomesh.label>共生膜：动态生理调节</Symbiomesh.label>
+
+<Symbiomesh.description>纳米液主动调节生理状态，增强体能效率与作业适应性。</Symbiomesh.description>
+
+
+<The_coming_death.label>死亡将至</The_coming_death.label>
+
+<The_coming_death.description>引爆吧</The_coming_death.description>
+
+
+<TW_WasEncouraged.label>被鼓励哩</TW_WasEncouraged.label>
+
+<TW_WasEncouraged.description>被鼓励哩</TW_WasEncouraged.description>
+
+
+<Zero_Point_Overdrive_Hediff.label>零点闪烁过载</Zero_Point_Overdrive_Hediff.label>
+
+<Zero_Point_Overdrive_Hediff.description>机械关节进入过载模式，移动速度提高，伤害承受减半，射击冷却减半</Zero_Point_Overdrive_Hediff.description>
+  
+</LanguageData>

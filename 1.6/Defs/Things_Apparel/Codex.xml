@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="ArmorMachineableBase">
+    <defName>Centurion_Arsenal_Codex</defName>
+    <label>Centurion Arsenal Codex</label>
+    <description>Weapon Archive: Centurion Arsenal Codex Tactical Backpack System
+Designation: Centurion Arsenal Codex
+Affiliation: Neo-Communist League "Centurion" Elite Tactical Series
+
+The Centurion Arsenal Codex is an integrated combat platform exclusive to NCL elite units. This highly modular tactical harness features independent power and AI management systems. Designed for rapid battlefield adaptation, it embeds multiple specialized weapons into a single backpack, enabling real-time weapon switching during combat via dynamic deployment mechanisms - facilitating "single-operator multi-role" combat doctrine.
+
+Non-combat configuration presents as an oversized military backpack. When activated, primary arm linkage systems deploy selected modules. To maintain operator physiological balance, the system provides:
+◆ Increased carrying capacity
+◆ Robotic massage systems
+◆ Rapid weapon deployment/mode transition
+
+Confirmed integrated weapon modules:
+
+◆ Charge Rifle - 
+High-frequency energy pulses for medium-range penetration and suppression.
+
+◆ Submachine Gun - 
+Close-quarter suppression weapon with minimal target acquisition delay.
+
+◆ Designated Marksman Rifle - 
+High-precision, low-rate-of-fire long-range rifle.
+
+◆ Tactical Bayonet - 
+Rapid-deployment melee weapon based on vanguard tactics.
+
+Development logs:
+O'Neal: "I crammed an entire armory into a backpack. Don't tell me it's insufficient."
+Shana: "Sometimes you just need a blade... and momentum."</description>
+	<thingClass>Apparel</thingClass>
+    <techLevel>Archotech</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
+      <researchPrerequisite>NCL_Experimental_Assemblies</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <ComponentSpacer>8</ComponentSpacer>
+      <Steel>500</Steel>
+      <Plasteel>250</Plasteel>
+    </costList>
+    <graphicData>
+      <texPath>Apparels/Codex/XGL_BeiBao_north</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+	  <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToMake>14000</WorkToMake>
+      <Mass>24</Mass>
+      <Flammability>0</Flammability>
+      <EquipDelay>0.5</EquipDelay>
+    </statBases>
+		<equippedStatOffsets>
+			<ForagedNutritionPerDay>3</ForagedNutritionPerDay>		
+			<VEF_MassCarryCapacity>120</VEF_MassCarryCapacity>
+			<CarryingCapacity>120</CarryingCapacity>		
+		</equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <apparel>
+      <wornGraphicPath>Apparels/Codex/XGL_BeiBao</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+      </wornGraphicData>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+    <tradeability>None</tradeability>
+	<comps>
+      <li Class="CompProperties_CauseHediff_Apparel">
+	    <hediff>Centurion_Arsenal_Codex_Hediff</hediff>
+      </li>
+    </comps>
+</ThingDef>
+</Defs>

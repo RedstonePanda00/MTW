@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<TW_Mech_Praetor.label>侧频卫螽</TW_Mech_Praetor.label>
+<TW_Mech_Praetor.description>机械卫螽的升级型号，搭载更加强劲的护盾生成器，使用四联制导导弹发射器，能够在较远距离发射高爆或者EMP制导导弹以精准压制其对手；身后的反探测雷达可以消除范围内所有地方单位的隐匿效果。</TW_Mech_Praetor.description>
+<TW_Mech_Praetor.tools.head.label>head</TW_Mech_Praetor.tools.head.label>
+
+</LanguageData>

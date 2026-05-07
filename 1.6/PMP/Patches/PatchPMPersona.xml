@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>ProtossMechPersonaHero</li> 
+    </mods>
+
+    <match Class="PatchOperationSequence">
+      <operations>
+
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Kaldalis"]/statBases</xpath>
+            <value>
+                <statBases>
+                    <BandwidthCost>0</BandwidthCost>
+                    <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                    <MoveSpeed>9</MoveSpeed>
+                    <MeleeHitChance>100.0</MeleeHitChance>
+                    <IncomingDamageFactor>0.1</IncomingDamageFactor>
+                    <FoodPoisonChance>0</FoodPoisonChance>
+                </statBases>
+            </value>
+        </li>
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Kaldalis"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+            <value>
+                <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                    <energyMax>2000</energyMax>
+                    <energyGainPerTick>0.5</energyGainPerTick>
+                    <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                    <minDrawSize>0</minDrawSize>
+                    <maxDrawSize>2</maxDrawSize>
+                    <HardenedShields>true</HardenedShields>
+                </li>
+            </value>
+        </li>
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Kaldalis"]/tools/li[label="left Energy Blade"]/power</xpath>
+            <value>
+                <power>48</power>
+            </value>
+        </li>
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Kaldalis"]/tools/li[label="right Energy Blade"]/power</xpath>
+            <value>
+                <power>48</power>
+            </value>
+        </li>
+
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Taldarin"]/statBases</xpath>
+            <value>
+                <statBases>
+                    <MoveSpeed>5</MoveSpeed>
+                    <BandwidthCost>0</BandwidthCost>
+                    <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                    <IncomingDamageFactor>0.1</IncomingDamageFactor>
+                </statBases>
+            </value>
+        </li>
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Taldarin"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+            <value>
+                <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                    <energyMax>2000</energyMax>
+                    <energyGainPerTick>0.5</energyGainPerTick>
+                    <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                    <minDrawSize>0</minDrawSize>
+                    <maxDrawSize>3</maxDrawSize>
+                    <HardenedShields>true</HardenedShields>
+                </li>
+            </value>
+        </li>
+
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Warbringer"]/statBases</xpath>
+            <value>
+                <statBases>
+                    <MoveSpeed>12</MoveSpeed>
+                    <BandwidthCost>0</BandwidthCost>
+                    <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                    <IncomingDamageFactor>0.1</IncomingDamageFactor>
+                </statBases>
+            </value>
+        </li>
+        <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="PMPH_Warbringer"]/comps/li[@Class="ProtossMech.CompProperties_ProtossMechShield"]</xpath>
+            <value>
+                <li Class="ProtossMech.CompProperties_ProtossMechShield">
+                    <energyMax>3000</energyMax>
+                    <energyGainPerTick>0.5</energyGainPerTick>
+                    <ticksToBeginRecharge>60</ticksToBeginRecharge>
+                    <minDrawSize>0</minDrawSize>
+                    <maxDrawSize>3</maxDrawSize>
+                    <HardenedShields>true</HardenedShields>
+                </li>
+            </value>
+        </li>
+        
+      </operations>
+    </match>
+    
+    </Operation>
+
+</Patch>

@@ -1,0 +1,595 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <EffecterDef>
+    <defName>NCL_WormFightingeffects</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>1</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <fleckDef>NCL_EnergyCrackle</fleckDef>
+        <positionOffset>(-1, 0, -1)</positionOffset>
+        <color>(0.73, 0.13, 0.08, 0.85)</color>
+        <chancePerTick>.007</chancePerTick>
+        <chancePeriodTicks>300</chancePeriodTicks>
+        <burstCount>0~2</burstCount>
+        <scale>1~1.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>1</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <fleckDef>NCL_EnergyCrackle</fleckDef>
+        <positionOffset>(2, 0, 2)</positionOffset>
+        <color>(0.73, 0.13, 0.08, 0.85)</color>
+        <chancePerTick>.007</chancePerTick>
+        <chancePeriodTicks>300</chancePeriodTicks>
+        <burstCount>0~2</burstCount>
+        <scale>1~1.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>1</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <fleckDef>NCL_EnergyCrackle</fleckDef>
+        <color>(0.73, 0.13, 0.08, 0.85)</color>
+        <positionOffset>(2, 0, -2)</positionOffset>
+        <chancePerTick>.007</chancePerTick>
+        <chancePeriodTicks>300</chancePeriodTicks>
+        <burstCount>0~2</burstCount>
+        <scale>1~1.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>1</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <fleckDef>NCL_EnergyCrackle</fleckDef>
+        <color>(0.73, 0.13, 0.08, 0.85)</color>
+        <positionOffset>(-2, 0, 2)</positionOffset>
+        <chancePerTick>.007</chancePerTick>
+        <chancePeriodTicks>300</chancePeriodTicks>
+        <burstCount>0~2</burstCount>
+        <scale>1~1.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>NCL_Fleck_BurnerUsedEmber</fleckDef>
+        <initialDelayTicks>7</initialDelayTicks>
+        <scale>.1~.5</scale>
+        <burstCount>3~6</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>True</absoluteAngle>
+        <positionRadius>5</positionRadius>
+        <positionRadiusMin>2</positionRadiusMin>
+        <angle>0</angle>
+        <speed>.1~.9</speed>
+        <rotation>0~360</rotation>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>NCL_Fleck_BurnerUsedEmber</fleckDef>
+        <initialDelayTicks>7</initialDelayTicks>
+        <scale>.1~.3</scale>
+        <burstCount>1~4</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>True</absoluteAngle>
+        <positionRadius>5</positionRadius>
+        <positionRadiusMin>2</positionRadiusMin>
+        <angle>0</angle>
+        <speed>.3~1.5</speed>
+        <rotation>0~360</rotation>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_ApocritonPulse</moteDef>
+        <burstCount>1</burstCount>
+        <rotation>-150~150</rotation>
+        <scale>5</scale>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <positionRadius>0</positionRadius>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+<EffecterDef>
+    <defName>NCL_ShellFortFightingeffects</defName>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>NCL_Fleck_BurnerUsedEmber</fleckDef>
+        <initialDelayTicks>7</initialDelayTicks>
+        <scale>.1~.5</scale>
+        <burstCount>3~6</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>True</absoluteAngle>
+        <positionRadius>0</positionRadius>
+        <positionRadiusMin>0</positionRadiusMin>
+        <angle>0</angle>
+        <speed>.1~.9</speed>
+        <rotation>0~360</rotation>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>NCL_Fleck_BurnerUsedEmber</fleckDef>
+        <initialDelayTicks>7</initialDelayTicks>
+        <scale>.1~.3</scale>
+        <burstCount>1~4</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>True</absoluteAngle>
+        <positionRadius>5</positionRadius>
+        <positionRadiusMin>2</positionRadiusMin>
+        <angle>0</angle>
+        <speed>.3~1.5</speed>
+        <rotation>0~360</rotation>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_ApocritonPulse</moteDef>
+        <burstCount>1</burstCount>
+        <rotation>-150~150</rotation>
+        <scale>5</scale>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <positionRadius>0</positionRadius>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>NCL_WormBulletOnHit</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>1</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <fleckDef>NCL_EnergyCrackle</fleckDef>
+        <positionOffset>(-1, 0, -1)</positionOffset>
+        <color>(0.73, 0.13, 0.08, 0.85)</color>
+        <chancePerTick>.007</chancePerTick>
+        <chancePeriodTicks>300</chancePeriodTicks>
+        <burstCount>0~2</burstCount>
+        <scale>0.4~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_MechSparkSimple</moteDef>
+        <burstCount>1~2</burstCount>
+        <chancePerTick>0.015</chancePerTick>
+        <rotation>-150~-150</rotation>
+        <spawnLocType>OnTarget</spawnLocType>
+        <scale>1.0~1.2</scale>
+        <positionRadius>0.7</positionRadius>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+    <EffecterDef>
+    <defName>NCL_PillBugBeam_End</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>Smoke</fleckDef>
+        <chancePerTick>0.4</chancePerTick>
+        <scale>1.6~2.1</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.2~0.35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>SparkFlash</fleckDef>
+        <positionLerpFactor>0.6</positionLerpFactor>
+        <chancePerTick>0.2</chancePerTick>
+        <scale>2.5~4.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.2</positionRadius>
+        <fleckDef>AirPuff</fleckDef>
+        <chancePerTick>0.9</chancePerTick>
+        <speed>0.4~0.8</speed>
+        <scale>0.5~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <fleckDef>NCL_Fleck_BurnerUsedEmber</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <chancePerTick>0.1</chancePerTick>
+        <speed>3.3~5</speed>
+        <scale>0.8~1.2</scale>
+        <angle>88~104</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.02</positionRadius>
+        <moteDef>NCL_Fleck_BurnerUsedEmber</moteDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <chancePerTick>0.9</chancePerTick>
+        <speed>3.3~5</speed>
+        <scale>0.5~1</scale>
+        <angle>88~104</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <fleckDef>SparkFlash</fleckDef>
+        <chancePerTick>0.9</chancePerTick>
+        <scale>0.9~1.3</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>Beam_Glow</fleckDef>
+        <chancePerTick>0.8</chancePerTick>
+        <scale>3.0~3.5</scale>
+      </li>
+    </children>
+    <positionRadius>0.2</positionRadius>
+  </EffecterDef>
+
+    <ThingDef ParentName="MoteBase">
+    <defName>NCL_Fleck_BurnerUsedEmber</defName>
+    <graphicData>
+      <texPath>Motes/NCL_Fleck_BurnerUsedEmber</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <solidTime>0.3</solidTime>
+      <fadeOutTime>0.45</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_PillBug_Laser_Aim</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <texPath>Motes/Mote_PillBug_Laser_Aim</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteHellfireCannon_Aim</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/Cloudy_C</_DistortionTex>
+        <_NumFrames>10</_NumFrames>
+        <_FramesPerSec>1</_FramesPerSec>
+        <_DistortionScrollSpeed>(1.35, 1.35)</_DistortionScrollSpeed>
+        <_Intensity>3</_Intensity>
+        <_DistortionScale>0.082</_DistortionScale>
+      </shaderParameters>
+      <drawSize>(3, 0.9)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>NCL_EnergyCrackle</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>.1</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <growthRate>-.125</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleA</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <shaderParameters>
+          <_Color>(1, .8, .9, 1)</_Color>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>12.0</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleB</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <shaderParameters>
+          <_Color>(1, .8, .9, 1)</_Color>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>12.0</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleC</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <shaderParameters>
+          <_Color>(1, .8, .9, 1)</_Color>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>12.0</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <EffecterDef>
+    <defName>NCL_DroneFloating</defName>
+    <children>
+      
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>DustPuff</fleckDef>
+        <burstCount>0~2</burstCount>
+        <positionRadius>1.2</positionRadius>
+        <positionRadiusMin>1.2</positionRadiusMin>
+        <angle>165~195</angle>
+        <speed>0.5~0.8</speed>
+        <scale>1~1.5</scale>
+        <rotation>0~360</rotation>
+        
+        <rotationRate>-450~-360,360~450</rotationRate>
+        <airTime>1.5~2.5</airTime>
+        <orbitOrigin>false</orbitOrigin>
+        <positionLerpFactor>0.0</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      
+      
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>DustPuff</fleckDef>
+        <burstCount>0~2</burstCount>
+        <positionRadius>1.2</positionRadius>
+        <positionRadiusMin>1.2</positionRadiusMin>
+        <angle>-15~15</angle>
+        <speed>0.5~0.8</speed>
+        <scale>1~1.5</scale>
+        <rotation>0~360</rotation>
+        <rotationRate>-450~-360,360~450</rotationRate>
+        <airTime>1.5~2.5</airTime>
+        <orbitOrigin>false</orbitOrigin>
+        <positionLerpFactor>0.0</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      
+      
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>DustPuff</fleckDef>
+        <burstCount>0~2</burstCount>
+        <positionRadius>1.2</positionRadius>
+        <positionRadiusMin>1.2</positionRadiusMin>
+        <angle>75~105</angle>
+        <speed>0.5~0.8</speed>
+        <scale>1~1.5</scale>
+        <rotation>0~360</rotation>
+        <rotationRate>-450~-360,360~450</rotationRate>
+        <airTime>1.5~2.5</airTime>
+        <orbitOrigin>false</orbitOrigin>
+        <positionLerpFactor>0.0</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      
+      
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>DustPuff</fleckDef>
+        <burstCount>0~2</burstCount>
+        <positionRadius>1.2</positionRadius>
+        <positionRadiusMin>1.2</positionRadiusMin>
+        <angle>255~285</angle>
+        <speed>0.5~0.8</speed>
+        <scale>1~1.5</scale>
+        <rotation>0~360</rotation>
+        <rotationRate>-450~-360,360~450</rotationRate>
+        <airTime>1.5~2.5</airTime>
+        <orbitOrigin>false</orbitOrigin>
+        <positionLerpFactor>0.0</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>TW_Mote_ProximityScannerRadius</defName>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>999999999</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/ActivatorProximityRadius</texPath>
+      <shaderType>MoteProximityScannerRadius</shaderType>
+      <color>(1, 0.1, 0.1, 0.35)</color>
+      <drawSize>50</drawSize>
+      <shaderParameters>
+        <_smokeScrollSpeed>0.1</_smokeScrollSpeed>
+        <_rotationSpeed>0.1</_rotationSpeed>
+        <_smokeAmount>0.5</_smokeAmount>
+        <_MainTex>/Things/Mote/ActivatorProximityRadius</_MainTex>
+        <_ScanTex>/Things/Mote/ActivatorProximityScanning</_ScanTex>
+        <_SmokeTex>/Things/Mote/SmokeTiled</_SmokeTex>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <defName>TW_Mote_ActivatorProximityGlow</defName>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>999999999</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <drawSize>2.5</drawSize>
+      <drawOffset>(0,0,0.65)</drawOffset>
+      <color>(235, 75, 40, 150)</color>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>NCL_Fleck_BurnerUsedEmber</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>3</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Motes/NCL_Fleck_BurnerUsedEmber</texPath>
+      <shaderType>NCL_EmberGlow</shaderType>
+      <drawSize>.5</drawSize>
+      <shaderParameters>
+        <_Color2>(.96, .6, .2, 1)</_Color2>
+        <_Interval>0.05</_Interval>
+      </shaderParameters>
+    </graphicData>
+    <scalers>
+      <li>
+        <scaleAmt>1~4</scaleAmt>
+        <scaleTime>.2~6</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.305448)</li>
+            <li>(0.08,0.6668836)</li>
+            <li>(0.12,0.9360147)</li>
+            <li>(0.16,0.9911547)</li>
+            <li>(0.2,0.9870781)</li>
+            <li>(0.24,0.9784655)</li>
+            <li>(0.28,0.9653521)</li>
+            <li>(0.32,0.9477734)</li>
+            <li>(0.36,0.9257647)</li>
+            <li>(0.3999999,0.8993613)</li>
+            <li>(0.4399999,0.8685986)</li>
+            <li>(0.4799999,0.8335121)</li>
+            <li>(0.5199999,0.7941369)</li>
+            <li>(0.5599999,0.7505086)</li>
+            <li>(0.6,0.7026625)</li>
+            <li>(0.64,0.6506338)</li>
+            <li>(0.68,0.594458)</li>
+            <li>(0.72,0.5341705)</li>
+            <li>(0.7600001,0.4698067)</li>
+            <li>(0.8000001,0.4014017)</li>
+            <li>(0.8400001,0.3289912)</li>
+            <li>(0.8800001,0.2526103)</li>
+            <li>(0.9200001,0.1722946)</li>
+            <li>(0.9600002,0.08807921)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+    
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>NCL_Fleck_BurnerUsedEmberBlack</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>3</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <graphicData>
+      <drawSize>.5</drawSize>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Motes/NCL_Fleck_BurnerUsedEmber</texPath>
+      <shaderType>NCL_Ember</shaderType>
+      <shaderParameters>
+        <_Color2>(0, 0, 0, 1)</_Color2>
+        <_Interval>0.05</_Interval>
+      </shaderParameters>
+    </graphicData>
+    <scalers>
+      <li>
+        <scaleAmt>.8~1</scaleAmt>
+        <scaleTime>2~6</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.305448)</li>
+            <li>(0.08,0.6668836)</li>
+            <li>(0.12,0.9360147)</li>
+            <li>(0.16,0.9911547)</li>
+            <li>(0.2,0.9870781)</li>
+            <li>(0.24,0.9784655)</li>
+            <li>(0.28,0.9653521)</li>
+            <li>(0.32,0.9477734)</li>
+            <li>(0.36,0.9257647)</li>
+            <li>(0.3999999,0.8993613)</li>
+            <li>(0.4399999,0.8685986)</li>
+            <li>(0.4799999,0.8335121)</li>
+            <li>(0.5199999,0.7941369)</li>
+            <li>(0.5599999,0.7505086)</li>
+            <li>(0.6,0.7026625)</li>
+            <li>(0.64,0.6506338)</li>
+            <li>(0.68,0.594458)</li>
+            <li>(0.72,0.5341705)</li>
+            <li>(0.7600001,0.4698067)</li>
+            <li>(0.8000001,0.4014017)</li>
+            <li>(0.8400001,0.3289912)</li>
+            <li>(0.8800001,0.2526103)</li>
+            <li>(0.9200001,0.1722946)</li>
+            <li>(0.9600002,0.08807921)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+   
+  </FleckDef>
+
+    <ShaderTypeDef>
+    <defName>NCL_Ember</defName>
+    <shaderPath>Map/Ember</shaderPath>
+  </ShaderTypeDef>
+  <ShaderTypeDef>
+    <defName>NCL_EmberGlow</defName>
+    <shaderPath>Map/EmberGlow</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>GroundFog</defName>
+    <shaderPath>Map/GroundFog</shaderPath>
+  </ShaderTypeDef>
+</Defs>

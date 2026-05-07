@@ -1,0 +1,530 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  
+    <AbilityDef>
+		<defName>NCL_Blazing_Core_Penetrator</defName>
+		<label>Solaris Penetrator</label>
+		<description>Propels toward target, displacing enemies along trajectory and generating large-area effect at impact zone.</description>
+		<iconPath>Things/Tail</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<verbProperties>
+			<defaultCooldownTime>5</defaultCooldownTime>
+			<verbClass>Verb_CastAbility</verbClass>
+			<onlyManualCast>true</onlyManualCast>
+			<range>35</range>
+			<warmupTime>5</warmupTime>
+			<soundCast>Shot_HellsphereCannonGun</soundCast>
+		    <soundCastTail>GunTail_Heavy</soundCastTail>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetBuildings>true</canTargetBuildings>
+			</targetParams>
+			<aimingLineMote>Mote_HellsphereCannon_Aim</aimingLineMote>
+            <aimingChargeMote>Mote_HellsphereCannon_Charge</aimingChargeMote>
+            <aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+            <aimingLineMoteFixedLength>15.9</aimingLineMoteFixedLength>
+            <aimingTargetMote>Mote_HellsphereCannon_Target</aimingTargetMote>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>Bullet_HellsphereCannonGun</projectileDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+    
+  <AbilityDef>
+    <defName>NCL_MechSelfRepair</defName>
+    <label>Self Repair</label>
+    <description>Self Repair, can recover 15 scars on the user itself</description>
+    
+    <iconPath>ModIcon/FixingTheBuilding</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+	<stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <showCastingProgressBar>true</showCastingProgressBar>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupEffecter>ConstructMetal</warmupEffecter>
+      <warmupTime>8</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <range>-1</range>   
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+		<canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="NCL.CompProperties_RepairAbility" />
+    </comps>
+  </AbilityDef>
+
+      <AbilityDef>
+		<defName>NCL_Bidirectional_Shielding_System</defName>
+		<label>Binary Veil System Deployment</label>
+		<description>Deploys smokescreen generators to create visual-obscurement fields while simultaneously launching two Gyro-Blades.</description>
+		<iconPath>Projectiles/Gyro/Gyro_a</iconPath>
+		<aiCanUse>false</aiCanUse>
+    <targetRequired>false</targetRequired>
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<verbProperties>
+			<defaultCooldownTime>0</defaultCooldownTime>
+			<verbClass>Verb_CastAbility</verbClass>
+			<onlyManualCast>true</onlyManualCast>
+			<range>0</range>
+        <drawAimPie>false</drawAimPie>  
+			<warmupTime>0</warmupTime>
+			<soundCast>Shot_HellsphereCannonGun</soundCast>
+		    <soundCastTail>GunTail_Heavy</soundCastTail>
+			<requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+		</verbProperties>
+		<comps>
+    <li Class="NyarsModPackTwo.CompProperties_ShootRandomBullet">
+                <bullets>
+                    <li>Nyar_Gyro_Blade</li>
+                </bullets>
+                <castCount>
+                    <min>2</min>
+                    <max>2</max>
+                </castCount>
+            </li>
+      <li Class="CompProperties_AbilitySmokepop">
+        <smokeRadius>4.5</smokeRadius>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>15</clamorRadius>
+      </li>
+		</comps>
+	</AbilityDef> 
+
+      <ThingDef ParentName="BaseBullet">
+        <defName>Nyar_Gyro_Blade</defName>
+        <label>Gyro-Blade</label>
+        <thingClass>NyarsModPackTwo.Bullet_TracingEnemies</thingClass>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <modExtensions>
+            <li Class="NyarsModPackTwo.ModExtension_BulletProperties">
+                <trailFleck>Nyar_Gyro_Blade_Fleck</trailFleck>
+                <trackEnemyProjectiles>true</trackEnemyProjectiles>
+                <maxFlyingTime>9000</maxFlyingTime>
+                <flyingStep>0.4</flyingStep>
+                <ignoreGroundProjectiles>true</ignoreGroundProjectiles>
+            </li>
+        </modExtensions>
+        <graphicData>
+            <texPath>Projectiles/Gyro</texPath>
+      <graphicClass>Graphic_Flicker</graphicClass>
+            <drawSize>1</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>EMP</damageDef>
+            <armorPenetrationBase>1</armorPenetrationBase>
+            <damageAmountBase>12</damageAmountBase>
+            <speed>55</speed>
+        </projectile>
+    <comps>
+        <li Class="NCL.CompProperties_SpawnEffectOnDestroy">
+            <effectDefName>NCL_WormBulletOnHit</effectDefName>
+            <effectSize>1</effectSize>
+            <durationTicks>120</durationTicks>
+        </li>
+    <li Class="NCL.CompProperties_FragmentedExplosive">
+      <explosionRadius>12</explosionRadius>
+      <fragmentCount>24</fragmentCount> 
+      <guaranteedCenterFraction>0.5</guaranteedCenterFraction> 
+      <fragmentProjectileDef>Bullet_NCL_Fragments</fragmentProjectileDef>
+      <fireGlowSize>2.5</fireGlowSize>
+    </li>
+    </comps>
+    </ThingDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>Nyar_Gyro_Blade_Fleck</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <solidTime>0</solidTime>
+        <graphicData>
+            <drawSize>(2,2)</drawSize>
+            <color>(0.5,0.5,0.5)</color>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>XFXFXFXF</texPath>
+        </graphicData>
+    </FleckDef>
+
+          <ThingDef ParentName="BaseBullet">
+        <defName>Bullet_NCL_Fragments</defName>
+        <label>Fragment</label>
+        <graphicData>
+            <texPath>Projectiles/Fragment</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <drawSize>(0.5, 0.75)</drawSize>
+        </graphicData>
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+            <damageDef>NCL_ModBomb</damageDef>
+            <explosionRadius>0.9</explosionRadius>
+            <explosionEffect>NCL_Frag</explosionEffect>
+            <damageAmountBase>9</damageAmountBase>
+      <screenShakeFactor>0</screenShakeFactor>
+            <stoppingPower>2.3</stoppingPower>
+            <armorPenetrationBase>0.14</armorPenetrationBase>
+            <speed>38</speed>
+        </projectile>
+    </ThingDef>
+
+      <DamageDef Name="NCL_ModBomb">
+    <defName>NCL_ModBomb</defName>
+    <label>bomb</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has died in an explosion.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <defaultDamage>50</defaultDamage>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <defaultArmorPenetration>0.10</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>4</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>2</buildingDamageFactorPassable>
+    <plantDamageFactor>4</plantDamageFactor>
+    <corpseDamageFactor>0.5</corpseDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>0</explosionHeatEnergyPerCell>
+    <explosionCellFleck>DustPuff</explosionCellFleck>
+    <explosionColorCenter>(205, 205, 205)</explosionColorCenter>
+    <explosionColorEdge>(75, 75, 75)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+      <EffecterDef>
+    <defName>NCL_Frag</defName>
+    <children>
+		<li>
+			<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+			<fleckDef>DustPuff</fleckDef>
+			<positionRadius>0.4</positionRadius>
+			<burstCount>2~6</burstCount>
+			<speed>1.6~1.75</speed>
+			<scale>2.5~3.3</scale>
+			<spawnLocType>OnSource</spawnLocType>
+		</li>
+    </children>
+  </EffecterDef>
+
+  
+  	<AbilityDef>
+		<defName>Zero_Point_Overdrive</defName>
+		<label>Zero-Point Flash</label>
+		<description>Overdrives nanomachines for instantaneous spatial translocation. Impact releases kinetic shockwave devastating nearby enemies while generating 16 unstable energy arcs. Post-translocation, user enters enhanced combat mode with significantly increased mobility, defense, and attack frequency.</description>
+		<iconPath>Ability/Overdrive</iconPath>
+		<cooldownTicksRange>600</cooldownTicksRange>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<hasStandardCommand>true</hasStandardCommand>
+			<verbClass>NCL.Verb_AbilityTeleport</verbClass>
+			<range>-1</range>
+			<requireLineOfSight>False</requireLineOfSight>
+			<nonInterruptingSelfCast>False</nonInterruptingSelfCast>
+			<warmupTime>0</warmupTime>			
+            <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NCL.CompProperties_AbilityCauseExplosion">
+				<damageDef>Crimson_Slagburst</damageDef>
+				<damageAmount>200</damageAmount>
+				<explosionRadius>6.5</explosionRadius>
+			</li>
+			<li Class="NCL.CompProperties_ThunderStrike">
+			    <lightningCount>16</lightningCount>
+                <radius>3</radius>
+                <damageAmount>50</damageAmount>
+                <damageType>Bomb</damageType>
+				<postEffectFilth>Filth_Ash</postEffectFilth>
+			</li>
+			<li Class="NCL.CompProperties_AbilityCasterHediff"> 
+                <casterHediff>Zero_Point_Overdrive_Hediff</casterHediff>
+                <ignoreIfExist>true</ignoreIfExist> 
+                <initialSeverity>0.5</initialSeverity> 
+            </li>
+			<li Class="NCL.CompProperties_AbilityShowRange">
+                 <range>282</range>
+                 <minRange>0</minRange>
+            </li>
+			<li Class="CompProperties_AbilityEffecterOnTarget">
+             <effecterDef>NCL_WormBulletOnHit</effecterDef>
+            </li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>NCL_Phantom_Force</defName>
+		<label>Phantom Strike</label>
+		<description>No target beyond reach!</description>
+		<iconPath>Ability/Overdrive</iconPath>
+		<cooldownTicksRange>30</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<hasStandardCommand>true</hasStandardCommand>
+			<verbClass>NCL.Verb_AbilityTeleport</verbClass>
+			<range>-1</range>
+			<requireLineOfSight>False</requireLineOfSight>
+			<nonInterruptingSelfCast>False</nonInterruptingSelfCast>
+			<warmupTime>0</warmupTime>			
+            <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NCL.CompProperties_AbilityShowRange">
+                 <range>282</range>
+                 <minRange>0</minRange>
+            </li>
+			<li Class="CompProperties_AbilityEffecterOnTarget">
+             <effecterDef>NCL_WormBulletOnHit</effecterDef>
+            </li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+     <defName>Terminus_Gaze</defName>
+     <label>Terminus Gaze</label>
+     <description>This lunar bionic-derived combat protocol enables temporary omnipotent combat state: perfect accuracy, zero action delay, instant target acquisition, dark-phase teleportation, and cryonic suspension of enemies in shadows. The godlike state lasts precisely 5 hours before neural collapse renders the implantee combat-ineffective.</description>
+     <iconPath>Ability/Gaze</iconPath>
+	 <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+     <cooldownTicksRange>900000</cooldownTicksRange> 
+     <targetRequired>false</targetRequired>
+	 <showCastingProgressBar>true</showCastingProgressBar>
+     <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>true</requireLineOfSight>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <warmupTime>20</warmupTime>
+      <range>0</range>
+      <targetable>false</targetable>
+	<targetParams>
+		<canTargetSelf>true</canTargetSelf>
+	</targetParams>
+    </verbProperties>
+    <comps>
+	    <li Class="NCL.CompProperties_AbilityGiveSelfHediff">
+            <hediffToApply>NCL_Terminus_Gazed_Hediff</hediffToApply>
+        </li>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>NCL_WormBulletOnHit</effecterDef>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>NCL_Fleck_Terminus_Gaze</fleckDef>
+      </li>
+      <li Class="NCL.CompProperties_AbilityApplyHediffInDarkness">
+            <hediffToApply>NCL_Shadow_Tag_Hediff</hediffToApply> 
+            <maxRange>250</maxRange>
+            <darknessThreshold>0.3</darknessThreshold> 
+      </li>
+    </comps>
+  </AbilityDef>
+
+      <FleckDef ParentName="FleckBase">
+    <defName>NCL_Fleck_Terminus_Gaze</defName>
+    <altitudeLayer>MoteOverheadLow</altitudeLayer>
+    <fadeInTime>4</fadeInTime>
+    <fadeOutTime>1</fadeOutTime>
+    <solidTime>8</solidTime>
+    <growthRate>1.5</growthRate>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.66</_distortionIntensity>
+        <_brightnessMultiplier>11.5</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>210</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+ <AbilityDef Name="EntitySkip">
+    <defName>QuantumShift</defName>
+    <label>Quantum Shift</label>
+    <description>Yggdrasil-root inspired quantum translocation system enabling terrain-ignoring free teleportation.</description>
+    <iconPath>Ability/QuantumShift</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+	<cooldownTicksRange>180</cooldownTicksRange>
+	<aiCanUse>true</aiCanUse>
+	<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+	<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <verbProperties>
+	  <hasStandardCommand>true</hasStandardCommand>
+	  <verbClass>Verb_EntitySkip</verbClass>
+      <warmupTime>0</warmupTime>
+      <range>-1</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityTeleport">
+        <compClass>CompAbilityEffect_Teleport</compClass>
+        <destination>Selected</destination>
+        <requiresLineOfSight>false</requiresLineOfSight>
+        <range>56</range>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+        <destClamorType>Ability</destClamorType>
+        <destClamorRadius>10</destClamorRadius>
+		<maxBodySize>10</maxBodySize>
+      </li>
+	  <li Class="NCL.CompProperties_AbilityShowRange">
+        <range>282</range>
+        <minRange>0</minRange>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+
+	
+	<AbilityDef MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+    <abilityClass>Ability</abilityClass>
+    <defName>NCL_ToggleCodexTurret</defName>
+    <label>Shoulder Turret Deployment</label>
+    <description>extend or retract a tiny, shoulder mounted automatic turret</description>
+    <iconPath>Weapons/CodexTurret</iconPath>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+	<showWhenDrafted>true</showWhenDrafted>
+    <uiOrder>6</uiOrder>
+	<targetRequired>False</targetRequired>
+	<comps>
+	  <li Class="NCL.LTS_CompProperties_ToggleHediff">
+	    <compClass>NCL.LTS_CompAbilityEffect_ToggleHediff</compClass>
+        <ToggleHediff>NCL_ShoulderTurretActive</ToggleHediff>
+		<location>Torso</location>
+      </li>
+	</comps>
+	<groupAbility>true</groupAbility>
+	<verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  
+  
+  <AbilityDef>
+		<defName>Ironbark_Explosion</defName>
+		<label>Core Detonation</label>
+		<description>Detonates the mechanoid, instantly destroying it and damaging all nearby entities regardless of allegiance.</description>
+		<jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+		<iconPath>UI/Abilities/FireBurst</iconPath>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<aiCanUse>false</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<targetRequired>false</targetRequired>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupEffecter>Fire_Burst_Warmup</warmupEffecter>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>12</range>
+			<drawAimPie>false</drawAimPie>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NCL.CompProperties_Detonate">
+				<radius>12</radius>
+				<damageType>Vaporize</damageType>
+				<damageAmount>800</damageAmount>
+				<soundCreated>MortarIncendiary_Explode</soundCreated>
+				<chanceToStartFire>0.5</chanceToStartFire>
+				<damageUser>true</damageUser>
+			</li>
+		</comps>
+	</AbilityDef>
+  
+
+      <AbilityDef>
+        <defName>NCL_FlyingKick</defName>
+        <label>KINETIC ROLL</label>
+        <description>Propels toward target, displacing enemies along trajectory and generating large-area effect at impact zone.</description>
+        <writeCombatLog>True</writeCombatLog>
+        <cooldownTicksRange>900</cooldownTicksRange>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <iconPath>Ability/PillBugFlyingB</iconPath>
+        <verbProperties>
+            <verbClass>NCL.Verb_FlyingKick</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <range>30.9</range>
+            <defaultCooldownTime>0</defaultCooldownTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+        <ThingDef ParentName="PawnFlyerBase">
+        <defName>NCL_FlyingKick</defName>
+        <thingClass>NCL.FlyingKick</thingClass>
+    <graphicData>
+      <texPath>Ability/PillBugFlyingB</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>5</drawSize>
+    </graphicData>
+        <pawnFlyer>
+            <flightDurationMin>0.5</flightDurationMin>
+            <flightSpeed>24</flightSpeed>
+        </pawnFlyer>
+    </ThingDef>
+
+
+</Defs>

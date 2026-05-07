@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  
+<Codex_M9Knife.label>百战兵谱：M9刺刀</Codex_M9Knife.label>
+<Codex_M9Knife.description>切换至M9刺刀</Codex_M9Knife.description>
+
+<Codex_Rifle.label>百战兵谱：电荷步枪</Codex_Rifle.label>
+<Codex_Rifle.description>切换至电荷步枪</Codex_Rifle.description>
+
+<Codex_SMG.label>百战兵谱：冲锋枪</Codex_SMG.label>
+<Codex_SMG.description>切换至重型冲锋枪</Codex_SMG.description>
+
+<Codex_Sniper.label>百战兵谱：狙击枪</Codex_Sniper.label>
+<Codex_Sniper.description>切换至狙击枪</Codex_Sniper.description>
+
+  
+</LanguageData>

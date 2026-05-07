@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="WormThingBase" Abstract="True">
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType> 
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    
+    <building>
+      <isEdifice>false</isEdifice>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <combatPower>1000</combatPower>
+    </building>
+
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0.99</fillPercent> 
+    <drawOffscreen>true</drawOffscreen>
+
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Cutout</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <!-- 身体 -->
+  <ThingDef ParentName="WormThingBase">
+    <defName>Mst_Worm_Body_Normal</defName>
+    <label>超凡蠕虫体节</label>
+    <thingClass>NCLWorm.WormBody</thingClass>
+    
+    <graphicData>
+      <texPath>WormBoss/Worm_Body</texPath>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    
+    <modExtensions>
+      <li Class="NyarsModPackTwo.ModExtension_BulletsDefs">
+        <bullets>
+          <li>Nyar_RandomTurrent_BulletA</li>
+          <li>Nyar_RandomTurrent_BulletB</li>
+          <li>Nyar_RandomTurrent_BulletC</li>
+          <li>Nyar_RandomTurrent_BulletD</li>
+          <li>Nyar_RandomTurrent_BulletE</li>
+          <li>Nyar_RandomTurrent_BulletF</li>
+        </bullets>
+        <castCount>9</castCount>
+      </li>
+    </modExtensions>
+    <comps>
+      <!-- 体节散热伤害组件 -->
+      <li Class="NCLWorm.CompProperties_WormHeatVent">
+        <!-- 触发阈值：装甲张开超过 90% 才开始烫人 -->
+        <activationThreshold>0.9</activationThreshold>
+        
+        <!-- 检查间隔：30 ticks (0.5秒) -->
+        <checkInterval>30</checkInterval>
+        
+        <!-- 伤害配置 -->
+        <baseDamage>15</baseDamage>
+        <damageDef>Burn</damageDef>
+        <armorPenetration>0.2</armorPenetration> <!-- 普通穿透 -->
+        <radius>4.9</radius> <!-- 约等于半径3格，覆盖近战范围 -->
+        
+        <!-- 击退配置 -->
+        <knockbackDistance>5</knockbackDistance> <!-- 推开3格 -->
+        <stunTicks>60</stunTicks> <!-- 眩晕1秒 -->
+      </li>
+      <!-- 体节防御组件 -->
+      <li Class="NCLWorm.CompProperties_WormSegment">
+        <damageGateWindow>30</damageGateWindow>
+        <maxDamagePerHit>100</maxDamagePerHit> 
+        <!-- 可选：排除的伤害类型 -->
+        <excludedDamageDefs><li>Vaporize</li></excludedDamageDefs>
+      </li>
+      <!-- 特效发生器 -->
+      <li Class="NCLWorm.CompProperties_WormVFX" />
+      <li Class="NCLWorm.TCP_WormWeaponController">
+        <verbs>
+          <li>
+            <verbClass>NyarsModPackTwo.Verb_ShootRandomBullet</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Nyar_RandomTurrent_BulletA</defaultProjectile>
+            <warmupTime>0.8</warmupTime>
+            <range>35.9</range>
+            <burstShotCount>2</burstShotCount>
+            <ticksBetweenBurstShots>120</ticksBetweenBurstShots>
+            <soundCast>Shot_BeamRepeater</soundCast>
+            <soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>9</muzzleFlashScale>
+            <aimingChargeMote>Mote_BeamRepeater_Charge</aimingChargeMote>
+            <aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+            <defaultCooldownTime>4.5</defaultCooldownTime>
+          </li>
+
+          <li Class="NCLWorm.WormVerbProperties">
+            <verbTag>Heavy</verbTag>
+            
+            <verbClass>NCLWorm.Verb_WormDirect</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Mst_WormHeavyLaserProj</defaultProjectile>
+
+            <warmupTime>0</warmupTime> 
+            <range>65.9</range> 
+
+            <burstShotCount>1</burstShotCount> 
+            <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+            
+            <defaultCooldownTime>2</defaultCooldownTime>
+
+            <soundCast>Shot_ChargeBlaster</soundCast>
+            <soundCastTail>GunTail_Heavy</soundCastTail>
+            <muzzleFlashScale>14</muzzleFlashScale>
+          </li>
+        </verbs>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="NyarsModPackTwo.ModExtension_BulletsDefs">
+        <bullets>
+          <li>Nyar_RandomTurrent_BulletA</li>
+          <li>Nyar_RandomTurrent_BulletB</li>
+          <li>Nyar_RandomTurrent_BulletC</li>
+          <li>Nyar_RandomTurrent_BulletD</li>
+          <li>Nyar_RandomTurrent_BulletE</li>
+          <li>Nyar_RandomTurrent_BulletF</li>
+        </bullets>
+        <castCount>9</castCount>
+      </li>
+      <li Class="NCLWorm.WormSegmentVisuals">
+          <parts>
+              <!-- 核心 -->
+              <li Class="NCLWorm.Part_Fader">
+                  <texPath>WormBoss/Worm/Body1CoreGlow</texPath>
+                  <sortOrder>1</sortOrder>
+                  <colorEnd>(1, 0, 0, 1)</colorEnd>
+              </li>
+
+              <!-- 身体本体  -->
+              <li Class="NCLWorm.Part_Static">
+                  <texPath>WormBoss/Worm/Body1</texPath>
+                  <sortOrder>0</sortOrder>
+              </li>
+
+              <!-- 身体发光 -->
+              <li Class="NCLWorm.Part_Fader">
+                  <texPath>WormBoss/Worm/Body1Glow</texPath>
+                  <sortOrder>1</sortOrder>
+                  <colorEnd>(1, 0, 0, 1)</colorEnd>
+              </li>
+
+              <!-- 左附肢 -->
+              <li Class="NCLWorm.Part_Rotator">
+                  <texPath>WormBoss/Worm/Body1Part2Left</texPath>
+                  <sortOrder>-1</sortOrder>
+                  <baseAngle>0</baseAngle>
+                  <rotateAngle>45</rotateAngle> 
+              </li>
+
+              <!-- 右附肢 -->
+              <li Class="NCLWorm.Part_Rotator">
+                  <texPath>WormBoss/Worm/Body1Part2Right</texPath>
+                  <sortOrder>-1</sortOrder>
+                  <baseAngle>0</baseAngle>
+                  <rotateAngle>-45</rotateAngle>
+              </li>
+
+              <!-- 装甲板 -->
+              <li Class="NCLWorm.Part_Slider">
+                  <texPath>WormBoss/Worm/Body1Part1Plate</texPath>
+                  <sortOrder>3</sortOrder>
+                  <slideDir>(0, 0, -1)</slideDir> 
+                  <slideDist>0.7</slideDist>
+              </li>
+          </parts>
+          <!-- 特效产生器 -->
+          <emitters>     
+                <!-- 内层：高压等离子焰 (亮橙红色) -->
+                <li Class="NCLWorm.Emitter_Fleck">
+                  <mirror>true</mirror>
+                  <minFactor>0.9</minFactor>
+                  <intervalRange>2~3</intervalRange>
+                  <fleckDef>Mst_Fleck_HadesFlame</fleckDef>
+                  <scaleMin>1.5</scaleMin>
+                  <scaleMax>2.5</scaleMax>
+                  <offset>(0.4, 0, -0.3)</offset>
+                  <angle>135</angle>
+                  <velocitySpeed>11.0</velocitySpeed> 
+                  <color>(1.0, 0.4, 0.1, 0.6)</color>  
+                </li>
+
+                <!-- 外层：高压废气烟雾 (深灰色) -->
+                <li Class="NCLWorm.Emitter_Fleck">
+                  <mirror>true</mirror>
+                  <minFactor>0.9</minFactor>
+                  <intervalRange>1~2</intervalRange>
+                  <fleckDef>Mst_Fleck_HadesVent</fleckDef>
+                    
+                  <scaleMin>2.2</scaleMin>
+                  <scaleMax>3.5</scaleMax>             
+                    
+                  <offset>(0.5, 0, -0.3)</offset> 
+                  <angle>135</angle>
+                  <velocitySpeed>13.0</velocitySpeed>   
+                    
+                  <color>(1, 1, 1, 1)</color>
+                </li>
+
+                <!-- 热扭曲 (Distortion) -->
+                <li Class="NCLWorm.Emitter_Fleck">
+                  <mirror>true</mirror>
+                  <minFactor>0.9</minFactor>
+                  <intervalRange>5~10</intervalRange>
+                  <fleckDef>Mst_Fleck_HadesDistortion</fleckDef>
+                    
+                  <scaleMin>3.0</scaleMin>
+                  <scaleMax>4.0</scaleMax>
+                    
+                  <offset>(0.8, 0, -0.3)</offset>
+                  <angle>135</angle>
+                  <velocitySpeed>8.0</velocitySpeed>
+
+                  <color>(1.0, 1.0, 1.0, 0.5)</color> 
+                </li>
+          </emitters>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 体节 -->
+  <ThingDef ParentName="WormThingBase">
+    <defName>Mst_Worm_Body_Gunner</defName>
+    <label>超凡机械蠕虫体节</label>
+    <thingClass>NCLWorm.WormBody</thingClass>
+    <selectable>true</selectable>
+    <graphicData>
+      <texPath>WormBoss/Worm_Body1</texPath> 
+      <drawSize>(8, 8)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="NCLWorm.CompProperties_WormSegment" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WormThingBase">
+    <defName>Mst_Worm_Body_Gunner_p</defName>
+    <label>超凡机械蠕虫体节</label>
+    <thingClass>NCLWorm.WormBody</thingClass>
+    <selectable>true</selectable>
+    <graphicData>
+      <texPath>WormBoss/Worm_Body2</texPath> 
+      <drawSize>(8, 8)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="NCLWorm.CompProperties_WormSegment" />
+    </comps>
+  </ThingDef>
+
+  <!-- 尾 -->
+  <ThingDef ParentName="WormThingBase">
+    <defName>Mst_Worm_Tail</defName>
+    <label>超凡机械蠕虫尾刺</label>
+    <thingClass>NCLWorm.WormBody</thingClass>
+    <selectable>false</selectable>
+    <graphicData>
+      <texPath>WormBoss/Worm_Tail</texPath>
+      <drawSize>(8, 8)</drawSize> 
+      <drawOffset>(0, 0, -2)</drawOffset> <!-- 沿朝向后移，防止贴图中心"吃进"前一节 -->
+    </graphicData>
+    <comps>
+      <li Class="NCLWorm.CompProperties_WormSegment" />
+    </comps>
+  </ThingDef>
+
+  <!-- 头部 -->
+  <ThingDef ParentName="WormThingBase">
+    <defName>Mst_Worm_Head</defName>
+    <label>超凡机械蠕虫</label>
+    <thingClass>NCLWorm.WormHead</thingClass>
+    
+    <graphicData>
+      <texPath>WormBoss/Worm_Head</texPath>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+    
+    <statBases>
+      <MaxHitPoints>50000</MaxHitPoints>
+    </statBases>
+
+    <comps>
+      <!-- 索敌 -->
+      <li Class="NCLWorm.CompProperties_WormTargeter"/>
+
+      <!-- 负责体节同步 -->
+      <li Class="NCLWorm.CompProperties_WormCoordinator" />
+
+      <!-- 决策控制器 -->
+      <li Class="NCLWorm.TCP_WormDecisionController">
+        <!-- 存在时间 -->
+        <initialLifespanDays>3.5</initialLifespanDays>
+        <!-- 目标身上的mote -->
+        <targetMoteDef>Mote_WormTargetTracker</targetMoteDef>
+        <targetMoteScale>5.0</targetMoteScale>
+        <!-- 死亡的时候使用的Phase -->
+        <deathPhaseClass>NCLWorm.Phase_DeathSequence</deathPhaseClass>
+        <!-- 招式池：定义这个 Boss 能使用哪些招式及其权重 -->
+        <phases>
+          <!-- 冲撞：高频基础招式 -->
+          <li>
+            <phaseClass>NCLWorm.Phase_Ramming</phaseClass>
+            <resetScore>0</resetScore>
+            <growth>25</growth>
+          </li>
+          <!-- 环绕射击：高频基础招式 -->
+          <li>
+            <phaseClass>NCLWorm.Phase_OrbitAttack</phaseClass>
+            <resetScore>0</resetScore>
+            <growth>25</growth>
+          </li>
+          <!-- 连续激光齐射：高频基础招式 -->
+          <li>
+            <phaseClass>NCLWorm.Phase_ContinuousLaserBarrage</phaseClass>
+            <resetScore>0</resetScore>
+            <growth>25</growth>
+          </li>
+          <!-- 虫洞冲刺：中频招式 -->
+          <li>
+            <phaseClass>NCLWorm.Phase_WormholeDash</phaseClass>
+            <resetScore>0</resetScore>
+            <growth>15</growth>
+          </li>
+          <!-- 能量爆发：低频大招 -->
+          <li>
+            <phaseClass>NCLWorm.Phase_ExoEnergyBlast</phaseClass>
+            <resetScore>0</resetScore>
+            <growth>20</growth>
+          </li>
+          <!-- 风暴环：低频大招 -->
+          <li>
+            <phaseClass>NCLWorm.Phase_StormCircle</phaseClass>
+            <resetScore>0</resetScore>
+            <growth>10</growth>
+          </li>
+        </phases>
+      </li>
+
+      <!-- 移动控制器 -->
+      <li Class="NCLWorm.TCP_WormMovingController">
+        <baseSpeed>24.0</baseSpeed> 
+        <turnRate>120.0</turnRate>
+        <acceleration>24.0</acceleration>
+        <impactDamage>40</impactDamage>
+        <impactArmorPenetration>2</impactArmorPenetration>
+        <minImpactSpeed>6.0</minImpactSpeed>
+        <headBaseLimbBreakFactor>1</headBaseLimbBreakFactor>
+        <headSpeedScale>1.5</headSpeedScale>
+        <headMaxLimbBreakFactor>5.0</headMaxLimbBreakFactor>
+      </li>
+
+      <!-- 负责管理 Verb 列表和冷却 -->
+      <li Class="NCLWorm.TCP_WormWeaponController">
+        <verbs>
+          <li Class="NCLWorm.WormVerbProperties">
+            <verbTag>Default</verbTag>
+            <verbClass>NCLWorm.Verb_WormDeathRay</verbClass>
+            <hasStandardCommand>false</hasStandardCommand>
+            <warmupTime>0</warmupTime> 
+            <targetParams>
+              <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+
+            <ticksBetweenBurstShots>5</ticksBetweenBurstShots> 
+            <burstShotCount>120</burstShotCount> 
+            
+            <range>60</range>
+            <soundCast>ChargeLance_Fire</soundCast> 
+            <muzzleFlashScale>0</muzzleFlashScale>
+            <defaultCooldownTime>5.0</defaultCooldownTime>
+          </li>
+        </verbs>
+      </li>
+
+      <!-- 激光参数 (数据层) -->
+      <!-- Verb_WormDeathRay 会读取这个组件里的数据 -->
+      <li Class="NCLWorm.CompProperties_WormLaser">
+        <damageDef>Cut</damageDef> 
+        <armorPenetration>1.0</armorPenetration>
+        <baseLimbBreakFactor>0.1</baseLimbBreakFactor> 
+        <overheatScaleMultiplier>2.0</overheatScaleMultiplier>
+        <maxLimbBreakFactor>0.8</maxLimbBreakFactor>
+
+        <normalWidth>14</normalWidth>
+        <overheatWidth>20</overheatWidth>
+        <normalColor>(1, 0, 0, 1)</normalColor>
+        <overheatColor>(1, 1, 1, 1)</overheatColor>
+        <overheatCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.5, 1)</li> 
+            <li>(1, 1)</li>
+          </points>
+        </overheatCurve>
+      </li>
+
+      <!-- 蜂群/探测器/子机 控制/生产器 -->
+      <li Class="NCLWorm.CompProperties_SwarmCarrier">
+        <!-- 全局总上限：所有类型的探测器加起来不能超过这个数 -->
+        <maxTotalProbes>12</maxTotalProbes>
+        
+        <!-- 生产节奏 -->
+        <spawnInterval>300</spawnInterval> <!-- 10秒尝试一次 -->
+        <batchSize>1</batchSize>         <!-- 一次开1个舱门 -->
+        <spawnOpenThreshold>0.8</spawnOpenThreshold>
+
+        <!-- 多兵种生成规则列表 -->
+        <spawnOptions>
+          <!-- 战斗探测器 -->
+          <li>
+            <probeDef>Mst_WormProbe_Combat</probeDef>
+            <spawnWeight>50</spawnWeight>  <!-- 随机权重：50/100 -->
+            <maxCount>10</maxCount>         <!-- 独立上限：场上最多存在10个 -->
+          </li>
+
+          <!-- 维修探测器 -->
+          <li>
+            <probeDef>Mst_WormProbe_Repair</probeDef>
+            <spawnWeight>50</spawnWeight>  <!-- 随机权重：50/100 -->
+            <maxCount>10</maxCount>         <!-- 独立上限：场上最多存在10个 -->
+          </li>
+        </spawnOptions>
+      </li>
+
+      <!-- 投射物拦截 -->
+      <li Class="NCLWorm.CompProperties_WormPointDefense">
+        <!-- 拦截半径: 10 -->
+        <radius>10</radius>
+        
+        <!-- 每次拦截数量: 3 -->
+        <interceptCountPerBurst>3</interceptCountPerBurst>
+        
+        <!-- 扫描间隔: 5 Tick -->
+        <scanInterval>3</scanInterval>
+        
+        <!-- 过热阈值: 150个投射物 -->
+        <shotsBeforeCooldown>150</shotsBeforeCooldown>
+        
+        <!-- 冷却时间: 2400 Tick / 40秒 -->
+        <cooldownTicks>2400</cooldownTicks>
+        
+        <!-- 拦截特效 -->
+        <interceptEffect>PsycastSkipInnerEntry</interceptEffect>
+        
+      </li>
+
+      <!-- 威压光环 -->
+      <li Class="NCLWorm.CompProperties_WormAura">
+        <!-- Hediff的Defname -->
+        <hediff>WormPressure</hediff>
+        
+        <!-- 范围 -->
+        <range>28</range>
+        
+        <!-- 检查间隔 -->
+        <checkInterval>600</checkInterval>
+        
+        <drawLines>true</drawLines>
+      </li>
+    </comps>
+    
+    <!-- 体节生成规则 -->
+    <modExtensions>
+      <li Class="NCLWorm.WormBossDefExtension">
+        <bodySegmentCount>54</bodySegmentCount>
+        <segmentSpacing>1.6</segmentSpacing>    
+        <defaultBodyDef>Mst_Worm_Body_Normal</defaultBodyDef>
+        <tailDef>Mst_Worm_Tail</tailDef>
+        <specialSegments>
+          <li>
+            <defName>Mst_Worm_Body_Gunner</defName>
+            <specificIndex>3</specificIndex>
+          </li>
+          <li>
+            <defName>Mst_Worm_Body_Gunner_p</defName>
+            <specificIndex>5</specificIndex>
+          </li>
+          <li>
+            <defName>Mst_Worm_Body_Gunner_p</defName>
+            <specificIndex>7</specificIndex>
+          </li>
+        </specialSegments>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 探测器/子机 -->
+  <!-- 探测器基类 -->
+  <ThingDef Name="Mst_ProbeBase" Abstract="True">
+    <label>超凡机械蠕虫探测器</label>
+    <thingClass>NCLWorm.WormProbe</thingClass>
+    <category>Building</category>
+
+    <building>
+      <isEdifice>false</isEdifice>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <combatPower>1000</combatPower>
+    </building>
+
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <selectable>true</selectable>
+
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>50</Mass>
+    </statBases>
+
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>WormBoss/Prob</texPath>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+
+    <comps>
+      <!-- 运动控制器  -->
+      <li Class="NCLWorm.TCP_WormMovingController">
+        <baseSpeed>9.5</baseSpeed>       
+        <turnRate>90</turnRate>         
+        <acceleration>5</acceleration> 
+        <impactDamage>3</impactDamage>   
+        <minImpactSpeed>999</minImpactSpeed>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 战斗探测器 -->
+  <ThingDef ParentName="Mst_ProbeBase">
+    <defName>Mst_WormProbe_Combat</defName>
+    <label>武装探测器 (追踪弹)</label>
+    <comps>
+      <!-- 战斗大脑 -->
+      <li Class="NCLWorm.CompProperties_ProbeCombat">
+        <followRadius>8.0</followRadius>  <!-- 闲置伴飞半径 -->
+        <combatRange>21.0</combatRange>   <!-- 战斗距离 -->
+        <returnDist>999.0</returnDist>    <!-- 强制归队距离 -->
+      </li>
+
+      <!-- 索敌组件 -->
+      <li Class="NCLWorm.CompProperties_WormTargeter" />
+
+      <!-- 武器组件  -->
+      <li Class="NCLWorm.TCP_WormWeaponController">
+        <verbs>
+          <li Class="NCLWorm.WormVerbProperties">
+            <verbTag>Default</verbTag>
+            <verbClass>Verb_Shoot</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Bullet_ChargeLance</defaultProjectile>
+            <defaultCooldownTime>1.5</defaultCooldownTime>
+            <warmupTime>1.5</warmupTime>
+            <range>24.9</range>
+            <burstShotCount>3</burstShotCount>
+            <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+            <soundCast>Shot_ChargeRifle</soundCast>
+            <muzzleFlashScale>9</muzzleFlashScale>
+          </li>
+        </verbs>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 维修探测器 -->
+  <ThingDef ParentName="Mst_ProbeBase">
+    <defName>Mst_WormProbe_Repair</defName>
+    <label>工程探测器 (维修型)</label>
+
+    <comps>
+      <li Class="NCLWorm.CompProperties_ProbeRepair">
+        <!-- 维修用参数  -->
+        <repairInterval>60</repairInterval> <!-- 维修频率（tick） -->
+        <repairAmount>20</repairAmount>     <!-- 每次维修回复量 -->
+        <orbitRadius>4.0</orbitRadius>      <!-- 维修时的环绕半径 -->
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 各种特效 -->
+
+  <!-- 激光特效 -->
+  <ThingDef>
+    <defName>Mst_HadesLaserEffect</defName>
+    <label>hades laser effect</label>
+    <thingClass>NCLWorm.ExoDeathRay</thingClass>
+    <category>Mote</category>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>WormBoss/Blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <!-- 传送门特效 -->
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>Mst_ExoRedPortal</defName>
+    <label>exo portal</label>
+    <thingClass>NCLWorm.ExoRedPortal</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer> 
+    <drawOffscreen>true</drawOffscreen>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <graphicData>
+      <texPath>WormBoss/Blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawOffscreen>true</drawOffscreen>
+  </ThingDef>
+
+  <!-- 传送门警告线特效 -->
+  <ThingDef>
+    <defName>Mst_WormRiftPath</defName>
+    <label>danger zone</label>
+    <thingClass>NCLWorm.ExoRiftPath</thingClass>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <drawOffscreen>true</drawOffscreen>
+    <selectable>false</selectable>
+    <graphicData>
+      <texPath>WormBoss/Blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+  </ThingDef>
+
+  <!-- 激光瞄准线警告线特效 -->
+  <ThingDef>
+    <defName>Mst_ExoTelegraphCone</defName>
+    <label>Worm laser sight</label>
+    <thingClass>NCLWorm.ExoTelegraphCone</thingClass>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <graphicData>
+      <texPath>WormBoss/Blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawOffscreen>true</drawOffscreen>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <modExtensions>
+      <li Class="NCLWorm.ExoTelegraphVisuals">
+          <coreColor>(0.2, 0.5, 1.0, 0.2)</coreColor>
+          <hazeColor>(0.2, 0.5, 1.0, 0.3)</hazeColor>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Mst_Fleck_HadesVent</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <shaderType>Transparent</shaderType>
+      <color>(255, 255, 255, 255)</color>  
+      <drawSize>1</drawSize>
+    </graphicData>
+
+    <altitudeLayer>MoteOverhead</altitudeLayer> 
+    <fadeInTime>0.02</fadeInTime>            
+    <solidTime>0.05</solidTime>              
+    <fadeOutTime>0.75</fadeOutTime>             
+    <growthRate>4.0</growthRate>                
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Mst_Fleck_HadesFlame</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <shaderType>MoteGlow</shaderType> 
+      <color>(255, 255, 255, 255)</color>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.01</fadeInTime>
+    <solidTime>0.05</solidTime>
+    <fadeOutTime>0.65</fadeOutTime>
+    <growthRate>3.0</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Mst_Fleck_HadesDistortion</defName>
+    
+    <graphicData>
+      <texPath>WormBoss/Distortion_second</texPath> 
+      <shaderType>MoteGlow</shaderType>
+      <shaderParameters>
+        <_distortionIntensity>0.15</_distortionIntensity>
+        <_brightnessMultiplier>1.2</_brightnessMultiplier>
+      </shaderParameters>
+      <color>(255, 255, 255, 1.0)</color>
+      <drawSize>2.0</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>1.6</fadeOutTime>
+    <growthRate>3.5</growthRate>
+  </FleckDef>
+
+  <!-- 重型激光子弹 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Mst_WormHeavyLaserProj</defName>
+    <label>heavy laser</label>
+    <thingClass>NCLWorm.WormHeavyLaser</thingClass> 
+    
+    <graphicData>
+      <texPath>WormBoss/Mst_DisintegratorBeam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>5</drawSize>
+    </graphicData>
+    
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+    <modExtensions>
+      <li Class="NCLWorm.ProjectileExtension_WormLaser">
+        <maxRange>60</maxRange>     <!-- 强制飞行 40 格 -->
+        <laserWidth>3</laserWidth> <!-- 碰撞判定宽度 -->
+        <passThroughWalls>true</passThroughWalls> <!-- 是否穿墙 -->
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 静态龙卷风 -->
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>Mst_StaticTornado</defName>
+    <label>storm tornado</label>
+    <thingClass>NCLWorm.Mst_StaticTornado</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <comps>
+      <li Class="CompProperties_WindSource">
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <!-- 锁定特效 -->
+  <ThingDef ParentName="MoteBase">
+      <defName>Mote_WormTargetTracker</defName>
+      <thingClass>NCLWorm.Mote_TargetTracker</thingClass>
+      <graphicData>
+          <texPath>WormBoss/Worm_Boss_Crosshair</texPath>
+          <graphicClass>Graphic_Mote</graphicClass>
+          <shaderType>MoteGlow</shaderType>
+          <drawSize>(1.5, 1.5)</drawSize>
+      </graphicData>
+      <altitudeLayer>MoteOverhead</altitudeLayer>
+      <mote>
+          <fadeInTime>0.2</fadeInTime>   
+          <solidTime>9999</solidTime>     
+          <fadeOutTime>0.3</fadeOutTime> 
+          <attachedDrawOffset>(0, 0, 0)</attachedDrawOffset>
+      </mote>
+      <modExtensions>
+          <li Class="NCLWorm.MoteTargetTrackerVisuals">
+              <texCrosshair>WormBoss/Worm_Boss_Crosshair</texCrosshair> 
+              <scaleCrosshair>1.0</scaleCrosshair>
+              
+              <texRing>WormBoss/Worm_Boss_Ring</texRing>
+              <scaleRing>1.3</scaleRing>
+              <rotationSpeedRing>-30</rotationSpeedRing>
+
+              <texTriangles>WormBoss/Worm_Boss_Triangles</texTriangles>
+              <scaleTrianglesBase>1.6</scaleTrianglesBase> 
+              <scaleTrianglesSwing>0.15</scaleTrianglesSwing>
+              <breathSpeed>5.0</breathSpeed>
+          </li>
+      </modExtensions>
+  </ThingDef>
+
+</Defs>

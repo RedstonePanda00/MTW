@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+<ThinkTreeDef>
+    <defName>Capitalistic_Militors_ThinkTreeMain</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+        <subNodes>
+            
+            <li Class="ThinkNode_Subtree">
+                <treeDef>Despawned</treeDef>
+            </li>
+            <li Class="ThinkNode_Subtree">
+                <treeDef>Downed</treeDef>
+            </li>
+            <li Class="ThinkNode_Subtree">
+                <treeDef>MentalStateCritical</treeDef>
+            </li>
+
+            
+            <li Class="ThinkNode_QueuedJob" />
+            <li Class="ThinkNode_Subtree">
+                <treeDef>MentalStateNonCritical</treeDef>
+            </li>
+            <li Class="ThinkNode_ConditionalForcedGoto">
+                <subNodes>
+                    <li Class="JobGiver_ForcedGoto" />
+                </subNodes>
+            </li>
+
+            
+            <li Class="NCL.ThinkNode_ConditionalPlayerFaction">
+                <subNodes>
+                    <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+                        <subNodes>
+                            <li Class="JobGiver_AICastAbilityOnSelf">
+                                <ability>Call_for_University_Students</ability>
+                            </li>
+                        </subNodes>
+                    </li>
+                </subNodes>
+            </li>
+
+            
+            <li Class="ThinkNode_Tagger">
+                <tagToGive>Idle</tagToGive>
+                <subNodes>
+                    <li Class="ThinkNode_ConditionalPlayerMech">
+						<subNodes>
+						<li Class="JobGiver_WanderColony" />
+						</subNodes>
+					</li>
+			<li Class="JobGiver_WanderAnywhere" />
+                </subNodes>
+					</li>
+            <li Class="JobGiver_Idle" />
+        </subNodes>
+    </thinkRoot>
+</ThinkTreeDef>
+
+<ThinkTreeDef>
+    <defName>Capitalistic_Militors_ThinkTreeConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+        <subNodes>
+            <li Class="ThinkNode_Subtree">
+                <treeDef>Despawned</treeDef>
+            </li>
+        </subNodes>
+    </thinkRoot>
+</ThinkTreeDef>
+
+<ThinkTreeDef>
+    <defName>Gestapo_Militors_ThinkTreeMain</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+        <subNodes>
+            
+            <li Class="ThinkNode_Subtree">
+                <treeDef>Despawned</treeDef>
+            </li>
+            <li Class="ThinkNode_Subtree">
+                <treeDef>Downed</treeDef>
+            </li>
+            <li Class="ThinkNode_Subtree">
+                <treeDef>MentalStateCritical</treeDef>
+            </li>
+
+            
+            <li Class="ThinkNode_QueuedJob" />
+            <li Class="ThinkNode_Subtree">
+                <treeDef>MentalStateNonCritical</treeDef>
+            </li>
+            <li Class="ThinkNode_ConditionalForcedGoto">
+                <subNodes>
+                    <li Class="JobGiver_ForcedGoto" />
+                </subNodes>
+            </li>
+
+            
+            <li Class="NCL.ThinkNode_ConditionalPlayerFaction">
+                <subNodes>
+                    <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+                        <subNodes>
+                            <li Class="NCL.JobGiver_AttackMinitor">
+                            </li>
+                        </subNodes>
+                    </li>
+                </subNodes>
+            </li>
+
+            
+            <li Class="ThinkNode_Tagger">
+                <tagToGive>Idle</tagToGive>
+                <subNodes>
+					<li Class="ThinkNode_ConditionalPlayerMech">
+						<subNodes>
+							<li Class="JobGiver_WanderColony" />
+							</subNodes>
+							</li>
+						<li Class="JobGiver_WanderAnywhere" />
+					</subNodes>
+				</li>
+            <li Class="JobGiver_Idle" />
+        </subNodes>
+    </thinkRoot>
+</ThinkTreeDef>
+
+<ThinkTreeDef>
+    <defName>Gestapo_Militors_ThinkTreeConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+        <subNodes>
+            <li Class="ThinkNode_Subtree">
+                <treeDef>Despawned</treeDef>
+            </li>
+        </subNodes>
+    </thinkRoot>
+</ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>TW_University_Minitor</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        
+        
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+		          <li Class="JobGiver_SeekAllowedArea" />
+                  <li Class="JobGiver_Work">
+                    <emergency>true</emergency>
+                  </li>
+				<li Class="JobGiver_Work" />
+						
+                  
+				  
+				  
+				  
+                  <li Class="ThinkNode_ConditionalWorkMech">
+                    <invert>true</invert>
+                    <subNodes>
+                      <li Class="JobGiver_AIFightEnemies">
+                        <targetAcquireRadius>65</targetAcquireRadius>
+                        <targetKeepRadius>72</targetKeepRadius>
+                      </li>
+                      <li Class="ThinkNode_Tagger">
+                        <tagToGive>MiscWork</tagToGive>
+                        <subNodes>
+                          <li Class="JobGiver_WanderColony">
+                            <maxDanger>Deadly</maxDanger>
+                            <reportStringOverride TKey="ReportStringPatrolling">Patrolling.</reportStringOverride>
+                          </li>
+                        </subNodes>
+                      </li>
+                    </subNodes>
+                  </li>
+		  <li Class="ThinkNode_ConditionalPlayerMech">
+              <subNodes>
+                <li Class="JobGiver_WanderColony" />
+              </subNodes>
+            </li>
+			<li Class="JobGiver_WanderAnywhere" />
+		  
+		  
+          </subNodes>
+		   
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+
+</Defs>

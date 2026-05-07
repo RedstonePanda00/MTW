@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TraderKindDef>
+    <defName>Mechanoid_Employer</defName>
+    <label>Mechanoid Employerment Serves</label>
+    <commonality>0</commonality> 
+    <orbital>false</orbital>
+    <hideThingsNotWillingToTrade>True</hideThingsNotWillingToTrade>
+  <stockGenerators>
+    <li Class="NCL.StockGenerator_BuyingMetalWithEmploy" />
+  </stockGenerators>
+  </TraderKindDef>
+
+    <TraderKindDef>
+    <defName>NCL_material_Trader</defName>
+    <label>Raw Material Trader</label>
+    <commonality>2</commonality>
+    <orbital>true</orbital>
+    <stockGenerators>
+
+      
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>
+          <min>4000</min>
+          <max>6000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentIndustrial</thingDef>
+        <countRange>
+          <min>1000</min>
+          <max>2000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentSpacer</thingDef>
+        <countRange>
+          <min>10</min>
+          <max>20</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Steel</thingDef>
+        <countRange>
+          <min>5000</min>
+          <max>10000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Plasteel</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>4000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Gold</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>4000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Uranium</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>4000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Jade</thingDef>
+        <countRange>
+          <min>1000</min>
+          <max>2000</max>
+        </countRange>
+      </li>
+
+     <li Class="StockGenerator_SingleDef">
+        <thingDef>BlocksMarble</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>4000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>BlocksGranite</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>4000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>BlocksLimestone</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>4000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>BlocksSlate</thingDef>
+        <countRange>
+          <min>2000</min>
+          <max>4000</max>
+        </countRange>
+      </li>
+
+      
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Clothing</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>Drugs</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+
+    </stockGenerators>
+  </TraderKindDef>
+
+	<TraderKindDef>
+		<defName>Orbital_Universal_life_Services_Provider</defName>
+		<label>Orbital Universal life Services Provider</label>
+		<orbital>true</orbital>
+		<stockGenerators>
+			
+			
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Wort</thingDef>
+				<countRange>500~800</countRange>
+				<price>Cheap</price>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>PlantMatter</categoryDef>
+				<thingDefCountRange>5~10</thingDefCountRange>
+				<countRange>500~800</countRange>
+				<price>Cheap</price>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Foods</categoryDef>
+				<excludedCategories>
+					<li>FoodMeals</li>
+					<li>FoodRaw</li>
+				</excludedCategories>
+				<thingDefCountRange>10~20</thingDefCountRange>
+				<countRange>500~800</countRange>
+				<price>Cheap</price>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>FoodMeals</categoryDef>
+				<thingDefCountRange>6~20</thingDefCountRange>
+				<countRange>40~80</countRange>
+				<price>Cheap</price>
+			</li>
+			
+			<li Class="StockGenerator_Category">
+				<categoryDef>FoodRaw</categoryDef>
+				<excludedCategories>
+					<li>MeatRaw</li>
+					<li>PlantFoodRaw</li>
+					<li>AnimalProductRaw</li>
+				</excludedCategories>
+				<thingDefCountRange>10~20</thingDefCountRange>
+				<countRange>500~800</countRange>
+				<price>Cheap</price>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>PlantFoodRaw</categoryDef>
+				<thingDefCountRange>5~20</thingDefCountRange>
+				<countRange>500~800</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>MeatRaw</categoryDef>
+				<thingDefCountRange>5~20</thingDefCountRange>
+				<countRange>500~800</countRange>
+				<price>Cheap</price>
+			</li>
+			
+			<li Class="StockGenerator_Category">
+				<categoryDef>AnimalProductRaw</categoryDef>
+				<excludedCategories>
+					<li>EggsUnfertilized</li>
+					<li>EggsFertilized</li>
+				</excludedCategories>
+				<thingDefCountRange>10~20</thingDefCountRange>
+				<countRange>500~800</countRange>
+				<price>Cheap</price>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>EggsUnfertilized</categoryDef>
+				<thingDefCountRange>10~20</thingDefCountRange>
+				<countRange>20~50</countRange>
+				<price>Cheap</price>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>EggsFertilized</categoryDef>
+				<thingDefCountRange>10~20</thingDefCountRange>
+				<countRange>20~50</countRange>
+				<price>Cheap</price>
+			</li>
+			
+			<li Class="StockGenerator_Category">
+				<categoryDef>Leathers</categoryDef>
+				<thingDefCountRange>20~40</thingDefCountRange>
+				<countRange>1000~2000</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Wools</categoryDef>
+				<thingDefCountRange>6~40</thingDefCountRange>
+				<countRange>1000~2000</countRange>
+			</li>
+			
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>TextBook</thingDef>
+				<countRange>4</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Hyperweave</thingDef>
+				<countRange>300~500</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Cloth</thingDef>
+				<countRange>3000~5000</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Schematic</thingDef>
+				<countRange>4</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Novel</thingDef>
+				<countRange>4</countRange>
+			</li>
+			
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Silver</thingDef>
+				<countRange>120000~200000</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Drugs</categoryDef>
+			</li>
+			<li Class="StockGenerator_MultiDef">
+				<thingDefs>
+					<li>Chocolate</li>
+					<li>Kibble</li>
+					<li>Pemmican</li>
+				</thingDefs>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Gold</thingDef>
+				<countRange>1000~2000</countRange>
+			</li>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Clothing</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>Drugs</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+		</stockGenerators>
+	</TraderKindDef>
+
+  	<TraderKindDef>
+		<defName>Orbital_Defense_Solutions</defName>
+		<label>Orbital Defense Solutions</label>
+		<orbital>true</orbital>
+		<stockGenerators>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Shell_HighExplosive</thingDef>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Shell_Incendiary</thingDef>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Shell_EMP</thingDef>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Shell_Smoke</thingDef>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Shell_Firefoam</thingDef>
+			</li>
+			<li Class="StockGenerator_SingleDef" MayRequire="Ludeon.RimWorld.Biotech">
+				<thingDef>Shell_Toxic</thingDef>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>MortarShells</categoryDef>
+				<thingDefCountRange>3~10</thingDefCountRange>
+				<countRange>6~12</countRange>
+				<price>Exorbitant</price>
+			</li>
+			
+			
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Apparel_PsychicShockLance</thingDef>
+				<countRange>2~5</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Apparel_PsychicInsanityLance</thingDef>
+				<countRange>2~5</countRange>
+			</li>
+			
+			<li Class="StockGenerator_Category">
+				<categoryDef>ApparelUtility</categoryDef>
+				<thingDefCountRange>7~15</thingDefCountRange>
+				<countRange>1~3</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Apparel</categoryDef>
+				<thingDefCountRange>30~50</thingDefCountRange>
+				<countRange>1~3</countRange>
+			</li>
+			
+			<li Class="StockGenerator_Category">
+				<excludedThingDefs>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<thingDef>DeathrestCapacitySerum</thingDef>
+					</li>
+					<li>MechSerumHealer</li>
+					<li>MechSerumResurrector</li>
+				</excludedThingDefs>
+				<categoryDef>Drugs</categoryDef>
+				<thingDefCountRange>7~15</thingDefCountRange>
+				<countRange>50~80</countRange>
+				<price>Expensive</price>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Medicine</categoryDef>
+				<thingDefCountRange>5~20</thingDefCountRange>
+				<countRange>30~60</countRange>
+			</li>
+			
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Silver</thingDef>
+				<countRange>100000~150000</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Drugs</categoryDef>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Gold</thingDef>
+				<countRange>2000~10000</countRange>
+			</li>
+			<li Class="StockGenerator_BuyExpensiveSimple" />
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>Art</tag>
+			</li>
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>MusicalInstrument</tag>
+			</li>
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>ImplantEmpireCommon</tag>
+			</li>
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>ImplantEmpireRoyal</tag>
+			</li>
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>PsylinkNeuroformer</tag>
+			</li>
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>ExoticBuilding</tag>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+
+</Defs>

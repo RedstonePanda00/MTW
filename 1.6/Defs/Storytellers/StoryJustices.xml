@@ -93,15 +93,6 @@
 				<minDanger>High</minDanger>
 			</li>
 			<li Class="StorytellerCompProperties_FactionInteraction">
-				<incident>TraderCaravanArrival</incident>
-				<minDaysPassed>5</minDaysPassed>
-				<baseIncidentsPerYear>5</baseIncidentsPerYear>
-				<minSpacingDays>6</minSpacingDays>
-				<allowedTargetTags>
-					<li>Map_PlayerHome</li>
-				</allowedTargetTags>
-			</li>
-			<li Class="StorytellerCompProperties_FactionInteraction">
 				<incident>VisitorGroup</incident>
 				<minDaysPassed>3</minDaysPassed>
 				<baseIncidentsPerYear>4</baseIncidentsPerYear>
@@ -189,13 +180,6 @@
 				</allowedTargetTags>
 				<minDaysPassed>15</minDaysPassed>
 				<mtbDays>15</mtbDays>
-			</li>
-			
-			<li Class="StorytellerCompProperties_OnOffCycle">
-				<incident>OrbitalTraderArrival</incident>
-				<onDays>7</onDays>
-				<offDays>8</offDays>
-				<numIncidentsRange>1</numIncidentsRange>
 			</li>
 			
 			<li Class="StorytellerCompProperties_Triggered">

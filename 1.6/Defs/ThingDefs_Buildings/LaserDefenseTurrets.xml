@@ -1,7 +1,40 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Defs>
+
+    <!-- Hidden defs: only supply turretTopMat texPath via building.turretGunDef (same pipeline as vanilla Building_TurretGun). -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>NCL_LaserDefenceTurret_TopGun</defName>
+        <label>laser point defense turret top (internal)</label>
+        <selectable>false</selectable>
+        <useHitPoints>false</useHitPoints>
+        <destroyOnDrop>true</destroyOnDrop>
+        <tradeability>None</tradeability>
+        <graphicData>
+            <texPath>Buildings/LaserDefenseTurretItself</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+            <shaderType>Cutout</shaderType>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>TW_LaserDefenceTurret_TopGun</defName>
+        <label>mech laser point defense turret top (internal)</label>
+        <selectable>false</selectable>
+        <useHitPoints>false</useHitPoints>
+        <destroyOnDrop>true</destroyOnDrop>
+        <tradeability>None</tradeability>
+        <graphicData>
+            <texPath>Buildings/MechLaserDefenseTurretItself</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2.4,2.4)</drawSize>
+            <shaderType>Cutout</shaderType>
+        </graphicData>
+    </ThingDef>
+
     <ThingDef ParentName="BuildingBase">
         <defName>NCL_LaserDefenceTurret</defName>
+        <thingClass>TowerLaserDefense.Building_LaserDefenceTurret</thingClass>
         <label>Laser Point Defense Turret</label>
 		<description>Automated interception platform deployed on colonial frontlines. Generates high-frequency laser beams through sustained power input, effectively neutralizing slow-moving high-trajectory projectiles like mortar shells and incendiary rounds. While demonstrating high accuracy, its single-point defense capability is severely challenged against high-velocity aircraft or saturation attacks - requiring coordinated multi-turret deployment to maintain area denial coverage.</description>
         <size>(2,2)</size>
@@ -21,6 +54,8 @@
         <building>
             <ai_combatDangerous>true</ai_combatDangerous>
             <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <turretGunDef>NCL_LaserDefenceTurret_TopGun</turretGunDef>
+            <turretTopDrawSize>2</turretTopDrawSize>
         </building>
         <comps>
             <li Class="CompProperties_Power">
@@ -46,13 +81,6 @@
 					<enablePowerConsumption>true</enablePowerConsumption>
 					<enableSpecialBulletExplosion>true</enableSpecialBulletExplosion>
                     <powerConsumptionPerShot>100</powerConsumptionPerShot>
-                    <graphicData>
-                        <texPath>Buildings/LaserDefenseTurretItself</texPath>
-                        <graphicClass>Graphic_Single</graphicClass>
-                        <drawSize>(2,2)</drawSize>
-                        <shaderType>Cutout</shaderType>
-                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
-                    </graphicData>
                     <needSight>false</needSight>
                 </laserDefenceProperties>
             </li>
@@ -89,6 +117,7 @@
 	
 	<ThingDef ParentName="BuildingBase">
         <defName>TW_LaserDefenceTurret</defName>
+        <thingClass>TowerLaserDefense.Building_LaserDefenceTurret</thingClass>
         <label>Mechanoid Laser Point Defense Turret</label>
 		<description>Temporary defensive installation deployed by mechanoids in forward areas. Integrated power core enables short-duration high-efficiency operation specialized in intercepting slow enemy projectiles. Upon power depletion, activates self-destruct protocol to prevent capture of core technology.</description>
         <size>(1,1)</size>
@@ -108,6 +137,8 @@
         <building>
             <ai_combatDangerous>true</ai_combatDangerous>
             <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <turretGunDef>TW_LaserDefenceTurret_TopGun</turretGunDef>
+            <turretTopDrawSize>2.4</turretTopDrawSize>
         </building>
         <comps> 
             <li Class="CompProperties_Forbiddable" />
@@ -127,13 +158,6 @@
           <secondaryImpactScale>0.5</secondaryImpactScale>
           <tertiaryImpactScale>0.5</tertiaryImpactScale>
 					<interceptSound>Explosion_Rocket</interceptSound>
-                    <graphicData>
-                        <texPath>Buildings/MechLaserDefenseTurretItself</texPath>
-                        <graphicClass>Graphic_Single</graphicClass>
-                        <drawSize>(2.4,2.4)</drawSize>
-                        <shaderType>Cutout</shaderType>
-                        <ignoreThingDrawColor>true</ignoreThingDrawColor>
-                    </graphicData>
                     <needSight>false</needSight>
 					<requiresPower>false</requiresPower>
                 </laserDefenceProperties>

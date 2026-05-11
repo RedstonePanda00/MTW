@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Verse;
 
 #nullable disable
@@ -19,8 +20,12 @@ namespace TowerLaserDefense
     {
     }
 
-    public virtual void GameComponentTick()
+    public override void GameComponentTick()
     {
+      base.GameComponentTick();
+      LaserDefenceCore.RemoveStaleInstanceEntries();
+      LaserDefenceCore.MaybeLogPeriodicSummary();
+      int ticksGame = Find.TickManager.TicksGame;
       for (int index = GameComponent_BulletsCache.BulletsCache.Count - 1; index >= 0; --index)
       {
         Thing target = GameComponent_BulletsCache.BulletsCache[index];
@@ -30,19 +35,83 @@ namespace TowerLaserDefense
         }
         else
         {
-          foreach (LaserDefenceCore instance in LaserDefenceCore.Instances)
+          bool locked = false;
+          HashSet<LaserDefenceCore> seenCanonical = new HashSet<LaserDefenceCore>();
+          List<LaserDefenceCore> tryOrder = new List<LaserDefenceCore>(LaserDefenceCore.Instances.Count);
+          foreach (LaserDefenceCore entry in LaserDefenceCore.Instances)
           {
-            if (instance?.Parent != null && !instance.Parent.Destroyed && instance.Parent.Spawned && instance.TryLockTarget(target))
+            if (entry?.Parent == null || entry.Parent.Destroyed || !entry.Parent.Spawned || entry.Parent.Map != target.Map)
             {
+              continue;
+            }
+
+            ThingWithComps twc = entry.Parent as ThingWithComps;
+            if (twc == null)
+            {
+              continue;
+            }
+
+            CompLaserDefence comp = twc.TryGetComp<CompLaserDefence>();
+            LaserDefenceCore canonical = comp?.DefenceCore;
+            if (canonical == null || !seenCanonical.Add(canonical))
+            {
+              continue;
+            }
+
+            tryOrder.Add(canonical);
+          }
+
+          tryOrder.Sort((LaserDefenceCore a, LaserDefenceCore b) =>
+          {
+            int distA = (a.Parent.Position - target.Position).LengthHorizontalSquared;
+            int distB = (b.Parent.Position - target.Position).LengthHorizontalSquared;
+            return distA.CompareTo(distB);
+          });
+
+          foreach (LaserDefenceCore instance in tryOrder)
+          {
+            if (instance.TryLockTarget(target))
+            {
+              locked = true;
+              if (LaserDefenceCore.LaserDefenceLoggingEnabled)
+              {
+                LaserDefenceCore.DbgMessage(string.Format("GameComponent locked projectile={0} projThingId={1} by NEAREST capable turret={2} turretThingId={3} pos={4} (candidates={5}) lockedCoreIdentity={6} canonicalOnParent={7} instancesContainsLockedCore={8} otherCoresSameParent={9} note=removed_from_bullets_cache_same_tick", (object) target.def.defName, (object) target.thingIDNumber, (object) instance.Parent.def.defName, (object) instance.Parent.thingIDNumber, (object) instance.Parent.Position, (object) tryOrder.Count, (object) RuntimeHelpers.GetHashCode(instance), (object) instance.DiagIsCanonicalOnParent(), (object) LaserDefenceCore.Instances.Contains(instance), (object) instance.DiagCountOtherCoresSameParentInInstances()));
+              }
+
               GameComponent_BulletsCache.BulletsCache.RemoveAt(index);
               break;
             }
+          }
+
+          if (!locked && target is Projectile && LaserDefenceCore.LaserDefenceLoggingEnabled && LaserDefenceCore.Instances.Count > 0 && LaserDefenceCore.ShouldLogProjectileDiag(target, ticksGame))
+          {
+            LaserDefenceCore sample = null;
+            foreach (LaserDefenceCore core in LaserDefenceCore.Instances)
+            {
+              if (core?.Parent?.Map == target.Map)
+              {
+                sample = core;
+                break;
+              }
+            }
+
+            if (sample == null)
+            {
+              sample = LaserDefenceCore.Instances[0];
+            }
+
+            string reason = sample != null ? sample.DebugExplainCannotLock(target) : "no sample instance";
+            Log.Warning(string.Format("[NCL LaserDefense @{0}] projectile in cache but no lock (throttled ~120 ticks/proj): proj={1} launcher={2} flyOverhead={3} sampleTurret={4} reason={5}", (object) ticksGame, (object) target.def.defName, (object) (((Projectile) target).Launcher?.LabelCap ?? "null"), (object) target.def.projectile.flyOverhead, (object) (sample?.Parent?.def?.defName ?? "null"), (object) reason));
+          }
+          else if (!locked && target is Projectile && LaserDefenceCore.LaserDefenceLoggingEnabled && LaserDefenceCore.Instances.Count == 0 && LaserDefenceCore.ShouldLogProjectileDiag(target, ticksGame))
+          {
+            Log.Warning(string.Format("[NCL LaserDefense @{0}] projectile in cache but Instances=0: proj={1}", (object) ticksGame, (object) target.def.defName));
           }
         }
       }
     }
 
-    public virtual void ExposeData()
+    public override void ExposeData()
     {
       if (Scribe.mode == LoadSaveMode.Saving)
       {
@@ -51,22 +120,27 @@ namespace TowerLaserDefense
       else if (Scribe.mode == LoadSaveMode.LoadingVars)
       {
         GameComponent_BulletsCache.BulletsCache.Clear();
-        LaserDefenceCore.Instances.Clear();
+        LaserDefenceCore.CleanupAllInstances();
       }
     }
 
-    public virtual void LoadedGame()
+    public override void LoadedGame()
     {
       base.LoadedGame();
       LaserDefenceCore.CleanupAllInstances();
+      LaserDefenceCore.ResyncInstancesFromMaps();
       GameComponent_BulletsCache.BulletsCache.RemoveAll((Predicate<Thing>) (b => b == null || b.Destroyed || !b.Spawned));
     }
 
-    public virtual void StartedNewGame()
+    public override void StartedNewGame()
     {
       base.StartedNewGame();
       GameComponent_BulletsCache.BulletsCache.Clear();
-      LaserDefenceCore.Instances.Clear();
+      // Do NOT clear LaserDefenceCore.Instances here: InitNewGame calls StartedNewGame after MapGenerator
+      // has already spawned buildings (CompLaserDefence.PostSpawnSetup registered cores). Clearing would
+      // leave no turrets in Instances for the rest of the session.
+      LaserDefenceCore.CleanupAllInstances();
+      LaserDefenceCore.ResyncInstancesFromMaps();
     }
 
     public static void ClearStaticCache()

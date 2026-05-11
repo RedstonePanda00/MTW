@@ -7,6 +7,7 @@
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -38,6 +39,127 @@ namespace TowerLaserDefense
     private int _destroyedCount = 0;
     private int _coolDownTicksLeft = 0;
 
+    // After TryLockTarget, log LaserDefenceCore.Tick state each tick until this tick (inclusive).
+    private int _diagCompTickTraceUntilTick = -1;
+
+    // Throttle TICK-PROBE when only locked (no active COMP-TICK trace window).
+    private int _lastTickProbeWhileLockedLog = -99999999;
+
+    // Toggle to true when debugging; false silences [NCL LaserDefense] diagnostics (DbgMessage + gated warnings).
+    public static bool LaserDefenceLoggingEnabled = false;
+
+    private static int _lastGlobalSummaryTick = -999999;
+
+    private static readonly Dictionary<int, int> ProjectileLastDiagTick = new Dictionary<int, int>();
+
+    public static int DebugTicksGame => Current.Game != null ? Find.TickManager.TicksGame : -1;
+
+    public static void DbgMessage(string message)
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled)
+        return;
+      Log.Message(string.Format("[NCL LaserDefense @{0}] {1}", (object) LaserDefenceCore.DebugTicksGame, (object) message));
+    }
+
+    public int DiagCoreIdentity => RuntimeHelpers.GetHashCode(this);
+
+    public bool DiagIsCanonicalOnParent()
+    {
+      if (!(this.Parent is ThingWithComps twc))
+        return false;
+      CompLaserDefence comp = twc.TryGetComp<CompLaserDefence>();
+      return comp != null && object.ReferenceEquals(comp.DefenceCore, this);
+    }
+
+    public int DiagCountOtherCoresSameParentInInstances()
+    {
+      Thing p = this.Parent;
+      if (p == null)
+        return 0;
+      int id = p.thingIDNumber;
+      int n = 0;
+      for (int i = 0; i < LaserDefenceCore.Instances.Count; i++)
+      {
+        LaserDefenceCore x = LaserDefenceCore.Instances[i];
+        if (x == null || object.ReferenceEquals(x, this))
+          continue;
+        if (x.Parent != null && x.Parent.thingIDNumber == id)
+          ++n;
+      }
+
+      return n;
+    }
+
+    private string DiagFormatCoreContext()
+    {
+      bool inInst = LaserDefenceCore.Instances.Contains(this);
+      return string.Format("coreIdentity={0} canonicalOnParent={1} instancesContainsThis={2} otherCoresSameParentInInstances={3}", (object) this.DiagCoreIdentity, (object) this.DiagIsCanonicalOnParent(), (object) inInst, (object) this.DiagCountOtherCoresSameParentInInstances());
+    }
+
+    public bool DiagShouldLogCompLayerEntry()
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled || Current.Game == null)
+        return false;
+      int now = Find.TickManager.TicksGame;
+      return this._diagCompTickTraceUntilTick >= now || (this._lockedTargets != null && this._lockedTargets.Count > 0);
+    }
+
+    private void MaybeLogTickProbeAtTickStart()
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled || Current.Game == null || this.parent == null || this.Parent == null)
+        return;
+      int now = Find.TickManager.TicksGame;
+      bool inTrace = this._diagCompTickTraceUntilTick >= now;
+      bool hasLocks = this._lockedTargets != null && this._lockedTargets.Count > 0;
+      if (!inTrace && !hasLocks)
+        return;
+      bool inInstances = LaserDefenceCore.Instances.Contains(this);
+      bool canonical = this.DiagIsCanonicalOnParent();
+      int otherSameParent = this.DiagCountOtherCoresSameParentInInstances();
+      bool forceEveryTick = hasLocks && (!inInstances || !canonical || otherSameParent > 0);
+      if (!inTrace && !forceEveryTick && now - this._lastTickProbeWhileLockedLog < 30)
+        return;
+      if (!inTrace)
+        this._lastTickProbeWhileLockedLog = now;
+      int firstTgt = -1;
+      if (hasLocks && this._lockedTargets.Count > 0 && this._lockedTargets[0]?.target != null)
+        firstTgt = this._lockedTargets[0].target.thingIDNumber;
+      LaserDefenceCore.DbgMessage(string.Format("TICK-PROBE turretThingId={0} turretDef={1} {2} lockedCount={3} diagUntil@{4} firstLockedTgtId={5} detectionEnabled={6} spawned={7} destroyed={8}", (object) this.Parent.thingIDNumber, (object) this.Parent.def.defName, (object) this.DiagFormatCoreContext(), (object) (this._lockedTargets?.Count ?? 0), (object) this._diagCompTickTraceUntilTick, (object) firstTgt, (object) this._detectionEnabled, (object) this.Parent.Spawned, (object) this.Parent.Destroyed));
+    }
+
+    private void LogCompTickInterceptSnapshot(int num1ChargeBlocked)
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled)
+      {
+        return;
+      }
+
+      int now = Find.TickManager.TicksGame;
+      if (this._diagCompTickTraceUntilTick < now)
+      {
+        return;
+      }
+
+      string lockDetail = string.Empty;
+      for (int i = 0; i < this._lockedTargets.Count; i++)
+      {
+        LockedTargetData data = this._lockedTargets[i];
+        if (data?.target == null || data.target.Destroyed)
+        {
+          lockDetail += "[dead/null];";
+        }
+        else
+        {
+          int distSq = (data.target.PositionHeld - this.Parent.PositionHeld).LengthHorizontalSquared;
+          int maxSq = Mathf.RoundToInt((float) this.properties.range * (float) this.properties.range);
+          int lockAge = data.lockedAtTick >= 0 ? now - data.lockedAtTick : -1;
+          lockDetail += string.Format("{0}:chargeTime={1} lockAgeTicks={2} distSq={3}/{4};", (object) data.target.def.defName, (object) data.time, (object) lockAge, (object) distSq, (object) maxSq);
+        }
+      }
+
+      LaserDefenceCore.DbgMessage(string.Format("COMP-TICK-SHOT turretThingId={0} pos={1} traceUntil@{2} num1={3}(1=pausedBranch) IsStunned={4} RequiresPower={5} PowerOn={6} coolDownTicksLeft={7} interceptTimeDef={8} lockedCount={9} {10} [{11}]", (object) this.Parent.thingIDNumber, (object) this.Parent.Position, (object) this._diagCompTickTraceUntilTick, (object) num1ChargeBlocked, (object) this.IsStunned, (object) this.RequiresPower, (object) (this.Power != null && this.Power.PowerOn), (object) this._coolDownTicksLeft, (object) this.properties.interceptTime, (object) this._lockedTargets.Count, (object) this.DiagFormatCoreContext(), (object) lockDetail));
+    }
+
     private CompProperties_Stunnable StunComp
     {
       get => this.Parent?.def?.GetCompProperties<CompProperties_Stunnable>();
@@ -52,7 +174,10 @@ namespace TowerLaserDefense
           return;
         this._detectionEnabled = value;
         if (!value)
+        {
+          this.LogClearAllLocks("detection_disabled");
           this._lockedTargets.Clear();
+        }
       }
     }
 
@@ -74,6 +199,206 @@ namespace TowerLaserDefense
     public static void CleanupAllInstances()
     {
       LaserDefenceCore.Instances.RemoveAll((Predicate<LaserDefenceCore>) (core => core?.Parent == null || core.Parent.Destroyed || !core.Parent.Spawned));
+    }
+
+    // Instances can hold a LaserDefenceCore that is no longer CompLaserDefence.DefenceCore (e.g. after Scribe_Deep reload).
+    // TryLockTarget on that stale object never runs in CompTick on the live core — breaks locks and COMP-TICK-SHOT tracing.
+    public static void RemoveStaleInstanceEntries()
+    {
+      for (int i = LaserDefenceCore.Instances.Count - 1; i >= 0; --i)
+      {
+        LaserDefenceCore c = LaserDefenceCore.Instances[i];
+        if (c?.Parent == null)
+        {
+          LaserDefenceCore.Instances.RemoveAt(i);
+          continue;
+        }
+
+        ThingWithComps twc = c.Parent as ThingWithComps;
+        if (twc == null)
+        {
+          LaserDefenceCore.Instances.RemoveAt(i);
+          continue;
+        }
+
+        CompLaserDefence comp = twc.TryGetComp<CompLaserDefence>();
+        if (comp?.DefenceCore == null)
+        {
+          LaserDefenceCore.Instances.RemoveAt(i);
+          continue;
+        }
+
+        if (!object.ReferenceEquals(c, comp.DefenceCore))
+        {
+          LaserDefenceCore.Instances.RemoveAt(i);
+        }
+      }
+    }
+
+    // Re-add any laser defence cores that are valid on maps but missing from Instances (e.g. after bad static clears).
+    public static void ResyncInstancesFromMaps()
+    {
+      LaserDefenceCore.CleanupAllInstances();
+      Game game = Current.Game;
+      if (game == null)
+        return;
+      int added = 0;
+      foreach (Map map in game.Maps)
+      {
+        if (map == null)
+          continue;
+        foreach (Thing thing in map.listerThings.AllThings)
+        {
+          if (thing is not ThingWithComps twc)
+            continue;
+          CompLaserDefence comp = twc.TryGetComp<CompLaserDefence>();
+          if (comp?.DefenceCore == null)
+            continue;
+          if (!LaserDefenceCore.Instances.Contains(comp.DefenceCore))
+          {
+            LaserDefenceCore.Instances.Add(comp.DefenceCore);
+            ++added;
+          }
+        }
+      }
+
+      LaserDefenceCore.RemoveStaleInstanceEntries();
+      if (LaserDefenceCore.LaserDefenceLoggingEnabled && added > 0)
+      {
+        LaserDefenceCore.DbgMessage(string.Format("ResyncInstancesFromMaps added={0} totalInstances={1}", (object) added, (object) LaserDefenceCore.Instances.Count));
+      }
+    }
+
+    public static void MaybeLogPeriodicSummary()
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled || Current.Game == null)
+        return;
+      int ticksGame = Find.TickManager.TicksGame;
+      if (ticksGame - LaserDefenceCore._lastGlobalSummaryTick < 480)
+        return;
+      LaserDefenceCore._lastGlobalSummaryTick = ticksGame;
+      int count1 = LaserDefenceCore.Instances.Count;
+      int count2 = GameComponent_BulletsCache.BulletsCache.Count;
+      if (count1 == 0 && count2 == 0)
+        return;
+      LaserDefenceCore.DbgMessage(string.Format("summary laserInstances={0} bulletsCache={1}", (object) count1, (object) count2));
+      if (count1 == 0 && count2 > 0)
+      {
+        Log.Warning(string.Format("[NCL LaserDefense @{0}] bullets in cache but laserInstances=0 (turrets not registered or cleared).", (object) ticksGame));
+      }
+    }
+
+    public static bool ShouldLogProjectileDiag(Thing projectile, int curTick)
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled || projectile == null)
+        return false;
+      int thingIdNumber = projectile.thingIDNumber;
+      if (LaserDefenceCore.ProjectileLastDiagTick.TryGetValue(thingIdNumber, out int num) && curTick - num < 120)
+        return false;
+      LaserDefenceCore.ProjectileLastDiagTick[thingIdNumber] = curTick;
+      if (LaserDefenceCore.ProjectileLastDiagTick.Count > 400 && curTick % 2000 == 0)
+      {
+        LaserDefenceCore.ProjectileLastDiagTick.Clear();
+      }
+
+      return true;
+    }
+
+    public string DebugExplainCannotSee(Thing target)
+    {
+      if (target == null || target.Destroyed || !target.Spawned)
+      {
+        return "target null/destroyed/not spawned";
+      }
+
+      if (this.Parent == null || this.Parent.Map == null)
+      {
+        return "parent null or no map";
+      }
+
+      if (this.Parent is Pawn parent1 && parent1.stances.stunner.Stunned)
+      {
+        return "parent pawn stunned";
+      }
+
+      if (target is Projectile projectile)
+      {
+        Thing launcher = projectile.Launcher;
+        if (launcher?.Faction != null && !GenHostility.HostileTo(launcher, this.Parent))
+        {
+          return string.Format("non-hostile launcher faction={0}", (object) launcher.Faction.def.defName);
+        }
+
+        if (this.properties.ignoreAirProjectiles && ((Thing) projectile).def.projectile.flyOverhead)
+        {
+          return "ignoreAirProjectiles and flyOverhead";
+        }
+
+        if (this.properties.ignoreGroundProjectiles && !((Thing) projectile).def.projectile.flyOverhead)
+        {
+          return string.Format("ignoreGroundProjectiles excludes ground projectile def={0} flyOverhead=false", (object) projectile.def.defName);
+        }
+      }
+
+      if (this.RequiresPower && this.Parent is Building parent2)
+      {
+        CompPowerTrader comp = ((ThingWithComps) parent2).GetComp<CompPowerTrader>();
+        if (comp == null || !comp.PowerOn)
+        {
+          return comp == null ? "requiresPower but no CompPowerTrader" : "requiresPower but PowerOn=false";
+        }
+      }
+
+      if (!target.Spawned || target.Map != this.Parent.Map)
+      {
+        return string.Format("wrong map or not spawned (targetMap={0} parentMap={1})", target.Map == null ? "null" : "ok", this.Parent.Map == null ? "null" : "ok");
+      }
+
+      IntVec3 intVec3 = target.PositionHeld - this.Parent.PositionHeld;
+      double rangeSq = (double) this.properties.range * (double) this.properties.range;
+      if ((double) intVec3.LengthHorizontalSquared > rangeSq)
+      {
+        return string.Format("out of range distSq={0:F0} maxSq={1:F0}", (object) (float) intVec3.LengthHorizontalSquared, (object) (float) rangeSq);
+      }
+
+      if (this.properties.needSight && !GenSight.LineOfSight(this.Parent.Position, target.Position, this.Parent.Map))
+      {
+        return "needSight blocked LOS";
+      }
+
+      return null;
+    }
+
+    public string DebugExplainCannotLock(Thing target)
+    {
+      if (this._coolDownTicksLeft > 0)
+      {
+        return string.Format("cooldownTicksLeft={0}", (object) this._coolDownTicksLeft);
+      }
+
+      if (this._lockedTargets.Count >= this.properties.interceptCount)
+      {
+        return string.Format("intercept slots full ({0}/{1})", (object) this._lockedTargets.Count, (object) this.properties.interceptCount);
+      }
+
+      foreach (LaserDefenceCore instance in LaserDefenceCore.Instances)
+      {
+        if (instance == null || instance._lockedTargets == null)
+        {
+          continue;
+        }
+
+        foreach (LockedTargetData lockedTargetData in instance._lockedTargets)
+        {
+          if (lockedTargetData.target != null && lockedTargetData.target.GetUniqueLoadID() == target.GetUniqueLoadID())
+          {
+            return string.Format("already locked by turret def={0} id={1}", (object) (instance.Parent?.def?.defName ?? "?"), (object) (instance.Parent?.thingIDNumber ?? -1));
+          }
+        }
+      }
+
+      string cannotSee = this.DebugExplainCannotSee(target);
+      return cannotSee != null ? "cannot see: " + cannotSee : "unknown (CanSeeTarget mismatch)";
     }
 
     public bool HasEnoughPowerToFire()
@@ -166,12 +491,19 @@ label_14:
 
     public bool CanLockTarget(Thing target)
     {
-      if (this._coolDownTicksLeft > 0 || this._lockedTargets.Count >= this.properties.interceptCount || !this.CanSeeTarget(target))
+      if (!this.DetectionEnabled || this._coolDownTicksLeft > 0 || this._lockedTargets.Count >= this.properties.interceptCount || !this.CanSeeTarget(target))
         return false;
       foreach (LaserDefenceCore instance in LaserDefenceCore.Instances)
       {
-        if (instance._lockedTargets.Any<LockedTargetData>((Func<LockedTargetData, bool>) (data => data.target.GetUniqueLoadID() == target.GetUniqueLoadID())))
+        if (instance == null || instance._lockedTargets == null)
+        {
+          continue;
+        }
+
+        if (instance._lockedTargets.Any<LockedTargetData>((Func<LockedTargetData, bool>) (data => data.target != null && data.target.GetUniqueLoadID() == target.GetUniqueLoadID())))
+        {
           return false;
+        }
       }
       return true;
     }
@@ -185,7 +517,12 @@ label_14:
         string targetID = target.GetUniqueLoadID();
         if (GenCollection.Any<LockedTargetData>(this._lockedTargets, (Predicate<LockedTargetData>) (x => x.target?.GetUniqueLoadID() == targetID)))
           return false;
-        this._lockedTargets.Add(new LockedTargetData(target));
+        LockedTargetData newLock = new LockedTargetData(target);
+        newLock.lockedAtTick = Find.TickManager.TicksGame;
+        this._lockedTargets.Add(newLock);
+        this._diagCompTickTraceUntilTick = Find.TickManager.TicksGame + 120;
+        this.GunRotate();
+        LaserDefenceCore.DbgMessage(string.Format("TryLockTarget OK turret={0} thingId={1} at={2} target={3} tgtId={4} lockedCount={5} lockStartedTick={6} COMP-TICK-SHOT until@{7} instancesTotal={8} {9}", (object) this.Parent.def.defName, (object) this.Parent.thingIDNumber, (object) this.Parent.Position, (object) target.def.defName, (object) target.thingIDNumber, (object) this._lockedTargets.Count, (object) newLock.lockedAtTick, (object) this._diagCompTickTraceUntilTick, (object) LaserDefenceCore.Instances.Count, (object) this.DiagFormatCoreContext()));
         return true;
       }
       catch (Exception ex)
@@ -216,12 +553,55 @@ label_14:
       }
     }
 
-    private void TryRemoveTarget(Thing target)
+    private static string ClassifyTargetUnavailableReason(Thing t, Map parentMap)
+    {
+      if (t == null)
+        return "target_null";
+      if (t.Destroyed)
+        return "target_destroyed";
+      if (!t.Spawned)
+        return "target_not_spawned";
+      if (parentMap != null && t.Map != parentMap)
+        return "target_wrong_map";
+      return "target_unavailable_unknown";
+    }
+
+    private void LogLockEnd(Thing target, LockedTargetData data, string reason)
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled)
+        return;
+      int now = Find.TickManager.TicksGame;
+      int lockDurationTicks = data != null && data.lockedAtTick >= 0 ? now - data.lockedAtTick : -1;
+      int chargeAccumulated = data?.time ?? -1;
+      int tgtId = target != null ? target.thingIDNumber : -1;
+      string tgtDef = target?.def?.defName ?? "null";
+      LaserDefenceCore.DbgMessage(string.Format("LockEnd turretThingId={0} tgtDef={1} tgtId={2} reason={3} lockDurationTicks={4} chargeAccumulated={5} {6}", (object) this.Parent.thingIDNumber, (object) tgtDef, (object) tgtId, (object) reason, (object) lockDurationTicks, (object) chargeAccumulated, (object) this.DiagFormatCoreContext()));
+    }
+
+    private void LogClearAllLocks(string reason)
+    {
+      if (!LaserDefenceCore.LaserDefenceLoggingEnabled || this._lockedTargets == null || this._lockedTargets.Count == 0)
+        return;
+      int now = Find.TickManager.TicksGame;
+      for (int i = 0; i < this._lockedTargets.Count; i++)
+      {
+        LockedTargetData data = this._lockedTargets[i];
+        Thing t = data?.target;
+        int lockDurationTicks = data != null && data.lockedAtTick >= 0 ? now - data.lockedAtTick : -1;
+        int chargeAccumulated = data?.time ?? -1;
+        int tgtId = t != null ? t.thingIDNumber : -1;
+        string tgtDef = t?.def?.defName ?? "null";
+        LaserDefenceCore.DbgMessage(string.Format("LockEnd turretThingId={0} tgtDef={1} tgtId={2} reason={3} lockDurationTicks={4} chargeAccumulated={5} {6}", (object) this.Parent.thingIDNumber, (object) tgtDef, (object) tgtId, (object) reason, (object) lockDurationTicks, (object) chargeAccumulated, (object) this.DiagFormatCoreContext()));
+      }
+    }
+
+    private void TryRemoveTarget(Thing target, string reason)
     {
       if (target == null)
         return;
       foreach (LockedTargetData lockedTargetData in this._lockedTargets.Where<LockedTargetData>((Func<LockedTargetData, bool>) (data => data.target == target)).ToList<LockedTargetData>())
       {
+        this.LogLockEnd(target, lockedTargetData, reason);
         int index = this._lockedTargets.IndexOf(lockedTargetData);
         if (index >= 0 && index < this._lockedTargets.Count)
           this._lockedTargets.RemoveAt(index);
@@ -232,6 +612,7 @@ label_14:
 
     public void Tick()
     {
+      this.MaybeLogTickProbeAtTickStart();
       if (!this.DetectionEnabled)
       {
         this._randomRot = 0;
@@ -244,13 +625,28 @@ label_14:
           if (++this._cleanCounter >= 250 || this._cleanCounter < 0)
           {
             this._cleanCounter = 0;
-            this._lockedTargets.RemoveAll((Predicate<LockedTargetData>) (data => data.target == null || data.target.Destroyed || !data.target.Spawned || data.target.Map != this.Parent.Map));
+            for (int ci = this._lockedTargets.Count - 1; ci >= 0; --ci)
+            {
+              LockedTargetData stale = this._lockedTargets[ci];
+              Thing st = stale?.target;
+              if (st == null || st.Destroyed || !st.Spawned || st.Map != this.Parent.Map)
+              {
+                string r = LaserDefenceCore.ClassifyTargetUnavailableReason(st, this.Parent?.Map);
+                if (st != null)
+                  this.LogLockEnd(st, stale, r + "_periodicCleanup");
+                else if (LaserDefenceCore.LaserDefenceLoggingEnabled)
+                  LaserDefenceCore.DbgMessage(string.Format("LockEnd turretThingId={0} reason=stale_slot_null_target_periodicCleanup chargeAccumulated={1} {2}", (object) this.Parent.thingIDNumber, (object) (stale?.time ?? -1), (object) this.DiagFormatCoreContext()));
+                this._lockedTargets.RemoveAt(ci);
+              }
+            }
           }
           if (this.Parent == null || this.Parent.Destroyed || this.properties == null || this._lockedTargets == null)
             return;
           if (this._coolDownTicksLeft > 0)
           {
             --this._coolDownTicksLeft;
+            if (this._lockedTargets.Count > 0)
+              this.LogClearAllLocks("cooldown_tick_clear");
             this._lockedTargets.Clear();
             if (this.properties.enableCooldownEffect && this._cooldownEffecter != null)
               this._cooldownEffecter.EffectTick(new TargetInfo(this.Parent.PositionHeld, this.Parent.Map, false), new TargetInfo(this.Parent.PositionHeld, this.Parent.Map, false));
@@ -281,6 +677,7 @@ label_14:
               num1 = 1;
             if (num1 != 0)
             {
+              this.LogClearAllLocks("stun_or_no_power_clear");
               this._lockedTargets.Clear();
             }
             else
@@ -294,23 +691,41 @@ label_14:
                   ++num2;
                   if (lockedTargetData.target == null || lockedTargetData.target.Destroyed || !lockedTargetData.target.Spawned || lockedTargetData.target.Map != this.Parent.Map)
                   {
-                    this.TryRemoveTarget(lockedTargetData.target);
+                    if (lockedTargetData.target != null)
+                    {
+                      string ru = LaserDefenceCore.ClassifyTargetUnavailableReason(lockedTargetData.target, this.Parent?.Map);
+                      this.TryRemoveTarget(lockedTargetData.target, ru + "_while_tracking");
+                    }
+                    else
+                    {
+                      if (LaserDefenceCore.LaserDefenceLoggingEnabled)
+                        LaserDefenceCore.DbgMessage(string.Format("LockEnd turretThingId={0} tgtDef=null tgtId=-1 reason=target_null_while_tracking lockDurationTicks=-1 chargeAccumulated={1} {2}", (object) this.Parent.thingIDNumber, (object) lockedTargetData.time, (object) this.DiagFormatCoreContext()));
+                      int ni = this._lockedTargets.IndexOf(lockedTargetData);
+                      if (ni >= 0)
+                        this._lockedTargets.RemoveAt(ni);
+                    }
                   }
                   else
                   {
                     IntVec3 intVec3 = lockedTargetData.target.PositionHeld - this.Parent.PositionHeld;
                     if ((double)intVec3.LengthHorizontalSquared > (double)this.properties.range * (double)this.properties.range)
-                      this.TryRemoveTarget(lockedTargetData.target);
+                      this.TryRemoveTarget(lockedTargetData.target, "left_horizontal_range");
                     else if (this.properties.needSight && !GenSight.LineOfSight(this.Parent.Position, lockedTargetData.target.Position, this.Parent.Map))
                     {
-                      this.TryRemoveTarget(lockedTargetData.target);
+                      this.TryRemoveTarget(lockedTargetData.target, "lost_line_of_sight");
                     }
                     else
                     {
                       ++lockedTargetData.time;
+                      if (lockedTargetData.time == 1)
+                      {
+                        LaserDefenceCore.DbgMessage(string.Format("intercept CHARGE tick=1/{0} turret={1} id={2} -> target={3} tgtId={4} {5}", (object) this.properties.interceptTime, (object) this.Parent.def.defName, (object) this.Parent.thingIDNumber, (object) lockedTargetData.target.def.defName, (object) lockedTargetData.target.thingIDNumber, (object) this.DiagFormatCoreContext()));
+                      }
+
                       if (lockedTargetData.time >= this.properties.interceptTime)
                       {
-                        if (this.DestroyTarget(lockedTargetData.target))
+                        bool destroyedProj = this.DestroyTarget(lockedTargetData.target);
+                        if (destroyedProj)
                         {
                           ++this._destroyedCount;
                           if (this._destroyedCount >= this.properties.coolDownAfterShots)
@@ -325,7 +740,8 @@ label_14:
                             break;
                           }
                         }
-                        this.TryRemoveTarget(lockedTargetData.target);
+
+                        this.TryRemoveTarget(lockedTargetData.target, destroyedProj ? "intercept_destroyed" : "intercept_cycle_finished_not_destroyed");
                       }
                     }
                   }
@@ -335,6 +751,8 @@ label_14:
               }
               this.GunRotate();
             }
+
+            this.LogCompTickInterceptSnapshot(num1);
           }
         }
         catch (Exception ex)
@@ -362,6 +780,8 @@ label_14:
       CompStunnable comp = ThingCompUtility.TryGetComp<CompStunnable>(this.Parent);
       return comp != null ? comp.StunHandler.StunTicksLeft : 0;
     }
+
+    public float VisualAimAngle => this._aimingAngle;
 
     private void GunRotate()
     {
@@ -409,17 +829,29 @@ label_14:
       drawPos.y = 0.0f;
       if (this.properties.enableLaserLine)
       {
+        float denom = Mathf.Max(1f, (float) this.properties.interceptTime);
         foreach (LockedTargetData lockedTarget in this._lockedTargets)
         {
-          Material material = MaterialPool.MatFrom("Motes/LaserLine", ShaderDatabase.TransparentPostLight, new Color(1f, 1f, 1f, (float) lockedTarget.time * 0.8f / (float) this.properties.interceptTime));
+          if (lockedTarget?.target == null || lockedTarget.target.Destroyed)
+          {
+            continue;
+          }
+
+          // First ticks used alpha=0 so the beam was invisible — looked like lock never started.
+          float chargeT = Mathf.Clamp01((float) lockedTarget.time / denom);
+          float alpha = Mathf.Lerp(0.45f, 0.95f, chargeT);
+          string lineTex = this.properties.laserLineTexture.NullOrEmpty() ? "Motes/LaserLine" : this.properties.laserLineTexture;
+          Material material = MaterialPool.MatFrom(lineTex, ShaderDatabase.TransparentPostLight, new Color(1f, 1f, 1f, alpha));
           Vector3 drawPos1 = lockedTarget.target.DrawPos;
           drawPos1.y = 0.0f;
-          GenDraw.DrawLineBetween(drawPos, drawPos1, Altitudes.AltitudeFor((AltitudeLayer) 16), material, 0.7f);
+          GenDraw.DrawLineBetween(drawPos, drawPos1, Altitudes.AltitudeFor(AltitudeLayer.BuildingBelowTop), material, 0.7f);
         }
       }
       if (this.properties.graphicData == null)
         return;
-      drawPos.y = Altitudes.AltitudeFor((AltitudeLayer) 17);
+      if (this.parent.Thing is Building_LaserDefenceTurret)
+        return;
+      drawPos.y = Altitudes.AltitudeFor(AltitudeLayer.BuildingOnTop);
       this.properties.graphicData.GraphicColoredFor(this.parent.Thing).Draw(drawPos, Rot4.North, this.parent.Thing, this._aimingAngle);
     }
 
@@ -477,6 +909,7 @@ label_14:
           this.TriggerBulletExplosion(target as Projectile);
         else
           target.Destroy((DestroyMode) 2);
+        LaserDefenceCore.DbgMessage(string.Format("DestroyTarget OK turret={0} id={1} projectile={2}", (object) this.Parent.def.defName, (object) this.Parent.thingIDNumber, (object) target.def.defName));
         return true;
       }
       catch (Exception ex)
@@ -550,8 +983,9 @@ label_14:
       {
       }
 
-      public virtual void GameComponentTick()
+      public override void GameComponentTick()
       {
+        base.GameComponentTick();
         if (Find.TickManager.TicksGame % 1000 != 0)
           return;
         LaserDefenceCore.CleanupAllInstances();

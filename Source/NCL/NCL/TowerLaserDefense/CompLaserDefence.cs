@@ -7,6 +7,7 @@
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using Verse;
 
@@ -32,6 +33,10 @@ namespace TowerLaserDefense
     public virtual void PostSpawnSetup(bool respawningAfterLoad)
     {
       LaserDefenceCore.Instances.Add(this.DefenceCore);
+      if (LaserDefenceCore.LaserDefenceLoggingEnabled)
+      {
+        LaserDefenceCore.DbgMessage(string.Format("registered turret def={0} mapUniqueId={1} pos={2} instances={3}", (object) this.parent.def.defName, (object) (this.parent.Map == null ? -1 : this.parent.Map.uniqueID), (object) this.parent.Position, (object) LaserDefenceCore.Instances.Count));
+      }
     }
 
     public virtual void PostDeSpawn() => LaserDefenceCore.Instances.Remove(this.DefenceCore);
@@ -105,7 +110,19 @@ namespace TowerLaserDefense
       GenDraw.DrawRadiusRing(((Thing) this.parent).Position, this.Props.laserDefenceProperties.range);
     }
 
-    public virtual void CompTick() => this.DefenceCore.Tick();
+    public override void CompTick()
+    {
+      LaserDefenceCore d = this.DefenceCore;
+      if (LaserDefenceCore.LaserDefenceLoggingEnabled && d != null && d.DiagShouldLogCompLayerEntry())
+      {
+        Thing t = (Thing) this.parent;
+        int fieldId = this.core != null ? RuntimeHelpers.GetHashCode(this.core) : -1;
+        int getterId = RuntimeHelpers.GetHashCode(d);
+        LaserDefenceCore.DbgMessage(string.Format("COMP-TICK-ENTRY turretThingId={0} compFieldCoreIdentity={1} DefenceCoreGetterIdentity={2} fieldRefEqualsGetter={3}", (object) t.thingIDNumber, (object) fieldId, (object) getterId, (object) (this.core != null && object.ReferenceEquals(this.core, d))));
+      }
+
+      d.Tick();
+    }
 
     public bool DetectionEnabled
     {

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Used by HediffComp_ReactOnDamage EMP prefix: chance to resist brain shock / vomiting (0-1, PercentZero). -->
+    <!-- No workerClass: StatDef defaults to RimWorld.StatWorker (see StatDef.workerClass in game source). -->
+    <StatDef>
+        <defName>NCL_BrainShockResistance</defName>
+        <label>brain shock resistance</label>
+        <description>Chance to resist mental break side effects from EMP damage reactions.</description>
+        <category>BasicsPawn</category>
+        <defaultBaseValue>0</defaultBaseValue>
+        <minValue>0</minValue>
+        <maxValue>1</maxValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <showIfUndefined>false</showIfUndefined>
+        <showOnPawns>false</showOnPawns>
+        <displayPriorityInCategory>9990</displayPriorityInCategory>
+    </StatDef>
+</Defs>

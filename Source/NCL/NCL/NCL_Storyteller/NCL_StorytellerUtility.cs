@@ -22,6 +22,25 @@ namespace NCL_Storyteller
             return Find.Storyteller?.def?.defName == "NCL_Justice_Storyteller";
         }
 
+        // Player colony map only: excludes raid-beacon / pocket temp maps where caravan or orbital trade is meaningless.
+        public static bool IsJusticeColonyTraderTargetMap(Map map)
+        {
+            if (map == null || !map.IsPlayerHome || map.IsTempIncidentMap)
+            {
+                return false;
+            }
+
+            foreach (IncidentTargetTagDef tag in map.IncidentTargetTags())
+            {
+                if (tag == IncidentTargetTagDefOf.Map_RaidBeacon)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public static float MaxDefaultThreatPointsNow()
         {
             TotalWarfareSettings s = ActiveSettings;

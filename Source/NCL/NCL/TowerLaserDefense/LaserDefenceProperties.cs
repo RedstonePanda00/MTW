@@ -13,6 +13,11 @@ namespace TowerLaserDefense
   public class LaserDefenceProperties
   {
     public float range;
+
+    // Extra horizontal cells beyond `range` while a target is locked: Tick used the same radius as acquisition,
+    // so fast shells left the circle on the next tick and never drew aim line / turret turn before intercept.
+    public int lockLeashCells = 72;
+
     public int interceptCount = 1;
     public int interceptTime = 20;
     public bool ignoreGroundProjectiles = false;

@@ -194,6 +194,8 @@
     <Compile Include="IFCEquipmentFormChangePatches.cs" />
     <Compile Include="MechanitorKingOfTheFieldPatches.cs" />
     <Compile Include="NCL_Storyteller\NCL_StorytellerUtility.cs" />
+    <Compile Include="NCL_Storyteller\GameComponent_JusticePostRaid.cs" />
+    <Compile Include="NCL_Storyteller\Patch_JusticeStoryteller.cs" />
     <Compile Include="NCL_Storyteller\Patch_StorytellerUtility.cs" />
     <Compile Include="NCL_Storyteller\Patch_PawnsArrivalModeWorker.cs" />
     <Compile Include="NCLWorm\**\*.cs" />

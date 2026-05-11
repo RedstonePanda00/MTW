@@ -14,6 +14,9 @@ namespace TowerLaserDefense
     public Thing target;
     public int time;
 
+    // TicksGame when this slot began tracking the target (for debug lock duration).
+    public int lockedAtTick = -1;
+
     public LockedTargetData()
     {
     }
@@ -23,6 +26,7 @@ namespace TowerLaserDefense
     public void ExposeData()
     {
       Scribe_Values.Look<int>(ref this.time, "time", 0, false);
+      Scribe_Values.Look<int>(ref this.lockedAtTick, "lockedAtTick", -1, false);
       Scribe_References.Look<Thing>(ref this.target, "target", false);
     }
   }

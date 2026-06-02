@@ -76,7 +76,7 @@ namespace NCLWorm
     {
     }
 
-    public virtual void MapComponentTick()
+    public override void MapComponentTick()
     {
       base.MapComponentTick();
       if (Find.TickManager.TicksGame % 120 != 0)
@@ -132,7 +132,7 @@ namespace NCLWorm
 
     public void DeregisterBoss(WormHead boss) => this.activeBosses.Remove(boss);
 
-    public virtual void MapComponentOnGUI()
+    public override void MapComponentOnGUI()
     {
       base.MapComponentOnGUI();
       if (this.activeBosses.Count == 0)

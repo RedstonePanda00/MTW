@@ -17,6 +17,8 @@ namespace NCL
 
     public class CompDamageLimit : ThingComp
     {
+        private const string OrbitalPrecisionDirectHitDefName = "MTW_OrbitalPrecisionDirectHit";
+
         private CompProperties_DamageLimit Props =>
             (CompProperties_DamageLimit)props;
 
@@ -24,6 +26,11 @@ namespace NCL
         {
             base.PostPreApplyDamage(ref dinfo, out absorbed);
             absorbed = false;
+
+            if (dinfo.Def?.defName == OrbitalPrecisionDirectHitDefName)
+            {
+                return;
+            }
 
             // 检查是否在排除列表中
             if (Props.excludedDamageTypes != null &&

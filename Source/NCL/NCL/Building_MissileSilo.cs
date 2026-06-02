@@ -37,13 +37,13 @@ namespace NCL
 
         public const int PowerPerShot = 100; // 每次发射消耗电量
         private CompPowerTrader powerComp; // 电力组件
-        // 发射间隔（秒） - 添加范围限制
+        public const float MinLaunchInterval = 0.5f;
+        public const float MaxLaunchInterval = 3.0f;
         public float launchInterval = 3.0f;
         public const int SteelPerShot = 20;
 
         public CompSteelResource steelComp;
         // 盖子相关
-        private Graphic lidGraphic;
         private LidState lidState = LidState.Closed;
         private float lidOffset = -1.1f;
         private float targetLidOffset = -1.1f;
@@ -63,6 +63,17 @@ namespace NCL
             base.SpawnSetup(map, respawningAfterLoad);
             steelComp = GetComp<CompSteelResource>();
             powerComp = GetComp<CompPowerTrader>(); // 初始化电力组件
+            MapComponent_IronRainTargeting.GetOrCreate(map)?.RegisterSilo(this);
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.WillReplace)
+        {
+            if (Map != null)
+            {
+                MapComponent_IronRainTargeting.Get(Map)?.UnregisterSilo(this);
+            }
+
+            base.DeSpawn(mode);
         }
 
         public bool HasEnoughPowerToFire()
@@ -168,11 +179,14 @@ namespace NCL
                 bool hasEnoughSteel = steelComp != null && steelComp.HasEnoughResources(SteelPerShot);
                 bool hasEnoughPower = HasEnoughPowerToFire();
 
-                // 达到发射间隔且有敌人存在且资源充足
-                if (launchTimer >= launchInterval && HasEnemyTargets() && hasEnoughSteel && hasEnoughPower)
+                if (launchTimer >= launchInterval)
                 {
-                    LaunchMissile();
-                    launchTimer = 0f; // 重置计时器
+                    if (hasEnoughSteel && hasEnoughPower && CanFireFromTargetingSystem())
+                    {
+                        LaunchMissile();
+                    }
+
+                    launchTimer = 0f;
                 }
             }
         }
@@ -214,90 +228,15 @@ namespace NCL
             }
         }
 
-        // 检测地图上是否有敌人
-        // 修改 HasEnemyTargets() 方法
-        private bool HasEnemyTargets()
+        private bool CanFireFromTargetingSystem()
         {
-            if (!Spawned || Map == null || Faction == null)
-                return false;
-
-            // 根据当前设置的发射条件进行检查
-            switch (launchCondition)
+            MapComponent_IronRainTargeting targeting = MapComponent_IronRainTargeting.GetOrCreate(Map);
+            if (targeting == null)
             {
-                case LaunchCondition.HighAngleProjectilesOnly:
-                    // 只有高角投射物时才发射
-                    return HasHostileAirProjectiles();
-
-                case LaunchCondition.AnyEnemyThreats:
-                    // 任何敌方威胁时发射
-                    return HasHostileAirProjectiles() || HasEnemyPawns();
-
-                default:
-                    return false;
-            }
-        }
-
-
-        /// <summary>
-        /// 检测是否存在敌方单位
-        /// </summary>
-        private bool HasEnemyPawns()
-        {
-            foreach (Pawn pawn in Map.mapPawns.AllPawnsSpawned)
-            {
-                if (IsHostilePawn(pawn))
-                    return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// 判断单位是否敌对
-        /// </summary>
-        private bool IsHostilePawn(Pawn pawn)
-        {
-            // 确保不是囚犯且未倒地
-            bool isPrisonerOrDowned = pawn.IsPrisoner || pawn.Downed;
-
-            return pawn != null &&
-                   pawn.Spawned &&
-                   pawn.Faction != null &&
-                   Faction != null &&
-                   Faction.HostileTo(pawn.Faction) &&
-                   !isPrisonerOrDowned;
-        }
-
-        /// <summary>
-        /// 检测是否存在敌方高空投射物
-        /// </summary>
-        private bool HasHostileAirProjectiles()
-        {
-            List<Thing> projectiles = Map.listerThings.ThingsInGroup(ThingRequestGroup.Projectile);
-            foreach (Thing thing in projectiles)
-            {
-                Projectile projectile = thing as Projectile;
-                if (projectile != null && IsHostileAirProjectile(projectile))
-                    return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// 判断是否是敌方高空投射物
-        /// </summary>
-        private bool IsHostileAirProjectile(Projectile projectile)
-        {
-            // 检查是否为高空投射物
-            if (projectile.def.projectile == null || !projectile.def.projectile.flyOverhead)
                 return false;
+            }
 
-            // 检查发射者是否敌对
-            Thing launcher = projectile.Launcher;
-            if (launcher == null || launcher.Faction == null || Faction == null)
-                return false;
-
-            // 检查是否敌对
-            return Faction.HostileTo(launcher.Faction);
+            return targeting.HasEnemyTargetsFor(this) && targeting.CanSiloLaunchMoreMissiles(this);
         }
 
         // 获取下一个发射位置
@@ -345,6 +284,12 @@ namespace NCL
         {
             try
             {
+                MapComponent_IronRainTargeting targeting = MapComponent_IronRainTargeting.GetOrCreate(Map);
+                if (targeting == null || !targeting.CanSiloLaunchMoreMissiles(this))
+                {
+                    return;
+                }
+
                 // 检查是否有足够钢铁
                 if (steelComp == null || !steelComp.ConsumeResources(SteelPerShot))
                 {
@@ -395,6 +340,8 @@ namespace NCL
 
                     // 通过反射初始化关键字段
                     InitializeMissileFields(tracingMissile, missileDef);
+
+                    tracingMissile.EnableCentralIronRainTargeting();
                 }
 
                 // 发射导弹
@@ -481,7 +428,7 @@ namespace NCL
                     interceptParamsField.SetValue(missile, new object[2]);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }
@@ -578,9 +525,9 @@ namespace NCL
                 defaultDesc = "NCL.LaunchIntervalDesc".Translate(),
                 action = () => {
                     Find.WindowStack.Add(new Dialog_FloatSlider(
-                        "NCL.SetLaunchInterval".Translate(), // 窗口标题
-                        0.1f,  // 最小值0.1秒 (最快10发/秒)
-                        3.0f,  // 最大值3.0秒 (最慢3秒/发)
+                        "NCL.SetLaunchInterval".Translate(),
+                        MinLaunchInterval,
+                        MaxLaunchInterval,
                         val => launchInterval = val,
                         launchInterval
                     ));
@@ -661,6 +608,7 @@ namespace NCL
             Scribe_Values.Look(ref nextMissileIndex, "nextMissileIndex", 0);
             Scribe_Values.Look(ref launchTimer, "launchTimer", 0f);
             Scribe_Values.Look(ref launchInterval, "launchInterval", 3.0f);
+            launchInterval = Mathf.Clamp(launchInterval, MinLaunchInterval, MaxLaunchInterval);
         }
 
         // 在场景中显示发射位置（开发模式）
@@ -693,7 +641,16 @@ namespace NCL
         public bool AutoFill
         {
             get => autoFill;
-            set => autoFill = value;
+            set
+            {
+                if (autoFill == value)
+                {
+                    return;
+                }
+
+                autoFill = value;
+                NotifyAutofillRegistryChanged();
+            }
         }
 
         public bool HasEnoughResources(int amount)
@@ -705,10 +662,27 @@ namespace NCL
         public int AmountToAutofill => Mathf.Max(0, maxToFill - IngredientCount);
         public float FillPercentage => (float)IngredientCount / Props.maxIngredientCount;
 
+        public bool NeedsAutofillWork =>
+            autoFill
+            && parent != null
+            && parent.Spawned
+            && !parent.IsBurning()
+            && AmountToAutofill > 0;
+
         public int MaxToFill
         {
             get => maxToFill;
-            set => maxToFill = Mathf.Clamp(value, 0, Props.maxIngredientCount);
+            set
+            {
+                int clamped = Mathf.Clamp(value, 0, Props.maxIngredientCount);
+                if (clamped == maxToFill)
+                {
+                    return;
+                }
+
+                maxToFill = clamped;
+                NotifyAutofillRegistryChanged();
+            }
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -723,22 +697,31 @@ namespace NCL
                 }
                 maxToFill = Props.startingIngredientCount;
             }
+
+            NotifyAutofillRegistryChanged();
         }
 
         public void AddIngredient(ThingDef ingredientDef, int amount)
         {
             if (innerContainer == null) return;
 
+            int before = IngredientCount;
             int num = Mathf.Min(amount, Props.maxIngredientCount - IngredientCount);
             if (num <= 0) return;
 
             Thing thing = ThingMaker.MakeThing(ingredientDef);
             thing.stackCount = num;
             innerContainer.TryAdd(thing, true);
+
+            if (IngredientCount != before)
+            {
+                NotifyAutofillRegistryChanged();
+            }
         }
 
         public bool ConsumeResources(int amount)
         {
+            int before = IngredientCount;
             int num = amount;
             List<Thing> list = new List<Thing>(innerContainer);
             foreach (Thing thing in list)
@@ -759,6 +742,12 @@ namespace NCL
                 num -= num2;
                 if (num <= 0) break;
             }
+
+            if (IngredientCount != before)
+            {
+                NotifyAutofillRegistryChanged();
+            }
+
             return num <= 0;
         }
 
@@ -770,11 +759,18 @@ namespace NCL
             // 在原地吐出所有资源
             innerContainer.TryDropAll(parent.Position, parent.Map, ThingPlaceMode.Near);
 
-            // 重置目标量为0
-            maxToFill = 0;
+            MaxToFill = 0;
+        }
 
+        private void NotifyAutofillRegistryChanged()
+        {
+            Map map = parent?.Map;
+            if (map == null)
+            {
+                return;
+            }
 
-
+            MapComponent_SteelResourceAutofill.GetOrCreate(map)?.NotifyChanged(this);
         }
 
         public override void PostExposeData()
@@ -794,6 +790,11 @@ namespace NCL
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
+            if (previousMap != null)
+            {
+                MapComponent_SteelResourceAutofill.GetOrCreate(previousMap)?.Unregister(parent as Building);
+            }
+
             base.PostDestroy(mode, previousMap);
             innerContainer?.ClearAndDestroyContents(DestroyMode.Vanish);
         }
@@ -912,7 +913,7 @@ namespace NCL
 
             if (lastTargetValue != targetValue)
             {
-                comp.maxToFill = Mathf.RoundToInt(targetValue * comp.Props.maxIngredientCount);
+                comp.MaxToFill = Mathf.RoundToInt(targetValue * comp.Props.maxIngredientCount);
             }
 
             return new GizmoResult(GizmoState.Clear);
@@ -982,13 +983,31 @@ namespace NCL
 
         public override PathEndMode PathEndMode => PathEndMode.Touch;
 
+        public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
+        {
+            if (pawn?.Map == null)
+            {
+                yield break;
+            }
+
+            MapComponent_SteelResourceAutofill registry = MapComponent_SteelResourceAutofill.GetOrCreate(pawn.Map);
+            if (registry == null)
+            {
+                yield break;
+            }
+
+            foreach (Building building in registry.BuildingsNeedingAutofill)
+            {
+                if (building != null && building.Spawned && !building.IsBurning())
+                {
+                    yield return building;
+                }
+            }
+        }
+
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             if (pawn == null || t == null || !t.Spawned || t.IsBurning())
-                return false;
-
-            // 检查是否是我们需要的建筑类型
-            if (t.def.defName != "NCL_Building_MissileSilo" && t.def.defName != "NCL_Eagle_Artillery_Building")
                 return false;
 
             CompSteelResource comp = t.TryGetComp<CompSteelResource>();
@@ -1002,32 +1021,12 @@ namespace NCL
             if (!pawn.CanReserve(t, 1, -1, null, forced))
                 return false;
 
-            ThingDef steelDef = comp.Props.fixedIngredient;
+            ThingDef ingredient = comp.Props.fixedIngredient;
+            if (ingredient == null)
+                return false;
 
-            // 快速最近单堆查找（廉价）
-            Predicate<Thing> validator = (Thing x) =>
-            {
-                if (x == null || x.IsForbidden(pawn) || x.IsBurning())
-                    return false;
-
-                if (!pawn.CanReserve(x, 1, -1, null, forced))
-                    return false;
-
-                return true;
-            };
-
-            Thing nearest = GenClosest.ClosestThingReachable(
-                pawn.Position,
-                pawn.Map,
-                ThingRequest.ForDef(steelDef),
-                PathEndMode.ClosestTouch,
-                TraverseParms.For(pawn),
-                9999f,
-                validator);
-
-            return nearest != null;
+            return !HaulAIUtility.FindFixedIngredientCount(pawn, ingredient, amount).NullOrEmpty();
         }
-
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
@@ -1047,7 +1046,6 @@ namespace NCL
             if (resources.NullOrEmpty())
                 return null;
 
-            // 再次确认资源可操作（避免瞬间被别人拿走）
             if (!pawn.CanReserve(resources[0], 1, -1, null, forced))
                 return null;
 
@@ -1057,7 +1055,6 @@ namespace NCL
             Job job = HaulAIUtility.HaulToContainerJob(pawn, resources[0], t);
             job.count = Mathf.Min(job.count, amount);
 
-            // 多堆资源队列
             if (resources.Count > 1)
             {
                 job.targetQueueB = new List<LocalTargetInfo>();
@@ -1066,12 +1063,6 @@ namespace NCL
             }
 
             return job;
-        }
-
-
-        private List<Thing> FindResources(Pawn pawn, ThingDef resourceDef, int amountNeeded)
-        {
-            return HaulAIUtility.FindFixedIngredientCount(pawn, resourceDef, amountNeeded);
         }
     }
 }

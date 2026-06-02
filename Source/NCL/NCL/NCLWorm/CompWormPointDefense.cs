@@ -23,7 +23,7 @@ namespace NCLWorm
 
     private WormHead Head => this.parent as WormHead;
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       if (this.Head == null || !((Thing) this.Head).Spawned)
         return;
@@ -132,7 +132,7 @@ namespace NCLWorm
       MoteMaker.ThrowText(((Thing) this.parent).DrawPos, ((Thing) this.parent).Map, "Shield Overload!", Color.red, -1f);
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Values.Look<int>(ref this._cooldownTimer, "cooldownTimer", 0, false);

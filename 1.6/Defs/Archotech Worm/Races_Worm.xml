@@ -83,7 +83,7 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
     </race>
     <tools>
       <li>
-        <label>逆鳞</label>
+        <label>Inverted scale</label>
         <capacities>
           <li>Stab</li>
         </capacities>
@@ -121,6 +121,7 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
       <maxDamage>120</maxDamage>
       <excludedDamageTypes>
         <li>Vaporize</li>
+        <li>MTW_OrbitalPrecisionDirectHit</li>
       </excludedDamageTypes>
     </li>
       <li Class="NCL.Worm.CompProperties_CauseHediff_AoEAndRing">        
@@ -135,6 +136,10 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
         <damageDef>NCL_ModBomb</damageDef>
         <amount>50</amount>
         <armorPenetration>1</armorPenetration>
+        <excludedDamageTypes>
+          <li>Vaporize</li>
+          <li>MTW_OrbitalPrecisionDirectHit</li>
+        </excludedDamageTypes>
       </li>
     <li Class="NCL.CompProperties_MechanoidShield">
         </li>
@@ -208,11 +213,6 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
       <Plasteel>1200</Plasteel>
       <Gold>1800</Gold>
     </butcherProducts>
-    <killedLeavingsPlayerHostile> 
-      <UnstablePrometheusCore>1</UnstablePrometheusCore>
-      <SolarbaneArtemisLunarOculus>1</SolarbaneArtemisLunarOculus>
-      <YggdrasilWorldTreeSpine>1</YggdrasilWorldTreeSpine>
-    </killedLeavingsPlayerHostile>    
 	<modExtensions>
         <li Class="NyarsModPackOne.ModExtension_EffecterOnMelee">
             <effectersAtCaster>
@@ -266,7 +266,7 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
 
   <HediffDef>
     <defName>WormPressure</defName>
-    <label>WormPressure</label>
+    <label>Worm pressure</label>
     <hediffClass>HediffWithComps</hediffClass>
     <description>"Worm's oppressive aura induces fragility and heightened aggression."</description>
     <everCurableByItem>false</everCurableByItem>
@@ -292,8 +292,8 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <stages>
       <li>
-        <label>蠕虫威压</label>
-        <description>受到蠕虫的威压影响,变的脆弱且易怒.</description>
+        <label>Worm pressure</label>
+        <description>Under the worm's suppressive aura you feel fragile and irritable.</description>
         <baseMoodEffect>-40</baseMoodEffect>
       </li>
     </stages>

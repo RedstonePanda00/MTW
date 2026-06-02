@@ -14,7 +14,7 @@ namespace NCLWorm
 {
   public class CompWormDebug : ThingComp
   {
-    public virtual string CompInspectStringExtra()
+    public override string CompInspectStringExtra()
     {
       if (!Prefs.DevMode)
         return (string) null;
@@ -29,8 +29,6 @@ namespace NCLWorm
       AttackTargetsCache attackTargetsCache = ((Thing) this.parent).Map.attackTargetsCache;
       bool flag1 = GenHostility.IsPotentialThreat(this.parent as IAttackTarget);
       stringBuilder.AppendLine(string.Format("IsPotentialThreat: {0}", (object) flag1));
-      if (!flag1)
-        ;
       stringBuilder.AppendLine(string.Format("FillPercent: {0}", (object) ((Thing) this.parent).def.fillPercent));
       return stringBuilder.ToString();
     }

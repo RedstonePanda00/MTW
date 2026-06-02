@@ -23,7 +23,7 @@ namespace NCLWorm
 
     public void Clear() => this._segments.Clear();
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       if (this._segments.Count == 0)
@@ -41,6 +41,6 @@ namespace NCLWorm
       }
     }
 
-    public virtual void PostExposeData() => base.PostExposeData();
+    public override void PostExposeData() => base.PostExposeData();
   }
 }

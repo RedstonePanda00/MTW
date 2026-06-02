@@ -129,7 +129,7 @@ This sixth-generation tactical unit, fusing a humanoid-female torso with a wolf-
 
   <PawnKindDef ParentName="HeavyMechanoidKind">
   <defName>NCL_Mech_Mantis_Kind</defName>
-  <label>机械兰螳</label>
+  <label>NCL orchid mantis</label>
   <race>NCL_Mech_Mantis</race>
   <defaultFactionType>NCL_faction</defaultFactionType>
   <allowInMechClusters>false</allowInMechClusters>

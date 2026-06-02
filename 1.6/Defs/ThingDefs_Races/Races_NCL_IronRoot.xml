@@ -35,8 +35,8 @@ As final contingency, Ironbark can deliberately detonate its reactor core to unl
     </statBases>
 	<tools>
       <li>
-        <label>裂地巨臂</label>
-        <labelNoLocation>裂地巨臂</labelNoLocation>
+        <label>Ground splitter arm</label>
+        <labelNoLocation>Ground splitter arm</labelNoLocation>
         <capacities>
           <li>Cut</li>
           <li>Stab</li>
@@ -47,8 +47,8 @@ As final contingency, Ironbark can deliberately detonate its reactor core to unl
         <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
       </li>
       <li>
-        <label>裂地巨臂</label>
-        <labelNoLocation>裂地巨臂</labelNoLocation>
+        <label>Ground splitter arm</label>
+        <labelNoLocation>Ground splitter arm</labelNoLocation>
         <capacities>
           <li>Cut</li>
           <li>Stab</li>
@@ -59,7 +59,7 @@ As final contingency, Ironbark can deliberately detonate its reactor core to unl
         <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
       </li>
       <li>
-        <label>铁木树冠</label>
+        <label>Ironbark canopy</label>
         <capacities>
           <li>Blunt</li>
         </capacities>

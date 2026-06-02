@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef Name="MTWMechDiver" ParentName="BaseMechanoid">
+    <defName>MTW_Diver</defName>
+    <label>Diver</label>
+    <description>These newly mature young datapersons, burning with dreams of heroism and zeal for glory, plunge from orbit into battle.
+They download themselves into carbon-fiber frames produced by allied NCL, fight mechanoids with assorted light firepower, and after death transmit their personalities back to the Aurora to ready themselves for the next engagement.
+For their stubborn fighting spirit—as long as they have breath they keep fighting, and they can always infiltrate all manner of bizarre mechanoid facilities—mechanoids have nicknamed them "cloakroaches."
+These datapersons in fact require no mechanitor control at all, but they can still accept bandwidth assistance from a mechanitor for higher work efficiency.</description>
+    <statBases>
+      <MarketValue>1450</MarketValue>
+      <MoveSpeed>5.2</MoveSpeed>
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+      <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">5</BandwidthCost>
+      <MechEnergyUsageFactor>0</MechEnergyUsageFactor>
+      <MechEnergyLossPerHP>0.01</MechEnergyLossPerHP>
+      <WastepacksPerRecharge>0</WastepacksPerRecharge>
+      <EMPResistance>1.0</EMPResistance>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+    </statBases>
+    <tools>
+      <li>
+        <label>left fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.1</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.1</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+    </tools>
+    <race>
+      <body>Human</body>
+      <intelligence>ToolUser</intelligence>
+      <renderTree>Humanlike</renderTree>
+      <thinkTreeMain>MTW_Diver_ThinkTreeMain</thinkTreeMain>
+      <thinkTreeConstant>MechConstant</thinkTreeConstant>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechEnabledWorkTypes>
+        <li>BasicWorker</li>
+        <li>Firefighter</li>
+        <li>Hauling</li>
+        <li>Cleaning</li>
+        <li>Construction</li>
+        <li>Mining</li>
+      </mechEnabledWorkTypes>
+      <mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+    <butcherProducts>
+      <Steel>70</Steel>
+    </butcherProducts>
+    <comps>
+      <li Class="RsPandaLibrary.CompProperties_EquippableMechanoid" />
+      <li Class="RsPandaLibrary.CompProperties_IgnoreMechCommandRange" />
+      <li Class="RsPandaLibrary.CompProperties_RestoreMechEnergy">
+        <energyPerSecond>1</energyPerSecond>
+        <tickInterval>60</tickInterval>
+      </li>
+      <li Class="RsPandaLibrary.CompProperties_NeverDown" />
+      <li Class="RsPandaLibrary.CompProperties_ImmuneToMentalBreak" />
+      <li Class="NCL.Diver.CompProperties_DiverCloak" />
+      <li Class="NCL.Diver.CompProperties_DiverStimCharges">
+        <maxCharges>4</maxCharges>
+        <boostHediff>MTW_Diver_StimBoost</boostHediff>
+      </li>
+      <li Class="NCL.Stratagem.CompProperties_StratagemUser" />
+    </comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>MTW_Diver_Kind</defName>
+    <label>Diver</label>
+    <race>MTW_Diver</race>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <allowInMechClusters>false</allowInMechClusters>
+    <destroyGearOnDrop>false</destroyGearOnDrop>
+    <combatPower>50</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Diver/DiverBody</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+          <shadowData>
+            <volume>(0.35, 0.75, 0.35)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <abilities>
+      <li>MTW_Diver_Pounce</li>
+    </abilities>
+  </PawnKindDef>
+
+</Defs>

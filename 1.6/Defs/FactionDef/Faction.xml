@@ -61,7 +61,7 @@
 	<defName>NCL_factionEnemy</defName>
 	<label>NCL</label>
     <permanentEnemy>true</permanentEnemy>
-	<description>特殊情况下的NCL派系，属于敌方阵营，必须被生成。</description>
+	<description>Hostile NCL faction variant required for mod logic; must be generated at game start.</description>
 	<pawnSingular>mechanoid</pawnSingular>
 	<pawnsPlural>mechanoids</pawnsPlural>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>

@@ -1347,13 +1347,6 @@ public class WorldObject_SkyfallerArtillery : WorldObject
     private const int BurstCount = 1; // 每轮发射的炮弹数量
     private const int BurstIntervalTicks = (int)(2.1f * GenTicks.TicksPerRealSecond); // 每轮之间的间隔（2.1 秒）
 
-    private int burstShotsDone = 0; // 已发射的炮弹数量
-    private int burstTicksUntilNextShot = 0; // 距离下一轮发射的计时
-    private bool burstInProgress = false; // 是否正在进行发射
-
-    private int pendingShotsToLaunch = 0; // 全图打击剩余的炮弹数量
-    private int pendingLaunchTicks = 0; // 距离下一次全图打击的计时
-
     private int initialTile = -1;
     private bool arrived;
     private float traveledPct;

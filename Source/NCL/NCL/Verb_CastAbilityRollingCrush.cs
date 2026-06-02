@@ -1,4 +1,4 @@
-﻿using NCL;
+using NCL;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -81,7 +81,7 @@ namespace NCL
                 },
                 graphicDataB = new GraphicData
                 {
-                    texPath = "Ability/PillBugFlyingC",
+                    texPath = "Ability/PillBugFlyingB",
                     graphicClass = typeof(Graphic_Single),
                     drawSize = new Vector2(5f, 5f),
                     shaderType = ShaderTypeDefOf.Transparent

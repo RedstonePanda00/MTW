@@ -76,6 +76,7 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">999</BandwidthCost>
       <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
       </statBases>
+    <size>(5,5)</size>
 <damageMultipliers Inherit="False">
       <li>
         <damageDef>TW_Crimson_Slagburst</damageDef>
@@ -95,6 +96,70 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
       </li>
     </damageMultipliers>
 	  <comps>
+      <li Class="NCL.CompProperties_MultiCellPawn">
+        <version>1</version>
+        <showOverlayWhenSelected>true</showOverlayWhenSelected>
+        <showDebugLabels>false</showDebugLabels>
+        <rebuildProxyOnLoad>true</rebuildProxyOnLoad>
+        <coreCellColor>(0.55, 0.35, 0.20)</coreCellColor>
+        <healthColorThresholdHigh>0.7</healthColorThresholdHigh>
+        <healthColorThresholdMid>0.35</healthColorThresholdMid>
+        <showPartHealthGizmo>true</showPartHealthGizmo>
+        <parts>
+          <li>
+            <partKey>dorsalCore</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_First</bindBodyPartDef>
+            <priority>10</priority>
+            <cellsNorth><li>(0,0,0)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalMidA</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Second</bindBodyPartDef>
+            <priority>15</priority>
+            <cellsNorth><li>(0,0,1)</li><li>(-1,0,1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalMidB</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Third</bindBodyPartDef>
+            <priority>18</priority>
+            <cellsNorth><li>(0,0,2)</li><li>(1,0,1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalTail</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Fourth</bindBodyPartDef>
+            <priority>20</priority>
+            <cellsNorth><li>(0,0,3)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>sensorFront</partKey>
+            <bindBodyPartDef>Doxa0_Sensor_Cluster</bindBodyPartDef>
+            <priority>35</priority>
+            <cellsNorth><li>(0,0,-1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>hatchLeft</partKey>
+            <bindBodyPartDef>Doxa0_Hatch_Module</bindBodyPartDef>
+            <priority>25</priority>
+            <cellsNorth><li>(-1,0,0)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>plasmaTurret</partKey>
+            <bindBodyPartDef>Doxa0_Turret_Mount</bindBodyPartDef>
+            <priority>50</priority>
+            <cellsNorth><li>(1,0,0)</li></cellsNorth>
+            <turretMounts>
+              <li>
+                <slotKey>ionizedPlasma</slotKey>
+                <turretDef>TW_Ionized_Plasma_Launcher</turretDef>
+                <onePerCell>true</onePerCell>
+                <enabledByDefault>true</enabledByDefault>
+                <disableWhenPartMissing>true</disableWhenPartMissing>
+                <mountCellsNorth><li>(1,0,0)</li></mountCellsNorth>
+              </li>
+            </turretMounts>
+          </li>
+        </parts>
+      </li>
     <li Class="NCL.CompProperties_ClearOwnerProjectiles">
     </li>
 	  <li Class="CompProperties_Forbiddable" />
@@ -161,6 +226,7 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
       <maxDamage>200</maxDamage>
       <excludedDamageTypes>
         <li>Vaporize</li>
+        <li>MTW_OrbitalPrecisionDirectHit</li>
       </excludedDamageTypes>
     </li>
       <li Class="NCL.Worm.CompProperties_DamageAbsorbedAndBoom">
@@ -170,6 +236,10 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
         <damageDef>NCL_ModBomb</damageDef>
         <amount>50</amount>
         <armorPenetration>1</armorPenetration>
+        <excludedDamageTypes>
+          <li>Vaporize</li>
+          <li>MTW_OrbitalPrecisionDirectHit</li>
+        </excludedDamageTypes>
       </li>
     <li Class="NCL.CompProperties_MechAutoRecovery">
         <tickInterval>180</tickInterval>
@@ -299,7 +369,54 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">999</BandwidthCost>
       <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
       </statBases>
+    <size>(4,4)</size>
 	  <comps>
+      <li Class="NCL.CompProperties_MultiCellPawn">
+        <version>1</version>
+        <showOverlayWhenSelected>true</showOverlayWhenSelected>
+        <rebuildProxyOnLoad>true</rebuildProxyOnLoad>
+        <coreCellColor>(0.55, 0.35, 0.20)</coreCellColor>
+        <parts>
+          <li>
+            <partKey>dorsalCore</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_First</bindBodyPartDef>
+            <priority>10</priority>
+            <cellsNorth><li>(0,0,0)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalMid</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Second</bindBodyPartDef>
+            <priority>15</priority>
+            <cellsNorth><li>(0,0,1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalBack</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Third</bindBodyPartDef>
+            <priority>18</priority>
+            <cellsNorth><li>(0,0,2)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>sensorFront</partKey>
+            <bindBodyPartDef>Doxa0_Sensor_Cluster</bindBodyPartDef>
+            <priority>35</priority>
+            <cellsNorth><li>(0,0,-1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>plasmaTurret</partKey>
+            <bindBodyPartDef>Doxa0_Turret_Mount</bindBodyPartDef>
+            <priority>50</priority>
+            <cellsNorth><li>(1,0,0)</li></cellsNorth>
+            <turretMounts>
+              <li>
+                <slotKey>ionizedPlasma</slotKey>
+                <turretDef>TW_Ionized_Plasma_Launcher</turretDef>
+                <onePerCell>true</onePerCell>
+                <mountCellsNorth><li>(1,0,0)</li></mountCellsNorth>
+              </li>
+            </turretMounts>
+          </li>
+        </parts>
+      </li>
 	  <li Class="CompProperties_Forbiddable" />
 	<li Class="NCL.CompProperties_FearAura">
     </li>
@@ -506,7 +623,66 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">100</BandwidthCost>
       <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0</MechEnergyLossPerHP>
       </statBases>
+    <size>(5,5)</size>
 	  <comps>
+      <li Class="NCL.CompProperties_MultiCellPawn">
+        <version>1</version>
+        <showOverlayWhenSelected>true</showOverlayWhenSelected>
+        <rebuildProxyOnLoad>true</rebuildProxyOnLoad>
+        <coreCellColor>(0.55, 0.35, 0.20)</coreCellColor>
+        <parts>
+          <li>
+            <partKey>dorsalCore</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_First</bindBodyPartDef>
+            <priority>10</priority>
+            <cellsNorth><li>(0,0,0)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalMidA</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Second</bindBodyPartDef>
+            <priority>15</priority>
+            <cellsNorth><li>(0,0,1)</li><li>(-1,0,1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalMidB</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Third</bindBodyPartDef>
+            <priority>18</priority>
+            <cellsNorth><li>(0,0,2)</li><li>(1,0,1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>dorsalTail</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Fourth</bindBodyPartDef>
+            <priority>20</priority>
+            <cellsNorth><li>(0,0,3)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>sensorFront</partKey>
+            <bindBodyPartDef>Doxa0_Sensor_Cluster</bindBodyPartDef>
+            <priority>35</priority>
+            <cellsNorth><li>(0,0,-1)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>hatchLeft</partKey>
+            <bindBodyPartDef>Doxa0_Hatch_Module</bindBodyPartDef>
+            <priority>25</priority>
+            <cellsNorth><li>(-1,0,0)</li></cellsNorth>
+          </li>
+          <li>
+            <partKey>plasmaTurret</partKey>
+            <bindBodyPartDef>Doxa0_Turret_Mount</bindBodyPartDef>
+            <priority>50</priority>
+            <cellsNorth><li>(1,0,0)</li></cellsNorth>
+            <turretMounts>
+              <li>
+                <slotKey>ionizedPlasma</slotKey>
+                <turretDef>TW_Ionized_Plasma_Launcher</turretDef>
+                <onePerCell>true</onePerCell>
+                <mountCellsNorth><li>(1,0,0)</li></mountCellsNorth>
+              </li>
+            </turretMounts>
+          </li>
+        </parts>
+      </li>
 	  <li Class="CompProperties_Forbiddable" />
       <li Class="TowerLaserDefense.CompProperties_LaserDefence">
                 <laserDefenceProperties>
@@ -569,6 +745,7 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
       <maxDamage>200</maxDamage>
       <excludedDamageTypes>
         <li>Vaporize</li>
+        <li>MTW_OrbitalPrecisionDirectHit</li>
       </excludedDamageTypes>
     </li>
       <li Class="NCL.Worm.CompProperties_DamageAbsorbedAndBoom">
@@ -578,6 +755,10 @@ The Shell Fortification Construct typically descends from the sky, crashing heav
         <damageDef>NCL_ModBomb</damageDef>
         <amount>50</amount>
         <armorPenetration>1</armorPenetration>
+        <excludedDamageTypes>
+          <li>Vaporize</li>
+          <li>MTW_OrbitalPrecisionDirectHit</li>
+        </excludedDamageTypes>
       </li>
       <li Class="NCL.Worm.CompProperties_BattleCrush">
           <battleEffect>NCL_ShellFortFightingeffects</battleEffect>

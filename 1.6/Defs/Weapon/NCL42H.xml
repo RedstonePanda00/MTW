@@ -3,7 +3,7 @@
 
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_NCL42H</defName>
-    <label>NCL42H Sniper Round</label>
+    <label>AR-34 Fire Ant round</label>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -18,18 +18,10 @@
     </projectile>
   </ThingDef>
   
-  <ThingDef ParentName="BaseGun">
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>NCL_SniperGun</defName>
-    <label>NCL42H</label>
-    <description>Weapon Archive: NCL42H Sniper Rifle
-Designation: NCL42H  
-Affiliation: Neo-Communist League "Iron Law" Standard Weapons Series  
-
-Functional Overview:  
-Specialized sniper rifle designed exclusively for Dinergate Snipers. Delivers peak performance in range, accuracy, damage, and armor penetration. Excessive weight and specialized ergonomics restrict effective operation to Dinergate units only.</description>
-    <tradeability>None</tradeability>
-    <destroyOnDrop>true</destroyOnDrop>
-<relicChance>0</relicChance>    
+    <label>AR-34 Fire Ant</label>
+    <description>Heavy anti-materiel rifle firing .50 BMG armor-piercing ammunition, purpose-built for destroying armored targets at long range.</description>
     <graphicData>
       <texPath>Weapons/NCL42H</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -40,22 +32,38 @@ Specialized sniper rifle designed exclusively for Dinergate Snipers. Delivers pe
       <li>LongShots</li>
       <li>RangedHeavy</li>
     </weaponClasses>
+    <recipeMaker>
+      <researchPrerequisite Inherit="False" />
+      <researchPrerequisites>
+        <li>NCL_Standard_Issue</li>
+        <li>ChargedShot</li>
+      </researchPrerequisites>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Steel>300</Steel>
+      <ComponentIndustrial>15</ComponentIndustrial>
+    </costList>
     <statBases>
-      <WorkToMake>20000</WorkToMake>
+      <WorkToMake>26000</WorkToMake>
       <Mass>14.5</Mass>
-      <AccuracyTouch>.7</AccuracyTouch>
-      <AccuracyShort>.75</AccuracyShort>
-      <AccuracyMedium>1</AccuracyMedium>
-      <AccuracyLong>1</AccuracyLong>
-      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.95</AccuracyMedium>
+      <AccuracyLong>0.85</AccuracyLong>
+      <RangedWeapon_Cooldown>4.7</RangedWeapon_Cooldown>
     </statBases>
-	<smeltable>false</smeltable>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_NCL42H</defaultProjectile>
-        <warmupTime>1.2</warmupTime>
+        <warmupTime>2.2</warmupTime>
         <range>56</range>
         <burstShotCount>1</burstShotCount>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
@@ -70,8 +78,8 @@ Specialized sniper rifle designed exclusively for Dinergate Snipers. Delivers pe
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>9</power>
-        <cooldownTime>2.1</cooldownTime>
+        <power>20</power>
+        <cooldownTime>3.1</cooldownTime>
       </li>
       <li>
         <label>barrel</label>
@@ -79,11 +87,11 @@ Specialized sniper rifle designed exclusively for Dinergate Snipers. Delivers pe
           <li>Blunt</li>
           <li>Poke</li>
         </capacities>
-        <power>10</power>
+        <power>20</power>
         <cooldownTime>2.4</cooldownTime>
       </li>
     </tools>
-    <weaponTags Inherit="False">
+    <weaponTags Inherit="False"> <!-- tag 之后改掉 -->
       <li>NCL42H</li>
     </weaponTags>
 	<tradeTags>

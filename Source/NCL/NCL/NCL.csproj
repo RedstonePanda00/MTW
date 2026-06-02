@@ -43,6 +43,10 @@
       <HintPath>$(RimWorldManagedDir)\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="RsPandaLibrary">
+      <HintPath>..\..\..\1.6\Assemblies\RsPandaLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -67,6 +71,10 @@
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(RimWorldManagedDir)\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>$(RimWorldManagedDir)\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
@@ -89,14 +97,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbilityCasterHediff.cs" />
-    <Compile Include="AbilityEffecterOnSelf.cs" />
-    <Compile Include="AbilityExplosion.cs" />
     <Compile Include="AutoTurretOnPawns.cs" />
     <Compile Include="BanInvisibility.cs" />
     <Compile Include="BuildingPawnSpawner.cs" />
+    <Compile Include="DiverSentry\Building_DiverSentryTurret.cs" />
+    <Compile Include="DiverSentry\Comp_DiverSentryAmmunition.cs" />
+    <Compile Include="DiverSentry\Comp_DiverSentryCombatLedger.cs" />
+    <Compile Include="DiverSentry\CompProperties_DiverSentryAmmunition.cs" />
+    <Compile Include="DiverSentry\CompProperties_DiverSentryCombatLedger.cs" />
+    <Compile Include="DiverSentry\Gizmo_DiverSentryAmmunition.cs" />
+    <Compile Include="DiverSentry\Patch_DiverSentryCombatLedger.cs" />
+    <Compile Include="DiverSentry\Verb_DiverSentryBurst.cs" />
     <Compile Include="Building_ManualAimTurret.cs" />
     <Compile Include="Building_MissileSilo.cs" />
+    <Compile Include="MapComponent_SteelResourceAutofill.cs" />
+    <Compile Include="MapComponent_IronRainTargeting.cs" />
     <Compile Include="ChasingRocket.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CompAllDead.cs" />
@@ -139,8 +154,17 @@
     <Compile Include="CompSpawnFleckEffectOnDestroyed.cs" />
     <Compile Include="CompTurretGun_GroundTarget.cs" />
     <Compile Include="CompUnlockResearch.cs" />
-    <Compile Include="Comp_DebuffImmunity.cs" />
+    <Compile Include="CompApparelFollowerDrone.cs" />
+    <Compile Include="GameComponent_DiverRespawnManager.cs" />
+    <Compile Include="Stratagem\Mote_StratagemArc.cs" />
+    <Compile Include="Stratagem\StratagemDef.cs" />
+    <Compile Include="Stratagem\StratagemUtility.cs" />
+    <Compile Include="Stratagem\CompStratagemUser.cs" />
+    <Compile Include="Stratagem\StratagemRuntime.cs" />
+    <Compile Include="HediffComp_FollowerDroneInterceptGround.cs" />
+    <Compile Include="PawnRenderNodeWorker_FollowerDrone.cs" />
     <Compile Include="CruiseFlyer.cs" />
+    <Compile Include="DefModExtension_AtmosphericPlasmaDropPod.cs" />
     <Compile Include="Explosion.cs" />
     <Compile Include="Graphic_RefuelableMulti.cs" />
     <Compile Include="HediffCompProperties_AutoRevealInvisibility.cs" />
@@ -150,43 +174,91 @@
     <Compile Include="HediffComp_AddAbility.cs" />
     <Compile Include="HediffComp_RemoveWhenPlayerNearby.cs" />
     <Compile Include="HediffComp_SmokeAura.cs" />
-    <Compile Include="HediffComp_SolarDisruption.cs" />
     <Compile Include="HediffExtension_NoNotification.cs" />
     <Compile Include="HediffgiverBuilding.cs" />
     <Compile Include="Hediff_ExplodeOnRemove.cs" />
+    <Compile Include="JobGiver_AIFightEnemiesInPlace.cs" />
+    <Compile Include="DoxaCombatFireUtility.cs" />
+    <Compile Include="CompDoxaCombatDebug.cs" />
+    <Compile Include="Patch_Doxa_WaitCombatFire.cs" />
     <Compile Include="IncidentWorker_MechMilitorWandersIn.cs" />
-    <Compile Include="LightningStrike.cs" />
     <Compile Include="MagicBullets.cs" />
     <Compile Include="MechAutoRecovery.cs" />
+    <Compile Include="AtmosphericPlasmaAssets.cs" />
+    <Compile Include="Mote_AtmosphericPlasmaColumn.cs" />
+    <Compile Include="Mote_RocketFlames.cs" />
+    <Compile Include="Skyfaller_AtmosphericPlasmaPod.cs" />
     <Compile Include="ModAbout.cs" />
+    <Compile Include="NCLStatDefOf.cs" />
     <Compile Include="NCL_QuestNode_Root_Bossgroup.cs" />
     <Compile Include="NoCorpseAllowed.cs" />
     <Compile Include="OverrideBodyGraphic.cs" />
+    <Compile Include="Patch_NCLVerbRangeAndWeaponOffsets.cs" />
+    <Compile Include="Patch_Dinergate_SpawnAssaultRifle.cs" />
+    <Compile Include="Patch_Dinergate_MechEnergyNeed.cs" />
+    <Compile Include="Patch_Dinergate_MechanitorFloatMenu.cs" />
+    <Compile Include="Patch_Dinergate_NoMechanitorDraft.cs" />
+    <Compile Include="Patch_Diver_NoOverseer.cs" />
+    <Compile Include="Patch_Diver_SpawnSC34Apparel.cs" />
+    <Compile Include="Diver\CompProperties_DiverCloak.cs" />
+    <Compile Include="Diver\Patch_Diver_DeathBroadcast.cs" />
+    <Compile Include="Diver\CompDiverCloak.cs" />
+    <Compile Include="Diver\CompDiverStimCharges.cs" />
+    <Compile Include="Diver\DiverRecordsUtility.cs" />
+    <Compile Include="Diver\DiverSlotPersistentData.cs" />
+    <Compile Include="Diver\DiverRimTalkUtility.cs" />
+    <Compile Include="Diver\DiverRimTalkPersonaPersistence.cs" />
+    <Compile Include="Diver\DiverCloakCatalog.cs" />
+    <Compile Include="Diver\DynamicPawnRenderNodeSetup_DiverCloak.cs" />
+    <Compile Include="Diver\PawnRenderNode_DiverCloak.cs" />
+    <Compile Include="Diver\PawnRenderNodeWorker_DiverCloak.cs" />
+    <Compile Include="Diver\Dialog_DiverCloakCustomization.cs" />
+    <Compile Include="Diver\Dialog_DiverStratagemLoadoutPicker.cs" />
+    <Compile Include="Diver\DiverPounce.cs" />
+    <Compile Include="Patch_Verb_MultiTurretBurstMuzzleEffects.cs" />
+    <Compile Include="Patch_VerbLaunchProjectile_ForceRsPandaMultiTurretTryCastShot.cs" />
     <Compile Include="PersistentItemSpawnIncidentParams.cs" />
     <Compile Include="PlaceWorker_MustBeRoofed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmokeTrail.cs" />
     <Compile Include="ThinkNode_ConditionalInHomeAreaRoofed.cs" />
+    <Compile Include="ThingDefExtension_WeaponCarryDrawOffsets.cs" />
     <Compile Include="TransformableBuildingComp.cs" />
     <Compile Include="TurretCaller1.cs" />
     <Compile Include="TurretCaller2.cs" />
-    <Compile Include="Verb_AbilityTeleport.cs" />
-    <Compile Include="Verb_ArcSprayProjectile.cs" />
     <Compile Include="Verb_CastAbilityRollingCrush.cs" />
     <Compile Include="Verb_ShootBeamReforged.cs" />
     <Compile Include="Verb_StealthCloakToggle.cs" />
+    <Compile Include="Worm\AuroraCaller.cs" />
+    <Compile Include="Worm\AuroraDropUIUtility.cs" />
     <Compile Include="Worm\Call.cs" />
+    <Compile Include="Worm\TypewriterTextDisplay.cs" />
     <Compile Include="Worm\ShieldGizmo.cs" />
     <Compile Include="Worm\Worm.cs" />
     <Compile Include="Worm\WormAbility.cs" />
     <Compile Include="Projectiles\Class1.cs" />
+    <Compile Include="Projectiles\HighArcTrajectory.cs" />
+    <Compile Include="Projectiles\HighArcProjectileDebug.cs" />
+    <Compile Include="Projectiles\ModExtension_ProjectileHighArc.cs" />
+    <Compile Include="Projectiles\ModExtension_ProjectileCluster.cs" />
+    <Compile Include="Projectiles\ClusterSubmunitionSpawner.cs" />
+    <Compile Include="Projectiles\Projectile_DoxaClusterWarhead.cs" />
+    <Compile Include="Projectiles\Comp_SpawnClusterSubmunitionsOnDestroy.cs" />
+    <Compile Include="Projectiles\Projectile_HighArcExplosiveBase.cs" />
+    <Compile Include="Projectiles\Projectile_ExplosiveWithEffects.cs" />
     <Compile Include="NoBody\Patch_PawnRenderNode_Body_GraphicFor.cs" />
     <Compile Include="NoBody\Comp_ForceBodyType.cs" />
     <Compile Include="NoBody\CompProperties_ForceBodyType.cs" />
     <Compile Include="NoBody\TransparentBodyDefOf.cs" />
     <Compile Include="NoBody\Command_ActionWithFloat.cs" />
     <Compile Include="NoBody\NoBodyApparel.cs" />
+    <Compile Include="MultiCellPawn\**\*.cs" />
     <Compile Include="CompFormChange.cs" />
+    <Compile Include="CompProperties_FatCatMissile.cs" />
+    <Compile Include="CompProperties_FatCatMissileLoft.cs" />
+    <Compile Include="Projectile_FatCatMissile.cs" />
+    <Compile Include="Projectile_FatCatMissileLoft.cs" />
+    <Compile Include="Patch_MissileCentipede_DefaultWeapon.cs" />
     <Compile Include="CompPropertiesWeaponSwitch.cs" />
     <Compile Include="TransformData.cs" />
     <Compile Include="Command_Transform_Action.cs" />
@@ -200,7 +272,6 @@
     <Compile Include="NCL_Storyteller\Patch_PawnsArrivalModeWorker.cs" />
     <Compile Include="NCLWorm\**\*.cs" />
     <Compile Include="TowerLaserDefense\**\*.cs" />
-    <Compile Include="WeaponBackpack\**\*.cs" />
     <Compile Include="CapitalisticMilitor\**\*.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

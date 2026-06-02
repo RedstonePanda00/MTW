@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <MTW_Diver.label>披风蟑螂</MTW_Diver.label>
+  <MTW_Diver.description>这些刚成年的年轻数据人格怀着成为英雄的憧憬和对荣耀的狂热从轨道俯冲加入战场。
+他们把自己下载到盟友NCL生产的碳纤维骨架中，用各式轻火力和机械族战斗，并且会在死后将人格传回曙光号，准备投入下一次战斗。
+因为他们顽强的作战意志——只要还有一口气就会继续战斗，而且总能潜入各种奇奇怪怪的机械族设施而被机械族称为“披风蟑螂”。
+这些数据人格事实上根本不需要机械师控制，但是也可以接受机械师的带宽辅助以获得更高的工作效率。</MTW_Diver.description>
+  <MTW_Diver.tools.left_fist.label>左拳</MTW_Diver.tools.left_fist.label>
+  <MTW_Diver.tools.left_fist.labelNoLocation>拳头</MTW_Diver.tools.left_fist.labelNoLocation>
+  <MTW_Diver.tools.right_fist.label>右拳</MTW_Diver.tools.right_fist.label>
+  <MTW_Diver.tools.right_fist.labelNoLocation>拳头</MTW_Diver.tools.right_fist.labelNoLocation>
+</LanguageData>

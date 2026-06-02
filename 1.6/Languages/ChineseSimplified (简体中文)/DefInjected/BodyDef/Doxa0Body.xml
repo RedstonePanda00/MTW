@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+  <Doxa0Body.label>静巢构体 Doxa-0</Doxa0Body.label>
+  <Doxa0_Dorsal_First.labelShort>背壳节</Doxa0_Dorsal_First.labelShort>
+  <Doxa0_Dorsal_Second.labelShort>背壳节</Doxa0_Dorsal_Second.labelShort>
+  <Doxa0_Dorsal_Third.labelShort>背壳节</Doxa0_Dorsal_Third.labelShort>
+  <Doxa0_Dorsal_Fourth.labelShort>背壳节</Doxa0_Dorsal_Fourth.labelShort>
+  <Doxa0Body.corePart.parts.Doxa0_Dorsal_Second.parts.Doxa0_Dorsal_Third.parts.Doxa0_Dorsal_Fourth.parts.Doxa0_DeepLogic_NeuronCore.customLabel>深层逻辑核</Doxa0Body.corePart.parts.Doxa0_Dorsal_Second.parts.Doxa0_Dorsal_Third.parts.Doxa0_Dorsal_Fourth.parts.Doxa0_DeepLogic_NeuronCore.customLabel>
+  <Doxa0Body.corePart.parts.Doxa0_Turret_Mount.customLabel>反粒子炮架</Doxa0Body.corePart.parts.Doxa0_Turret_Mount.customLabel>
+  <Doxa0Body.corePart.parts.Doxa0_Turret_Mount.parts.Doxa0_AntiParticleEmitter.customLabel>反粒子发射口</Doxa0Body.corePart.parts.Doxa0_Turret_Mount.parts.Doxa0_AntiParticleEmitter.customLabel>
+  <Doxa0Body.corePart.parts.Doxa0_Turret_Mount.parts.Doxa0_FireControlModule.customLabel>火控核心单元</Doxa0Body.corePart.parts.Doxa0_Turret_Mount.parts.Doxa0_FireControlModule.customLabel>
+  <Doxa0Body.corePart.parts.Doxa0_Hatch_Module.customLabel>裂壳蛛孵化腔</Doxa0Body.corePart.parts.Doxa0_Hatch_Module.customLabel>
+  <Doxa0Body.corePart.parts.Doxa0_Sensor_Cluster.customLabel>前端感知阵列</Doxa0Body.corePart.parts.Doxa0_Sensor_Cluster.customLabel>
+  <Doxa0Body.corePart.parts.Doxa0_LimbCluster.customLabel>多爪推进组</Doxa0Body.corePart.parts.Doxa0_LimbCluster.customLabel>
+
+</LanguageData>

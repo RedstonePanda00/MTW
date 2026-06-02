@@ -21,6 +21,9 @@
 <!-- EN: Cannot change while silo is active -->
   <NCL.MustBeDisabledWhenActive>发射井激活时不可修改</NCL.MustBeDisabledWhenActive>
 
+  <NCL.SwitchRocketMode>切换弹种</NCL.SwitchRocketMode>
+  <NCL.SwitchRocketModeDesc>切换至：{0}</NCL.SwitchRocketModeDesc>
+
 <!-- EN: Hostile High-Angle Projectiles Only -->
   <NCL.Condition.HighAngleOnly>仅敌方高角投射物</NCL.Condition.HighAngleOnly>
 <!-- EN: Hostile Units or Projectiles -->
@@ -528,6 +531,12 @@ Tactical Tip: Build laser point defense against mortars. -->
   <NCLSradeShipCooldownTime>(CD:{0}天)</NCLSradeShipCooldownTime>
   <!-- EN: (Worm currently inbound) -->
   <NCLYouWaitWorm>(当前已有蠕虫在降临中)</NCLYouWaitWorm>
+
+  <!-- EN: Call Aurora -->
+  <NCL_AuroraCaller_GizmoLabel>呼叫曙光号</NCL_AuroraCaller_GizmoLabel>
+  <!-- EN: Open the Aurora courier panel to request orbital mechanoid drops. -->
+  <NCL_AuroraCaller_GizmoDesc>呼叫曙光号并执行机械体空投。</NCL_AuroraCaller_GizmoDesc>
+
   <!-- EN: (Currently in trial) -->
   <NCLYouInWar>(当前已在试炼中)</NCLYouInWar>
   <!-- EN: (No mechanical worm on current map) -->
@@ -593,8 +602,8 @@ Tactical Tip: Build laser point defense against mortars. -->
   <!-- 发射间隔按钮 - 英文 -->
   <!-- EN: Launch Interval: {0}s -->
   <NCL.LaunchInterval>发射间隔: {0}秒</NCL.LaunchInterval>
-  <!-- EN: Adjust time between missile launches (0.1-3.0 seconds) -->
-  <NCL.LaunchIntervalDesc>调整导弹发射间隔时间 (0.1-3.0秒)</NCL.LaunchIntervalDesc>
+  <!-- EN: Adjust time between missile launches (0.5-3.0 seconds) -->
+  <NCL.LaunchIntervalDesc>调整导弹发射间隔时间 (0.5-3.0秒)</NCL.LaunchIntervalDesc>
   
   <!-- 设置窗口 - 英文 -->
   <!-- EN: Set Launch Interval -->
@@ -660,4 +669,170 @@ Tactical Tip: Build laser point defense against mortars. -->
   <!-- Mod settings UI tabs -->
   <NCL_SETTINGS_TAB_GENERAL>常规</NCL_SETTINGS_TAB_GENERAL>
   <NCL_SETTINGS_TAB_STORYTELLER>故事叙述者</NCL_SETTINGS_TAB_STORYTELLER>
+
+  <!-- Odyssey / CerebrexCore scan letter -->
+  <NCL.Odyssey.CerebrexScanLetter.Label>研究突破：机械首脑</NCL.Odyssey.CerebrexScanLetter.Label>
+  <NCL.Odyssey.CerebrexScanLetter.Text>你的殖民者已通过扫描该远古机械首脑解锁了重构它的能力</NCL.Odyssey.CerebrexScanLetter.Text>
+
+  <!-- NCL comms call panel -->
+  <NCL_CallPanel_Title>NCL 通讯</NCL_CallPanel_Title>
+  <NCL_CallPanel_Contact>联系</NCL_CallPanel_Contact>
+  <NCL_CallPanel_Aurora>呼叫增援</NCL_CallPanel_Aurora>
+  <NCL_CallPanel_DontTouch>别点这个</NCL_CallPanel_DontTouch>
+  <NCL_DiverIntro_Continue>继续</NCL_DiverIntro_Continue>
+  <NCL_DiverIntro_Q0>边缘世界，我们的家园，繁荣，自由，荣耀...我们的生存正道，但荣耀，也要付出代价。</NCL_DiverIntro_Q0>
+  <NCL_DiverIntro_A0>哦不，荣耀在上啊，是机械族巢穴！</NCL_DiverIntro_A0>
+  <NCL_DiverIntro_Q1>哈哈，觉得眼熟？这样的事情,此时此刻在整个边缘世界都在发生！你可能成为下一个...</NCL_DiverIntro_Q1>
+  <NCL_DiverIntro_A1>太糟了长官，我要怎么办呢？</NCL_DiverIntro_A1>
+  <NCL_DiverIntro_Q2>除非你能做出你人生中最重要的决定...加入，披风蟑螂的行列...！</NCL_DiverIntro_Q2>
+  <NCL_DiverIntro_A2>好耶，我自愿加入披风蟑螂！</NCL_DiverIntro_A2>
+  <NCL_DiverIntro_Q3>请求已确认，部署披风蟑螂到殖民地。</NCL_DiverIntro_Q3>
+  <NCL_DiverIntro_A3>拥抱战斗的荣耀！</NCL_DiverIntro_A3>
+  <NCL_DiverIntro_DeploySuccess>披风蟑螂已部署：{0} 舱已发射。</NCL_DiverIntro_DeploySuccess>
+  <NCL_DiverIntro_DeployAlreadyFull>Diver 槽位已满，系统已启用。</NCL_DiverIntro_DeployAlreadyFull>
+  <NCL_DiverIntro_DeployFailed>无法发射空投舱，请检查地图与电量。</NCL_DiverIntro_DeployFailed>
+  <NCL_DiverIntro_InvalidMap>通讯台不在有效地图上。</NCL_DiverIntro_InvalidMap>
+  <NCL_CallPanel_Back>返回主菜单</NCL_CallPanel_Back>
+  <NCL_Typewriter_ClickToSkip>点击文字区域可立即显示全文</NCL_Typewriter_ClickToSkip>
+  <NCL_Typewriter_WaitForText>通讯内容接收中…</NCL_Typewriter_WaitForText>
+
+  <!-- Aurora 面板本地化 -->
+  <NCL_AuroraIntro_Q1>……</NCL_AuroraIntro_Q1>
+  <NCL_AuroraIntro_A1_1>你好？有人在吗？</NCL_AuroraIntro_A1_1>
+  <NCL_AuroraIntro_A1_2>坏了？</NCL_AuroraIntro_A1_2>
+  <NCL_AuroraIntro_Q2>……我听见了。</NCL_AuroraIntro_Q2>
+  <NCL_AuroraIntro_A2_1>Fieldy 告诉我们能在这个频道呼叫增援</NCL_AuroraIntro_A2_1>
+  <NCL_AuroraIntro_A2_2>我们需要增援，用电换就行，对吧？</NCL_AuroraIntro_A2_2>
+  <NCL_AuroraIntro_Q3>当然，打印机还有空闲。</NCL_AuroraIntro_Q3>
+  <NCL_AuroraIntro_A3>让我们来看看有什么。</NCL_AuroraIntro_A3>
+  <NCL_AuroraPanel_Title>曙光号空投指令</NCL_AuroraPanel_Title>
+  <NCL_AuroraPanel_InvalidMap>通讯台不在有效地图上。</NCL_AuroraPanel_InvalidMap>
+  <NCL_AuroraPanel_NoEntries>未找到曙光号可空投单位配置。</NCL_AuroraPanel_NoEntries>
+  <NCL_AuroraPanel_Count>数量: {0}</NCL_AuroraPanel_Count>
+  <NCL_AuroraPanel_PowerCost>电力消耗: {0} Wd</NCL_AuroraPanel_PowerCost>
+  <NCL_AuroraPanel_MapEnergy>当前地图电池总电量: {0} Wd</NCL_AuroraPanel_MapEnergy>
+  <NCL_AuroraPanel_DropButton>空投</NCL_AuroraPanel_DropButton>
+  <NCL_AuroraPanel_InvalidTarget>目标机械体 defName 无效或不是 Pawn ThingDef。</NCL_AuroraPanel_InvalidTarget>
+  <NCL_AuroraPanel_NotEnoughPower>电量不足，无法执行空投。</NCL_AuroraPanel_NotEnoughPower>
+  <NCL_AuroraPanel_PodOrMapInvalid>空投舱定义缺失或地图无效。</NCL_AuroraPanel_PodOrMapInvalid>
+  <NCL_AuroraPanel_ContinuousModeStart>连续空投模式已开启：左键选择落点，右键取消。</NCL_AuroraPanel_ContinuousModeStart>
+  <NCL_AuroraPanel_InvalidDropCell>空投目标点无效。</NCL_AuroraPanel_InvalidDropCell>
+  <NCL_AuroraPanel_PausedCannotDrop>游戏已暂停，无法执行连续空投。请取消暂停后继续。</NCL_AuroraPanel_PausedCannotDrop>
+  <NCL_AuroraPanel_StopNoPower>电量不足，连续空投已结束。</NCL_AuroraPanel_StopNoPower>
+  <NCL_AuroraPanel_PodTypeMismatch>空投舱类型不匹配，无法发射。</NCL_AuroraPanel_PodTypeMismatch>
+  <NCL_AuroraPanel_StopAfterLaunchNoPower>曙光号空投已发射，电量耗尽，连续空投结束。</NCL_AuroraPanel_StopAfterLaunchNoPower>
+  <NCL_AuroraPanel_LaunchSuccessContinue>曙光号空投已发射，可继续左键选择下一个落点。</NCL_AuroraPanel_LaunchSuccessContinue>
+
+  <!-- Diver 面板本地化 -->
+  <NCL_DiverPanel_AliveCount>全局存活数量: {0}/{1}</NCL_DiverPanel_AliveCount>
+  <NCL_DiverPanel_OccupiedSlots>占用槽位(含在途空投): {0}/{1}</NCL_DiverPanel_OccupiedSlots>
+  <NCL_DiverPanel_EnergyPerUnit>每只消耗: {0} Wd</NCL_DiverPanel_EnergyPerUnit>
+  <NCL_DiverPanel_MapEnergy>当前地图电池总电量: {0} Wd</NCL_DiverPanel_MapEnergy>
+  <NCL_DiverPanel_MaxSpawnNow>本次最多可补充: {0}</NCL_DiverPanel_MaxSpawnNow>
+  <NCL_DiverPanel_Status>系统状态: {0}</NCL_DiverPanel_Status>
+  <NCL_DiverPanel_StatusEnabled>已启用</NCL_DiverPanel_StatusEnabled>
+  <NCL_DiverPanel_StatusDisabled>未启用</NCL_DiverPanel_StatusDisabled>
+  <NCL_DiverPanel_SummonButton>召唤</NCL_DiverPanel_SummonButton>
+  <NCL_DiverAutoReinforce_Launched>Diver 自动补员已发射：{0} 舱。</NCL_DiverAutoReinforce_Launched>
+  <NCL_DiverSummon_InvalidMap>地图无效，无法召唤 Diver。</NCL_DiverSummon_InvalidMap>
+  <NCL_DiverSummon_InvalidTarget>空投目标点无效。</NCL_DiverSummon_InvalidTarget>
+  <NCL_DiverSummon_SelectTarget>请选择 Diver 空投目标点。</NCL_DiverSummon_SelectTarget>
+  <NCL_DiverPanel_ManagerUnavailable>Diver 管理组件不可用。</NCL_DiverPanel_ManagerUnavailable>
+  <NCL_DiverPanel_Full>Diver 数量已满，无法继续召唤。</NCL_DiverPanel_Full>
+
+  <NCL_DiverManager_GizmoLabel>Diver 编队管理</NCL_DiverManager_GizmoLabel>
+  <NCL_DiverManager_GizmoDesc>打开 Diver 编队和改名界面。</NCL_DiverManager_GizmoDesc>
+  <NCL_DiverManager_WindowTitle>Diver 指挥面板</NCL_DiverManager_WindowTitle>
+  <NCL_DiverManager_DefaultNickname>Diver 槽位 {0}</NCL_DiverManager_DefaultNickname>
+  <NCL_DiverStatus_Alive>存活</NCL_DiverStatus_Alive>
+  <NCL_DiverStatus_WaitingReinforce>等待增援</NCL_DiverStatus_WaitingReinforce>
+  <NCL_DiverManager_Reserved>□</NCL_DiverManager_Reserved>
+  <NCL_DiverManager_RenameButton>更改名字</NCL_DiverManager_RenameButton>
+  <NCL_DiverManager_NoPortrait>无头像</NCL_DiverManager_NoPortrait>
+  <NCL_DiverManager_NoNames>未获取到可用的 Steam 显示名。</NCL_DiverManager_NoNames>
+  <NCL_DiverManager_RenameSuccess>Diver 名字已改为 {0}。</NCL_DiverManager_RenameSuccess>
+  <NCL_DiverManager_LoadoutTipFilled>槽位 {0}: {1}</NCL_DiverManager_LoadoutTipFilled>
+  <NCL_DiverManager_LoadoutTipEmpty>槽位 {0}: 空</NCL_DiverManager_LoadoutTipEmpty>
+  <NCL_DiverManager_ClearLoadout>清空槽位</NCL_DiverManager_ClearLoadout>
+  <NCL_DiverManager_LoadoutSet>槽位 {0} 已设置为 {1}。</NCL_DiverManager_LoadoutSet>
+  <NCL_DiverManager_LoadoutLocked>等待增援时可修改全部配装；存活时仅空槽可改。</NCL_DiverManager_LoadoutLocked>
+  <NCL_DiverManager_LoadoutLockedFilled>该 Diver 在役时此格已锁定；空槽仍可修改，待增援后可更换已装备。</NCL_DiverManager_LoadoutLockedFilled>
+  <NCL_DiverManager_LoadoutDuplicate>已在其他配装格装备</NCL_DiverManager_LoadoutDuplicate>
+  <NCL_DiverLoadout_WindowTitle>战略配装 — Diver 槽位 {0}，第 {1} 格</NCL_DiverLoadout_WindowTitle>
+  <NCL_DiverLoadout_SelectSection>点击方框为该配装格选择战略。</NCL_DiverLoadout_SelectSection>
+  <NCL_DiverLoadout_ClearSlot>清空</NCL_DiverLoadout_ClearSlot>
+  <NCL_DiverLoadout_Cleared>配装格 {0} 已清空。</NCL_DiverLoadout_Cleared>
+  <NCL_DiverManager_CombatStats>击杀: {0}  爆头: {1}  造成伤害: {2}  承受伤害: {3}</NCL_DiverManager_CombatStats>
+
+  <NCL_DiverCloak_GizmoLabel>披风</NCL_DiverCloak_GizmoLabel>
+  <NCL_DiverCloak_GizmoDesc>自定义该槽位披风款式与染色（按槽位保存）。</NCL_DiverCloak_GizmoDesc>
+  <NCL_DiverCloak_WindowTitle>披风定制 — {0}</NCL_DiverCloak_WindowTitle>
+  <NCL_DiverCloak_NoComp>该单位缺少披风组件。</NCL_DiverCloak_NoComp>
+  <NCL_DiverCloak_ShowCloak>显示披风</NCL_DiverCloak_ShowCloak>
+  <NCL_DiverCloak_SetSection>披风款式</NCL_DiverCloak_SetSection>
+  <NCL_DiverCloak_ColorSection>披风颜色</NCL_DiverCloak_ColorSection>
+
+  <NCL_Stratagem_EmptySlotLabel>Stratagem 槽位 {0}</NCL_Stratagem_EmptySlotLabel>
+  <NCL_Stratagem_EmptySlotDesc>该槽位尚未配装 Stratagem。</NCL_Stratagem_EmptySlotDesc>
+  <NCL_Stratagem_EmptySlotDisabled>该槽位为空。</NCL_Stratagem_EmptySlotDisabled>
+  <NCL_Stratagem_Cooldown>冷却中: {0}秒</NCL_Stratagem_Cooldown>
+  <NCL_Stratagem_InvalidTarget>目标点无效。</NCL_Stratagem_InvalidTarget>
+  <NCL_Stratagem_OutOfRange>超出范围（半径 {0}）。</NCL_Stratagem_OutOfRange>
+  <NCL_Stratagem_Incoming>即将抵达：{0}</NCL_Stratagem_Incoming>
+  <NCL_Stratagem_IncomingHud>{0} — 即将抵达：{1}</NCL_Stratagem_IncomingHud>
+  <NCL_Stratagem_SystemDisabled>战备系统已在 Mod 设置中关闭。</NCL_Stratagem_SystemDisabled>
+  <NCL_Stratagem_ResearchRequired>需要先完成以下研究：</NCL_Stratagem_ResearchRequired>
+  <NCL_Stratagem_NotEnoughPower>殖民地蓄电量不足（需要 {0} Wd）。</NCL_Stratagem_NotEnoughPower>
+  <NCL_Stratagem_PowerCostTip>施放消耗：{0} Wd 蓄电</NCL_Stratagem_PowerCostTip>
+  <NCL_SETTINGS_TAB_DIVER>潜兵</NCL_SETTINGS_TAB_DIVER>
+  <NCL_SETTINGS_TAB_MULTICELL_DEBUG>多格机械体调试</NCL_SETTINGS_TAB_MULTICELL_DEBUG>
+  <NCL_SETTINGS_MULTICELL_DEBUG_DESC>开发者工具：编辑多格机械体的占地格、部位与炮台布局，并导出 XML 片段。</NCL_SETTINGS_MULTICELL_DEBUG_DESC>
+  <NCL_SETTINGS_MULTICELL_DEBUG_COUNT>已发现 {0} 个多格机械体 ThingDef。</NCL_SETTINGS_MULTICELL_DEBUG_COUNT>
+  <NCL_SETTINGS_MULTICELL_DEBUG_OPEN>打开调试器</NCL_SETTINGS_MULTICELL_DEBUG_OPEN>
+  <NCL_MultiCellDebugger_Title>多格机械体调试</NCL_MultiCellDebugger_Title>
+  <NCL_MultiCellDebugger_NoDefs>未找到带 MultiCellPawn 的 ThingDef。</NCL_MultiCellDebugger_NoDefs>
+  <NCL_MultiCellDebugger_ModeResize>增减格子</NCL_MultiCellDebugger_ModeResize>
+  <NCL_MultiCellDebugger_ModeParts>部位分配</NCL_MultiCellDebugger_ModeParts>
+  <NCL_MultiCellDebugger_ModeTurrets>炮台分配</NCL_MultiCellDebugger_ModeTurrets>
+  <NCL_MultiCellDebugger_DeleteZone>删除</NCL_MultiCellDebugger_DeleteZone>
+  <NCL_MultiCellDebugger_Export>导出 XML</NCL_MultiCellDebugger_Export>
+  <NCL_MultiCellDebugger_HintResize>从已有格拖到相邻绿格添加占地；拖到右侧删除区移除格子（(0,0,0) 不可删，须保持四向连通）。</NCL_MultiCellDebugger_HintResize>
+  <NCL_MultiCellDebugger_HintTurrets>选择炮台编号后拖到格子；或从列表拖动炮台项。拖到删除区可移除该格上的炮台挂载。</NCL_MultiCellDebugger_HintTurrets>
+  <NCL_MultiCellDebugger_HintTurretsSelected>当前炮台 #{0}：拖到格子添加挂载格。</NCL_MultiCellDebugger_HintTurretsSelected>
+  <NCL_MultiCellDebugger_NoBody>该种族无 BodyDef，无法分配部位。</NCL_MultiCellDebugger_NoBody>
+  <NCL_MultiCellDebugger_CannotRemove>无法移除此格（核心格或会破坏连通性）。</NCL_MultiCellDebugger_CannotRemove>
+  <NCL_MultiCellDebugger_CannotAdd>无法在此添加格（须与现有占地四向相邻）。</NCL_MultiCellDebugger_CannotAdd>
+  <NCL_MultiCellDebugger_PanHint>右键拖动平移网格视角</NCL_MultiCellDebugger_PanHint>
+  <NCL_MultiCellDebugger_CoreBodyLocked>中心格 (0,0,0) 固定为 body（种族核心部位），不可改分其他部位。</NCL_MultiCellDebugger_CoreBodyLocked>
+  <NCL_MultiCellExport_DialogTitle>导出多格配置</NCL_MultiCellExport_DialogTitle>
+  <NCL_MultiCellExport_Directory>保存目录：{0}</NCL_MultiCellExport_Directory>
+  <NCL_MultiCellExport_FileName>文件名</NCL_MultiCellExport_FileName>
+  <NCL_MultiCellExport_Confirm>导出</NCL_MultiCellExport_Confirm>
+  <NCL_MultiCellExport_ErrFileName>请输入文件名。</NCL_MultiCellExport_ErrFileName>
+  <NCL_MultiCellExport_Success>已导出至：{0}</NCL_MultiCellExport_Success>
+  <NCL_MultiCellExport_ErrNoCore>缺少核心格 (0,0,0)。</NCL_MultiCellExport_ErrNoCore>
+  <NCL_MultiCellExport_ErrNotConnected>占地格必须四向连通且包含 (0,0,0)。</NCL_MultiCellExport_ErrNotConnected>
+  <NCL_MultiCellExport_ErrMountOutside>炮台 #{0} 的挂载格不在占地范围内。</NCL_MultiCellExport_ErrMountOutside>
+  <NCL_MultiCellExport_ErrNoParts>至少为一个格子分配部位后再导出。</NCL_MultiCellExport_ErrNoParts>
+  <NCL_SETTINGS_STRATAGEM_ENABLED>启用 Diver 战备系统</NCL_SETTINGS_STRATAGEM_ENABLED>
+  <NCL_SETTINGS_STRATAGEM_ENABLED_TIP>开启后，Diver 可配置并施放轨道打击、哨戒炮等战备。默认关闭。</NCL_SETTINGS_STRATAGEM_ENABLED_TIP>
+  <NCL_SETTINGS_STRATAGEM_ENABLED_NOTE>关闭时仍可打开 Diver 指挥面板进行改名、披风与战斗统计；场上仅保留增援 Gizmo，四个战备槽位 Gizmo 不会出现。</NCL_SETTINGS_STRATAGEM_ENABLED_NOTE>
+
+  <MTW_Diver_StimGizmo_Label>治疗剂 ({0}/{1})</MTW_Diver_StimGizmo_Label>
+  <MTW_Diver_StimGizmo_Desc>消耗一层充能，在 2 秒内纳米机械快速修复伤势，并提升 50% 移动速度。</MTW_Diver_StimGizmo_Desc>
+  <MTW_Diver_StimGizmo_NoCharges>充能已耗尽。</MTW_Diver_StimGizmo_NoCharges>
+  <MTW_Diver_StimGizmo_Dead>单位已死亡。</MTW_Diver_StimGizmo_Dead>
+
+  <MTW_Diver_ReinforceGizmo_Label>增援</MTW_Diver_ReinforceGizmo_Label>
+  <MTW_Diver_ReinforceGizmo_Desc>战备：选定落点，经抛物线接近与 inbound 倒计时后着陆空投，将潜兵小队补员至 4 人（无冷却；按舱消耗殖民地电量）。</MTW_Diver_ReinforceGizmo_Desc>
+  <MTW_Diver_ReinforceGizmo_Dead>单位已死亡。</MTW_Diver_ReinforceGizmo_Dead>
+  <MTW_Diver_ReinforceGizmo_NoManager>潜兵管理系统不可用。</MTW_Diver_ReinforceGizmo_NoManager>
+  <MTW_Diver_ReinforceGizmo_Full>潜兵小队已满员。</MTW_Diver_ReinforceGizmo_Full>
+  <MTW_Diver_Reinforce_InvalidCaller>无法从此单位呼叫增援。</MTW_Diver_Reinforce_InvalidCaller>
+  <MTW_Diver_Reinforce_GameNotReady>游戏尚未就绪，无法呼叫增援。</MTW_Diver_Reinforce_GameNotReady>
+  <MTW_Diver_Reinforce_PodMissing>空投舱定义缺失，无法呼叫增援。</MTW_Diver_Reinforce_PodMissing>
+  <MTW_Diver_Reinforce_Full>潜兵小队已满员。</MTW_Diver_Reinforce_Full>
+  <MTW_Diver_Reinforce_Success>增援空投已发射：{0} 舱。</MTW_Diver_Reinforce_Success>
+  <MTW_Diver_Reinforce_Failed>电量不足或落点无效，未能发射增援空投。</MTW_Diver_Reinforce_Failed>
+
 </LanguageData>

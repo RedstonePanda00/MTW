@@ -43,10 +43,10 @@
       <li Class="CompProperties_ProximityLetter">
         <radius>4</radius>
         <letterDef>PositiveEvent</letterDef>
-        <letterLabel>破碎的信标旧址</letterLabel>
-        <letterText>这座战争信标早已饱经战火的洗礼，残垣断壁诉说着一场惨烈的过往。尽管其表面伤痕累累、结构破碎，但核心框架依旧坚固如初，仿佛静静等待着重返战场的那一刻。
-如果你能筹集足够的资源并完成修复，或许就能再次唤醒它沉睡的力量——将其重构为真正的战争信标，点燃机械族对这片土地的关注，也为你带来前所未有的科技突破。
-它静候着……是重启，还是遗忘？</letterText>
+        <letterLabel>Ruined beacon ruins</letterLabel>
+        <letterText>This war beacon ruin has seen brutal fighting. Broken walls tell of a violent past. The core frame is still sound, as if waiting to return to war.
+If you gather enough resources and finish repairs, you might wake its dormant power—rebuild it into a true war beacon, draw mechanoid attention to this land, and open unprecedented tech paths.
+It waits… restart, or forget?</letterText>
       </li>
     </comps>
 		<modExtensions>
@@ -96,7 +96,7 @@
 		<JobDef>
 		<defName>RebuildTheWarBeacon</defName>
 		<driverClass>NCL.JobDriver_RebuildTheWarBeacon</driverClass>
-		<reportString>修复 TargetA.</reportString>
+		<reportString>Repairing TargetA.</reportString>
 		<suspendable>false</suspendable>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
@@ -140,7 +140,7 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>TriggerObject</useJob>
-        <useLabel>开启全面战争X</useLabel>
+        <useLabel>Activate total warfare</useLabel>
         <useDuration>900</useDuration>
         <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
       </li>
@@ -255,12 +255,12 @@
       <li Class="CompProperties_ProximityLetter">
         <radius>4</radius>
         <letterDef>PositiveEvent</letterDef>
-        <letterLabel>战争巨蝎残骸</letterLabel>
-        <letterText>当你靠近这座战争巨蝎残骸时,你感受到其中似乎存在某些有价值的事物,你隐隐约约看到其头部的一块闪闪发光的红色立方体,也许其能提取出为你所用</letterText>
+        <letterLabel>War scorpion wreckage</letterLabel>
+        <letterText>As you approach this war scorpion wreck, you sense something valuable inside. You faintly see a gleaming red cube in its head—it might be recovered for your use.</letterText>
       </li>
       <li Class="CompProperties_LeavingsLetter">
-        <letterLabel>可用的: {LEAVINGS1_label}</letterLabel>
-        <letterText>战争巨蝎残骸毁坏后留下了一份红色魔方,也许你能用它解锁什么科技</letterText>
+        <letterLabel>Available: {LEAVINGS1_label}</letterLabel>
+        <letterText>Destroying the war scorpion wreck left a red cube—you might unlock new tech with it.</letterText>
         <letterDef>PositiveEvent</letterDef>
         <leavingsFilter>
           <thingDefs>
@@ -269,7 +269,7 @@
         </leavingsFilter>
       </li>
       <li Class="CompProperties_InspectString">
-        <inspectString>包含一块闪闪发光的红色立方体.</inspectString>
+        <inspectString>Contains a gleaming red cube.</inspectString>
       </li>
     </comps>
     <tickerType>Normal</tickerType>

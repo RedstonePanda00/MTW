@@ -24,10 +24,19 @@
   
   <TW_Overdrive_M.label>机械超载</TW_Overdrive_M.label>
   <TW_Overdrive_M.description>该机械体因被注入大量能量而在短时间内超载</TW_Overdrive_M.description>
-  <TW_Overdrive_M.stages.0.label>Overdrive</TW_Overdrive_M.stages.0.label>
-  <TW_Overdrive_M.stages.1.label>Energy Surplus</TW_Overdrive_M.stages.1.label>
-  <TW_Overdrive_M.stages.2.label>Stabilizing</TW_Overdrive_M.stages.2.label>
-  <TW_Overdrive_M.stages.3.label>Stable</TW_Overdrive_M.stages.3.label>
+  <TW_Overdrive_M.stages.0.label>超载</TW_Overdrive_M.stages.0.label>
+  <TW_Overdrive_M.stages.1.label>能量过剩</TW_Overdrive_M.stages.1.label>
+  <TW_Overdrive_M.stages.2.label>逐渐稳定</TW_Overdrive_M.stages.2.label>
+  <TW_Overdrive_M.stages.3.label>稳定</TW_Overdrive_M.stages.3.label>
+
+  <TW_TacticalArtilleryCoordinationModule_Airstrike_Signal_Transmitter.label>远程战术协调单元:突袭信号指示终端</TW_TacticalArtilleryCoordinationModule_Airstrike_Signal_Transmitter.label>
+  <TW_TacticalArtilleryCoordinationModule_Airstrike_Signal_Transmitter.description>该单位在周围半径150格内存在玩家单位时将召唤突袭信号指示终端协助战斗</TW_TacticalArtilleryCoordinationModule_Airstrike_Signal_Transmitter.description>
+
+  <TW_TacticalArtilleryCoordinationModule_AutoMortarEMP.label>远程战术协调单元:EMP迫击炮</TW_TacticalArtilleryCoordinationModule_AutoMortarEMP.label>
+  <TW_TacticalArtilleryCoordinationModule_AutoMortarEMP.description>该单位在周围半径150格内存在玩家单位时将召唤EMP迫击炮协助战斗</TW_TacticalArtilleryCoordinationModule_AutoMortarEMP.description>
+
+  <TW_TacticalArtilleryCoordinationModule_AutoInferno.label>远程战术协调单元：狱火炮</TW_TacticalArtilleryCoordinationModule_AutoInferno.label>
+  <TW_TacticalArtilleryCoordinationModule_AutoInferno.description>该单位在周围半径35格内存在玩家单位时将召唤狱火炮协助战斗</TW_TacticalArtilleryCoordinationModule_AutoInferno.description>
    
   <TW_TacticalArtilleryCoordinationModule_AutoMortar.label>远程战术协调单元:迫击炮</TW_TacticalArtilleryCoordinationModule_AutoMortar.label>
   <TW_TacticalArtilleryCoordinationModule_AutoMortar.description>该单位在周围半径150格内存在玩家单位时将召唤迫击炮协助战斗</TW_TacticalArtilleryCoordinationModule_AutoMortar.description>

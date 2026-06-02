@@ -202,8 +202,8 @@
     
 <HediffDef ParentName="NCL_TotalWarfareHediffBase">
     <defName>TW_ShieldGeneration</defName>
-    <label>隔壁偷来的护盾生成器</label>
-    <description>灵能小镰用念力从隔壁偷来了护盾生成器，因传送匆忙忘了拆标签。很快，商船上的灵能者就会循着标签将护盾折跃回去。</description>
+    <label>Stolen shield generator</label>
+    <description>A psycast militor telekinetically "borrowed" this shield generator from next door and forgot to remove the shipping tag. Soon, a psycaster on a trade ship will trace the tag and snap it back.</description>
 	<comps>
       <li Class="NCL.HediffCompProperties_ShieldGenerator">
         <range>19</range>

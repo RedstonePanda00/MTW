@@ -30,7 +30,7 @@ namespace NCLWorm
       get => ExoRiftPath._mpb_inst ?? (ExoRiftPath._mpb_inst = new MaterialPropertyBlock());
     }
 
-    public virtual void SpawnSetup(Map map, bool respawningAfterLoad)
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
       base.SpawnSetup(map, respawningAfterLoad);
       this._age = 0;
@@ -43,7 +43,7 @@ namespace NCLWorm
       this._groundWarnColor = modExtension.groundWarnColor;
     }
 
-    public virtual void Destroy(DestroyMode mode = 0)
+    public override void Destroy(DestroyMode mode = 0)
     {
       if (this._viewMesh != null)
       {
@@ -53,7 +53,7 @@ namespace NCLWorm
       base.Destroy(mode);
     }
 
-    protected virtual void Tick()
+    protected override void Tick()
     {
       ++this._age;
       if (this._age < this.Duration)
@@ -61,7 +61,7 @@ namespace NCLWorm
       base.Destroy((DestroyMode) 0);
     }
 
-    protected virtual void DrawAt(Vector3 drawLoc, bool flip = false)
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
       if (this._viewMesh == null)
       {

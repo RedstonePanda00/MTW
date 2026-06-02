@@ -1,0 +1,180 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <NCL.Worm.NCLCallDef>
+    <defName>ChineseSimplified</defName>
+    <label>NCL通讯系统</label>
+    <FirstHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+      <FirstUseMess>你成功的启动了这台通讯台,并且解码了对应的通讯地址,那么,你的选择是?</FirstUseMess>
+      <NextCallTools>
+        <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+          <label>拨通解码后的通讯地址</label>
+          <UseHello>「滋——嘟……量子链路建立成功！」
+
+电子屏幕剧烈闪烁后，突然映出一顶压低的宽檐帽，帽檐下传来带着电流杂音的少女声：
+
+「Fieldy在线验证——咦？这频段明明该接贸易中转站的呀？」
+
+（镜头拉远露出半张脸）「你谁啊？天轴的幸存者？还是……（突然警觉）该不会又是机械族的仿生陷阱吧？」</UseHello>
+          <NextCallTools>
+            <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+              <label>说明来历ing</label>
+              <UseHello>「新殖民地？（突然笑出声）哈！我就知道——只有你们这些刚降落边缘世界的愣头青，才会用这种老古董频段！」
+
+「让我看看你们的位置...等等，这个坐标附近不是有台战争信标吗？你们该不会已经手贱激活了吧？」
+
+（快速扫描数据ing）
+「唔...信号读数还算稳定，看来你们运气不错。听着，那玩意儿可不是什么好玩具，上次有个殖民地乱碰信标，没几天就被强化后的机械族给拆了，虽然说那玩意内部的确有可能藏有什么珍贵情报...」
+
+「不过既然你们还没变成废铁，按照《边缘世界团结互助条例》第三章第十二款，NCL很乐意帮助迷路的开拓者啦！虽然资源有限...（小声嘀咕）但总比看着你们被机械族拆了强～」</UseHello>
+              <NextCallTools>
+                <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+                  <label>你们到底是什么组织</label>
+                  <UseHello>「（突然象征性地立正敬礼）‘为人类存续而奋斗！’——官方口号嘛，喊还是要喊一下的～（肩膀立刻松懈下来）」
+
+「其实就是几个幸存者据点凑成的互助群组。以前嘛...可能还像点样子，但自从闪耀世界那边爆发了智械革命，我们这边也开始疯狂减员...现在嘛，不剩多少人了。」
+
+「大本营在离你们五个地月距离的一颗人造卫星上，现在主要靠迫降到就近的行星做些买卖，回收些机械族残骸来发展。」
+
+「至于那个《条例》？我们老大56年前编的，一共六百六十六页！真正的核心思想就一条——，撑久一点，至少撑到能叫人来给你收尸的地步。’」
+
+「所以，既然联系上了，也算认识了。以后真遇到搞不定的麻烦，如果频道还通着... 可以试着呼叫我们。力所能及的范围内，我们或许能想想办法搭把手。」</UseHello>
+                  <NextCallTools>
+                    <li Class="NCL.Worm.NCLCallTool_ByeBye">
+                      <label>通讯结束</label>
+                    </li>
+                  </NextCallTools>
+                </li>
+              </NextCallTools>
+            </li>
+          </NextCallTools>
+        </li>
+      </NextCallTools>
+    </FirstHello>    
+    <RandomHello>
+      <li>「喂喂喂，又是你们呀，找我有什么事吗？」</li>
+      <li>「哟，还活着呢？可以嘛～这世道真是没个消停。自从某个闪耀世界的机械族造反之后，咱们人类和他们之间就没一刻太平，现在连附近的中寰世界都快给他们洗了，还好是他们没搞出超光速，不然我们连窝在边缘世界过日子的愿望都泡汤了。」</li>
+      <li>「生存建议？那当然，多造点激光点防御炮塔？现在的机械族精得很，还会用迫击炮偷家。点防御不仅能干掉炮弹，就连魔王弹都能拦呢」</li>
+      <li>「机械族能隐身？不是早把反隐雷达的图纸发你了吗？前线建一个呗？我记得咱家那边自研的机械族里好像也有一个能反隐的，你掂量下哪个合适？」</li>
+      <li>「你们最近是不是碰上了机械族泰坦？对，就是那些巨大的、像能把山拆了似的家伙。听好了，用信标可以召唤他们作战，打赢了还能学他们的构造，不过……能不能活着回来，就看你们造化了。」</li>
+      <li>「说起来你们势力范围内那座破烂的机械族建筑，应该是个‘战争信标’。激活它，会引来机械族主力入侵，不过也能解析一些隐藏科技。是赌一把还是保守点，看你们咯～当地人倒是可能会感激你，毕竟你吸引了火力。」</li>
+      <li>「要不要我给你们连线点商船？有几家贸易商和我们关系不错。你问我们平时卖些什么？艺术品、衣服、奢侈食品啥的……你们要来点吗？」</li>
+    </RandomHello>    
+    <WarHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+      <UseHello>你启动了通讯台,然而对面似乎没有回应</UseHello>
+      <NextCallTools>
+        <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+          <label>尝试联系</label>
+          <UseHello>来吧，让我看到你的挣扎!</UseHello>
+          <GraphicData>
+            <texPath>StoryTellers/Justice_Large3</texPath>
+            <drawSize>1.5</drawSize>
+          </GraphicData>
+          <NextCallTools>
+            <li Class="NCL.Worm.NCLCallTool_ByeBye">
+              <label>切断通讯</label>
+            </li>
+          </NextCallTools>
+        </li>
+      </NextCallTools>
+    </WarHello>    
+    <OutWarHello Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+      <UseHello>喂喂喂，通讯突然断了，你那边发生了什么事吗？</UseHello>
+      <NextCallTools>
+        <li Class="NCL.Worm.NCLCallTool_ReStart">
+          <label>继续</label>
+        </li>
+      </NextCallTools>
+    </OutWarHello>    
+
+    <NCLCallTools>
+      <li Class="NCL.Worm.NCLCallTool_Walk">
+        <label>闲聊</label>
+        <FirstUseMess>你没什么自己要忙的事吗？</FirstUseMess>
+        <Randomstring>
+          <li>我以为世界上就我这么闲，我在殖民地里啥也不干，他们一开始把我招进来是想要我做厨师，结果来了才发现我不会做饭。老大辛苦跑商给我带了几个学习机回来想要我当厨子，结果后面来了个机械师，她的厨艺机把我的活给抢了。现在的我负责帮厨艺机端盘子和接电话，老大说我口才还是不错的。</li>
+          <li>好啦，你快去干自己的事情，我看你们那还挺破的，还不快好好发展一下。</li>
+          <li>喵?</li>
+          <li>增援频道的同僚有些太冷淡了？额，卡戎他，严格来说不是我们自己人——当然你放心，他们也是我们这边的。至于冷淡嘛，反正他们的打印机也会正常完成委托的。把空投舱留下来？这不归我说了算，他们要回收每一份亚金。</li>
+          <li>介绍一下我们？我们也就一艘轨道上的战舰，叫死亡之眼号。我们的老大叫Reeze，Lisa姐是机械师，还有一对兄弟，Right 和 Left，他们很少失手...再多说点？哎呀再多就涉及机密了。</li>
+          <li>你不觉得披风蟑螂很诡异吗？不不不，他们实际上跟我们没啥关系，额，好吧，至少装备都是我们的——言归正题，他们彼此之间显然认识！我经常听到他们在频道里说“活我活我”，然后跟没事人一样回到自己尸体旁边拿掉的装备！还有什么“谁尽力，谁犯罪，谁的打法不团队”，“我真得大调查你的DPS了”，“狗东西谁把我地狱火开了”。你真得听听，你不觉得他们很诡异吗？</li>
+        </Randomstring>
+      </li>
+      <li Class="NCL.Worm.NCLCallTool_GiveLong">
+        <label>申请援兵</label>
+        <delayTick>15000~30000</delayTick>
+        <ReLongTick>1800000</ReLongTick>
+        <TextLong>Fieldy： “援兵？说来惭愧，咱们这儿也不剩几个活人了，直接派舰队支援是没戏了。”
+
+“不过嘛，也不是完全没人能派...emmm，这样吧！我听我家那两位机械师说，他们刚弄出个新型泰坦机械体，还在调试阶段。虽然是待测试的，但毕竟是泰坦级别，战斗力你们绝对可以放心！”
+
+（调出一个巨大但有些闪烁的泰坦投影）“那些白大褂肯定很乐意收集实战数据。等着，我去问问她愿不愿意把它送到你们那儿，帮你们守城顺便测试！”（话音刚落，Fieldy的身影就从屏幕上消失了）
+
+【约5分钟后】
+（屏幕重新亮起，Fieldy微喘着气）“OK！她答应了，少有这么爽快！（快速操作）先给你们发份操作手册...（投影中的泰坦模型突然抽搐了一下）别看它这样，拆起机械族可利索了！条件是...（查看清单）嗯...每天提供20单位钢铁给它当‘零食费’？”
+
+（确认发送完毕）“好了！你们没意见的话，我这就让它往你们那边动身了。预计2天之内就能赶到！”</TextLong>
+        <TextYes>确认申请（官方作弊码，不建议过度依赖于它）</TextYes>
+        <TextNo>暂不申请</TextNo>
+        <letter>蠕虫预告</letter>
+        <letterText>大宝贝要来咯.</letterText>
+      </li>
+      <li Class="NCL.Worm.NCLCallTool_GiveUpLong">
+        <label>遣返蠕虫</label>
+        <TextLong>哦?你希望蠕虫暂时离开你的基地么?\n嗯嗯,完全可以的,我这就去操作一下</TextLong>
+        <TextYes>确认遣返</TextYes>
+        <TextNo>暂不遣返</TextNo>
+        <letter>蠕虫遣返</letter>
+        <letterText>机械蠕虫暂时离开了你的基地.</letterText>
+      </li>
+      <li Class="NCL.Worm.NCLCallTool_LianXuDuiHua">
+        <label>特殊频道</label>
+        <UseHello>你尝试连线那个特殊频道，但显示屏另一端毫无回应，只传来零星的电流杂音。</UseHello>
+        <GraphicData>
+          <texPath>Things/None</texPath>
+          <drawSize>1.2</drawSize>
+        </GraphicData>
+        <NextCallTools>
+          <li Class="NCL.Worm.NCLCallTool_ShiLian">
+            <label>继续</label>
+            <delayTick>15000~30000</delayTick>
+            <TextLong>“我听见你灵魂的饥渴了...人类。但史诗的真谛，从来要用血与火来书写。”
+（全息投影突然在硝烟中凝聚，呈现一座燃烧的特洛伊城微缩模型）
+“真相？当然可以给你。可你确定付得起入场券么？”
+“现在转身离去——还能当个糊涂的活死人。</TextLong>
+            <GraphicData>
+              <texPath>StoryTellers/Justice_Large3</texPath>
+              <drawSize>1.8</drawSize>
+            </GraphicData>
+            <ResearchProj>NCL_Archoworm</ResearchProj>
+            <TextYes>接受挑战</TextYes>
+            <TextNo>暂不开启</TextNo>
+            <letter>蠕虫预告</letter>
+            <letterText>一位你熟悉的对手</letterText>
+          </li>
+          <li Class="NCL.Worm.NCLCallTool_ReStart">
+            <label>(返回)</label>
+          </li>
+        </NextCallTools>
+      </li>
+      <li Class="NCL.Worm.NCLCallTool_GoSleep">
+        <label>切换蠕虫休眠状态</label>
+        <WormInSleep>好,蠕虫现在已经进入休眠状态了</WormInSleep>
+        <WormOutSleep>好,蠕虫现在已经恢复活跃状态了</WormOutSleep>
+      </li>
+      <li Class="NCL.Worm.NCLCallTool_TraderShip">
+        <label>进行贸易</label>
+        <FirstUseMess>「想交易？当然行！我可是吃这碗饭的」
+「不光跟我们，我还能帮你连线几个常跑这条线的老油条商船。需要的时候吱一声，我立马让他们调头往你们那破地方赶。」</FirstUseMess>
+        <CooldownTick>300000</CooldownTick>        
+        <ChooseTrader>你需要什么商队?</ChooseTrader>
+        <NoChoose>别急，不是什么时候都碰巧有商船经过的</NoChoose>
+        <TraderKindDefs>
+          <li>NCL_material_Trader</li>
+          <li>Orbital_Universal_life_Services_Provider</li>
+          <li>Orbital_Defense_Solutions</li>
+        </TraderKindDefs>        
+      </li>
+    </NCLCallTools>
+
+  </NCL.Worm.NCLCallDef>
+</Defs>

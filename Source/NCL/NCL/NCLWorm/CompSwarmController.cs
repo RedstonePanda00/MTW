@@ -47,7 +47,7 @@ namespace NCLWorm
       });
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       if (Scribe.mode == LoadSaveMode.LoadingVars)

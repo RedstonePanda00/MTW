@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <NCL.Worm.AuroraDropConfigDef>
+    <defName>NCL_AuroraDropConfig_Default</defName>
+    <label>Aurora Drop Config</label>
+    <entries>
+      <li>
+        <mechDefName>NCL_Mech_Dinergate</mechDefName>
+        <spawnCount>1</spawnCount>
+        <powerCost>0</powerCost>
+        <info>兵蚁机动班。测试默认 0Wd，不消耗电池电量。</info>
+      </li>
+      <li>
+        <mechDefName>NCL_Mech_Mantis</mechDefName>
+        <spawnCount>1</spawnCount>
+        <powerCost>0</powerCost>
+        <info>螳螂突击组。近中距离突破用途。</info>
+      </li>
+      <li>
+        <mechDefName>NCL_Mech_Scorpion</mechDefName>
+        <spawnCount>1</spawnCount>
+        <powerCost>0</powerCost>
+        <info>蝎式重火力单元。用于高威胁目标压制。</info>
+      </li>
+      <li>
+        <mechDefName>NCL_Mech_Ironbark</mechDefName>
+        <spawnCount>1</spawnCount>
+        <powerCost>0</powerCost>
+        <info>铁根防御单元。前线抗压与区域控制。</info>
+      </li>
+    </entries>
+  </NCL.Worm.AuroraDropConfigDef>
+
+</Defs>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MTW_Diver_Pounce.label>飞扑</MTW_Diver_Pounce.label>
+  <MTW_Diver_Pounce.description>向选定位置全向飞扑，最远 3 格。可在眩晕时使用，并立刻打断当前行动。</MTW_Diver_Pounce.description>
+</LanguageData>

@@ -128,10 +128,16 @@ namespace NCL
                     iconDrawScale = transformData.iconSize;
                 }
 
+                bool useCyclicLabel = !GenText.NullOrEmpty(Props.cyclicLabel) && Props.transformData.Count == 1;
+                string label = useCyclicLabel ? Props.cyclicLabel.Translate() : transformData.label;
+                string description = useCyclicLabel
+                    ? BuildCyclicDescription(transformData)
+                    : transformData.description;
+
                 Command_Transform_Action cmd = new Command_Transform_Action
                 {
-                    defaultLabel = transformData.label,
-                    defaultDesc = transformData.description,
+                    defaultLabel = label,
+                    defaultDesc = description,
                     compFormChange = this,
                     transformData = tsdP,
                     icon = icon,
@@ -165,6 +171,16 @@ namespace NCL
                     Disabled = true
                 };
             }
+        }
+
+        private string BuildCyclicDescription(TransformData nextTransform)
+        {
+            if (GenText.NullOrEmpty(Props.cyclicDescription))
+            {
+                return nextTransform.thingDef.label;
+            }
+
+            return Props.cyclicDescription.Translate(nextTransform.thingDef.label);
         }
 
         public override void PostExposeData()

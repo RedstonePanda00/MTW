@@ -24,7 +24,7 @@ namespace NCLWorm
 
     private CompProperties_WormSegment Props => (CompProperties_WormSegment) this.props;
 
-    public virtual void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
+    public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
     {
       absorbed = true;
       if (!this.IsBodyValid())
@@ -116,7 +116,7 @@ namespace NCLWorm
       this._lastMoteTick = ticksGame;
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Values.Look<int>(ref this._lastWindowStartTick, "lastWindowStartTick", -999, false);

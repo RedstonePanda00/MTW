@@ -44,9 +44,9 @@
 
     <HediffDef>
     <defName>NCL_Mech_Mantis_Hediff</defName>
-    <label>NCL：机械兰螳</label>
+    <label>NCL: Orchid Mantis</label>
 	<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
-	<description>1</description>
+	<description>Hidden battlefield reinforcement tag for the Orchid Mantis pattern.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <comps>
 	  <li Class="NCL.HediffCompProperties_MechAutoRecovery">
@@ -133,7 +133,7 @@
       <li>
 		<minSeverity>0.01</minSeverity>
 		<statFactors>
-			<VEF_VerbRangeFactor>1.25</VEF_VerbRangeFactor>
+			<NCL_VerbRangeFactor>1.25</NCL_VerbRangeFactor>
 			<RangedCooldownFactor>0.1</RangedCooldownFactor>
 			<AimingDelayFactor>0.1</AimingDelayFactor>
         </statFactors>
@@ -306,6 +306,39 @@ Dragon's Final Blow: The worm burrows underground and charges straight toward it
     <hediffGivers>
       <li Class="HediffGiver_Random">
         <hediff>TW_Mech_Warqueen_Hediff</hediff>
+        <mtbDays>0.00000001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+  <HediffDef>
+    <defName>TW_Mech_Diabolus_Hediff</defName>
+    <label>Total War: Diabolus</label>
+    <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+    <description>The Diabolus integrates an advanced fire-control suite that cuts main-gun aiming time in half. Twin lateral close-in weapon mounts provide lethal point defense against nearby threats.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.01</minSeverity>
+        <statFactors>
+          <AimingDelayFactor>0.5</AimingDelayFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="NCL.HediffExtension_NoNotification" />
+    </modExtensions>
+  </HediffDef>
+
+  <HediffGiverSetDef>
+    <defName>TW_Mech_Diabolus_Hediff</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Random">
+        <hediff>TW_Mech_Diabolus_Hediff</hediff>
         <mtbDays>0.00000001</mtbDays>
       </li>
     </hediffGivers>

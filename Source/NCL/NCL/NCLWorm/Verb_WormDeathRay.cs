@@ -32,9 +32,9 @@ namespace NCLWorm
 
     private CompWormLaserWeapon LaserComp => this.EquipmentSource?.GetComp<CompWormLaserWeapon>();
 
-    protected virtual int ShotsPerBurst => this.verbProps.burstShotCount;
+    protected override int ShotsPerBurst => this.verbProps.burstShotCount;
 
-    public virtual void WarmupComplete()
+    public override void WarmupComplete()
     {
       base.WarmupComplete();
       this._ticksUntilNextScan = 0;
@@ -45,7 +45,7 @@ namespace NCLWorm
       this.EnsureLaserEffectCreated();
     }
 
-    public virtual void Reset()
+    public override void Reset()
     {
       base.Reset();
       this._currentOverheat = 0.0f;
@@ -55,7 +55,7 @@ namespace NCLWorm
       this._cachedTargets.Clear();
     }
 
-    public virtual void BurstingTick()
+    public override void BurstingTick()
     {
       base.BurstingTick();
       if (this.Controller == null || this.caster == null || !this.caster.Spawned)

@@ -41,7 +41,7 @@ namespace NCLWorm
       }
     }
 
-    public virtual void ExposeData()
+    public override void ExposeData()
     {
       base.ExposeData();
       List<int> collection = (List<int>) null;
@@ -53,7 +53,7 @@ namespace NCLWorm
       Scribe_Values.Look<Vector3>(ref this._lastExactPos, "lastExactPos", new Vector3(), false);
     }
 
-    public virtual void Launch(
+    public override void Launch(
       Thing launcher,
       Vector3 origin,
       LocalTargetInfo usedTarget,
@@ -85,7 +85,7 @@ namespace NCLWorm
       this.ticksToImpact = Mathf.CeilToInt(maxRange / num);
     }
 
-    protected virtual void Tick()
+    protected override void Tick()
     {
       base.Tick();
       if (this.landed)
@@ -187,7 +187,7 @@ namespace NCLWorm
       t.TakeDamage(damageInfo);
     }
 
-    protected virtual void Impact(Thing hitThing, bool blockedByShield = false)
+    protected override void Impact(Thing hitThing, bool blockedByShield = false)
     {
       base.Impact(hitThing, blockedByShield);
     }

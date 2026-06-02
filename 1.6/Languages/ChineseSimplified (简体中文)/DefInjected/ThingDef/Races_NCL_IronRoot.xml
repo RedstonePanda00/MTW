@@ -16,11 +16,11 @@
 在关键时刻，“铁树”还能主动引爆自身反应炉，释放毁灭性的热能冲击波。</NCL_Mech_Ironbark.description>
 <NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandDesc>Enable/disable invisibility detection</NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandDesc>
 <NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandLabel>Toggle Scanner</NCL_Mech_Ironbark.comps.CompAntiInvisibilityField.toggleCommandLabel>
-<NCL_Mech_Ironbark.tools.0.label>Ground Splitter</NCL_Mech_Ironbark.tools.0.label>
-<NCL_Mech_Ironbark.tools.0.labelNoLocation>Ground Splitter</NCL_Mech_Ironbark.tools.0.labelNoLocation>
-<NCL_Mech_Ironbark.tools.1.label>Ground Splitter</NCL_Mech_Ironbark.tools.1.label>
-<NCL_Mech_Ironbark.tools.1.labelNoLocation>Ground Splitter</NCL_Mech_Ironbark.tools.1.labelNoLocation>
-<NCL_Mech_Ironbark.tools.2.label>Ironbark Canopy</NCL_Mech_Ironbark.tools.2.label>
+<NCL_Mech_Ironbark.tools.0.label>裂地巨臂</NCL_Mech_Ironbark.tools.0.label>
+<NCL_Mech_Ironbark.tools.0.labelNoLocation>裂地巨臂</NCL_Mech_Ironbark.tools.0.labelNoLocation>
+<NCL_Mech_Ironbark.tools.1.label>裂地巨臂</NCL_Mech_Ironbark.tools.1.label>
+<NCL_Mech_Ironbark.tools.1.labelNoLocation>裂地巨臂</NCL_Mech_Ironbark.tools.1.labelNoLocation>
+<NCL_Mech_Ironbark.tools.2.label>铁木树冠</NCL_Mech_Ironbark.tools.2.label>
 
   
 </LanguageData>

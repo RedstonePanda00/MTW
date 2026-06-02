@@ -81,7 +81,7 @@ Operating through automated long-range tracking, it provides full-map-range defe
                 <initialFlyingStep>0.2</initialFlyingStep>
             <accelerationDuration>120</accelerationDuration>
             <ticksBeforeTracing>30</ticksBeforeTracing>  
-                <maxFlyingTime>900</maxFlyingTime>
+                <maxFlyingTime>180</maxFlyingTime>
                 <flyingStep>2</flyingStep>
                 <ignoreGroundProjectiles>true</ignoreGroundProjectiles>
         <enableExplosionOnHit>false</enableExplosionOnHit>

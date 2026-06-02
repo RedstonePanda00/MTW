@@ -1,504 +1,14 @@
 using RimWorld;
 using RimWorld.Planet;
 using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using UnityEngine;
-using Verse;
 using Verse;
 using Verse.AI;
 using Verse.Sound;
 
-
-namespace NCL.Projectiles
-{
-    // Token: 0x02000054 RID: 84
-    public class Projectile_ExplosiveStagedWithEffects : Projectile_ExplosiveWithEffects
-    {
-        // Token: 0x1700002A RID: 42
-        // (get) Token: 0x060001D2 RID: 466 RVA: 0x0000CD2F File Offset: 0x0000AF2F
-        protected int TicksSinceLaunch
-        {
-            get
-            {
-                return this.calculatedRuntimeTicks - this.ticksToImpact;
-            }
-        }
-
-        // Token: 0x1700002B RID: 43
-        // (get) Token: 0x060001D3 RID: 467 RVA: 0x0000CD40 File Offset: 0x0000AF40
-        public override string Label
-        {
-            get
-            {
-                ProjectileStagingTracker projectileStagingTracker = this.staging;
-                if (((projectileStagingTracker != null) ? projectileStagingTracker.stageConfig : null) != null)
-                {
-                    return this.LabelNoCount + " (" + this.staging.stageConfig.label + ")";
-                }
-                return base.Label;
-            }
-        }
-
-        // Token: 0x060001D4 RID: 468 RVA: 0x0000CD8D File Offset: 0x0000AF8D
-        public override void PostMake()
-        {
-            base.PostMake();
-            this.staging = new ProjectileStagingTracker(this);
-        }
-
-        // Token: 0x060001D5 RID: 469 RVA: 0x0000CDA1 File Offset: 0x0000AFA1
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-            this.staging.PostSpawnSetup(map, respawningAfterLoad, this.effectsExtension, this.TicksSinceLaunch);
-        }
-
-        // Token: 0x060001D6 RID: 470 RVA: 0x0000CDC4 File Offset: 0x0000AFC4
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Deep.Look<ProjectileStagingTracker>(ref this.staging, "stagingTracker", new object[]
-            {
-                this
-            });
-            Scribe_Values.Look<int>(ref this.calculatedRuntimeTicks, "calculatedRuntimeTicks", 0, false);
-        }
-
-        // Token: 0x060001D7 RID: 471 RVA: 0x0000CDF8 File Offset: 0x0000AFF8
-        protected override void TickInterval(int delta)
-        {
-            this.staging.PreTick(this.effectsExtension, this.effects, this.TicksSinceLaunch, this.activeTracking);
-            Map map = base.Map;
-            base.TickInterval(delta);
-            this.staging.Tick(map, this.effectsExtension);
-        }
-
-        // Token: 0x060001D8 RID: 472 RVA: 0x0000CE48 File Offset: 0x0000B048
-        protected override void CalculateExactPosition()
-        {
-            ProjectileUtility.CalculateExactPosition(this, this.effects, this.staging, this.TicksSinceLaunch);
-            this.cachedPositionTick = this.ticksToImpact;
-        }
-
-        // Token: 0x060001D9 RID: 473 RVA: 0x0000CE6E File Offset: 0x0000B06E
-        protected override void CalculateExactRotation()
-        {
-            ProjectileUtility.CalculateExactRotation(this, this.effects, this.staging, this.effectsExtension, this.TicksSinceLaunch);
-        }
-
-        // Token: 0x060001DA RID: 474 RVA: 0x0000CE90 File Offset: 0x0000B090
-        public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
-        {
-            this.effects.PreLaunch(equipment, ref origin, usedTarget.Cell.ToVector3Shifted());
-            base.BaseLaunch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
-            if (this.effectsExtension != null && this.effectsExtension.activeTracking)
-            {
-                Thing thing = intendedTarget.Thing;
-                if (thing != null && thing.Spawned)
-                {
-                    this.activeTracking = true;
-                }
-            }
-            this.calculatedRuntimeTicks = (this.ticksToImpact = this.staging.PostLaunch(this.effectsExtension, this.origin.Yto0(), this.destination.Yto0()));
-            this.effects.parentDuration = this.ticksToImpact;
-            this.effects.PostLaunch(this.origin, this.destination, false);
-        }
-
-        // Token: 0x04000240 RID: 576
-        protected ProjectileStagingTracker staging;
-
-        // Token: 0x04000241 RID: 577
-        protected int calculatedRuntimeTicks = -1;
-    }
-}
-
-namespace NCL.Projectiles
-{
-    // Token: 0x02000056 RID: 86
-    public class Projectile_ExplosiveWithEffects : Projectile_Explosive
-    {
-        // Token: 0x1700002C RID: 44
-        // (get) Token: 0x060001ED RID: 493 RVA: 0x0000D780 File Offset: 0x0000B980
-        protected virtual Material ShadowMaterial
-        {
-            get
-            {
-                return UIAssets.ProjectileShadowMaterial;
-            }
-        }
-
-        // Token: 0x1700002D RID: 45
-        // (get) Token: 0x060001EE RID: 494 RVA: 0x0000D787 File Offset: 0x0000B987
-        protected override int MaxTickIntervalRate
-        {
-            get
-            {
-                return 1;
-            }
-        }
-
-        // Token: 0x060001EF RID: 495 RVA: 0x0000D78A File Offset: 0x0000B98A
-        public override void PostMake()
-        {
-            base.PostMake();
-            this.effects = new ProjectileEffectTracker(this);
-        }
-
-        // Token: 0x060001F0 RID: 496 RVA: 0x0000D79E File Offset: 0x0000B99E
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-            this.effectsExtension = this.def.GetModExtension<ModExtension_ProjectileEffects>();
-            this.effects.PostSpawnSetup(map, respawningAfterLoad);
-        }
-
-        // Token: 0x060001F1 RID: 497 RVA: 0x0000D7C6 File Offset: 0x0000B9C6
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Deep.Look<ProjectileEffectTracker>(ref this.effects, "effectTracker", new object[]
-            {
-                this
-            });
-            Scribe_Values.Look<bool>(ref this.activeTracking, "activeTracking", false, false);
-        }
-
-        // Token: 0x060001F2 RID: 498 RVA: 0x0000D7FA File Offset: 0x0000B9FA
-        public virtual void BaseTickInterval(int delta)
-        {
-            base.TickInterval(delta);
-        }
-
-        // Token: 0x060001F3 RID: 499 RVA: 0x0000D804 File Offset: 0x0000BA04
-        protected override void TickInterval(int delta)
-        {
-            if (this.activeTracking)
-            {
-                Thing thing = this.intendedTarget.Thing;
-                if (thing != null && thing.Spawned)
-                {
-                    this.destination = thing.DrawPos;
-                }
-            }
-            this.effects.PreTick(this.origin, this.destination);
-            this.CalculateExactPosition();
-            Map map = base.Map;
-            base.TickInterval(delta);
-            this.CalculateExactRotation();
-            this.effects.Tick(map, this.effectsExtension);
-            this.effects.PostTick(delta);
-        }
-
-        // Token: 0x060001F4 RID: 500 RVA: 0x0000D88C File Offset: 0x0000BA8C
-        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
-        {
-            if (this.def.projectile.shadowSize > 0f && this.def.projectile.arcHeightFactor > 0f)
-            {
-                ProjectileUtility.DrawShadow(this, this.effects, this.ShadowMaterial);
-            }
-            this.DrawMainMesh();
-            base.Comps_PostDraw();
-        }
-
-        // Token: 0x060001F5 RID: 501 RVA: 0x0000D8E8 File Offset: 0x0000BAE8
-        protected override void Impact(Thing hitThing, bool blockedByShield = false)
-        {
-            Map map = base.Map;
-            this.CalculateExactRotation();
-            this.CalculateExactPosition();
-            base.Impact(hitThing, blockedByShield);
-            this.effects.Impact(map, hitThing, blockedByShield);
-        }
-
-        // Token: 0x060001F6 RID: 502 RVA: 0x0000D91E File Offset: 0x0000BB1E
-        protected virtual void DrawMainMesh()
-        {
-            ProjectileUtility.DrawProjectileMesh(this, this.effects);
-        }
-
-        // Token: 0x060001F7 RID: 503 RVA: 0x0000D92C File Offset: 0x0000BB2C
-        protected virtual void CalculateExactPosition()
-        {
-            ProjectileUtility.CalculateExactPosition(this, this.effects, this.origin, this.destination, base.DistanceCoveredFraction);
-            this.cachedPositionTick = this.ticksToImpact;
-        }
-
-        // Token: 0x060001F8 RID: 504 RVA: 0x0000D958 File Offset: 0x0000BB58
-        protected virtual void CalculateExactRotation()
-        {
-            ProjectileUtility.CalculateExactRotation(this, this.effects, this.effectsExtension, this.origin, this.destination, base.DistanceCoveredFraction);
-        }
-
-        // Token: 0x1700002E RID: 46
-        // (get) Token: 0x060001F9 RID: 505 RVA: 0x0000D97E File Offset: 0x0000BB7E
-        public override Vector3 DrawPos
-        {
-            get
-            {
-                return this.effects.currentVisualPosition;
-            }
-        }
-
-        // Token: 0x1700002F RID: 47
-        // (get) Token: 0x060001FA RID: 506 RVA: 0x0000D98B File Offset: 0x0000BB8B
-        public override Vector3 ExactPosition
-        {
-            get
-            {
-                if (this.cachedPositionTick != this.ticksToImpact)
-                {
-                    this.CalculateExactPosition();
-                }
-                return this.effects.currentExactPosition;
-            }
-        }
-
-        // Token: 0x17000030 RID: 48
-        // (get) Token: 0x060001FB RID: 507 RVA: 0x0000D9AC File Offset: 0x0000BBAC
-        public override Quaternion ExactRotation
-        {
-            get
-            {
-                return this.effects.currentVisualRotation;
-            }
-        }
-
-        // Token: 0x17000031 RID: 49
-        // (get) Token: 0x060001FC RID: 508 RVA: 0x0000D9B9 File Offset: 0x0000BBB9
-        protected virtual float ArcHeightFactor
-        {
-            get
-            {
-                return this.def.projectile.arcHeightFactor;
-            }
-        }
-
-        // Token: 0x060001FD RID: 509 RVA: 0x0000D9CC File Offset: 0x0000BBCC
-        public void BaseLaunch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
-        {
-            base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
-        }
-
-        // Token: 0x060001FE RID: 510 RVA: 0x0000D9EC File Offset: 0x0000BBEC
-        public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
-        {
-            this.effects.PreLaunch(equipment, ref origin, usedTarget.Cell.ToVector3Shifted());
-            base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
-            if (this.effectsExtension != null && this.effectsExtension.activeTracking)
-            {
-                Thing thing = intendedTarget.Thing;
-                if (thing != null && thing.Spawned)
-                {
-                    this.activeTracking = true;
-                }
-            }
-            this.effects.parentDuration = this.ticksToImpact;
-            this.effects.PostLaunch(this.origin, this.destination, true);
-        }
-
-        // Token: 0x04000243 RID: 579
-        protected ModExtension_ProjectileEffects effectsExtension;
-
-        // Token: 0x04000244 RID: 580
-        protected ProjectileEffectTracker effects;
-
-        // Token: 0x04000245 RID: 581
-        protected int cachedPositionTick = -1;
-
-        // Token: 0x04000246 RID: 582
-        protected bool impacted;
-
-        // Token: 0x04000247 RID: 583
-        protected bool activeTracking;
-    }
-}
-
-namespace NCL.Projectiles
-{
-    // Token: 0x02000052 RID: 82
-    public class ProjectileStagingTracker : IExposable
-    {
-        // Token: 0x060001C9 RID: 457 RVA: 0x0000C89B File Offset: 0x0000AA9B
-        public ProjectileStagingTracker(Thing parent)
-        {
-            this.parent = parent;
-        }
-
-        // Token: 0x060001CA RID: 458 RVA: 0x0000C8AC File Offset: 0x0000AAAC
-        public void PostSpawnSetup(Map map, bool respawningAfterLoad, ModExtension_ProjectileEffects extension, int ticksSinceLaunch)
-        {
-            if (this.stages != null)
-            {
-                int stageIndex = this.GetStageIndex(ticksSinceLaunch);
-                if (stageIndex > -1)
-                {
-                    this.stageConfig = extension.stages[stageIndex];
-                    this.stage = this.stages[stageIndex];
-                }
-            }
-        }
-
-        // Token: 0x060001CB RID: 459 RVA: 0x0000C8F2 File Offset: 0x0000AAF2
-        public int PostLaunch(ModExtension_ProjectileEffects extension, Vector3 origin, Vector3 destination)
-        {
-            this.InitializeStages(extension, origin, destination);
-            return this.totalFlightDuration;
-        }
-
-        // Token: 0x060001CC RID: 460 RVA: 0x0000C903 File Offset: 0x0000AB03
-        public void ExposeData()
-        {
-            Scribe_Values.Look<int>(ref this.totalFlightDuration, "totalFlightDuration", 0, false);
-            Scribe_Collections.Look<ProjectileFlightStage>(ref this.stages, "stages", LookMode.Undefined, Array.Empty<object>());
-        }
-
-        // Token: 0x060001CD RID: 461 RVA: 0x0000C930 File Offset: 0x0000AB30
-        public int GetStageIndex(int tick = 0)
-        {
-            if (this.stages != null)
-            {
-                for (int i = 0; i < this.stages.Count; i++)
-                {
-                    if (this.stages[i].duration < 0)
-                    {
-                        return i;
-                    }
-                    if (tick < this.stages[i].duration)
-                    {
-                        return i;
-                    }
-                    tick -= this.stages[i].duration;
-                }
-            }
-            return -1;
-        }
-
-        // Token: 0x060001CE RID: 462 RVA: 0x0000C9A0 File Offset: 0x0000ABA0
-        public void PreTick(ModExtension_ProjectileEffects extension, ProjectileEffectTracker effectTracker, int ticksSinceLaunch, bool activeTracking = false)
-        {
-            int ticksSinceStageStart = ticksSinceLaunch - this.stage.startingTick;
-            if (this.stage.duration > -1 && ticksSinceStageStart > this.stage.duration)
-            {
-                int stageIndex = this.GetStageIndex(ticksSinceLaunch);
-                if (stageIndex > -1)
-                {
-                    Vector3 previousDestination = this.stage.destination;
-                    this.stageConfig = extension.stages[stageIndex];
-                    this.stage = this.stages[stageIndex];
-                    SoundDef startSound = this.stageConfig.startSound;
-                    if (startSound != null)
-                    {
-                        startSound.PlayOneShot(new TargetInfo(this.parent.Position, this.parent.Map, false));
-                    }
-                    if (activeTracking && previousDestination != default(Vector3))
-                    {
-                        this.stage.origin = previousDestination;
-                    }
-                }
-            }
-            if (activeTracking && this.stageConfig != null && (this.stageConfig.type == ProjectileStageType.Cruise || this.stageConfig.type == ProjectileStageType.Terminal))
-            {
-                this.stage.destination = effectTracker.destination + ProjectileUtility.CalculateStagePositionOffset(this.stageConfig, this.stage.origin, effectTracker.destination);
-            }
-        }
-
-        // Token: 0x060001CF RID: 463 RVA: 0x0000CACE File Offset: 0x0000ACCE
-        public void Tick(Map map, ModExtension_ProjectileEffects extension)
-        {
-        }
-
-        // Token: 0x060001D0 RID: 464 RVA: 0x0000CAD0 File Offset: 0x0000ACD0
-        private void InitializeStages(ModExtension_ProjectileEffects extension, Vector3 origin, Vector3 destination)
-        {
-            Vector3 start = origin;
-            float startHeight = 0f;
-            this.stages = new List<ProjectileFlightStage>(extension.stages.Count);
-            int i = 0;
-            while (i < extension.stages.Count)
-            {
-                ProjectileStageConfiguration stageConfig = extension.stages[i];
-                Vector3 end;
-                float endHeight;
-                switch (stageConfig.type)
-                {
-                    case ProjectileStageType.Launch:
-                        end = start;
-                        end += ProjectileUtility.CalculateStagePositionOffset(stageConfig, start, destination);
-                        startHeight = stageConfig.initialHeight;
-                        endHeight = stageConfig.heightOffset;
-                        break;
-                    case ProjectileStageType.Cruise:
-                        end = destination + ProjectileUtility.CalculateStagePositionOffset(stageConfig, start, destination);
-                        endHeight = stageConfig.heightOffset;
-                        break;
-                    case ProjectileStageType.Terminal:
-                        goto IL_8E;
-                    default:
-                        goto IL_8E;
-                }
-            IL_97:
-                int stageDuration;
-                if (stageConfig.duration > -1)
-                {
-                    stageDuration = stageConfig.duration;
-                }
-                else
-                {
-                    stageDuration = Mathf.CeilToInt((end - start).MagnitudeHorizontal() / stageConfig.TilesPerTick);
-                }
-                this.stages.Add(new ProjectileFlightStage
-                {
-                    origin = start,
-                    destination = end,
-                    startingTick = this.totalFlightDuration,
-                    startingHeight = startHeight,
-                    endingHeight = endHeight,
-                    distance = (end - start).MagnitudeHorizontal(),
-                    duration = stageDuration
-                });
-                this.totalFlightDuration += stageDuration;
-                start = end;
-                startHeight = endHeight;
-                i++;
-                continue;
-            IL_8E:
-                end = destination;
-                endHeight = 0f;
-                goto IL_97;
-            }
-            this.stageConfig = extension.stages[0];
-            this.stage = this.stages[0];
-            SoundDef startSound = this.stageConfig.startSound;
-            if (startSound == null)
-            {
-                return;
-            }
-            startSound.PlayOneShot(new TargetInfo(this.parent.Position, this.parent.Map, false));
-        }
-
-        // Token: 0x04000233 RID: 563
-        private readonly Thing parent;
-
-        // Token: 0x04000234 RID: 564
-        public List<ProjectileFlightStage> stages;
-
-        // Token: 0x04000235 RID: 565
-        public ProjectileFlightStage stage;
-
-        // Token: 0x04000236 RID: 566
-        public ProjectileStageConfiguration stageConfig;
-
-        // Token: 0x04000237 RID: 567
-        public int totalFlightDuration;
-
-        // Token: 0x04000238 RID: 568
-        public bool impacted;
-    }
-}
 
 namespace NCL.Projectiles
 {
@@ -567,53 +77,10 @@ namespace NCL.Projectiles
             return modifiedList;
         }
 
-        // Token: 0x060001E0 RID: 480 RVA: 0x0000D0E8 File Offset: 0x0000B2E8
-        public static Vector3 CalculateStagePositionOffset(ProjectileStageConfiguration stage, Vector3 origin, Vector3 destination)
-        {
-            Vector3 position = Vector3.zero;
-            if (stage.positionOffset != Vector3.zero & stage.alignPositionWithDestination)
-            {
-                position += ((destination == origin) ? Quaternion.identity : Quaternion.LookRotation(destination - origin)) * stage.positionOffset;
-            }
-            else
-            {
-                position += stage.positionOffset;
-            }
-            return position;
-        }
-
         // Token: 0x060001E1 RID: 481 RVA: 0x0000D154 File Offset: 0x0000B354
         public static void CalculateExactPosition(Thing projectile, ProjectileEffectTracker effects, Vector3 origin, Vector3 destination, float progress)
         {
-            float effectiveProgress = (effects.progress == null) ? progress : effects.progress(progress);
-            effects.currentExactPosition = Vector3.Lerp(origin, destination, effectiveProgress);
-            if (effects.lateralOffsetMagnitude != 0f && effects.lateralOffset != null)
-            {
-                effects.currentExactPosition += effects.destinationRotation * new Vector3(effects.lateralOffsetMagnitude * effects.lateralOffset(progress), 0f);
-            }
-            effects.currentVisualHeight = ((effects.arcFactor > 0f && effects.height != null) ? (effects.arcFactor * effects.height(progress)) : 0f);
-            effects.currentVisualPosition = effects.currentExactPosition;
-            effects.currentVisualPosition.y = projectile.def.Altitude;
-            effects.currentVisualPosition.z = effects.currentVisualPosition.z + effects.currentVisualHeight;
-        }
-
-        // Token: 0x060001E2 RID: 482 RVA: 0x0000D248 File Offset: 0x0000B448
-        public static void CalculateExactPosition(Thing projectile, ProjectileEffectTracker effects, ProjectileStagingTracker staging, int ticksSinceLaunch)
-        {
-            float stageProgress = (float)(ticksSinceLaunch - staging.stage.startingTick) / (float)staging.stage.duration;
-            if (staging.stageConfig.progress != null)
-            {
-                stageProgress = staging.stageConfig.progress(stageProgress);
-            }
-            effects.currentExactPosition = Vector3.Lerp(staging.stage.origin, staging.stage.destination, (staging.stageConfig.position == null) ? stageProgress : staging.stageConfig.position(stageProgress));
-            effects.currentVisualHeight = Mathf.Lerp(staging.stage.startingHeight, staging.stage.endingHeight, staging.stageConfig.height(stageProgress));
-            if (staging.stageConfig.arcFactor != 0f && staging.stageConfig.arc != null)
-            {
-                effects.currentVisualHeight += staging.stageConfig.arcFactor * staging.stageConfig.arc(stageProgress);
-            }
-            effects.currentVisualPosition = effects.currentExactPosition;
-            effects.currentVisualPosition.y = projectile.def.Altitude;
-            effects.currentVisualPosition.z = effects.currentVisualPosition.z + effects.currentVisualHeight;
+            HighArcTrajectory.Apply(effects, projectile, origin, destination, progress);
         }
 
         // Token: 0x060001E3 RID: 483 RVA: 0x0000D384 File Offset: 0x0000B584
@@ -658,38 +125,6 @@ namespace NCL.Projectiles
             effects.currentVisualAngle = effects.currentVisualRotation.eulerAngles.y;
         }
 
-        // Token: 0x060001E5 RID: 485 RVA: 0x0000D490 File Offset: 0x0000B690
-        public static void CalculateExactRotation(Thing projectile, ProjectileEffectTracker effects, ProjectileStagingTracker staging, ModExtension_ProjectileEffects effectsExtension, int ticksSinceLaunch)
-        {
-            if (effectsExtension != null)
-            {
-                if (effectsExtension.fixedRotation)
-                {
-                    effects.currentVisualAngle = 0f;
-                    effects.currentVisualRotation = Quaternion.identity;
-                    return;
-                }
-                if (effectsExtension.rotationRate != 0f)
-                {
-                    effects.currentVisualAngle = effectsExtension.rotationRate * (float)effects.ticksSinceLaunch / 60f;
-                    effects.currentVisualRotation = Quaternion.AngleAxis(effects.currentVisualAngle, Vector3.up);
-                    return;
-                }
-            }
-            if (effects.previousVisualPosition != effects.currentVisualPosition)
-            {
-                effects.currentVisualRotation = Quaternion.LookRotation(effects.currentVisualPosition - effects.previousVisualPosition);
-                effects.currentVisualAngle = effects.currentVisualRotation.eulerAngles.y;
-                return;
-            }
-            if (staging.stageConfig.overrideInitialAngle)
-            {
-                effects.currentVisualAngle = staging.stageConfig.angle;
-                effects.currentVisualRotation = Quaternion.Euler(0f, effects.currentVisualAngle, 0f);
-                return;
-            }
-        }
-
         // Token: 0x060001E6 RID: 486 RVA: 0x0000D57D File Offset: 0x0000B77D
         public static void DrawProjectileMesh(Projectile projectile, ProjectileEffectTracker effects)
         {
@@ -699,7 +134,14 @@ namespace NCL.Projectiles
         // Token: 0x060001E7 RID: 487 RVA: 0x0000D5B4 File Offset: 0x0000B7B4
         public static void DrawShadow(Projectile projectile, ProjectileEffectTracker effects, Material shadowMaterial)
         {
-            float heightFactor = effects.currentVisualHeight / projectile.def.projectile.arcHeightFactor;
+            float heightFactor = 0f;
+            if (effects.currentVisualHeight > 0f)
+            {
+                float z0 = effects.origin.z;
+                float z1 = effects.destination.z;
+                float maxLift = HighArcTrajectory.ResolveApexZ(z0, z1, projectile.def) - (z0 + z1) * 0.5f;
+                heightFactor = maxLift > 0.001f ? Mathf.Clamp01(effects.currentVisualHeight / maxLift) : 0f;
+            }
             float num = projectile.def.projectile.shadowSize * 2f * heightFactor;
             Vector3 s = new Vector3(num, 1f, num);
             Vector3 vector = new Vector3(0f, -0.01f, 0f);
@@ -830,7 +272,7 @@ namespace NCL.Projectiles
                 return;
             }
             WeaponWithAttachments weapon = equipment as WeaponWithAttachments;
-            if (weapon != null)
+            if (weapon != null && this.effectExtension != null)
             {
                 ModExtension_WeaponAttachments attachmentExtension = weapon.AttachmentExtension;
                 if (attachmentExtension != null)
@@ -864,7 +306,7 @@ namespace NCL.Projectiles
             this.destination = destination;
             this.fullVector = (destination - origin).Yto0();
             this.destinationRotation = ((this.fullVector == Vector3.zero) ? Quaternion.identity : Quaternion.LookRotation(this.fullVector));
-            if (calculatePositionImmediately)
+            if (calculatePositionImmediately && this.parent is not Projectile_HighArcExplosiveBase)
             {
                 ProjectileUtility.CalculateExactPosition(this.parent, this, origin, destination, 0f);
                 ProjectileUtility.CalculateExactRotation(this.parent, this, this.effectExtension, origin, destination, 0f);
@@ -914,6 +356,7 @@ namespace NCL.Projectiles
             Scribe_Values.Look<float>(ref this.previousVisualHeight, "previousVisualHeight", 0f, false);
             Scribe_Values.Look<Vector3>(ref this.currentExactPosition, "currentExactPosition", default(Vector3), false);
             Scribe_Values.Look<Vector3>(ref this.currentVisualPosition, "currentVisualPosition", default(Vector3), false);
+            Scribe_Values.Look<Vector3>(ref this.currentVisualOffset, "currentVisualOffset", default(Vector3), false);
             Scribe_Values.Look<float>(ref this.currentVisualHeight, "currentVisualHeight", 0f, false);
         }
 
@@ -1082,6 +525,8 @@ namespace NCL.Projectiles
         // Token: 0x04000191 RID: 401
         public Vector3 currentVisualPosition = Vector3.zero;
 
+        public Vector3 currentVisualOffset = Vector3.zero;
+
         // Token: 0x04000192 RID: 402
         public float currentVisualHeight;
 
@@ -1133,13 +578,6 @@ namespace NCL.Projectiles
                 {
                     this.lateralOffset = AnimationUtility.GetFunctionByName(this.lateralOffsetFunction, null);
                 }
-                if (this.stages != null)
-                {
-                    foreach (ProjectileStageConfiguration projectileStageConfiguration in this.stages)
-                    {
-                        projectileStageConfiguration.Initialize();
-                    }
-                }
                 this.hasImpactEffects = (!this.impactEffects.NullOrEmpty<EffectDef>() || !this.returnEffects.NullOrEmpty<EffectDef>());
             });
         }
@@ -1164,44 +602,6 @@ namespace NCL.Projectiles
             Vector3 result = this.originOffsets[incrementer++];
             ModExtension_ProjectileEffects.originIncrementers[thing.thingIDNumber] = incrementer;
             return result;
-        }
-
-        // Token: 0x060001AB RID: 427 RVA: 0x0000C1FC File Offset: 0x0000A3FC
-        public ProjectileStageConfiguration GetStageAt(int tick = 0)
-        {
-            if (this.stages != null)
-            {
-                foreach (ProjectileStageConfiguration stage in this.stages)
-                {
-                    if (stage.duration < 0)
-                    {
-                        return stage;
-                    }
-                    if (tick < stage.duration)
-                    {
-                        return stage;
-                    }
-                    tick -= stage.duration;
-                }
-            }
-            return null;
-        }
-
-        // Token: 0x060001AC RID: 428 RVA: 0x0000C278 File Offset: 0x0000A478
-        public int GetFlightTimeOffset()
-        {
-            int offset = 0;
-            if (this.stages != null)
-            {
-                foreach (ProjectileStageConfiguration stage in this.stages)
-                {
-                    if (stage.duration > -1)
-                    {
-                        offset += stage.duration;
-                    }
-                }
-            }
-            return offset;
         }
 
         // Token: 0x040001EE RID: 494
@@ -1285,161 +685,9 @@ namespace NCL.Projectiles
         // Token: 0x04000207 RID: 519
         public List<EffectDef> returnEffects;
 
-        // Token: 0x04000208 RID: 520
-        public List<ProjectileStageConfiguration> stages;
-
         // Token: 0x04000209 RID: 521
         [Unsaved(false)]
         public bool hasImpactEffects;
-    }
-}
-
-namespace NCL.Projectiles
-{
-    // Token: 0x02000053 RID: 83
-    public struct ProjectileFlightStage : IExposable
-    {
-        // Token: 0x060001D1 RID: 465 RVA: 0x0000CC88 File Offset: 0x0000AE88
-        public void ExposeData()
-        {
-            Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
-            Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
-            Scribe_Values.Look<int>(ref this.startingTick, "startingTick", 0, false);
-            Scribe_Values.Look<float>(ref this.startingHeight, "startingHeight", 0f, false);
-            Scribe_Values.Look<float>(ref this.endingHeight, "endingHeight", 0f, false);
-            Scribe_Values.Look<float>(ref this.distance, "distance", 0f, false);
-            Scribe_Values.Look<int>(ref this.duration, "duration", 0, false);
-        }
-
-        // Token: 0x04000239 RID: 569
-        public Vector3 origin;
-
-        // Token: 0x0400023A RID: 570
-        public Vector3 destination;
-
-        // Token: 0x0400023B RID: 571
-        public int startingTick;
-
-        // Token: 0x0400023C RID: 572
-        public float startingHeight;
-
-        // Token: 0x0400023D RID: 573
-        public float endingHeight;
-
-        // Token: 0x0400023E RID: 574
-        public float distance;
-
-        // Token: 0x0400023F RID: 575
-        public int duration;
-    }
-}
-
-namespace NCL.Projectiles
-{
-    // Token: 0x0200004D RID: 77
-    public enum ProjectileStageType
-    {
-        // Token: 0x0400020B RID: 523
-        Launch,
-        // Token: 0x0400020C RID: 524
-        Cruise,
-        // Token: 0x0400020D RID: 525
-        Terminal
-    }
-}
-
-namespace NCL.Projectiles
-{
-    // Token: 0x0200004E RID: 78
-    public class ProjectileStageConfiguration
-    {
-        // Token: 0x17000023 RID: 35
-        // (get) Token: 0x060001AF RID: 431 RVA: 0x0000C3D0 File Offset: 0x0000A5D0
-        public float TilesPerTick
-        {
-            get
-            {
-                return this.speed / 100f;
-            }
-        }
-
-        // Token: 0x060001B0 RID: 432 RVA: 0x0000C3E0 File Offset: 0x0000A5E0
-        public void Initialize()
-        {
-            this.progress = AnimationUtility.GetFunctionByName(this.progressFunction, AnimationUtility.Linear);
-            this.position = AnimationUtility.GetFunctionByName(this.positionFunction, AnimationUtility.Linear);
-            this.height = AnimationUtility.GetFunctionByName(this.heightFunction, AnimationUtility.Linear);
-            this.arc = AnimationUtility.GetFunctionByName(this.arcFunction, AnimationUtility.Sine);
-        }
-
-        // Token: 0x0400020E RID: 526
-        public string label;
-
-        // Token: 0x0400020F RID: 527
-        public ProjectileStageType type = ProjectileStageType.Terminal;
-
-        // Token: 0x04000210 RID: 528
-        public int duration = -1;
-
-        // Token: 0x04000211 RID: 529
-        public float speed = 5f;
-
-        // Token: 0x04000212 RID: 530
-        public bool overrideInitialAngle;
-
-        // Token: 0x04000213 RID: 531
-        public float angle;
-
-        // Token: 0x04000214 RID: 532
-        public bool activeTracking;
-
-        // Token: 0x04000215 RID: 533
-        public string progressFunction;
-
-        // Token: 0x04000216 RID: 534
-        public Func<float, float> progress;
-
-        // Token: 0x04000217 RID: 535
-        public Vector3 positionOffset = Vector3.zero;
-
-        // Token: 0x04000218 RID: 536
-        public string positionFunction;
-
-        // Token: 0x04000219 RID: 537
-        public Func<float, float> position;
-
-        // Token: 0x0400021A RID: 538
-        public bool alignPositionWithDestination = true;
-
-        // Token: 0x0400021B RID: 539
-        public float initialHeight;
-
-        // Token: 0x0400021C RID: 540
-        public float heightOffset;
-
-        // Token: 0x0400021D RID: 541
-        public string heightFunction;
-
-        // Token: 0x0400021E RID: 542
-        public Func<float, float> height;
-
-        // Token: 0x0400021F RID: 543
-        public float arcFactor;
-
-        // Token: 0x04000220 RID: 544
-        public string arcFunction;
-
-        // Token: 0x04000221 RID: 545
-        public Func<float, float> arc;
-
-        // Token: 0x04000222 RID: 546
-        public List<EffectDef> startEffects;
-
-        // Token: 0x04000223 RID: 547
-        public List<EffectDef> endEffects;
-
-        // Token: 0x04000224 RID: 548
-        public SoundDef startSound;
     }
 }
 

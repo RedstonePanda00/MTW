@@ -71,7 +71,6 @@ namespace TY_Mora_Gene_B.com
         private Vector3 lastTargetPos = Vector3.zero;
         private bool targetAcquired = false;
         private int losTargetCountdown = 0; // 丢失目标倒计时
-        private float currentTurnAngle = 0f; // 当前转向角度
 
         // 视觉效果
         private Vector2 tailDrawSize;

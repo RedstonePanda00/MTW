@@ -20,13 +20,13 @@ namespace NCLWorm
 
     private WormBody Body => this.parent as WormBody;
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       this._damageDef = this.Props.damageDef ?? DamageDefOf.Burn;
     }
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       if (this.Body == null || (double) this.Body.VentOpenFactor < (double) this.Props.activationThreshold || (Find.TickManager.TicksGame + ((Thing) this.parent).thingIDNumber) % this.Props.checkInterval != 0)
         return;

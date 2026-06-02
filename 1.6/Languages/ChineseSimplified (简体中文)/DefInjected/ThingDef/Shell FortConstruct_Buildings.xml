@@ -9,7 +9,7 @@
 
 
 <Building_PawnContainer.label>壳心堡垒</Building_PawnContainer.label>
-<Building_PawnContainer.comps.Comp_AloneDetonator.customCountdownText>Self-destruct countdown: {0} seconds</Building_PawnContainer.comps.Comp_AloneDetonator.customCountdownText>
+<Building_PawnContainer.comps.Comp_AloneDetonator.customCountdownText>自毁倒计时: {0}秒</Building_PawnContainer.comps.Comp_AloneDetonator.customCountdownText>
 
 
 <Building_PawnContainerForged.label>壳心堡垒</Building_PawnContainerForged.label>

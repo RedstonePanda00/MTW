@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	
-	<!-- 战争巨蝎 -->
+	<!-- War scorpion -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="NCL_Mech_Scorpion"]/statBases</xpath>
 		<value>
@@ -22,7 +22,7 @@
 		</value>
 	</Operation>
 	
-	<!-- 闪光西瓜虫 -->
+	<!-- Glowing pillbug -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="NCL_Mech_PillBug"]/statBases</xpath>
 		<value>
@@ -43,7 +43,7 @@
 		</value>
 	</Operation>
 
-		<!-- 机械兰螳 -->
+		<!-- Orchid mantis -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="NCL_Mech_Mantis"]/statBases</xpath>
 		<value>
@@ -52,8 +52,8 @@
       <MoveSpeed>5.4</MoveSpeed>
       <ArmorRating_Blunt>1.45</ArmorRating_Blunt>
 	  <EMPResistance>0.8</EMPResistance>
-			<IncomingDamageFactor>0.80</IncomingDamageFactor><!--受到伤害乘数-->
-			<StaggerDurationFactor>0.5</StaggerDurationFactor><!--抑止时间系数-->
+			<IncomingDamageFactor>0.80</IncomingDamageFactor><!-- incoming damage factor -->
+			<StaggerDurationFactor>0.5</StaggerDurationFactor><!-- stagger duration factor -->
       <ArmorRating_Sharp>1.45</ArmorRating_Sharp>
 	  <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
       <PsychicSensitivity>0</PsychicSensitivity>
@@ -66,7 +66,7 @@
 		</value>
 	</Operation>
 
-			<!-- 静巢构体 -->
+			<!-- Static nest construct (Doxa) -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="TW_Mech_Doxa"]/statBases</xpath>
 		<value>
@@ -88,7 +88,7 @@
 		</value>
 	</Operation>
  
- 			<!-- 裂壳蛛 -->
+ 			<!-- Shellsplitter spider -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="TW_Mech_Shellsplitter_Spider"]/statBases</xpath>
 		<value>
@@ -138,7 +138,7 @@
 		</value>
 	</Operation>
 
-		<!-- 壳堡构体敌对模式 -->
+		<!-- Fortified shell construct (hostile) -->
 	    <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="TW_Mech_Shell_Fortification"]/statBases</xpath>
 		<value>
@@ -160,7 +160,7 @@
 		</value>
 	</Operation>
 
-			<!-- 壳堡构体破壳mon -->
+			<!-- Fortified shell construct (shell break form) -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="TW_Mech_Shell_Fortification_ShellBreakFormed"]/statBases</xpath>
 		<value>
@@ -182,7 +182,7 @@
 		</value>
 	</Operation>
 
-				<!-- 测频 -->
+				<!-- Praetor tuning -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="TW_Mech_Praetor"]/statBases</xpath>
 		<value>
@@ -203,7 +203,7 @@
 		</value>
 	</Operation>
 
-  				<!-- 测频 -->
+  				<!-- Praetor tuning -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="TW_Mech_Praetor"]/comps</xpath>
 		<value>
@@ -239,7 +239,7 @@
 		</value>
 	</Operation>
 
-			<!-- 特斯拉蜈蚣 -->
+			<!-- Tesla centipede -->
     <Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="TW_Mech_MechTeslaCentipede"]/statBases</xpath>
 		<value>

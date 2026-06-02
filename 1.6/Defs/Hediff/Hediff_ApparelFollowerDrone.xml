@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>NCL_Hediff_ApparelDrone_PointDefense</defName>
+    <label>NCL follower drone</label>
+    <description>Internal state for a backpack-mounted follower drone. Removed when the apparel is unequipped.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 0.6)</defaultLabelColor>
+    <isBad>false</isBad>
+    <makesAlert>false</makesAlert>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>0.5</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="NCL.HediffCompProperties_FollowerDroneInterceptGround">
+        <scanIntervalTicks>15</scanIntervalTicks>
+        <interceptCooldownTicks>180</interceptCooldownTicks>
+        <interceptRadiusCells>6</interceptRadiusCells>
+        <debugLog>true</debugLog>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

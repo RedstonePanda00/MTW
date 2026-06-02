@@ -37,7 +37,7 @@ namespace NCLWorm
       }
     }
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       if (this._lockedTarget != null)
@@ -45,7 +45,7 @@ namespace NCLWorm
       this._lockedTarget = this.FindBestTargetGlobal();
     }
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       ++this._ticksSinceLastScan;
@@ -131,7 +131,7 @@ namespace NCLWorm
         this._lockedTarget = bestTargetGlobal;
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_References.Look<Thing>(ref this._lockedTarget, "lockedTarget", false);

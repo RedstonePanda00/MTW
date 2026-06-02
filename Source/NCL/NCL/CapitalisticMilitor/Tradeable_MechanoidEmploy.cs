@@ -15,23 +15,23 @@ namespace NCL
   {
     private int _countToTransfer;
 
-    public virtual bool IsFavor => false;
+    public override bool IsFavor => false;
 
-    public virtual bool IsCurrency => false;
+    public override bool IsCurrency => false;
 
-    public virtual bool IsThing => false;
+    public override bool IsThing => false;
 
-    public virtual Thing AnyThing => (Thing) null;
+    public override Thing AnyThing => (Thing) null;
 
-    public virtual bool TraderWillTrade => true;
+    public override bool TraderWillTrade => true;
 
-    public virtual bool Interactive => true;
+    public override bool Interactive => true;
 
-    public virtual AcceptanceReport UnderflowReport() => new AcceptanceReport();
+    public override AcceptanceReport UnderflowReport() => new AcceptanceReport();
 
-    public virtual AcceptanceReport OverflowReport() => new AcceptanceReport();
+    public override AcceptanceReport OverflowReport() => new AcceptanceReport();
 
-    public virtual string Label
+    public override string Label
     {
       get
       {
@@ -41,13 +41,13 @@ namespace NCL
       }
     }
 
-    public virtual string TipDescription => "用零部件购买机械单位的服务时间";
+    public override string TipDescription => "用零部件购买机械单位的服务时间";
 
-    public virtual int CostToInt(float cost) => Mathf.CeilToInt(cost);
+    public override int CostToInt(float cost) => Mathf.CeilToInt(cost);
 
     public override int CountHeldBy(Transactor trans) => trans != Transactor.Trader ? 0 : 99999;
 
-    public virtual int GetHashCode() => -51;
+    public override int GetHashCode() => -51;
 
     public override void ResolveTrade()
     {
@@ -78,7 +78,7 @@ namespace NCL
       }
     }
 
-    public virtual void ExposeData()
+    public override void ExposeData()
     {
       base.ExposeData();
       Scribe_Values.Look<int>(ref this._countToTransfer, "_countToTransfer", 0, false);

@@ -46,7 +46,7 @@ namespace NCLWorm
       this.Anchor = (Thing) null;
     }
 
-    public virtual void SpawnSetup(Map map, bool respawningAfterLoad)
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
       base.SpawnSetup(map, respawningAfterLoad);
       this._timeLeft = 2;
@@ -58,7 +58,7 @@ namespace NCLWorm
       this._hazeColor = modExtension.hazeColor;
     }
 
-    public virtual void Destroy(DestroyMode mode = 0)
+    public override void Destroy(DestroyMode mode = 0)
     {
       if (this._viewMesh != null)
       {
@@ -68,7 +68,7 @@ namespace NCLWorm
       base.Destroy(mode);
     }
 
-    protected virtual void Tick()
+    protected override void Tick()
     {
       if (this.IsInPool)
         return;
@@ -124,7 +124,7 @@ namespace NCLWorm
       this._timeLeft = 2;
     }
 
-    protected virtual void DrawAt(Vector3 drawLoc, bool flip = false)
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
       if (this.IsInPool || this.Anchor == null || !this._hasInitializedPos || this.Anchor is WormBody anchor && (double) anchor.CurrentAnimateFactor < 0.20000000298023224)
         return;

@@ -30,7 +30,7 @@ namespace TowerLaserDefense
 
     public Thing Thing => (Thing) this.parent;
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       LaserDefenceCore.Instances.Add(this.DefenceCore);
       if (LaserDefenceCore.LaserDefenceLoggingEnabled)
@@ -39,13 +39,12 @@ namespace TowerLaserDefense
       }
     }
 
-    public virtual void PostDeSpawn() => LaserDefenceCore.Instances.Remove(this.DefenceCore);
-
-    public virtual void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
+      LaserDefenceCore.Instances.Remove(this.DefenceCore);
       if (this.core != null && LaserDefenceCore.Instances.Contains(this.core))
         LaserDefenceCore.Instances.Remove(this.core);
-      this.PostDeSpawn(map, (DestroyMode) 0);
+      base.PostDeSpawn(map, mode);
     }
 
     private bool HasEnoughPowerToFire()
@@ -53,7 +52,7 @@ namespace TowerLaserDefense
       return !this.Props.laserDefenceProperties.requiresPower || !this.Props.laserDefenceProperties.enablePowerConsumption || this.Power == null || this.DefenceCore.HasEnoughPowerToFire();
     }
 
-    public virtual string CompInspectStringExtra()
+    public override string CompInspectStringExtra()
     {
       string str = base.CompInspectStringExtra();
       string powerInfoString = this.GetPowerInfoString();
@@ -86,14 +85,14 @@ namespace TowerLaserDefense
 
     private CompPowerTrader Power => this.parent.GetComp<CompPowerTrader>();
 
-    public virtual void PostDestroy(DestroyMode mode, Map previousMap)
+    public override void PostDestroy(DestroyMode mode, Map previousMap)
     {
       if (this.core != null && LaserDefenceCore.Instances.Contains(this.core))
         LaserDefenceCore.Instances.Remove(this.core);
       base.PostDestroy(mode, previousMap);
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       Scribe_Deep.Look<LaserDefenceCore>(ref this.core, "CompLaserDefence_core", new object[2]
       {
@@ -105,7 +104,7 @@ namespace TowerLaserDefense
       this.core.DetectionEnabled = false;
     }
 
-    public virtual void PostDrawExtraSelectionOverlays()
+    public override void PostDrawExtraSelectionOverlays()
     {
       GenDraw.DrawRadiusRing(((Thing) this.parent).Position, this.Props.laserDefenceProperties.range);
     }
@@ -146,7 +145,7 @@ namespace TowerLaserDefense
       this.DefenceCore.ToggleDetection();
     }
 
-    public virtual IEnumerable<Gizmo> CompGetGizmosExtra()
+    public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
       foreach (Gizmo gizmo in base.CompGetGizmosExtra())
         yield return gizmo;
@@ -162,7 +161,7 @@ namespace TowerLaserDefense
       }
     }
 
-    public virtual void PostDraw()
+    public override void PostDraw()
     {
       this.DefenceCore.DrawAt(GenThing.TrueCenter((Thing) this.parent));
     }

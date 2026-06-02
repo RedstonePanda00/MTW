@@ -22,7 +22,7 @@ namespace NCLWorm
     private int _age;
     private static MaterialPropertyBlock _mpb;
 
-    public virtual void SpawnSetup(Map map, bool respawningAfterLoad)
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
       base.SpawnSetup(map, respawningAfterLoad);
       this._age = 0;
@@ -35,7 +35,7 @@ namespace NCLWorm
       this._horizonRimColor = modExtension.horizonRimColor;
     }
 
-    protected virtual void Tick()
+    protected override void Tick()
     {
       ++this._age;
       if (this._age < this.Duration)
@@ -43,7 +43,7 @@ namespace NCLWorm
       this.Destroy((DestroyMode) 0);
     }
 
-    protected virtual void DrawAt(Vector3 drawLoc, bool flip = false)
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
       if (ExoRedPortal._mpb == null)
         ExoRedPortal._mpb = new MaterialPropertyBlock();

@@ -71,7 +71,7 @@ namespace NCLWorm
 
     public TCP_WormDecisionController Props => (TCP_WormDecisionController) this.props;
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       if (!respawningAfterLoad && this._ticksUntilDespawn == -2)
@@ -87,7 +87,7 @@ namespace NCLWorm
         this._currentPhase.OnEnter(this);
     }
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       if (this._currentPhase == null)
@@ -250,7 +250,7 @@ namespace NCLWorm
       this._activeTargetMote = (Mote) null;
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Values.Look<int>(ref this._ticksUntilDespawn, "ticksUntilDespawn", -2, false);

@@ -89,7 +89,7 @@
 </BodyPartDef>
 
     <BodyPartDef Abstract="True" Name="Doxa0Dorsal">
-    <labelShort>背壳节</labelShort>
+    <labelShort>Dorsal shell segment</labelShort>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>
@@ -127,7 +127,7 @@
 
 <BodyDef>
   <defName>Doxa0Body</defName>
-  <label>静巢构体 Doxa-0</label>
+  <label>Static nest construct Doxa-0</label>
   <corePart>
     <def>Doxa0_Dorsal_First</def>
     <height>Middle</height>
@@ -157,7 +157,7 @@
                   
                   <li>
                     <def>Doxa0_DeepLogic_NeuronCore</def>
-                    <customLabel>深层逻辑核</customLabel>
+                    <customLabel>Deep logic core</customLabel>
                     <coverage>0.05</coverage>
                     <depth>Inside</depth>
                   </li>
@@ -171,17 +171,17 @@
       
       <li>
         <def>Doxa0_Turret_Mount</def>
-        <customLabel>反粒子炮架</customLabel>
+        <customLabel>Antiparticle turret mount</customLabel>
         <coverage>0.12</coverage>
         <parts>
           <li>
             <def>Doxa0_AntiParticleEmitter</def>
-            <customLabel>反粒子发射口</customLabel>
+            <customLabel>Antiparticle emitter port</customLabel>
             <coverage>0.20</coverage>
           </li>
           <li>
             <def>Doxa0_FireControlModule</def>
-            <customLabel>火控核心单元</customLabel>
+            <customLabel>Fire control core unit</customLabel>
             <coverage>0.08</coverage>
             <depth>Inside</depth>
           </li>
@@ -191,21 +191,21 @@
       
       <li>
         <def>Doxa0_Hatch_Module</def>
-        <customLabel>裂壳蛛孵化腔</customLabel>
+        <customLabel>Shellsplitter incubation chamber</customLabel>
         <coverage>0.10</coverage>
       </li>
 
       
       <li>
         <def>Doxa0_Sensor_Cluster</def>
-        <customLabel>前端感知阵列</customLabel>
+        <customLabel>Forward sensor array</customLabel>
         <coverage>0.08</coverage>
       </li>
 
       
       <li>
         <def>Doxa0_LimbCluster</def>
-        <customLabel>多爪推进组</customLabel>
+        <customLabel>Multi-claw propulsion cluster</customLabel>
         <coverage>0.10</coverage>
       </li>
     </parts>

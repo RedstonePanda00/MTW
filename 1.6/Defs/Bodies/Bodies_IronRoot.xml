@@ -27,22 +27,22 @@
             </li>
             <li>
               <def>ThermalSensor</def>
-              <customLabel>热感阵列：左</customLabel>
+              <customLabel>Thermal array (left)</customLabel>
               <coverage>0.13</coverage>
             </li>
             <li>
               <def>ThermalSensor</def>
-              <customLabel>热感阵列：右</customLabel>
+              <customLabel>Thermal array (right)</customLabel>
               <coverage>0.13</coverage>
             </li>
             <li>
               <def>HydraulicCrusher</def>
-              <customLabel>液压粉碎器：一</customLabel>
+              <customLabel>Hydraulic crusher I</customLabel>
               <coverage>0.10</coverage>
             </li>
             <li>
               <def>HydraulicCrusher</def>
-              <customLabel>液压粉碎器：二</customLabel>
+              <customLabel>Hydraulic crusher II</customLabel>
               <coverage>0.10</coverage>
             </li>
             <li>
@@ -111,7 +111,7 @@
         
         <li>
           <def>InfernoEmitter</def>
-          <customLabel>焚城辐射阵列</customLabel>
+          <customLabel>City-burner radiation array</customLabel>
           <coverage>0.05</coverage>
           <groups>
             <li>InfernoSystem</li>
@@ -232,7 +232,7 @@
   </BodyPartDef>
   
 <BodyPartDef Abstract="True" Name="IronbarkDorsalBase">
-    <labelShort>铁木主干基座</labelShort>
+    <labelShort>Ironbark trunk base</labelShort>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
     <solid>true</solid>

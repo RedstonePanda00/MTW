@@ -427,6 +427,7 @@ namespace NCL.Worm
 
         public int amount = 80;           // ????
         public float armorPenetration = 1f; // ????
+        public List<DamageDef> excludedDamageTypes;
 
         // ?????????????
         [Unsaved]
@@ -461,9 +462,21 @@ namespace NCL.Worm
             Scribe_Values.Look(ref absorbedTime, "absorbedTime");
             Scribe_Values.Look(ref boomTime, "boomTime");
         }
+        private const string OrbitalPrecisionDirectHitDefName = "MTW_OrbitalPrecisionDirectHit";
+
         public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             base.PostPreApplyDamage(ref dinfo, out absorbed);
+            if (absorbed || ShouldBypassAbsorb(dinfo))
+            {
+                if (boomTime <= 0)
+                {
+                    TriggerRetaliatoryExplosion();
+                }
+
+                return;
+            }
+
             if (absorbedTime <= 0)
             {
                 absorbed = true;
@@ -471,9 +484,24 @@ namespace NCL.Worm
             }
             if (boomTime <= 0)
             {
-                GenExplosion.DoExplosion(parent.Position, parent.Map, Props.radius, Props.damageDef, parent, Props.amount, Props.armorPenetration, null, null, null, null, null, 0, 1, null, null, 255, false, null, 0, 1, 0, false, null, new List<Thing> { parent });
-                boomTime = 60;
+                TriggerRetaliatoryExplosion();
             }
+        }
+
+        private bool ShouldBypassAbsorb(DamageInfo dinfo)
+        {
+            if (dinfo.Def?.defName == OrbitalPrecisionDirectHitDefName)
+            {
+                return true;
+            }
+
+            return Props.excludedDamageTypes != null && Props.excludedDamageTypes.Contains(dinfo.Def);
+        }
+
+        private void TriggerRetaliatoryExplosion()
+        {
+            GenExplosion.DoExplosion(parent.Position, parent.Map, Props.radius, Props.damageDef, parent, Props.amount, Props.armorPenetration, null, null, null, null, null, 0, 1, null, null, 255, false, null, 0, 1, 0, false, null, new List<Thing> { parent });
+            boomTime = 60;
         }
 
     }
@@ -667,7 +695,7 @@ namespace NCL.Worm
         // ??????
         private void ApplyCrushDamage(Pawn attacker, Pawn target)
         {
-            // ??????? (?????? × ????)
+            // ??????? (?????? ï¿½ ????)
             float baseDamage = GetAveragePartHealth(target) * Props.damageFactor;
 
             // ????????? (IncomingDamageFactor)

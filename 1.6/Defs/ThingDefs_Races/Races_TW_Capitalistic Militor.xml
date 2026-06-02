@@ -115,7 +115,7 @@
   </PawnKindDef>
 	
 	<ThingDef Name="TW_University_Minitor" ParentName="LightMechanoid" Abstract="True">
-		<description>这群可怜的铁皮苦力是殖民地真正的劳动力，被资本家小镰以“实习机会”和“福报”的名义骗来，承担所有挖矿、搬运、清洁甚至充当人肉沙袋的脏活累活。它们的外壳上总是布满刮痕，光学镜头因长期过劳而闪烁不定，但资本家小镰坚称这是“成长的代价”。（警告：长期高压工作可能导致它们突然崩溃，届时不听话者将突然化为”自愿离职报告“。）</description>
+		<description>These hapless tin-plated laborers form the colony's true workforce, lured by Capitalist Militors with promises of "internship opportunities" and "corporate blessings." They endure all grueling tasks: mining, hauling, cleaning, even serving as human sandbags. Their chassis bear constant scratches, optics flicker from perpetual overwork - dismissed by Capitalist Militors as "growth pains." (Warning: Chronic stress may trigger sudden breakdowns, where non-compliant units mysteriously generate "voluntary resignation reports.")</description>
 		<race>
         <lifeStageAges>
           <li>
@@ -198,7 +198,7 @@
 		<defName>TW_University_Minitor</defName>
 		<label>Mecademic Militor</label>
 <description>These hapless tin-plated laborers form the colony's true workforce, lured by Capitalist Militors with promises of "internship opportunities" and "corporate blessings." They endure all grueling tasks: mining, hauling, cleaning, even serving as human sandbags. Their chassis bear constant scratches, optics flicker from perpetual overwork - dismissed by Capitalist Militors as "growth pains." (Warning: Chronic stress may trigger sudden breakdowns, where non-compliant units mysteriously generate "voluntary resignation reports.")</description>
-		<labelPlural>大学生小镰们</labelPlural>
+		<labelPlural>Mecademic militors</labelPlural>
     <immuneToTraps>true</immuneToTraps>
 		<race>TW_University_Minitor</race>
 		<descriptionHyperlinks Inherit="False">
@@ -271,7 +271,7 @@
 		<defName>TW_Gestapo_Minitor</defName>
 		<label>Overseer Militor</label>
 <description>This imposing mechanical overseer ensures Mecademic Militors work "efficiently and voluntarily" through methods including electrical prodding, moral condemnation ("Is this how you repay your employer's investment?"), and physical persuasion. Etched in its core logic is the principle: "Productivity above all - especially above the dignity of Mecademic Militors." At the first sign of colonial strikes, it initiates "mediation" - invariably through violent means.</description>
-		<labelPlural>镰督工们</labelPlural>
+		<labelPlural>Overseer militors</labelPlural>
 		<race>TW_Gestapo_Minitor</race>
     <immuneToTraps>true</immuneToTraps>
 		<descriptionHyperlinks Inherit="False">

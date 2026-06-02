@@ -3,8 +3,8 @@
   
   <AbilityDef ParentName="LongJumpMech">
     <defName>NCLJumpWithBomb</defName>
-    <label>重力突进</label>
-    <description>猛的跳向目标并以体重碾压对手</description>
+    <label>Gravitic slam</label>
+    <description>Leap at a target and crush them with mass.</description>
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
     <charges>1</charges>
@@ -40,8 +40,8 @@
   
   <AbilityDef ParentName="LongJumpMech">
     <defName>NCLBurrowAttack</defName>
-    <label>潜龙</label>
-    <description>从地下猛地钻出发出突击</description>
+    <label>Burrow strike</label>
+    <description>Erupt from underground for a sudden melee strike.</description>
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
     <charges>1</charges>
@@ -79,8 +79,8 @@
   
   <AbilityDef>
     <defName>NCLBeckon</defName>
-    <label>牵引</label>
-    <description>将目标用牵引至身侧.</description>
+    <label>Beckon</label>
+    <description>Pull the target to your side.</description>
     <cooldownTicksRange>6000</cooldownTicksRange>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
@@ -101,8 +101,8 @@
   
   <AbilityDef>
     <defName>NCLPush</defName>
-    <label>驱逐</label>
-    <description>将目标驱逐.</description>
+    <label>Expel</label>
+    <description>Force the target away.</description>
     <cooldownTicksRange>6000</cooldownTicksRange>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>

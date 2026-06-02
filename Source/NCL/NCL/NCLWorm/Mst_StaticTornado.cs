@@ -45,9 +45,9 @@ namespace NCLWorm
       }
     }
 
-    public virtual Vector2 DrawSize => new Vector2(45f, 100f);
+    public override Vector2 DrawSize => new Vector2(45f, 100f);
 
-    public virtual void ExposeData()
+    public override void ExposeData()
     {
       base.ExposeData();
       Scribe_Values.Look<Vector2>(ref this.realPosition, "realPosition", new Vector2(), false);
@@ -55,7 +55,7 @@ namespace NCLWorm
       Scribe_Values.Look<int>(ref this.leftFadeOutTicks, "leftFadeOutTicks", -1, false);
     }
 
-    public virtual void SpawnSetup(Map map, bool respawningAfterLoad)
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
       base.SpawnSetup(map, respawningAfterLoad);
       if (!respawningAfterLoad)
@@ -69,7 +69,7 @@ namespace NCLWorm
       this.CreateSustainer();
     }
 
-    protected virtual void Tick()
+    protected override void Tick()
     {
       if (!((Thing) this).Spawned)
         return;
@@ -113,7 +113,7 @@ namespace NCLWorm
       Messages.Message((Translator.Translate("MessageTornadoDissipated")), (new TargetInfo(((Thing) this).Position, ((Thing) this).Map, false)), MessageTypeDefOf.PositiveEvent, true);
     }
 
-    protected virtual void DrawAt(Vector3 drawLoc, bool flip = false)
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
       Rand.PushState();
       Rand.Seed = ((Thing) this).thingIDNumber;

@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+// Decompiled with JetBrains decompiler
 // Type: TowerLaserDefense.MainGameComponent
 // Assembly: TowerLaserDefense, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: D672ED81-8E05-4DF5-BFC2-02EBAE2446C3
@@ -15,7 +15,7 @@ namespace TowerLaserDefense
     {
     }
 
-    public virtual void FinalizeInit()
+    public override void FinalizeInit()
     {
       if (Current.ProgramState != 0)
         return;

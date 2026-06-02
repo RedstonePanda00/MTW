@@ -41,8 +41,9 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>TW_Guided_Rocket_Launcher_EMP</li>
-      <li>TW_Guided_Rocket_Launcher_HE</li>
+      <li>TW_MissileCentipede_Rocket_HE</li>
+      <li>TW_MissileCentipede_Rocket_EMP</li>
+      <li>TW_MissileCentipede_Rocket_FatCat</li>
     </weaponTags>
   </PawnKindDef>
   

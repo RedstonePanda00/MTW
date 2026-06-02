@@ -10,6 +10,8 @@
   <Turret_TW_AutoMortar.label>小型自动迫击炮</Turret_TW_AutoMortar.label>
   
   <Turret_TW_AutoMortar.description>A self-powered, self-loading, automatic mortar. It can hit targets at any distance, over walls, but is quite inaccurate.</Turret_TW_AutoMortar.description>
+
+  <Turret_TW_AutoMortar_EMP.label>小型自动迫击炮-EMP版</Turret_TW_AutoMortar_EMP.label>
   
   
   <TW_Shell_HighExplosive.label>high-explosive shell</TW_Shell_HighExplosive.label>

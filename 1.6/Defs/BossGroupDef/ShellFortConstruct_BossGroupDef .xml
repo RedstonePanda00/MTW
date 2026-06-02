@@ -259,7 +259,9 @@
         </escorts>
       </li>
     </waves>
-    <leaderDescription>『壳堡构体』是机械族中极为罕见的泰坦级单位，其体高二十米，身披多层金属混铸而成的庞大外壳，其设计理念结合了攻坚、压制与区域控制的多重战略目标，尤其擅长在敌方防线中撕裂缺口，并以绝对火力清扫战场残余。『壳堡构体』通常自天际坠落，重重地落在殖民地边缘，以“炮塔形态”进入待命状态，发射导弹引发局部地震和恐慌。与此同时，配属的机械族主力部队将从另一侧空投登陆，与其构成前后夹击态势，极大增强攻势张力。</leaderDescription>
+    <leaderDescription>Shell Fortification Construct (Shell_Fortconstruct) is an extremely rare titan-class unit among mechanoids, standing twenty meters tall and clad in massive armor composed of multiple layers of alien metals and alloy fragments, presenting an awe-inspiring presence. Its design philosophy combines multiple strategic objectives including siege warfare, suppression, and area control, excelling particularly at breaching enemy defensive lines and clearing battlefield remnants with absolute firepower.
+
+The Shell Fortification Construct typically descends from the sky, crashing heavily at the colony's periphery, entering a turret-mode standby state while launching missiles to cause localized earthquakes and panic. Simultaneously, attached mechanoid main forces will drop from the opposite side, forming pincer attack formations that dramatically intensify offensive pressure.</leaderDescription>
     <rewardDef>TW_ArmorBlitzWarfare</rewardDef>
   </BossgroupDef>
 

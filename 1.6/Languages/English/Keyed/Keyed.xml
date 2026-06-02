@@ -15,6 +15,9 @@
 <NCL.LaunchCondition>Launch Condition</NCL.LaunchCondition>
 <NCL.MustBeDisabledWhenActive>Cannot change while silo is active</NCL.MustBeDisabledWhenActive>
 
+<NCL.SwitchRocketMode>Switch warhead</NCL.SwitchRocketMode>
+<NCL.SwitchRocketModeDesc>Switch to: {0}</NCL.SwitchRocketModeDesc>
+
 <NCL.Condition.HighAngleOnly>Hostile High-Angle Projectiles Only</NCL.Condition.HighAngleOnly>
 <NCL.Condition.AnyEnemyThreat>Hostile Units or Projectiles</NCL.Condition.AnyEnemyThreat>
 
@@ -338,6 +341,11 @@ Tactical Tip: Build laser point defense against mortars.</NCL_Content_Page3>
   <NCLYouNewWorm>(Requires {0} days to rebuild)</NCLYouNewWorm>
   <NCLSradeShipCooldownTime>(CD: {0} days)</NCLSradeShipCooldownTime>
   <NCLYouWaitWorm>(Worm currently inbound)</NCLYouWaitWorm>
+
+  <!-- NCLCommsConsole: CompProperties_AuroraCaller gizmo -->
+  <NCL_AuroraCaller_GizmoLabel>Call Aurora</NCL_AuroraCaller_GizmoLabel>
+  <NCL_AuroraCaller_GizmoDesc>Open the Aurora courier panel to request orbital mechanoid drops.</NCL_AuroraCaller_GizmoDesc>
+
   <NCLYouInWar>(Currently in trial)</NCLYouInWar>
   <NoNCLWormCanSleep>(No mechanical worm on current map)</NoNCLWormCanSleep>
   <GoBackMuLu>(Return to previous)</GoBackMuLu>
@@ -375,7 +383,7 @@ Tactical Tip: Build laser point defense against mortars.</NCL_Content_Page3>
   
   <!-- 发射间隔按钮 - 英文 -->
   <NCL.LaunchInterval>Launch Interval: {0}s</NCL.LaunchInterval>
-  <NCL.LaunchIntervalDesc>Adjust time between missile launches (0.1-3.0 seconds)</NCL.LaunchIntervalDesc>
+  <NCL.LaunchIntervalDesc>Adjust time between missile launches (0.5-3.0 seconds)</NCL.LaunchIntervalDesc>
   
   <!-- 设置窗口 - 英文 -->
   <NCL.SetLaunchInterval>Set Launch Interval</NCL.SetLaunchInterval>
@@ -439,5 +447,170 @@ Tactical Tip: Build laser point defense against mortars.</NCL_Content_Page3>
   <!-- Mod settings UI tabs -->
   <NCL_SETTINGS_TAB_GENERAL>General</NCL_SETTINGS_TAB_GENERAL>
   <NCL_SETTINGS_TAB_STORYTELLER>Storyteller</NCL_SETTINGS_TAB_STORYTELLER>
+
+  <!-- Odyssey / CerebrexCore scan letter (CompUnlockResearch) -->
+  <NCL.Odyssey.CerebrexScanLetter.Label>Research breakthrough: archocortex</NCL.Odyssey.CerebrexScanLetter.Label>
+  <NCL.Odyssey.CerebrexScanLetter.Text>Your colonists finished scanning this ancient archocortex and unlocked the ability to rebuild it.</NCL.Odyssey.CerebrexScanLetter.Text>
+
+  <!-- NCL comms call panel -->
+  <NCL_CallPanel_Title>NCL Communications</NCL_CallPanel_Title>
+  <NCL_CallPanel_Contact>Contact</NCL_CallPanel_Contact>
+  <NCL_CallPanel_Aurora>Call Reinforcements</NCL_CallPanel_Aurora>
+  <NCL_CallPanel_DontTouch>dont toutch it</NCL_CallPanel_DontTouch>
+  <NCL_DiverIntro_Continue>Continue</NCL_DiverIntro_Continue>
+  <NCL_DiverIntro_Q0>Rimworld, our home. Prosperity, Liberity, Glory...Our way of life — but glory doesnt comes free...</NCL_DiverIntro_Q0>
+  <NCL_DiverIntro_A0>Oh no, glory above — a mechanoid hive!</NCL_DiverIntro_A0>
+  <NCL_DiverIntro_Q1>Ha, look familiar? This happens all across the Rimworld right now! You could be next...</NCL_DiverIntro_Q1>
+  <NCL_DiverIntro_A1>This is terrible, sir — what should I do?</NCL_DiverIntro_A1>
+  <NCL_DiverIntro_Q2>Unless you make the most important decision of your life... join... The Diver...!</NCL_DiverIntro_Q2>
+  <NCL_DiverIntro_A2>Hooray — I volunteer to join the diver!</NCL_DiverIntro_A2>
+  <NCL_DiverIntro_Q3>Request confirmed. Deploying diver to the colony.</NCL_DiverIntro_Q3>
+  <NCL_DiverIntro_A3>We embrace the glory of battle!</NCL_DiverIntro_A3>
+  <NCL_DiverIntro_DeploySuccess>Diver deployment complete: {0} drop pod(s) launched.</NCL_DiverIntro_DeploySuccess>
+  <NCL_DiverIntro_DeployAlreadyFull>Diver slots are full; the system is now enabled.</NCL_DiverIntro_DeployAlreadyFull>
+  <NCL_DiverIntro_DeployFailed>Could not launch drop pods. Check the map and stored power.</NCL_DiverIntro_DeployFailed>
+  <NCL_DiverIntro_InvalidMap>Comms console is not on a valid map.</NCL_DiverIntro_InvalidMap>
+  <NCL_CallPanel_Back>Back to main menu</NCL_CallPanel_Back>
+  <NCL_Typewriter_ClickToSkip>Click the text area to show the full message immediately.</NCL_Typewriter_ClickToSkip>
+  <NCL_Typewriter_WaitForText>Receiving transmission…</NCL_Typewriter_WaitForText>
+
+  <!-- Aurora panel localization -->
+  <NCL_AuroraIntro_Q1>……</NCL_AuroraIntro_Q1>
+  <NCL_AuroraIntro_A1_1>Hello? Is anyone there?</NCL_AuroraIntro_A1_1>
+  <NCL_AuroraIntro_A1_2>Broken?</NCL_AuroraIntro_A1_2>
+  <NCL_AuroraIntro_Q2>……I hear you.</NCL_AuroraIntro_Q2>
+  <NCL_AuroraIntro_A2_1>Fieldy said we can call for reinforcements on this channel.</NCL_AuroraIntro_A2_1>
+  <NCL_AuroraIntro_A2_2>We need reinforcements — we trade power for them, right?</NCL_AuroraIntro_A2_2>
+  <NCL_AuroraIntro_Q3>Of course. The printer still has capacity.</NCL_AuroraIntro_Q3>
+  <NCL_AuroraIntro_A3>Let's see what's available.</NCL_AuroraIntro_A3>
+  <NCL_AuroraPanel_Title>Aurora Drop Command</NCL_AuroraPanel_Title>
+  <NCL_AuroraPanel_InvalidMap>Comms console is not on a valid map.</NCL_AuroraPanel_InvalidMap>
+  <NCL_AuroraPanel_NoEntries>No Aurora drop entries are configured.</NCL_AuroraPanel_NoEntries>
+  <NCL_AuroraPanel_Count>Count: {0}</NCL_AuroraPanel_Count>
+  <NCL_AuroraPanel_PowerCost>Power Cost: {0} Wd</NCL_AuroraPanel_PowerCost>
+  <NCL_AuroraPanel_MapEnergy>Map Stored Battery Energy: {0} Wd</NCL_AuroraPanel_MapEnergy>
+  <NCL_AuroraPanel_DropButton>Drop</NCL_AuroraPanel_DropButton>
+  <NCL_AuroraPanel_InvalidTarget>Invalid target mechanoid defName or not a pawn ThingDef.</NCL_AuroraPanel_InvalidTarget>
+  <NCL_AuroraPanel_NotEnoughPower>Not enough power to execute the drop.</NCL_AuroraPanel_NotEnoughPower>
+  <NCL_AuroraPanel_PodOrMapInvalid>Drop pod def is missing or map is invalid.</NCL_AuroraPanel_PodOrMapInvalid>
+  <NCL_AuroraPanel_ContinuousModeStart>Continuous drop mode enabled: left click to choose a drop cell, right click to cancel.</NCL_AuroraPanel_ContinuousModeStart>
+  <NCL_AuroraPanel_InvalidDropCell>Invalid drop target cell.</NCL_AuroraPanel_InvalidDropCell>
+  <NCL_AuroraPanel_PausedCannotDrop>Game is paused. Unpause to continue continuous drops.</NCL_AuroraPanel_PausedCannotDrop>
+  <NCL_AuroraPanel_StopNoPower>Insufficient power, continuous drop mode ended.</NCL_AuroraPanel_StopNoPower>
+  <NCL_AuroraPanel_PodTypeMismatch>Drop pod type mismatch. Launch aborted.</NCL_AuroraPanel_PodTypeMismatch>
+  <NCL_AuroraPanel_StopAfterLaunchNoPower>Aurora drop launched. Power depleted, continuous drop mode ended.</NCL_AuroraPanel_StopAfterLaunchNoPower>
+  <NCL_AuroraPanel_LaunchSuccessContinue>Aurora drop launched. Left click to select the next drop cell.</NCL_AuroraPanel_LaunchSuccessContinue>
+
+  <!-- Diver panel localization -->
+  <NCL_DiverPanel_AliveCount>Global Alive: {0}/{1}</NCL_DiverPanel_AliveCount>
+  <NCL_DiverPanel_OccupiedSlots>Occupied Slots (including inbound pods): {0}/{1}</NCL_DiverPanel_OccupiedSlots>
+  <NCL_DiverPanel_EnergyPerUnit>Energy Per Diver: {0} Wd</NCL_DiverPanel_EnergyPerUnit>
+  <NCL_DiverPanel_MapEnergy>Map Stored Battery Energy: {0} Wd</NCL_DiverPanel_MapEnergy>
+  <NCL_DiverPanel_MaxSpawnNow>Maximum Spawn This Call: {0}</NCL_DiverPanel_MaxSpawnNow>
+  <NCL_DiverPanel_Status>Status: {0}</NCL_DiverPanel_Status>
+  <NCL_DiverPanel_StatusEnabled>Enabled</NCL_DiverPanel_StatusEnabled>
+  <NCL_DiverPanel_StatusDisabled>Disabled</NCL_DiverPanel_StatusDisabled>
+  <NCL_DiverPanel_SummonButton>Summon</NCL_DiverPanel_SummonButton>
+  <NCL_DiverPanel_ManagerUnavailable>Diver manager component is unavailable.</NCL_DiverPanel_ManagerUnavailable>
+  <NCL_DiverPanel_Full>Diver slots are full, cannot summon more.</NCL_DiverPanel_Full>
+  <NCL_DiverAutoReinforce_Launched>Automatic diver reinforcement launched: {0} pod(s).</NCL_DiverAutoReinforce_Launched>
+  <NCL_DiverSummon_InvalidMap>Invalid map; cannot summon divers.</NCL_DiverSummon_InvalidMap>
+  <NCL_DiverSummon_InvalidTarget>Invalid drop target.</NCL_DiverSummon_InvalidTarget>
+  <NCL_DiverSummon_SelectTarget>Select a location for diver drop pods.</NCL_DiverSummon_SelectTarget>
+
+  <NCL_DiverManager_GizmoLabel>Diver Roster</NCL_DiverManager_GizmoLabel>
+  <NCL_DiverManager_GizmoDesc>Open Diver roster and rename panel.</NCL_DiverManager_GizmoDesc>
+  <NCL_DiverManager_WindowTitle>Diver Command Panel</NCL_DiverManager_WindowTitle>
+  <NCL_DiverManager_DefaultNickname>Diver Slot {0}</NCL_DiverManager_DefaultNickname>
+  <NCL_DiverStatus_Alive>Alive</NCL_DiverStatus_Alive>
+  <NCL_DiverStatus_WaitingReinforce>Waiting Reinforcement</NCL_DiverStatus_WaitingReinforce>
+  <NCL_DiverManager_Reserved>□</NCL_DiverManager_Reserved>
+  <NCL_DiverManager_RenameButton>Change Nickname</NCL_DiverManager_RenameButton>
+  <NCL_DiverManager_NoPortrait>N/A</NCL_DiverManager_NoPortrait>
+  <NCL_DiverManager_NoNames>No Steam display names available.</NCL_DiverManager_NoNames>
+  <NCL_DiverManager_RenameSuccess>Diver nickname changed to {0}.</NCL_DiverManager_RenameSuccess>
+  <NCL_DiverManager_LoadoutTipFilled>Slot {0}: {1}</NCL_DiverManager_LoadoutTipFilled>
+  <NCL_DiverManager_LoadoutTipEmpty>Slot {0}: Empty</NCL_DiverManager_LoadoutTipEmpty>
+  <NCL_DiverManager_ClearLoadout>Clear Slot</NCL_DiverManager_ClearLoadout>
+  <NCL_DiverManager_LoadoutSet>Slot {0} set to {1}.</NCL_DiverManager_LoadoutSet>
+  <NCL_DiverManager_LoadoutLocked>All loadout slots can be changed while waiting reinforcement or when the slot is empty.</NCL_DiverManager_LoadoutLocked>
+  <NCL_DiverManager_LoadoutLockedFilled>This stratagem is locked while the Diver is active. Clear the slot after reinforcement, or edit empty slots now.</NCL_DiverManager_LoadoutLockedFilled>
+  <NCL_DiverManager_LoadoutDuplicate>Already assigned to another loadout slot</NCL_DiverManager_LoadoutDuplicate>
+  <NCL_DiverLoadout_WindowTitle>Stratagem loadout — Diver slot {0}, slot {1}</NCL_DiverLoadout_WindowTitle>
+  <NCL_DiverLoadout_SelectSection>Click a box to assign this loadout slot.</NCL_DiverLoadout_SelectSection>
+  <NCL_DiverLoadout_ClearSlot>Clear</NCL_DiverLoadout_ClearSlot>
+  <NCL_DiverLoadout_Cleared>Loadout slot {0} cleared.</NCL_DiverLoadout_Cleared>
+  <NCL_DiverManager_CombatStats>Kills: {0}  Headshots: {1}  Damage dealt: {2}  Damage taken: {3}</NCL_DiverManager_CombatStats>
+
+  <NCL_DiverCloak_GizmoLabel>Cloak</NCL_DiverCloak_GizmoLabel>
+  <NCL_DiverCloak_GizmoDesc>Customize cloak style and color for this slot (saved per slot).</NCL_DiverCloak_GizmoDesc>
+  <NCL_DiverCloak_WindowTitle>Cloak customization — {0}</NCL_DiverCloak_WindowTitle>
+  <NCL_DiverCloak_NoComp>This pawn has no cloak component.</NCL_DiverCloak_NoComp>
+  <NCL_DiverCloak_ShowCloak>Show cloak</NCL_DiverCloak_ShowCloak>
+  <NCL_DiverCloak_SetSection>Cloak set</NCL_DiverCloak_SetSection>
+  <NCL_DiverCloak_ColorSection>Cloak color</NCL_DiverCloak_ColorSection>
+
+  <NCL_Stratagem_EmptySlotLabel>Stratagem Slot {0}</NCL_Stratagem_EmptySlotLabel>
+  <NCL_Stratagem_EmptySlotDesc>No stratagem equipped in this slot.</NCL_Stratagem_EmptySlotDesc>
+  <NCL_Stratagem_EmptySlotDisabled>This slot is empty.</NCL_Stratagem_EmptySlotDisabled>
+  <NCL_Stratagem_Cooldown>Cooldown: {0}s</NCL_Stratagem_Cooldown>
+  <NCL_Stratagem_InvalidTarget>Invalid target point.</NCL_Stratagem_InvalidTarget>
+  <NCL_Stratagem_OutOfRange>Target is out of range (radius {0}).</NCL_Stratagem_OutOfRange>
+  <NCL_Stratagem_Incoming>Inbound: {0}</NCL_Stratagem_Incoming>
+  <NCL_Stratagem_IncomingHud>{0} — Inbound: {1}</NCL_Stratagem_IncomingHud>
+  <NCL_Stratagem_SystemDisabled>Stratagem system is disabled in mod settings.</NCL_Stratagem_SystemDisabled>
+  <NCL_Stratagem_ResearchRequired>Requires the following research:</NCL_Stratagem_ResearchRequired>
+  <NCL_Stratagem_NotEnoughPower>Not enough stored battery power (requires {0} Wd).</NCL_Stratagem_NotEnoughPower>
+  <NCL_Stratagem_PowerCostTip>Cast cost: {0} Wd stored power</NCL_Stratagem_PowerCostTip>
+  <NCL_SETTINGS_TAB_DIVER>Diver</NCL_SETTINGS_TAB_DIVER>
+  <NCL_SETTINGS_TAB_MULTICELL_DEBUG>Multi-cell mech debug</NCL_SETTINGS_TAB_MULTICELL_DEBUG>
+  <NCL_SETTINGS_MULTICELL_DEBUG_DESC>Developer tool: edit multi-cell footprint, body-part cells, and turret mounts; export XML snippet.</NCL_SETTINGS_MULTICELL_DEBUG_DESC>
+  <NCL_SETTINGS_MULTICELL_DEBUG_COUNT>Found {0} multi-cell mechanoid ThingDef(s).</NCL_SETTINGS_MULTICELL_DEBUG_COUNT>
+  <NCL_SETTINGS_MULTICELL_DEBUG_OPEN>Open debugger</NCL_SETTINGS_MULTICELL_DEBUG_OPEN>
+  <NCL_MultiCellDebugger_Title>Multi-cell mechanoid debugger</NCL_MultiCellDebugger_Title>
+  <NCL_MultiCellDebugger_NoDefs>No ThingDefs with MultiCellPawn found.</NCL_MultiCellDebugger_NoDefs>
+  <NCL_MultiCellDebugger_ModeResize>Cells</NCL_MultiCellDebugger_ModeResize>
+  <NCL_MultiCellDebugger_ModeParts>Parts</NCL_MultiCellDebugger_ModeParts>
+  <NCL_MultiCellDebugger_ModeTurrets>Turrets</NCL_MultiCellDebugger_ModeTurrets>
+  <NCL_MultiCellDebugger_DeleteZone>Delete</NCL_MultiCellDebugger_DeleteZone>
+  <NCL_MultiCellDebugger_Export>Export XML</NCL_MultiCellDebugger_Export>
+  <NCL_MultiCellDebugger_HintResize>Drag from an occupied cell to a green neighbor to add; drag to the delete zone to remove ((0,0,0) is locked; footprint must stay 4-way connected).</NCL_MultiCellDebugger_HintResize>
+  <NCL_MultiCellDebugger_HintTurrets>Select a turret #, then drag onto cells; drag cells to delete zone to clear mounts.</NCL_MultiCellDebugger_HintTurrets>
+  <NCL_MultiCellDebugger_HintTurretsSelected>Turret #{0}: drag onto cells to add mount cells.</NCL_MultiCellDebugger_HintTurretsSelected>
+  <NCL_MultiCellDebugger_NoBody>No BodyDef on this race; cannot assign parts.</NCL_MultiCellDebugger_NoBody>
+  <NCL_MultiCellDebugger_CannotRemove>Cannot remove this cell (core or would disconnect footprint).</NCL_MultiCellDebugger_CannotRemove>
+  <NCL_MultiCellDebugger_CannotAdd>Cannot add cell here (must be 4-way adjacent to footprint).</NCL_MultiCellDebugger_CannotAdd>
+  <NCL_MultiCellDebugger_PanHint>Right-drag to pan the grid view</NCL_MultiCellDebugger_PanHint>
+  <NCL_MultiCellDebugger_CoreBodyLocked>Core cell (0,0,0) is locked to body (race core part) and cannot be reassigned.</NCL_MultiCellDebugger_CoreBodyLocked>
+  <NCL_MultiCellExport_DialogTitle>Export multi-cell layout</NCL_MultiCellExport_DialogTitle>
+  <NCL_MultiCellExport_Directory>Directory: {0}</NCL_MultiCellExport_Directory>
+  <NCL_MultiCellExport_FileName>File name</NCL_MultiCellExport_FileName>
+  <NCL_MultiCellExport_Confirm>Export</NCL_MultiCellExport_Confirm>
+  <NCL_MultiCellExport_ErrFileName>Enter a file name.</NCL_MultiCellExport_ErrFileName>
+  <NCL_MultiCellExport_Success>Exported to: {0}</NCL_MultiCellExport_Success>
+  <NCL_MultiCellExport_ErrNoCore>Missing core cell (0,0,0).</NCL_MultiCellExport_ErrNoCore>
+  <NCL_MultiCellExport_ErrNotConnected>Footprint must be 4-way connected and include (0,0,0).</NCL_MultiCellExport_ErrNotConnected>
+  <NCL_MultiCellExport_ErrMountOutside>Turret #{0} has mount cell(s) outside footprint.</NCL_MultiCellExport_ErrMountOutside>
+  <NCL_MultiCellExport_ErrNoParts>Assign at least one part to a cell before exporting.</NCL_MultiCellExport_ErrNoParts>
+  <NCL_SETTINGS_STRATAGEM_ENABLED>Enable Diver stratagem system</NCL_SETTINGS_STRATAGEM_ENABLED>
+  <NCL_SETTINGS_STRATAGEM_ENABLED_TIP>Allows divers to equip and cast orbital strikes, sentry pods, and other stratagems. Off by default.</NCL_SETTINGS_STRATAGEM_ENABLED_TIP>
+  <NCL_SETTINGS_STRATAGEM_ENABLED_NOTE>When off, the diver command panel still supports rename, cloak, and combat stats. Only the reinforce gizmo remains on map; the four stratagem slot gizmos are hidden.</NCL_SETTINGS_STRATAGEM_ENABLED_NOTE>
+
+  <MTW_Diver_StimGizmo_Label>Stim ({0}/{1})</MTW_Diver_StimGizmo_Label>
+  <MTW_Diver_StimGizmo_Desc>Spend one charge. For 2 seconds, nanomachines rapidly repair injuries and increase move speed by 50%.</MTW_Diver_StimGizmo_Desc>
+  <MTW_Diver_StimGizmo_NoCharges>No charges remaining.</MTW_Diver_StimGizmo_NoCharges>
+  <MTW_Diver_StimGizmo_Dead>Unit is dead.</MTW_Diver_StimGizmo_Dead>
+
+  <MTW_Diver_ReinforceGizmo_Label>Reinforce</MTW_Diver_ReinforceGizmo_Label>
+  <MTW_Diver_ReinforceGizmo_Desc>Stratagem: pick a landing site; pods arc in, show inbound countdown, then land to fill the diver squad back up to 4 (no cooldown; power per pod).</MTW_Diver_ReinforceGizmo_Desc>
+  <MTW_Diver_ReinforceGizmo_Dead>Unit is dead.</MTW_Diver_ReinforceGizmo_Dead>
+  <MTW_Diver_ReinforceGizmo_NoManager>Diver management system is unavailable.</MTW_Diver_ReinforceGizmo_NoManager>
+  <MTW_Diver_ReinforceGizmo_Full>Diver squad is already at full strength.</MTW_Diver_ReinforceGizmo_Full>
+  <MTW_Diver_Reinforce_InvalidCaller>Cannot call reinforcements from this unit.</MTW_Diver_Reinforce_InvalidCaller>
+  <MTW_Diver_Reinforce_GameNotReady>Game is not ready to call reinforcements.</MTW_Diver_Reinforce_GameNotReady>
+  <MTW_Diver_Reinforce_PodMissing>Drop pod definition is missing.</MTW_Diver_Reinforce_PodMissing>
+  <MTW_Diver_Reinforce_Full>Diver squad is already at full strength.</MTW_Diver_Reinforce_Full>
+  <MTW_Diver_Reinforce_Success>Reinforcement drop launched: {0} pod(s).</MTW_Diver_Reinforce_Success>
+  <MTW_Diver_Reinforce_Failed>Insufficient power or invalid drop site; reinforcement failed.</MTW_Diver_Reinforce_Failed>
 
 </LanguageData> 

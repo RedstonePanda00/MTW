@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <NCL.Stratagem.StratagemDef>
+    <defName>MTW_DiverReinforce</defName>
+    <label>Reinforce</label>
+    <description>Call orbital drop pods to reinforce the diver squad back up to four members.</description>
+    <iconPath>Diver/SC-34/SC-34 Infiltrator_Head_south</iconPath>
+    <rangeRadius>25</rangeRadius>
+    <guideLineColor>(0.25,0.85,1,1)</guideLineColor>
+    <arcPhaseSeconds>1.5</arcPhaseSeconds>
+    <executeDelaySeconds>2.0</executeDelaySeconds>
+    <cooldownSeconds>0</cooldownSeconds>
+    <powerCost>0</powerCost>
+    <hideFromLoadoutPicker>true</hideFromLoadoutPicker>
+    <workerClass>NCL.Stratagem.StratagemWorker_DiverReinforce</workerClass>
+  </NCL.Stratagem.StratagemDef>
+
+  <NCL.Stratagem.StratagemDef>
+    <defName>MTW_OrbitalPrecisionStrike</defName>
+    <label>Orbital Precision Strike</label>
+    <description>A precision orbital particle strike fired from Aurora.</description>
+    <iconPath>UI/Commands/DesirePower</iconPath>
+    <rangeRadius>25</rangeRadius>
+    <guideLineColor>(1,0,0,1)</guideLineColor>
+    <arcPhaseSeconds>1.5</arcPhaseSeconds>
+    <executeDelaySeconds>2.0</executeDelaySeconds>
+    <cooldownSeconds>10</cooldownSeconds>
+    <powerCost>800</powerCost>
+    <researchPrerequisites>
+      <li>NCL_SpectreNet_Array</li>
+    </researchPrerequisites>
+    <workerClass>NCL.Stratagem.StratagemWorker_OrbitalPrecisionStrike</workerClass>
+  </NCL.Stratagem.StratagemDef>
+
+  <NCL.Stratagem.StratagemDef>
+    <defName>MTW_MachineGunSentry</defName>
+    <label>Machine Gun Sentry</label>
+    <description>Calls down a compact machine gun sentry pod from Aurora. The pod lands at the target point and deploys an autonomous turret with a sealed 100-round magazine. The sentry self-destructs when out of ammunition.</description>
+    <iconPath>DiverTurret/MachineGun</iconPath>
+    <rangeRadius>25</rangeRadius>
+    <guideLineColor>(0.25,0.85,1,1)</guideLineColor>
+    <arcPhaseSeconds>1.5</arcPhaseSeconds>
+    <executeDelaySeconds>8.0</executeDelaySeconds>
+    <cooldownSeconds>90</cooldownSeconds>
+    <powerCost>200</powerCost>
+    <researchPrerequisites>
+      <li>NCL_Vanguard_Units</li>
+    </researchPrerequisites>
+    <dropBuildingDefName>MTW_DiverSentry_MachineGun</dropBuildingDefName>
+    <workerClass>NCL.Stratagem.StratagemWorker_DropSentryPod</workerClass>
+  </NCL.Stratagem.StratagemDef>
+
+  <NCL.Stratagem.StratagemDef>
+    <defName>MTW_GatlingSentry</defName>
+    <label>Gatling Sentry</label>
+    <description>Calls down a heavier gatling sentry pod from Aurora. The pod lands at the target point and deploys a rotary turret with a sealed 1000-round magazine. The sentry self-destructs when out of ammunition.</description>
+    <iconPath>DiverTurret/Gatling</iconPath>
+    <rangeRadius>25</rangeRadius>
+    <guideLineColor>(0.25,0.85,1,1)</guideLineColor>
+    <arcPhaseSeconds>1.5</arcPhaseSeconds>
+    <executeDelaySeconds>10.0</executeDelaySeconds>
+    <cooldownSeconds>180</cooldownSeconds>
+    <powerCost>400</powerCost>
+    <researchPrerequisites>
+      <li>NCL_Vanguard_Units</li>
+    </researchPrerequisites>
+    <dropBuildingDefName>MTW_DiverSentry_Gatling</dropBuildingDefName>
+    <workerClass>NCL.Stratagem.StratagemWorker_DropSentryPod</workerClass>
+  </NCL.Stratagem.StratagemDef>
+</Defs>

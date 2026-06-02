@@ -33,9 +33,9 @@ namespace NCLWorm
       return true;
     }
 
-    protected virtual int ShotsPerBurst => this.verbProps.burstShotCount;
+    protected override int ShotsPerBurst => this.verbProps.burstShotCount;
 
-    public virtual float HighlightFieldRadiusAroundTarget(out bool needLOSToCenter)
+    public override float HighlightFieldRadiusAroundTarget(out bool needLOSToCenter)
     {
       needLOSToCenter = true;
       return 0.0f;

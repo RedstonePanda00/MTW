@@ -18,7 +18,7 @@ namespace NyarsModPackOne
     public int maxDronesPerSpawn = 5;
     public int startingIngredientCount;
     public PawnKindDef droneKind;
-    public string gizmoIconPath = "Races/ScutigerDrone_south";
+    public string gizmoIconPath = "Races/Drone_south";
 
     public CompProperties_DroneCarrier() => this.compClass = typeof (CompDroneCarrier);
   }

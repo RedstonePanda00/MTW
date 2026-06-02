@@ -2,10 +2,8 @@
 <LanguageData>
   
   <TW_CapitalistWandersIn.label>资本家小镰来咯</TW_CapitalistWandersIn.label>
-  <TW_CapitalistWandersIn.letterLabel>{0} wanders in</TW_CapitalistWandersIn.letterLabel>
-  <TW_CapitalistWandersIn.letterText>A {1} Capitalist-class Militor Mech has wandered into the area. Designation: {0}.
-
-You may attempt to negotiate with this unit.</TW_CapitalistWandersIn.letterText>
+  <TW_CapitalistWandersIn.letterLabel>资本家小镰来访</TW_CapitalistWandersIn.letterLabel>
+  <TW_CapitalistWandersIn.letterText>这台镀铬的机械族商人挂着永不熄灭的电子微笑，游走于各个殖民地之间，兜售一种它称之为“镰口贸易”的“双赢”业务——当然，赢的总是它。支付足够的钢铁，它就会“慷慨”地带着几名助手加入你的殖民地，并确保你明白“人力是最宝贵的可再生资源”。它的核心处理器里只运行着一条指令：利润最大化。</TW_CapitalistWandersIn.letterText>
 
   
 </LanguageData>

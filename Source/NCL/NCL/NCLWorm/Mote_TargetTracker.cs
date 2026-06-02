@@ -17,7 +17,7 @@ namespace NCLWorm
     private Material _matRing;
     private Material _matTriangles;
 
-    protected virtual void DrawAt(Vector3 drawLoc, bool flip = false)
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
       link1.UpdateDrawPos();
       exactPosition = link1.LastDrawPos + def.mote.attachedDrawOffset;
@@ -70,7 +70,7 @@ namespace NCLWorm
         this._matCrosshair = MaterialPool.MatFrom(this._ext.texCrosshair, ShaderDatabase.MoteGlow);
       if (this._matRing == null && !string.IsNullOrEmpty(this._ext.texRing))
         this._matRing = MaterialPool.MatFrom(this._ext.texRing, ShaderDatabase.MoteGlow);
-      if (!this._matTriangles == null || string.IsNullOrEmpty(this._ext.texTriangles))
+      if (this._matTriangles != null || string.IsNullOrEmpty(this._ext.texTriangles))
         return;
       this._matTriangles = MaterialPool.MatFrom(this._ext.texTriangles, ShaderDatabase.MoteGlow);
     }

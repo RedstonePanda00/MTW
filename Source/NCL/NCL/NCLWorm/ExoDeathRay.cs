@@ -31,7 +31,7 @@ namespace NCLWorm
     private bool _isRainbowMode = false;
     private static MaterialPropertyBlock _mpb_inst;
 
-    public virtual void SpawnSetup(Map map, bool respawningAfterLoad)
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
       base.SpawnSetup(map, respawningAfterLoad);
       this._lastUpdateTick = Find.TickManager.TicksGame;
@@ -49,7 +49,7 @@ namespace NCLWorm
         this._isRainbowMode = true;
     }
 
-    public virtual void Destroy(DestroyMode mode = 0)
+    public override void Destroy(DestroyMode mode = 0)
     {
       if (this._viewMesh != null)
       {
@@ -83,7 +83,7 @@ namespace NCLWorm
       this.Position = IntVec3Utility.ToIntVec3(vector3);
     }
 
-    protected virtual void Tick()
+    protected override void Tick()
     {
       ++this._age;
       if (Find.TickManager.TicksGame > this._lastUpdateTick + 2)
@@ -121,7 +121,7 @@ namespace NCLWorm
       get => ExoDeathRay._mpb_inst ?? (ExoDeathRay._mpb_inst = new MaterialPropertyBlock());
     }
 
-    protected virtual void DrawAt(Vector3 drawLoc, bool flip = false)
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
       if ((double) this._currentWidth <= 0.05000000074505806)
         return;

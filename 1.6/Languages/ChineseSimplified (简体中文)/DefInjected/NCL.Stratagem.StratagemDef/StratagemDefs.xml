@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_DiverReinforce.label>增援</MTW_DiverReinforce.label>
+  <MTW_DiverReinforce.description>选定落点后，轨道空投舱将沿抛物线接近并在倒计时后着陆，把潜兵小队补员至 4 人。</MTW_DiverReinforce.description>
+
+  <MTW_OrbitalPrecisionStrike.label>轨道精准打击</MTW_OrbitalPrecisionStrike.label>
+  <MTW_OrbitalPrecisionStrike.description>从 Aurora 对目标点发射一道精准轨道粒子束。</MTW_OrbitalPrecisionStrike.description>
+
+  <MTW_MachineGunSentry.label>机枪哨戒炮</MTW_MachineGunSentry.label>
+  <MTW_MachineGunSentry.description>从 Aurora 呼叫一具紧凑机枪哨戒空投舱。舱体在目标点着陆并展开一座自主射击的哨戒炮，自带 100 发密封弹药；打完后炮塔自动报废。</MTW_MachineGunSentry.description>
+
+  <MTW_GatlingSentry.label>加特林哨戒炮</MTW_GatlingSentry.label>
+  <MTW_GatlingSentry.description>从 Aurora 呼叫一具重型加特林哨戒空投舱。舱体在目标点着陆并展开一座旋转炮塔，自带 1000 发密封弹药；打完后炮塔自动报废。</MTW_GatlingSentry.description>
+
+</LanguageData>

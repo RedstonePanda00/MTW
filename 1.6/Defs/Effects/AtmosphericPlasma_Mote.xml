@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Composite mote: three bundle materials (Tail + Halo + ShockFront) matching Unity AtmosphericPlasma prefab. -->
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_AtmosphericPlasmaShield_Column</defName>
+    <label>atmospheric plasma column</label>
+    <!-- CullJob still skips fogged cells even when drawOffscreen is true; beam can sit over revealed tiles while Position stays fogged. -->
+    <seeThroughFog>true</seeThroughFog>
+    <drawOffscreen>true</drawOffscreen>
+    <thingClass>NCL.Mote_AtmosphericPlasmaColumn</thingClass>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <color>(255, 255, 255, 255)</color>
+      <drawSize>(9.0, 36.0)</drawSize>
+    </graphicData>
+    <!-- Above Skyfaller (30) so column draws on top of falling pod graphic; world Y still comes from exactPosition when following skyfaller. -->
+    <altitudeLayer>Weather</altitudeLayer>
+    <mote>
+      <fadeInTime>0</fadeInTime>
+      <!-- solidTime fallback; Skyfaller_AtmosphericPlasmaPod sets solidTimeOverride from actual fall ticks. No fadeOut so column stays opaque until Impact destroys the mote. -->
+      <solidTime>10.0</solidTime>
+      <fadeOutTime>0</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>PM_Mote_Flame</defName>
+    <label>rocket flames</label>
+    <thingClass>NCL.Mote_RocketFlames</thingClass>
+    <seeThroughFog>true</seeThroughFog>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <color>(255, 255, 255, 255)</color>
+      <drawSize>(3.6, 3.6)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0</fadeInTime>
+      <solidTime>6.0</solidTime>
+      <fadeOutTime>0</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+</Defs>

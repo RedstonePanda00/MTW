@@ -9,6 +9,8 @@ namespace NCL
     {
         public List<TransformData> transformData = new List<TransformData>();
         public TransformData revertData;
+        public string cyclicLabel;
+        public string cyclicDescription;
         public List<string> sharedComps = new List<string>();
         private HashSet<Type> sharedCompsResolved;
 

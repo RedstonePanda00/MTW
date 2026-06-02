@@ -124,7 +124,7 @@
 	  <li>
 		<statFactors>
             <ShootingAccuracyPawn>1.15</ShootingAccuracyPawn>
-			<VEF_VerbRangeFactor>1.15</VEF_VerbRangeFactor>
+			<NCL_VerbRangeFactor>1.15</NCL_VerbRangeFactor>
 			<RangedCooldownFactor>0.9</RangedCooldownFactor>
 			<AimingDelayFactor>0.9</AimingDelayFactor>		  
         </statFactors>

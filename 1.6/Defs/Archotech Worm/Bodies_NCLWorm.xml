@@ -3,7 +3,7 @@
 
   <BodyDef>
     <defName>NCLWormBody</defName>
-    <label>机械蠕虫</label>
+    <label>Mechanical archotech worm</label>
     <corePart>
       <def>MechanicalCentipedeBodyFirstRing</def>
       <height>Middle</height>

@@ -6,5 +6,8 @@
   
   
   <Bullet_FlyingCentipede.label>FlyingCentipede</Bullet_FlyingCentipede.label>
-  
+
+  <!-- EN: Star Devourer squad drop pod -->
+  <NCL_AtmosphericPlasmaDropPod.label>噬星者小队空投舱</NCL_AtmosphericPlasmaDropPod.label>
+
 </LanguageData>

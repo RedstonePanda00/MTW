@@ -91,7 +91,7 @@
       <li>NCLThings</li>
     </tradeTags>
 	<modExtensions>
-		<li Class="VEF.Things.ThingDefExtension">
+		<li Class="NCL.ThingDefExtension_WeaponCarryDrawOffsets">
 			<weaponCarryDrawOffsets>
 				<north>
 					<drawOffset>(1.0, 0.0, -0.7)</drawOffset>

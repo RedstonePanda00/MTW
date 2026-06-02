@@ -35,7 +35,7 @@ namespace NCLWorm
 
     public TC_WormDecisionController Brain => this.GetComp<TC_WormDecisionController>();
 
-    public virtual void SpawnSetup(Map map, bool respawningAfterLoad)
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
       base.SpawnSetup(map, respawningAfterLoad);
       this.ApplyXmlSettings();
@@ -50,13 +50,13 @@ namespace NCLWorm
       this.RegisterToMapComponent(map);
     }
 
-    public virtual void DeSpawn(DestroyMode mode = 0)
+    public override void DeSpawn(DestroyMode mode = 0)
     {
       ((Thing) this).Map?.GetComponent<WormBossMapComponent>()?.DeregisterBoss(this);
       base.DeSpawn(mode);
     }
 
-    public virtual void Destroy(DestroyMode mode = 0)
+    public override void Destroy(DestroyMode mode = 0)
     {
       if (((Thing) this).Destroyed)
         return;
@@ -79,7 +79,7 @@ namespace NCLWorm
       this.segmentSpacing = modExtension.segmentSpacing;
     }
 
-    public virtual void SetFaction(Faction newFaction, Pawn recruiter = null)
+    public override void SetFaction(Faction newFaction, Pawn recruiter = null)
     {
       ((Thing) this).SetFaction(newFaction, recruiter);
       if (this.segments == null)
@@ -227,7 +227,7 @@ namespace NCLWorm
       }
     }
 
-    public virtual void Kill(DamageInfo? dinfo = null, Hediff exactCulprit = null)
+    public override void Kill(DamageInfo? dinfo = null, Hediff exactCulprit = null)
     {
       if (((Thing) this).Destroyed || this._isDyingSequence)
         return;

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+  <Mst_Worm_Body_Normal.label>超凡蠕虫体节</Mst_Worm_Body_Normal.label>
+  <Mst_Worm_Body_Gunner.label>超凡机械蠕虫体节</Mst_Worm_Body_Gunner.label>
+  <Mst_Worm_Body_Gunner_p.label>超凡机械蠕虫体节</Mst_Worm_Body_Gunner_p.label>
+  <Mst_Worm_Tail.label>超凡机械蠕虫尾刺</Mst_Worm_Tail.label>
+  <Mst_Worm_Head.label>超凡机械蠕虫</Mst_Worm_Head.label>
+  <Mst_WormProbe_Combat.label>武装探测器 (追踪弹)</Mst_WormProbe_Combat.label>
+  <Mst_WormProbe_Repair.label>工程探测器 (维修型)</Mst_WormProbe_Repair.label>
+
+</LanguageData>

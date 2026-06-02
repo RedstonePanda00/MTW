@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+// Decompiled with JetBrains decompiler
 // Type: NCL.CompTrader
 // Assembly: TW_Mech_Capitalistic_Militor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: 19431CE1-8FC8-4A04-970C-DC00BB350104
@@ -20,7 +20,7 @@ namespace NCL
       get => !(this.parent is Pawn parent) ? (Faction) null : ((Thing) parent).Faction;
     }
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       if (this.TraderPawn == null)
@@ -50,7 +50,7 @@ namespace NCL
 
     public float TradePriceImprovementOffsetForPlayer => 0.0f;
 
-    public virtual void PostExposeData() => base.PostExposeData();
+    public override void PostExposeData() => base.PostExposeData();
 
     public CompProperties_Trader Props => (CompProperties_Trader) this.props;
 

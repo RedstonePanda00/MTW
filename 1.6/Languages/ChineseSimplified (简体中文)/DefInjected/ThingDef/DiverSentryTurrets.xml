@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_DiverSentry_MachineGun.label>机枪哨戒炮</MTW_DiverSentry_MachineGun.label>
+  <MTW_DiverSentry_MachineGun.description>由轨道空投部署的紧凑自动哨戒炮。自带密封弹匣（100 发），无需殖民地电网即可开火；弹药耗尽后自动报废，需再次呼叫空投补充。</MTW_DiverSentry_MachineGun.description>
+  <MTW_DiverSentry_MachineGun.comps.2.ammoLabel>弹药</MTW_DiverSentry_MachineGun.comps.2.ammoLabel>
+  <MTW_DiverSentry_MachineGun.comps.2.ammoGizmoLabel>弹药</MTW_DiverSentry_MachineGun.comps.2.ammoGizmoLabel>
+  <MTW_DiverSentry_MachineGun.comps.2.outOfAmmoMessage>弹药耗尽</MTW_DiverSentry_MachineGun.comps.2.outOfAmmoMessage>
+
+  <MTW_DiverSentry_Gatling.label>加特林哨戒炮</MTW_DiverSentry_Gatling.label>
+  <MTW_DiverSentry_Gatling.description>由轨道空投部署的重型旋转哨戒炮。自带密封弹匣（1000 发），无需殖民地电网即可开火；弹药耗尽后自动报废，需再次呼叫空投补充。</MTW_DiverSentry_Gatling.description>
+  <MTW_DiverSentry_Gatling.comps.2.ammoLabel>弹药</MTW_DiverSentry_Gatling.comps.2.ammoLabel>
+  <MTW_DiverSentry_Gatling.comps.2.ammoGizmoLabel>弹药</MTW_DiverSentry_Gatling.comps.2.ammoGizmoLabel>
+  <MTW_DiverSentry_Gatling.comps.2.outOfAmmoMessage>弹药耗尽</MTW_DiverSentry_Gatling.comps.2.outOfAmmoMessage>
+
+  <Gun_MTW_DiverSentry_MachineGun.label>机枪哨戒炮塔</Gun_MTW_DiverSentry_MachineGun.label>
+  <Gun_MTW_DiverSentry_MachineGun.description>安装在 Diver 哨戒舱上的简易自动枪。</Gun_MTW_DiverSentry_MachineGun.description>
+
+  <Gun_MTW_DiverSentry_Gatling.label>加特林哨戒炮塔</Gun_MTW_DiverSentry_Gatling.label>
+  <Gun_MTW_DiverSentry_Gatling.description>安装在 Diver 哨戒舱上的旋转机枪。</Gun_MTW_DiverSentry_Gatling.description>
+
+  <Bullet_MTW_DiverSentry_MG.label>机枪哨戒弹</Bullet_MTW_DiverSentry_MG.label>
+  <Bullet_MTW_DiverSentry_Gatling.label>加特林哨戒弹</Bullet_MTW_DiverSentry_Gatling.label>
+
+</LanguageData>

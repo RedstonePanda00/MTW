@@ -10,7 +10,7 @@ namespace NCLvsTW
 {
     public class ThinkNode_ConditionalInHomeAreaRoofed : ThinkNode_Conditional
     {
-        public bool invert = false; // XML可配置是否反转条件
+        public new bool invert = false; // XML可配置是否反转条件
 
         protected override bool Satisfied(Pawn pawn)
         {

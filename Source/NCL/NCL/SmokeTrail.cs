@@ -1,9 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NCL.Projectiles;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace NCL
@@ -27,9 +29,13 @@ namespace NCL
                 // 确保子弹在有效地图上
                 if (parent.Map != null && parent.Position.IsValid)
                 {
-                    // 生成烟雾粒子
-                    FleckMaker.ThrowSmoke(parent.DrawPos, parent.Map, Props.smokeSize);
+                    Vector3 smokePos = parent.DrawPos;
+                    if (parent is Projectile_HighArcExplosiveBase highArc)
+                    {
+                        HighArcProjectileDebug.LogSmoke(highArc, smokePos, highArc.HighArcProgress);
+                    }
 
+                    FleckMaker.ThrowSmoke(smokePos, parent.Map, Props.smokeSize);
                 }
             }
         }

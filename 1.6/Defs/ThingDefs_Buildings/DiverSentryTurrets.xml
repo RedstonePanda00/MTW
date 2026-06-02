@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef Name="MTW_DiverSentryBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>NCL.Building_DiverSentryTurret</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <size>(1,1)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <graphicData>
+      <texPath>DiverTurret/DropingPodOpened</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.4,1.4)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.35,0.35,0.35)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+      <Mass>8</Mass>
+      <Beauty>-20</Beauty>
+      <ShootingAccuracyTurret>0.99</ShootingAccuracyTurret>
+    </statBases>
+    <comps>
+      <li Class="NCL.CompProperties_DiverSentryCombatLedger" />
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <combatPower>45</combatPower>
+      <turretTopDrawSize>1.4</turretTopDrawSize>
+      <turretTopOffset>(0, 0.05)</turretTopOffset>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="MTW_DiverSentryBase">
+    <defName>MTW_DiverSentry_MachineGun</defName>
+    <label>machine gun sentry</label>
+    <description>A compact automatic sentry deployed from orbit. It carries a sealed magazine of 100 rounds, needs no colony power, and self-destructs when ammunition is spent. Call down another pod to replace it.</description>
+    <uiIconPath>DiverTurret/MachineGun</uiIconPath>
+    <comps>
+      <li Class="NCL.CompProperties_DiverSentryAmmunition">
+        <ammoLabel>ammunition</ammoLabel>
+        <ammoGizmoLabel>ammunition</ammoGizmoLabel>
+        <outOfAmmoMessage>out of ammunition</outOfAmmoMessage>
+        <ammoCapacity>100</ammoCapacity>
+        <showAmmoGizmo>true</showAmmoGizmo>
+        <depletionEffectRadius>3.9</depletionEffectRadius>
+      </li>
+    </comps>
+    <building>
+      <turretGunDef>Gun_MTW_DiverSentry_MachineGun</turretGunDef>
+      <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+      <turretBurstCooldownTime>0.5</turretBurstCooldownTime>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="MTW_DiverSentryBase">
+    <defName>MTW_DiverSentry_Gatling</defName>
+    <label>gatling sentry</label>
+    <description>A heavier rotary sentry deployed from orbit. It carries a sealed magazine of 1000 rounds, needs no colony power, and self-destructs when ammunition is spent. Call down another pod to replace it.</description>
+    <uiIconPath>DiverTurret/Gatling</uiIconPath>
+    <comps>
+      <li Class="NCL.CompProperties_DiverSentryAmmunition">
+        <ammoLabel>ammunition</ammoLabel>
+        <ammoGizmoLabel>ammunition</ammoGizmoLabel>
+        <outOfAmmoMessage>out of ammunition</outOfAmmoMessage>
+        <ammoCapacity>1000</ammoCapacity>
+        <showAmmoGizmo>true</showAmmoGizmo>
+        <depletionEffectRadius>3.9</depletionEffectRadius>
+      </li>
+    </comps>
+    <building>
+      <turretGunDef>Gun_MTW_DiverSentry_Gatling</turretGunDef>
+      <turretBurstWarmupTime>1.0</turretBurstWarmupTime>
+      <turretBurstCooldownTime>0</turretBurstCooldownTime>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_MTW_DiverSentry_MG</defName>
+    <label>machine gun sentry round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_MTW_DiverSentry_Gatling</defName>
+    <label>gatling sentry round</label>
+    <graphicData>
+      <shaderType>Transparent</shaderType>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Name="MTW_DiverSentryGunBase" ParentName="BaseWeaponTurret" Abstract="True">
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>-3</Beauty>
+      <AccuracyTouch>0.99</AccuracyTouch>
+      <AccuracyShort>0.99</AccuracyShort>
+      <AccuracyMedium>0.99</AccuracyMedium>
+      <AccuracyLong>0.99</AccuracyLong>
+      <Mass>5</Mass>
+    </statBases>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+  </ThingDef>
+
+  <ThingDef ParentName="MTW_DiverSentryGunBase">
+    <defName>Gun_MTW_DiverSentry_MachineGun</defName>
+    <label>machine gun sentry turret</label>
+    <description>A simple automatic gun made to be mounted on a diver sentry pod.</description>
+    <graphicData>
+      <texPath>DiverTurret/MachineGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>NCL.Verb_DiverSentryMachineGun</verbClass>
+        <defaultProjectile>Bullet_MTW_DiverSentry_MG</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>45</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="MTW_DiverSentryGunBase">
+    <defName>Gun_MTW_DiverSentry_Gatling</defName>
+    <label>gatling sentry turret</label>
+    <description>A rotary gun made to be mounted on a diver sentry pod.</description>
+    <graphicData>
+      <texPath>DiverTurret/Gatling</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>NCL.Verb_DiverSentryGatling</verbClass>
+        <defaultProjectile>Bullet_MTW_DiverSentry_Gatling</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>45</range>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <burstShotCount>999999</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>

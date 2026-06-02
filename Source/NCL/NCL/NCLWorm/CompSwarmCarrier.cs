@@ -27,7 +27,7 @@ namespace NCLWorm
 
     private CompProperties_SwarmCarrier Props => (CompProperties_SwarmCarrier) this.props;
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       if (((Thing) this.parent).Map == null)

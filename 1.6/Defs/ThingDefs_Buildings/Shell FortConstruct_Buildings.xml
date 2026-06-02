@@ -73,7 +73,7 @@
         <damAmount>75</damAmount>
         <checkInterval>60</checkInterval> 
         <includeDownedPawns>false</includeDownedPawns>
-        <customCountdownText>自毁倒计时: {0}秒</customCountdownText>
+        <customCountdownText>Self-destruct: {0}s</customCountdownText>
     </li>
 	<li Class="NCL.CompProperties_TurretGun_GroundTarget">
       <turretDef>Shell_FortConstruct_Barrage</turretDef> 
@@ -502,7 +502,7 @@
 		<JobDef>
 		<defName>RebuildBrokenShellcoreBastion</defName>
 		<driverClass>NCL.JobDriver_RebuildTheWarBeacon</driverClass>
-		<reportString>修复 TargetA.</reportString>
+		<reportString>Repairing TargetA.</reportString>
 		<suspendable>false</suspendable>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>

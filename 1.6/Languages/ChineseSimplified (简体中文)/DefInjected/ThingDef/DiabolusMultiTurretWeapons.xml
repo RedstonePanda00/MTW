@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Bullet_NCL_Diabolus_Minigun.label>炼狱魔王机枪弹</Bullet_NCL_Diabolus_Minigun.label>
+
+  <NCL_Diabolus_RT_AutoGun.label>炼狱魔王速射机枪</NCL_Diabolus_RT_AutoGun.label>
+  <NCL_Diabolus_RT_AutoGun.description>炼狱魔王肩部近程速射机枪炮塔，弹道与射速参照制式速射机枪，精度更高、射程更短。</NCL_Diabolus_RT_AutoGun.description>
+
+  <NCL_Diabolus_RT_AutoGun_Left.label>炼狱魔王速射机枪（左）</NCL_Diabolus_RT_AutoGun_Left.label>
+  <NCL_Diabolus_RT_AutoGun_Right.label>炼狱魔王速射机枪（右）</NCL_Diabolus_RT_AutoGun_Right.label>
+
+</LanguageData>

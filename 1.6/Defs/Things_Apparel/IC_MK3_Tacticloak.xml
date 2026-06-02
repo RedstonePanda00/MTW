@@ -30,8 +30,8 @@ O'Neal: "I stitch only for those who survive."</description>
 	  <MaxHitPoints>1000</MaxHitPoints>
       <WorkToMake>14000</WorkToMake>
       <Flammability>0</Flammability>
-      <EnergyShieldRechargeRate>0.5</EnergyShieldRechargeRate>
-      <EnergyShieldEnergyMax>2</EnergyShieldEnergyMax>
+      <EnergyShieldRechargeRate>0.05</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>300</EnergyShieldEnergyMax>
 	  <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
       <ArmorRating_Heat>2</ArmorRating_Heat>
@@ -96,19 +96,11 @@ O'Neal: "I stitch only for those who survive."</description>
       </tags>
     </apparel>
     <comps>
-      	<li Class="VEF.Apparels.CompProperties_ShieldBubble">
-			<compClass>VEF.Apparels.CompShieldBubble</compClass>
-			<blockRangedAttack>true</blockRangedAttack>
-			<showWhenDrafted>true</showWhenDrafted>
-			<showOnHostiles>true</showOnHostiles>
-			<showOnNeutralInCombat>true</showOnNeutralInCombat>
-			<shieldTexPath>Other/ShieldBubble</shieldTexPath>
-			<EnergyShieldRechargeRate>0.05</EnergyShieldRechargeRate>
-			<EnergyShieldEnergyMax>300</EnergyShieldEnergyMax>
-			<minShieldSize>1.4</minShieldSize>
-			<maxShieldSize>1.8</maxShieldSize>
-			<disableRotation>true</disableRotation>
-		</li>
+      <li Class="CompProperties_Shield">
+        <blocksRangedWeapons>false</blocksRangedWeapons>
+        <minDrawSize>1.4</minDrawSize>
+        <maxDrawSize>1.8</maxDrawSize>
+      </li>
       <li Class="CompProperties_ApparelReloadable">
         <maxCharges>3</maxCharges>
         <ammoDef>Chemfuel</ammoDef>
@@ -126,7 +118,7 @@ O'Neal: "I stitch only for those who survive."</description>
     <verbs>
       <li>
         <verbClass>NCL.Verb_JumpAndCloak</verbClass>
-        <label>光学迷彩激活</label>
+        <label>Activate optical cloak</label>
         <violent>false</violent>
         <hasStandardCommand>true</hasStandardCommand>
 		<range>8</range> 

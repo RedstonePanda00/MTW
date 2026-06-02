@@ -9,7 +9,7 @@
     <ResearchProjectDef>
     <defName>NCL_Standard_Issue</defName>
     <label>Standard Issue</label>
-    <description>Unlock fabrication technology for NCL-standard assault rifles and self-defense submachine guns.</description>
+    <description>Unlock fabrication technology for NCL-standard assault rifles, designated marksman and precision rifles (AR-23 / AR-34 series), and self-defense submachine guns.</description>
     <techLevel>Spacer</techLevel>
     <baseCost>1000</baseCost>
     <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>

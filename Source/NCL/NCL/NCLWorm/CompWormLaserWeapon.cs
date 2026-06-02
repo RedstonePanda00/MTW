@@ -28,7 +28,7 @@ namespace NCLWorm
 
     public float GetArmorPenetration() => this.Props.armorPenetration;
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Values.Look<float>(ref this._runtimeDamageMultiplier, "runtimeDamageMultiplier", 1f, false);

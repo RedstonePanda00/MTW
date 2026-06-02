@@ -31,4 +31,15 @@
 <TW_Quad_Guided_Rocket_Launcher_HE.tools.barrel.label>barrel</TW_Quad_Guided_Rocket_Launcher_HE.tools.barrel.label>
 <TW_Quad_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>Quad HE Guided Rocket Launcher</TW_Quad_Guided_Rocket_Launcher_HE.verbs.Verb_Shoot.label>
 
+<TW_MissileCentipede_Rocket_HE.label>制导火箭发射器-高爆导弹</TW_MissileCentipede_Rocket_HE.label>
+<TW_MissileCentipede_Rocket_HE.description>机械制导蜈蚣装备的高爆火箭发射器，可在三种弹种间轮切。</TW_MissileCentipede_Rocket_HE.description>
+<TW_MissileCentipede_Rocket_EMP.label>制导火箭发射器-EMP导弹</TW_MissileCentipede_Rocket_EMP.label>
+<TW_MissileCentipede_Rocket_EMP.description>机械制导蜈蚣装备的EMP火箭发射器，可在三种弹种间轮切。</TW_MissileCentipede_Rocket_EMP.description>
+<TW_MissileCentipede_Rocket_FatCat.label>制导火箭发射器-肥猫导弹</TW_MissileCentipede_Rocket_FatCat.label>
+<TW_MissileCentipede_Rocket_FatCat.description>机械制导蜈蚣装备的肥猫制导导弹发射器，可在三种弹种间轮切。</TW_MissileCentipede_Rocket_FatCat.description>
+<TW_FatCat_Guided_Missile.label>肥猫制导导弹</TW_FatCat_Guided_Missile.label>
+<MTW_FatCatMobile.label>肥猫机动发射器</MTW_FatCatMobile.label>
+<MTW_FatCatMobile.description>实验性肥猫制导发射器，弹道为地图平面斜飞。技术储备，未实装于机械体。</MTW_FatCatMobile.description>
+<MTW_FatCatMobile_Missile.label>肥猫机动导弹</MTW_FatCatMobile_Missile.label>
+
 </LanguageData>

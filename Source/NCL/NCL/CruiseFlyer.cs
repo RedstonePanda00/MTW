@@ -779,7 +779,7 @@ namespace NCL
         }
 
         // 修正炸弹投放位置（确保在地图内）
-        private new void DropBomb()
+        private void DropBomb()
         {
             Vector3 bombPos = GetCurrentDrawPosition();
             Projectile bomb = (Projectile)ThingMaker.MakeThing(bombDef, null);
@@ -970,7 +970,7 @@ namespace NCL
         }
 
         // 修正炸弹投放位置（确保在地图内）
-        private new void DropBomb()
+        private void DropBomb()
         {
             Vector3 bombPos = GetCurrentDrawPosition();
             Projectile bomb = (Projectile)ThingMaker.MakeThing(bombDef, null);

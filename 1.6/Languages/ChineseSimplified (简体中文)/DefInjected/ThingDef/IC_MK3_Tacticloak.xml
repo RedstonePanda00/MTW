@@ -18,6 +18,6 @@ Eclipse：“不是所有人都有机会穿上这件斗篷了。”
  O’Neal：“我只为活下来的那几个家伙缝的。”</IC_MK3_Tacticloak.description>
 <IC_MK3_Tacticloak.comps.CompApparelReloadable.chargeNoun>incendiary</IC_MK3_Tacticloak.comps.CompApparelReloadable.chargeNoun>
 <IC_MK3_Tacticloak.comps.CompApparelReloadable.cooldownGerund>on cooldown</IC_MK3_Tacticloak.comps.CompApparelReloadable.cooldownGerund>
-<IC_MK3_Tacticloak.verbs.0.label>Optical Camo Activation</IC_MK3_Tacticloak.verbs.0.label>
+<IC_MK3_Tacticloak.verbs.0.label>光学迷彩激活</IC_MK3_Tacticloak.verbs.0.label>
   
 </LanguageData>

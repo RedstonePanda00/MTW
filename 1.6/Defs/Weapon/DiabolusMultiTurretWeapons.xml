@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NCL_Diabolus_Minigun</defName>
+    <label>diabolus minigun shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>3</damageAmountBase>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <!-- Diabolus side mounts: minigun fire pattern, custom low-damage charge-styled rounds. -->
+  <ThingDef Name="NCL_Diabolus_RT_AutoGun" ParentName="BaseWeaponTurret">
+    <defName>NCL_Diabolus_RT_AutoGun</defName>
+    <label>Diabolus minigun turret</label>
+    <description>Side-mounted minigun turret (diabolus).</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Minigun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.95</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NCL_Diabolus_Minigun</defaultProjectile>
+        <warmupTime>0.01</warmupTime>
+        <range>12</range>
+        <minRange>0</minRange>
+        <burstShotCount>50</burstShotCount>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <defaultCooldownTime>0.5</defaultCooldownTime>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="NCL_Diabolus_RT_AutoGun">
+    <defName>NCL_Diabolus_RT_AutoGun_Left</defName>
+    <label>Diabolus minigun turret (L)</label>
+  </ThingDef>
+
+  <ThingDef ParentName="NCL_Diabolus_RT_AutoGun">
+    <defName>NCL_Diabolus_RT_AutoGun_Right</defName>
+    <label>Diabolus minigun turret (R)</label>
+  </ThingDef>
+
+</Defs>

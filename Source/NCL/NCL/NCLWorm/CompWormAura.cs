@@ -22,7 +22,7 @@ namespace NCLWorm
 
     private WormHead Head => this.parent as WormHead;
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       if (this.Head == null || !((Thing) this.Head).Spawned || !Gen.IsHashIntervalTick((Thing) this.parent, this.Props.checkInterval))
         return;
@@ -101,7 +101,7 @@ namespace NCLWorm
       comp.ticksToDisappear = this.Props.checkInterval + 60;
     }
 
-    public virtual void PostDraw()
+    public override void PostDraw()
     {
       if (!this.Props.drawLines || !Find.Selector.IsSelected((object) this.parent))
         return;

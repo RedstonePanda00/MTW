@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_OrbitalPrecisionDirectHitInjury.label>轨道炮直击</MTW_OrbitalPrecisionDirectHitInjury.label>
+  <MTW_OrbitalPrecisionDirectHitInjury.description>精准轨道粒子束造成的碳化创伤。伤口已被高热封死，无法包扎；正常生物不应在这之后还能走动。</MTW_OrbitalPrecisionDirectHitInjury.description>
+  <MTW_OrbitalPrecisionDirectHitInjury.labelNoun>轨道炮直击</MTW_OrbitalPrecisionDirectHitInjury.labelNoun>
+  <MTW_OrbitalPrecisionDirectHitInjury.labelNounPretty>{1}上的轨道炮直击</MTW_OrbitalPrecisionDirectHitInjury.labelNounPretty>
+  <MTW_OrbitalPrecisionDirectHitInjury.comps.HediffComp_GetsPermanent.permanentLabel>致命轨道打击疤痕</MTW_OrbitalPrecisionDirectHitInjury.comps.HediffComp_GetsPermanent.permanentLabel>
+  <MTW_OrbitalPrecisionDirectHitInjury.comps.HediffComp_GetsPermanent.instantlyPermanentLabel>致命轨道打击灼痕</MTW_OrbitalPrecisionDirectHitInjury.comps.HediffComp_GetsPermanent.instantlyPermanentLabel>
+  <MTW_OrbitalPrecisionDirectHitInjury.injuryProps.destroyedLabel>已汽化脱落</MTW_OrbitalPrecisionDirectHitInjury.injuryProps.destroyedLabel>
+  <MTW_OrbitalPrecisionDirectHitInjury.injuryProps.destroyedOutLabel>已汽化消失</MTW_OrbitalPrecisionDirectHitInjury.injuryProps.destroyedOutLabel>
+
+</LanguageData>

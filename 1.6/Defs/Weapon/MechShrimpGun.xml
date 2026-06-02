@@ -22,8 +22,8 @@
   
   <ThingDef ParentName="BaseGun">
     <defName>TideSurge</defName>
-    <label>潮涌标枪</label>
-    <description>1</description>
+    <label>Tidal javelin</label>
+    <description>Heavy charge javelin issued to select mechanoid units.</description>
     <relicChance>0</relicChance>
     <tradeability>None</tradeability>
     <graphicData>

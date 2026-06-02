@@ -27,7 +27,7 @@ namespace NCLWorm
 
     public CompSwarmController Commander => this._commander;
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       this._mover = this.parent.GetComp<TC_WormMovingController>();
@@ -39,7 +39,7 @@ namespace NCLWorm
       this.FindAndRegisterCommander();
     }
 
-    public virtual void PostDeSpawn(Map map, DestroyMode mode = 0)
+    public override void PostDeSpawn(Map map, DestroyMode mode = 0)
     {
       this._commander?.Deregister(this);
       base.PostDeSpawn(map, (DestroyMode) 0);
@@ -76,7 +76,7 @@ namespace NCLWorm
       };
     }
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       if (this._mover == null)
@@ -155,7 +155,7 @@ namespace NCLWorm
       ((Thing) this.parent).Destroy((DestroyMode) 0);
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Deep.Look<ProbeCommand>(ref this._overrideOrder, "overrideOrder", Array.Empty<object>());

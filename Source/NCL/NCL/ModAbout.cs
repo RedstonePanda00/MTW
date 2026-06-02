@@ -22,7 +22,7 @@ namespace NCL
         private const string currentVersion = "2.0.1";
 
         // 是否强制显示更新信息 - 每次需要显示更新信息但不想更改版本号时设为true
-        private const bool forceShowUpdateInfo = false;
+        private static bool forceShowUpdateInfo = false;
 
         public NCL_StoryWC(World world) : base(world)
         {
@@ -158,9 +158,6 @@ namespace NCL
         private const float CAROUSEL_HEIGHT = 160f; // 轮播图高度
         private Texture2D leftArrowTexture; // 左箭头按钮贴图
         private Texture2D rightArrowTexture; // 右箭头按钮贴图
-
-        // 背景图片
-        private Texture2D backgroundImage;
 
         // 文本区域高度 - 主页面和子页面使用不同的高度
         private const float MAIN_TEXT_AREA_HEIGHT = 280f;

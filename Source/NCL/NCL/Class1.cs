@@ -61,7 +61,6 @@ namespace NCL
         public bool TWtriggered2 = false;
         public bool TWtriggered1 = false;
         public int defeated = 0;
-        private bool puzzleFlag = false;
         public List<string> list_str = new List<string>();
 
         // 静态设置
@@ -392,7 +391,7 @@ namespace NCL
 {
     public class CompUseEffect_ActivateWarfare : CompUseEffect
     {
-        public new CompProperties_UseEffect_ActivateWarfare Props =>
+        public CompProperties_UseEffect_ActivateWarfare Props =>
             (CompProperties_UseEffect_ActivateWarfare)props;
 
 
@@ -619,6 +618,8 @@ namespace NCL
         public float maxDefaultThreatPoints = 100000f;
         public int maxPawns = 300;
 
+        public bool stratagemSystemEnabled;
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -634,6 +635,7 @@ namespace NCL
             Scribe_Values.Look(ref InvisibilityVisibleToPlayer, "invisibilityVisibleToPlayer", true);
             Scribe_Values.Look(ref maxDefaultThreatPoints, "maxDefaultThreatPoints", 100000f);
             Scribe_Values.Look(ref maxPawns, "maxPawns", 300);
+            Scribe_Values.Look(ref stratagemSystemEnabled, "stratagemSystemEnabled", false);
         }
     }
 }
@@ -652,8 +654,13 @@ namespace NCL
         private static readonly string[] SettingsTabLabelKeys =
         {
             "NCL_SETTINGS_TAB_GENERAL",
-            "NCL_SETTINGS_TAB_STORYTELLER"
+            "NCL_SETTINGS_TAB_STORYTELLER",
+            "NCL_SETTINGS_TAB_DIVER"
         };
+
+        private const int SettingsTabIndexMultiCellDebug = 3;
+
+        private int SettingsTabCount => Prefs.DevMode ? 4 : SettingsTabLabelKeys.Length;
 
         public TotalWarfareMod(ModContentPack content) : base(content)
         {
@@ -664,6 +671,8 @@ namespace NCL
         public static TotalWarfareMod Instance { get; private set; } // 静态实例
         public TotalWarfareSettings Settings { get; private set; }    // 公有属性
 
+        public static bool StratagemSystemEnabled =>
+            Instance?.settings?.stratagemSystemEnabled ?? false;
 
         public override string SettingsCategory() => "NCL_TOTALWARFARE_SETTINGS_CATEGORY".Translate();
 
@@ -685,19 +694,67 @@ namespace NCL
             Widgets.DrawBox(leftOuter);
             Widgets.DrawBox(rightOuter);
 
+            if (_settingsTabIndex >= SettingsTabCount)
+            {
+                _settingsTabIndex = 0;
+            }
+
             DrawSettingsTabColumn(leftOuter.ContractedBy(6f));
 
+            Rect rightInner = rightOuter.ContractedBy(6f);
             if (_settingsTabIndex == 0)
-                DrawSettingsGeneralPanel(rightOuter.ContractedBy(6f));
-            else
-                DrawSettingsStorytellerPanel(rightOuter.ContractedBy(6f));
+            {
+                DrawSettingsGeneralPanel(rightInner);
+            }
+            else if (_settingsTabIndex == 1)
+            {
+                DrawSettingsStorytellerPanel(rightInner);
+            }
+            else if (_settingsTabIndex == 2)
+            {
+                DrawSettingsDiverPanel(rightInner);
+            }
+            else if (Prefs.DevMode && _settingsTabIndex == SettingsTabIndexMultiCellDebug)
+            {
+                DrawSettingsMultiCellDebugPanel(rightInner);
+            }
+        }
+
+        private void DrawSettingsMultiCellDebugPanel(Rect rightInner)
+        {
+            MultiCellMechanoidRegistry.Refresh();
+            Listing_Standard listing = new Listing_Standard();
+            listing.Begin(rightInner);
+            listing.Label("NCL_SETTINGS_MULTICELL_DEBUG_DESC".Translate());
+            listing.Gap(8f);
+            listing.Label("NCL_SETTINGS_MULTICELL_DEBUG_COUNT".Translate(MultiCellMechanoidRegistry.All.Count));
+            listing.Gap(12f);
+            if (listing.ButtonText("NCL_SETTINGS_MULTICELL_DEBUG_OPEN".Translate()))
+            {
+                Find.WindowStack.Add(new Window_MultiCellDebugger());
+            }
+
+            listing.End();
+        }
+
+        private void DrawSettingsDiverPanel(Rect rightInner)
+        {
+            Listing_Standard listing = new Listing_Standard();
+            listing.Begin(rightInner);
+            listing.CheckboxLabeled(
+                "NCL_SETTINGS_STRATAGEM_ENABLED".Translate(),
+                ref settings.stratagemSystemEnabled,
+                "NCL_SETTINGS_STRATAGEM_ENABLED_TIP".Translate());
+            listing.Gap(12f);
+            listing.Label("NCL_SETTINGS_STRATAGEM_ENABLED_NOTE".Translate());
+            listing.End();
         }
 
         private void DrawSettingsTabColumn(Rect area)
         {
             const float tabHeight = 36f;
             const float gap = 8f;
-            for (int i = 0; i < SettingsTabLabelKeys.Length; i++)
+            for (int i = 0; i < SettingsTabCount; i++)
             {
                 Rect row = new Rect(area.x, area.y + i * (tabHeight + gap), area.width, tabHeight);
                 if (_settingsTabIndex == i)
@@ -705,7 +762,10 @@ namespace NCL
                     Widgets.DrawBoxSolid(row, new Color(0.2f, 0.25f, 0.32f, 0.55f));
                 }
 
-                if (Widgets.ButtonText(row, SettingsTabLabelKeys[i].Translate()))
+                string labelKey = i < SettingsTabLabelKeys.Length
+                    ? SettingsTabLabelKeys[i]
+                    : "NCL_SETTINGS_TAB_MULTICELL_DEBUG";
+                if (Widgets.ButtonText(row, labelKey.Translate()))
                 {
                     _settingsTabIndex = i;
                 }

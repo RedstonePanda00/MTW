@@ -11,7 +11,7 @@ namespace TowerLaserDefense
 {
   public class PlaceWorker_ShowTurretRadius : PlaceWorker
   {
-    public virtual AcceptanceReport AllowsPlacing(
+    public override AcceptanceReport AllowsPlacing(
       BuildableDef checkingDef,
       IntVec3 loc,
       Rot4 rot,

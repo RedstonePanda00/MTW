@@ -24,5 +24,12 @@
   <RT_AutoGun.description>RT AutoGun</RT_AutoGun.description>
   
   <RT_AutoGun.verbs.Verb_ArcSprayProjectile.label>RT AutoGun</RT_AutoGun.verbs.Verb_ArcSprayProjectile.label>
+
+  <NCL_Scorpion_RT_AutoGun_Left.label>RT 自动炮（左）</NCL_Scorpion_RT_AutoGun_Left.label>
+  <NCL_Scorpion_RT_AutoGun_Right.label>RT 自动炮（右）</NCL_Scorpion_RT_AutoGun_Right.label>
+
+  <NCL_Scorpion_SolarisPenetrator.label>炽核贯杀</NCL_Scorpion_SolarisPenetrator.label>
+  <NCL_Scorpion_SolarisPenetrator.description>战争巨蝎尾部挂载的地狱球投射炮。</NCL_Scorpion_SolarisPenetrator.description>
+  <NCL_Scorpion_SolarisPenetrator.verbs.Verb_Shoot.label>炽核贯杀</NCL_Scorpion_SolarisPenetrator.verbs.Verb_Shoot.label>
   
 </LanguageData>

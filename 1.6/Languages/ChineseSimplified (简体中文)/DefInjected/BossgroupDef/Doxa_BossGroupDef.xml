@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <LanguageData>
-  
-<Doxa.leaderDescription>Doxa-0 is an autonomous tactical fire control hub modeled after large arachnid organisms. As a key unit among mechanoids, it possesses multiple tactical functions including area suppression, target designation, and summoning support.
 
-Doxa-0 moves slowly, typically advancing across terrain at low frequency. When entering its "Artillery Lock" state, the main body becomes fully automated and stationary, activating its rocket artillery module mounted on the third dorsal segment to deliver high-coverage, shield-penetrating strikes.
+  <Doxa.leaderDescription>静巢构体（Doxa-0）是机械族关键泰坦之一，外形源于大型蛛形生物，具备区域压制、目标指示与召唤支援等多重战术职能。
 
-Additionally, Doxa-0 features self-defense mechanisms: during combat, it periodically incubates and releases "Shellsplitter" units - fast, fragile but highly dangerous small support mechanoids. Shellsplitters release localized shockwaves and EMP disruption pulses upon death, dealing area damage to targets and impairing their electronic capabilities.
+它以低频、沉重的步伐推进；进入“架炮锁定”后，机体趋于固定，由第三背节火箭/轨吊火力模块对大片区域进行穿盾饱和打击。尾部与侧舷辅助炮塔负责近中程清场与骚扰。
 
-Its massive neural core system grants it powerful target calculation and fire control coordination capabilities. If its deployment activities are not quickly interrupted, it may completely dominate the battle rhythm through overwhelming suppression.</Doxa.leaderDescription>
-  
+战斗中会周期性孵化裂壳蛛：速度快、结构脆，但极具威胁。裂壳蛛死亡时可释放局部冲击波与电磁脉冲，损伤电子设备并扰乱阵型。
+
+其巨型神经火控核心能协调多路火力与目标优先级。若不在压制形成前将其击溃，战场节奏往往会被静巢构体完全主导。</Doxa.leaderDescription>
+
 </LanguageData>

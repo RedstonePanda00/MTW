@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <AbilityDef>
+    <defName>MTW_Diver_Pounce</defName>
+    <label>Pounce</label>
+    <description>Omnidirectional pounce up to 3 cells toward the chosen location. Can be used while stunned; immediately interrupts current actions.</description>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <iconPath>UI/Abilities/Skip</iconPath>
+    <verbProperties>
+      <verbClass>NCL.Verb_DiverPounce</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <range>999.9</range>
+      <warmupTime>0</warmupTime>
+      <defaultCooldownTime>0</defaultCooldownTime>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>MTW_Diver_PounceFlyer</defName>
+    <thingClass>NCL.DiverPounceFlyer</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.5</flightDurationMin>
+      <flightSpeed>12</flightSpeed>
+      <workerClass>PawnFlyerWorker</workerClass>
+      <heightFactor>0.35</heightFactor>
+      <progressCurve>
+        <points>
+          <li>(0, 0)</li>
+          <li>(0.1, 0.15)</li>
+          <li>(1, 1)</li>
+        </points>
+      </progressCurve>
+    </pawnFlyer>
+  </ThingDef>
+
+</Defs>

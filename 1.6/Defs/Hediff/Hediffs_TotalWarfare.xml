@@ -39,8 +39,8 @@
     
   <HediffDef ParentName="NCL_TotalWarfareHediffBase">
     <defName>TW_TacticalArtilleryCoordinationModule_Airstrike_Signal_Transmitter</defName>
-    <label>远程战术协调单元:突袭信号指示终端</label>
-    <description>该单位在周围半径150格内存在玩家单位时将召唤突袭信号指示终端协助战斗</description>
+    <label>Tactical Coordination Module: Airstrike Signal Transmitter</label>
+    <description>When player colonists are detected within a 150-tile radius, this unit deploys an airstrike signal transmitter for support.</description>
 	<comps>
       <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
         <turretDef>TW_Airstrike_Signal_Transmitter</turretDef>
@@ -62,8 +62,8 @@
 
     <HediffDef ParentName="NCL_TotalWarfareHediffBase">
     <defName>TW_TacticalArtilleryCoordinationModule_AutoMortarEMP</defName>
-    <label>远程战术协调单元:EMP迫击炮</label>
-    <description>该单位在周围半径150格内存在玩家单位时将召唤EMP迫击炮协助战斗</description>
+    <label>Tactical Coordination Module: EMP Mortar</label>
+    <description>When player colonists are detected within a 150-tile radius, this unit calls EMP mortar support.</description>
 	<comps>
       <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
         <turretDef>Turret_TW_AutoMortar_EMP</turretDef>
@@ -121,8 +121,8 @@
 
       <HediffDef ParentName="NCL_TotalWarfareHediffBase">
     <defName>TW_TacticalArtilleryCoordinationModule_AutoInferno</defName>
-    <label>远程战术协调单元：狱火炮</label>
-    <description>该单位在周围半径35格内存在玩家单位时将召唤狱火炮协助战斗</description>
+    <label>Tactical Coordination Module: Incinerator Mortar</label>
+    <description>When player colonists are detected within a 35-tile radius, this unit calls incinerator mortar support.</description>
 	<comps>
       <li Class="NCL.HediffCompProperties_TurretCallerAutoMortar">
         <turretDef>Turret_TW_AutoInferno</turretDef>
@@ -153,7 +153,7 @@
 		<minSeverity>0.01</minSeverity>
 		<statFactors>
       <ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
-			<VEF_VerbRangeFactor>1.25</VEF_VerbRangeFactor>
+			<NCL_VerbRangeFactor>1.25</NCL_VerbRangeFactor>
 			<RangedCooldownFactor>0.8</RangedCooldownFactor>
 			<IncomingDamageFactor>0.9</IncomingDamageFactor>
 			<AimingDelayFactor>0.8</AimingDelayFactor>		  
@@ -333,7 +333,7 @@
     <stages>
       <li>
 		<minSeverity>0.01</minSeverity>
-        <label>超载</label>
+        <label>Overload</label>
 		<statFactors>
             <RangedCooldownFactor>0.2</RangedCooldownFactor>
 			<IncomingDamageFactor>0.4</IncomingDamageFactor>
@@ -354,7 +354,7 @@
       </li>
       <li>
         <minSeverity>0.20</minSeverity>
-        <label>能量过剩</label>
+        <label>Energy surplus</label>
 		<statFactors>
             <RangedCooldownFactor>0.4</RangedCooldownFactor>
 			<IncomingDamageFactor>0.55</IncomingDamageFactor>
@@ -375,7 +375,7 @@
       </li>    
 	  <li>
 		<minSeverity>0.40</minSeverity>
-        <label>逐渐稳定</label>
+        <label>Stabilizing</label>
 		<statFactors>
             <RangedCooldownFactor>0.6</RangedCooldownFactor>
 			<IncomingDamageFactor>0.7</IncomingDamageFactor>
@@ -396,7 +396,7 @@
       </li>
 	  <li>
 		<minSeverity>0.80</minSeverity>
-        <label>稳定</label>
+        <label>Stable</label>
 		<statFactors>
 			<RangedCooldownFactor>0.8</RangedCooldownFactor>
 			<IncomingDamageFactor>0.8</IncomingDamageFactor>

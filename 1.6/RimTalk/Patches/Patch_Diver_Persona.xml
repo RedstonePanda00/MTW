@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MTW_Diver"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="RsPandaLibrary.Compatibility.RimTalk.RimTalkPersonaExtension">
+          <personaKeys>
+            <li>MTW_Persona_Diver_Sharpshooter</li>
+            <li>MTW_Persona_Diver_Warmonger</li>
+            <li>MTW_Persona_Diver_Recruit</li>
+            <li>MTW_Persona_Diver_Veteran</li>
+          </personaKeys>
+          <chattiness>0.5</chattiness>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+
+</Patch>

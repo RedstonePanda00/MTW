@@ -52,6 +52,7 @@ Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to 
           </li>
         </detritusLeavings>
 	<thinkTreeMain>DoxaThinkTreeMain</thinkTreeMain>
+        <thinkTreeConstant>DoxaThinkTreeConstant</thinkTreeConstant>
       </race>
       <tools>
         <li>
@@ -77,7 +78,127 @@ Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to 
       <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">50</BandwidthCost>
       <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
       </statBases>
+    <size>(3,5)</size>
 	  <comps>
+      <li Class="NCL.CompProperties_MultiCellPawn">
+        <version>1</version>
+        <showOverlayWhenSelected>true</showOverlayWhenSelected>
+        <showDebugLabels>false</showDebugLabels>
+        <rebuildProxyOnLoad>true</rebuildProxyOnLoad>
+        <coreCellColor>(0.20, 0.45, 1.00)</coreCellColor>
+        <healthColorThresholdHigh>0.7</healthColorThresholdHigh>
+        <healthColorThresholdMid>0.35</healthColorThresholdMid>
+        <showPartHealthGizmo>true</showPartHealthGizmo>
+        <parts>
+          <li>
+            <partKey>body</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_First</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>5</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(0,0,0)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_Doxa0_Dorsal_Fourth</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Fourth</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(0,0,-1)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_Doxa0_Dorsal_Second</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Second</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,1)</li>
+              <li>(0,0,1)</li>
+              <li>(0,0,2)</li>
+              <li>(1,0,1)</li>
+            </cellsNorth>
+            <turretMounts>
+              <li>
+                <slotKey>turret3</slotKey>
+                <turretDef>NCL_Diabolus_RT_AutoGun</turretDef>
+                <onePerCell>true</onePerCell>
+                <enabledByDefault>true</enabledByDefault>
+                <disableWhenPartMissing>true</disableWhenPartMissing>
+                <mountCellsNorth>
+                  <li>(-1,0,1)</li>
+                </mountCellsNorth>
+              </li>
+              <li>
+                <slotKey>turret4</slotKey>
+                <turretDef>NCL_Diabolus_RT_AutoGun</turretDef>
+                <onePerCell>true</onePerCell>
+                <enabledByDefault>true</enabledByDefault>
+                <disableWhenPartMissing>true</disableWhenPartMissing>
+                <mountCellsNorth>
+                  <li>(1,0,1)</li>
+                </mountCellsNorth>
+              </li>
+            </turretMounts>
+          </li>
+          <li>
+            <partKey>part_Doxa0_Dorsal_Third</partKey>
+            <bindBodyPartDef>Doxa0_Dorsal_Third</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,-1)</li>
+              <li>(-1,0,0)</li>
+              <li>(1,0,-1)</li>
+              <li>(1,0,0)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_Doxa0_Turret_Mount</partKey>
+            <bindBodyPartDef>Doxa0_Turret_Mount</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,-2)</li>
+              <li>(1,0,-2)</li>
+            </cellsNorth>
+            <turretMounts>
+              <li>
+                <slotKey>antiparticleMortar</slotKey>
+                <turretDef>MTW_Doxa_RT_FragLauncher</turretDef>
+                <onePerCell>true</onePerCell>
+                <enabledByDefault>true</enabledByDefault>
+                <disableWhenPartMissing>true</disableWhenPartMissing>
+                <mountCellsNorth>
+                  <li>(-1,0,-2)</li>
+                </mountCellsNorth>
+              </li>
+              <li>
+                <slotKey>turret2</slotKey>
+                <turretDef>MTW_Doxa_RT_FragLauncher</turretDef>
+                <onePerCell>true</onePerCell>
+                <enabledByDefault>true</enabledByDefault>
+                <disableWhenPartMissing>true</disableWhenPartMissing>
+                <mountCellsNorth>
+                  <li>(1,0,-2)</li>
+                </mountCellsNorth>
+              </li>
+            </turretMounts>
+          </li>
+        </parts>
+      </li>
+  <li Class="NCL.CompProperties_DoxaCombatDebug" />
   <li Class="CompProperties_AutoMechSpawner" />
       <li Class="CompProperties_MechCarrier">
         <spawnPawnKind>TW_Mech_Shellsplitter_Spider</spawnPawnKind>
@@ -244,7 +365,7 @@ Typically deployed in swarms via rapid batch production, they execute infiltrati
     <PawnKindDef ParentName="LightMechanoidKind">
       <defName>TW_Mech_Shellsplitter_Spider</defName>
       <label>Shellsplitter</label>
-      <labelPlural>裂壳蛛</labelPlural>
+      <labelPlural>Shellsplitters</labelPlural>
       <race>TW_Mech_Shellsplitter_Spider</race>
       <allowInMechClusters>false</allowInMechClusters>
       <forceNoDeathNotification>true</forceNoDeathNotification>

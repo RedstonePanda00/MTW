@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
 		<Operation Class="PatchOperationAdd">
@@ -10,8 +10,8 @@
       <checkIntervalTicks>30</checkIntervalTicks>
       <requireLineOfSight>false</requireLineOfSight>
       <letterDef>PositiveEvent</letterDef>
-      <letterLabel>研究突破：机械首脑</letterLabel>
-      <letterText>你的殖民者已通过扫描该远古机械首脑解锁了重构它的能力</letterText>
+      <letterLabel>NCL.Odyssey.CerebrexScanLetter.Label</letterLabel>
+      <letterText>NCL.Odyssey.CerebrexScanLetter.Text</letterText>
       <sendLetter>true</sendLetter>
 			</li>
         </value>

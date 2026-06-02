@@ -14,7 +14,7 @@ namespace NCLWorm
   {
     public CompProbeBrain Brain => this.GetComp<CompProbeBrain>();
 
-    public virtual void SpawnSetup(Map map, bool respawningAfterLoad)
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
       base.SpawnSetup(map, respawningAfterLoad);
       if (!respawningAfterLoad && (this.ExactPosition == Vector3.zero))
@@ -25,7 +25,7 @@ namespace NCLWorm
       map.GetComponent<WormBossMapComponent>()?.RegisterProbe(this);
     }
 
-    public virtual void Destroy(DestroyMode mode = 0)
+    public override void Destroy(DestroyMode mode = 0)
     {
       ((Thing) this).Map?.GetComponent<WormBossMapComponent>()?.DeregisterProbe(this);
       base.Destroy(mode);

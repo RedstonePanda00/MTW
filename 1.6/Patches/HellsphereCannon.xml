@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Gun_HellsphereCannon (hellsphere cannon / 帝王业火炮) -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]/statBases/RangedWeapon_Cooldown</xpath>
+    <value>
+      <RangedWeapon_Cooldown>11.0</RangedWeapon_Cooldown>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]/verbs/li/warmupTime</xpath>
+    <value>
+      <warmupTime>4.2</warmupTime>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]/verbs/li/range</xpath>
+    <value>
+      <range>34.9</range>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]/verbs/li/minRange</xpath>
+    <value>
+      <minRange>11.4</minRange>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]/verbs/li/ai_AvoidFriendlyFireRadius</xpath>
+    <value>
+      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]/tools/li/power</xpath>
+    <value>
+      <power>35</power>
+    </value>
+  </Operation>
+
+  <!-- Bullet_HellsphereCannonGun -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/graphicData/drawSize</xpath>
+    <value>
+      <drawSize>(2.5, 5)</drawSize>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/projectile/speed</xpath>
+    <value>
+      <speed>40</speed>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/projectile</xpath>
+    <value>
+      <flyOverhead>true</flyOverhead>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/projectile/filth</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/projectile/filthCount</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/projectile/explosionSpawnsSingleFilth</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/modExtensions</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]</xpath>
+      <value>
+        <modExtensions>
+          <li Class="PenetrateThickRoof.PenetrateThickRoofExtension" />
+        </modExtensions>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Bullet_HellsphereCannonGun"]/modExtensions</xpath>
+      <value>
+        <li Class="PenetrateThickRoof.PenetrateThickRoofExtension" />
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

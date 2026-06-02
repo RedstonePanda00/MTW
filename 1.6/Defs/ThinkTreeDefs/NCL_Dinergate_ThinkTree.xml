@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThinkTreeDef>
+    <defName>NCL_Dinergate_ThinkTreeMain</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalLowEnergy">
+          <subNodes>
+            <li Class="JobGiver_SelfShutdown" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>MentalStateCritical</treeDef>
+        </li>
+        <li Class="ThinkNode_QueuedJob" />
+        <li Class="ThinkNode_Subtree">
+          <treeDef>MentalStateNonCritical</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalForcedGoto">
+          <subNodes>
+            <li Class="JobGiver_ForcedGoto" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>DraftedOrder</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_MoveToStandable" />
+                <li Class="JobGiver_Orders" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            <li Class="JobGiver_SeekAllowedArea" />
+            <li Class="ThinkNode_ConditionalPlayerMech">
+              <subNodes>
+                <li Class="JobGiver_GetEnergy_Charger" />
+                <li Class="JobGiver_GetEnergy_SelfShutdown" />
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_ConditionalWorkMech">
+              <invert>true</invert>
+              <subNodes>
+                <li Class="JobGiver_AIFightEnemies">
+                  <targetAcquireRadius>55</targetAcquireRadius>
+                  <targetKeepRadius>65</targetKeepRadius>
+                </li>
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_ConditionalPlayerMech">
+              <subNodes>
+                <li Class="JobGiver_WanderColony">
+                  <maxDanger>Deadly</maxDanger>
+                  <reportStringOverride>Patrolling.</reportStringOverride>
+                </li>
+              </subNodes>
+            </li>
+            <li Class="JobGiver_WanderAnywhere" />
+          </subNodes>
+        </li>
+        <li Class="JobGiver_Idle" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>

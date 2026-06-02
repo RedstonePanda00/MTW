@@ -353,11 +353,20 @@ namespace NCL
         // 重写TryCastShot方法，根据不同模式处理射击
         protected override bool TryCastShot()
         {
+            bool lastBurstShot = burstShotsLeft == 1;
             var ammoComp = AmmoComp;
 
             // 没有高级弹药组件或次要弹药，执行常规射击
             if (ammoComp == null || !ammoComp.HasSecondaryProjectile())
-                return base.TryCastShot();
+            {
+                bool shotOk = base.TryCastShot();
+                if (shotOk && lastBurstShot)
+                {
+                    TrySpawnDoxaHatchlingsAfterVolley();
+                }
+
+                return shotOk;
+            }
 
             // 初始化射击状态
             if (!initialized)
@@ -434,7 +443,28 @@ namespace NCL
                 }
             }
 
+            if (result && lastBurstShot)
+            {
+                TrySpawnDoxaHatchlingsAfterVolley();
+            }
+
             return result;
+        }
+
+        // Doxa: release shellsplitters after a full mortar volley; CompMechCarrier cooldown handles spacing.
+        private void TrySpawnDoxaHatchlingsAfterVolley()
+        {
+            Pawn pawn = CasterPawn;
+            if (pawn == null || pawn.def.defName != "TW_Mech_Doxa")
+            {
+                return;
+            }
+
+            CompMechCarrier carrier = pawn.TryGetComp<CompMechCarrier>();
+            if (carrier != null && carrier.CanSpawn)
+            {
+                carrier.TrySpawnPawns();
+            }
         }
 
         // 播放次要弹药音效辅助方法

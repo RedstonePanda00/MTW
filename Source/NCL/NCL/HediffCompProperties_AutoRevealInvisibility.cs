@@ -101,7 +101,7 @@ namespace NCL
         }
 
         // 新增的强制可见条件：附近有敌人
-        private new bool ForcedVisible
+        private bool ForcedVisible
         {
             get
             {
@@ -110,7 +110,7 @@ namespace NCL
         }
 
         // 覆盖 GetAlpha 方法以使用 Mod 设置
-        public virtual float GetAlpha()
+        public new float GetAlpha()
         {
             if (Settings?.InvisibilityVisibleToPlayer ?? true)
             {

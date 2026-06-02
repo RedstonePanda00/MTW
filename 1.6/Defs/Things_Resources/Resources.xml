@@ -166,10 +166,10 @@ Enables construction of mechanoid units, deployment structures, and specialized 
 
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
-        <completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</completedLetterLabel>
-        <completedLetter>通过研究压制火控战略核心，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+        <completedLetterLabel>Fire suppression tactical core studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the fire suppression tactical core, {PAWN_labelShort} has gained the insight needed for {RESEARCH}.
 
-您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+Your researchers can now use a research bench to begin unlocking practical applications.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         
@@ -177,7 +177,7 @@ Enables construction of mechanoid units, deployment structures, and specialized 
         <activateTexPath>UI/Icons/Study</activateTexPath>
         <activateLabelString>Analyze...</activateLabelString>
         <activateDescString>Analyze the Tactical Core.</activateDescString>
-        <jobString>Analyze Doxa Tactical Core</jobString>
+        <jobString>Analyze fire suppression tactical core</jobString>
         <guiLabelString>Choose who should analyze this</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
 
@@ -215,10 +215,10 @@ Recovery and analysis unlocks heavy-assault mechanoid units/structures and enabl
 
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
-        <completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</completedLetterLabel>
-        <completedLetter>通过研究装甲突击战略核心，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+        <completedLetterLabel>Armor blitz strategic core studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the armor blitz strategic core, {PAWN_labelShort} has gained the insight needed for {RESEARCH}.
 
-您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+Your researchers can now use a research bench to begin unlocking practical applications.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         
@@ -226,7 +226,7 @@ Recovery and analysis unlocks heavy-assault mechanoid units/structures and enabl
         <activateTexPath>UI/Icons/Study</activateTexPath>
         <activateLabelString>Analyze...</activateLabelString>
         <activateDescString>Analyze the Tactical Core.</activateDescString>
-        <jobString>Analyze Doxa Tactical Core</jobString>
+        <jobString>Analyze armor blitz strategic core</jobString>
         <guiLabelString>Choose who should analyze this</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
 
@@ -262,10 +262,10 @@ Recovery and analysis unlocks heavy-assault mechanoid units/structures and enabl
 
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
-        <completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</completedLetterLabel>
-        <completedLetter>通过研究机械精密接口阵列，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+        <completedLetterLabel>Precision memory interface studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the precision memory interface array, {PAWN_labelShort} has gained the insight needed for {RESEARCH}.
 
-您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+Your researchers can now use a research bench to begin unlocking practical applications.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         
@@ -314,9 +314,9 @@ Recovery and analysis unlocks heavy-assault mechanoid units/structures and enabl
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>The Red Cube studied: {RESEARCH} unlocked</completedLetterLabel>
-        <completedLetter>通过研究红色魔方，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
+        <completedLetter>By studying the red cube, {PAWN_labelShort} has gained the insight needed for {RESEARCH}.
 
-您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</completedLetter>
+Your researchers can now use a research bench to begin unlocking practical applications.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         

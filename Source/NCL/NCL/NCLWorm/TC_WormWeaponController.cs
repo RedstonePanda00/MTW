@@ -79,7 +79,7 @@ namespace NCLWorm
       this.IsOverheating = isOverheating;
     }
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       if (!this.IsCasterInBoundsForWeaponLogic())
@@ -121,7 +121,7 @@ namespace NCLWorm
       {
         Verb primaryVerb = this.VerbTracker.PrimaryVerb;
         if (primaryVerb == null || primaryVerb.state != VerbState.Bursting)
-          ;
+          return;
       }
       else
       {
@@ -200,7 +200,7 @@ namespace NCLWorm
       this._cooldownTicksLeft = (int) ((double) verb.verbProps.defaultCooldownTime * 60.0);
     }
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       if (this._verbTracker == null)
@@ -208,19 +208,19 @@ namespace NCLWorm
       this._cacheDirty = true;
     }
 
-    public virtual void PostPostMake()
+    public override void PostPostMake()
     {
       base.PostPostMake();
       this._cacheDirty = true;
     }
 
-    public virtual void PostDeSpawn(Map map, DestroyMode mode = 0)
+    public override void PostDeSpawn(Map map, DestroyMode mode = 0)
     {
       base.PostDeSpawn(map, (DestroyMode) 0);
       this.ForceStop();
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Deep.Look<VerbTracker>(ref this._verbTracker, "verbTracker", new object[1]

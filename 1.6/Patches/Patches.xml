@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Patch>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
-		<order>Prepend</order>
-		<value>
-			<li>NCL_Mech_Dinergate</li>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationInsert">
-		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
-		<value>
-			<li>Corpse_NCL_Mech_Dinergate</li>
-		</value>
-	</Operation>
-	
-		<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
-		<order>Prepend</order>
-		<value>
-			<li>NCL_Mech_DinergateSniper</li>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationInsert">
-		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
-		<value>
-			<li>Corpse_NCL_Mech_DinergateSniper</li>
-		</value>
-	</Operation>
-
 			<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="MechGestator"]/recipes</xpath>
 		<order>Prepend</order>
@@ -125,21 +95,6 @@
 		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
 		<value>
 			<li>Corpse_NCL_Mech_Mantis</li>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
-		<order>Prepend</order>
-		<value>
-			<li>NCL_Mech_Scutiger</li>
-		</value>
-	</Operation>
-
-			<Operation Class="PatchOperationInsert">
-		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs/li</xpath>
-		<value>
-			<li>Corpse_NCL_Mech_Scutiger</li>
 		</value>
 	</Operation>
 
@@ -239,32 +194,6 @@
         </value>
     </Operation>
 
-		<Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="NCL_Dinergate_Drone"]/comps</xpath>
-        <value>
-            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
-			<ProductDef>Steel</ProductDef>
-		<SpawnCountRange>
-        <min>10</min>
-        <max>25</max>
-        </SpawnCountRange>
-			</li>
-        </value>
-    </Operation>
-
-			<Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="NCL_Scutiger_Drone"]/comps</xpath>
-        <value>
-            <li Class="NCL.CompProperties_ClearCorpseWhenDeath">
-			<ProductDef>Steel</ProductDef>
-		<SpawnCountRange>
-        <min>10</min>
-        <max>25</max>
-        </SpawnCountRange>
-			</li>
-        </value>
-    </Operation>
-	
 	<Operation Class="PatchOperationAdd">
         <xpath>/Defs/ThingDef[defName="TW_Mech_Shellsplitter_Spider"]/comps</xpath>
         <value>

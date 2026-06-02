@@ -12,26 +12,23 @@ namespace NyarsModPackOne
 {
   public class JobGiver_AIFightEnemiesInPlace : JobGiver_AIFightEnemy
   {
-    protected virtual bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null)
+    protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null)
     {
       Thing enemyTarget = pawn.mindState.enemyTarget;
-      bool flag = !pawn.IsColonist && !pawn.IsColonySubhuman;
-      Verb verb = verbToUse ?? pawn.TryGetAttackVerb(enemyTarget, flag, this.allowTurrets);
-      int num;
-      if (verb != null)
-      {
-        IntVec3 position = ((Thing) pawn).Position;
-        num = !((IntVec3) ref position).InHorDistOf(enemyTarget.Position, verb.EffectiveRange) ? 1 : 0;
-      }
-      else
-        num = 1;
-      if (num != 0)
+      bool allowManualCastWeapons = !pawn.IsColonist && !pawn.IsColonySubhuman;
+      Verb verb = verbToUse ?? pawn.TryGetAttackVerb(enemyTarget, allowManualCastWeapons, this.allowTurrets);
+      if (verb == null || enemyTarget == null)
       {
         dest = IntVec3.Invalid;
         return false;
       }
-      dest = ((Thing) pawn).Position;
-      return true;
+      if (verb.CanHitTargetFrom(pawn.Position, enemyTarget))
+      {
+        dest = pawn.Position;
+        return true;
+      }
+      dest = IntVec3.Invalid;
+      return false;
     }
   }
 }

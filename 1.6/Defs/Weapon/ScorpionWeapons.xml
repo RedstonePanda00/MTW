@@ -82,21 +82,18 @@
     <smeltable>false</smeltable>
     <verbs>
       <li>
-				<verbClass>NCL.Verb_ShootWithDustBlast</verbClass>
-				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
-				<burstShotCount>15</burstShotCount>
-				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Crimson_Slagburst_Rocket</defaultProjectile>
-				<warmupTime>1.5</warmupTime>
-				<minRange>0</minRange>
-				<range>32</range>
-				<soundCast>Shot_Autocannon</soundCast>
-				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>7</muzzleFlashScale>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
-				<forcedMissRadius>0.1</forcedMissRadius>
+        <verbClass>Verb_Shoot</verbClass>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Crimson_Slagburst_Rocket</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>32</range>
+        <soundCast>Shot_Autocannon</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <forcedMissRadius>0.1</forcedMissRadius>
       </li>
     </verbs>
     <tools>
@@ -126,7 +123,7 @@
     </tradeTags>
   </ThingDef>
   
-  <ThingDef ParentName="BaseWeaponTurret">
+  <ThingDef Name="RT_AutoGun" ParentName="BaseWeaponTurret">
     <defName>RT_AutoGun</defName>
     <label>RT AutoGun</label>
     <description>RT AutoGun</description>
@@ -145,7 +142,7 @@
     </statBases>
     <verbs>
       <li>
-				<verbClass>NCL.Verb_ArcSprayProjectile</verbClass>
+				<verbClass>Verb_ArcSprayProjectile</verbClass>
 				<sprayWidth>2.5</sprayWidth>
 				<sprayArching>1</sprayArching>
 				<sprayThicknessCells>10</sprayThicknessCells>
@@ -169,6 +166,74 @@
       </li>
     </verbs>
 	<tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+
+  <!-- Duplicate defs so RsPandaLibrary.CompMultiTurretGun save/load can match TurretProperties per gun (FirstOrDefault by turretDef). -->
+  <ThingDef ParentName="RT_AutoGun">
+    <defName>NCL_Scorpion_RT_AutoGun_Left</defName>
+    <label>RT AutoGun (L)</label>
+  </ThingDef>
+  <ThingDef ParentName="RT_AutoGun">
+    <defName>NCL_Scorpion_RT_AutoGun_Right</defName>
+    <label>RT AutoGun (R)</label>
+  </ThingDef>
+
+  <!-- Tail-mounted Solaris Penetrator (replaces NCL_Blazing_Core_Penetrator ability for CompMultiTurretGun). -->
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>NCL_Scorpion_SolarisPenetrator</defName>
+    <label>Solaris Penetrator</label>
+    <description>Tail-mounted hellsphere projector (War Scorpion).</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/SolarisPenetratorCannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>40</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HellsphereCannonGun</defaultProjectile>
+        <warmupTime>5</warmupTime>
+        <defaultCooldownTime>5</defaultCooldownTime>
+        <minRange>11.4</minRange>
+        <range>35</range>
+        <requireLineOfSight>false</requireLineOfSight>
+        <soundCast>Shot_HellsphereCannonGun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+        <ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <ai_TargetHasRangedAttackScoreOffset>50</ai_TargetHasRangedAttackScoreOffset>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>true</canTargetBuildings>
+        </targetParams>
+        <aimingLineMote>Mote_HellsphereCannon_Aim</aimingLineMote>
+        <aimingChargeMote>Mote_HellsphereCannon_Charge</aimingChargeMote>
+        <aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+        <aimingLineMoteFixedLength>15.9</aimingLineMoteFixedLength>
+        <aimingTargetMote>Mote_HellsphereCannon_Target</aimingTargetMote>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+        <beamTargetsGround>true</beamTargetsGround>
+        <soundAiming>HellsphereCannon_Aiming</soundAiming>
+        <canGoWild>false</canGoWild>
+      </li>
+    </verbs>
+    <tradeTags>
       <li>NCLThings</li>
     </tradeTags>
   </ThingDef>

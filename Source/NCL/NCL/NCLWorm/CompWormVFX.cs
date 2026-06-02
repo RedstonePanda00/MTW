@@ -18,7 +18,7 @@ namespace NCLWorm
 
     private WormBody Body => this.parent as WormBody;
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       this.Initialize();
@@ -52,7 +52,7 @@ namespace NCLWorm
         this._runtimeStates.Add(activeEmitter.CreateState());
     }
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       if (this.parent is WormThingBase parent && parent.IsVisualHidden || ((Thing) this.parent).Map != Find.CurrentMap || this._activeEmitters == null || this._runtimeStates == null)
@@ -62,7 +62,7 @@ namespace NCLWorm
         this._activeEmitters[index].Tick(this.Body, this._runtimeStates[index], currentFactor);
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Collections.Look<VFXRuntimeState>(ref this._runtimeStates, "runtimeStates", (LookMode) 2, Array.Empty<object>());

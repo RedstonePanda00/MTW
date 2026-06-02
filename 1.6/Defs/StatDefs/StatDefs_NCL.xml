@@ -15,4 +15,18 @@
         <showOnPawns>false</showOnPawns>
         <displayPriorityInCategory>9990</displayPriorityInCategory>
     </StatDef>
+
+    <!-- Pawn combat stat: multiplied onto Verb_LaunchProjectile.EffectiveRange via Harmony (replaces VEF_VerbRangeFactor). -->
+    <StatDef>
+        <defName>NCL_VerbRangeFactor</defName>
+        <label>verb range factor</label>
+        <description>Multiplier applied to ranged verb effective range from this pawn.</description>
+        <category>PawnCombat</category>
+        <defaultBaseValue>1</defaultBaseValue>
+        <minValue>0.01</minValue>
+        <hideAtValue>1</hideAtValue>
+        <alwaysHide>true</alwaysHide>
+        <toStringStyle>PercentZero</toStringStyle>
+        <displayPriorityInCategory>1210</displayPriorityInCategory>
+    </StatDef>
 </Defs>

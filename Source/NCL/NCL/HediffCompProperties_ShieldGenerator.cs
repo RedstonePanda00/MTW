@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
@@ -109,6 +109,7 @@ namespace NCL
         public static WorldObjectDef NCL_WorldObject_SkyfallerArtillery;
         public static ThingDef NCL_Eagle_Artillery_Shell_Up; // 替换为实际的 Skyfaller 定义名称
         public static ThingDef NCL_Eagle_Artillery_Shell_Down; // 替换为实际的 Skyfaller 定义名称
+        public static ThingDef NCL_AtmosphericPlasmaDropPod;
         public static EffecterDef NCL_ShellFortFightingeffects; // 替换为实际的 Skyfaller 定义名称
         public static SoundDef NCL_Artillery_Landed;
         public static SoundDef NCL_Artillery_Firing;

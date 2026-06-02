@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ApparelArmorReconBase">
+    <defName>Apparel_MTW_SC34_InfiltratorArmor</defName>
+    <label>SC-34 infiltrator armor</label>
+    <description>A lightweight powered scout suit in the SC-34 series. Plasteel weave plates and lower-body neuro-memetic assistors preserve recon-grade protection without sacrificing mobility—standard issue for orbital drop infiltrators operating in mechanoid-held facilities.</description>
+    <graphicData>
+      <texPath>Diver/SC-34/SC-34 Infiltrator_Body_Male_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(1, 1, 1, 1)</color>
+    </graphicData>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>1</weight>
+          <only>(1, 1, 1, 1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <recipeMaker>
+      <researchPrerequisite>NCL_Protective_Gear</researchPrerequisite>
+      <displayPriority>116</displayPriority>
+    </recipeMaker>
+    <tradeTags>
+      <li>HiTechArmor</li>
+      <li>Armor</li>
+      <li>NCLthings</li>
+    </tradeTags>
+    <apparel>
+      <wornGraphicPath>Diver/SC-34/SC-34 Infiltrator_Body</wornGraphicPath>
+      <useWornGraphicMask>false</useWornGraphicMask>
+      <tags>
+        <li>SpacerMilitary</li>
+        <li>MTW_DiverGear</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelArmorHelmetReconBase">
+    <defName>Apparel_MTW_SC34_InfiltratorHelmet</defName>
+    <label>SC-34 infiltrator helmet</label>
+    <description>A recon-pattern armored helmet from the SC-34 line, with an integrated status computer and plasteel-weave faceplate. Pairs with the SC-34 infiltrator suit for full-environment drop operations.</description>
+    <graphicData>
+      <texPath>Diver/SC-34/SC-34 Infiltrator_Head_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+      <color>(1, 1, 1, 1)</color>
+    </graphicData>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>1</weight>
+          <only>(1, 1, 1, 1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <recipeMaker>
+      <researchPrerequisite>NCL_Protective_Gear</researchPrerequisite>
+      <displayPriority>111</displayPriority>
+    </recipeMaker>
+    <tradeTags>
+      <li>HiTechArmor</li>
+      <li>Armor</li>
+      <li>NCLthings</li>
+    </tradeTags>
+    <apparel>
+      <wornGraphicPath>Diver/SC-34/SC-34 Infiltrator_Head</wornGraphicPath>
+      <useWornGraphicMask>false</useWornGraphicMask>
+      <tags>
+        <li>SpacerMilitary</li>
+        <li>MTW_DiverGear</li>
+      </tags>
+      <forceEyesVisibleForRotations>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </forceEyesVisibleForRotations>
+    </apparel>
+  </ThingDef>
+
+</Defs>

@@ -34,20 +34,8 @@
    <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Annihilator_Wildfire</defName>
     <label>Annihilator Wildfire</label>
-    <description>Designation: Annihilator Wildfire
-Affiliation: Noah Communist League "Iron Curtain" Experimental Weapons Series
-
-Functional Overview:
-
-The Annihilator Wildfire is a high-energy experimental rifle housing a red antiparticle core, co-developed by NCL chief engineer O'Neal and transhuman AI "Justice" amid intense technical controversy. It fires high-frequency oscillating red antiparticle projectiles that trigger localized annihilation reactions upon impact, delivering incalculable destructive damage to single targets and medium clusters.
-
-However, O'Neal never fully endorsed the design. The weapon exhibits extreme recoil instability surpassing human endurance thresholds, while core excitation patterns induce rapid ballistic deviation - transforming each shot into a gamble between skill and fate. Unsuitable for sustained operation and never meeting standard combat unit compatibility requirements.
-
-The Annihilator Wildfire represents a nonlinear destruction vector - the final gamble when conventional tactics and ballistic logic collapse.
-
-Justice audio log #21: "Not flawed design... just excessive passion." "Precision unnecessary - courage sufficient."
-O'Neal RD annotation: "This shouldn't exist. But existing - never stand before it."</description>
-<relicChance>0</relicChance>
+    <description>Experimental weapon powered by a uranium fuel cell. Fires Heat rounds; each round bursts into 12 fragments on impact. Crude fire-control algorithms and recoil far beyond human tolerance make this weapon wildly inaccurate, so in most situations it fails to hit its target at all.</description>
+    <relicChance>0</relicChance>
     <graphicData>
       <texPath>Weapons/AnnihilatorWildfire</texPath>
       <graphicClass>Graphic_Single</graphicClass>

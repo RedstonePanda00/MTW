@@ -35,6 +35,15 @@
 	 	</Operation>
 
   <Operation Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Mech_Diabolus"]/race</xpath>
+				<value>
+					<hediffGiverSets>
+						<li>TW_Mech_Diabolus_Hediff</li>
+					</hediffGiverSets>
+				</value>
+	 	</Operation>
+
+  <Operation Class="PatchOperationAdd">
 						<xpath>Defs/PawnKindDef[defName="Mech_Warqueen"]</xpath>
 				<value>
     <weaponTags>

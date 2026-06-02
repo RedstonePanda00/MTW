@@ -20,9 +20,9 @@
 <NCL_RedCube.description>魔方内部的数据结构远超现有人类科技所能理解。唯有一组通讯坐标在其表面持续闪烁，似乎在等待某种回应。</NCL_RedCube.description>
 <NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze The Red Cube.</NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateDescString>
 <NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</NCL_RedCube.comps.CompAnalyzableUnlockResearch.activateLabelString>
-<NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the The Red Cube, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+<NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetter>通过研究红色魔方，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
 
-Your researchers can now use research benches to begin researching how to actually use the technology.</NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetter>
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetter>
 <NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetterLabel>The Red Cube studied: {RESEARCH} unlocked</NCL_RedCube.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
 <NCL_RedCube.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</NCL_RedCube.comps.CompAnalyzableUnlockResearch.guiLabelString>
 <NCL_RedCube.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</NCL_RedCube.comps.CompAnalyzableUnlockResearch.inspectString>
@@ -35,10 +35,10 @@ Your researchers can now use research benches to begin researching how to actual
 回收并解析此核心后，殖民地能够解锁大量以重装突击为导向的机械族单元与结构样式，同时开发出基于高强度复合材料与能动装甲反馈系统的专属装备。核心还可作为植入控制模块，用于增强机械化生命体的战场生存与突进性能，是全面战争体系中实现“火力突破”与“重装冲击”的关键资源。</TW_ArmorBlitzWarfare.description>
 <TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the Tactical Core.</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateDescString>
 <TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.activateLabelString>
-<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the Tactical Core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetter>通过研究装甲突击战略核心，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
 
-Your researchers can now use research benches to begin researching how to actually use the technology.</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetter>
-<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Fortified Shell Tactical Core studied: {RESEARCH} unlocked</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetter>
+<TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetterLabel>装甲突击战略核心已研究：{RESEARCH} 已解锁</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
 <TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.guiLabelString>
 <TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.inspectString>
 <TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.jobString>Analyze Fortified Shell Tactical Core</TW_ArmorBlitzWarfare.comps.CompAnalyzableUnlockResearch.jobString>
@@ -61,24 +61,24 @@ Your researchers can now use research benches to begin researching how to actual
 <TW_DoxaTacticalCore.description>压制火控战略核心 "Strategic Core: Fire Suppression Warfare" 是静巢构体 Doxa-0 的主脑残余，一种高度集成的战术协调装置。其内部保留着大量用于火控运算、目标优先级管理与战场压制算法的神经逻辑架构，是机械族体系中不可或缺的战略模块。该核心不仅具备极高的数据吞吐与并行计算能力，还包含对机械单位结构、植入模块与武装节点的完整编译支持。
 
 本核心在回收后可用于构建机械族单位、部署类建筑、专属装备，亦可作为高级植入物的控制中枢，是全面战争体系下实现“战术自演化”与“战力重构”的关键部件。唯有控制压制火控战略核心，才能真正掌握机械族的战场节奏与压制优势。</TW_DoxaTacticalCore.description>
-<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the Tactical Core.</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateDescString>
-<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateLabelString>
-<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the Tactical Core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateDescString>分析这枚静巢构体战术核心，以解锁相关研究。</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateDescString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateLabelString>分析…</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.activateLabelString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetter>通过研究压制火控战略核心，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
 
-Your researchers can now use research benches to begin researching how to actually use the technology.</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetter>
-<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Doxa Tactical Core studied: {RESEARCH} unlocked</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
-<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.guiLabelString>
-<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.inspectString>
-<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.jobString>Analyze Doxa Tactical Core</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.jobString>
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetter>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>压制火控战略核心已研究：{RESEARCH} 已解锁</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.guiLabelString>选择分析者</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.guiLabelString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.inspectString>可由殖民者分析。</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.inspectString>
+<TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.jobString>分析静巢构体战术核心</TW_DoxaTacticalCore.comps.CompAnalyzableUnlockResearch.jobString>
 
 
 <TW_Precision_Memory_Interface_Array.label>机械精密接口阵列</TW_Precision_Memory_Interface_Array.label>
 <TW_Precision_Memory_Interface_Array.description>这组高精密接口阵列储存了机械族压缩的核心数据。解码后可访问其部分技术体系。</TW_Precision_Memory_Interface_Array.description>
 <TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze Precision Memory Interface Array.</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateDescString>
 <TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.activateLabelString>
-<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the Precision Memory Interface Array, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+<TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetter>通过研究机械精密接口阵列，{PAWN_labelShort}获得了{RESEARCH}研究项目所需的深层认知与技术洞见。
 
-Your researchers can now use research benches to begin researching how to actually use the technology.</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetter>
+您的科研团队现在可以使用研究台开始探索如何实际应用这项技术。</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetter>
 <TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Precision Interface studied: {RESEARCH} unlocked</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
 <TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.guiLabelString>
 <TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</TW_Precision_Memory_Interface_Array.comps.CompAnalyzableUnlockResearch.inspectString>

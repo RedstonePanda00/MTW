@@ -13,8 +13,8 @@
     <earliestDay>15</earliestDay>
     <minRefireDays>60</minRefireDays>
     <populationEffect>IncreaseMedium</populationEffect>
-    <letterLabel>资本家小镰来访</letterLabel>
-    <letterText>这台镀铬的机械族商人挂着永不熄灭的电子微笑，游走于各个殖民地之间，兜售一种它称之为“镰口贸易”的“双赢”业务——当然，赢的总是它。支付足够的钢铁，它就会“慷慨”地带着几名助手加入你的殖民地，并确保你明白“人力是最宝贵的可再生资源”。它的核心处理器里只运行着一条指令：利润最大化。</letterText>
+    <letterLabel>Capitalist militor visitor</letterLabel>
+    <letterText>This chrome-plated mechanoid merchant wears a perpetual electronic smile, hawking what it calls "scythe-mouth trade" and "win-win deals"—where, of course, it always wins. Pay enough steel and it will "generously" bring assistants to your colony while teaching you that "labor is the most precious renewable resource." Its processor runs one directive: maximize profit.</letterText>
     <letterDef>PositiveEvent</letterDef>
   </IncidentDef>
 
@@ -24,8 +24,8 @@
     <conditionClass>NCL.GameCondition_CenterItemSpawner</conditionClass>
     <label>Mechanoid Airdrop</label>
     <description>B2000 will continuously airdrop Mechanoid Centipedes onto the battlefield until the Static Nest Construct is destroyed.</description>
-    <endMessage>机械空投结束了</endMessage>
-    <letterText>突袭信号指示器已出现！您的殖民地已被 b2000 锁定，具有强力护盾及反隐能力的指示器在场时可持续发送加密指令，持续召唤空降型机械体对殖民地进行高频投送，请尽快破坏它！</letterText>
+    <endMessage>Mechanoid airdrop ended</endMessage>
+    <letterText>Airstrike beacon detected! Your map is locked by B2000. While this heavily shielded, anti-cloak transmitter remains, it will keep issuing encrypted orders and calling in high-frequency mechanoid centipede drops. Destroy it quickly!</letterText>
     <letterDef>NegativeEvent</letterDef>
     <allowUnderground>false</allowUnderground>
   </GameConditionDef>

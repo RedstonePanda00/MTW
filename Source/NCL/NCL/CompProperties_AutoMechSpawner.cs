@@ -5,7 +5,6 @@ using Verse;
 using Verse.AI;
 using static System.Collections.Specialized.BitVector32;
 using UnityEngine; // 添加这个命名空间引用
-using System.Reflection;
 
 namespace RimWorld
 {

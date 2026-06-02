@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DamageDef>
+    <defName>MTW_OrbitalPrecisionDirectHit</defName>
+    <label>orbital precision direct hit</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <makesBlood>false</makesBlood>
+    <externalViolence>true</externalViolence>
+    <isRanged>true</isRanged>
+    <deathMessage>{0} was neutralized by orbital cannon direct hit.</deathMessage>
+    <hediff>MTW_OrbitalPrecisionDirectHitInjury</hediff>
+    <armorCategory></armorCategory>
+    <defaultStoppingPower>10.0</defaultStoppingPower>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <defaultDamage>1000</defaultDamage>
+    <defaultArmorPenetration>999</defaultArmorPenetration>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+</Defs>

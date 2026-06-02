@@ -13,5 +13,7 @@
   <NCL_faction.pawnSingular>mechanoid</NCL_faction.pawnSingular>
   
   <NCL_faction.pawnsPlural>mechanoids</NCL_faction.pawnsPlural>
+
+  <NCL_factionEnemy.description>特殊情况下的NCL派系，属于敌方阵营，必须被生成。</NCL_factionEnemy.description>
   
 </LanguageData>

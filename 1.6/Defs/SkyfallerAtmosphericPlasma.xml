@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Vertical plasma pod fall; thingClass handles draw curve + plasma mote + landing smoke. -->
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>NCL_AtmosphericPlasmaDropPod</defName>
+    <label>Star Devourer squad drop pod</label>
+    <thingClass>NCL.Skyfaller_AtmosphericPlasmaPod</thingClass>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <size>(1,1)</size>
+    <graphicData>
+      <texPath>DropingPod/DropingPod_ClawTriple</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(2.2, 2.2)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <rotateGraphicTowardsDirection>false</rotateGraphicTowardsDirection>
+      <angleCurve>
+        <points>
+          <li>(0, 0)</li>
+          <li>(1, 0)</li>
+        </points>
+      </angleCurve>
+      <speed>0.5</speed>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(2.2, 2.2)</shadowSize>
+      <ticksToImpactRange>
+        <min>141</min>
+        <max>141</max>
+      </ticksToImpactRange>
+    </skyfaller>
+    <modExtensions>
+      <li Class="NCL.DefModExtension_AtmosphericPlasmaDropPod">
+        <!-- Ground dwell after touchdown before despawn (vanilla ActiveDropPod-style pause). -->
+        <ticksPauseOnGround>120</ticksPauseOnGround>
+        <!-- Immediate shake at touchdown; independent from skyfaller.cameraShake. -->
+        <touchdownCameraShake>0.22</touchdownCameraShake>
+        <cruiseMoteDefName>PM_Mote_Flame</cruiseMoteDefName>
+        <!-- Cruise phase in normalized flight progress (0=start, 1=impact). -->
+        <cruiseMoteProgressRange>0.2~0.9</cruiseMoteProgressRange>
+        <!-- Map world +Z offset for cruise flame mote. -->
+        <cruiseMoteZOffset>-1.6</cruiseMoteZOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

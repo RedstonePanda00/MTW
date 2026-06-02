@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef>
+    <defName>NCL_MultiCellPartProxy</defName>
+    <label>multi-cell part proxy</label>
+    <description>Invisible combat proxy for multi-cell part routing.</description>
+    <thingClass>NCL.PartProxyThing</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <drawerType>None</drawerType>
+    <passability>Standable</passability>
+    <pathCost>0</pathCost>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <holdsRoof>false</holdsRoof>
+    <coversFloor>false</coversFloor>
+    <alwaysHaulable>false</alwaysHaulable>
+    <destroyable>false</destroyable>
+    <building>
+      <isEdifice>false</isEdifice>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <altitudeLayer>Item</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>1</MaxHitPoints>
+      <Mass>0.01</Mass>
+      <Flammability>0</Flammability>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <comps />
+  </ThingDef>
+
+  <ThingDef>
+    <defName>NCL_MultiCellCellProxy</defName>
+    <label>multi-cell cell proxy</label>
+    <description>Invisible combat proxy for per-cell targeting.</description>
+    <thingClass>NCL.CellProxyThing</thingClass>
+    <category>Building</category>
+    <tickerType>Never</tickerType>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <drawerType>None</drawerType>
+    <passability>Standable</passability>
+    <pathCost>0</pathCost>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <holdsRoof>false</holdsRoof>
+    <coversFloor>false</coversFloor>
+    <alwaysHaulable>false</alwaysHaulable>
+    <destroyable>false</destroyable>
+    <building>
+      <isEdifice>false</isEdifice>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <altitudeLayer>Item</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>1</MaxHitPoints>
+      <Mass>0.01</Mass>
+      <Flammability>0</Flammability>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <comps />
+  </ThingDef>
+</Defs>

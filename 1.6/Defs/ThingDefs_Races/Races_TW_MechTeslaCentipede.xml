@@ -17,7 +17,7 @@
 	  <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
 
     </statBases>
-	<size>(1,1)</size>
+	<size>(3,3)</size>
     <tools>
       <li>
         <label>head</label>
@@ -66,7 +66,100 @@
         </li>
       </lifeStageAges>
     </race>
-	<comps>  
+	<comps>
+      <li Class="NCL.CompProperties_MultiCellPawn">
+        <version>1</version>
+        <showOverlayWhenSelected>true</showOverlayWhenSelected>
+        <showDebugLabels>false</showDebugLabels>
+        <rebuildProxyOnLoad>true</rebuildProxyOnLoad>
+        <coreCellColor>(0.35, 0.55, 0.95)</coreCellColor>
+        <healthColorThresholdHigh>0.7</healthColorThresholdHigh>
+        <healthColorThresholdMid>0.35</healthColorThresholdMid>
+        <showPartHealthGizmo>true</showPartHealthGizmo>
+        <parts>
+          <li>
+            <partKey>body</partKey>
+            <bindBodyPartDef>MechanicalCentipedeBodyFirstRing</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>5</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(0,0,0)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechanicalCentipedeBodyFifthRing</partKey>
+            <bindBodyPartDef>MechanicalCentipedeBodyFifthRing</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(0,0,-1)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechanicalCentipedeBodyFourthRing</partKey>
+            <bindBodyPartDef>MechanicalCentipedeBodyFourthRing</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,-1)</li>
+              <li>(1,0,-1)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechanicalCentipedeBodySecondRing</partKey>
+            <bindBodyPartDef>MechanicalCentipedeBodySecondRing</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,1)</li>
+              <li>(1,0,1)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechanicalCentipedeBodyThirdRing</partKey>
+            <bindBodyPartDef>MechanicalCentipedeBodyThirdRing</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,0)</li>
+              <li>(1,0,0)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechanicalHead</partKey>
+            <bindBodyPartDef>MechanicalHead</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(0,0,1)</li>
+            </cellsNorth>
+            <turretMounts>
+              <li>
+                <slotKey>plasmaArc</slotKey>
+                <turretDef>TW_Plasma_Arc_Projector</turretDef>
+                <onePerCell>true</onePerCell>
+                <enabledByDefault>true</enabledByDefault>
+                <disableWhenPartMissing>true</disableWhenPartMissing>
+                <mountCellsNorth>
+                  <li>(0,0,1)</li>
+                </mountCellsNorth>
+              </li>
+            </turretMounts>
+          </li>
+        </parts>
+      </li>
 	 <li Class="CompProperties_Forbiddable" />
      <li Class="TowerLaserDefense.CompProperties_LaserDefence">
                 <laserDefenceProperties>

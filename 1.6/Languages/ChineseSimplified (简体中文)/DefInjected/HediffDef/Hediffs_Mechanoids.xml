@@ -18,10 +18,15 @@
 
 <TW_Mech_Warqueen_Hediff.description>战争女王利用装载的钢铁能源强化机体防御。钢铁储量越充足，伤害减免效果越强：满载时可承受伤害降至50%，耗尽后承受伤害提升至150%。</TW_Mech_Warqueen_Hediff.description>
 
+  <TW_Mech_Diabolus_Hediff.label>全面战争：炼狱魔王</TW_Mech_Diabolus_Hediff.label>
+  <TW_Mech_Diabolus_Hediff.description>炼狱魔王搭载先进火控单元，主炮瞄准时间减半。机体两侧还装备两门非常致命的近防火炮，可对贴近目标实施毁灭性拦截。</TW_Mech_Diabolus_Hediff.description>
+
 
 <TW_Mech_Apocriton_Hediff.label>全面战争：憎恶毒蜂</TW_Mech_Apocriton_Hediff.label>
 
-<TW_Mech_Apocriton_Hediff.description>憎恶毒蜂专有的光学迷彩模块，使其从战场上隐身。仅当玩家单位处于其附近25格范围内时隐身才会解除，在此之前该单位不进行攻击。</TW_Mech_Apocriton_Hediff.description>
+  <TW_Mech_Apocriton_Hediff.description>憎恶毒蜂专有的光学迷彩模块，使其从战场上隐身。仅当玩家单位处于其附近25格范围内时隐身才会解除，在此之前该单位不进行攻击。</TW_Mech_Apocriton_Hediff.description>
 
+  <NCL_Mech_Mantis_Hediff.label>NCL：机械兰螳</NCL_Mech_Mantis_Hediff.label>
+  <NCL_Mech_Mantis_Hediff.description>机械兰螳强化：提升近战命中与闪避，并略微强化装甲抗性。</NCL_Mech_Mantis_Hediff.description>
 
 </LanguageData>

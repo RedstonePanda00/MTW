@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using NCL;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,12 +93,15 @@ namespace NyarsModPackTwo
 {
         private static readonly Dictionary<int, Bullet_TracingEnemies> LockedProjectiles =
             new Dictionary<int, Bullet_TracingEnemies>();
-        private enum TargetType
-    {
-        None,       // 无目标
-        Projectile, // 敌方投射物
-        Pawn        // 敌人单位
-    }
+
+        public enum TrackingTargetKind
+        {
+            None,
+            Projectile,
+            Pawn
+        }
+
+        private bool usesCentralIronRainTargeting;
 
     public override Vector3 ExactPosition =>
         trackingPosNow + Vector3.up * def.Altitude;
@@ -110,6 +114,58 @@ namespace NyarsModPackTwo
 
     private ModExtension_BulletProperties Props =>
         _props ??= def.GetModExtension<ModExtension_BulletProperties>();
+
+        public bool UsesCentralIronRainTargeting => usesCentralIronRainTargeting;
+
+        public bool IsReadyForCentralTargeting => _flyingTime >= Props.ticksBeforeTracing;
+
+        public bool HasValidCentralTarget =>
+            trackingTargetThing != null
+            && trackingTargetThing.Spawned
+            && !trackingTargetThing.Destroyed
+            && trackingTargetThing.Map == Map;
+
+        public void EnableCentralIronRainTargeting()
+        {
+            if (usesCentralIronRainTargeting || Map == null)
+            {
+                return;
+            }
+
+            usesCentralIronRainTargeting = true;
+            MapComponent_IronRainTargeting.GetOrCreate(Map)?.Register(this);
+        }
+
+        public void ApplyCentralizedTarget(Thing target, TrackingTargetKind kind)
+        {
+            trackingTargetThing = target;
+            currentTargetType = kind;
+        }
+
+        public void ClearCentralizedTarget()
+        {
+            InvalidateCentralTarget();
+        }
+
+        private void InvalidateCentralTarget()
+        {
+            if (!usesCentralIronRainTargeting || Map == null)
+            {
+                trackingTargetThing = null;
+                currentTargetType = TrackingTargetKind.None;
+                return;
+            }
+
+            MapComponent_IronRainTargeting targeting = MapComponent_IronRainTargeting.Get(Map);
+            if (trackingTargetThing != null)
+            {
+                targeting?.NotifyCachedTargetInvalid(trackingTargetThing);
+            }
+
+            targeting?.ReleaseLocksFor(this);
+            trackingTargetThing = null;
+            currentTargetType = TrackingTargetKind.None;
+        }
 
     private bool IsHostileProjectile(Thing projectile)
     {
@@ -157,7 +213,9 @@ namespace NyarsModPackTwo
                 }
                 else
                 {
-                    bool flag4 = this._flyingTime >= this.Props.ticksBeforeTracing && (this._flyingTime - this.Props.ticksBeforeTracing) % this.Props.ticksBetweenFindTarget == 0;
+                    bool flag4 = !usesCentralIronRainTargeting
+                        && this._flyingTime >= this.Props.ticksBeforeTracing
+                        && (this._flyingTime - this.Props.ticksBeforeTracing) % this.Props.ticksBetweenFindTarget == 0;
                     bool flag5 = flag4;
                     if (flag5)
                     {
@@ -182,7 +240,7 @@ namespace NyarsModPackTwo
                         if (flag9)
                         {
                             // 拦截投射物而不是造成伤害
-                            if (currentTargetType == TargetType.Projectile)
+                            if (currentTargetType == TrackingTargetKind.Projectile)
                             {
                                 InterceptProjectile(this.trackingTargetThing as Projectile);
                             }
@@ -406,15 +464,23 @@ namespace NyarsModPackTwo
 
         private void CleanupReferences()
         {
-            // 释放当前锁定的投射物（如果有）
-            if (trackingTargetThing != null && currentTargetType == TargetType.Projectile)
+            if (usesCentralIronRainTargeting)
+            {
+                ClearCentralizedTarget();
+            }
+            else if (trackingTargetThing != null && currentTargetType == TrackingTargetKind.Projectile)
             {
                 ReleaseProjectileLock(trackingTargetThing.thingIDNumber);
+                trackingTargetThing = null;
+                currentTargetType = TrackingTargetKind.None;
+            }
+            else
+            {
+                trackingTargetThing = null;
+                currentTargetType = TrackingTargetKind.None;
             }
 
-            this.trackingTargetThing = null;
             this.trackingCell = IntVec3.Invalid;
-            currentTargetType = TargetType.None;
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
@@ -476,6 +542,11 @@ namespace NyarsModPackTwo
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
     {
+        if (usesCentralIronRainTargeting && Map != null)
+        {
+            MapComponent_IronRainTargeting.Get(Map)?.Unregister(this);
+        }
+
         this.CleanupReferences();
         base.Destroy(mode);
     }
@@ -486,12 +557,17 @@ namespace NyarsModPackTwo
     }
         private void UpdateTarget()
         {
+            if (usesCentralIronRainTargeting)
+            {
+                return;
+            }
+
             // 重置目标
             trackingTargetThing = null;
-            currentTargetType = TargetType.None;
+            currentTargetType = TrackingTargetKind.None;
 
             // 释放当前锁定的投射物（如果有）
-            if (currentTargetType == TargetType.Projectile && trackingTargetThing != null)
+            if (currentTargetType == TrackingTargetKind.Projectile && trackingTargetThing != null)
             {
                 ReleaseProjectileLock(trackingTargetThing.thingIDNumber);
             }
@@ -536,7 +612,7 @@ namespace NyarsModPackTwo
                     if (closestProjectile != null)
                     {
                         trackingTargetThing = closestProjectile;
-                        currentTargetType = TargetType.Projectile;
+                        currentTargetType = TrackingTargetKind.Projectile;
 
                         // 锁定这个投射物
                         LockProjectile(closestProjectile.thingIDNumber);
@@ -564,7 +640,7 @@ namespace NyarsModPackTwo
                     (b.Position - Position).LengthHorizontalSquared));
 
                 trackingTargetThing = _localTargetCache[0];
-                currentTargetType = TargetType.Pawn;
+                currentTargetType = TrackingTargetKind.Pawn;
             }
         }
 
@@ -603,11 +679,16 @@ namespace NyarsModPackTwo
                 this.trackingTargetThing.Map != this.Map)
             {
                 this.trackingCell = IntVec3.Invalid;
+                if (usesCentralIronRainTargeting)
+                {
+                    InvalidateCentralTarget();
+                }
+
                 return;
             }
 
             // 根据目标类型调整追踪精度
-            float precisionFactor = currentTargetType == TargetType.Projectile ?
+            float precisionFactor = currentTargetType == TrackingTargetKind.Projectile ?
                 0.8f :  // 投射物追踪更精确
                 0.6f;   // 单位追踪稍宽松
 
@@ -642,7 +723,7 @@ namespace NyarsModPackTwo
         private void Rotate()
     {
         // 如果目标是投射物，使用更快的旋转速度
-        float rotationMultiplier = currentTargetType == TargetType.Projectile ? 1.5f : 1.0f;
+        float rotationMultiplier = currentTargetType == TrackingTargetKind.Projectile ? 1.5f : 1.0f;
 
         bool flag = this.trackingCell == IntVec3.Invalid;
         bool flag2 = !flag;
@@ -694,7 +775,7 @@ namespace NyarsModPackTwo
         Scribe_Values.Look<IntVec3>(ref this.trackingCell, "trackingCell", default(IntVec3), false);
         Scribe_Values.Look<float>(ref this.flyingAngle, "flyingAngle", 0f, false);
         Scribe_Values.Look<Vector3>(ref this.trackingPosNow, "trackingPosNow", default(Vector3), false);
-        Scribe_Values.Look<TargetType>(ref currentTargetType, "currentTargetType", TargetType.None);
+        Scribe_Values.Look<TrackingTargetKind>(ref currentTargetType, "currentTargetType", TrackingTargetKind.None);
     }
 
     private static readonly MethodInfo _interceptCheck = typeof(Projectile).GetMethod("CheckForFreeInterceptBetween", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -706,7 +787,7 @@ namespace NyarsModPackTwo
     public IntVec3 trackingCell = IntVec3.Invalid;
     public float flyingAngle;
     public Vector3 trackingPosNow;
-    private TargetType currentTargetType = TargetType.None; // 当前追踪的目标类型
+    private TrackingTargetKind currentTargetType = TrackingTargetKind.None;
 }
 
     public class ModExtension_BulletProperties : DefModExtension

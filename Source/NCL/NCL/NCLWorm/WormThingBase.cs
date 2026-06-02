@@ -98,7 +98,7 @@ namespace NCLWorm
       this.visualRotation = Quaternion.LookRotation(vector3);
     }
 
-    protected virtual void Tick()
+    protected override void Tick()
     {
       if (((Thing) this).Destroyed)
         return;
@@ -114,7 +114,7 @@ namespace NCLWorm
       ((Thing) this).Position = new IntVec3(num1, position.y, num2);
     }
 
-    public virtual Vector3 DrawPos
+    public override Vector3 DrawPos
     {
       get
       {
@@ -124,7 +124,7 @@ namespace NCLWorm
       }
     }
 
-    public virtual void ExposeData()
+    public override void ExposeData()
     {
       base.ExposeData();
       Scribe_Values.Look<Vector3>(ref this.exactPosition, "exactPosition", new Vector3(), false);
@@ -140,7 +140,7 @@ namespace NCLWorm
       get => WormThingBase._mpb ?? (WormThingBase._mpb = new MaterialPropertyBlock());
     }
 
-    protected virtual void DrawAt(Vector3 drawLoc, bool flip = false)
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
       if (this.IsVisualHidden || (double) this.exactPosition.y < -1.0)
         return;

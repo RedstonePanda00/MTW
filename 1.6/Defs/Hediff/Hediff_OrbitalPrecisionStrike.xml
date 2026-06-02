@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef>
+    <defName>MTW_OrbitalPrecisionDirectHitInjury</defName>
+    <label>orbital cannon direct hit</label>
+    <description>Carbonized trauma from a precision orbital particle beam. The wound is cauterized shut and cannot be bandaged; nothing living should walk away from this.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <defaultLabelColor>(0.85, 0.55, 0.35)</defaultLabelColor>
+    <isBad>true</isBad>
+    <tendable>false</tendable>
+    <displayWound>true</displayWound>
+    <labelNoun>orbital cannon direct hit</labelNoun>
+    <labelNounPretty>orbital cannon direct hit on {1}</labelNounPretty>
+    <injuryProps>
+      <painPerSeverity>0.018</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.015</averagePainPerSeverityPermanent>
+      <bleedRate>0</bleedRate>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Vaporized off</destroyedLabel>
+      <destroyedOutLabel>Vaporized out</destroyedOutLabel>
+    </injuryProps>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>lethal orbital strike scar</permanentLabel>
+        <instantlyPermanentLabel>lethal orbital strike scarring</instantlyPermanentLabel>
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>

@@ -7,7 +7,7 @@ namespace TowerLaserDefense
 {
   public class PlaceWorker_TurretTop : PlaceWorker
   {
-    public virtual void DrawGhost(
+    public override void DrawGhost(
       ThingDef def,
       IntVec3 loc,
       Rot4 rot,

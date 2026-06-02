@@ -34,7 +34,7 @@ namespace NCLWorm
 
     public float CurrentSpeed => this._velocity.magnitude;
 
-    public virtual void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       if (this.Body == null || !(this._velocity == Vector3.zero))
@@ -51,7 +51,7 @@ namespace NCLWorm
       this.AtDestination = false;
     }
 
-    public virtual void CompTick()
+    public override void CompTick()
     {
       base.CompTick();
       if (this.Body == null)
@@ -245,7 +245,7 @@ namespace NCLWorm
       victim.TakeDamage(damageInfo);
     }
 
-    public virtual void PostExposeData()
+    public override void PostExposeData()
     {
       base.PostExposeData();
       Scribe_Values.Look<Vector3>(ref this._velocity, "velocity", new Vector3(), false);

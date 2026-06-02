@@ -1,4 +1,4 @@
-﻿using NCL;
+using NCL;
 using RimWorld;
 using System;
 using UnityEngine;
@@ -106,11 +106,11 @@ namespace NCL
                 {
                     string label = Props.letterLabel.NullOrEmpty()
                         ? "ResearchUnlocked".Translate()
-                        : Props.letterLabel;
+                        : Props.letterLabel.Translate();
 
                     string text = Props.letterText.NullOrEmpty()
                         ? "ResearchUnlockedBy".Translate(Props.researchToUnlock.LabelCap, triggerer.LabelShort)
-                        : Props.letterText;
+                        : Props.letterText.Translate();
 
                     Find.LetterStack.ReceiveLetter(
                         label,

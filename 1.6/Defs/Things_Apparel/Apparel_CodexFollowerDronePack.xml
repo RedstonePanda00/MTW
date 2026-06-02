@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ArmorMachineableBase">
+    <defName>NCL_Apparel_CodexPointDefenseDronePack</defName>
+    <label>codex point-defense drone pack</label>
+    <description>A reusable pack frame mounting a compact escort drone. Uses the utility layer so one graphic set fits all body types; it cannot stack with other belt-slot items. Periodically neutralizes one nearby hostile low-trajectory projectile, similar to a low-angle shield.</description>
+    <thingClass>Apparel</thingClass>
+    <graphicData>
+      <texPath>Apparels/Codex/XGL_BeiBao_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <Mass>4.5</Mass>
+      <MaxHitPoints>220</MaxHitPoints>
+      <WorkToMake>3200</WorkToMake>
+      <Flammability>0.4</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <generateCommonality>0</generateCommonality>
+    <costList>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <Plasteel>40</Plasteel>
+      <Steel>60</Steel>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>NCL_Protective_Gear</li>
+      </researchPrerequisites>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>220</displayPriority>
+    </recipeMaker>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <apparel>
+      <wornGraphicPath>Apparels/Codex/XGL_BeiBao</wornGraphicPath>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>true</careIfDamaged>
+      <wearPerDay>0.2</wearPerDay>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>IndustrialAdvanced</li>
+      </tags>
+      <renderNodeProperties>
+        <li>
+          <debugLabel>NCL_FollowerDrone</debugLabel>
+          <parentTagDef>Body</parentTagDef>
+          <workerClass>NCL.PawnRenderNodeWorker_FollowerDrone</workerClass>
+          <texPath>Races/Drone_south</texPath>
+          <pawnType>Any</pawnType>
+          <drawSize>(0.55, 0.55)</drawSize>
+          <baseLayer>82</baseLayer>
+          <drawData>
+            <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+            <dataNorth>
+              <offset>(0.35, 0, 0.42)</offset>
+            </dataNorth>
+            <dataSouth>
+              <offset>(-0.35, 0, 0.42)</offset>
+            </dataSouth>
+            <dataEast>
+              <offset>(0.42, 0, 0.12)</offset>
+            </dataEast>
+            <dataWest>
+              <offset>(-0.42, 0, 0.12)</offset>
+            </dataWest>
+          </drawData>
+        </li>
+      </renderNodeProperties>
+    </apparel>
+    <comps>
+      <li Class="NCL.CompProperties_ApparelFollowerDronePointDefense">
+        <hediffDef>NCL_Hediff_ApparelDrone_PointDefense</hediffDef>
+        <debugLog>true</debugLog>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>NCLthings</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>

@@ -253,6 +253,12 @@
     <Compile Include="NoBody\Command_ActionWithFloat.cs" />
     <Compile Include="NoBody\NoBodyApparel.cs" />
     <Compile Include="MultiCellPawn\**\*.cs" />
+    <Compile Include="VoxEngine\VoxEngineChassisAngles.cs" />
+    <Compile Include="VoxEngine\VoxBaseVisualMode.cs" />
+    <Compile Include="VoxEngine\CompProperties_VoxEngineChassis.cs" />
+    <Compile Include="VoxEngine\CompVoxEngineChassis.cs" />
+    <Compile Include="VoxEngine\PawnRenderNode_VoxEngineBase.cs" />
+    <Compile Include="VoxEngine\PawnRenderNodeWorker_VoxEngineBase.cs" />
     <Compile Include="CompFormChange.cs" />
     <Compile Include="CompProperties_FatCatMissile.cs" />
     <Compile Include="CompProperties_FatCatMissileLoft.cs" />

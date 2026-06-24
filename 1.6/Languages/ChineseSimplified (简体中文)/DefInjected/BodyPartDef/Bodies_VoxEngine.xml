@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <VoxEngineBody.label>沃克斯引擎</VoxEngineBody.label>
+
+  <VoxEngine_Core.label>逻辑核心</VoxEngine_Core.label>
+  <VoxEngine_Shell_NW.label>西北外壳</VoxEngine_Shell_NW.label>
+  <VoxEngine_Shell_N.label>北侧外壳</VoxEngine_Shell_N.label>
+  <VoxEngine_Shell_NE.label>东北外壳</VoxEngine_Shell_NE.label>
+  <VoxEngine_Shell_W.label>西侧外壳</VoxEngine_Shell_W.label>
+  <VoxEngine_Shell_E.label>东侧外壳</VoxEngine_Shell_E.label>
+  <VoxEngine_Shell_SW.label>西南外壳</VoxEngine_Shell_SW.label>
+  <VoxEngine_Shell_S.label>南侧外壳</VoxEngine_Shell_S.label>
+  <VoxEngine_Shell_SE.label>东南外壳</VoxEngine_Shell_SE.label>
+
+</LanguageData>

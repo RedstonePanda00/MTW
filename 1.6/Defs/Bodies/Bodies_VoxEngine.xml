@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BodyPartDef>
+    <defName>VoxEngine_Core</defName>
+    <label>vox logic core</label>
+    <hitPoints>80</hitPoints>
+    <solid>true</solid>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <canSuggestAmputation>false</canSuggestAmputation>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>BreathingSource</li>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+      <li>HearingSource</li>
+      <li>SightSource</li>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef Name="VoxEngineShellPartBase" Abstract="True">
+    <hitPoints>120</hitPoints>
+    <solid>true</solid>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>1</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_NW</defName>
+    <label>vox shell (northwest)</label>
+  </BodyPartDef>
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_N</defName>
+    <label>vox shell (north)</label>
+  </BodyPartDef>
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_NE</defName>
+    <label>vox shell (northeast)</label>
+  </BodyPartDef>
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_W</defName>
+    <label>vox shell (west)</label>
+  </BodyPartDef>
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_E</defName>
+    <label>vox shell (east)</label>
+  </BodyPartDef>
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_SW</defName>
+    <label>vox shell (southwest)</label>
+  </BodyPartDef>
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_S</defName>
+    <label>vox shell (south)</label>
+  </BodyPartDef>
+  <BodyPartDef ParentName="VoxEngineShellPartBase">
+    <defName>VoxEngine_Shell_SE</defName>
+    <label>vox shell (southeast)</label>
+  </BodyPartDef>
+
+  <BodyDef>
+    <defName>VoxEngineBody</defName>
+    <label>vox engine</label>
+    <corePart>
+      <def>VoxEngine_Core</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>VoxEngine_Shell_NW</def>
+          <customLabel>northwest shell</customLabel>
+          <coverage>0.11</coverage>
+        </li>
+        <li>
+          <def>VoxEngine_Shell_N</def>
+          <customLabel>north shell</customLabel>
+          <coverage>0.11</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+        </li>
+        <li>
+          <def>VoxEngine_Shell_NE</def>
+          <customLabel>northeast shell</customLabel>
+          <coverage>0.11</coverage>
+        </li>
+        <li>
+          <def>VoxEngine_Shell_W</def>
+          <customLabel>west shell</customLabel>
+          <coverage>0.11</coverage>
+        </li>
+        <li>
+          <def>VoxEngine_Shell_E</def>
+          <customLabel>east shell</customLabel>
+          <coverage>0.11</coverage>
+        </li>
+        <li>
+          <def>VoxEngine_Shell_SW</def>
+          <customLabel>southwest shell</customLabel>
+          <coverage>0.11</coverage>
+        </li>
+        <li>
+          <def>VoxEngine_Shell_S</def>
+          <customLabel>south shell</customLabel>
+          <coverage>0.11</coverage>
+        </li>
+        <li>
+          <def>VoxEngine_Shell_SE</def>
+          <customLabel>southeast shell</customLabel>
+          <coverage>0.11</coverage>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

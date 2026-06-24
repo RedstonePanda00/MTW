@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_VoxEngine.label>沃克斯引擎</MTW_VoxEngine.label>
+  <MTW_VoxEngine.description>一种重型多格机械体，上层机体随朝向即时转向，履带底盘则缓慢追向移动方向。</MTW_VoxEngine.description>
+  <MTW_VoxEngine.tools.chassis.label>底盘</MTW_VoxEngine.tools.chassis.label>
+
+  <MTW_VoxEngine_Kind.label>沃克斯引擎</MTW_VoxEngine_Kind.label>
+
+</LanguageData>

@@ -700,14 +700,26 @@ namespace NCL
                 }
             }
 
-            float idleFacing = ownerPawn.Rotation.AsAngle;
             for (int i = 0; i < turretUnits.Count; i++)
             {
                 VirtualTurretUnit unit = turretUnits[i];
-                if (!ResolveTargetForUnit(unit).IsValid)
+                if (ResolveTargetForUnit(unit).IsValid)
                 {
-                    unit.CurRotation = idleFacing;
+                    continue;
                 }
+
+                if (TryGetMountDrawPosition(unit, out Vector3 mountCenter))
+                {
+                    Vector3 outward = mountCenter - ownerPawn.DrawPos;
+                    outward.y = 0f;
+                    if (outward.sqrMagnitude > 0.0001f)
+                    {
+                        unit.CurRotation = outward.AngleFlat();
+                        continue;
+                    }
+                }
+
+                unit.CurRotation = ownerPawn.Rotation.AsAngle;
             }
         }
 
@@ -738,7 +750,16 @@ namespace NCL
             }
 
             drawPos = comp.GetSmoothDrawPosForLocalCell(unit.LocalCellNorth);
-            drawPos.y = Altitudes.AltitudeFor(AltitudeLayer.Pawn);
+            Vector3 outward = drawPos - ownerPawn.DrawPos;
+            outward.y = 0f;
+            if (outward.sqrMagnitude > 0.0001f)
+            {
+                float push = Mathf.Abs(unit.LocalCellNorth.x) >= 1 ? 0.9f : 0.55f;
+                drawPos += outward.normalized * push;
+            }
+
+            // Render above chassis (layer -10) and upper hull via pawn render layer offset.
+            drawPos.y = ownerPawn.DrawPos.y + PawnRenderUtility.AltitudeForLayer(MultiCellPawnDraw.TurretRenderLayer);
             return true;
         }
 

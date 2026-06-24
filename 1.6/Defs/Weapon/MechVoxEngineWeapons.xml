@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_MTW_VoxEngine_105mm</defName>
+    <label>vox 105mm shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>62</damageAmountBase>
+      <armorPenetrationBase>0.9</armorPenetrationBase>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>95</speed>
+      <stoppingPower>2</stoppingPower>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>MTW_VoxEngine_RT_105mmCannon</defName>
+    <label>vox 105mm tank gun</label>
+    <description>Side-mounted 105mm direct-fire cannon for the Vox Engine chassis.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/VoxEngine/Vox_Weapon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3.2</drawSize>
+    </graphicData>
+    <uiIconPath>Things/VoxEngine/Vox_Weapon</uiIconPath>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <Mass>18</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.88</AccuracyMedium>
+      <AccuracyLong>0.78</AccuracyLong>
+      <RangedWeapon_Cooldown>9</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_MTW_VoxEngine_105mm</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>52</range>
+        <minRange>3</minRange>
+        <burstShotCount>1</burstShotCount>
+        <requireLineOfSight>true</requireLineOfSight>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>Shot_TurretSniper</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

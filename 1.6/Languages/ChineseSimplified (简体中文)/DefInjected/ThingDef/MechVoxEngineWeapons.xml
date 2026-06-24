@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_VoxEngine_RT_105mmCannon.label>Vox 105mm 坦克炮</MTW_VoxEngine_RT_105mmCannon.label>
+  <MTW_VoxEngine_RT_105mmCannon.description>挂载于 Vox 引擎侧舷的 105mm 直瞄坦克炮，需视线，单发高爆弹。</MTW_VoxEngine_RT_105mmCannon.description>
+
+  <Bullet_MTW_VoxEngine_105mm.label>Vox 105mm 炮弹</Bullet_MTW_VoxEngine_105mm.label>
+
+</LanguageData>

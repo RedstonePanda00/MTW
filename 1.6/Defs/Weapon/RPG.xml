@@ -664,7 +664,7 @@
     <statBases>
       <MarketValue>1000</MarketValue>
       <Mass>8</Mass>
-      <RangedWeapon_Cooldown>5.5</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>9.0</RangedWeapon_Cooldown>
     </statBases>
     <weaponTags>
       <li>TW_Quad_Guided_Rocket_Launcher_HE</li>
@@ -683,7 +683,7 @@
         <defaultProjectile>TW_HE_Guided_Missile</defaultProjectile>
         <forcedMissRadius>0.1</forcedMissRadius>
         <warmupTime>3.5</warmupTime>
-      <ticksBetweenBurstShots>44</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
         <ai_AvoidFriendlyFireRadius>2</ai_AvoidFriendlyFireRadius>
         <range>36</range>
         <burstShotCount>4</burstShotCount>
@@ -785,7 +785,7 @@
     <statBases>
       <MarketValue>1000</MarketValue>
       <Mass>8</Mass>
-      <RangedWeapon_Cooldown>5.5</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>9.0</RangedWeapon_Cooldown>
     </statBases>
     <weaponTags>
       <li>TW_Quad_Guided_Rocket_Launcher_EMP</li>
@@ -802,7 +802,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>TW_EMP_Guided_Missile</defaultProjectile>
-      <ticksBetweenBurstShots>44</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
         <forcedMissRadius>0.1</forcedMissRadius>
         <warmupTime>3.5</warmupTime>
         <ai_AvoidFriendlyFireRadius>2</ai_AvoidFriendlyFireRadius>
@@ -900,10 +900,10 @@
     </graphicData>
     <projectile>
       <damageDef>Bomb</damageDef>
-	  <damageAmountBase>40</damageAmountBase>
+	  <damageAmountBase>100</damageAmountBase>
 	  <armorPenetrationBase>0.8</armorPenetrationBase>
 	  <stoppingPower>1.5</stoppingPower>
-      <explosionRadius>3.8</explosionRadius>
+      <explosionRadius>7.9</explosionRadius>
 	  <flyOverhead>true</flyOverhead>
       <speed>120</speed>
     </projectile>
@@ -961,8 +961,8 @@
     </graphicData>
     <projectile>
       <damageDef>BombSuper</damageDef>
-      <damageAmountBase>550</damageAmountBase>
-      <explosionRadius>5.9</explosionRadius>
+      <damageAmountBase>50</damageAmountBase>
+      <explosionRadius>2.9</explosionRadius>
       <flyOverhead>true</flyOverhead>
       <speed>40</speed>
     </projectile>

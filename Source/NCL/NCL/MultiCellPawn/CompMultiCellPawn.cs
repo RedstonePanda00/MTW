@@ -109,9 +109,8 @@ namespace NCL
             RefreshProxies();
         }
 
-        public override void PostDraw()
+        public void DrawMountedTurrets()
         {
-            base.PostDraw();
             if (Pawn == null || !Pawn.Spawned)
             {
                 return;

@@ -194,6 +194,12 @@ namespace NCL
                 return false;
             }
 
+            CompGunshipFlight gunshipFlight = Pawn.TryGetComp<CompGunshipFlight>();
+            if (gunshipFlight != null && !gunshipFlight.TurretsAllowed)
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -419,6 +425,67 @@ namespace NCL
             IntVec3 worldCell = GetWorldCellForLocalCellNorth(localCellNorth);
             Vector3 gridOffset = worldCell.ToVector3Shifted() - Pawn.Position.ToVector3Shifted();
             return Pawn.DrawPos + gridOffset;
+        }
+
+        public bool TryGetTurretMountDrawPos(IntVec3 localCellNorth, out Vector3 drawPos)
+        {
+            drawPos = GetSmoothDrawPosForLocalCell(localCellNorth);
+            if (Pawn == null || !Pawn.Spawned)
+            {
+                return false;
+            }
+
+            if (!LocalCellHasTurretMount(localCellNorth))
+            {
+                return true;
+            }
+
+            Vector3 outward = drawPos - Pawn.DrawPos;
+            outward.y = 0f;
+            if (outward.sqrMagnitude > 0.0001f)
+            {
+                float push = Mathf.Abs(localCellNorth.x) >= 1 ? 0.9f : 0.55f;
+                drawPos += outward.normalized * push;
+            }
+
+            drawPos.y = Pawn.DrawPos.y + PawnRenderUtility.AltitudeForLayer(MultiCellPawnDraw.TurretRenderLayer);
+            return true;
+        }
+
+        public bool LocalCellHasTurretMount(IntVec3 localCellNorth)
+        {
+            if (Props?.parts == null)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < Props.parts.Count; i++)
+            {
+                PartDefEntry part = Props.parts[i];
+                if (part?.turretMounts == null)
+                {
+                    continue;
+                }
+
+                for (int m = 0; m < part.turretMounts.Count; m++)
+                {
+                    PartTurretMountDef mount = part.turretMounts[m];
+                    if (mount?.mountCellsNorth == null)
+                    {
+                        continue;
+                    }
+
+                    for (int c = 0; c < mount.mountCellsNorth.Count; c++)
+                    {
+                        if (mount.mountCellsNorth[c] == localCellNorth)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
 
         public IntVec3 GetWorldCellForLocalCellNorth(IntVec3 localCellNorth)

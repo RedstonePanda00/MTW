@@ -22,9 +22,20 @@ namespace NCL
         {
             get
             {
+                if (MultiCellVirtualTurretLaunch.TryGetForcedDrawPos(this, out Vector3 forced))
+                {
+                    return forced;
+                }
+
                 CompMultiCellPawn comp = OwnerComp;
                 if (comp != null && ownerPawn != null && ownerPawn.Spawned)
                 {
+                    if (comp.LocalCellHasTurretMount(localCellNorth)
+                        && comp.TryGetTurretMountDrawPos(localCellNorth, out Vector3 turretPos))
+                    {
+                        return turretPos;
+                    }
+
                     return comp.GetSmoothDrawPosForLocalCell(localCellNorth);
                 }
 
@@ -193,6 +204,9 @@ namespace NCL
                 {
                     continue;
                 }
+
+                // Keep caster bound every tick so burst shots leave the mount cell, not the hull core.
+                PrepareVerbCaster(unit, out _);
 
                 LocalTargetInfo unitTarget = ResolveTargetForUnit(unit);
                 if (!unitTarget.IsValid)
@@ -438,6 +452,11 @@ namespace NCL
             }
 
             turretLayoutDirty = false;
+            for (int i = 0; i < turretUnits.Count; i++)
+            {
+                MultiCellVirtualTurretLaunch.Unregister(turretUnits[i].Verb);
+            }
+
             turretUnits.Clear();
             CompMultiCellPawn comp = OwnerComp;
             if (comp == null || !comp.TryGetPartEntry(partKey, out PartDefEntry entry) || entry?.turretMounts == null)
@@ -485,8 +504,41 @@ namespace NCL
                 Gun = gun,
                 Verb = eq.PrimaryVerb
             };
-            unit.Verb.caster = ownerPawn != null ? ownerPawn : this;
+            PrepareVerbCaster(unit, out _);
+            MultiCellVirtualTurretLaunch.Register(unit.Verb, this, localCellNorth);
             return unit;
+        }
+
+        public bool TryPrepareVirtualTurretCaster(Verb verb, IntVec3 localCellNorth, out Vector3 launchOrigin)
+        {
+            launchOrigin = Vector3.zero;
+            for (int i = 0; i < turretUnits.Count; i++)
+            {
+                VirtualTurretUnit unit = turretUnits[i];
+                if (unit.Verb != verb || unit.LocalCellNorth != localCellNorth)
+                {
+                    continue;
+                }
+
+                if (!PrepareVerbCaster(unit, out _))
+                {
+                    return false;
+                }
+
+                return TryGetMountDrawPosition(unit, out launchOrigin);
+            }
+
+            return false;
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            for (int i = 0; i < turretUnits.Count; i++)
+            {
+                MultiCellVirtualTurretLaunch.Unregister(turretUnits[i].Verb);
+            }
+
+            base.Destroy(mode);
         }
 
         private static int GetVirtualTurretWarmupTicks(VirtualTurretUnit unit)
@@ -539,23 +591,9 @@ namespace NCL
 
         private Thing ResolveCasterForUnit(VirtualTurretUnit unit)
         {
-            CompMultiCellPawn comp = OwnerComp;
-            if (comp == null)
-            {
-                return this;
-            }
-
-            if (!comp.TryGetWorldCellFromPartLocalCell(partKey, unit.LocalCellNorth, out IntVec3 worldCell))
-            {
-                return this;
-            }
-
-            if (comp.TryGetCellProxyAtWorldCell(worldCell, out CellProxyThing cellProxy))
-            {
-                return cellProxy;
-            }
-
-            return ownerPawn;
+            // Always use the part proxy as caster. Falling back to ownerPawn made projectiles
+            // leave from the hull core. Mount DrawPos (and ForcedDrawPos) are resolved on this proxy.
+            return this;
         }
 
         private bool PrepareVerbCaster(VirtualTurretUnit unit, out IntVec3 shootRoot)
@@ -572,8 +610,7 @@ namespace NCL
                 return false;
             }
 
-            Thing shootCaster = ResolveCasterForUnit(unit);
-            unit.Verb.caster = shootCaster ?? ownerPawn;
+            unit.Verb.caster = this;
             return true;
         }
 
@@ -749,18 +786,7 @@ namespace NCL
                 return false;
             }
 
-            drawPos = comp.GetSmoothDrawPosForLocalCell(unit.LocalCellNorth);
-            Vector3 outward = drawPos - ownerPawn.DrawPos;
-            outward.y = 0f;
-            if (outward.sqrMagnitude > 0.0001f)
-            {
-                float push = Mathf.Abs(unit.LocalCellNorth.x) >= 1 ? 0.9f : 0.55f;
-                drawPos += outward.normalized * push;
-            }
-
-            // Render above chassis (layer -10) and upper hull via pawn render layer offset.
-            drawPos.y = ownerPawn.DrawPos.y + PawnRenderUtility.AltitudeForLayer(MultiCellPawnDraw.TurretRenderLayer);
-            return true;
+            return comp.TryGetTurretMountDrawPos(unit.LocalCellNorth, out drawPos);
         }
 
         private void SetForcedTargetForUnit(string unitKey, LocalTargetInfo target)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Take off -->
+  <MTW.Gunship.TakeOff>起飞</MTW.Gunship.TakeOff>
+  <!-- EN: Spool thrusters and lift off. Restores turret fire and flying pathing. -->
+  <MTW.Gunship.TakeOffDesc>启动推进器升空，恢复双炮开火并使用飞行寻路。</MTW.Gunship.TakeOffDesc>
+  <!-- EN: Land -->
+  <MTW.Gunship.Land>着陆</MTW.Gunship.Land>
+  <!-- EN: Land the gunship. Turrets lock; movement slows; melee remains available. -->
+  <MTW.Gunship.LandDesc>着陆：炮台锁定，移速降低，仍可近战。</MTW.Gunship.LandDesc>
+  <!-- EN: Flying -->
+  <MTW.Gunship.Status.Flying>飞行中</MTW.Gunship.Status.Flying>
+  <!-- EN: Taking off -->
+  <MTW.Gunship.Status.TakingOff>起飞中</MTW.Gunship.Status.TakingOff>
+  <!-- EN: Landing -->
+  <MTW.Gunship.Status.Landing>着陆中</MTW.Gunship.Status.Landing>
+  <!-- EN: Landed -->
+  <MTW.Gunship.Status.Landed>已着陆</MTW.Gunship.Status.Landed>
+  <!-- EN: Contains: {0} -->
+  <MTW.Gunship.WreckageContains>内含：{0}</MTW.Gunship.WreckageContains>
+
+</LanguageData>

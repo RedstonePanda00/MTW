@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_MechGunship_RT_NeedleRocket.label>针刺火箭炮台</MTW_MechGunship_RT_NeedleRocket.label>
+  <MTW_MechGunship_RT_NeedleRocket.description>前部针刺造型火箭电池，六连发三重火箭同款弹头，射程远、冷却长。</MTW_MechGunship_RT_NeedleRocket.description>
+
+  <MTW_MechGunship_RT_Mortar.label>迫击炮台</MTW_MechGunship_RT_Mortar.label>
+  <MTW_MechGunship_RT_Mortar.description>尾部迫击炮，炮弹采用与多萨类似的高抛弹道。</MTW_MechGunship_RT_Mortar.description>
+
+  <Shell_MTW_MechGunship_Mortar.label>蝎蝽迫击炮弹</Shell_MTW_MechGunship_Mortar.label>
+
+</LanguageData>

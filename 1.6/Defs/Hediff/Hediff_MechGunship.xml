@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef>
+    <defName>MTW_GunshipLanded</defName>
+    <label>landed</label>
+    <description>This gunship is landed. Thrusters are idle, turrets are locked, and ground locomotion is slow. Melee contact remains available.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.55, 0.65, 0.75)</defaultLabelColor>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.35</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

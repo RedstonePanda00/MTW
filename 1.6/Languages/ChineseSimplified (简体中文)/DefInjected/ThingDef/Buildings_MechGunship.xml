@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_MechGunship_CrashFaller.label>坠落中的逆重蝎蝽</MTW_MechGunship_CrashFaller.label>
+  <MTW_MechGunship_CrashFaller.description>一架正在坠向地面的炮艇。</MTW_MechGunship_CrashFaller.description>
+
+  <MTW_MechGunship_Wreckage.label>逆重蝎蝽残骸</MTW_MechGunship_Wreckage.label>
+  <MTW_MechGunship_Wreckage.description>坠毁炮艇的扭曲残骸。尸骸仍困在其中；拆除后可回收尸体与机械体残块。</MTW_MechGunship_Wreckage.description>
+
+</LanguageData>

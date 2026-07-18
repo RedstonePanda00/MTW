@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseMechanoid">
+    <defName>MTW_MechGunship</defName>
+    <label>gunship</label>
+    <description>A multi-cell flying mechanoid gunship. Four thrusters keep it aloft while a forward needle rocket battery and aft mortar suppress the field. It can land for slow ground movement and melee only, or take off to restore turret fire and near-zero terrain path costs.</description>
+    <statBases>
+      <MarketValue>7200</MarketValue>
+      <MoveSpeed>4.6</MoveSpeed>
+      <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.95</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">14</BandwidthCost>
+      <MechEnergyLossPerHP MayRequire="Ludeon.RimWorld.Biotech">0.2</MechEnergyLossPerHP>
+    </statBases>
+    <size>(3,2)</size>
+    <tools>
+      <li>
+        <label>hull</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>32</power>
+        <cooldownTime>2.0</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <race>
+      <body>MechGunshipBody</body>
+      <baseBodySize>3.8</baseBodySize>
+      <baseHealthScale>2.6</baseHealthScale>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Mechanoid</thinkTreeMain>
+      <mechWeightClass>Heavy</mechWeightClass>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+      <lifeStageAges Inherit="false">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <!-- Same RsPandaLibrary.CompMultiTurretGun path as War Scorpion: TurretShootDrawWorld + LaunchProjectileShotHelper. -->
+      <li Class="RsPandaLibrary.CompProperties_MultiTurretGun">
+        <saveKeysPrefix>MTWMechGunshipMultiTurret_</saveKeysPrefix>
+        <turrets>
+          <li>
+            <turretDef>MTW_MechGunship_RT_NeedleRocket</turretDef>
+            <warmupTime>2.5</warmupTime>
+            <cooldownTime>12</cooldownTime>
+            <renderTurretGraphic>true</renderTurretGraphic>
+            <renderNodeProperties>
+              <nodeClass>RsPandaLibrary.PawnRenderNode_MultiTurretGun</nodeClass>
+              <workerClass>RsPandaLibrary.PawnRenderNodeWorker_MultiTurretGun</workerClass>
+              <parentTagDef>Body</parentTagDef>
+              <overrideMeshSize>(1.2, 1.2)</overrideMeshSize>
+              <baseLayer>20</baseLayer>
+              <pawnType>Any</pawnType>
+              <drawData>
+                <defaultData>
+                  <rotationOffset>-90</rotationOffset>
+                </defaultData>
+              </drawData>
+            </renderNodeProperties>
+            <!-- Local cell (0,0,1) relative to core Position / DrawPos. -->
+            <turretOffsetNorth>(0, 0, 1)</turretOffsetNorth>
+            <turretOffsetSouth>(0, 0, -1)</turretOffsetSouth>
+            <turretOffsetEast>(1, 0, 0)</turretOffsetEast>
+            <turretOffsetWest>(-1, 0, 0)</turretOffsetWest>
+          </li>
+          <li>
+            <turretDef>MTW_MechGunship_RT_Mortar</turretDef>
+            <warmupTime>2.0</warmupTime>
+            <cooldownTime>8</cooldownTime>
+            <renderTurretGraphic>true</renderTurretGraphic>
+            <renderNodeProperties>
+              <nodeClass>RsPandaLibrary.PawnRenderNode_MultiTurretGun</nodeClass>
+              <workerClass>RsPandaLibrary.PawnRenderNodeWorker_MultiTurretGun</workerClass>
+              <parentTagDef>Body</parentTagDef>
+              <overrideMeshSize>(1.1, 1.1)</overrideMeshSize>
+              <baseLayer>21</baseLayer>
+              <pawnType>Any</pawnType>
+              <drawData>
+                <defaultData>
+                  <rotationOffset>-90</rotationOffset>
+                </defaultData>
+              </drawData>
+            </renderNodeProperties>
+            <turretOffsetNorth>(0, 0, 0)</turretOffsetNorth>
+            <turretOffsetSouth>(0, 0, 0)</turretOffsetSouth>
+            <turretOffsetEast>(0, 0, 0)</turretOffsetEast>
+            <turretOffsetWest>(0, 0, 0)</turretOffsetWest>
+          </li>
+        </turrets>
+      </li>
+      <li Class="NCL.CompProperties_MultiCellPawn">
+        <version>1</version>
+        <showOverlayWhenSelected>true</showOverlayWhenSelected>
+        <showDebugLabels>false</showDebugLabels>
+        <rebuildProxyOnLoad>true</rebuildProxyOnLoad>
+        <coreCellColor>(0.35, 0.70, 0.95)</coreCellColor>
+        <healthColorThresholdHigh>0.7</healthColorThresholdHigh>
+        <healthColorThresholdMid>0.35</healthColorThresholdMid>
+        <showPartHealthGizmo>true</showPartHealthGizmo>
+        <parts>
+          <li>
+            <partKey>body</partKey>
+            <bindBodyPartDef>MechGunship_Core</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>5</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(0,0,0)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechGunship_NeedleMount</partKey>
+            <bindBodyPartDef>MechGunship_NeedleMount</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>10</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(0,0,1)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechGunship_Engine_NW</partKey>
+            <bindBodyPartDef>MechGunship_Engine_NW</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>12</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,1)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechGunship_Engine_NE</partKey>
+            <bindBodyPartDef>MechGunship_Engine_NE</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>12</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(1,0,1)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechGunship_Engine_W</partKey>
+            <bindBodyPartDef>MechGunship_Engine_W</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>12</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(-1,0,0)</li>
+            </cellsNorth>
+          </li>
+          <li>
+            <partKey>part_MechGunship_Engine_E</partKey>
+            <bindBodyPartDef>MechGunship_Engine_E</bindBodyPartDef>
+            <canBeTargeted>true</canBeTargeted>
+            <priority>12</priority>
+            <damageMultiplier>1.0</damageMultiplier>
+            <armorFactor>1.0</armorFactor>
+            <cellsNorth>
+              <li>(1,0,0)</li>
+            </cellsNorth>
+          </li>
+        </parts>
+      </li>
+      <li Class="NCL.CompProperties_GunshipFlight">
+        <landedHediff>MTW_GunshipLanded</landedHediff>
+        <takeoffTicks>50</takeoffTicks>
+        <landingTicks>50</landingTicks>
+        <hoverOffsetZ>1.8</hoverOffsetZ>
+        <hoverAltitudeY>0.08</hoverAltitudeY>
+        <thrusterFleckInterval>2</thrusterFleckInterval>
+        <thrusterMinSpeed>0.05</thrusterMinSpeed>
+        <defaultAirborneOnSpawn>false</defaultAirborneOnSpawn>
+        <crashFallerDef>MTW_MechGunship_CrashFaller</crashFallerDef>
+        <wreckageDef>MTW_MechGunship_Wreckage</wreckageDef>
+        <crashTicks>150</crashTicks>
+        <crashLandingSearchRadius>8</crashLandingSearchRadius>
+        <crashExplosionRadius>8.9</crashExplosionRadius>
+        <crashExplosionDamage>55</crashExplosionDamage>
+        <crashExplosionDamageDef>Bomb</crashExplosionDamageDef>
+        <lethalEngineParts>
+          <li>MechGunship_Engine_NW</li>
+          <li>MechGunship_Engine_NE</li>
+          <li>MechGunship_Engine_W</li>
+          <li>MechGunship_Engine_E</li>
+        </lethalEngineParts>
+        <engineCellsNorth>
+          <li>(-1,0,1)</li>
+          <li>(1,0,1)</li>
+          <li>(-1,0,0)</li>
+          <li>(1,0,0)</li>
+        </engineCellsNorth>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>380</Steel>
+      <Plasteel>110</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>MTW_MechGunship_Kind</defName>
+    <label>gunship</label>
+    <race>MTW_MechGunship</race>
+    <combatPower>520</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/MechGunship/MechGunship</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.6</drawSize>
+          <shadowData>
+            <volume>(1.4, 0.5, 1.4)</volume>
+            <offset>(0, 0, -0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/MechGunship/MechGunshipAncient</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.6</drawSize>
+          <shadowData>
+            <volume>(1.5, 0.55, 1.5)</volume>
+            <offset>(0, 0, -0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

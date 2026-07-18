@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <MTW.Gunship.TakeOff>Take off</MTW.Gunship.TakeOff>
+  <MTW.Gunship.TakeOffDesc>Spool thrusters and lift off. Restores turret fire and flying pathing.</MTW.Gunship.TakeOffDesc>
+  <MTW.Gunship.Land>Land</MTW.Gunship.Land>
+  <MTW.Gunship.LandDesc>Land the gunship. Turrets lock; movement slows; melee remains available.</MTW.Gunship.LandDesc>
+  <MTW.Gunship.Status.Flying>Flying</MTW.Gunship.Status.Flying>
+  <MTW.Gunship.Status.TakingOff>Taking off</MTW.Gunship.Status.TakingOff>
+  <MTW.Gunship.Status.Landing>Landing</MTW.Gunship.Status.Landing>
+  <MTW.Gunship.Status.Landed>Landed</MTW.Gunship.Status.Landed>
+  <MTW.Gunship.WreckageContains>Contains: {0}</MTW.Gunship.WreckageContains>
+
+</LanguageData>

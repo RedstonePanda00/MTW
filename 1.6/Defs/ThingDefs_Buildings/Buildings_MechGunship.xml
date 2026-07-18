@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef>
+    <defName>MTW_MechGunship_CrashFaller</defName>
+    <label>crashing gunship</label>
+    <description>A gunship falling from the sky.</description>
+    <thingClass>NCL.Thing_GunshipCrashFaller</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <destroyable>true</destroyable>
+    <passability>Standable</passability>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MTW_MechGunship_Wreckage</defName>
+    <label>gunship wreckage</label>
+    <description>Twisted remains of a crashed gunship. The corpse is still trapped inside; deconstructing the wreck recovers it along with mechanoid slag.</description>
+    <thingClass>NCL.Building_GunshipWreckage</thingClass>
+    <category>Building</category>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.45</fillPercent>
+    <size>(3,2)</size>
+    <graphicData>
+      <texPath>Races/MechGunship/MechGunship_Corpse</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4.6, 4.6)</drawSize>
+      <shadowData>
+        <volume>(1.6, 0.4, 1.2)</volume>
+        <offset>(0, 0, -0.15)</offset>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>450</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>-12</Beauty>
+    </statBases>
+    <building>
+      <deconstructible>true</deconstructible>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+      <claimable>true</claimable>
+      <isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <costList>
+      <Steel>40</Steel>
+    </costList>
+    <resourcesFractionWhenDeconstructed>0.35</resourcesFractionWhenDeconstructed>
+  </ThingDef>
+
+</Defs>

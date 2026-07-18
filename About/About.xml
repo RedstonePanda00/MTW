@@ -23,6 +23,7 @@
     </li>
   </modDependencies>
   <loadAfter>
+  <li>RedstonePanda.RedstonePandaLibrary</li>
 	<li>wvc.sergkart.biotech.MoreMechanoidsWorkModes</li>
 	<li>BreadMo.Cinders</li>
 	<li>IssacZhuang.MuzzleFlash</li>

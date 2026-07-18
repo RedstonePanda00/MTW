@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>MTW_MechGunship</defName>
+    <label>gunship</label>
+    <gestationCycles>14</gestationCycles>
+    <displayPriority>310</displayPriority>
+    <description>Assemble a multi-cell flying gunship with a forward needle rocket battery and aft high-arc mortar. Destroying any thruster unit destroys the chassis.</description>
+    <researchPrerequisites>
+      <li>UltraMechtech</li>
+      <li>NCL_Ignition_of_the_Crucible</li>
+    </researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>700</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>480</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>350</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>28</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NanostructuringChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <MTW_MechGunship>1</MTW_MechGunship>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>MTW_MechGunship</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+</Defs>

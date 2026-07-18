@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MechGunship_Core.label>逻辑核心</MechGunship_Core.label>
+  <MechGunship_NeedleMount.label>针刺炮台</MechGunship_NeedleMount.label>
+  <MechGunship_Engine_NW.label>西北推进器</MechGunship_Engine_NW.label>
+  <MechGunship_Engine_NE.label>东北推进器</MechGunship_Engine_NE.label>
+  <MechGunship_Engine_W.label>西侧推进器</MechGunship_Engine_W.label>
+  <MechGunship_Engine_E.label>东侧推进器</MechGunship_Engine_E.label>
+
+</LanguageData>

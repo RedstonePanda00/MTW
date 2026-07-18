@@ -8,8 +8,9 @@ using Verse;
 
 namespace NCL
 {
-    // Loads MTW/AssetBundles/atmosphericplasma (Unity bundle) and clones materials for runtime use.
-    // Pre-bundle authoring: RwShader/Assets/Shaders/AtmosphericPlasmaShield (build into AssetBundles/atmosphericplasma).
+    // Loads AssetBundles/atmosphericplasma (Unity bundle) and clones materials for runtime use.
+    // When Redstone.PMPersona is active, prefer that mod's bundle (same RwShader/Assets/Shaders/AtmosphericPlasmaShield build).
+    // Otherwise use MTW/AssetBundles/atmosphericplasma.
     //
     // Shader property contract (Unity project RwShader/Assets/Shaders/AtmosphericPlasmaShield/*.shader):
     // - ProtossMech/AtmosphericPlasma/MultiQuadTail: _NoiseTex, _FlowTex; Color _CoreColor, _MidColor, _TailColor, _SparkColor;
@@ -23,6 +24,10 @@ namespace NCL
     {
         // Bundle load traces, shader scans, material snapshots, mote draw diagnostics.
         public static bool VerboseAtmosphericPlasmaLogging = false;
+
+        private const string MtwPackageId = "Nyar.NCLvsTW";
+        private const string PmpPersonaPackageId = "Redstone.PMPersona";
+        private const string BundleFileName = "atmosphericplasma";
 
         public static bool Ready { get; private set; }
 
@@ -57,28 +62,20 @@ namespace NCL
 
         private static void Init()
         {
-            string root = ModRoot();
-            if (string.IsNullOrEmpty(root))
+            if (!TryResolveBundlePath(out string bundlePath, out string sourceLabel))
             {
-                Log.Warning("[NCL] AtmosphericPlasma: mod root not found (package Nyar.NCLvsTW).");
                 return;
             }
 
-            string bundlePath = Path.Combine(root, "AssetBundles", "atmosphericplasma");
             if (VerboseAtmosphericPlasmaLogging)
             {
-                Log.Message($"[NCL] AtmosphericPlasma: loading bundle from {bundlePath}");
-            }
-            if (!File.Exists(bundlePath))
-            {
-                Log.Warning($"[NCL] AtmosphericPlasma: missing bundle at {bundlePath}");
-                return;
+                Log.Message($"[NCL] AtmosphericPlasma: loading bundle ({sourceLabel}) from {bundlePath}");
             }
 
-            _bundle = AssetBundle.LoadFromFile(bundlePath);
+            _bundle = LoadOrReuseBundle(bundlePath);
             if (_bundle == null)
             {
-                Log.Warning("[NCL] AtmosphericPlasma: AssetBundle.LoadFromFile returned null.");
+                Log.Warning($"[NCL] AtmosphericPlasma: AssetBundle load failed ({sourceLabel}) at {bundlePath}.");
                 return;
             }
 
@@ -579,11 +576,68 @@ namespace NCL
                 $"mainTexOrNA={mainTexInfo} keywords={kw}");
         }
 
-        private static string ModRoot()
+        private static bool TryResolveBundlePath(out string bundlePath, out string sourceLabel)
+        {
+            bundlePath = null;
+            sourceLabel = null;
+
+            if (ModLister.GetActiveModWithIdentifier(PmpPersonaPackageId) != null)
+            {
+                string pmpRoot = FindModRoot(PmpPersonaPackageId);
+                if (!string.IsNullOrEmpty(pmpRoot))
+                {
+                    string pmpPath = Path.Combine(pmpRoot, "AssetBundles", BundleFileName);
+                    if (File.Exists(pmpPath))
+                    {
+                        bundlePath = pmpPath;
+                        sourceLabel = "ProtossMech:Persona";
+                        return true;
+                    }
+
+                    Log.Warning(
+                        $"[NCL] AtmosphericPlasma: {PmpPersonaPackageId} is active but bundle missing at {pmpPath}; falling back to MTW bundle.");
+                }
+            }
+
+            string mtwRoot = FindModRoot(MtwPackageId);
+            if (string.IsNullOrEmpty(mtwRoot))
+            {
+                Log.Warning($"[NCL] AtmosphericPlasma: mod root not found (package {MtwPackageId}).");
+                return false;
+            }
+
+            bundlePath = Path.Combine(mtwRoot, "AssetBundles", BundleFileName);
+            sourceLabel = "MTW";
+            if (!File.Exists(bundlePath))
+            {
+                Log.Warning($"[NCL] AtmosphericPlasma: missing bundle at {bundlePath}");
+                bundlePath = null;
+                sourceLabel = null;
+                return false;
+            }
+
+            return true;
+        }
+
+        private static AssetBundle LoadOrReuseBundle(string bundlePath)
+        {
+            string bundleName = Path.GetFileName(bundlePath);
+            foreach (AssetBundle existing in AssetBundle.GetAllLoadedAssetBundles())
+            {
+                if (existing != null && string.Equals(existing.name, bundleName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return existing;
+                }
+            }
+
+            return AssetBundle.LoadFromFile(bundlePath);
+        }
+
+        private static string FindModRoot(string packageId)
         {
             foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading)
             {
-                if (string.Equals(mod.PackageIdPlayerFacing, "Nyar.NCLvsTW", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(mod.PackageIdPlayerFacing, packageId, StringComparison.OrdinalIgnoreCase))
                 {
                     return mod.RootDir;
                 }

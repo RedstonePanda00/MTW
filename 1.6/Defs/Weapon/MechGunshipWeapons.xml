@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Shell_MTW_MechGunship_Mortar</defName>
+    <label>gunship mortar shell</label>
+    <thingClass>NCL.Projectiles.Projectile_HighArcExplosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>50</damageAmountBase>
+      <armorPenetrationBase>0.45</armorPenetrationBase>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>32</speed>
+      <shadowSize>0.6</shadowSize>
+      <arcHeightFactor>20</arcHeightFactor>
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+    <modExtensions>
+      <li Class="NCL.Projectiles.ModExtension_ProjectileHighArc">
+        <arcPeakHeight>45</arcPeakHeight>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="NCL.CompProperties_SmokeTrail">
+        <intervalTicks>3</intervalTicks>
+        <smokeSize>0.7</smokeSize>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>MTW_MechGunship_RT_NeedleRocket</defName>
+    <label>gunship needle rocket battery</label>
+    <description>Forward needle-style rocket battery. Fires six Bomb rockets in a burst at long range, then enters a long cooldown.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Races/MechGunship/MechGunship_NeedleTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <uiIconPath>Races/MechGunship/MechGunship_NeedleTurret</uiIconPath>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <Mass>16</Mass>
+      <AccuracyTouch>0.45</AccuracyTouch>
+      <AccuracyShort>0.60</AccuracyShort>
+      <AccuracyMedium>0.72</AccuracyMedium>
+      <AccuracyLong>0.68</AccuracyLong>
+      <RangedWeapon_Cooldown>12</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Rocket</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>60</range>
+        <minRange>4</minRange>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
+        <forcedMissRadius>2.9</forcedMissRadius>
+        <requireLineOfSight>true</requireLineOfSight>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>MTW_MechGunship_RT_Mortar</defName>
+    <label>gunship mortar</label>
+    <description>Aft mortar turret. Fires high-arc explosive shells that follow a Doxa-style lob trajectory.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Races/MechGunship/MechGunship_Mortar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <uiIconPath>Races/MechGunship/MechGunship_Mortar</uiIconPath>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <Mass>18</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>8</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Shell_MTW_MechGunship_Mortar</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>75</range>
+        <minRange>12</minRange>
+        <burstShotCount>1</burstShotCount>
+        <forcedMissRadius>6</forcedMissRadius>
+        <requireLineOfSight>false</requireLineOfSight>
+        <isMortar>true</isMortar>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>Mortar_LaunchA</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

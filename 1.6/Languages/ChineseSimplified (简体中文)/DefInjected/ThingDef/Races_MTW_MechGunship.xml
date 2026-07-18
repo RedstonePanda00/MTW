@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MTW_MechGunship.label>逆重蝎蝽</MTW_MechGunship.label>
+  <MTW_MechGunship.description>一种多格飞行机械炮艇。四具推进器维持悬停，前部针刺火箭电池与尾部迫击炮负责火力压制。可着陆以低速近战移动，起飞后恢复双炮并忽略地形通行代价。</MTW_MechGunship.description>
+  <MTW_MechGunship.tools.hull.label>船体</MTW_MechGunship.tools.hull.label>
+
+  <MTW_MechGunship_Kind.label>逆重蝎蝽</MTW_MechGunship_Kind.label>
+
+</LanguageData>

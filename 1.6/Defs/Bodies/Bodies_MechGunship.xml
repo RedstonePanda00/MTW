@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BodyPartDef>
+    <defName>MechGunship_Core</defName>
+    <label>gunship logic core</label>
+    <hitPoints>90</hitPoints>
+    <solid>true</solid>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <canSuggestAmputation>false</canSuggestAmputation>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>BreathingSource</li>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+      <li>HearingSource</li>
+      <li>SightSource</li>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef Name="MechGunshipPartBase" Abstract="True">
+    <hitPoints>100</hitPoints>
+    <solid>true</solid>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>1</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechGunshipPartBase">
+    <defName>MechGunship_NeedleMount</defName>
+    <label>needle rocket turret</label>
+    <hitPoints>110</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechGunshipPartBase">
+    <defName>MechGunship_Engine_NW</defName>
+    <label>northwest thruster</label>
+    <hitPoints>80</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechGunshipPartBase">
+    <defName>MechGunship_Engine_NE</defName>
+    <label>northeast thruster</label>
+    <hitPoints>80</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechGunshipPartBase">
+    <defName>MechGunship_Engine_W</defName>
+    <label>west thruster</label>
+    <hitPoints>80</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechGunshipPartBase">
+    <defName>MechGunship_Engine_E</defName>
+    <label>east thruster</label>
+    <hitPoints>80</hitPoints>
+  </BodyPartDef>
+
+  <BodyDef>
+    <defName>MechGunshipBody</defName>
+    <label>gunship</label>
+    <corePart>
+      <def>MechGunship_Core</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>MechGunship_NeedleMount</def>
+          <customLabel>forward needle turret</customLabel>
+          <coverage>0.18</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+        </li>
+        <li>
+          <def>MechGunship_Engine_NW</def>
+          <customLabel>northwest thruster</customLabel>
+          <coverage>0.16</coverage>
+        </li>
+        <li>
+          <def>MechGunship_Engine_NE</def>
+          <customLabel>northeast thruster</customLabel>
+          <coverage>0.16</coverage>
+        </li>
+        <li>
+          <def>MechGunship_Engine_W</def>
+          <customLabel>west thruster</customLabel>
+          <coverage>0.16</coverage>
+        </li>
+        <li>
+          <def>MechGunship_Engine_E</def>
+          <customLabel>east thruster</customLabel>
+          <coverage>0.16</coverage>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

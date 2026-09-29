@@ -27,10 +27,13 @@ namespace NCL
         private DamageDef explosionDamageDef;
         private IntVec3 deathCell = IntVec3.Invalid;
         private IntVec3 impactCell = IntVec3.Invalid;
+        private Rot4 wreckageRot = Rot4.South;
+        private int passengerDamage;
 
         public Thing_GunshipCrashFaller()
         {
-            innerContainer = new ThingOwner<Thing>(this, oneStackOnly: true, LookMode.Deep);
+            // Not oneStackOnly: the bay rides down alongside the corpse.
+            innerContainer = new ThingOwner<Thing>(this, oneStackOnly: false, LookMode.Deep);
         }
 
         public void Configure(
@@ -45,9 +48,13 @@ namespace NCL
             IntVec3 crashImpactCell,
             float crashExplosionRadius = 8.9f,
             int crashExplosionDamage = 55,
-            DamageDef crashExplosionDamageDef = null)
+            DamageDef crashExplosionDamageDef = null,
+            Rot4 wreckageRotation = default,
+            int crashPassengerDamage = 0)
         {
             wreckageDef = wreckage;
+            wreckageRot = wreckageRotation.IsValid ? wreckageRotation : Rot4.South;
+            passengerDamage = Mathf.Max(0, crashPassengerDamage);
             ticksTotal = Mathf.Max(1, crashTicks);
             ticksLeft = ticksTotal;
             startOffsetZ = hoverOffsetZ;
@@ -168,11 +175,13 @@ namespace NCL
             Scribe_Defs.Look(ref explosionDamageDef, "gunshipCrashExplosionDamageDef");
             Scribe_Values.Look(ref deathCell, "gunshipCrashDeathCell", IntVec3.Invalid);
             Scribe_Values.Look(ref impactCell, "gunshipCrashImpactCell", IntVec3.Invalid);
+            Scribe_Values.Look(ref wreckageRot, "gunshipCrashWreckageRot", Rot4.South);
+            Scribe_Values.Look(ref passengerDamage, "gunshipCrashPassengerDamage", 0);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (innerContainer == null)
                 {
-                    innerContainer = new ThingOwner<Thing>(this, oneStackOnly: true, LookMode.Deep);
+                    innerContainer = new ThingOwner<Thing>(this, oneStackOnly: false, LookMode.Deep);
                 }
 
                 if (explosionDamageDef == null)
@@ -269,6 +278,19 @@ namespace NCL
                 }
             }
 
+            // Everything else in the bay is a passenger (possibly another loaded gunship carrying its
+            // own bay). Take them out of the faller before it is destroyed so they can be placed
+            // beside the wreck once the explosion is over.
+            List<Pawn> passengers = new List<Pawn>();
+            for (int i = innerContainer.Count - 1; i >= 0; i--)
+            {
+                if (innerContainer[i] is Pawn passenger)
+                {
+                    innerContainer.Remove(passenger);
+                    passengers.Add(passenger);
+                }
+            }
+
             ThingDef spawnDef = wreckageDef;
             if (spawnDef == null)
             {
@@ -279,10 +301,12 @@ namespace NCL
                 }
 
                 DestroyFaller();
+                ReleasePassengers(passengers, cell, map);
                 return;
             }
 
             Building_GunshipWreckage wreck = (Building_GunshipWreckage)ThingMaker.MakeThing(spawnDef);
+            wreck.Rotation = spawnDef.rotatable ? wreckageRot : Rot4.North;
             if (corpse != null)
             {
                 innerContainer.Remove(corpse);
@@ -337,6 +361,38 @@ namespace NCL
             else
             {
                 FleckMaker.ThrowDustPuffThick(cell.ToVector3Shifted(), map, 2.2f, new Color(0.45f, 0.45f, 0.45f));
+            }
+
+            // After the blast so survivors are not caught in it.
+            ReleasePassengers(passengers, cell, map);
+        }
+
+        private void ReleasePassengers(List<Pawn> passengers, IntVec3 cell, Map map)
+        {
+            if (passengers == null || passengers.Count == 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < passengers.Count; i++)
+            {
+                Pawn passenger = passengers[i];
+                if (passenger == null || passenger.Destroyed)
+                {
+                    continue;
+                }
+
+                if (map == null || !GenPlace.TryPlaceThing(passenger, cell, map, ThingPlaceMode.Near))
+                {
+                    passenger.Destroy(DestroyMode.Vanish);
+                    continue;
+                }
+
+                FleckMaker.ThrowDustPuff(passenger.Position.ToVector3Shifted(), map, 1.4f);
+                if (passengerDamage > 0)
+                {
+                    passenger.TakeDamage(new DamageInfo(DamageDefOf.Blunt, passengerDamage));
+                }
             }
         }
 

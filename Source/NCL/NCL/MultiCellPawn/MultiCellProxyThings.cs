@@ -763,9 +763,9 @@ namespace NCL
         private IntVec3 GetWorldCellForTurret(VirtualTurretUnit unit)
         {
             CompMultiCellPawn comp = OwnerComp;
-            if (comp != null && comp.TryGetWorldCellFromPartLocalCell(partKey, unit.LocalCellNorth, out IntVec3 worldCell))
+            if (comp != null && comp.TryGetWorldCellFromPartLocalCell(partKey, unit.LocalCellNorth, out _))
             {
-                return worldCell;
+                return comp.GetTurretOriginCell(unit.LocalCellNorth);
             }
 
             return Position;

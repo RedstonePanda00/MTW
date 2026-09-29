@@ -12,7 +12,7 @@ namespace NCL
 
         public Building_GunshipWreckage()
         {
-            innerContainer = new ThingOwner<Thing>(this, oneStackOnly: true, LookMode.Deep);
+            innerContainer = new ThingOwner<Thing>(this, oneStackOnly: false, LookMode.Deep);
         }
 
         public void AcceptCorpse(Corpse corpse)
@@ -34,16 +34,13 @@ namespace NCL
         {
             Map map = Map;
             IntVec3 pos = Position;
-            bool releaseContents = mode == DestroyMode.Deconstruct || mode == DestroyMode.KillFinalize;
-            base.Destroy(mode);
+            bool releaseContents = mode == DestroyMode.Deconstruct
+                || mode == DestroyMode.KillFinalize
+                || mode == DestroyMode.Refund
+                || mode == DestroyMode.FailConstruction;
 
-            if (map == null)
-            {
-                innerContainer.ClearAndDestroyContents();
-                return;
-            }
-
-            if (releaseContents)
+            // Contents have to leave before the holder goes away, matching Building_Casket.
+            if (map != null && releaseContents)
             {
                 innerContainer.TryDropAll(pos, map, ThingPlaceMode.Near);
                 SpawnMechanoidSlag(pos, map);
@@ -52,6 +49,8 @@ namespace NCL
             {
                 innerContainer.ClearAndDestroyContents();
             }
+
+            base.Destroy(mode);
         }
 
         public override void ExposeData()
@@ -60,7 +59,7 @@ namespace NCL
             Scribe_Deep.Look(ref innerContainer, "gunshipWreckInner", this);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && innerContainer == null)
             {
-                innerContainer = new ThingOwner<Thing>(this, oneStackOnly: true, LookMode.Deep);
+                innerContainer = new ThingOwner<Thing>(this, oneStackOnly: false, LookMode.Deep);
             }
         }
 

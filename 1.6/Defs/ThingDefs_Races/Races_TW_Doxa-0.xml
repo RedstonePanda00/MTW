@@ -53,7 +53,9 @@ Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to 
         </detritusLeavings>
 	<thinkTreeMain>DoxaThinkTreeMain</thinkTreeMain>
         <thinkTreeConstant>DoxaThinkTreeConstant</thinkTreeConstant>
+        <renderTree>NCL_MultiLegRig</renderTree>
       </race>
+      <uiIconPath>Races/JXGT/JXGT_Icon</uiIconPath>
       <tools>
         <li>
           <label>head</label>
@@ -128,7 +130,7 @@ Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to 
             <turretMounts>
               <li>
                 <slotKey>turret3</slotKey>
-                <turretDef>NCL_Diabolus_RT_AutoGun</turretDef>
+                <turretDef>MTW_Doxa_RT_ChargeAutocannon</turretDef>
                 <onePerCell>true</onePerCell>
                 <enabledByDefault>true</enabledByDefault>
                 <disableWhenPartMissing>true</disableWhenPartMissing>
@@ -138,7 +140,7 @@ Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to 
               </li>
               <li>
                 <slotKey>turret4</slotKey>
-                <turretDef>NCL_Diabolus_RT_AutoGun</turretDef>
+                <turretDef>MTW_Doxa_RT_ChargeAutocannon</turretDef>
                 <onePerCell>true</onePerCell>
                 <enabledByDefault>true</enabledByDefault>
                 <disableWhenPartMissing>true</disableWhenPartMissing>
@@ -222,6 +224,194 @@ Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to 
 				</li>
     <li Class="NCL.CompProperties_MechanoidShield">
     </li>
+      <li Class="NCL.CompProperties_EvasiveReposition">
+        <checkIntervalTicks>60</checkIntervalTicks>
+        <pressureWindowTicks>300</pressureWindowTicks>
+        <hitsToEvade>5</hitsToEvade>
+        <maxStationaryTicks>1500</maxStationaryTicks>
+        <cooldownTicks>900~1500</cooldownTicks>
+        <failRetryTicks>300</failRetryTicks>
+        <stuckDistance>2</stuckDistance>
+        <maxBackoffLevel>3</maxBackoffLevel>
+        <repositionDistance>5~10</repositionDistance>
+        <candidateCount>16</candidateCount>
+        <minThreatDistance>8</minThreatDistance>
+        <avoidPreviousRadius>4</avoidPreviousRadius>
+        <keepFiringSolution>true</keepFiringSolution>
+        <jobExpiryTicks>900</jobExpiryTicks>
+        <locomotionUrgency>Walk</locomotionUrgency>
+      </li>
+      <li Class="NCL.CompProperties_MultiLegRig">
+        <cycleDistance>2</cycleDistance>
+        <swingFraction>0.5</swingFraction>
+        <liftHeight>0.35</liftHeight>
+        <strideVisual>0.5</strideVisual>
+        <bodyBobDepth>0.1</bodyBobDepth>
+        <bodyBobTicks>50</bodyBobTicks>
+        <bodySwayAmount>0.04</bodySwayAmount>
+        <idleFloatAmplitude>0.06</idleFloatAmplitude>
+        <idleFloatPeriodTicks>240</idleFloatPeriodTicks>
+        <dustPuffsPerFoot>3</dustPuffsPerFoot>
+        <dustScale>1.4~2.2</dustScale>
+        <recoilDepth>0.35</recoilDepth>
+        <recoilTicks>70</recoilTicks>
+        <fireRecoilAttackTicks>4</fireRecoilAttackTicks>
+        <fireRecoilReturnTicks>60</fireRecoilReturnTicks>
+        <fireRecoilTailAmplitude>0.12</fireRecoilTailAmplitude>
+        <fireRecoilTailPeriodTicks>12</fireRecoilTailPeriodTicks>
+        <fireRecoilTailDecayTicks>14</fireRecoilTailDecayTicks>
+        <fireRecoilKickback>0.3</fireRecoilKickback>
+        <fireRecoilSink>0.08</fireRecoilSink>
+        <fireRecoilTiltAngle>4</fireRecoilTiltAngle>
+        <fireRecoilSquash>0.05</fireRecoilSquash>
+        <landOnFirstSpawn>true</landOnFirstSpawn>
+        <landingFallerDef>NCL_JXGT_LandingFaller</landingFallerDef>
+        <landingTexPath>Races/JXGT/JXGT_Rest</landingTexPath>
+        <landingDrawSize>10</landingDrawSize>
+        <!-- Tripod gait: group 0 = FL, MR, RL; group 1 = FR, ML, RR. Foot positions are relative to the draw center. -->
+        <legs>
+          <li>
+            <key>LegFL</key>
+            <gaitGroup>0</gaitGroup>
+            <footSouth>(1.86, -3.99)</footSouth>
+            <footEast>(3.63, 0.40)</footEast>
+            <footNorth>(-1.82, 0.18)</footNorth>
+          </li>
+          <li>
+            <key>LegFR</key>
+            <gaitGroup>1</gaitGroup>
+            <footSouth>(-1.87, -3.99)</footSouth>
+            <footEast>(3.67, -3.03)</footEast>
+            <footNorth>(1.81, 0.18)</footNorth>
+          </li>
+          <li>
+            <key>LegML</key>
+            <gaitGroup>1</gaitGroup>
+            <footSouth>(3.88, -1.91)</footSouth>
+            <footEast>(0.16, 1.30)</footEast>
+            <footNorth>(-3.89, -2.10)</footNorth>
+          </li>
+          <li>
+            <key>LegMR</key>
+            <gaitGroup>0</gaitGroup>
+            <footSouth>(-3.89, -1.91)</footSouth>
+            <footEast>(0.16, -3.99)</footEast>
+            <footNorth>(3.88, -2.10)</footNorth>
+          </li>
+          <li>
+            <key>LegRL</key>
+            <gaitGroup>0</gaitGroup>
+            <footSouth>(2.84, 0.53)</footSouth>
+            <footEast>(-3.63, 0.41)</footEast>
+            <footNorth>(-2.67, -4.02)</footNorth>
+          </li>
+          <li>
+            <key>LegRR</key>
+            <gaitGroup>1</gaitGroup>
+            <footSouth>(-2.85, 0.53)</footSouth>
+            <footEast>(-3.68, -3.29)</footEast>
+            <footNorth>(2.66, -4.02)</footNorth>
+          </li>
+        </legs>
+        <!-- Layers are offsets from baseLayer, derived from the reference composites per facing. -->
+        <renderNodeProperties>
+          <li Class="NCL.PawnRenderNodeProperties_LegRigPart">
+            <debugLabel>JXGT_Body</debugLabel>
+            <rigPartKey>Body</rigPartKey>
+            <nodeClass>NCL.PawnRenderNode_LegRigPart</nodeClass>
+            <workerClass>NCL.PawnRenderNodeWorker_LegRigPart</workerClass>
+            <parentTagDef>Root</parentTagDef>
+            <pawnType>Any</pawnType>
+            <texPath>Races/JXGT/JXGT_Body</texPath>
+            <drawSize>(10, 10)</drawSize>
+            <baseLayer>10</baseLayer>
+          </li>
+          <li Class="NCL.PawnRenderNodeProperties_LegRigPart">
+            <debugLabel>JXGT_LegFL</debugLabel>
+            <rigPartKey>LegFL</rigPartKey>
+            <nodeClass>NCL.PawnRenderNode_LegRigPart</nodeClass>
+            <workerClass>NCL.PawnRenderNodeWorker_LegRigPart</workerClass>
+            <parentTagDef>Root</parentTagDef>
+            <pawnType>Any</pawnType>
+            <texPath>Races/JXGT/JXGT_LegFL</texPath>
+            <drawSize>(10, 10)</drawSize>
+            <baseLayer>10</baseLayer>
+            <layerSouth>1</layerSouth>
+            <layerEast>-1</layerEast>
+            <layerNorth>-2</layerNorth>
+          </li>
+          <li Class="NCL.PawnRenderNodeProperties_LegRigPart">
+            <debugLabel>JXGT_LegFR</debugLabel>
+            <rigPartKey>LegFR</rigPartKey>
+            <nodeClass>NCL.PawnRenderNode_LegRigPart</nodeClass>
+            <workerClass>NCL.PawnRenderNodeWorker_LegRigPart</workerClass>
+            <parentTagDef>Root</parentTagDef>
+            <pawnType>Any</pawnType>
+            <texPath>Races/JXGT/JXGT_LegFR</texPath>
+            <drawSize>(10, 10)</drawSize>
+            <baseLayer>10</baseLayer>
+            <layerSouth>1</layerSouth>
+            <layerEast>1</layerEast>
+            <layerNorth>-2</layerNorth>
+          </li>
+          <li Class="NCL.PawnRenderNodeProperties_LegRigPart">
+            <debugLabel>JXGT_LegML</debugLabel>
+            <rigPartKey>LegML</rigPartKey>
+            <nodeClass>NCL.PawnRenderNode_LegRigPart</nodeClass>
+            <workerClass>NCL.PawnRenderNodeWorker_LegRigPart</workerClass>
+            <parentTagDef>Root</parentTagDef>
+            <pawnType>Any</pawnType>
+            <texPath>Races/JXGT/JXGT_LegML</texPath>
+            <drawSize>(10, 10)</drawSize>
+            <baseLayer>10</baseLayer>
+            <layerSouth>-1</layerSouth>
+            <layerEast>-1</layerEast>
+            <layerNorth>-1</layerNorth>
+          </li>
+          <li Class="NCL.PawnRenderNodeProperties_LegRigPart">
+            <debugLabel>JXGT_LegMR</debugLabel>
+            <rigPartKey>LegMR</rigPartKey>
+            <nodeClass>NCL.PawnRenderNode_LegRigPart</nodeClass>
+            <workerClass>NCL.PawnRenderNodeWorker_LegRigPart</workerClass>
+            <parentTagDef>Root</parentTagDef>
+            <pawnType>Any</pawnType>
+            <texPath>Races/JXGT/JXGT_LegMR</texPath>
+            <drawSize>(10, 10)</drawSize>
+            <baseLayer>10</baseLayer>
+            <layerSouth>-1</layerSouth>
+            <layerEast>1</layerEast>
+            <layerNorth>-1</layerNorth>
+          </li>
+          <li Class="NCL.PawnRenderNodeProperties_LegRigPart">
+            <debugLabel>JXGT_LegRL</debugLabel>
+            <rigPartKey>LegRL</rigPartKey>
+            <nodeClass>NCL.PawnRenderNode_LegRigPart</nodeClass>
+            <workerClass>NCL.PawnRenderNodeWorker_LegRigPart</workerClass>
+            <parentTagDef>Root</parentTagDef>
+            <pawnType>Any</pawnType>
+            <texPath>Races/JXGT/JXGT_LegRL</texPath>
+            <drawSize>(10, 10)</drawSize>
+            <baseLayer>10</baseLayer>
+            <layerSouth>-2</layerSouth>
+            <layerEast>-1</layerEast>
+            <layerNorth>1</layerNorth>
+          </li>
+          <li Class="NCL.PawnRenderNodeProperties_LegRigPart">
+            <debugLabel>JXGT_LegRR</debugLabel>
+            <rigPartKey>LegRR</rigPartKey>
+            <nodeClass>NCL.PawnRenderNode_LegRigPart</nodeClass>
+            <workerClass>NCL.PawnRenderNodeWorker_LegRigPart</workerClass>
+            <parentTagDef>Root</parentTagDef>
+            <pawnType>Any</pawnType>
+            <texPath>Races/JXGT/JXGT_LegRR</texPath>
+            <drawSize>(10, 10)</drawSize>
+            <baseLayer>10</baseLayer>
+            <layerSouth>-2</layerSouth>
+            <layerEast>1</layerEast>
+            <layerNorth>1</layerNorth>
+          </li>
+        </renderNodeProperties>
+      </li>
     </comps>
       <killedLeavingsPlayerHostile>
         <TW_DoxaTacticalCore>1</TW_DoxaTacticalCore>
@@ -245,20 +435,16 @@ Doxa isn't a frontline fighter but a theater-level tempo controller. Failure to 
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Races/Doxa</texPath>
-          <shaderType>CutoutWithOverlay</shaderType>
-          <maskPath>Races/Doxa_C</maskPath>
-        <graphicClass>Graphic_Multi</graphicClass>
-              <drawSize>10</drawSize>
+            <texPath>Races/JXGT/JXGT_Display</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>10</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Races/JXGTAncient</texPath>
-          <shaderType>CutoutWithOverlay</shaderType>
-          <maskPath>Races/Doxa_C</maskPath>
-        <graphicClass>Graphic_Multi</graphicClass>
-              <drawSize>10</drawSize>
+            <texPath>Races/JXGT/JXGT_Display</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>10</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>      

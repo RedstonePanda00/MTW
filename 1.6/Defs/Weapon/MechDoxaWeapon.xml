@@ -335,7 +335,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="BaseWeaponTurret">
+  <ThingDef Name="MTW_Doxa_RT_FragLauncher" ParentName="BaseWeaponTurret">
     <defName>MTW_Doxa_RT_FragLauncher</defName>
     <label>Doxa frag grenade launcher</label>
     <description>High-arc frag grenade launcher for Doxa rear turret mounts. Seven-round burst.</description>
@@ -370,6 +370,65 @@
         <soundCast>ThrowGrenade</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>6</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tradeTags>
+      <li>NCLThings</li>
+    </tradeTags>
+  </ThingDef>
+
+  <!-- Doxa front mounts: standalone copy of the Diabolus minigun turret, heavier autocannon rounds. -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_MTW_Doxa_ChargeAutocannon</defName>
+    <label>charge autocannon shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <armorPenetrationBase>0.6</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>MTW_Doxa_RT_ChargeAutocannon</defName>
+    <label>Doxa burst-charge autocannon</label>
+    <description>Front-mounted burst-charge autocannon of Doxa. Compared with a minigun turret it fires heavier charge shells with markedly higher damage and armor penetration, and recycles slightly faster between bursts.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/JXGT/JXGT_ChargeAutocannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.95</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_MTW_Doxa_ChargeAutocannon</defaultProjectile>
+        <warmupTime>0.01</warmupTime>
+        <range>12</range>
+        <minRange>0</minRange>
+        <burstShotCount>50</burstShotCount>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <defaultCooldownTime>0.5</defaultCooldownTime>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
         </targetParams>

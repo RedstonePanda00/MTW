@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <!-- Salvage rather than resurrection: mechResurrection would revive the original pawn through
+       Bill_ResurrectMech, which only accepts corpses of player mechs. Consuming the corpse as a plain
+       ingredient lets a downed enemy gunship be rebuilt into a fresh one. -->
   <RecipeDef ParentName="BaseMechanoidRecipe">
     <defName>MTW_MechGunship</defName>
-    <label>gunship</label>
-    <gestationCycles>14</gestationCycles>
+    <label>salvage gunship</label>
+    <gestationCycles>4</gestationCycles>
     <displayPriority>310</displayPriority>
-    <description>Assemble a multi-cell flying gunship with a forward needle rocket battery and aft high-arc mortar. Destroying any thruster unit destroys the chassis.</description>
+    <description>Rebuild a flying gunship around a recovered gunship hull. Any gunship wreck will do, friendly or hostile, so long as enough plasteel is on hand to reline the thruster units. Destroying any thruster unit destroys the chassis.</description>
     <researchPrerequisites>
       <li>UltraMechtech</li>
       <li>NCL_Ignition_of_the_Crucible</li>
@@ -14,11 +17,11 @@
     <ingredients Inherit="False">
       <li>
         <filter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
+          <categories>
+            <li>Corpses</li>
+          </categories>
         </filter>
-        <count>700</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -26,49 +29,23 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>480</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>ComponentSpacer</li>
-          </thingDefs>
-        </filter>
-        <count>10</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>Uranium</li>
-          </thingDefs>
-        </filter>
-        <count>350</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>SubcoreHigh</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>ComponentIndustrial</li>
-          </thingDefs>
-        </filter>
-        <count>28</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>NanostructuringChip</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
+        <count>100</count>
       </li>
     </ingredients>
+    <fixedIngredientFilter>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesMechFriendly</li>
+        <li>AllowCorpsesMechEnemy</li>
+      </specialFiltersToAllow>
+      <thingDefs>
+        <li>Corpse_MTW_MechGunship</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <forceHiddenSpecialFilters>
+      <li>AllowCorpsesMechFriendly</li>
+      <li>AllowCorpsesMechEnemy</li>
+    </forceHiddenSpecialFilters>
     <products>
       <MTW_MechGunship>1</MTW_MechGunship>
     </products>

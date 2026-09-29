@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Copy of vanilla Misc tree; the body node only draws in portraits because the leg rig renders the pawn on the map. -->
+  <PawnRenderTreeDef>
+    <defName>NCL_MultiLegRig</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+          <workerClass>NCL.PawnRenderNodeWorker_PortraitOnlyBody</workerClass>
+          <useRottenColor>true</useRottenColor>
+          <children>
+            <li>
+              <debugLabel>Wounds</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>3</baseLayer>
+            </li>
+            <li>
+              <debugLabel>Firefoam</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>5</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Weapon/carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <ThingDef>
+    <defName>NCL_JXGT_LandingFaller</defName>
+    <label>descending mechanoid</label>
+    <thingClass>NCL.Thing_MechLandingFaller</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <drawOffscreen>true</drawOffscreen>
+    <modExtensions>
+      <li Class="NCL.ModExtension_MechLanding">
+        <shadowTicks>150</shadowTicks>
+        <fallTicks>45</fallTicks>
+        <shadowStartScale>0.25</shadowStartScale>
+        <shadowMaxAlpha>0.6</shadowMaxAlpha>
+        <fallStartScale>3</fallStartScale>
+        <fallFadeInFraction>0.35</fallFadeInFraction>
+        <fallSound>DropPod_Fall_Mechanoid</fallSound>
+        <impactSound>DropPod_Impact_Mechanoid</impactSound>
+        <impactShake>4</impactShake>
+        <impactDustCount>40</impactDustCount>
+        <impactDustRadius>4.5</impactDustRadius>
+        <impactDustScale>2.5~4.5</impactDustScale>
+        <impactSmokeCount>12</impactSmokeCount>
+        <impactSmokeScale>3~5</impactSmokeScale>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

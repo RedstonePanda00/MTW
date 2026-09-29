@@ -37,10 +37,19 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+      <!-- Two stages only to drive the paint variant: under 200 years uses the factory-fresh set,
+           200+ uses the weathered set. MechanoidFullyFormed has no stat factors, so nothing else changes. -->
       <lifeStageAges Inherit="false">
         <li>
           <def>MechanoidFullyFormed</def>
           <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>200</minAge>
           <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
           <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
           <soundCall>Pawn_Mech_Centipede_Call</soundCall>
@@ -82,10 +91,12 @@
             <turretMounts>
               <li>
                 <slotKey>voxMinigunNW</slotKey>
-                <turretDef>NCL_Diabolus_RT_AutoGun</turretDef>
+                <turretDef>MTW_VoxEngine_RT_MachineGun</turretDef>
                 <onePerCell>true</onePerCell>
                 <enabledByDefault>true</enabledByDefault>
                 <disableWhenPartMissing>true</disableWhenPartMissing>
+                <!-- Corner mounts ride the tread units, so they orbit with the chassis graphic. -->
+                <followChassisRotation>true</followChassisRotation>
                 <mountCellsNorth>
                   <li>(-1,0,1)</li>
                 </mountCellsNorth>
@@ -116,10 +127,11 @@
             <turretMounts>
               <li>
                 <slotKey>voxMinigunNE</slotKey>
-                <turretDef>NCL_Diabolus_RT_AutoGun</turretDef>
+                <turretDef>MTW_VoxEngine_RT_MachineGun</turretDef>
                 <onePerCell>true</onePerCell>
                 <enabledByDefault>true</enabledByDefault>
                 <disableWhenPartMissing>true</disableWhenPartMissing>
+                <followChassisRotation>true</followChassisRotation>
                 <mountCellsNorth>
                   <li>(1,0,1)</li>
                 </mountCellsNorth>
@@ -185,10 +197,11 @@
             <turretMounts>
               <li>
                 <slotKey>voxFragSW</slotKey>
-                <turretDef>MTW_Doxa_RT_FragLauncher</turretDef>
+                <turretDef>MTW_VoxEngine_RT_FragLauncher</turretDef>
                 <onePerCell>true</onePerCell>
                 <enabledByDefault>true</enabledByDefault>
                 <disableWhenPartMissing>true</disableWhenPartMissing>
+                <followChassisRotation>true</followChassisRotation>
                 <mountCellsNorth>
                   <li>(-1,0,-1)</li>
                 </mountCellsNorth>
@@ -219,10 +232,11 @@
             <turretMounts>
               <li>
                 <slotKey>voxFragSE</slotKey>
-                <turretDef>MTW_Doxa_RT_FragLauncher</turretDef>
+                <turretDef>MTW_VoxEngine_RT_FragLauncher</turretDef>
                 <onePerCell>true</onePerCell>
                 <enabledByDefault>true</enabledByDefault>
                 <disableWhenPartMissing>true</disableWhenPartMissing>
+                <followChassisRotation>true</followChassisRotation>
                 <mountCellsNorth>
                   <li>(1,0,-1)</li>
                 </mountCellsNorth>
@@ -235,6 +249,17 @@
         <angularVelocityDegPerSec>45</angularVelocityDegPerSec>
         <baseTexPath>Things/VoxEngine/Vox_Base</baseTexPath>
         <baseSideTexPath>Things/VoxEngine/Vox_Base_side</baseSideTexPath>
+        <!-- Index-aligned with race.lifeStageAges above. -->
+        <lifeStageTextures>
+          <li>
+            <baseTexPath>Things/VoxEngine/Vox_Base_New</baseTexPath>
+            <baseSideTexPath>Things/VoxEngine/Vox_Base_side_New</baseSideTexPath>
+          </li>
+          <li>
+            <baseTexPath>Things/VoxEngine/Vox_Base</baseTexPath>
+            <baseSideTexPath>Things/VoxEngine/Vox_Base_side</baseSideTexPath>
+          </li>
+        </lifeStageTextures>
         <sideSwitchHysteresisDeg>0</sideSwitchHysteresisDeg>
         <cardinalBandDeg>45</cardinalBandDeg>
         <baseDrawSize>4.5</baseDrawSize>
@@ -267,6 +292,16 @@
     <combatPower>420</combatPower>
     <maxPerGroup>2</maxPerGroup>
     <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/VoxEngine/Vox_New</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.5</drawSize>
+          <shadowData>
+            <volume>(1.2, 0.8, 1.2)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
       <li>
         <bodyGraphicData>
           <texPath>Things/VoxEngine/Vox</texPath>

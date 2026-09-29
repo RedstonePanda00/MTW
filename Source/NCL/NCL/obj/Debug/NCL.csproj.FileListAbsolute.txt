@@ -34,3 +34,5 @@ c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\obj\Debug\
 c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\obj\Debug\NCL.pdb
 c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\bin\Debug\NCL.dll
 c:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\Source\NCL\NCL\bin\Debug\NCL.pdb
+C:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\1.6\Assemblies\NCL.dll
+C:\Users\15858\OneDrive\Documents\Sundry\RwModCoop\MTW\1.6\Assemblies\NCL.pdb

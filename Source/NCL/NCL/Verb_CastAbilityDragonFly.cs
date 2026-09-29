@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
-using UnityEngine;
 using Verse;
 
 namespace NCL
 {
-    [StaticConstructorOnStartup]
     public class Verb_CastAbilityDragonFly : Verb_CastAbility
     {
-        public static readonly Texture2D TargeterMouseAttachment = ContentFinder<Texture2D>.Get("Things/SuckerPunch", true);
         private DragonFlyExtension dragonFlyExtension;
         public int MaxLaunchDistance = 50;
 
@@ -49,7 +46,7 @@ namespace NCL
             Find.WorldTargeter.BeginTargeting(
                 new Func<GlobalTargetInfo, bool>(this.ChoseWorldTarget),
                 true,
-                Verb_CastAbilityDragonFly.TargeterMouseAttachment,
+                CompLaunchable.TargeterMouseAttachment,
                 true,
                 delegate ()
                 {

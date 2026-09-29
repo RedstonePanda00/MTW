@@ -11,4 +11,17 @@
   <MTW.Gunship.Status.Landed>Landed</MTW.Gunship.Status.Landed>
   <MTW.Gunship.WreckageContains>Contains: {0}</MTW.Gunship.WreckageContains>
 
+  <MTW.Gunship.Cargo.Tab>Passengers</MTW.Gunship.Cargo.Tab>
+  <MTW.Gunship.Cargo.Contents>Passengers: {0} / {1}</MTW.Gunship.Cargo.Contents>
+  <MTW.Gunship.Cargo.Load>Load passenger</MTW.Gunship.Cargo.Load>
+  <MTW.Gunship.Cargo.LoadDesc>Order a pawn to board this gunship. The bay holds up to {0} units, including other gunships.</MTW.Gunship.Cargo.LoadDesc>
+  <MTW.Gunship.Cargo.Unload>Unload all</MTW.Gunship.Cargo.Unload>
+  <MTW.Gunship.Cargo.UnloadDesc>Release every passenger next to the gunship. Works on the ground and in the air.</MTW.Gunship.Cargo.UnloadDesc>
+  <MTW.Gunship.Cargo.Full>The passenger bay is full.</MTW.Gunship.Cargo.Full>
+  <MTW.Gunship.Cargo.CannotLoad>This target cannot be loaded.</MTW.Gunship.Cargo.CannotLoad>
+  <MTW.Gunship.Cargo.CannotLoadCycle>That gunship is already carrying this one.</MTW.Gunship.Cargo.CannotLoadCycle>
+  <MTW.Gunship.Cargo.CannotLoadWhileAirborne>Must be landed to transfer passengers.</MTW.Gunship.Cargo.CannotLoadWhileAirborne>
+  <MTW.Gunship.Cargo.TooDeep>The nesting limit has been reached.</MTW.Gunship.Cargo.TooDeep>
+  <MTW.Gunship.AI.HoldingRange>Holding firing range.</MTW.Gunship.AI.HoldingRange>
+
 </LanguageData>

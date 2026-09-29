@@ -267,6 +267,8 @@
         <li Class="ThinkNode_ConditionalPlayerControlledMech">
           <invert>true</invert>
           <subNodes>
+            <!-- Throttled by CompEvasiveReposition; returns null most of the time so the hold-and-fire node below keeps control. -->
+            <li Class="NCL.JobGiver_EvasiveReposition" />
             <li Class="NCL.JobGiver_AIFightEnemiesInPlace">
               <targetAcquireRadius>9999</targetAcquireRadius>
               <targetKeepRadius>500</targetKeepRadius>

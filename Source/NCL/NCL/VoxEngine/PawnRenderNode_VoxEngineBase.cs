@@ -32,12 +32,12 @@ namespace NCL
             CompVoxEngineChassis comp = chassisComp ?? CompVoxEngineChassis.Get(pawn);
             float drawSize = ResolveDrawSize(comp);
 
-            if (comp != null && comp.UseSideProfileGraphic && !comp.Props.baseSideTexPath.NullOrEmpty())
+            if (comp != null && comp.UseSideProfileGraphic && !comp.ActiveBaseSideTexPath.NullOrEmpty())
             {
-                return ResolveSideGraphic(comp.Props.baseSideTexPath, drawSize);
+                return ResolveSideGraphic(comp.ActiveBaseSideTexPath, drawSize);
             }
 
-            string topPath = comp?.Props.baseTexPath;
+            string topPath = comp?.ActiveBaseTexPath;
             if (topPath.NullOrEmpty())
             {
                 topPath = Props.texPath;

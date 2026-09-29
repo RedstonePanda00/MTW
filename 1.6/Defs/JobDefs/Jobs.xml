@@ -9,5 +9,35 @@
         <checkOverrideOnDamage>Never</checkOverrideOnDamage>
     </JobDef>
 
-  
+  <JobDef>
+    <defName>MTW_BoardGunship</defName>
+    <driverClass>NCL.JobDriver_BoardGunship</driverClass>
+    <reportString>boarding TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>MTW_GunshipLoadPassenger</defName>
+    <driverClass>NCL.JobDriver_GunshipLoadPassenger</driverClass>
+    <reportString>picking up TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
+
+  <JobDef>
+    <defName>MTW_GunshipUnloadCargo</defName>
+    <driverClass>NCL.JobDriver_GunshipUnloadCargo</driverClass>
+    <reportString>unloading passengers.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
+
+  <JobDef>
+    <defName>NCL_EvasiveReposition</defName>
+    <driverClass>JobDriver_Goto</driverClass>
+    <reportString>repositioning under fire.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
+
 </Defs>

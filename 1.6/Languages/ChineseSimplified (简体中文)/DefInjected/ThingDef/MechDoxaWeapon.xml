@@ -25,4 +25,9 @@
   <MTW_Doxa_RT_FragLauncher.label>静巢构体高抛榴弹炮</MTW_Doxa_RT_FragLauncher.label>
   <MTW_Doxa_RT_FragLauncher.description>挂载于静巢构体尾部炮位的高抛破片榴弹发射器。七连发、射程 70 格、射击间隔 10 秒；高抛弹道，可被机械族高角护盾拦截，与主炮一样无法被低角护盾拦截。</MTW_Doxa_RT_FragLauncher.description>
 
+  <Bullet_MTW_Doxa_ChargeAutocannon.label>爆裂电荷机炮弹</Bullet_MTW_Doxa_ChargeAutocannon.label>
+
+  <MTW_Doxa_RT_ChargeAutocannon.label>静巢构体爆裂电荷机炮</MTW_Doxa_RT_ChargeAutocannon.label>
+  <MTW_Doxa_RT_ChargeAutocannon.description>挂载于静巢构体前部炮位的爆裂电荷机炮。相比速射机枪，发射更重的电荷弹，伤害与穿甲显著提升，连射间的冷却也略短。</MTW_Doxa_RT_ChargeAutocannon.description>
+
 </LanguageData>

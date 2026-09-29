@@ -20,4 +20,29 @@
   <!-- EN: Contains: {0} -->
   <MTW.Gunship.WreckageContains>内含：{0}</MTW.Gunship.WreckageContains>
 
+  <!-- EN: Passengers -->
+  <MTW.Gunship.Cargo.Tab>载员</MTW.Gunship.Cargo.Tab>
+  <!-- EN: Passengers: {0} / {1} -->
+  <MTW.Gunship.Cargo.Contents>载员：{0} / {1}</MTW.Gunship.Cargo.Contents>
+  <!-- EN: Load passenger -->
+  <MTW.Gunship.Cargo.Load>装载载员</MTW.Gunship.Cargo.Load>
+  <!-- EN: Order a pawn to board this gunship. The bay holds up to {0} units, including other gunships. -->
+  <MTW.Gunship.Cargo.LoadDesc>命令一个单位登上这架炮艇。货舱最多容纳 {0} 个单位，包括其他炮艇。</MTW.Gunship.Cargo.LoadDesc>
+  <!-- EN: Unload all -->
+  <MTW.Gunship.Cargo.Unload>全部卸载</MTW.Gunship.Cargo.Unload>
+  <!-- EN: Release every passenger next to the gunship. Works on the ground and in the air. -->
+  <MTW.Gunship.Cargo.UnloadDesc>在炮艇旁释放所有载员。着陆与升空状态下均可使用。</MTW.Gunship.Cargo.UnloadDesc>
+  <!-- EN: The passenger bay is full. -->
+  <MTW.Gunship.Cargo.Full>货舱已满。</MTW.Gunship.Cargo.Full>
+  <!-- EN: This target cannot be loaded. -->
+  <MTW.Gunship.Cargo.CannotLoad>无法装载该目标。</MTW.Gunship.Cargo.CannotLoad>
+  <!-- EN: That gunship is already carrying this one. -->
+  <MTW.Gunship.Cargo.CannotLoadCycle>那架炮艇正载着本机，无法互相装载。</MTW.Gunship.Cargo.CannotLoadCycle>
+  <!-- EN: Must be landed to transfer passengers. -->
+  <MTW.Gunship.Cargo.CannotLoadWhileAirborne>必须着陆后才能装卸载员。</MTW.Gunship.Cargo.CannotLoadWhileAirborne>
+  <!-- EN: The nesting limit has been reached. -->
+  <MTW.Gunship.Cargo.TooDeep>已达到套娃层数上限。</MTW.Gunship.Cargo.TooDeep>
+  <!-- EN: Holding firing range. -->
+  <MTW.Gunship.AI.HoldingRange>保持射击距离。</MTW.Gunship.AI.HoldingRange>
+
 </LanguageData>

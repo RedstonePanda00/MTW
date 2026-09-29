@@ -32,6 +32,9 @@ namespace NCL
         public float cooldownTime = 1f;
         public bool enabledByDefault = true;
         public bool disableWhenPartMissing = true;
+        // Orbit the mount around the pawn center by the chassis' continuous yaw instead of the
+        // quantized Rot4 facing. Only affects draw position and shoot origin, never the damage grid.
+        public bool followChassisRotation;
     }
 
     public class PartDefEntry

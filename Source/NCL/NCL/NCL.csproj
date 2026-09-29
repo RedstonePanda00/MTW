@@ -253,6 +253,8 @@
     <Compile Include="NoBody\Command_ActionWithFloat.cs" />
     <Compile Include="NoBody\NoBodyApparel.cs" />
     <Compile Include="MultiCellPawn\**\*.cs" />
+    <Compile Include="MultiLegRig\**\*.cs" />
+    <Compile Include="EvasiveReposition\**\*.cs" />
     <Compile Include="Gunship\**\*.cs" />
     <Compile Include="VoxEngine\VoxEngineChassisAngles.cs" />
     <Compile Include="VoxEngine\VoxBaseVisualMode.cs" />
@@ -277,6 +279,7 @@
     <Compile Include="NCL_Storyteller\Patch_JusticeStoryteller.cs" />
     <Compile Include="NCL_Storyteller\Patch_StorytellerUtility.cs" />
     <Compile Include="NCL_Storyteller\Patch_PawnsArrivalModeWorker.cs" />
+    <Compile Include="NCL_Storyteller\Patch_RaidHeavyMechInjection.cs" />
     <Compile Include="NCLWorm\**\*.cs" />
     <Compile Include="TowerLaserDefense\**\*.cs" />
     <Compile Include="CapitalisticMilitor\**\*.cs" />

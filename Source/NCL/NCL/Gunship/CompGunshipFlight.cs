@@ -90,7 +90,7 @@ namespace NCL
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad && Props.defaultAirborneOnSpawn)
+            if (!respawningAfterLoad && ShouldSpawnAirborne())
             {
                 flightState = GunshipFlightState.Airborne;
                 lerpTick = 0;
@@ -99,6 +99,17 @@ namespace NCL
             SyncLandedHediff();
             smoothedEnginePos.Clear();
             EnsurePathCache();
+        }
+
+        private bool ShouldSpawnAirborne()
+        {
+            if (Props.defaultAirborneOnSpawn)
+            {
+                return true;
+            }
+
+            // AI factions get no take-off gizmo, so a grounded spawn would lock their turrets forever.
+            return Props.autoAirborneForNonPlayer && parent.Faction != Faction.OfPlayer;
         }
 
         public override void CompTick()
@@ -113,9 +124,17 @@ namespace NCL
 
             TickFlightState(pawn);
             TickTransitionEffects(pawn);
-            TickEngineLethality(pawn);
+            TickAutoTakeOff(pawn);
             TickThrusters(pawn);
             SyncLandedHediff();
+        }
+
+        public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+        {
+            base.PostPostApplyDamage(dinfo, totalDamageDealt);
+            // Body part scans are far too expensive to run every tick; losing an engine can only
+            // happen as a result of damage.
+            CheckEngineLethality(Pawn);
         }
 
         public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
@@ -351,14 +370,28 @@ namespace NCL
                 return;
             }
 
-            IntVec3 safe = CellFinder.RandomClosewalkCellNear(pawn.Position, pawn.Map, 8);
-            if (safe.IsValid && safe.WalkableByNormal(pawn.Map))
+            // Widen the search progressively: a gunship that drifted over rock should limp back out
+            // rather than evaporate.
+            int[] radii = { 8, 16, 30, 50 };
+            for (int i = 0; i < radii.Length; i++)
             {
-                pawn.Position = safe;
-                pawn.Notify_Teleported(endCurrentJob: false, resetTweenedPos: true);
-                return;
+                if (CellFinder.TryRandomClosewalkCellNear(
+                        pawn.Position,
+                        pawn.Map,
+                        radii[i],
+                        out IntVec3 safe,
+                        c => c.WalkableByNormal(pawn.Map)))
+                {
+                    pawn.Position = safe;
+                    pawn.Notify_Teleported(endCurrentJob: false, resetTweenedPos: true);
+                    return;
+                }
             }
 
+            // Nowhere to put it down: restore the airborne state so the death runs the full crash
+            // sequence instead of making the gunship vanish.
+            flightState = GunshipFlightState.Airborne;
+            lerpTick = 0;
             pawn.Kill(null, null);
         }
 
@@ -380,6 +413,7 @@ namespace NCL
         {
             CleanupTakeoffEffecter();
             CleanupLandingEffecter();
+            smoothedEnginePos.Clear();
         }
 
         private void CleanupTakeoffEffecter()
@@ -394,9 +428,22 @@ namespace NCL
             landingEffecter = null;
         }
 
-        private void TickEngineLethality(Pawn pawn)
+        private void TickAutoTakeOff(Pawn pawn)
         {
-            if (engineKillTriggered || Props.lethalEngineParts == null || pawn.RaceProps?.body == null)
+            if (!Props.autoAirborneForNonPlayer
+                || flightState != GunshipFlightState.Grounded
+                || pawn.Faction == Faction.OfPlayer
+                || !pawn.IsHashIntervalTick(60))
+            {
+                return;
+            }
+
+            TryTakeOff();
+        }
+
+        private void CheckEngineLethality(Pawn pawn)
+        {
+            if (pawn == null || engineKillTriggered || Props.lethalEngineParts == null || pawn.RaceProps?.body == null)
             {
                 return;
             }
@@ -463,15 +510,31 @@ namespace NCL
 
             CompMultiCellPawn multi = pawn.TryGetComp<CompMultiCellPawn>();
             const float followLerp = 0.45f;
+            bool useSideOffsets = (pawn.Rotation == Rot4.East || pawn.Rotation == Rot4.West)
+                && Props.engineOffsetsEast != null
+                && Props.engineOffsetsEast.Count > 0;
+            int engineCount = useSideOffsets ? Props.engineOffsetsEast.Count : cells.Count;
 
-            for (int i = 0; i < cells.Count; i++)
+            for (int i = 0; i < engineCount; i++)
             {
-                IntVec3 localNorth = cells[i];
-                Vector3 targetPos = multi != null
-                    ? multi.GetSmoothDrawPosForLocalCell(localNorth)
-                    : (pawn.Position + localNorth.RotatedBy(pawn.Rotation)).ToVector3Shifted() + DrawOffset;
-                // Spawn slightly toward +Z so the trail reads longer toward -Z.
-                targetPos += new Vector3(0f, 0f, 0.15f);
+                Vector3 targetPos;
+                if (useSideOffsets)
+                {
+                    Vector3 offset = Props.engineOffsetsEast[i];
+                    if (pawn.Rotation == Rot4.West)
+                    {
+                        offset.x = -offset.x;
+                    }
+
+                    targetPos = pawn.DrawPos + offset;
+                }
+                else
+                {
+                    IntVec3 localNorth = cells[i];
+                    targetPos = multi != null
+                        ? multi.GetSmoothDrawPosForLocalCell(localNorth)
+                        : (pawn.Position + localNorth.RotatedBy(pawn.Rotation)).ToVector3Shifted() + DrawOffset;
+                }
 
                 if (!smoothedEnginePos.TryGetValue(i, out Vector3 smoothed))
                 {
@@ -558,6 +621,12 @@ namespace NCL
             IntVec3 impactCell = FindCrashLandingCell(deathCell, map, Props.crashLandingSearchRadius);
             string texPath = ResolveBodyTexPath(pawn);
             Vector2 drawSize = ResolveBodyDrawSize(pawn);
+            ThingDef selectedWreckageDef = Props.wreckageDef;
+            if (Props.ancientWreckageDef != null && texPath.Contains("MechGunshipAncient"))
+            {
+                selectedWreckageDef = Props.ancientWreckageDef;
+            }
+
             float heightFactor = PositionOffsetFactor;
             float hoverZ = Props.hoverOffsetZ * heightFactor;
             float hoverY = Props.hoverAltitudeY * heightFactor;
@@ -565,7 +634,7 @@ namespace NCL
             Thing_GunshipCrashFaller faller = (Thing_GunshipCrashFaller)ThingMaker.MakeThing(Props.crashFallerDef);
             faller.Configure(
                 null,
-                Props.wreckageDef,
+                selectedWreckageDef,
                 Props.crashTicks,
                 hoverZ,
                 hoverY,
@@ -575,7 +644,11 @@ namespace NCL
                 impactCell,
                 Props.crashExplosionRadius,
                 Props.crashExplosionDamage,
-                Props.crashExplosionDamageDef ?? DamageDefOf.Bomb);
+                Props.crashExplosionDamageDef ?? DamageDefOf.Bomb,
+                pawn?.Rotation ?? Rot4.South,
+                Props.crashPassengerDamage);
+
+            CompGunshipCargo cargo = GunshipDefCache.GetCargo(pawn);
 
             // Keep logical Position at death cell; DrawPos lerps toward impactCell.
             if (!GenPlace.TryPlaceThing(faller, deathCell, map, ThingPlaceMode.Direct)
@@ -587,10 +660,13 @@ namespace NCL
                     faller.Destroy(DestroyMode.Vanish);
                 }
 
+                cargo?.DropAllPassengers(deathCell, map);
                 return;
             }
 
             faller.AcceptCorpse(corpse);
+            // Passengers ride the wreck down and are ejected once the animation finishes.
+            cargo?.TransferAllTo(faller.GetDirectlyHeldThings());
         }
 
         private static IntVec3 FindCrashLandingCell(IntVec3 deathCell, Map map, float radius)

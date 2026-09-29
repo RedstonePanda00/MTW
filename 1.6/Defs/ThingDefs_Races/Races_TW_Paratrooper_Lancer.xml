@@ -161,7 +161,7 @@
     <defName>SuckerPunch</defName>
     <label>Sucker Punch</label>
     <description>Activates the jetpack's global mobility system, enabling tactical airborne insertion from any map location for rapid deployment to target zones and combat execution.</description>
-    <iconPath>Things/SuckerPunch</iconPath>
+    <iconPath>UI/Abilities/Skip</iconPath>
     <cooldownTicksRange>6000</cooldownTicksRange>
     <aiCanUse>false</aiCanUse>
     

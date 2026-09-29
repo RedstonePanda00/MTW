@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <MTW_MechGunship.label>逆重蝎蝽</MTW_MechGunship.label>
-  <MTW_MechGunship.description>组装一架多格飞行炮艇：前部针刺火箭电池与尾部高抛迫击炮。任一推进器损毁即会导致整机摧毁。</MTW_MechGunship.description>
+  <MTW_MechGunship.label>打捞逆重蝎蝽</MTW_MechGunship.label>
+  <MTW_MechGunship.description>以回收的炮艇残骸为骨架重建一架飞行炮艇。无论敌我，任何炮艇尸体都可使用，只需备足玻璃钢用于重铸推进器组件。任一推进器损毁即会导致整机摧毁。</MTW_MechGunship.description>
 
 </LanguageData>

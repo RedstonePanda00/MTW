@@ -16,8 +16,12 @@ namespace TowerLaserDefense
   {
     public static List<Thing> BulletsCache = new List<Thing>();
 
+    // A new Game (new or loaded) is constructed before any of its maps spawn things. Cores from the
+    // previous Game still report Spawned and resolve Map by index into the new game's map list, so they
+    // would keep comparing the new factions against the old game's faction objects.
     public GameComponent_BulletsCache(Game game)
     {
+      GameComponent_BulletsCache.ClearStaticCache();
     }
 
     public override void GameComponentTick()
@@ -119,8 +123,7 @@ namespace TowerLaserDefense
       }
       else if (Scribe.mode == LoadSaveMode.LoadingVars)
       {
-        GameComponent_BulletsCache.BulletsCache.Clear();
-        LaserDefenceCore.CleanupAllInstances();
+        GameComponent_BulletsCache.ClearStaticCache();
       }
     }
 

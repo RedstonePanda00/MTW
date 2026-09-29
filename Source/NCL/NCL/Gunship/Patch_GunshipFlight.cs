@@ -18,8 +18,7 @@ namespace NCL
                 return;
             }
 
-            Pawn pawn = __instance.PawnOwner;
-            CompGunshipFlight flight = pawn?.TryGetComp<CompGunshipFlight>();
+            CompGunshipFlight flight = GunshipDefCache.GetFlight(__instance.PawnOwner);
             if (flight != null && !flight.TurretsAllowed)
             {
                 __result = false;
@@ -32,7 +31,7 @@ namespace NCL
     {
         public static void Postfix(Pawn __instance, Pathing pathing, ref PathingContext __result)
         {
-            CompGunshipFlight flight = __instance.TryGetComp<CompGunshipFlight>();
+            CompGunshipFlight flight = GunshipDefCache.GetFlight(__instance);
             if (flight != null && flight.UsesFlyingPathGrid)
             {
                 __result = pathing.Flying;
@@ -50,7 +49,7 @@ namespace NCL
                 return;
             }
 
-            CompGunshipFlight flight = __instance.TryGetComp<CompGunshipFlight>();
+            CompGunshipFlight flight = GunshipDefCache.GetFlight(__instance);
             if (flight != null && flight.UsesFlyingPathGrid)
             {
                 __result = true;
@@ -66,8 +65,7 @@ namespace NCL
 
         public static void Postfix(Pawn_DrawTracker __instance, ref Vector3 __result)
         {
-            Pawn pawn = PawnField(__instance);
-            CompGunshipFlight flight = pawn?.TryGetComp<CompGunshipFlight>();
+            CompGunshipFlight flight = GunshipDefCache.GetFlight(PawnField(__instance));
             if (flight == null || !flight.IsAirborneVisual)
             {
                 return;
@@ -82,18 +80,30 @@ namespace NCL
     {
         public static void Postfix(IntVec3 c, Map map, Pawn pawn, ref bool __result)
         {
-            if (__result || pawn == null || map == null)
+            if (map == null)
             {
                 return;
             }
 
-            CompGunshipFlight flight = pawn.TryGetComp<CompGunshipFlight>();
+            if (GunshipDefCache.HasMultiCell(pawn?.def)
+                && !GunshipFlightUtility.FootprintFitsAtAllRotations(pawn.def, c, map))
+            {
+                __result = false;
+                return;
+            }
+
+            if (__result)
+            {
+                return;
+            }
+
+            CompGunshipFlight flight = GunshipDefCache.GetFlight(pawn);
             if (flight == null || !flight.UsesFlyingPathGrid)
             {
                 return;
             }
 
-            if (c.InBounds(map) && map.terrainGrid.TerrainAt(c) != null)
+            if (GunshipFlightUtility.CanFlyOver(c, map))
             {
                 __result = true;
             }
@@ -111,14 +121,14 @@ namespace NCL
             }
 
             Pawn pawn = traverseParams.pawn;
-            CompGunshipFlight flight = pawn?.TryGetComp<CompGunshipFlight>();
+            CompGunshipFlight flight = GunshipDefCache.GetFlight(pawn);
             if (flight == null || !flight.UsesFlyingPathGrid || pawn.Map == null)
             {
                 return;
             }
 
-            IntVec3 cell = dest.Cell;
-            if (cell.InBounds(pawn.Map) && pawn.Map.terrainGrid.TerrainAt(cell) != null)
+            if (GunshipFlightUtility.CanFlyOver(dest.Cell, pawn.Map)
+                && GunshipFlightUtility.FootprintFitsAtAllRotations(pawn.def, dest.Cell, pawn.Map))
             {
                 __result = true;
             }
@@ -131,8 +141,10 @@ namespace NCL
         public static void Postfix(PathFinderMapData __instance, PathRequest request, ref PathGridJob job)
         {
             Pawn pawn = request?.pawn;
-            CompGunshipFlight flight = pawn?.TryGetComp<CompGunshipFlight>();
-            if (flight == null || !flight.UsesFlyingPathGrid || pawn.Map == null)
+            CompGunshipFlight flight = GunshipDefCache.GetFlight(pawn);
+            bool usesFlyingGrid = flight != null && flight.UsesFlyingPathGrid;
+            bool isMultiCell = GunshipDefCache.HasMultiCell(pawn?.def);
+            if ((!usesFlyingGrid && !isMultiCell) || pawn.Map == null)
             {
                 return;
             }
@@ -144,7 +156,66 @@ namespace NCL
                 pawn.Map.components.Add(cache);
             }
 
-            job.pathGridDirect = cache.ZeroCostGrid.AsReadOnly();
+            if (isMultiCell && request.customizer == null)
+            {
+                job.custom = cache.MultiCellBorderGrid.AsReadOnly();
+            }
+
+            if (usesFlyingGrid)
+            {
+                job.pathGridDirect = cache.ZeroCostGrid.AsReadOnly();
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Thing), nameof(Thing.Rotation), MethodType.Setter)]
+    public static class Patch_MultiCellPawn_RotationBounds
+    {
+        public static void Prefix(Thing __instance, ref Rot4 value)
+        {
+            if (!(__instance is Pawn pawn)
+                || !pawn.Spawned
+                || !GunshipDefCache.HasMultiCell(pawn.def)
+                || GenAdj.OccupiedRect(pawn.Position, value, pawn.def.Size).InBounds(pawn.Map))
+            {
+                return;
+            }
+
+            value = pawn.Rotation;
+        }
+    }
+
+    public static class GunshipFlightUtility
+    {
+        // Overflying thick rock leaves the gunship with nowhere to land, so exclude it from the
+        // relaxed walkability/reachability the flying grid grants.
+        public static bool CanFlyOver(IntVec3 cell, Map map)
+        {
+            if (map == null || !cell.InBounds(map) || map.terrainGrid.TerrainAt(cell) == null)
+            {
+                return false;
+            }
+
+            RoofDef roof = map.roofGrid.RoofAt(cell);
+            if (roof != null && roof.isThickRoof)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool FootprintFitsAtAllRotations(ThingDef def, IntVec3 center, Map map)
+        {
+            if (def == null || map == null)
+            {
+                return false;
+            }
+
+            return GenAdj.OccupiedRect(center, Rot4.North, def.Size).InBounds(map)
+                && GenAdj.OccupiedRect(center, Rot4.East, def.Size).InBounds(map)
+                && GenAdj.OccupiedRect(center, Rot4.South, def.Size).InBounds(map)
+                && GenAdj.OccupiedRect(center, Rot4.West, def.Size).InBounds(map);
         }
     }
 }

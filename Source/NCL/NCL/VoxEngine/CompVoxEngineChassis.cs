@@ -148,14 +148,61 @@ namespace NCL
             return visualMode != oldMode;
         }
 
-        public string GetActiveBaseTexPath()
+        public string ActiveBaseTexPath
         {
-            if (UseSideProfileGraphic && !Props.baseSideTexPath.NullOrEmpty())
+            get
             {
+                VoxChassisLifeStageTextures stage = CurrentLifeStageTextures;
+                if (stage != null && !stage.baseTexPath.NullOrEmpty())
+                {
+                    return stage.baseTexPath;
+                }
+
+                return Props.baseTexPath;
+            }
+        }
+
+        public string ActiveBaseSideTexPath
+        {
+            get
+            {
+                VoxChassisLifeStageTextures stage = CurrentLifeStageTextures;
+                if (stage != null && !stage.baseSideTexPath.NullOrEmpty())
+                {
+                    return stage.baseSideTexPath;
+                }
+
                 return Props.baseSideTexPath;
             }
+        }
 
-            return Props.baseTexPath;
+        private VoxChassisLifeStageTextures CurrentLifeStageTextures
+        {
+            get
+            {
+                if (Props.lifeStageTextures.NullOrEmpty()
+                    || parent is not Pawn pawn
+                    || pawn.ageTracker == null
+                    || pawn.RaceProps == null
+                    || pawn.RaceProps.Humanlike)
+                {
+                    return null;
+                }
+
+                int index = Mathf.Clamp(pawn.ageTracker.CurLifeStageIndex, 0, Props.lifeStageTextures.Count - 1);
+                return Props.lifeStageTextures[index];
+            }
+        }
+
+        public string GetActiveBaseTexPath()
+        {
+            string sidePath = ActiveBaseSideTexPath;
+            if (UseSideProfileGraphic && !sidePath.NullOrEmpty())
+            {
+                return sidePath;
+            }
+
+            return ActiveBaseTexPath;
         }
 
         public float GetDisplayRimAngle()

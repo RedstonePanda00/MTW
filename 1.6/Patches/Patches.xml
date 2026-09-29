@@ -180,6 +180,24 @@
 			<li>Corpse_Mech_CentipedeMissile</li>
 		</value>
 	</Operation>
+
+	<!-- Gunship salvage bill. The recipe consumes the corpse instead of resurrecting it, so it lives on
+	     the gestator itself rather than in the ResurrectUltraheavyMech filter. -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>MTW_MechGunship</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs</xpath>
+		<value>
+			<li>Corpse_MTW_MechGunship</li>
+			<li>Corpse_MTW_VoxEngine</li>
+		</value>
+	</Operation>
 	
 	<Operation Class="PatchOperationAdd">
         <xpath>/Defs/ThingDef[defName="Mech_WarUrchin"]/comps</xpath>

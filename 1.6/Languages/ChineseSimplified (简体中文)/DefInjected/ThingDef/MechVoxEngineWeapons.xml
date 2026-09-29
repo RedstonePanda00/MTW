@@ -6,4 +6,10 @@
 
   <Bullet_MTW_VoxEngine_105mm.label>Vox 105mm 炮弹</Bullet_MTW_VoxEngine_105mm.label>
 
+  <MTW_VoxEngine_RT_MachineGun.label>Vox 履带机枪</MTW_VoxEngine_RT_MachineGun.label>
+  <MTW_VoxEngine_RT_MachineGun.description>安装在 Vox 引擎四角履带单元上的速射机枪炮塔，随履带底盘一同转动。弹道与射速沿用制式速射机枪。</MTW_VoxEngine_RT_MachineGun.description>
+
+  <MTW_VoxEngine_RT_FragLauncher.label>Vox 履带榴弹发射器</MTW_VoxEngine_RT_FragLauncher.label>
+  <MTW_VoxEngine_RT_FragLauncher.description>安装在 Vox 引擎四角履带单元上的高抛破片榴弹发射器，随履带底盘一同转动。七连发、射程 70 格，高抛弹道无需视线。</MTW_VoxEngine_RT_FragLauncher.description>
+
 </LanguageData>

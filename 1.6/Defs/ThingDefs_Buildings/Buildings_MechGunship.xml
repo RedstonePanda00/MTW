@@ -20,7 +20,7 @@
     </graphicData>
   </ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef Name="MTW_MechGunshipWreckageBase" ParentName="BuildingBase">
     <defName>MTW_MechGunship_Wreckage</defName>
     <label>gunship wreckage</label>
     <description>Twisted remains of a crashed gunship. The corpse is still trapped inside; deconstructing the wreck recovers it along with mechanoid slag.</description>
@@ -59,6 +59,13 @@
       <Steel>40</Steel>
     </costList>
     <resourcesFractionWhenDeconstructed>0.35</resourcesFractionWhenDeconstructed>
+  </ThingDef>
+
+  <ThingDef ParentName="MTW_MechGunshipWreckageBase">
+    <defName>MTW_MechGunshipAncient_Wreckage</defName>
+    <graphicData>
+      <texPath>Races/MechGunship/MechGunshipAncient_Corpse</texPath>
+    </graphicData>
   </ThingDef>
 
 </Defs>

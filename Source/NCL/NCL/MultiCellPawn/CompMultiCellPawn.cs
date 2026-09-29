@@ -194,7 +194,7 @@ namespace NCL
                 return false;
             }
 
-            CompGunshipFlight gunshipFlight = Pawn.TryGetComp<CompGunshipFlight>();
+            CompGunshipFlight gunshipFlight = GunshipDefCache.GetFlight(Pawn);
             if (gunshipFlight != null && !gunshipFlight.TurretsAllowed)
             {
                 return false;
@@ -429,13 +429,15 @@ namespace NCL
 
         public bool TryGetTurretMountDrawPos(IntVec3 localCellNorth, out Vector3 drawPos)
         {
-            drawPos = GetSmoothDrawPosForLocalCell(localCellNorth);
             if (Pawn == null || !Pawn.Spawned)
             {
+                drawPos = GetSmoothDrawPosForLocalCell(localCellNorth);
                 return false;
             }
 
-            if (!LocalCellHasTurretMount(localCellNorth))
+            bool hasMount = TryGetMountForLocalCell(localCellNorth, out PartTurretMountDef mount);
+            drawPos = Pawn.DrawPos + GetLocalOffsetVector(localCellNorth, hasMount && mount.followChassisRotation);
+            if (!hasMount)
             {
                 return true;
             }
@@ -448,12 +450,69 @@ namespace NCL
                 drawPos += outward.normalized * push;
             }
 
+            CompMultiLegRig legRig = Pawn.GetComp<CompMultiLegRig>();
+            if (legRig != null)
+            {
+                drawPos += legRig.BodyDrawOffset;
+            }
+
             drawPos.y = Pawn.DrawPos.y + PawnRenderUtility.AltitudeForLayer(MultiCellPawnDraw.TurretRenderLayer);
+            return true;
+        }
+
+        // Shoot root for a mount. Chassis-following mounts resolve to the cell under their orbited
+        // draw position so line of sight and range originate near the visible muzzle.
+        public IntVec3 GetTurretOriginCell(IntVec3 localCellNorth)
+        {
+            if (Pawn == null || !Pawn.Spawned || Pawn.Map == null)
+            {
+                return GetWorldCellForLocalCellNorth(localCellNorth);
+            }
+
+            if (!TryGetMountForLocalCell(localCellNorth, out PartTurretMountDef mount) || !mount.followChassisRotation)
+            {
+                return GetWorldCellForLocalCellNorth(localCellNorth);
+            }
+
+            IntVec3 cell = (Pawn.Position.ToVector3Shifted() + GetLocalOffsetVector(localCellNorth, true)).ToIntVec3();
+            return cell.InBounds(Pawn.Map) ? cell : Pawn.Position;
+        }
+
+        // North-local cell offset expressed in world space. Quaternion.AngleAxis(yaw, up) matches
+        // IntVec3.RotatedBy(Rot4) exactly, so a chassis-following mount keeps a fixed relative
+        // position on the chassis graphic, which is rotated by the same yaw.
+        private Vector3 GetLocalOffsetVector(IntVec3 localCellNorth, bool followChassis)
+        {
+            if (followChassis && TryGetChassisYaw(out float yaw))
+            {
+                Vector3 baseOffset = new Vector3(localCellNorth.x, 0f, localCellNorth.z);
+                return Quaternion.AngleAxis(yaw, Vector3.up) * baseOffset;
+            }
+
+            return localCellNorth.RotatedBy(Pawn.Rotation).ToVector3();
+        }
+
+        private bool TryGetChassisYaw(out float yaw)
+        {
+            CompVoxEngineChassis chassis = CompVoxEngineChassis.Get(Pawn);
+            if (chassis == null)
+            {
+                yaw = 0f;
+                return false;
+            }
+
+            yaw = chassis.CurrentBaseAngle;
             return true;
         }
 
         public bool LocalCellHasTurretMount(IntVec3 localCellNorth)
         {
+            return TryGetMountForLocalCell(localCellNorth, out _);
+        }
+
+        public bool TryGetMountForLocalCell(IntVec3 localCellNorth, out PartTurretMountDef mount)
+        {
+            mount = null;
             if (Props?.parts == null)
             {
                 return false;
@@ -469,16 +528,17 @@ namespace NCL
 
                 for (int m = 0; m < part.turretMounts.Count; m++)
                 {
-                    PartTurretMountDef mount = part.turretMounts[m];
-                    if (mount?.mountCellsNorth == null)
+                    PartTurretMountDef candidate = part.turretMounts[m];
+                    if (candidate?.mountCellsNorth == null)
                     {
                         continue;
                     }
 
-                    for (int c = 0; c < mount.mountCellsNorth.Count; c++)
+                    for (int c = 0; c < candidate.mountCellsNorth.Count; c++)
                     {
-                        if (mount.mountCellsNorth[c] == localCellNorth)
+                        if (candidate.mountCellsNorth[c] == localCellNorth)
                         {
+                            mount = candidate;
                             return true;
                         }
                     }

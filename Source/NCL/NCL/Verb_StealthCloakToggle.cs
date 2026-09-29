@@ -22,7 +22,9 @@ namespace NCL
     {
         private const int CooldownTicks = 60;
         private static Dictionary<Pawn, int> _lastUseTicks = new Dictionary<Pawn, int>();
-        private static readonly HediffDef CloakedHediff = HediffDef.Named("GD_Hediff_CloakedEffect");
+        private static HediffDef cloakedHediff;
+        private static HediffDef CloakedHediff =>
+            cloakedHediff ??= DefDatabase<HediffDef>.GetNamedSilentFail("GD_Hediff_CloakedEffect");
 
         private bool IsOnCooldown(Pawn pawn)
         {

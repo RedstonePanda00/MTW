@@ -65,4 +65,29 @@
     </tradeTags>
   </ThingDef>
 
+  <!-- Vox-skinned reskins of the shared Diabolus/Doxa mounts. Ballistics are inherited untouched. -->
+  <ThingDef ParentName="NCL_Diabolus_RT_AutoGun">
+    <defName>MTW_VoxEngine_RT_MachineGun</defName>
+    <label>vox machine gun turret</label>
+    <description>Corner-mounted rapid-fire machine gun riding on the Vox Engine tread chassis.</description>
+    <graphicData>
+      <texPath>Things/VoxEngine/Vox_Weapon_machineGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.8</drawSize>
+    </graphicData>
+    <uiIconPath>Things/VoxEngine/Vox_Weapon_machineGun</uiIconPath>
+  </ThingDef>
+
+  <ThingDef ParentName="MTW_Doxa_RT_FragLauncher">
+    <defName>MTW_VoxEngine_RT_FragLauncher</defName>
+    <label>vox frag grenade launcher</label>
+    <description>Corner-mounted high-arc frag grenade launcher riding on the Vox Engine tread chassis.</description>
+    <graphicData>
+      <texPath>Things/VoxEngine/Vox_Weapon_Grenade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <uiIconPath>Things/VoxEngine/Vox_Weapon_Grenade</uiIconPath>
+  </ThingDef>
+
 </Defs>

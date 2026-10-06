@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <!-- Vanilla Mechanoid tree with the assault trooper raid block inserted ahead of LordDuty. -->
+  <ThinkTreeDef>
+    <defName>NCL_AssaultTrooper</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalDeactivated" MayRequire="Ludeon.RimWorld.Odyssey">
+          <subNodes>
+            <li Class="JobGiver_Deactivated" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalLowEnergy" MayRequire="Ludeon.RimWorld.Biotech">
+          <subNodes>
+            <li Class="JobGiver_SelfShutdown" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>BerserkMechanoid</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="JobGiver_Berserk" />
+                <li Class="JobGiver_WanderAnywhere">
+                  <maxDanger>Deadly</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_QueuedJob" />
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>DraftedOrder</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_MoveToStandable" />
+                <li Class="JobGiver_Orders" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Combat first: kite while an enemy is in reach, otherwise breach toward the colony centre. -->
+        <li Class="NCL.ThinkNode_ConditionalAssaultTrooperAssault">
+          <subNodes>
+            <li Class="NCL.JobGiver_AssaultTrooperKite">
+              <targetAcquireRadius>40</targetAcquireRadius>
+              <targetKeepRadius>45</targetKeepRadius>
+              <maxRangeBand>3</maxRangeBand>
+              <engageSlack>4</engageSlack>
+              <searchRadius>10</searchRadius>
+            </li>
+            <li Class="NCL.JobGiver_AssaultTrooperBreach">
+              <retreatDistance>5</retreatDistance>
+              <arriveRadius>5</arriveRadius>
+            </li>
+          </subNodes>
+        </li>
+
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalPlayerControlledMech">
+          <subNodes>
+            <li Class="ThinkNode_ConditionalNotFormingCaravan">
+              <subNodes>
+                <li Class="ThinkNode_ConditionalRecharging">
+                  <subNodes>
+                    <li Class="JobGiver_GetEnergy_Charger" />
+                  </subNodes>
+                </li>
+                <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                  <workMode>Work</workMode>
+                  <subNodes>
+                    <li Class="JobGiver_SeekAllowedArea" />
+                    <li Class="JobGiver_GetEnergy_Charger" />
+                    <li Class="JobGiver_Work">
+                      <emergency>true</emergency>
+                    </li>
+                    <li Class="JobGiver_Work" />
+                    <li Class="ThinkNode_ConditionalWorkMech">
+                      <invert>true</invert>
+                      <subNodes>
+                        <li Class="JobGiver_AIFightEnemies">
+                          <targetAcquireRadius>65</targetAcquireRadius>
+                          <targetKeepRadius>72</targetKeepRadius>
+                        </li>
+                        <li Class="ThinkNode_Tagger">
+                          <tagToGive>MiscWork</tagToGive>
+                          <subNodes>
+                            <li Class="JobGiver_WanderColony">
+                              <maxDanger>Deadly</maxDanger>
+                              <reportStringOverride TKey="ReportStringPatrolling">Patrolling.</reportStringOverride>
+                            </li>
+                          </subNodes>
+                        </li>
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+                <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                  <workMode>SelfShutdown</workMode>
+                  <subNodes>
+                    <li Class="JobGiver_SeekAllowedArea" />
+                    <li Class="JobGiver_SelfShutdown" />
+                  </subNodes>
+                </li>
+                <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                  <workMode>Recharge</workMode>
+                  <subNodes>
+                    <li Class="JobGiver_SeekAllowedArea" />
+                    <li Class="JobGiver_GetEnergy_Charger" />
+                    <li Class="JobGiver_GetEnergy_SelfShutdown">
+                      <forced>true</forced>
+                    </li>
+                  </subNodes>
+                </li>
+                <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                  <workMode>Escort</workMode>
+                  <subNodes>
+                    <li Class="JobGiver_ExitMapFollowOverseer" />
+                    <li Class="JobGiver_AIDefendOverseer" />
+                    <li Class="JobGiver_AIFollowOverseer" />
+                    <li Class="JobGiver_AIWaitWithOverseer" />
+                    <li Class="JobGiver_WanderOverseer" />
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalPlayerControlledMech">
+          <invert>true</invert>
+          <subNodes>
+            <li Class="JobGiver_AIFightEnemies">
+              <targetAcquireRadius>30</targetAcquireRadius>
+              <targetKeepRadius>35</targetKeepRadius>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalPlayerControlledMech">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>Idle</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_WanderColony">
+                  <maxDanger>None</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_IdleError" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

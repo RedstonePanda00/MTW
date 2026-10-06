@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <ThingDef ParentName="BaseMechanoidWalker">
+    <defName>NCL_Mech_AssaultTrooper</defName>
+    <label>Mech Assault Trooper</label>
+    <description>A medium-sized mass-produced mechanoid built for breaching fortified positions. The Assault Trooper Silent Mantis fights with a charge rifle while a shoulder cannon picks off targets on its own, and it keeps its distance by falling back after every burst.\n\nWhen a wall stands between it and its objective, it walks up and attaches a C4 charge. Five seconds of work are needed to set the charge, which detonates three seconds later and erases the building without harming anything nearby. Moving or losing contact with the target cancels the placement.</description>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MoveSpeed>4.5</MoveSpeed>
+      <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
+    </statBases>
+    <tools>
+      <li>
+        <label>left fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>right fist</label>
+        <labelNoLocation>fist</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8.5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>NCL_AssaultTrooper</thinkTreeMain>
+      <body>Lancer</body>
+      <baseHealthScale>1</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="NCL.CompProperties_AssaultTrooper">
+        <c4Ability>NCL_AssaultTrooper_PlantC4</c4Ability>
+      </li>
+      <li Class="RsPandaLibrary.CompProperties_MultiTurretGun">
+        <saveKeysPrefix>NCLAssaultTrooperMultiTurret_</saveKeysPrefix>
+        <turrets>
+          <li>
+            <turretDef>NCL_AssaultTrooper_ShoulderCannon</turretDef>
+            <warmupTime>0.6</warmupTime>
+            <cooldownTime>3.5</cooldownTime>
+            <renderTurretGraphic>true</renderTurretGraphic>
+            <renderNodeProperties>
+              <nodeClass>RsPandaLibrary.PawnRenderNode_MultiTurretGun</nodeClass>
+              <workerClass>RsPandaLibrary.PawnRenderNodeWorker_MultiTurretGun</workerClass>
+              <parentTagDef>Body</parentTagDef>
+              <overrideMeshSize>(0.75, 0.75)</overrideMeshSize>
+              <baseLayer>20</baseLayer>
+              <pawnType>Any</pawnType>
+              <drawData>
+                <defaultData>
+                  <!-- ShoulderCannon.png points west; east-pointing turret art uses -90. -->
+                  <rotationOffset>90</rotationOffset>
+                </defaultData>
+              </drawData>
+            </renderNodeProperties>
+            <turretOffsetNorth>(0.17, 0, 0.27)</turretOffsetNorth>
+            <turretOffsetSouth>(0.29, 0, 0.27)</turretOffsetSouth>
+            <turretOffsetEast>(-0.33, 0, 0.52)</turretOffsetEast>
+            <turretOffsetWest>(0.33, 0, 0.52)</turretOffsetWest>
+          </li>
+        </turrets>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>20</Steel>
+      <Plasteel>5</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>NCL_Mech_AssaultTrooper_Kind</defName>
+    <label>assault trooper</label>
+    <race>NCL_Mech_AssaultTrooper</race>
+    <combatPower>250</combatPower>
+    <!-- Only reaches the field by taking over lancer spawns, see the extension below. -->
+    <allowInMechClusters>false</allowInMechClusters>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>NCL_AssaultTrooper_ChargeRifle</li>
+    </weaponTags>
+    <abilities>
+      <li>NCL_AssaultTrooper_PlantC4</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/AssaultTrooper/AssaultTrooper</texPath>
+          <maskPath>Races/AssaultTrooper/AssaultTrooper_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.6, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Races/AssaultTrooper/AssaultTrooperAncient</texPath>
+          <maskPath>Races/AssaultTrooper/AssaultTrooper_C</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.6, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <modExtensions>
+      <li Class="NCL.PawnKindExtension_SharedSpawnSlot">
+        <sharesSlotWith>Mech_Lancer</sharesSlotWith>
+        <chance>0.3</chance>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <AbilityDef>
+    <defName>NCL_AssaultTrooper_PlantC4</defName>
+    <label>plant C4</label>
+    <description>Move next to a building and spend 5 seconds attaching a C4 charge. The placement is cancelled if the Assault Trooper moves or ends up more than one cell from the target. The charge detonates 3 seconds after it is attached and destroys the building outright without damaging anything else.</description>
+    <iconPath>Races/AssaultTrooper/CompositionC-4</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <aiCanUse>false</aiCanUse>
+    <hostile>false</hostile>
+    <targetRequired>true</targetRequired>
+    <jobDef>NCL_PlantC4</jobDef>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>-1</range>
+      <warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="NCL.AbilityExtension_PlantC4">
+        <installTicks>300</installTicks>
+        <fuseTicks>180</fuseTicks>
+        <chargeDef>NCL_PlantedC4Charge</chargeDef>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <ThingDef>
+    <defName>NCL_PlantedC4Charge</defName>
+    <label>planted C4</label>
+    <thingClass>NCL.Thing_PlantedC4</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Races/AssaultTrooper/CompositionC-4</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

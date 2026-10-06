@@ -7,6 +7,7 @@
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -98,31 +99,21 @@ namespace NCLWorm
       WormHead head = this.brain.Head;
       if (head == null)
         return;
-      GameComponent gameComponent = (GameComponent) null;
-      foreach (GameComponent component in Current.Game.components)
-      {
-        if (component.GetType().FullName == "NCLWorm.GameComp_NCLWorm")
-        {
-          gameComponent = component;
-          break;
-        }
-      }
+      NCL.Worm.GameComp_NCLWorm gameComponent = Current.Game.GetComponent<NCL.Worm.GameComp_NCLWorm>();
       if (gameComponent == null)
         return;
-      Type type = gameComponent.GetType();
       if (((Thing) head).Faction != null && FactionUtility.HostileTo(((Thing) head).Faction, Faction.OfPlayer))
       {
-        type.GetField("inWormWar")?.SetValue((object) gameComponent, (object) false);
+        gameComponent.inWormWar = false;
         if (((Thing) head).Map?.weatherManager != null)
           ((Thing) head).Map.weatherManager.curWeather = WeatherDefOf.Clear;
         Messages.Message((Translator.Translate("NCLWormWarEnd")), MessageTypeDefOf.PositiveEvent, true);
       }
-      else
+      else if (NCL.Worm.ArchoWormUtility.IsAllyFaction(((Thing) head).Faction))
       {
-        Faction faction = ((Thing) head).Faction;
-        if (faction == null || !faction.IsPlayer)
-          return;
-        type.GetField("ReLongTime")?.SetValue((object) gameComponent, (object) 0);
+        NCL.Worm.NCLCallTool_GiveLong giveLong = DefDatabase<NCL.Worm.NCLCallDef>.GetNamed("NCLCommsConsole", false)?.NCLCallTools?.OfType<NCL.Worm.NCLCallTool_GiveLong>().FirstOrDefault();
+        if (giveLong != null)
+          gameComponent.ReLongTime = giveLong.ReLongTick;
       }
     }
 

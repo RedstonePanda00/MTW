@@ -81,7 +81,7 @@ namespace NCLWorm
 
     public override void SetFaction(Faction newFaction, Pawn recruiter = null)
     {
-      ((Thing) this).SetFaction(newFaction, recruiter);
+      base.SetFaction(newFaction, recruiter);
       if (this.segments == null)
         return;
       foreach (WormBody segment in this.segments)

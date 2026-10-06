@@ -229,6 +229,7 @@
     <Compile Include="Verb_CastAbilityRollingCrush.cs" />
     <Compile Include="Verb_ShootBeamReforged.cs" />
     <Compile Include="Verb_StealthCloakToggle.cs" />
+    <Compile Include="Worm\ArchoWormUtility.cs" />
     <Compile Include="Worm\AuroraCaller.cs" />
     <Compile Include="Worm\AuroraDropUIUtility.cs" />
     <Compile Include="Worm\Call.cs" />
@@ -255,6 +256,7 @@
     <Compile Include="MultiCellPawn\**\*.cs" />
     <Compile Include="MultiLegRig\**\*.cs" />
     <Compile Include="EvasiveReposition\**\*.cs" />
+    <Compile Include="AssaultTrooper\**\*.cs" />
     <Compile Include="Gunship\**\*.cs" />
     <Compile Include="VoxEngine\VoxEngineChassisAngles.cs" />
     <Compile Include="VoxEngine\VoxBaseVisualMode.cs" />

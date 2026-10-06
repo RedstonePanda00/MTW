@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+  <NCL_AssaultTrooper_ChargeRifle.label>突击电荷步枪</NCL_AssaultTrooper_ChargeRifle.label>
+  <NCL_AssaultTrooper_ChargeRifle.description>为突击静螳改装的电荷步枪。脉冲充能技术让每一发子弹都携带不稳定的能量，在命中时释放。</NCL_AssaultTrooper_ChargeRifle.description>
+  <NCL_AssaultTrooper_ChargeRifle.tools.stock.label>枪托</NCL_AssaultTrooper_ChargeRifle.tools.stock.label>
+  <NCL_AssaultTrooper_ChargeRifle.tools.barrel.label>枪管</NCL_AssaultTrooper_ChargeRifle.tools.barrel.label>
+
+  <Bullet_NCL_AssaultTrooperShoulderCannon.label>肩炮炮弹</Bullet_NCL_AssaultTrooperShoulderCannon.label>
+
+  <NCL_AssaultTrooper_ShoulderCannon.label>肩炮</NCL_AssaultTrooper_ShoulderCannon.label>
+  <NCL_AssaultTrooper_ShoulderCannon.description>突击静螳肩部的小型火炮，会在静螳用步枪作战时自主追踪并攻击目标。</NCL_AssaultTrooper_ShoulderCannon.description>
+
+</LanguageData>

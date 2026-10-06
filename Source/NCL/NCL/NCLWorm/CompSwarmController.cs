@@ -47,6 +47,21 @@ namespace NCLWorm
       });
     }
 
+    public void RecallAll()
+    {
+      for (int index = this._minions.Count - 1; index >= 0; --index)
+      {
+        Thing probe = this._minions[index]?.parent;
+        if (probe != null && !probe.Destroyed)
+        {
+          if (probe.Spawned)
+            RimWorld.FleckMaker.Static(probe.Position, probe.Map, RimWorld.FleckDefOf.PsycastSkipFlashEntry, 2f);
+          probe.Destroy(DestroyMode.Vanish);
+        }
+      }
+      this._minions.Clear();
+    }
+
     public override void PostExposeData()
     {
       base.PostExposeData();

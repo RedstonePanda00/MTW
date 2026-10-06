@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+
+  <RecipeDef ParentName="BaseMechanoidRecipe">
+    <defName>NCL_Mech_AssaultTrooper</defName>
+    <label>gestate assault trooper</label>
+    <gestationCycles>4</gestationCycles>
+    <displayPriority>300</displayPriority>
+    <description>Gestate an Assault Trooper mechanoid, a breaching unit armed with a charge rifle, a shoulder cannon and C4 charges.</description>
+    <researchPrerequisites>
+      <li>HighMechtech</li>
+    </researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreRegular</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <NCL_Mech_AssaultTrooper>1</NCL_Mech_AssaultTrooper>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>NCL_Mech_AssaultTrooper</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+</Defs>

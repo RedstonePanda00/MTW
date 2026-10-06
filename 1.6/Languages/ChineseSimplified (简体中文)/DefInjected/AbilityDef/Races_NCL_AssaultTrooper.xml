@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+  <NCL_AssaultTrooper_PlantC4.label>安装C4炸药</NCL_AssaultTrooper_PlantC4.label>
+  <NCL_AssaultTrooper_PlantC4.description>走到建筑旁，花费5秒安装C4炸药。安装期间静螳移动，或与目标距离超过1格，都会打断安放。炸药安装完成3秒后引爆，直接摧毁目标建筑，不会对其他任何事物造成伤害。</NCL_AssaultTrooper_PlantC4.description>
+
+</LanguageData>

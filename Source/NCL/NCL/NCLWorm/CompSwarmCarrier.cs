@@ -33,6 +33,8 @@ namespace NCLWorm
       if (((Thing) this.parent).Map == null)
         return;
       this.UpdateActiveSpawners();
+      if ((this.parent as WormHead)?.Brain?.Sleeping == true)
+        return;
       this.TryStartNewSpawn();
     }
 

@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using NCLWorm;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -197,7 +198,7 @@ namespace NCL.Worm
             {
                 return true;
             }
-            return Find.CurrentMap.mapPawns.AllPawnsSpawned.Any(x => x.def.defName == "NCL_MechWorm");
+            return ArchoWormUtility.HasAllyWorm(Find.CurrentMap);
         }
     }
     public class NCLCallTool_GiveUpLong : NCLCallTool_Bool
@@ -205,13 +206,7 @@ namespace NCL.Worm
         public IntRange delayTick;
         public override void SecAction()//????????
         {
-            {
-                Pawn oldPawn = (from x in windows.usedBy.Map.mapPawns.AllPawnsSpawned
-                                where x.def.defName == "NCL_MechWorm"
-                                select x).RandomElement();
-                FleckMaker.Static(oldPawn.Position, oldPawn.Map, FleckDefOf.PsycastSkipFlashEntry, 10);
-                oldPawn.DeSpawn(DestroyMode.Refund);
-            }//??
+            ArchoWormUtility.DismissAllies(windows.usedBy.Map);
 
             ChoiceLetter choiceLetter = LetterMaker.MakeLetter(letter, letterText, LetterDefOf.NeutralEvent);
             Find.LetterStack.ReceiveLetter(choiceLetter);
@@ -228,7 +223,7 @@ namespace NCL.Worm
             {
                 return true;
             }
-            return !Find.CurrentMap.mapPawns.AllPawnsSpawned.Any(x => x.def.defName == "NCL_MechWorm");
+            return !ArchoWormUtility.HasAllyWorm(Find.CurrentMap);
         }
     }
     public class NCLCallTool_GoSleep : NCLCallTool
@@ -240,29 +235,35 @@ namespace NCL.Worm
         public override void Action()
         {
             Pawn pawn = windows.usedBy;
+            bool sleeping = false;
 
-            NCL_Pawn_Worm firstWorm = (NCL_Pawn_Worm)(from t in pawn.Map.mapPawns.SpawnedColonyMechs
-                                                      where t.def.defName == "NCL_MechWorm" && t.Faction.IsPlayer
-                                                      select t).FirstOrDefault();
-            if (firstWorm != null)
+            WormHead head = ArchoWormUtility.ActiveAllyHeads(pawn.Map).FirstOrDefault(h => h.Brain != null);
+            if (head != null)
             {
-                firstWorm.Sleep = !firstWorm.Sleep;
+                head.Brain.Sleeping = !head.Brain.Sleeping;
+                sleeping = head.Brain.Sleeping;
+                if (sleeping)
+                {
+                    head.Swarm?.RecallAll();
+                }
+            }
+            else
+            {
+                NCL_Pawn_Worm firstWorm = (NCL_Pawn_Worm)(from t in pawn.Map.mapPawns.SpawnedColonyMechs
+                                                          where t.def.defName == ArchoWormUtility.LegacyPawnWormDefName && t.Faction.IsPlayer
+                                                          select t).FirstOrDefault();
+                if (firstWorm != null)
+                {
+                    firstWorm.Sleep = !firstWorm.Sleep;
+                    sleeping = firstWorm.Sleep;
+                }
             }
 
-            string feedback = WormInSleep;
-            if (firstWorm != null && !firstWorm.Sleep)
-            {
-                feedback = WormOutSleep;
-            }
-
-            windows?.ShowMainMenu(feedback);
+            windows?.ShowMainMenu(sleeping ? WormInSleep : WormOutSleep);
         }
         public override AcceptanceReport Canuse()
         {
-            IEnumerable<Pawn> Worm = from t in windows.usedBy.Map.mapPawns.SpawnedColonyMechs
-                                     where t.def.defName == "NCL_MechWorm" && t.Faction.IsPlayer
-                                     select t;
-            if (Worm.EnumerableNullOrEmpty())
+            if (!ArchoWormUtility.HasAllyWorm(windows.usedBy.Map))
             {
                 return "NoNCLWormCanSleep".Translate();
             }
@@ -270,7 +271,7 @@ namespace NCL.Worm
         }
         public override bool NoCanSee()
         {
-            return !Find.CurrentMap.mapPawns.AllPawnsSpawned.Any(x => x.def.defName == "NCL_MechWorm");
+            return Find.CurrentMap == null || !ArchoWormUtility.HasAllyWorm(Find.CurrentMap);
         }
     }
 
@@ -1303,7 +1304,11 @@ namespace NCL.Worm
                 }
                 if (ReLongTime > 0)
                 {
-                    tradetime -= 2000;
+                    ReLongTime -= 2000;
+                }
+                if (Find.Maps.Any(m => ArchoWormUtility.ActiveAllyHeads(m).Any()))
+                {
+                    ArchoWormUtility.SyncAllyHostility();
                 }
                 if (inWormWar)
                 {
@@ -1342,17 +1347,8 @@ namespace NCL.Worm
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             Map map = parms.target as Map;
-            {
-                Pawn oldPawn = (from x in map.mapPawns.AllPawnsSpawned
-                                where x.def.defName == "NCL_MechWorm"
-                                select x).RandomElement();
-                oldPawn?.DeSpawn(DestroyMode.Refund);
-            }//????
-            PawnKindDef kindDef = DefDatabase<PawnKindDef>.GetNamed("NCL_MechWorm");
-            Pawn pawn1 = PawnGenerator.GeneratePawn(kindDef, Faction.OfPlayer);
-            List<Thing> things = new List<Thing>() { pawn1 };
-            IntVec3 intVec = DropCellFinder.RandomDropSpot(map);
-            DropPodUtility.DropThingsNear(intVec, map, things);
+            ArchoWormUtility.ClearWorms(map);
+            ArchoWormUtility.SpawnHead(map, ArchoWormUtility.AllyFaction, DropCellFinder.RandomDropSpot(map));
             return true;
         }
 
@@ -1363,20 +1359,10 @@ namespace NCL.Worm
         public override void End()
         {
             base.End();
-            {
-                Pawn oldPawn = (from x in SingleMap.mapPawns.AllPawnsSpawned
-                                where x.def.defName == "NCL_MechWorm"
-                                select x).RandomElement();
-                oldPawn?.DeSpawn(DestroyMode.Refund);
-            }//????
-            PawnKindDef kindDef = DefDatabase<PawnKindDef>.GetNamed("NCL_MechWorm");
-            Pawn pawn1 = PawnGenerator.GeneratePawn(kindDef, Faction.OfPlayer);
-            List<Thing> things = new List<Thing>() { pawn1 };
-            IntVec3 intVec = DropCellFinder.RandomDropSpot(SingleMap);
-            DropPodUtility.DropThingsNear(intVec, SingleMap, things);
+            ArchoWormUtility.ClearWorms(SingleMap);
+            WormHead head = ArchoWormUtility.SpawnHead(SingleMap, ArchoWormUtility.AllyFaction, DropCellFinder.RandomDropSpot(SingleMap));
 
-
-            ChoiceLetter choiceLetter = LetterMaker.MakeLetter(def.endMessage, def.letterText, LetterDefOf.NeutralEvent, pawn1);
+            ChoiceLetter choiceLetter = LetterMaker.MakeLetter(def.endMessage, def.letterText, LetterDefOf.NeutralEvent, head);
             Find.LetterStack.ReceiveLetter(choiceLetter);
 
 
@@ -1388,18 +1374,10 @@ namespace NCL.Worm
         public override void End()
         {
             base.End();
-            Pawn oldPawn = (from x in SingleMap.mapPawns.AllPawnsSpawned
-                            where x.def.defName == "NCL_MechWorm"
-                            select x).RandomElement();
-            oldPawn?.DeSpawn(DestroyMode.Refund);
-            PawnKindDef kindDef = DefDatabase<PawnKindDef>.GetNamed("NCL_MechWorm");
-            Pawn pawn = PawnGenerator.GeneratePawn(kindDef, Find.FactionManager.FirstFactionOfDef(NCLWormDefOf.NCL_factionEnemy));
-            pawn.SetFaction(Find.FactionManager.FirstFactionOfDef(NCLWormDefOf.NCL_factionEnemy));
-            List<Thing> things = new List<Thing>() { pawn };
-            IntVec3 intVec = DropCellFinder.FindRaidDropCenterDistant(SingleMap);
-            DropPodUtility.DropThingsNear(intVec, SingleMap, things);
+            ArchoWormUtility.ClearWorms(SingleMap);
+            WormHead head = ArchoWormUtility.SpawnHead(SingleMap, ArchoWormUtility.EnemyFaction, DropCellFinder.FindRaidDropCenterDistant(SingleMap));
 
-            ChoiceLetter choiceLetter = LetterMaker.MakeLetter(def.endMessage, def.letterText, LetterDefOf.ThreatBig, pawn);
+            ChoiceLetter choiceLetter = LetterMaker.MakeLetter(def.endMessage, def.letterText, LetterDefOf.ThreatBig, head);
             Find.LetterStack.ReceiveLetter(choiceLetter);
 
             Current.Game.GetComponent<GameComp_NCLWorm>().inWormWar = true;

@@ -31,6 +31,21 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
+		<order>Prepend</order>
+		<value>
+			<li>NCL_Mech_AssaultTrooper</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_NCL_Mech_AssaultTrooper</li>
+		</value>
+	</Operation>
+
 			<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
 		<order>Prepend</order>

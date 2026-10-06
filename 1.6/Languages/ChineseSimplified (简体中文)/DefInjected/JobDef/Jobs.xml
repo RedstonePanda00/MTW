@@ -4,5 +4,6 @@
   
   <AttackUniversityMinitor.reportString>attacking target.</AttackUniversityMinitor.reportString>
   <NCL_EvasiveReposition.reportString>规避火力，转移阵位中。</NCL_EvasiveReposition.reportString>
+  <NCL_PlantC4.reportString>正在对TargetA安装C4炸药。</NCL_PlantC4.reportString>
   
 </LanguageData>

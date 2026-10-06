@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+  <NCL_Mech_AssaultTrooper.label>突击静螳</NCL_Mech_AssaultTrooper.label>
+  <NCL_Mech_AssaultTrooper.description>机械族中型量产攻坚机械体。突击静螳以电荷步枪作战，肩部的肩炮会自主索敌射击；它每打完一轮就向后拉开距离，尽量在射程极限处开火。\n\n当墙体挡住去路时，突击静螳会贴近目标安装C4炸药：安装需要5秒，完成后3秒引爆，直接抹除目标建筑，不会波及周围任何事物。安装期间静螳移动或与目标距离超过1格都会打断安放。</NCL_Mech_AssaultTrooper.description>
+  <NCL_Mech_AssaultTrooper.tools.left_fist.label>左拳</NCL_Mech_AssaultTrooper.tools.left_fist.label>
+  <NCL_Mech_AssaultTrooper.tools.left_fist.labelNoLocation>拳头</NCL_Mech_AssaultTrooper.tools.left_fist.labelNoLocation>
+  <NCL_Mech_AssaultTrooper.tools.right_fist.label>右拳</NCL_Mech_AssaultTrooper.tools.right_fist.label>
+  <NCL_Mech_AssaultTrooper.tools.right_fist.labelNoLocation>拳头</NCL_Mech_AssaultTrooper.tools.right_fist.labelNoLocation>
+  <NCL_Mech_AssaultTrooper.tools.head.label>头部</NCL_Mech_AssaultTrooper.tools.head.label>
+
+  <NCL_PlantedC4Charge.label>已安放的C4</NCL_PlantedC4Charge.label>
+
+</LanguageData>

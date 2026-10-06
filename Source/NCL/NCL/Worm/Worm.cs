@@ -26,6 +26,7 @@ namespace NCL.Worm
         public static ThingDef NCLJumpWithBomb_Flyer;
         public static ThingDef NCLBurrow_Flyer;
         public static ResearchProjectDef NCL_Archoworm;
+        public static FactionDef NCL_faction;
         public static FactionDef NCL_factionEnemy;
         public static GameConditionDef NCL_WaitWorm;
         public static GameConditionDef NCL_WaitWormFight;

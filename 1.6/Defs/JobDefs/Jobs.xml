@@ -40,4 +40,13 @@
     <checkOverrideOnDamage>Never</checkOverrideOnDamage>
   </JobDef>
 
+  <JobDef>
+    <defName>NCL_PlantC4</defName>
+    <driverClass>NCL.JobDriver_PlantC4</driverClass>
+    <reportString>planting C4 on TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
+
 </Defs>

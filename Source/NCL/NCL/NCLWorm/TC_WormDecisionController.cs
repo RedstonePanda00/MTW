@@ -28,6 +28,7 @@ namespace NCLWorm
     private int _visualTicks = 0;
     private int _ticksUntilDespawn = -2;
     private bool _isDeparting = false;
+    private bool _sleeping = false;
     private readonly List<PhaseEntry> _phaseCandidateScratch = new List<PhaseEntry>();
 
     public CompSwarmController Swarm
@@ -65,6 +66,23 @@ namespace NCLWorm
     {
       get => this._ticksUntilDespawn;
       set => this._ticksUntilDespawn = value;
+    }
+
+    public bool IsDeparting => this._isDeparting;
+
+    // While sleeping the worm only patrols (Phase_Idle) and never picks attack phases.
+    public bool Sleeping
+    {
+      get => this._sleeping;
+      set => this._sleeping = value;
+    }
+
+    public void Dismiss()
+    {
+      if (this._isDeparting || (this.Head != null && this.Head.IsDying))
+        return;
+      this._isDeparting = true;
+      this.SetPhase((WormPhase) new Phase_Departure());
     }
 
     public float SegmentReorientationStrength { get; set; } = 1f;
@@ -123,7 +141,7 @@ namespace NCLWorm
       }
       else
       {
-        bool flag = this.Targeter.LockedTarget != null;
+        bool flag = !this._sleeping && this.Targeter.LockedTarget != null;
         if (flag && ((Thing) this.parent).Map != null && ((Thing) this.parent).Faction != null)
         {
           HashSet<IAttackTarget> faction = ((Thing) this.parent).Map.attackTargetsCache.TargetsHostileToFaction(((Thing) this.parent).Faction);
@@ -255,6 +273,7 @@ namespace NCLWorm
       base.PostExposeData();
       Scribe_Values.Look<int>(ref this._ticksUntilDespawn, "ticksUntilDespawn", -2, false);
       Scribe_Values.Look<bool>(ref this._isDeparting, "isDeparting", false, false);
+      Scribe_Values.Look<bool>(ref this._sleeping, "sleeping", false, false);
       Scribe_Deep.Look<WormPhase>(ref this._currentPhase, "currentPhase", Array.Empty<object>());
       Scribe_Deep.Look<BossAIMemory>(ref this._aiMemory, "aiMemory", Array.Empty<object>());
       if (Scribe.mode != LoadSaveMode.PostLoadInit || this._currentPhase == null)

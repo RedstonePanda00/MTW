@@ -834,5 +834,6 @@ Tactical Tip: Build laser point defense against mortars. -->
   <MTW_Diver_Reinforce_Full>潜兵小队已满员。</MTW_Diver_Reinforce_Full>
   <MTW_Diver_Reinforce_Success>增援空投已发射：{0} 舱。</MTW_Diver_Reinforce_Success>
   <MTW_Diver_Reinforce_Failed>电量不足或落点无效，未能发射增援空投。</MTW_Diver_Reinforce_Failed>
+  <NCL_WormDashCountered>相杀斩[一闪]！超凡机械蠕虫的冲刺被打断：全部无人机被摧毁，蠕虫陷入踉跄，60秒内无法召唤无人机。</NCL_WormDashCountered>
 
 </LanguageData>

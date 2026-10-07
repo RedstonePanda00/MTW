@@ -24,11 +24,19 @@ namespace NCLWorm
 
     private CompProperties_WormSegment Props => (CompProperties_WormSegment) this.props;
 
+    // Damage matching this predicate skips the per-hit cap, vent armor and damage gate.
+    public static Predicate<DamageInfo> BypassReduction;
+
     public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
     {
       absorbed = true;
       if (!this.IsBodyValid())
         return;
+      if (BypassReduction != null && BypassReduction(dinfo))
+      {
+        this.TransferDamageToHead(dinfo.Amount, dinfo, 1f, false);
+        return;
+      }
       float hardCappedAmount = this.GetHardCappedAmount(dinfo);
       float armorMultiplier = this.GetArmorMultiplier();
       float gatedDamageDelta = this.GetGatedDamageDelta(hardCappedAmount * armorMultiplier);
@@ -70,9 +78,10 @@ namespace NCLWorm
     private void TransferDamageToHead(
       float amountToApply,
       DamageInfo originalDinfo,
-      float multiplier)
+      float multiplier,
+      bool capped = true)
     {
-      float attemptedDealt = Mathf.Min(amountToApply, this.Props.maxDamagePerHit);
+      float attemptedDealt = capped ? Mathf.Min(amountToApply, this.Props.maxDamagePerHit) : amountToApply;
       if ((double) attemptedDealt <= 0.0099999997764825821)
         return;
       DamageInfo damageInfo;

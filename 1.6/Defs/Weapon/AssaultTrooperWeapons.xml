@@ -18,6 +18,8 @@
     <uiIconPath>Races/AssaultTrooper/ExplosiveChargeRifle</uiIconPath>
     <soundInteract>Interact_ChargeRifle</soundInteract>
     <statBases>
+      <!-- PawnWeaponGenerator weights candidates by price. A zero-value gun is never equipped. -->
+      <MarketValue>1400</MarketValue>
       <Mass>4.6</Mass>
       <AccuracyTouch>0.55</AccuracyTouch>
       <AccuracyShort>0.64</AccuracyShort>

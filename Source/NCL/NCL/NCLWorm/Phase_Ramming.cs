@@ -23,6 +23,8 @@ namespace NCLWorm
     private int stateTimer = 0;
     private Vector3 cachedChargeDir;
 
+    public bool IsCharging => this.state == Phase_Ramming.RamState.Charging;
+
     public override void OnEnter(TC_WormDecisionController _brain)
     {
       base.OnEnter(_brain);

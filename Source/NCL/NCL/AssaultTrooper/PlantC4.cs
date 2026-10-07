@@ -70,7 +70,8 @@ namespace NCL
             {
                 pawn.rotationTracker.FaceTarget(Target);
             };
-            install.AddFailCondition(() => pawn.Position != installCell || !pawn.Position.AdjacentTo8WayOrInside(Target));
+            // endConditions are evaluated before initAction, while installCell is still invalid.
+            install.AddFailCondition(() => installCell.IsValid && (pawn.Position != installCell || !pawn.Position.AdjacentTo8WayOrInside(Target)));
             install.handlingFacing = true;
             install.defaultCompleteMode = ToilCompleteMode.Delay;
             install.defaultDuration = Extension?.installTicks ?? 300;

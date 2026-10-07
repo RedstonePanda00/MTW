@@ -283,6 +283,7 @@
     <Compile Include="NCL_Storyteller\Patch_PawnsArrivalModeWorker.cs" />
     <Compile Include="NCL_Storyteller\Patch_RaidHeavyMechInjection.cs" />
     <Compile Include="NCLWorm\**\*.cs" />
+    <Compile Include="PMP\**\*.cs" />
     <Compile Include="TowerLaserDefense\**\*.cs" />
     <Compile Include="CapitalisticMilitor\**\*.cs" />
   </ItemGroup>

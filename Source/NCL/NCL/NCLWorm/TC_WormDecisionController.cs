@@ -85,6 +85,23 @@ namespace NCLWorm
       this.SetPhase((WormPhase) new Phase_Departure());
     }
 
+    public bool IsDashing
+    {
+      get
+      {
+        return this._currentPhase is Phase_Ramming ramming && ramming.IsCharging || this._currentPhase is Phase_WormholeDash dash && dash.IsDashing;
+      }
+    }
+
+    public bool IsStaggered => this._currentPhase is Phase_Staggered && !this._currentPhase.IsFinished;
+
+    public void Stagger(Vector3 knockDir, int durationTicks)
+    {
+      if (this._isDeparting || (this.Head != null && this.Head.IsDying))
+        return;
+      this.SetPhase((WormPhase) new Phase_Staggered(knockDir, durationTicks));
+    }
+
     public float SegmentReorientationStrength { get; set; } = 1f;
 
     public TCP_WormDecisionController Props => (TCP_WormDecisionController) this.props;
@@ -157,7 +174,7 @@ namespace NCLWorm
           num = 0;
         if (num != 0)
         {
-          if (!(this._currentPhase is Phase_Idle))
+          if (!(this._currentPhase is Phase_Idle) && !this.IsStaggered)
             this.SetPhase((WormPhase) new Phase_Idle());
         }
         else if (this._currentPhase is Phase_Idle)

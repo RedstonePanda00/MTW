@@ -160,6 +160,9 @@ namespace NCLWorm
 
     private void HandleCollisionDamage()
     {
+      WormHead head = this.parent as WormHead ?? (this.parent as WormBody)?.Head;
+      if (head?.Brain?.IsStaggered == true)
+        return;
       if (this._collisionCooldown > 0)
       {
         --this._collisionCooldown;

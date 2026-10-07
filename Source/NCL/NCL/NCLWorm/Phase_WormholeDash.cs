@@ -29,6 +29,14 @@ namespace NCLWorm
     private Vector3 _moveDir;
     private Vector3 _predictionEndPos;
 
+    public bool IsDashing
+    {
+      get
+      {
+        return this._state == Phase_WormholeDash.DashState.InitialEntering || this._state == Phase_WormholeDash.DashState.Exiting || this._state == Phase_WormholeDash.DashState.ReEntrySetup || this._state == Phase_WormholeDash.DashState.ReEntering;
+      }
+    }
+
     public override float? DesiredStiffness
     {
       get => new float?(this._state == Phase_WormholeDash.DashState.FinalExhaustion ? 0.4f : 0.0f);

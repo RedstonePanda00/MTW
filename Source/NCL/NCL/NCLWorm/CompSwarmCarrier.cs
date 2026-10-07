@@ -24,14 +24,28 @@ namespace NCLWorm
     private readonly List<ProbeSpawnOption> _validProbeOptionsScratch = new List<ProbeSpawnOption>();
     private List<CompSwarmCarrier.SpawnTracker> _activeSpawners = new List<CompSwarmCarrier.SpawnTracker>();
     private int _cooldownTicks = 0;
+    private int _suppressedUntilTick = -1;
 
     private CompProperties_SwarmCarrier Props => (CompProperties_SwarmCarrier) this.props;
+
+    public bool SpawningSuppressed => Find.TickManager.TicksGame < this._suppressedUntilTick;
+
+    public void SuppressSpawning(int ticks)
+    {
+      this._suppressedUntilTick = Mathf.Max(this._suppressedUntilTick, Find.TickManager.TicksGame + ticks);
+      this._activeSpawners.Clear();
+    }
 
     public override void CompTick()
     {
       base.CompTick();
       if (((Thing) this.parent).Map == null)
         return;
+      if (this.SpawningSuppressed)
+      {
+        this._activeSpawners.Clear();
+        return;
+      }
       this.UpdateActiveSpawners();
       if ((this.parent as WormHead)?.Brain?.Sleeping == true)
         return;
@@ -191,6 +205,7 @@ namespace NCLWorm
       base.PostExposeData();
       Scribe_Collections.Look<CompSwarmCarrier.SpawnTracker>(ref this._activeSpawners, "activeSpawners", (LookMode) 2, Array.Empty<object>());
       Scribe_Values.Look<int>(ref this._cooldownTicks, "cooldownTicks", 0, false);
+      Scribe_Values.Look<int>(ref this._suppressedUntilTick, "suppressedUntilTick", -1, false);
     }
 
     private class SpawnTracker : IExposable

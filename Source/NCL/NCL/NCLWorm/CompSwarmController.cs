@@ -62,6 +62,23 @@ namespace NCLWorm
       this._minions.Clear();
     }
 
+    public void KillAll()
+    {
+      List<Thing> probes = new List<Thing>();
+      for (int index = 0; index < this._minions.Count; ++index)
+      {
+        Thing probe = this._minions[index]?.parent;
+        if (probe != null && !probe.Destroyed)
+          probes.Add(probe);
+      }
+      this._minions.Clear();
+      foreach (Thing probe in probes)
+      {
+        if (!probe.Destroyed)
+          probe.Kill(new DamageInfo?(), (Hediff) null);
+      }
+    }
+
     public override void PostExposeData()
     {
       base.PostExposeData();

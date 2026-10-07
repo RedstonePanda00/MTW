@@ -25,7 +25,7 @@ namespace NCLWorm
 
     public override void CompTick()
     {
-      if (this.Head == null || !((Thing) this.Head).Spawned)
+      if (this.Head == null || !((Thing) this.Head).Spawned || this.Head.Brain?.IsStaggered == true)
         return;
       if (this._cooldownTimer > 0)
       {

@@ -108,6 +108,8 @@ namespace NCL
 
                 NCL_Mod.harmony.PatchAll(typeof(NCL_Mod).Assembly);
                 NCL.Diver.DiverRimTalkPersonaPersistence.TryPatch(NCL_Mod.harmony);
+                NCL.PMP.UmbraOffsetSlashWormCounter.TryPatch(NCL_Mod.harmony);
+                NCL.PMP.UmbraSlashWormTargeting.TryPatch(NCL_Mod.harmony);
                 Log.Message("NCL Mod: Harmony PatchAll completed");
             }
             catch (Exception ex)

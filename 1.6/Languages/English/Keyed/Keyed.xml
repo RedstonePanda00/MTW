@@ -612,5 +612,6 @@ Tactical Tip: Build laser point defense against mortars.</NCL_Content_Page3>
   <MTW_Diver_Reinforce_Full>Diver squad is already at full strength.</MTW_Diver_Reinforce_Full>
   <MTW_Diver_Reinforce_Success>Reinforcement drop launched: {0} pod(s).</MTW_Diver_Reinforce_Success>
   <MTW_Diver_Reinforce_Failed>Insufficient power or invalid drop site; reinforcement failed.</MTW_Diver_Reinforce_Failed>
+  <NCL_WormDashCountered>Offset slash! The Archotech worm's dash was broken: all drones destroyed, the worm is staggered and cannot deploy drones for 60 seconds.</NCL_WormDashCountered>
 
 </LanguageData> 
